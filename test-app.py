@@ -12,7 +12,7 @@ st.markdown("""
 [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 2025-10-24")
+st.markdown("📅 Last updated: 2025-11-15")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 
 st.markdown("# Global T20 Dashboard: MBBL, WBBL, SA20 & WPL Insights")
@@ -114,7 +114,17 @@ st.sidebar.multiselect("Metrics", metrics, key="metrics", on_change=clear_submit
 
 # --- NEW: populate Match / Batter / Bowler selectors based on current pre-filtered p_df (and phases if given)
 # Use a phase-filtered df to ensure selections reflect chosen phases before SUBMIT
+
+# ensure session state keys exist (safe init)
+if 'matches' not in st.session_state:
+    st.session_state.matches = []
+if 'batters' not in st.session_state:
+    st.session_state.batters = []
+if 'bowlers' not in st.session_state:
+    st.session_state.bowlers = []
+
 pp_df = p_df.copy()
+
 if st.session_state.get('phases'):
     phases_norm = [p.title().replace('Power Play','Powerplay') for p in st.session_state['phases']]
     pp_df = pp_df[pp_df['phase'].isin(phases_norm)]
@@ -123,39 +133,42 @@ if st.session_state.get('phases'):
 if 'teams' in pp_df.columns and not pp_df['teams'].dropna().empty:
     match_options = sorted(pp_df['teams'].dropna().unique())
 else:
-    # fallback labels
     match_options = sorted(pp_df['match_id'].dropna().unique())
 
-# Keep previous matches only if still available
-valid_matches = [m for m in st.session_state.matches if m in match_options]
-if valid_matches != st.session_state.matches:
-    st.session_state.matches = valid_matches
+# Keep previous matches only if still available (avoid invalid session_state values)
+st.session_state.matches = [m for m in st.session_state.matches if m in match_options]
 
-st.sidebar.multiselect("Match", match_options, key="matches", default=st.session_state.matches, on_change=clear_submitted)
+# Create multiselect bound to session_state (DO NOT pass default= when key= is used)
+st.sidebar.multiselect("Match", match_options, key="matches", on_change=clear_submitted)
 
-# Batters
-if 'batter' in pp_df.columns:
-    batter_options = sorted(pp_df['batter'].dropna().unique())
+# --- Batter options (respect current match selection so batter list updates sensibly)
+batter_source = pp_df.copy()
+if st.session_state.get('matches'):
+    batter_source = batter_source[batter_source['teams'].isin(st.session_state['matches'])]
+
+if 'batter' in batter_source.columns:
+    batter_options = sorted(batter_source['batter'].dropna().unique())
 else:
     batter_options = []
 
-valid_batters = [b for b in st.session_state.batters if b in batter_options]
-if valid_batters != st.session_state.batters:
-    st.session_state.batters = valid_batters
+# preserve only valid previously selected batters
+st.session_state.batters = [b for b in st.session_state.batters if b in batter_options]
 
-st.sidebar.multiselect("Batter", batter_options, key="batters", default=st.session_state.batters, on_change=clear_submitted)
+st.sidebar.multiselect("Batter", batter_options, key="batters", on_change=clear_submitted)
 
-# Bowlers
-if 'bowler' in pp_df.columns:
-    bowler_options = sorted(pp_df['bowler'].dropna().unique())
+# --- Bowler options (same logic)
+bowler_source = pp_df.copy()
+if st.session_state.get('matches'):
+    bowler_source = bowler_source[bowler_source['teams'].isin(st.session_state['matches'])]
+
+if 'bowler' in bowler_source.columns:
+    bowler_options = sorted(bowler_source['bowler'].dropna().unique())
 else:
     bowler_options = []
 
-valid_bowlers = [b for b in st.session_state.bowlers if b in bowler_options]
-if valid_bowlers != st.session_state.bowlers:
-    st.session_state.bowlers = valid_bowlers
+st.session_state.bowlers = [b for b in st.session_state.bowlers if b in bowler_options]
 
-st.sidebar.multiselect("Bowler", bowler_options, key="bowlers", default=st.session_state.bowlers, on_change=clear_submitted)
+st.sidebar.multiselect("Bowler", bowler_options, key="bowlers", on_change=clear_submitted)
 # --- end new selectors
 
 # Run Rate options (user wanted per-over default behaviour)
