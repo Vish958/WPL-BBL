@@ -15,6 +15,39 @@ st.markdown("""
 st.markdown("📅 Last updated: 2025-11-15")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 
+st.markdown("""
+<style>
+.ai-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #111827;
+  color: #22c55e;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid rgba(34,197,94,0.5);
+  box-shadow: 0 0 0 rgba(34,197,94,0.6);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34,197,94,0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(34,197,94,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34,197,94,0);
+  }
+}
+</style>
+
+<div class="ai-badge">Powered by AI</div>
+""", unsafe_allow_html=True)
+
 st.markdown("# Global T20 Dashboard: MBBL, WBBL, SA20 & WPL Insights")
 
 DATA_SOURCE = "t20_data.parquet"
