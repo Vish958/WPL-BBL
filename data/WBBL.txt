@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 482 Women's Big Bash League matches.
+archive contains 490 Women's Big Bash League matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -21,6 +21,14 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2025-11-16 - club - WBB - female - 1494538 - Melbourne Stars vs Melbourne Renegades
+2025-11-16 - club - WBB - female - 1494537 - Adelaide Strikers vs Perth Scorchers
+2025-11-15 - club - WBB - female - 1494536 - Sydney Sixers vs Sydney Thunder
+2025-11-15 - club - WBB - female - 1494535 - Hobart Hurricanes vs Brisbane Heat
+2025-11-14 - club - WBB - female - 1494534 - Melbourne Renegades vs Adelaide Strikers
+2025-11-14 - club - WBB - female - 1494533 - Melbourne Stars vs Perth Scorchers
+2025-11-13 - club - WBB - female - 1494532 - Sydney Sixers vs Hobart Hurricanes
+2025-11-12 - club - WBB - female - 1494531 - Perth Scorchers vs Brisbane Heat
 2025-11-11 - club - WBB - female - 1494530 - Sydney Thunder vs Melbourne Renegades
 2025-11-10 - club - WBB - female - 1494529 - Melbourne Stars vs Adelaide Strikers
 2025-11-09 - club - WBB - female - 1494528 - Perth Scorchers vs Sydney Sixers

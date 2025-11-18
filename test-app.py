@@ -12,7 +12,7 @@ st.markdown("""
 [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 2025-11-15")
+st.markdown("📅 Last updated: 2025-11-18")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 
 st.markdown("""
