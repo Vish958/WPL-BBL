@@ -17,3 +17,6 @@ pip install -r requirements.txt
 
 # Run the dashboard
 streamlit run test-app.py (original app)
+
+# Process the new matches
+run the preprocessing.py
