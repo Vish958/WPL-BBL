@@ -12,43 +12,68 @@ st.markdown("""
 [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 2025-11-22")
+st.markdown("📅 Last updated: 2025-11-24")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 
 st.markdown("""
 <style>
-.ai-badge {
+/* common badge style */
+.ai-badge, .otw-badge {
   display: inline-block;
-  padding: 4px 10px;
+  padding: 6px 12px;
   border-radius: 999px;
-  background: #111827;
-  color: #22c55e;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  border: 1px solid rgba(34,197,94,0.5);
-  box-shadow: 0 0 0 rgba(34,197,94,0.6);
-  animation: pulse 2s infinite;
+  margin-right: 10px;
+  vertical-align: middle;
 }
 
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 0 0 rgba(34,197,94,0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 10px rgba(34,197,94,0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(34,197,94,0);
-  }
+/* Powered by AI (green pulsing) */
+.ai-badge {
+  background: linear-gradient(90deg,#0f172a,#042e1f);
+  color: #9ef08a;
+  border: 1px solid rgba(158,240,138,0.15);
+  box-shadow: 0 0 0 rgba(158,240,138,0.35);
+  animation: pulse-green 1s infinite;
 }
+
+/* Open to Work (red subtle pulse) */
+.otw-badge {
+  background: linear-gradient(90deg,#2b0a0a,#4c0b0b);
+  color: #ffd6d6;
+  border: 1px solid rgba(255,100,100,0.12);
+  box-shadow: 0 0 0 rgba(255,100,100,0.22);
+  animation: pulse-red 1s infinite;
+}
+
+/* keyframes */
+@keyframes pulse-green {
+  0% { box-shadow: 0 0 0 0 rgba(158,240,138,0.35); }
+  70% { box-shadow: 0 0 0 12px rgba(158,240,138,0); }
+  100% { box-shadow: 0 0 0 0 rgba(158,240,138,0); }
+}
+@keyframes pulse-red {
+  0% { box-shadow: 0 0 0 0 rgba(255,100,100,0.28); transform: translateY(0px); }
+  50% { box-shadow: 0 0 8px 4px rgba(255,100,100,0.06); transform: translateY(-1px); }
+  100% { box-shadow: 0 0 0 0 rgba(255,100,100,0); transform: translateY(0px); }
+}
+
+/* small helper to align badges and caption */
+.header-badges { margin-top: 6px; margin-bottom: 10px; }
+.badge-caption { display:inline-block; margin-left:8px; color:#94a3b8; font-size:12px; vertical-align: middle; }
 </style>
 
-<div class="ai-badge">Powered by AI</div>
+<div class="header-badges">
+  <div class="ai-badge">Powered by AI</div>
+  <div class="otw-badge">Open to work</div>
+  <span class="badge-caption"></span>
+</div>
 """, unsafe_allow_html=True)
 
-st.markdown("# Global T20 Dashboard: MBBL, WBBL, SA20 & WPL Insights")
+
+st.markdown("# Global T20 Dashboard: IPL, MBBL, WBBL, SA20 & WPL Insights")
 
 DATA_SOURCE = "t20_data.parquet"
 
@@ -57,8 +82,10 @@ LEAGUE_START_DATES = {
     'WBBL': '2020-10-25',
     'MBBL': '2020-12-10',
     'WPL':  '2023-03-04',
-    'SA20': '2023-01-10'
+    'SA20': '2023-01-10',
+    'IPL':  '2008-04-18'
 }
+
 st.markdown("**Data included from:**")
 for lg, dt in LEAGUE_START_DATES.items():
     st.markdown(f"- **{lg}** from **{dt}**")
