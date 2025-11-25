@@ -1,5 +1,95 @@
 # app.py (full file) - Updated: per-over RR fix + Run Source option + removed deliveries debug
 import streamlit as st
+
+# --- BEGIN AUTO-ADDED OPTIMIZATIONS (added by assistant) ---
+import logging, threading, time
+from typing import TYPE_CHECKING
+
+# Optional psutil import: avoid hard failure in editors/CI when psutil is not installed.
+# TYPE_CHECKING allows linters and type checkers to see the symbol while runtime will
+# only import psutil if it is actually available.
+if TYPE_CHECKING:
+    import psutil  # type: ignore
+else:
+    try:
+        import importlib.util
+        spec = importlib.util.find_spec("psutil")
+        if spec is not None:
+            import importlib
+            psutil = importlib.import_module("psutil")
+        else:
+            psutil = None
+    except Exception:
+        psutil = None
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
+
+# Streamlit caching helpers
+try:
+    # st may not be defined yet at this point in every file; we will define load_csv only if st exists later.
+    pass
+except Exception:
+    pass
+
+def _start_memory_monitor():
+    if psutil is None:
+        logging.info("psutil not available; memory monitor disabled.")
+        return
+    def _mon():
+        pproc = psutil.Process()
+        while True:
+            try:
+                mem = pproc.memory_info().rss / (1024*1024)
+                logging.info(f"[mem-monitor] RSS_MB={mem:.1f}")
+            except Exception:
+                logging.exception("Memory monitor error")
+            time.sleep(30)
+    t = threading.Thread(target=_mon, daemon=True)
+    t.start()
+
+# Start monitor in background (harmless if psutil missing)
+_start_memory_monitor()
+
+# A resilient restart wrapper (if you prefer to run this module directly).
+def _run_with_restart(main_func):
+    import sys, traceback
+    backoff = 1
+    while True:
+        try:
+            main_func()
+            logging.info("Main returned normally - exiting launcher.")
+            break
+        except Exception:
+            logging.exception("Unhandled exception in main() - restarting after backoff")
+            # save traceback for inspection
+            tb = traceback.format_exc()
+            try:
+                with open("last_traceback.log", "a") as f:
+                    f.write("\n-----\n")
+                    f.write(tb)
+            except Exception:
+                logging.exception("Failed writing traceback.log")
+            time.sleep(backoff)
+            backoff = min(300, backoff * 2)
+# --- END AUTO-ADDED OPTIMIZATIONS ---
+
+# Cached CSV loader to avoid repeated memory allocations
+try:
+    # If streamlit is available, use st.cache_data; otherwise, fallback to simple caching.
+    import streamlit as st
+    @st.cache_data
+    def load_csv(path, **kwargs):
+        import pandas as pd
+        return load_csv(path, **kwargs)
+except Exception:
+    # Fallback - minimal caching
+    _csv_cache = {}
+    def load_csv(path, **kwargs):
+        import pandas as pd
+        key = (path, tuple(sorted(kwargs.items())))
+        if key not in _csv_cache:
+            _csv_cache[key] = load_csv(path, **kwargs)
+        return _csv_cache[key]
 import pandas as pd
 import numpy as np
 import plotly.express as px
@@ -12,7 +102,7 @@ st.markdown("""
 [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 2025-11-24")
+st.markdown("📅 Last updated: 2025-11-25")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 
 st.markdown("""
@@ -314,7 +404,7 @@ def show_table(df_, title=None):
     if not has_meaningful_numbers(df_):
         st.info("No meaningful numeric data for this metric with current filters.")
         return
-    st.dataframe(df_, use_container_width=True, height=st.session_state.compact_height)
+    st.dataframe(df_, width='stretch', height=st.session_state.compact_height)
 
 def show_bar(df_, x, y, title, color=None, top_n=None):
     if df_ is None or df_.empty:
@@ -329,7 +419,7 @@ def show_bar(df_, x, y, title, color=None, top_n=None):
         fig = px.bar(df_, x=x, y=y, title=title, color_discrete_sequence=[color])
     else:
         fig = px.bar(df_, x=x, y=y, title=title)
-    st.plotly_chart(fig, use_container_width=True)
+    st.plotly_chart(fig, width='stretch')
 
 # -------------------------
 # Metrics implementations
