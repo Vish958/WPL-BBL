@@ -3,4 +3,4 @@ pandas
 plotly
 numpy
 python-dateuti
-psutil==5.9.5
+psutil
