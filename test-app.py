@@ -477,31 +477,49 @@ def extras_breakdown(df_):
     return pd.DataFrame(rows)
 
 # Key Batting - FIX: observed=True prevents leaking other league players
-# Updated key_batting function to fix Power Surge crash
+# Updated key_batting function: Aggressive Type Casting to fix WBBL Powerplay Crash
 def key_batting(df_):
     valid = df_.copy()
 
-    # --- CRITICAL FIX: Upcast to int64 to prevent Buffer dtype mismatch ---
-    # Memory optimization (int8/int16) causes crashes during groupby.sum() 
-    # on specific subsets like Power Surge. We convert to int64 just for this calculation.
-    cols_to_fix = ['runs.batter', 'is_valid_delivery', 'wicket_count']
+    # --- CRITICAL FIX START ---
+    # Convert Grouping Keys & Value Columns to standard types to prevent Buffer Mismatch.
+    # This forces int8 data back to standard int64 before Pandas touches it.
+    
+    # 1. Fix Grouping Keys
+    if 'innings' in valid.columns:
+        valid['innings'] = valid['innings'].astype('int64')
+    if 'batter' in valid.columns:
+        valid['batter'] = valid['batter'].astype(str)
+
+    # 2. Fix Value Columns
+    cols_to_fix = ['runs.batter', 'is_valid_delivery']
     for c in cols_to_fix:
         if c in valid.columns:
             valid[c] = valid[c].astype('int64')
+    # --- CRITICAL FIX END ---
 
-    # Proceed with calculations using observed=True
-    # Grouping
+    # Now proceed with calculations (observed=True is safe now because types are standard)
+    
+    # Balls Faced
     balls = valid[valid['is_valid_delivery']==1].groupby(['innings','batter'], observed=True).size().rename('BF')
+    
+    # Runs
     runs = valid.groupby(['innings','batter'], observed=True)['runs.batter'].sum().rename('Runs')
+    
+    # Boundaries (4s and 6s)
     fours = valid[valid['runs.batter'] == 4].groupby(['innings','batter'], observed=True).size().rename('4s')
     sixes = valid[valid['runs.batter'] == 6].groupby(['innings','batter'], observed=True).size().rename('6s')
+    
+    # Dots
     dots = valid[valid['runs.batter'] == 0].groupby(['innings','batter'], observed=True).size().rename('Dots')
     
-    # Innings played check
+    # Innings Played
     innings_played = valid.groupby(['innings','batter'], observed=True).apply(lambda g: 1 if (g['is_valid_delivery'].sum()>0) else 0).rename('InningsPlayed')
     
+    # Combine stats
     stats = pd.concat([runs, balls, fours, sixes, dots, innings_played], axis=1).fillna(0).reset_index()
     
+    # Derived Metrics
     stats['4s'] = stats['4s'].astype(int)
     stats['6s'] = stats['6s'].astype(int)
     stats['SR'] = (stats['Runs'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
