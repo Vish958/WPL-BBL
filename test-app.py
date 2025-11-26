@@ -477,21 +477,38 @@ def extras_breakdown(df_):
     return pd.DataFrame(rows)
 
 # Key Batting - FIX: observed=True prevents leaking other league players
+# Updated key_batting function to fix Power Surge crash
 def key_batting(df_):
     valid = df_.copy()
+
+    # --- CRITICAL FIX: Upcast to int64 to prevent Buffer dtype mismatch ---
+    # Memory optimization (int8/int16) causes crashes during groupby.sum() 
+    # on specific subsets like Power Surge. We convert to int64 just for this calculation.
+    cols_to_fix = ['runs.batter', 'is_valid_delivery', 'wicket_count']
+    for c in cols_to_fix:
+        if c in valid.columns:
+            valid[c] = valid[c].astype('int64')
+
+    # Proceed with calculations using observed=True
+    # Grouping
     balls = valid[valid['is_valid_delivery']==1].groupby(['innings','batter'], observed=True).size().rename('BF')
     runs = valid.groupby(['innings','batter'], observed=True)['runs.batter'].sum().rename('Runs')
     fours = valid[valid['runs.batter'] == 4].groupby(['innings','batter'], observed=True).size().rename('4s')
     sixes = valid[valid['runs.batter'] == 6].groupby(['innings','batter'], observed=True).size().rename('6s')
     dots = valid[valid['runs.batter'] == 0].groupby(['innings','batter'], observed=True).size().rename('Dots')
+    
+    # Innings played check
     innings_played = valid.groupby(['innings','batter'], observed=True).apply(lambda g: 1 if (g['is_valid_delivery'].sum()>0) else 0).rename('InningsPlayed')
+    
     stats = pd.concat([runs, balls, fours, sixes, dots, innings_played], axis=1).fillna(0).reset_index()
+    
     stats['4s'] = stats['4s'].astype(int)
     stats['6s'] = stats['6s'].astype(int)
     stats['SR'] = (stats['Runs'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
     stats['Avg'] = (stats['Runs'] / stats['InningsPlayed']).replace([np.inf, np.nan], 0).round(2)
     stats['Dot%'] = (stats['Dots'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
     stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
+    
     return stats[['Innings','batter','Runs','BF','SR','Avg','4s','6s','Dot%']].sort_values('Runs', ascending=False)
 
 # Key Bowling - FIX: observed=True
