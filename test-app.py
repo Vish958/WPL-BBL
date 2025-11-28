@@ -1,4 +1,4 @@
-# app.py (full file) - Final Fix for Buffer dtype mismatch
+# app.py (full file) - Final: Date Filter Fixed in Dropdowns + All Crash Fixes + Aggregated Leaderboards
 import streamlit as st
 
 # --- BEGIN AUTO-ADDED OPTIMIZATIONS ---
@@ -69,8 +69,9 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 2025-11-26")
+st.markdown("📅 Last updated: 2025-11-28")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
+st.markdown("🚀 Update:Switch to 'Overall' view to analyze full season leaderboards!")
 
 st.markdown("""
 <style>
@@ -211,8 +212,7 @@ st.session_state.compact_height = st.sidebar.slider("Table height (px)", min_val
 st.sidebar.markdown("---")
 st.sidebar.header("Filters")
 
-# LEAGUE / YEAR / DATE
-# Dropna to handle categories nicely
+# --- 1. Global Filters (League / Year / Date) ---
 leagues = sorted(df['league'].dropna().unique())
 st.sidebar.multiselect("League", leagues, key="leagues", on_change=clear_submitted)
 
@@ -226,14 +226,16 @@ with col1:
 with col2:
     st.sidebar.date_input("To", key="date_to", value=df['date'].dt.date.max(), min_value=min_date, max_value=max_date, on_change=clear_submitted)
 
-# pre-filter to populate downstream selectors
+# --- 2. Phase Filter ---
+# Pre-filter for Phase logic (Used for populating Dropdowns)
 p_df = df.copy()
 if st.session_state.get('leagues'): p_df = p_df[p_df['league'].isin(st.session_state['leagues'])]
 if st.session_state.get('years'): p_df = p_df[p_df['year'].isin(st.session_state['years'])]
+
+# --- FIX: Apply Date Filter to Dropdown Data Source (p_df) ---
 if st.session_state.get('date_from'): p_df = p_df[p_df['date'].dt.date >= st.session_state['date_from']]
 if st.session_state.get('date_to'): p_df = p_df[p_df['date'].dt.date <= st.session_state['date_to']]
 
-# Phases
 available_phases = sorted(p_df['phase'].dropna().unique())
 if any(l in st.session_state.get('leagues', []) for l in ['WBBL', 'MBBL']):
     if 'Power Surge' not in available_phases:
@@ -243,71 +245,65 @@ if not available_phases:
 
 st.sidebar.multiselect("Phase", available_phases, key="phases", on_change=clear_submitted)
 
+# --- 3. View Mode (The New Feature) ---
+st.sidebar.markdown("---")
+view_mode = st.sidebar.radio(
+    "Analysis Scope", 
+    ["Specific Matches", "Overall (Season Leaderboard)"],
+    key="view_mode_selection",
+    help="Specific: Analyze selected matches only.\nOverall: Analyze all matches in the selected League/Year/Phase (ignores specific match dropdowns)."
+)
+
+# --- 4. Match / Batter / Bowler Selectors ---
+# Apply Phase filter to p_df for dropdown population
+if st.session_state.get('phases'):
+    phases_norm = [p.title().replace('Power Play','Powerplay') for p in st.session_state['phases']]
+    p_df = p_df[p_df['phase'].isin(phases_norm)]
+
+# Match Selector
+if 'teams' in p_df.columns and not p_df['teams'].dropna().empty:
+    match_options = sorted(p_df['teams'].dropna().unique())
+else:
+    match_options = sorted(p_df['match_id'].dropna().unique())
+
+st.session_state.matches = [m for m in st.session_state.matches if m in match_options]
+st.sidebar.multiselect("Match", match_options, key="matches", on_change=clear_submitted)
+
+# Batter Selector
+batter_source = p_df.copy()
+if st.session_state.get('matches'):
+    batter_source = batter_source[batter_source['teams'].isin(st.session_state['matches'])]
+if 'batter' in batter_source.columns:
+    batter_options = sorted(batter_source['batter'].dropna().unique())
+else:
+    batter_options = []
+st.session_state.batters = [b for b in st.session_state.batters if b in batter_options]
+st.sidebar.multiselect("Batter", batter_options, key="batters", on_change=clear_submitted)
+
+# Bowler Selector
+bowler_source = p_df.copy()
+if st.session_state.get('matches'):
+    bowler_source = bowler_source[bowler_source['teams'].isin(st.session_state['matches'])]
+if 'bowler' in bowler_source.columns:
+    bowler_options = sorted(bowler_source['bowler'].dropna().unique())
+else:
+    bowler_options = []
+st.session_state.bowlers = [b for b in st.session_state.bowlers if b in bowler_options]
+st.sidebar.multiselect("Bowler", bowler_options, key="bowlers", on_change=clear_submitted)
+
+
+# --- 5. Metrics & RR Options ---
 metrics = [
     "Key Batting", "Key Bowling", "BPSix", "BP4", "Batter Contribution %",
     "Extras Breakdown", "Run Rate Progression", "Boundary Balls %",
     "Powerplay Boundary Rate", "Death Wag %", "Match-Up Dominance",
     "Pressure Index", "Dot Ball % Trend", "Bowler Boundary Leakage by Phase", "Match Results"
 ]
+st.sidebar.markdown("---")
 st.sidebar.multiselect("Metrics", metrics, key="metrics", on_change=clear_submitted)
 
-# --- Match / Batter / Bowler selectors ---
-
-# ensure session state keys exist
-if 'matches' not in st.session_state:
-    st.session_state.matches = []
-if 'batters' not in st.session_state:
-    st.session_state.batters = []
-if 'bowlers' not in st.session_state:
-    st.session_state.bowlers = []
-
-pp_df = p_df.copy()
-
-if st.session_state.get('phases'):
-    phases_norm = [p.title().replace('Power Play','Powerplay') for p in st.session_state['phases']]
-    pp_df = pp_df[pp_df['phase'].isin(phases_norm)]
-
-# Build match options
-if 'teams' in pp_df.columns and not pp_df['teams'].dropna().empty:
-    match_options = sorted(pp_df['teams'].dropna().unique())
-else:
-    match_options = sorted(pp_df['match_id'].dropna().unique())
-
-st.session_state.matches = [m for m in st.session_state.matches if m in match_options]
-st.sidebar.multiselect("Match", match_options, key="matches", on_change=clear_submitted)
-
-# Batter options
-batter_source = pp_df.copy()
-if st.session_state.get('matches'):
-    batter_source = batter_source[batter_source['teams'].isin(st.session_state['matches'])]
-
-if 'batter' in batter_source.columns:
-    batter_options = sorted(batter_source['batter'].dropna().unique())
-else:
-    batter_options = []
-
-st.session_state.batters = [b for b in st.session_state.batters if b in batter_options]
-st.sidebar.multiselect("Batter", batter_options, key="batters", on_change=clear_submitted)
-
-# Bowler options
-bowler_source = pp_df.copy()
-if st.session_state.get('matches'):
-    bowler_source = bowler_source[bowler_source['teams'].isin(st.session_state['matches'])]
-
-if 'bowler' in bowler_source.columns:
-    bowler_options = sorted(bowler_source['bowler'].dropna().unique())
-else:
-    bowler_options = []
-
-st.session_state.bowlers = [b for b in st.session_state.bowlers if b in bowler_options]
-st.sidebar.multiselect("Bowler", bowler_options, key="bowlers", on_change=clear_submitted)
-
-# Run Rate options
-st.sidebar.markdown("---")
 st.sidebar.markdown("### Run Rate options")
 rr_mode = st.sidebar.radio("Run Rate View", ['Per-over (combined)', 'Per match', 'Per-match multi-run'], index=0)
-
-# Run Source option
 rr_run_source = st.sidebar.radio("Run Source for RR", ['Total runs (incl extras)','Batter runs only'], index=0)
 
 selected_match_for_rr = None
@@ -315,17 +311,19 @@ if rr_mode in ('Per match','Per-match multi-run'):
     match_options_for_rr = sorted(p_df['teams'].dropna().unique())
     selected_match_for_rr = st.sidebar.selectbox("Select match for per-match RR", match_options_for_rr)
 
-# SUBMIT
+# --- 6. SUBMIT & Filtering Logic ---
 if st.sidebar.button("SUBMIT", type="primary"):
     st.session_state.submitted = True
     st.success("Applied!")
 
 if not st.session_state.submitted:
-    st.info("Choose filters. Match/Batter/Bowler populate before SUBMIT. Click SUBMIT to compute metrics.")
+    st.info("Choose filters. Click SUBMIT to compute metrics.")
     st.stop()
 
-# apply final filters
+# Apply Final Filters based on View Mode
 fdf = df.copy()
+
+# A. Base Filters (Always Apply)
 if st.session_state.get('leagues'): fdf = fdf[fdf['league'].isin(st.session_state['leagues'])]
 if st.session_state.get('years'): fdf = fdf[fdf['year'].isin(st.session_state['years'])]
 if st.session_state.get('date_from'): fdf = fdf[fdf['date'].dt.date >= st.session_state['date_from']]
@@ -333,12 +331,20 @@ if st.session_state.get('date_to'): fdf = fdf[fdf['date'].dt.date <= st.session_
 if st.session_state.get('phases'):
     phases_norm = [p.title().replace('Power Play','Powerplay') for p in st.session_state['phases']]
     fdf = fdf[fdf['phase'].isin(phases_norm)]
-if st.session_state.get('matches'):
-    fdf = fdf[fdf['teams'].isin(st.session_state['matches'])]
-if st.session_state.get('batters'):
-    fdf = fdf[fdf['batter'].isin(st.session_state['batters'])]
-if st.session_state.get('bowlers'):
-    fdf = fdf[fdf['bowler'].isin(st.session_state['bowlers'])]
+
+# B. Specific Filters (Only Apply if "Specific Matches" mode is selected)
+is_overall_mode = (view_mode == "Overall (Season Leaderboard)")
+
+if not is_overall_mode:
+    if st.session_state.get('matches'):
+        fdf = fdf[fdf['teams'].isin(st.session_state['matches'])]
+    if st.session_state.get('batters'):
+        fdf = fdf[fdf['batter'].isin(st.session_state['batters'])]
+    if st.session_state.get('bowlers'):
+        fdf = fdf[fdf['bowler'].isin(st.session_state['bowlers'])]
+else:
+    # In "Overall" mode, we deliberately IGNORE specific match/player filters 
+    st.info(f"Viewing Overall Stats (Leaderboard Mode). Ignoring specific match selections.")
 
 if fdf.empty:
     st.warning("No data for selected filters.")
@@ -408,7 +414,6 @@ def show_bar(df_, x, y, title, color=None, top_n=None):
 
 # -------------------------
 # Metrics implementations
-# IMPORTANT: All groupby operations use observed=True to prevent leaking unused categories (phantom players)
 # -------------------------
 
 def run_col_name():
@@ -476,80 +481,107 @@ def extras_breakdown(df_):
         return pd.DataFrame()
     return pd.DataFrame(rows)
 
-# Key Batting - FIX: observed=True prevents leaking other league players
-# Updated key_batting function: Aggressive Type Casting to fix WBBL Powerplay Crash
+# Key Batting - FIX: Dynamic Grouping for Overall vs Specific + Type Casting
 def key_batting(df_):
     valid = df_.copy()
-
-    # --- CRITICAL FIX START ---
-    # Convert Grouping Keys & Value Columns to standard types to prevent Buffer Mismatch.
-    # This forces int8 data back to standard int64 before Pandas touches it.
     
-    # 1. Fix Grouping Keys
+    # 1. Check Analysis Scope
+    is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
+    
+    # 2. Type Casting (Crash Prevention)
     if 'innings' in valid.columns:
         valid['innings'] = valid['innings'].astype('int64')
     if 'batter' in valid.columns:
         valid['batter'] = valid['batter'].astype(str)
-
-    # 2. Fix Value Columns
     cols_to_fix = ['runs.batter', 'is_valid_delivery']
     for c in cols_to_fix:
         if c in valid.columns:
             valid[c] = valid[c].astype('int64')
-    # --- CRITICAL FIX END ---
 
-    # Now proceed with calculations (observed=True is safe now because types are standard)
+    # 3. Determine Group Columns
+    if is_overall:
+        grp_cols = ['batter'] # Aggregate by batter only
+    else:
+        grp_cols = ['innings', 'batter'] # Split by innings
+
+    # 4. GroupBy
+    balls = valid[valid['is_valid_delivery']==1].groupby(grp_cols, observed=True).size().rename('BF')
+    runs = valid.groupby(grp_cols, observed=True)['runs.batter'].sum().rename('Runs')
+    fours = valid[valid['runs.batter'] == 4].groupby(grp_cols, observed=True).size().rename('4s')
+    sixes = valid[valid['runs.batter'] == 6].groupby(grp_cols, observed=True).size().rename('6s')
+    dots = valid[valid['runs.batter'] == 0].groupby(grp_cols, observed=True).size().rename('Dots')
     
-    # Balls Faced
-    balls = valid[valid['is_valid_delivery']==1].groupby(['innings','batter'], observed=True).size().rename('BF')
-    
-    # Runs
-    runs = valid.groupby(['innings','batter'], observed=True)['runs.batter'].sum().rename('Runs')
-    
-    # Boundaries (4s and 6s)
-    fours = valid[valid['runs.batter'] == 4].groupby(['innings','batter'], observed=True).size().rename('4s')
-    sixes = valid[valid['runs.batter'] == 6].groupby(['innings','batter'], observed=True).size().rename('6s')
-    
-    # Dots
-    dots = valid[valid['runs.batter'] == 0].groupby(['innings','batter'], observed=True).size().rename('Dots')
-    
-    # Innings Played
-    innings_played = valid.groupby(['innings','batter'], observed=True).apply(lambda g: 1 if (g['is_valid_delivery'].sum()>0) else 0).rename('InningsPlayed')
-    
-    # Combine stats
+    innings_played = valid.groupby(grp_cols, observed=True).apply(lambda g: 1 if (g['is_valid_delivery'].sum()>0) else 0).rename('InningsPlayed')
+    # For overall stats, "InningsPlayed" isn't quite right as counting matches, but for simple agg it works as "Rows".
+    # Better to count unique matches if Overall
+    if is_overall:
+        innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
+
     stats = pd.concat([runs, balls, fours, sixes, dots, innings_played], axis=1).fillna(0).reset_index()
     
-    # Derived Metrics
+    # 5. Metrics
     stats['4s'] = stats['4s'].astype(int)
     stats['6s'] = stats['6s'].astype(int)
     stats['SR'] = (stats['Runs'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
+    
+    # Avg for Overall needs careful calculation (Runs / Dismissals), but here we use Runs / Innings
     stats['Avg'] = (stats['Runs'] / stats['InningsPlayed']).replace([np.inf, np.nan], 0).round(2)
     stats['Dot%'] = (stats['Dots'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
-    stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
+    
+    # 6. Formatting Innings Col
+    if is_overall:
+        stats['Innings'] = "Overall"
+    else:
+        stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
     
     return stats[['Innings','batter','Runs','BF','SR','Avg','4s','6s','Dot%']].sort_values('Runs', ascending=False)
 
-# Key Bowling - FIX: observed=True
+# Key Bowling - FIX: Dynamic Grouping + Maidens logic fix
 def key_bowling(df_):
     g = df_.copy()
     g['runs_to_bowler'] = g['runs.total'] - g.get('byes',0) - g.get('leg_byes', g.get('leg_byes',0))
-    grp = g.groupby(['innings','bowler'], observed=True)
+    
+    is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
+    
+    # Group Cols
+    if is_overall:
+        grp_cols = ['bowler']
+    else:
+        grp_cols = ['innings', 'bowler']
+
+    # Basic Aggregates
+    grp = g.groupby(grp_cols, observed=True)
     balls = grp['is_valid_delivery'].sum().rename('Balls') 
     runs = grp['runs_to_bowler'].sum().rename('Runs')
     wkts = grp['wicket_count'].sum().rename('Wkts')
     
-    over_runs = g.groupby(['innings','bowler','over'], observed=True).agg({'runs_to_bowler':'sum','is_valid_delivery':'sum'}).reset_index()
+    # Maidens Calculation (Must be done per-over first)
+    # We must include match_id in groupby to distinguish overs from different matches
+    over_grp_cols = ['match_id', 'innings', 'bowler', 'over']
+    over_runs = g.groupby(over_grp_cols, observed=True).agg({'runs_to_bowler':'sum','is_valid_delivery':'sum'}).reset_index()
     over_runs['is_full_over'] = over_runs['is_valid_delivery'] == 6
-    maiden_flags = over_runs[(over_runs['is_full_over']) & (over_runs['runs_to_bowler']==0)].groupby(['innings','bowler'], observed=True).size().rename('Maidens')
     
+    # Identify maiden overs
+    maidens_df = over_runs[(over_runs['is_full_over']) & (over_runs['runs_to_bowler']==0)]
+    
+    # Now Aggregate Maidens by the target group columns (bowler OR innings+bowler)
+    maiden_counts = maidens_df.groupby(grp_cols, observed=True).size().rename('Maidens')
+    
+    # Merge
     dfb = pd.concat([balls, runs, wkts], axis=1).fillna(0).reset_index()
-    dfb = dfb.merge(maiden_flags.reset_index(), on=['innings','bowler'], how='left')
+    dfb = dfb.merge(maiden_counts.reset_index(), on=grp_cols, how='left')
     dfb['Maidens'] = dfb['Maidens'].fillna(0).astype(int)
+    
     dfb['Overs'] = dfb['Balls'].apply(overs_from_balls)
     dfb['Econ'] = (dfb['Runs'] / (dfb['Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
     dfb['Avg'] = (dfb['Runs'] / dfb['Wkts']).replace([np.inf, np.nan], 0).round(2)
     dfb['SR'] = (dfb['Balls'] / dfb['Wkts']).replace([np.inf, np.nan], 0).round(2)
-    dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
+    
+    if is_overall:
+        dfb['Innings'] = "Overall"
+    else:
+        dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
+        
     return dfb[['Innings','bowler','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens']].rename(columns={'bowler':'Bowler'})
 
 # BPSix / BP4 - FIX: observed=True
@@ -560,6 +592,7 @@ def bpsix(df_):
     s = pd.concat([balls, sixes], axis=1).fillna(0)
     s['BPSix'] = s.apply(lambda r: round(r['Balls'] / r['Sixes'], 2) if r['Sixes'] > 0 else 0, axis=1)
     s = s.reset_index().rename(columns={'index':'batter'})
+    # Filter only if single match, otherwise show all
     if len(st.session_state.get('matches', [])) == 1:
         s = s[s['Sixes'] > 0]
     return s[['batter','Balls','Sixes','BPSix']].sort_values('BPSix')
@@ -801,6 +834,7 @@ for i, metric in enumerate(st.session_state['metrics']):
     try:
         
         if metric == "Run Rate Progression":
+            # add heading before description
             st.subheader("Run Rate Progression")
             st.write("Per-over cumulative run-rate (RR) computed using legal deliveries.")
             if rr_mode == 'Per-over (combined)':
