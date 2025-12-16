@@ -8,7 +8,7 @@ from typing import Optional, Tuple, List
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-JSON_DIR = "/Users/vishwesh/Documents/WPL&BBL/data"  # change if needed
+JSON_DIR = "/Users/vishwesh/Documents/WPL&BBL/data"  # Change if needed
 DATA_DEST = "t20_data.parquet"
 
 LEAGUE_START_DATES = {
@@ -17,10 +17,8 @@ LEAGUE_START_DATES = {
 }
 
 LEAGUE_PP_DEFAULT = {
-    'WBBL': (0.0, 3 + 5/6),  # 0.1 -> 0.0 ; 3.6 -> 3 + 5/6
-    'MBBL': (0.0, 3 + 5/6),
-    'WPL': (0.0, 5 + 5/6),   # 6 overs
-    'SA20': (0.0, 5 + 5/6),
+    'WBBL': (0.0, 3 + 5/6), 'MBBL': (0.0, 3 + 5/6),
+    'WPL': (0.0, 5 + 5/6), 'SA20': (0.0, 5 + 5/6),
 }
 
 def notation_to_ball_float(notation) -> float:
@@ -37,21 +35,14 @@ def notation_to_ball_float(notation) -> float:
             if ball > 6: ball = 6
         return over + (ball - 1) / 6.0
     except Exception:
-        try:
-            return float(notation)
-        except Exception:
-            return 0.0
+        return 0.0
 
 def detect_league(event_name, gender):
     e = (event_name or '').lower()
-    if 'wpl' in e or "women's premier league" in e:
-        return 'WPL'
-    if 'big bash' in e:
-        return 'WBBL' if gender == 'female' else 'MBBL'
-    if 'sa20' in e:
-        return 'SA20'
-    if 'ipl' in e or 'indian premier league' in e:
-        return 'IPL'
+    if 'wpl' in e or "women's premier league" in e: return 'WPL'
+    if 'big bash' in e: return 'WBBL' if gender == 'female' else 'MBBL'
+    if 'sa20' in e: return 'SA20'
+    if 'ipl' in e or 'indian premier league' in e: return 'IPL'
     return 'OTHER'
 
 def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, innings_deliveries=None):
@@ -60,19 +51,15 @@ def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, i
         t = pp.get('type')
         from_n = pp.get('from')
         to_n = pp.get('to')
-        if from_n is None or to_n is None:
-            continue
+        if from_n is None or to_n is None: continue
         f = notation_to_ball_float(from_n)
         tt = notation_to_ball_float(to_n)
-        if t == 'mandatory':
-            pp_mand = (f, tt)
-        elif t == 'batting':
-            pp_surge = (f, tt)
+        if t == 'mandatory': pp_mand = (f, tt)
+        elif t == 'batting': pp_surge = (f, tt)
 
-    if not pp_mand:
-        pp_mand = LEAGUE_PP_DEFAULT.get(league)
+    if not pp_mand: pp_mand = LEAGUE_PP_DEFAULT.get(league)
 
-    if not pp_surge and inference and innings_deliveries is not None and len(innings_deliveries) > 0:
+    if not pp_surge and inference and innings_deliveries and len(innings_deliveries) > 0:
         df = pd.DataFrame(innings_deliveries)
         df_valid = df[df['over'] >= 10]
         if not df_valid.empty:
@@ -87,34 +74,35 @@ def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, i
                         best_start = o
             if best_start is not None:
                 pp_surge = (best_start + 0/6.0, best_start + 1 + 5/6.0)
-
     return pp_mand, pp_surge
 
-def assign_phase(ball_float, pp_mand: Optional[Tuple[float,float]], pp_surge: Optional[Tuple[float,float]]):
-    if pp_mand and pp_mand[0] is not None and pp_mand[1] is not None and pp_mand[0] <= ball_float <= pp_mand[1]:
-        return 'Powerplay'
-    if pp_surge and pp_surge[0] is not None and pp_surge[1] is not None and pp_surge[0] <= ball_float <= pp_surge[1]:
-        return 'Power Surge'
-    if ball_float >= 16.0:
-        return 'Death'
+def assign_phase(ball_float, pp_mand, pp_surge):
+    if pp_mand and pp_mand[0] is not None and pp_mand[1] is not None and pp_mand[0] <= ball_float <= pp_mand[1]: return 'Powerplay'
+    if pp_surge and pp_surge[0] is not None and pp_surge[1] is not None and pp_surge[0] <= ball_float <= pp_surge[1]: return 'Power Surge'
+    if ball_float >= 16.0: return 'Death'
     return 'Middle'
 
 def has_any_noball_marker(extras: dict) -> bool:
-    if not extras:
-        return False
-    # check common keys/variants and values
-    if extras.get('noballs', 0) or extras.get('no_ball', 0) or extras.get('noball', 0):
-        return True
-    # some JSONs might embed as flag or other
+    if not extras: return False
+    if extras.get('noballs', 0) or extras.get('no_ball', 0) or extras.get('noball', 0): return True
     for k in extras.keys():
-        if 'noball' in k.lower() or 'no_ball' in k.lower():
-            return True
+        if 'noball' in k.lower() or 'no_ball' in k.lower(): return True
     return False
 
 def has_wide(extras: dict) -> bool:
-    if not extras:
-        return False
+    if not extras: return False
     return extras.get('wides', 0) > 0 or extras.get('wide', 0) > 0
+
+def get_impact_players_from_match(json_data):
+    impact_names = set()
+    for inning in json_data.get('innings', []):
+        for over in inning.get('overs', []):
+            for delivery in over.get('deliveries', []):
+                if 'replacements' in delivery and 'match' in delivery['replacements']:
+                    for rep in delivery['replacements']['match']:
+                        if rep.get('reason', '').lower() == 'impact_player':
+                            impact_names.add(rep['in'])
+    return impact_names
 
 def process_data(inference_power_surge=True):
     files = glob(os.path.join(JSON_DIR, "*.json"))
@@ -125,8 +113,7 @@ def process_data(inference_power_surge=True):
             with open(file, 'r', encoding='utf-8') as f:
                 data = json.load(f)
 
-            if data.get('info', {}).get('match_type') != 'T20':
-                continue
+            if data.get('info', {}).get('match_type') != 'T20': continue
 
             info = data.get('info', {})
             date = pd.to_datetime(info.get('dates', [None])[0]).date()
@@ -135,13 +122,12 @@ def process_data(inference_power_surge=True):
             gender = info.get('gender', 'female')
             league = detect_league(event, gender)
 
-            if league in LEAGUE_START_DATES and date < pd.to_datetime(LEAGUE_START_DATES[league]).date():
-                continue
-            if league not in LEAGUE_START_DATES and year < 2020:
-                continue
+            if league in LEAGUE_START_DATES and date < pd.to_datetime(LEAGUE_START_DATES[league]).date(): continue
+            if league not in LEAGUE_START_DATES and year < 2020: continue
 
             teams = info.get('teams', [])
             match_id = os.path.basename(file).split('.')[0]
+            match_impact_players = get_impact_players_from_match(data)
 
             for inning_idx, inning in enumerate(data.get('innings', []), start=1):
                 team = inning.get('team')
@@ -150,16 +136,14 @@ def process_data(inference_power_surge=True):
                 declared_pp = inning.get('powerplays') or info.get('powerplays') or []
                 pp_mand, pp_surge = get_powerplay_phases(declared_pp, league)
 
-                # For each over, we count legal deliveries in that over to produce accurate "ball within over"
                 for over in inning.get('overs', []):
                     over_num = over.get('over', 0)
-                    legal_balls_in_over = 0  # counts legal deliveries already bowled in current over
+                    legal_balls_in_over = 0
                     for d in over.get('deliveries', []):
                         extras = d.get('extras', {}) or {}
                         wides_flag = has_wide(extras)
                         noball_flag = has_any_noball_marker(extras)
                         is_valid = not (wides_flag or noball_flag)
-                        # ball_float uses current legal_balls_in_over (before increment for this delivery)
                         ball_float = over_num + (legal_balls_in_over / 6.0)
 
                         inning_deliveries.append({
@@ -178,8 +162,13 @@ def process_data(inference_power_surge=True):
                                 'caught and bowled', 'handled the ball'
                             ])
                         })
+                        
+                        # Check Impact Player Status for Batter AND Bowler
+                        batter_name = d.get('batter')
+                        bowler_name = d.get('bowler')
+                        is_impact_batter = 1 if batter_name in match_impact_players else 0
+                        is_impact_bowler = 1 if bowler_name in match_impact_players else 0
 
-                        # create row later (we need phase after possible inference) — but append a placeholder now
                         rows.append({
                             'match_id': match_id,
                             'created': pd.to_datetime(date),
@@ -189,8 +178,8 @@ def process_data(inference_power_surge=True):
                             'innings': innings_num,
                             'team': team,
                             'over': over_num,
-                            'batter': d.get('batter', 'Unknown'),
-                            'bowler': d.get('bowler', 'Unknown'),
+                            'batter': batter_name,
+                            'bowler': bowler_name,
                             'runs.batter': d.get('runs', {}).get('batter', 0),
                             'runs.extras': d.get('runs', {}).get('extras', 0),
                             'runs.total': d.get('runs', {}).get('total', 0),
@@ -206,22 +195,19 @@ def process_data(inference_power_surge=True):
                             'leg_byes': extras.get('legbyes', 0),
                             'phase': None,
                             'league': league,
-                            'ball_float': ball_float
+                            'ball_float': ball_float,
+                            'is_impact_batter': is_impact_batter,
+                            'is_impact_bowler': is_impact_bowler # Added Bowler Check
                         })
 
-                        # increment legal ball counter only if legal
                         if is_valid:
                             legal_balls_in_over += 1
 
-                # inference for surge if missing
                 if not pp_surge and inference_power_surge:
                     pp_mand_inf, pp_surge_inf = get_powerplay_phases([], league, inference=True, innings_deliveries=inning_deliveries)
-                    if not pp_mand:
-                        pp_mand = pp_mand_inf
-                    if pp_surge_inf:
-                        pp_surge = pp_surge_inf
+                    if not pp_mand: pp_mand = pp_mand_inf
+                    if pp_surge_inf: pp_surge = pp_surge_inf
 
-                # assign phase for last len(inning_deliveries) rows
                 n = len(inning_deliveries)
                 if n > 0:
                     for r in rows[-n:]:
@@ -234,7 +220,7 @@ def process_data(inference_power_surge=True):
         df = pd.DataFrame(rows)
         df['created'] = pd.to_datetime(df['created'])
         # ensure numeric columns
-        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count']:
+        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count', 'is_impact_batter', 'is_impact_bowler']:
             if c not in df.columns:
                 df[c] = 0
         df.to_parquet(DATA_DEST, index=False)
