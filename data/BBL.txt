@@ -21,7 +21,27 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
-
+2026-01-03 - club - BBL - male - 1493258 - Sydney Thunder vs Hobart Hurricanes
+2026-01-02 - club - BBL - male - 1493257 - Melbourne Stars vs Brisbane Heat
+2026-01-01 - club - BBL - male - 1493256 - Perth Scorchers vs Hobart Hurricanes
+2026-01-01 - club - BBL - male - 1493255 - Melbourne Renegades vs Sydney Sixers
+2025-12-31 - club - BBL - male - 1493254 - Brisbane Heat vs Adelaide Strikers
+2025-12-30 - club - BBL - male - 1493253 - Perth Scorchers vs Sydney Thunder
+2025-12-29 - club - BBL - male - 1493252 - Melbourne Renegades vs Hobart Hurricanes
+2025-12-28 - club - BBL - male - 1493251 - Sydney Thunder vs Melbourne Stars
+2025-12-27 - club - BBL - male - 1493250 - Brisbane Heat vs Adelaide Strikers
+2025-12-26 - club - BBL - male - 1493249 - Perth Scorchers vs Hobart Hurricanes
+2025-12-26 - club - BBL - male - 1493248 - Sydney Sixers vs Melbourne Stars
+2025-12-23 - club - BBL - male - 1493247 - Adelaide Strikers vs Melbourne Stars
+2025-12-22 - club - BBL - male - 1493246 - Sydney Thunder vs Brisbane Heat
+2025-12-21 - club - BBL - male - 1493245 - Melbourne Renegades vs Hobart Hurricanes
+2025-12-20 - club - BBL - male - 1493244 - Sydney Sixers vs Sydney Thunder
+2025-12-19 - club - BBL - male - 1493243 - Perth Scorchers vs Brisbane Heat
+2025-12-18 - club - BBL - male - 1493242 - Hobart Hurricanes vs Melbourne Stars
+2025-12-17 - club - BBL - male - 1493241 - Sydney Sixers vs Adelaide Strikers
+2025-12-16 - club - BBL - male - 1493240 - Sydney Thunder vs Hobart Hurricanes
+2025-12-15 - club - BBL - male - 1493239 - Melbourne Renegades vs Brisbane Heat
+2025-12-14 - club - BBL - male - 1493238 - Sydney Sixers vs Perth Scorchers
 2025-01-27 - club - BBL - male - 1443100 - Sydney Thunder vs Hobart Hurricanes
 2025-01-24 - club - BBL - male - 1443099 - Sydney Sixers vs Sydney Thunder
 2025-01-22 - club - BBL - male - 1443098 - Sydney Thunder vs Melbourne Stars

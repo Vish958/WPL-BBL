@@ -21,6 +21,23 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2025-12-13 - club - WBB - female - 1494568 - Perth Scorchers vs Hobart Hurricanes
+2025-12-11 - club - WBB - female - 1494567 - Perth Scorchers vs Sydney Sixers
+2025-12-09 - club - WBB - female - 1494566 - Perth Scorchers vs Melbourne Stars
+2025-12-07 - club - WBB - female - 1494565 - Sydney Sixers vs Adelaide Strikers
+2025-12-06 - club - WBB - female - 1494564 - Brisbane Heat vs Perth Scorchers
+2025-12-06 - club - WBB - female - 1494563 - Melbourne Stars vs Sydney Thunder
+2025-12-05 - club - WBB - female - 1494562 - Adelaide Strikers vs Hobart Hurricanes
+2025-12-05 - club - WBB - female - 1494561 - Sydney Sixers vs Melbourne Renegades
+2025-12-03 - club - WBB - female - 1494560 - Sydney Thunder vs Brisbane Heat
+2025-12-03 - club - WBB - female - 1494559 - Sydney Sixers vs Melbourne Stars
+2025-12-02 - club - WBB - female - 1494558 - Perth Scorchers vs Melbourne Renegades
+2025-12-01 - club - WBB - female - 1494557 - Hobart Hurricanes vs Melbourne Stars
+2025-11-30 - club - WBB - female - 1494556 - Sydney Thunder vs Sydney Sixers
+2025-11-30 - club - WBB - female - 1494555 - Brisbane Heat vs Adelaide Strikers
+2025-11-29 - club - WBB - female - 1494554 - Perth Scorchers vs Hobart Hurricanes
+2025-11-29 - club - WBB - female - 1494553 - Melbourne Stars vs Melbourne Renegades
+2025-11-28 - club - WBB - female - 1494552 - Adelaide Strikers vs Sydney Thunder
 2025-11-27 - club - WBB - female - 1494550 - Melbourne Renegades vs Perth Scorchers
 2025-11-26 - club - WBB - female - 1494549 - Melbourne Stars vs Hobart Hurricanes
 2025-11-25 - club - WBB - female - 1494548 - Brisbane Heat vs Adelaide Strikers
