@@ -21,6 +21,8 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-01-05 - club - SAT - male - 1494266 - Pretoria Capitals vs Sunrisers Eastern Cape
+2026-01-04 - club - SAT - male - 1494265 - MI Cape Town vs Paarl Royals
 2026-01-02 - club - SAT - male - 1494262 - Paarl Royals vs MI Cape Town
 2026-01-01 - club - SAT - male - 1494261 - Joburg Super Kings vs Durban's Super Giants
 2025-12-31 - club - SAT - male - 1494260 - Pretoria Capitals vs MI Cape Town

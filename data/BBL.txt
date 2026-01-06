@@ -21,6 +21,9 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-01-05 - club - BBL - male - 1493261 - Brisbane Heat vs Sydney Sixers
+2026-01-04 - club - BBL - male - 1493260 - Perth Scorchers vs Adelaide Strikers
+2026-01-04 - club - BBL - male - 1493259 - Melbourne Stars vs Melbourne Renegades
 2026-01-03 - club - BBL - male - 1493258 - Sydney Thunder vs Hobart Hurricanes
 2026-01-02 - club - BBL - male - 1493257 - Melbourne Stars vs Brisbane Heat
 2026-01-01 - club - BBL - male - 1493256 - Perth Scorchers vs Hobart Hurricanes
