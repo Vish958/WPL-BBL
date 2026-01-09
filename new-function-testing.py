@@ -533,21 +533,20 @@ def key_batting(df_):
         if c in valid.columns: valid[c] = valid[c].astype('int64')
 
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
-    grp_cols = ['batter'] if is_overall else ['innings', 'batter']
+    grp_cols = ['batter', 'team'] if is_overall else ['innings', 'batter', 'team']
 
     balls = valid[valid['is_valid_delivery']==1].groupby(grp_cols, observed=True).size().rename('BF')
     runs = valid.groupby(grp_cols, observed=True)['runs.batter'].sum().rename('Runs')
     fours = valid[valid['runs.batter'] == 4].groupby(grp_cols, observed=True).size().rename('4s')
     sixes = valid[valid['runs.batter'] == 6].groupby(grp_cols, observed=True).size().rename('6s')
-    dots = valid[valid['runs.batter'] == 0].groupby(grp_cols, observed=True).size().rename('Dots')
+    dots = valid[(valid['runs.batter'] == 0) & (valid['is_valid_delivery'] == 1)].groupby(grp_cols, observed=True).size().rename('Dots')
     
-    innings_played = valid.groupby(grp_cols, observed=True).apply(lambda g: 1 if (g['is_valid_delivery'].sum()>0) else 0).rename('InningsPlayed')
-    if is_overall:
-        innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
+    innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
 
     stats = pd.concat([runs, balls, fours, sixes, dots, innings_played], axis=1).fillna(0).reset_index()
     stats['4s'] = stats['4s'].astype(int)
     stats['6s'] = stats['6s'].astype(int)
+    stats['Dots'] = stats['Dots'].astype(int)
     stats['SR'] = (stats['Runs'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
     stats['Avg'] = (stats['Runs'] / stats['InningsPlayed']).replace([np.inf, np.nan], 0).round(2)
     stats['Dot%'] = (stats['Dots'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
@@ -557,28 +556,34 @@ def key_batting(df_):
     else:
         stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
     
-    return stats[['Innings','batter','Runs','BF','SR','Avg','4s','6s','Dot%']].sort_values('Runs', ascending=False)
+    return stats[['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']].rename(columns={'team':'Team'}).sort_values('Runs', ascending=False)
 
 def key_bowling(df_):
     g = df_.copy()
-    g['runs_to_bowler'] = g['runs.total'] - g.get('byes',0) - g.get('leg_byes', g.get('leg_byes',0))
+    if 'byes' not in g.columns: g['byes'] = 0
+    if 'leg_byes' not in g.columns: g['leg_byes'] = 0
+    g['runs_to_bowler'] = g['runs.total'] - g['byes'] - g['leg_byes']
     
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
-    grp_cols = ['bowler'] if is_overall else ['innings', 'bowler']
+    grp_cols = ['bowler', 'team'] if is_overall else ['innings', 'bowler', 'team']
 
     grp = g.groupby(grp_cols, observed=True)
     balls = grp['is_valid_delivery'].sum().rename('Balls') 
     runs = grp['runs_to_bowler'].sum().rename('Runs')
     wkts = grp['wicket_count'].sum().rename('Wkts')
     
-    over_grp = ['match_id', 'innings', 'over', 'bowler']
+    # Dots: valid deliveries where no runs scored off the bowler
+    dots = g[(g['runs_to_bowler'] == 0) & (g['is_valid_delivery'] == 1)].groupby(grp_cols, observed=True).size().rename('Dots')
+    
+    over_grp = ['match_id', 'innings', 'over', 'bowler', 'team']
     over_runs = g.groupby(over_grp, observed=True).agg({'runs_to_bowler':'sum','is_valid_delivery':'sum'}).reset_index()
     maidens_df = over_runs[(over_runs['is_valid_delivery'] == 6) & (over_runs['runs_to_bowler']==0)]
     maiden_counts = maidens_df.groupby(grp_cols, observed=True).size().rename('Maidens')
     
-    dfb = pd.concat([balls, runs, wkts], axis=1).fillna(0).reset_index()
+    dfb = pd.concat([balls, runs, wkts, dots], axis=1).fillna(0).reset_index()
     dfb = dfb.merge(maiden_counts.reset_index(), on=grp_cols, how='left')
     dfb['Maidens'] = dfb['Maidens'].fillna(0).astype(int)
+    dfb['Dots'] = dfb['Dots'].astype(int)
     
     dfb['Overs'] = dfb['Balls'].apply(overs_from_balls)
     dfb['Econ'] = (dfb['Runs'] / (dfb['Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
@@ -590,7 +595,7 @@ def key_bowling(df_):
     else:
         dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
         
-    return dfb[['Innings','bowler','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens']].rename(columns={'bowler':'Bowler'})
+    return dfb[['Innings','bowler','team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'team':'Team'})
 
 def bpsix(df_):
     valid = df_[df_['is_valid_delivery']==1]
@@ -713,10 +718,6 @@ def match_results(df_):
         if 'outcome' in g.columns:
             v = g['outcome'].iloc[0]
             if pd.notna(v) and str(v).strip(): return str(v).strip()
-        for c in g.columns:
-            if 'winner' in c.lower() or 'outcome' in c.lower():
-                v = g[c].iloc[0]
-                if pd.notna(v) and str(v).strip(): return str(v).strip()
         return None
 
     for mid, g in df_.groupby('match_id', observed=True):
@@ -733,6 +734,23 @@ def match_results(df_):
         if explicit:
             out_rows.append({'match_id': mid, 'Match': teams, 'Date': date_val, 'Result': explicit})
             continue
+        
+        # Check for winner column with margin info (from preprocessing)
+        if 'winner' in g.columns and pd.notna(g['winner'].iloc[0]):
+            winner = str(g['winner'].iloc[0]).strip()
+            if winner:
+                wbw = g['win_by_wickets'].iloc[0] if 'win_by_wickets' in g.columns else 0
+                wbr = g['win_by_runs'].iloc[0] if 'win_by_runs' in g.columns else 0
+                
+                if pd.notna(wbw) and wbw > 0:
+                    out_rows.append({'match_id': mid, 'Match': teams, 'Date': date_val, 'Result': f"{winner} won by {int(wbw)} wickets"})
+                    continue
+                elif pd.notna(wbr) and wbr > 0:
+                    out_rows.append({'match_id': mid, 'Match': teams, 'Date': date_val, 'Result': f"{winner} won by {int(wbr)} runs"})
+                    continue
+                else:
+                    out_rows.append({'match_id': mid, 'Match': teams, 'Date': date_val, 'Result': f"{winner} won"})
+                    continue
 
         innings_present = sorted(g['innings'].dropna().unique())
         if not (1 in innings_present and 2 in innings_present):

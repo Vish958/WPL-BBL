@@ -128,6 +128,13 @@ def process_data(inference_power_surge=True):
             teams = info.get('teams', [])
             match_id = os.path.basename(file).split('.')[0]
             match_impact_players = get_impact_players_from_match(data)
+            
+            # Extract outcome/winner data
+            outcome = info.get('outcome', {})
+            winner = outcome.get('winner', None)
+            win_by = outcome.get('by', {})
+            win_by_wickets = win_by.get('wickets', 0) if win_by else 0
+            win_by_runs = win_by.get('runs', 0) if win_by else 0
 
             for inning_idx, inning in enumerate(data.get('innings', []), start=1):
                 team = inning.get('team')
@@ -159,7 +166,7 @@ def process_data(inference_power_surge=True):
                             'legbyes': extras.get('legbyes', 0),
                             'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
                                 'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
-                                'caught and bowled', 'handled the ball'
+                                'caught and bowled', 'handled the ball', 'run out', 'obstructing the field'
                             ])
                         })
                         
@@ -197,7 +204,10 @@ def process_data(inference_power_surge=True):
                             'league': league,
                             'ball_float': ball_float,
                             'is_impact_batter': is_impact_batter,
-                            'is_impact_bowler': is_impact_bowler # Added Bowler Check
+                            'is_impact_bowler': is_impact_bowler,
+                            'winner': winner,
+                            'win_by_wickets': win_by_wickets,
+                            'win_by_runs': win_by_runs
                         })
 
                         if is_valid:
