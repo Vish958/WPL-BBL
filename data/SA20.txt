@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 114 SA20 matches.
+archive contains 116 SA20 matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -21,6 +21,8 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-01-10 - club - SAT - male - 1494272 - MI Cape Town vs Joburg Super Kings
+2026-01-10 - club - SAT - male - 1494271 - Pretoria Capitals vs Paarl Royals
 2026-01-08 - club - SAT - male - 1494269 - Joburg Super Kings vs Paarl Royals
 2026-01-07 - club - SAT - male - 1494268 - Pretoria Capitals vs Durban's Super Giants
 2026-01-06 - club - SAT - male - 1494267 - Joburg Super Kings vs MI Cape Town

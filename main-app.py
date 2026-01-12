@@ -69,7 +69,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 10 Jan 2026")
+st.markdown("📅 Last updated: 12 Jan 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 
@@ -558,14 +558,21 @@ def key_batting(df_):
     
     return stats[['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']].rename(columns={'team':'Team'}).sort_values('Runs', ascending=False)
 
-def key_bowling(df_):
+def key_bowling(df_, no_team_filter=False):
     g = df_.copy()
     if 'byes' not in g.columns: g['byes'] = 0
     if 'leg_byes' not in g.columns: g['leg_byes'] = 0
     g['runs_to_bowler'] = g['runs.total'] - g['byes'] - g['leg_byes']
     
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
-    grp_cols = ['bowler', 'team'] if is_overall else ['innings', 'bowler', 'team']
+    
+    # If no_team_filter is True, aggregate across all teams (no team column in grouping)
+    if no_team_filter:
+        grp_cols = ['bowler']
+    elif is_overall:
+        grp_cols = ['bowler', 'team']
+    else:
+        grp_cols = ['innings', 'bowler', 'team']
 
     grp = g.groupby(grp_cols, observed=True)
     balls = grp['is_valid_delivery'].sum().rename('Balls') 
@@ -575,7 +582,10 @@ def key_bowling(df_):
     # Dots: valid deliveries where no runs scored off the bowler
     dots = g[(g['runs_to_bowler'] == 0) & (g['is_valid_delivery'] == 1)].groupby(grp_cols, observed=True).size().rename('Dots')
     
-    over_grp = ['match_id', 'innings', 'over', 'bowler', 'team']
+    # For maidens, we still need to group by match/innings/over/bowler, but then aggregate to our grp_cols
+    over_grp = ['match_id', 'innings', 'over', 'bowler']
+    if not no_team_filter:
+        over_grp.append('team')
     over_runs = g.groupby(over_grp, observed=True).agg({'runs_to_bowler':'sum','is_valid_delivery':'sum'}).reset_index()
     maidens_df = over_runs[(over_runs['is_valid_delivery'] == 6) & (over_runs['runs_to_bowler']==0)]
     maiden_counts = maidens_df.groupby(grp_cols, observed=True).size().rename('Maidens')
@@ -590,12 +600,16 @@ def key_bowling(df_):
     dfb['Avg'] = (dfb['Runs'] / dfb['Wkts']).replace([np.inf, np.nan], 0).round(2)
     dfb['SR'] = (dfb['Balls'] / dfb['Wkts']).replace([np.inf, np.nan], 0).round(2)
     
-    if is_overall:
+    if no_team_filter:
+        dfb['Innings'] = "Overall"
+        dfb['Team'] = "All Teams"
+        return dfb[['Innings','bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
+    elif is_overall:
         dfb['Innings'] = "Overall"
     else:
         dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
         
-    return dfb[['Innings','bowler','team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'team':'Team'})
+    return dfb[['Innings','bowler','team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'team':'Team'}).sort_values('Wkts', ascending=False)
 
 def bpsix(df_):
     valid = df_[df_['is_valid_delivery']==1]
@@ -892,7 +906,14 @@ for i, metric in enumerate(st.session_state['metrics']):
         elif metric == "Key Bowling":
             st.subheader("Key Bowling")
             st.write("Key bowling summary overs, balls, runs conceded to bowler, wickets, economy, maidens")
-            dfm = key_bowling(fdf)
+            
+            # Toggle for Overall (No Team Filter) view
+            col1, col2 = st.columns([3, 1])
+            with col2:
+                overall_bowling = st.checkbox("📊 Overall (No Team Filter)", key="overall_bowling_toggle", 
+                                             help="Aggregate bowler stats across all teams")
+            
+            dfm = key_bowling(fdf, no_team_filter=overall_bowling)
             show_table(dfm, metric)
             show_bar(dfm.head(50), 'Bowler', 'Wkts', "Top Wicket Takers", color=color)
         elif metric == "BPSix":
