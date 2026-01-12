@@ -45,6 +45,9 @@ def detect_league(event_name, gender):
     if 'ipl' in e or 'indian premier league' in e: return 'IPL'
     return 'OTHER'
 
+# Leagues that have Power Surge (BBL only)
+BBL_LEAGUES = {'WBBL', 'MBBL'}
+
 def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, innings_deliveries=None):
     pp_mand = pp_surge = None
     for pp in powerplays or []:
@@ -55,11 +58,14 @@ def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, i
         f = notation_to_ball_float(from_n)
         tt = notation_to_ball_float(to_n)
         if t == 'mandatory': pp_mand = (f, tt)
-        elif t == 'batting': pp_surge = (f, tt)
+        # Power Surge (batting powerplay) only applies to BBL leagues
+        elif t == 'batting' and league in BBL_LEAGUES: 
+            pp_surge = (f, tt)
 
     if not pp_mand: pp_mand = LEAGUE_PP_DEFAULT.get(league)
 
-    if not pp_surge and inference and innings_deliveries and len(innings_deliveries) > 0:
+    # Inference for Power Surge only applies to BBL leagues
+    if league in BBL_LEAGUES and not pp_surge and inference and innings_deliveries and len(innings_deliveries) > 0:
         df = pd.DataFrame(innings_deliveries)
         df_valid = df[df['over'] >= 10]
         if not df_valid.empty:
@@ -76,10 +82,24 @@ def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, i
                 pp_surge = (best_start + 0/6.0, best_start + 1 + 5/6.0)
     return pp_mand, pp_surge
 
-def assign_phase(ball_float, pp_mand, pp_surge):
-    if pp_mand and pp_mand[0] is not None and pp_mand[1] is not None and pp_mand[0] <= ball_float <= pp_mand[1]: return 'Powerplay'
-    if pp_surge and pp_surge[0] is not None and pp_surge[1] is not None and pp_surge[0] <= ball_float <= pp_surge[1]: return 'Power Surge'
-    if ball_float >= 16.0: return 'Death'
+def assign_phase(ball_float, pp_mand, pp_surge, league):
+    """
+    Assign phase for a delivery:
+    - WBBL/MBBL: Powerplay (mandatory), Power Surge (batting), Middle, Death (16+)
+    - WPL/SA20/IPL: Powerplay (0-5.5), Middle (6-15.5), Death (16+)
+    """
+    # Powerplay check (mandatory powerplay)
+    if pp_mand and pp_mand[0] is not None and pp_mand[1] is not None and pp_mand[0] <= ball_float <= pp_mand[1]: 
+        return 'Powerplay'
+    
+    # Power Surge only applies to BBL leagues
+    if league in BBL_LEAGUES and pp_surge and pp_surge[0] is not None and pp_surge[1] is not None and pp_surge[0] <= ball_float <= pp_surge[1]: 
+        return 'Power Surge'
+    
+    # Death overs: 16-19 (ball_float >= 16.0)
+    if ball_float >= 16.0: 
+        return 'Death'
+    
     return 'Middle'
 
 def has_any_noball_marker(extras: dict) -> bool:
@@ -221,7 +241,7 @@ def process_data(inference_power_surge=True):
                 n = len(inning_deliveries)
                 if n > 0:
                     for r in rows[-n:]:
-                        r['phase'] = assign_phase(r['ball_float'], pp_mand, pp_surge)
+                        r['phase'] = assign_phase(r['ball_float'], pp_mand, pp_surge, league)
 
         except Exception as e:
             logger.error(f"Error {file}: {e}")
