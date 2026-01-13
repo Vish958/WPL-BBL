@@ -157,7 +157,8 @@ def process_data(inference_power_surge=True):
             win_by_runs = win_by.get('runs', 0) if win_by else 0
 
             for inning_idx, inning in enumerate(data.get('innings', []), start=1):
-                team = inning.get('team')
+                team = inning.get('team')  # batting team
+                bowling_team = [t for t in teams if t != team][0] if len(teams) == 2 else team
                 innings_num = inning_idx
                 inning_deliveries = []
                 declared_pp = inning.get('powerplays') or info.get('powerplays') or []
@@ -204,6 +205,7 @@ def process_data(inference_power_surge=True):
                             'teams': ' vs '.join(sorted(teams)),
                             'innings': innings_num,
                             'team': team,
+                            'bowling_team': bowling_team,
                             'over': over_num,
                             'batter': batter_name,
                             'bowler': bowler_name,

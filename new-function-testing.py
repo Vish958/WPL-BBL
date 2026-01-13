@@ -564,15 +564,23 @@ def key_bowling(df_, no_team_filter=False):
     if 'leg_byes' not in g.columns: g['leg_byes'] = 0
     g['runs_to_bowler'] = g['runs.total'] - g['byes'] - g['leg_byes']
     
+    # Use bowling_team for proper team association (the team the bowler plays for)
+    # Fallback to 'team' if 'bowling_team' doesn't exist (for backward compatibility)
+    team_col = 'bowling_team' if 'bowling_team' in g.columns else 'team'
+    
+    # Convert team column to string to avoid Categorical issues
+    g[team_col] = g[team_col].astype(str)
+    
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
     
-    # If no_team_filter is True, aggregate across all teams (no team column in grouping)
+    # If no_team_filter is True, aggregate by bowler only, but we'll still show the team later
     if no_team_filter:
         grp_cols = ['bowler']
     elif is_overall:
-        grp_cols = ['bowler', 'team']
+        grp_cols = ['bowler', team_col]
     else:
-        grp_cols = ['innings', 'bowler', 'team']
+        # For Specific Matches mode, include match_id to show per-match breakdown
+        grp_cols = ['match_id', 'innings', 'bowler', team_col]
 
     grp = g.groupby(grp_cols, observed=True)
     balls = grp['is_valid_delivery'].sum().rename('Balls') 
@@ -585,7 +593,7 @@ def key_bowling(df_, no_team_filter=False):
     # For maidens, we still need to group by match/innings/over/bowler, but then aggregate to our grp_cols
     over_grp = ['match_id', 'innings', 'over', 'bowler']
     if not no_team_filter:
-        over_grp.append('team')
+        over_grp.append(team_col)
     over_runs = g.groupby(over_grp, observed=True).agg({'runs_to_bowler':'sum','is_valid_delivery':'sum'}).reset_index()
     maidens_df = over_runs[(over_runs['is_valid_delivery'] == 6) & (over_runs['runs_to_bowler']==0)]
     maiden_counts = maidens_df.groupby(grp_cols, observed=True).size().rename('Maidens')
@@ -602,14 +610,19 @@ def key_bowling(df_, no_team_filter=False):
     
     if no_team_filter:
         dfb['Innings'] = "Overall"
-        dfb['Team'] = "All Teams"
+        # Get the most common team for each bowler (their actual team)
+        bowler_teams = g.groupby('bowler', observed=True)[team_col].agg(lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 'Unknown').reset_index()
+        bowler_teams.columns = ['bowler', 'Team']
+        bowler_teams['Team'] = bowler_teams['Team'].astype(str)
+        dfb = dfb.merge(bowler_teams, on='bowler', how='left')
+        dfb['Team'] = dfb['Team'].astype(str).fillna('Unknown')
         return dfb[['Innings','bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
     elif is_overall:
         dfb['Innings'] = "Overall"
     else:
         dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
         
-    return dfb[['Innings','bowler','team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'team':'Team'}).sort_values('Wkts', ascending=False)
+    return dfb[['Innings','bowler',team_col,'Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team'}).sort_values('Wkts', ascending=False)
 
 def bpsix(df_):
     valid = df_[df_['is_valid_delivery']==1]
