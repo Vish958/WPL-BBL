@@ -535,11 +535,12 @@ def key_batting(df_):
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
     grp_cols = ['batter', 'team'] if is_overall else ['innings', 'batter', 'team']
 
-    balls = valid[valid['is_valid_delivery']==1].groupby(grp_cols, observed=True).size().rename('BF')
+    # BF = All deliveries faced by batter (excluding wides as they don't reach batter, but including no-balls)
+    balls = valid[valid['wides'] == 0].groupby(grp_cols, observed=True).size().rename('BF')
     runs = valid.groupby(grp_cols, observed=True)['runs.batter'].sum().rename('Runs')
     fours = valid[valid['runs.batter'] == 4].groupby(grp_cols, observed=True).size().rename('4s')
     sixes = valid[valid['runs.batter'] == 6].groupby(grp_cols, observed=True).size().rename('6s')
-    dots = valid[(valid['runs.batter'] == 0) & (valid['is_valid_delivery'] == 1)].groupby(grp_cols, observed=True).size().rename('Dots')
+    dots = valid[(valid['runs.batter'] == 0) & (valid['wides'] == 0)].groupby(grp_cols, observed=True).size().rename('Dots')
     
     innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
 
