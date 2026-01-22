@@ -69,7 +69,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 19 Jan 2026")
+st.markdown("📅 Last updated: 14 Jan 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 
@@ -153,7 +153,7 @@ def load_data(path=DATA_SOURCE):
             df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
             df['phase'] = df['phase'].replace({'Powersurge':'Power Surge','Power Surge':'Power Surge','Powerplay':'Powerplay'})
         
-        cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'non_striker', 'teams', 'venue', 'outcome', 'match_result', 'winner', 'match_id']
+        cat_cols = ['league', 'year', 'phase', 'team', 'batter', 'bowler', 'non_striker', 'teams', 'venue', 'outcome', 'match_result', 'winner', 'match_id']
         for col in df.columns:
             if col in cat_cols or df[col].dtype == 'object':
                 if df[col].nunique() < (len(df) * 0.5):
@@ -208,6 +208,16 @@ st.sidebar.multiselect("League", leagues, key="leagues", on_change=clear_submitt
 
 years = sorted(df['year'].dropna().unique())
 st.sidebar.multiselect("Year", years, key="years", on_change=clear_submitted)
+
+# --- Season Aggregation Options ---
+st.sidebar.markdown("##### Season View Options")
+season_view_mode = st.sidebar.selectbox(
+    "Season Display Mode",
+    ["Normal (Per Season)", "All Seasons Combined", "Season Comparison (Tabs)"],
+    key="season_view_mode",
+    help="Normal: Show data per season. Combined: Aggregate all seasons. Tabs: Compare seasons side-by-side.",
+    on_change=clear_submitted
+)
 
 min_date, max_date = df['date'].dt.date.min(), df['date'].dt.date.max()
 col1, col2 = st.sidebar.columns(2)
@@ -394,6 +404,53 @@ def show_bar(df_, x, y, title, color=None, top_n=None):
         fig = px.bar(df_, x=x, y=y, title=title)
     st.plotly_chart(fig, width='stretch')
 
+def render_with_season_tabs(fdf, metric_func, metric_name, x_col, y_col, chart_title, color, 
+                            top_n=50, show_chart=True, metric_func_kwargs=None):
+    """
+    Helper function to render a metric with season comparison tabs.
+    """
+    season_view_mode = st.session_state.get('season_view_mode', 'Normal (Per Season)')
+    
+    # Get available seasons for comparison tabs
+    available_seasons = sorted(fdf['year'].dropna().unique()) if 'year' in fdf.columns else []
+    
+    if metric_func_kwargs is None:
+        metric_func_kwargs = {}
+    
+    if season_view_mode == "Season Comparison (Tabs)" and len(available_seasons) > 1:
+        # Create tabs for each season + All Seasons Combined
+        tab_names = [str(s) for s in available_seasons] + ["All Seasons Combined"]
+        tabs = st.tabs(tab_names)
+        
+        for idx, tab in enumerate(tabs):
+            with tab:
+                if idx < len(available_seasons):
+                    # Filter data for this season
+                    season_data = fdf[fdf['year'] == available_seasons[idx]]
+                    dfm = metric_func(season_data, **metric_func_kwargs)
+                    st.markdown(f"**Season: {available_seasons[idx]}**")
+                else:
+                    # All Seasons Combined
+                    dfm = metric_func(fdf, **metric_func_kwargs)
+                    st.markdown("**All Seasons Combined**")
+                show_table(dfm, metric_name)
+                if show_chart and dfm is not None and not dfm.empty:
+                    show_bar(dfm.head(top_n), x_col, y_col, chart_title, color=color)
+    elif season_view_mode == "All Seasons Combined":
+        # Aggregate all seasons
+        dfm = metric_func(fdf, **metric_func_kwargs)
+        st.markdown("**All Seasons Combined**")
+        show_table(dfm, metric_name)
+        if show_chart and dfm is not None and not dfm.empty:
+            show_bar(dfm.head(top_n), x_col, y_col, chart_title, color=color)
+    else:
+        # Normal view - show data as-is (per selected filters)
+        dfm = metric_func(fdf, **metric_func_kwargs)
+        show_table(dfm, metric_name)
+        if show_chart and dfm is not None and not dfm.empty:
+            show_bar(dfm.head(top_n), x_col, y_col, chart_title, color=color)
+
+
 # -------------------------
 # NEW METRIC FUNCTION: Impact Player Performance (Batting & Bowling)
 # -------------------------
@@ -525,15 +582,39 @@ def extras_breakdown(df_):
     if not rows: return pd.DataFrame()
     return pd.DataFrame(rows)
 
-def key_batting(df_):
+def key_batting(df_, aggregate_seasons=False, season_filter=None):
     valid = df_.copy()
+    if valid.empty:
+        return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
+    
     if 'innings' in valid.columns: valid['innings'] = valid['innings'].astype('int64')
     if 'batter' in valid.columns: valid['batter'] = valid['batter'].astype(str)
     for c in ['runs.batter', 'is_valid_delivery']:
         if c in valid.columns: valid[c] = valid[c].astype('int64')
-
+    
+    # Apply season filter if provided (for season comparison tabs)
+    if season_filter is not None and 'year' in valid.columns:
+        valid = valid[valid['year'] == season_filter]
+        if valid.empty:
+            return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
+    
+    # Season mode takes priority: when aggregate_seasons or season_filter is specified,
+    # ignore the Analysis Scope setting for grouping
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
-    grp_cols = ['batter', 'team'] if is_overall else ['innings', 'batter', 'team']
+    
+    # Determine grouping columns based on aggregation mode
+    if aggregate_seasons:
+        # Aggregate across all seasons by batter ONLY (not batter+team)
+        # This ensures players who changed teams get their full stats combined
+        grp_cols = ['batter']
+    elif season_filter is not None:
+        # When viewing a specific season, show per-innings breakdown
+        grp_cols = ['innings', 'batter', 'team']
+    elif is_overall:
+        # Default Overall mode (no season mode active)
+        grp_cols = ['batter', 'team']
+    else:
+        grp_cols = ['innings', 'batter', 'team']
 
     # BF = All deliveries faced by batter (excluding wides as they don't reach batter, but including no-balls)
     balls = valid[valid['wides'] == 0].groupby(grp_cols, observed=True).size().rename('BF')
@@ -543,8 +624,19 @@ def key_batting(df_):
     dots = valid[(valid['runs.batter'] == 0) & (valid['wides'] == 0)].groupby(grp_cols, observed=True).size().rename('Dots')
     
     innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
+    
+    # Build stats - only include seasons if available and aggregating
+    series_to_concat = [runs, balls, fours, sixes, dots, innings_played]
+    
+    # Count seasons played by each batter (only when aggregating)
+    # Count by batter ONLY (not batter+team) so players who changed teams get correct total
+    include_seasons = aggregate_seasons and 'year' in valid.columns
+    if include_seasons:
+        # Get unique seasons per batter (independent of team)
+        batter_seasons = valid.groupby('batter', observed=True)['year'].nunique().rename('Seasons')
+        # We'll merge this back after creating stats
 
-    stats = pd.concat([runs, balls, fours, sixes, dots, innings_played], axis=1).fillna(0).reset_index()
+    stats = pd.concat(series_to_concat, axis=1).fillna(0).reset_index()
     stats['4s'] = stats['4s'].astype(int)
     stats['6s'] = stats['6s'].astype(int)
     stats['Dots'] = stats['Dots'].astype(int)
@@ -552,18 +644,53 @@ def key_batting(df_):
     stats['Avg'] = (stats['Runs'] / stats['InningsPlayed']).replace([np.inf, np.nan], 0).round(2)
     stats['Dot%'] = (stats['Dots'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
     
-    if is_overall:
+    # Merge batter_seasons if include_seasons (count per batter, not per batter+team)
+    if include_seasons:
+        stats = stats.merge(batter_seasons.reset_index(), on='batter', how='left')
+        stats['Seasons'] = stats['Seasons'].fillna(0).astype(int)
+    
+    if aggregate_seasons:
+        stats['Innings'] = "All Seasons"
+        # Get the most common team for each batter (since we're grouping by batter only)
+        batter_teams = valid.groupby('batter', observed=True)['team'].agg(
+            lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 'Unknown'
+        ).reset_index()
+        batter_teams.columns = ['batter', 'Team']
+        batter_teams['Team'] = batter_teams['Team'].astype(str)
+        stats = stats.merge(batter_teams, on='batter', how='left')
+        stats['Team'] = stats['Team'].astype(str).fillna('Unknown')
+        if include_seasons:
+            cols = ['Innings','batter','Team','Seasons','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        else:
+            cols = ['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        return stats[cols].sort_values('Runs', ascending=False)
+    elif season_filter is not None:
+        # Season comparison mode - show per innings for the specific season
+        stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
+        cols = ['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+    elif is_overall:
         stats['Innings'] = "Overall"
+        cols = ['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     else:
         stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
+        cols = ['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     
-    return stats[['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']].rename(columns={'team':'Team'}).sort_values('Runs', ascending=False)
+    return stats[cols].rename(columns={'team':'Team'}).sort_values('Runs', ascending=False)
 
-def key_bowling(df_, no_team_filter=False):
+def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filter=None):
     g = df_.copy()
+    if g.empty:
+        return pd.DataFrame(columns=['Innings','Bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots'])
+    
     if 'byes' not in g.columns: g['byes'] = 0
     if 'leg_byes' not in g.columns: g['leg_byes'] = 0
     g['runs_to_bowler'] = g['runs.total'] - g['byes'] - g['leg_byes']
+    
+    # Apply season filter if provided (for season comparison tabs)
+    if season_filter is not None and 'year' in g.columns:
+        g = g[g['year'] == season_filter]
+        if g.empty:
+            return pd.DataFrame(columns=['Innings','Bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots'])
     
     # Use bowling_team for proper team association (the team the bowler plays for)
     # Fallback to 'team' if 'bowling_team' doesn't exist (for backward compatibility)
@@ -572,11 +699,16 @@ def key_bowling(df_, no_team_filter=False):
     # Convert team column to string to avoid Categorical issues
     g[team_col] = g[team_col].astype(str)
     
+    # Season mode takes priority: when aggregate_seasons or season_filter is specified,
+    # ignore the Analysis Scope setting for grouping
     is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
     
-    # If no_team_filter is True, aggregate by bowler only, but we'll still show the team later
-    if no_team_filter:
+    # Determine grouping columns based on aggregation mode
+    if aggregate_seasons or no_team_filter:
         grp_cols = ['bowler']
+    elif season_filter is not None:
+        # When viewing a specific season, show per-innings breakdown with team
+        grp_cols = ['innings', 'bowler', team_col]
     elif is_overall:
         grp_cols = ['bowler', team_col]
     else:
@@ -591,15 +723,23 @@ def key_bowling(df_, no_team_filter=False):
     # Dots: valid deliveries where no runs scored off the bowler
     dots = g[(g['runs_to_bowler'] == 0) & (g['is_valid_delivery'] == 1)].groupby(grp_cols, observed=True).size().rename('Dots')
     
+    # Build stats - only include seasons when aggregating
+    series_to_concat = [balls, runs, wkts, dots]
+    # Count seasons by bowler ONLY (not bowler+team) so players who changed teams get correct total
+    include_seasons = aggregate_seasons and 'year' in g.columns
+    if include_seasons:
+        bowler_seasons = g.groupby('bowler', observed=True)['year'].nunique().rename('Seasons')
+        # We'll merge this later
+    
     # For maidens, we still need to group by match/innings/over/bowler, but then aggregate to our grp_cols
     over_grp = ['match_id', 'innings', 'over', 'bowler']
-    if not no_team_filter:
+    if not no_team_filter and not aggregate_seasons:
         over_grp.append(team_col)
     over_runs = g.groupby(over_grp, observed=True).agg({'runs_to_bowler':'sum','is_valid_delivery':'sum'}).reset_index()
     maidens_df = over_runs[(over_runs['is_valid_delivery'] == 6) & (over_runs['runs_to_bowler']==0)]
     maiden_counts = maidens_df.groupby(grp_cols, observed=True).size().rename('Maidens')
     
-    dfb = pd.concat([balls, runs, wkts, dots], axis=1).fillna(0).reset_index()
+    dfb = pd.concat(series_to_concat, axis=1).fillna(0).reset_index()
     dfb = dfb.merge(maiden_counts.reset_index(), on=grp_cols, how='left')
     dfb['Maidens'] = dfb['Maidens'].fillna(0).astype(int)
     dfb['Dots'] = dfb['Dots'].astype(int)
@@ -609,7 +749,21 @@ def key_bowling(df_, no_team_filter=False):
     dfb['Avg'] = (dfb['Runs'] / dfb['Wkts']).replace([np.inf, np.nan], 0).round(2)
     dfb['SR'] = (dfb['Balls'] / dfb['Wkts']).replace([np.inf, np.nan], 0).round(2)
     
-    if no_team_filter:
+    if aggregate_seasons:
+        dfb['Innings'] = "All Seasons"
+        # Get the most common team for each bowler
+        bowler_teams = g.groupby('bowler', observed=True)[team_col].agg(lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 'Unknown').reset_index()
+        bowler_teams.columns = ['bowler', 'Team']
+        bowler_teams['Team'] = bowler_teams['Team'].astype(str)
+        dfb = dfb.merge(bowler_teams, on='bowler', how='left')
+        dfb['Team'] = dfb['Team'].astype(str).fillna('Unknown')
+        # Merge bowler_seasons (count per bowler only, not per bowler+team)
+        if include_seasons:
+            dfb = dfb.merge(bowler_seasons.reset_index(), on='bowler', how='left')
+            dfb['Seasons'] = dfb['Seasons'].fillna(0).astype(int)
+            return dfb[['Innings','bowler','Team','Seasons','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
+        return dfb[['Innings','bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
+    elif no_team_filter:
         dfb['Innings'] = "Overall"
         # Get the most common team for each bowler (their actual team)
         bowler_teams = g.groupby('bowler', observed=True)[team_col].agg(lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 'Unknown').reset_index()
@@ -618,6 +772,10 @@ def key_bowling(df_, no_team_filter=False):
         dfb = dfb.merge(bowler_teams, on='bowler', how='left')
         dfb['Team'] = dfb['Team'].astype(str).fillna('Unknown')
         return dfb[['Innings','bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
+    elif season_filter is not None:
+        # Season comparison mode - show per innings for the specific season
+        dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
+        return dfb[['Innings','bowler',team_col,'Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team'}).sort_values('Wkts', ascending=False)
     elif is_overall:
         dfb['Innings'] = "Overall"
     else:
@@ -914,9 +1072,41 @@ for i, metric in enumerate(st.session_state['metrics']):
         elif metric =="Key Batting":
             st.subheader("Key Batting")
             st.write("Key batting summary (runs, balls faced, strike-rate, 4s/6s, dot%)")
-            dfm = key_batting(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'Runs', "Top Batting Runs", color=color)
+            
+            # Get season view mode
+            season_view_mode = st.session_state.get('season_view_mode', 'Normal (Per Season)')
+            
+            # Get available seasons for comparison tabs
+            available_seasons = sorted(fdf['year'].dropna().unique()) if 'year' in fdf.columns else []
+            
+            if season_view_mode == "Season Comparison (Tabs)" and len(available_seasons) > 1:
+                # Create tabs for each season + All Seasons Combined
+                tab_names = [str(s) for s in available_seasons] + ["All Seasons Combined"]
+                tabs = st.tabs(tab_names)
+                
+                for idx, tab in enumerate(tabs):
+                    with tab:
+                        if idx < len(available_seasons):
+                            # Individual season tab
+                            dfm = key_batting(fdf, aggregate_seasons=False, season_filter=available_seasons[idx])
+                            st.markdown(f"**Season: {available_seasons[idx]}**")
+                        else:
+                            # All Seasons Combined tab
+                            dfm = key_batting(fdf, aggregate_seasons=True)
+                            st.markdown("**All Seasons Combined**")
+                        show_table(dfm, metric)
+                        show_bar(dfm.head(50), 'batter', 'Runs', f"Top Batting Runs", color=color)
+            elif season_view_mode == "All Seasons Combined":
+                # Aggregate all seasons
+                dfm = key_batting(fdf, aggregate_seasons=True)
+                st.markdown("**All Seasons Combined**")
+                show_table(dfm, metric)
+                show_bar(dfm.head(50), 'batter', 'Runs', "Top Batting Runs", color=color)
+            else:
+                # Normal view
+                dfm = key_batting(fdf, aggregate_seasons=False)
+                show_table(dfm, metric)
+                show_bar(dfm.head(50), 'batter', 'Runs', "Top Batting Runs", color=color)
         elif metric == "Key Bowling":
             st.subheader("Key Bowling")
             st.write("Key bowling summary overs, balls, runs conceded to bowler, wickets, economy, maidens")
@@ -927,71 +1117,80 @@ for i, metric in enumerate(st.session_state['metrics']):
                 overall_bowling = st.checkbox("📊 Overall (No Team Filter)", key="overall_bowling_toggle", 
                                              help="Aggregate bowler stats across all teams")
             
-            dfm = key_bowling(fdf, no_team_filter=overall_bowling)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'Bowler', 'Wkts', "Top Wicket Takers", color=color)
+            # Get season view mode
+            season_view_mode = st.session_state.get('season_view_mode', 'Normal (Per Season)')
+            
+            # Get available seasons for comparison tabs
+            available_seasons = sorted(fdf['year'].dropna().unique()) if 'year' in fdf.columns else []
+            
+            if season_view_mode == "Season Comparison (Tabs)" and len(available_seasons) > 1:
+                # Create tabs for each season + All Seasons Combined
+                tab_names = [str(s) for s in available_seasons] + ["All Seasons Combined"]
+                tabs = st.tabs(tab_names)
+                
+                for idx, tab in enumerate(tabs):
+                    with tab:
+                        if idx < len(available_seasons):
+                            # Individual season tab
+                            dfm = key_bowling(fdf, no_team_filter=overall_bowling, aggregate_seasons=False, season_filter=available_seasons[idx])
+                            st.markdown(f"**Season: {available_seasons[idx]}**")
+                        else:
+                            # All Seasons Combined tab
+                            dfm = key_bowling(fdf, no_team_filter=overall_bowling, aggregate_seasons=True)
+                            st.markdown("**All Seasons Combined**")
+                        show_table(dfm, metric)
+                        show_bar(dfm.head(50), 'Bowler', 'Wkts', f"Top Wicket Takers", color=color)
+            elif season_view_mode == "All Seasons Combined":
+                # Aggregate all seasons
+                dfm = key_bowling(fdf, no_team_filter=overall_bowling, aggregate_seasons=True)
+                st.markdown("**All Seasons Combined**")
+                show_table(dfm, metric)
+                show_bar(dfm.head(50), 'Bowler', 'Wkts', "Top Wicket Takers", color=color)
+            else:
+                # Normal view
+                dfm = key_bowling(fdf, no_team_filter=overall_bowling, aggregate_seasons=False)
+                show_table(dfm, metric)
+                show_bar(dfm.head(50), 'Bowler', 'Wkts', "Top Wicket Takers", color=color)
         elif metric == "BPSix":
             st.subheader("Balls-per-Six (BPSix)")
             st.write("how many legal balls a batter takes on average to hit a six")
-            dfm = bpsix(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'BPSix', "Balls per Six", color=color)
+            render_with_season_tabs(fdf, bpsix, metric, 'batter', 'BPSix', "Balls per Six", color)
         elif metric == "BP4":
             st.subheader("Balls-per-Four (BP4)")
             st.write("how many legal balls a batter takes on average to hit a four")
-            dfm = bp4(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'BP4', "Balls per Four", color=color)
+            render_with_season_tabs(fdf, bp4, metric, 'batter', 'BP4', "Balls per Four", color)
         elif metric == "Boundary Balls %":
             st.subheader("Boundary Balls %")
             st.write("Percentage of balls faced by batter that yielded a boundary (4/6)")
-            dfm = boundary_balls_pct(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'Boundary %', "Boundary % by Batter", color=color)
+            render_with_season_tabs(fdf, boundary_balls_pct, metric, 'batter', 'Boundary %', "Boundary % by Batter", color)
         elif metric == "Powerplay Boundary Rate":
             st.subheader("Powerplay Boundary Rate")
             st.write("Team boundary rate (boundaries per legal ball) inside mandatory powerplay")
-            dfm = powerplay_boundary_rate(fdf)
-            show_table(dfm, metric)
-            if has_meaningful_numbers(dfm):
-                show_bar(dfm, 'Team', 'PPBR (%)', "Powerplay Boundary Rate (%) — aggregated per team", color=color)
+            render_with_season_tabs(fdf, powerplay_boundary_rate, metric, 'Team', 'PPBR (%)', "Powerplay Boundary Rate (%) — aggregated per team", color)
         elif metric == "Death Wag %":
             st.subheader("Death Wag %")
             st.write("Share of death-innings runs coming from lower-order batters (pos7-11)")
-            dfm = death_wag_pct(fdf)
-            show_table(dfm, metric)
-            if has_meaningful_numbers(dfm):
-                show_bar(dfm, 'Teams', 'Death Wag %', "Death Wag % aggregated by team", color=color)
+            render_with_season_tabs(fdf, death_wag_pct, metric, 'Teams', 'Death Wag %', "Death Wag % aggregated by team", color)
         elif metric == "Match-Up Dominance":
             st.subheader("Match-Up Dominance")
             st.write("How much better/worse a batter performs vs specific bowlers compared to season SR")
-            dfm = match_up_dominance(fdf)
-            show_table(dfm.head(200), metric)
-            show_bar(dfm.head(50), 'batter', 'MDS', "Match-Up Dominance Score (sample)", color=color)
+            render_with_season_tabs(fdf, match_up_dominance, metric, 'batter', 'MDS', "Match-Up Dominance Score (sample)", color, top_n=50)
         elif metric == "Pressure Index":
             st.subheader("Pressure Index")
             st.write("Average pressure faced per legal ball (runs * wicket-pressure metric)")
-            dfm = pressure_index(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'Pressure Index', "Pressure Index (avg pressure per ball faced)", color=color)
+            render_with_season_tabs(fdf, pressure_index, metric, 'batter', 'Pressure Index', "Pressure Index (avg pressure per ball faced)", color)
         elif metric == "Dot Ball % Trend":
             st.subheader("Dot Ball % Trend")
             st.write("Dot-ball percentage per batter (legal deliveries only)")
-            dfm = dot_ball_pct_trend(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'Dot %', "Dot % Trend by Batter", color=color)
+            render_with_season_tabs(fdf, dot_ball_pct_trend, metric, 'batter', 'Dot %', "Dot % Trend by Batter", color)
         elif metric == "Bowler Boundary Leakage by Phase":
             st.subheader("Bowler Boundary Leakage by Phase")
             st.write("Boundaries conceded by bowlers grouped by phase (Powerplay/Death/etc)")
-            dfm = bowler_boundary_leakage_by_phase(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'Bowler', 'Leakage %', "Bowler Boundary Leakage by Phase", color=color)
+            render_with_season_tabs(fdf, bowler_boundary_leakage_by_phase, metric, 'Bowler', 'Leakage %', "Bowler Boundary Leakage by Phase", color)
         elif metric == "Batter Contribution %":
             st.subheader("Batter Contribution %")
             st.write("Batter's contribution to their innings total (percentage)")
-            dfm = batter_contribution(fdf)
-            show_table(dfm, metric)
-            show_bar(dfm.head(50), 'batter', 'Contribution %', "Batter Contribution %", color=color)
+            render_with_season_tabs(fdf, batter_contribution, metric, 'batter', 'Contribution %', "Batter Contribution %", color)
         elif metric == "Match Results":
             st.subheader("Match Results")
             st.write("Match outcomes (inferred if not present) - who won and margin")
