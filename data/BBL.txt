@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 660 Big Bash League matches.
+archive contains 662 Big Bash League matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -21,6 +21,8 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-01-25 - club - BBL - male - 1493281 - Sydney Sixers vs Perth Scorchers
+2026-01-23 - club - BBL - male - 1493280 - Sydney Sixers vs Hobart Hurricanes
 2026-01-21 - club - BBL - male - 1493279 - Hobart Hurricanes vs Melbourne Stars
 2026-01-20 - club - BBL - male - 1493278 - Perth Scorchers vs Sydney Sixers
 2026-01-18 - club - BBL - male - 1493277 - Brisbane Heat vs Sydney Sixers
