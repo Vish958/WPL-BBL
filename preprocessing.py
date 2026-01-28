@@ -96,7 +96,7 @@ def assign_phase(ball_float, pp_mand, pp_surge, league):
     if league in BBL_LEAGUES and pp_surge and pp_surge[0] is not None and pp_surge[1] is not None and pp_surge[0] <= ball_float <= pp_surge[1]: 
         return 'Power Surge'
     
-    # Death overs: 16-19 (ball_float >= 16.0)
+    # Death overs: 17-20 (ball_float >= 16.0)
     if ball_float >= 16.0: 
         return 'Death'
     

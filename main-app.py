@@ -69,10 +69,10 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 27 Jan 2026")
+st.markdown("📅 Last updated: 28 Jan 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
-st.markdown("🚀 New: 'Season Comparison' (Tabs) for Batting & Bowling!")
+st.markdown("🚀 New: 'Season Comparison'(Tabs) for Batting & Bowling!")
 
 st.markdown("""
 <style>
@@ -243,6 +243,19 @@ if not available_phases:
     available_phases = ['Powerplay','Power Surge','Middle','Death']
 
 st.sidebar.multiselect("Phase", available_phases, key="phases", on_change=clear_submitted)
+
+with st.sidebar.expander("ℹ️ Phase Definitions", expanded=False):
+    st.markdown("""
+    **General (IPL, WPL, SA20)**
+    - **Powerplay**: Overs 1-6
+    - **Middle**: Overs 7-16
+    - **Death**: Overs 17-20
+    
+    **BBL (MBBL, WBBL)**
+    - **Powerplay**: Overs 1-4
+    - **Middle**: Overs 5-16 (excl. Surge)
+    - **Death**: Overs 17-20
+    """)
 
 # --- 3. View Mode ---
 st.sidebar.markdown("---")
@@ -648,22 +661,22 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
         stats = stats.merge(batter_teams, on='batter', how='left')
         stats['Team'] = stats['Team'].astype(str).fillna('Unknown')
         if include_seasons:
-            cols = ['Innings','batter','Team','Seasons','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+            cols = ['Innings','batter','Team','Seasons','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
         else:
-            cols = ['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
-        return stats[cols].sort_values('Runs', ascending=False)
+            cols = ['Innings','batter','Team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        return stats[cols].rename(columns={'InningsPlayed':'Inns'}).sort_values('Runs', ascending=False)
     elif season_filter is not None:
-        # Season comparison mode - show season aggregate (by batter+team)
+        # Season comparison mode - show aggregate
         stats['Innings'] = f"Season {season_filter}"
-        cols = ['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        cols = ['Innings','batter','team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     elif is_overall:
         stats['Innings'] = "Overall"
-        cols = ['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        cols = ['Innings','batter','team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     else:
         stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
-        cols = ['Innings','batter','team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        cols = ['Innings','batter','team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     
-    return stats[cols].rename(columns={'team':'Team'}).sort_values('Runs', ascending=False)
+    return stats[cols].rename(columns={'team':'Team', 'InningsPlayed':'Inns'}).sort_values('Runs', ascending=False)
 
 def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filter=None):
     g = df_.copy()
@@ -727,6 +740,11 @@ def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     maidens_df = over_runs[(over_runs['is_valid_delivery'] == 6) & (over_runs['runs_to_bowler']==0)]
     maiden_counts = maidens_df.groupby(grp_cols, observed=True).size().rename('Maidens')
     
+    
+    # Calculate Innings Played (unique match+innings combinations per bowler)
+    inns_played = grp['match_id'].nunique().rename('InningsPlayed')
+    series_to_concat.append(inns_played)
+
     dfb = pd.concat(series_to_concat, axis=1).fillna(0).reset_index()
     dfb = dfb.merge(maiden_counts.reset_index(), on=grp_cols, how='left')
     dfb['Maidens'] = dfb['Maidens'].fillna(0).astype(int)
@@ -749,8 +767,8 @@ def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filte
         if include_seasons:
             dfb = dfb.merge(bowler_seasons.reset_index(), on='bowler', how='left')
             dfb['Seasons'] = dfb['Seasons'].fillna(0).astype(int)
-            return dfb[['Innings','bowler','Team','Seasons','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
-        return dfb[['Innings','bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
+            return dfb[['Innings','bowler','Team','Seasons','InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
+        return dfb[['Innings','bowler','Team','InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
     elif no_team_filter:
         dfb['Innings'] = "Overall"
         # Get the most common team for each bowler (their actual team)
@@ -759,17 +777,19 @@ def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filte
         bowler_teams['Team'] = bowler_teams['Team'].astype(str)
         dfb = dfb.merge(bowler_teams, on='bowler', how='left')
         dfb['Team'] = dfb['Team'].astype(str).fillna('Unknown')
-        return dfb[['Innings','bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler'}).sort_values('Wkts', ascending=False)
+        return dfb[['Innings','bowler','Team','InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
     elif season_filter is not None:
         # Season comparison mode - show season aggregate (by bowler+team)
         dfb['Innings'] = f"Season {season_filter}"
-        return dfb[['Innings','bowler',team_col,'Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team'}).sort_values('Wkts', ascending=False)
+        return dfb[['Innings','bowler',team_col,'InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
     elif is_overall:
         dfb['Innings'] = "Overall"
+        # Ensure InningsPlayed/Inns is included here for the main leaderboard
+        return dfb[['Innings','bowler',team_col,'InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
     else:
         dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
         
-    return dfb[['Innings','bowler',team_col,'Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team'}).sort_values('Wkts', ascending=False)
+    return dfb[['Innings','bowler',team_col,'InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
 
 def bpsix(df_):
     valid = df_[df_['is_valid_delivery']==1]
