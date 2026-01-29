@@ -609,12 +609,13 @@ def extras_breakdown(df_):
     if not rows: return pd.DataFrame()
     return pd.DataFrame(rows)
 
-def key_batting(df_, aggregate_seasons=False, season_filter=None):
+def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filter=None):
     valid = df_.copy()
     if valid.empty:
         return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
     
-    if 'innings' in valid.columns: valid['innings'] = valid['innings'].astype('int64')
+    # innings column is now a string ('Innings 1', 'Innings 2', 'BAT1-SO', etc.)
+    if 'innings' in valid.columns: valid['innings'] = valid['innings'].astype(str)
     if 'batter' in valid.columns: valid['batter'] = valid['batter'].astype(str)
     for c in ['runs.batter', 'is_valid_delivery']:
         if c in valid.columns: valid[c] = valid[c].astype('int64')
@@ -627,11 +628,13 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
     
     # Season mode takes priority: when aggregate_seasons or season_filter is specified,
     # ignore the Analysis Scope setting for grouping
-    is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
+    # Also check if specific matches are selected - if so, we're NOT in overall mode even if radio button says so
+    selected_matches = st.session_state.get('matches', [])
+    is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)") and len(selected_matches) == 0
     
     # Determine grouping columns based on aggregation mode
-    if aggregate_seasons:
-        # Aggregate across all seasons by batter ONLY (not batter+team)
+    if aggregate_seasons or no_team_filter:
+        # Aggregate by batter ONLY (not batter+team)
         # This ensures players who changed teams get their full stats combined
         grp_cols = ['batter']
     elif season_filter is not None:
@@ -643,20 +646,52 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
     else:
         grp_cols = ['innings', 'batter', 'team']
 
-    # BF = All deliveries faced by batter (excluding wides as they don't reach batter, but including no-balls)
-    balls = valid[valid['wides'] == 0].groupby(grp_cols, observed=True).size().rename('BF')
-    runs = valid.groupby(grp_cols, observed=True)['runs.batter'].sum().rename('Runs')
-    fours = valid[valid['runs.batter'] == 4].groupby(grp_cols, observed=True).size().rename('4s')
-    sixes = valid[valid['runs.batter'] == 6].groupby(grp_cols, observed=True).size().rename('6s')
-    dots = valid[(valid['runs.batter'] == 0) & (valid['wides'] == 0)].groupby(grp_cols, observed=True).size().rename('Dots')
+    # For aggregate views (not per-innings), exclude super over deliveries from stats
+    # Super over stats are only shown in per-innings view when user selects "BAT1-SO" or "BAT2-SO"
+    is_per_innings_view = (not aggregate_seasons and not no_team_filter and season_filter is None and not is_overall)
     
-    # Calculate Outs (Times Dismissed)
-    if 'is_batter_out' in valid.columns:
-        outs = valid.groupby(grp_cols, observed=True)['is_batter_out'].sum().rename('Outs')
+    if 'is_super_over' in valid.columns and not is_per_innings_view:
+        # Exclude super over from aggregate stats
+        stats_df = valid[valid['is_super_over'] == 0]
+    else:
+        stats_df = valid
+
+    # BF = All deliveries faced by batter (excluding wides as they don't reach batter, but including no-balls)
+    balls = stats_df[stats_df['wides'] == 0].groupby(grp_cols, observed=True).size().rename('BF')
+    runs = stats_df.groupby(grp_cols, observed=True)['runs.batter'].sum().rename('Runs')
+    fours = stats_df[stats_df['runs.batter'] == 4].groupby(grp_cols, observed=True).size().rename('4s')
+    sixes = stats_df[stats_df['runs.batter'] == 6].groupby(grp_cols, observed=True).size().rename('6s')
+    dots = stats_df[(stats_df['runs.batter'] == 0) & (stats_df['wides'] == 0)].groupby(grp_cols, observed=True).size().rename('Dots')
+    
+    # Calculate Outs (Times Dismissed) - CORRECTLY count all dismissals including run outs as non-striker
+    # Outs = is_batter_out (when facing) + is_non_striker_out (when at non-striker end)
+    if 'is_batter_out' in stats_df.columns:
+        # 1. Count times dismissed as batter (facing the ball)
+        batter_outs = stats_df.groupby(grp_cols, observed=True)['is_batter_out'].sum()
+        
+        # 2. Count times dismissed as non-striker (run out while not facing)
+        if 'is_non_striker_out' in stats_df.columns and 'non_striker' in stats_df.columns:
+            ns_df = stats_df[stats_df['is_non_striker_out'] == 1].copy()
+            if not ns_df.empty:
+                ns_grp_cols = [c if c != 'batter' else 'non_striker' for c in grp_cols]
+                ns_outs = ns_df.groupby(ns_grp_cols, observed=True).size()
+                ns_outs = ns_outs.rename_axis([c if c != 'non_striker' else 'batter' for c in ns_grp_cols])
+            else:
+                ns_outs = pd.Series(dtype=float)
+        else:
+            ns_outs = pd.Series(dtype=float)
+        
+        # Combine batter outs + non-striker outs
+        outs = (batter_outs.add(ns_outs, fill_value=0)).rename('Outs')
     else:
         outs = pd.Series(0, index=runs.index, name='Outs')
     
-    innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
+    # InningsPlayed: Only count regular innings (exclude super over)
+    if 'is_super_over' in stats_df.columns:
+        regular_innings_df = stats_df[stats_df['is_super_over'] == 0]
+        innings_played = regular_innings_df.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
+    else:
+        innings_played = stats_df.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
     
     # Build stats - only include seasons if available and aggregating
     series_to_concat = [runs, balls, fours, sixes, dots, outs, innings_played]
@@ -703,6 +738,19 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
         else:
             cols = ['Innings','batter','Team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
         return stats[cols].rename(columns={'InningsPlayed':'Inns'}).sort_values('Runs', ascending=False)
+    elif no_team_filter:
+        # Overall (No Team Filter) - aggregate by batter only
+        stats['Innings'] = "Overall"
+        # Get the most common team for each batter
+        batter_teams = valid.groupby('batter', observed=True)['team'].agg(
+            lambda x: x.mode().iloc[0] if len(x.mode()) > 0 else 'Unknown'
+        ).reset_index()
+        batter_teams.columns = ['batter', 'Team']
+        batter_teams['Team'] = batter_teams['Team'].astype(str)
+        stats = stats.merge(batter_teams, on='batter', how='left')
+        stats['Team'] = stats['Team'].astype(str).fillna('Unknown')
+        cols = ['Innings','batter','Team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
+        return stats[cols].rename(columns={'InningsPlayed':'Inns'}).sort_values('Runs', ascending=False)
     elif season_filter is not None:
         # Season comparison mode - show aggregate
         stats['Innings'] = f"Season {season_filter}"
@@ -711,7 +759,8 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
         stats['Innings'] = "Overall"
         cols = ['Innings','batter','team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     else:
-        stats['Innings'] = stats['innings'].map({1:'Innings 1',2:'Innings 2'})
+        # Per-innings mode: innings column is already a string ("Innings 1", "Innings 2", "BAT1-SO", etc.)
+        stats['Innings'] = stats['innings']
         cols = ['Innings','batter','team','InningsPlayed','Runs','BF','SR','Avg','4s','6s','Dots','Dot%']
     
     return stats[cols].rename(columns={'team':'Team', 'InningsPlayed':'Inns'}).sort_values('Runs', ascending=False)
@@ -740,7 +789,9 @@ def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     
     # Season mode takes priority: when aggregate_seasons or season_filter is specified,
     # ignore the Analysis Scope setting for grouping
-    is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)")
+    # Also check if specific matches are selected - if so, we're NOT in overall mode
+    selected_matches = st.session_state.get('matches', [])
+    is_overall = (st.session_state.get('view_mode_selection') == "Overall (Season Leaderboard)") and len(selected_matches) == 0
     
     # Determine grouping columns based on aggregation mode
     if aggregate_seasons or no_team_filter:
@@ -825,7 +876,8 @@ def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filte
         # Ensure InningsPlayed/Inns is included here for the main leaderboard
         return dfb[['Innings','bowler',team_col,'InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
     else:
-        dfb['Innings'] = dfb['innings'].map({1:'Innings 1',2:'Innings 2'})
+        # Per-match mode: innings column is a string but needs BOWL prefix for bowling (BAT1-SO -> BOWL1-SO)
+        dfb['Innings'] = dfb['innings'].replace({'BAT1-SO': 'BOWL1-SO', 'BAT2-SO': 'BOWL2-SO'})
         
     return dfb[['Innings','bowler',team_col,'InningsPlayed','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots']].rename(columns={'bowler':'Bowler', team_col:'Team', 'InningsPlayed':'Inns'}).sort_values('Wkts', ascending=False)
 
@@ -1119,6 +1171,10 @@ for i, metric in enumerate(st.session_state['metrics']):
             st.subheader("Key Batting")
             st.write("Key batting summary (runs, balls faced, strike-rate, 4s/6s, dot%)")
             
+            # Overall (No Team Filter) toggle
+            overall_batting = st.checkbox("📊 Overall (No Team Filter)", value=False, key="overall_batting_filter",
+                                          help="Show aggregated stats across all teams for each player")
+            
             # Get season view mode
             season_view_mode = st.session_state.get('season_view_mode', 'Normal (Per Season)')
             
@@ -1133,13 +1189,13 @@ for i, metric in enumerate(st.session_state['metrics']):
                 for idx, tab in enumerate(tabs):
                     with tab:
                         # Individual season tab with aggregated stats
-                        dfm = key_batting(fdf, aggregate_seasons=False, season_filter=available_seasons[idx])
+                        dfm = key_batting(fdf, no_team_filter=overall_batting, aggregate_seasons=False, season_filter=available_seasons[idx])
                         st.markdown(f"**Season: {available_seasons[idx]}**")
                         show_table(dfm, metric)
                         show_bar(dfm.head(50), 'batter', 'Runs', f"Top Batting Runs", color=color)
             else:
                 # Normal view
-                dfm = key_batting(fdf, aggregate_seasons=False)
+                dfm = key_batting(fdf, no_team_filter=overall_batting, aggregate_seasons=False)
                 show_table(dfm, metric)
                 show_bar(dfm.head(50), 'batter', 'Runs', "Top Batting Runs", color=color)
         elif metric == "Key Bowling":

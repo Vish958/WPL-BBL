@@ -159,6 +159,22 @@ def process_data(inference_power_surge=True):
             for inning_idx, inning in enumerate(data.get('innings', []), start=1):
                 team = inning.get('team')  # batting team
                 bowling_team = [t for t in teams if t != team][0] if len(teams) == 2 else team
+                
+                # Check if this is a super over innings
+                is_super_over = 1 if inning.get('super_over', False) else 0
+                
+                # Assign innings label
+                if is_super_over:
+                    # Super over: BAT1-SO for first super over batting team, BAT2-SO for second
+                    # inning_idx 3 or 4 for super overs after tie
+                    if inning_idx == 3:
+                        innings_label = 'BAT1-SO'
+                    else:
+                        innings_label = 'BAT2-SO'
+                else:
+                    # Regular innings: "Innings 1" or "Innings 2"
+                    innings_label = f'Innings {inning_idx}'
+                
                 innings_num = inning_idx
                 inning_deliveries = []
                 declared_pp = inning.get('powerplays') or info.get('powerplays') or []
@@ -203,11 +219,14 @@ def process_data(inference_power_surge=True):
                             'date': pd.to_datetime(date),
                             'year': year,
                             'teams': ' vs '.join(sorted(teams)),
-                            'innings': innings_num,
+                            'innings': innings_label,
+                            'innings_num': innings_num,
+                            'is_super_over': is_super_over,
                             'team': team,
                             'bowling_team': bowling_team,
                             'over': over_num,
                             'batter': batter_name,
+                            'non_striker': d.get('non_striker'),
                             'bowler': bowler_name,
                             'runs.batter': d.get('runs', {}).get('batter', 0),
                             'runs.extras': d.get('runs', {}).get('extras', 0),
@@ -228,6 +247,8 @@ def process_data(inference_power_surge=True):
                             'is_impact_batter': is_impact_batter,
                             'is_impact_bowler': is_impact_bowler,
                             'is_batter_out': 1 if any(w.get('player_out') == batter_name for w in (d.get('wickets') or [])) else 0,
+                            'is_non_striker_out': 1 if any(w.get('player_out') == d.get('non_striker') for w in (d.get('wickets') or [])) else 0,
+                            'player_out': next((w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')), None),
                             'winner': winner,
                             'win_by_wickets': win_by_wickets,
                             'win_by_runs': win_by_runs
@@ -253,7 +274,7 @@ def process_data(inference_power_surge=True):
         df = pd.DataFrame(rows)
         df['created'] = pd.to_datetime(df['created'])
         # ensure numeric columns
-        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count', 'is_impact_batter', 'is_impact_bowler', 'is_batter_out']:
+        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count', 'is_impact_batter', 'is_impact_bowler', 'is_batter_out', 'is_non_striker_out', 'is_super_over']:
             if c not in df.columns:
                 df[c] = 0
         df.to_parquet(DATA_DEST, index=False)
