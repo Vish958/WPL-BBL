@@ -12,9 +12,33 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 2026-01-19")
+st.markdown("📅 Last updated: 2026-01-29")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
+JSON_DIR = "data"  # Directory containing JSON files
+
+@st.cache_data
+def load_venue_data():
+    """Load venue data from JSON files and create a match_id -> venue mapping."""
+    import os
+    from glob import glob
+    import json
+    
+    venue_map = {}
+    files = glob(os.path.join(JSON_DIR, "*.json"))
+    
+    for file in files:
+        try:
+            with open(file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            match_id = os.path.basename(file).split('.')[0]
+            venue = data.get('info', {}).get('venue', 'Unknown')
+            city = data.get('info', {}).get('city', 'Unknown')
+            venue_map[match_id] = {'venue': venue, 'city': city}
+        except Exception:
+            continue
+    
+    return venue_map
 
 @st.cache_data
 def load_data(path=DATA_SOURCE):
@@ -42,6 +66,12 @@ def load_data(path=DATA_SOURCE):
 df = load_data()
 if df.empty:
     st.stop()
+
+# Load and merge venue data
+venue_map = load_venue_data()
+if venue_map:
+    df['venue'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('venue', 'Unknown'))
+    df['city'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('city', 'Unknown'))
 
 # Sidebar Filters
 st.sidebar.header("Filters")
@@ -85,6 +115,11 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
                   bowling team in bowling mode)
     """
     pp = df_[df_['phase'] == 'Powerplay'].copy()
+    if pp.empty:
+        return pd.DataFrame(), pd.DataFrame()
+    
+    # Exclude super over innings (innings 3, 4, etc.)
+    pp = pp[pp['innings'].isin([1, 2])]
     if pp.empty:
         return pd.DataFrame(), pd.DataFrame()
     
@@ -299,7 +334,7 @@ if metric_choice == "Powerplay Score Tracker":
                 season_summary = season_summary[season_summary['Team'].isin([team1, team2])]
         
         # Tabs
-        tab1, tab2 = st.tabs(["📋 Match-by-Match", "📊 Season Summary"])
+        tab1, tab2, tab3 = st.tabs(["📋 Match-by-Match", "📊 Season Summary", "🏟️ Venue-wise"])
         
         with tab1:
             if mode_val == 'batting':
@@ -336,6 +371,64 @@ if metric_choice == "Powerplay Score Tracker":
                     fig = px.bar(season_summary, x='Team', y='Avg_Runs_Conceded', color='Season',
                                 barmode='group', title="Average PP Runs Conceded by Team")
                 st.plotly_chart(fig, use_container_width=True)
+        
+        with tab3:
+            st.markdown("#### Venue-wise Powerplay Performance")
+            
+            # Get venue data for matches in match_stats
+            if 'match_id' in match_stats.columns:
+                # Merge venue info
+                venue_stats_df = match_stats.copy()
+                venue_stats_df['Venue'] = venue_stats_df['match_id'].astype(str).map(
+                    lambda x: venue_map.get(x, {}).get('venue', 'Unknown')
+                )
+                
+                if mode_val == 'batting':
+                    venue_summary = venue_stats_df.groupby('Venue', observed=True).agg(
+                        Matches=('match_id', 'nunique'),
+                        Avg_PP_Runs=('PP_Runs', 'mean'),
+                        Avg_PP_RR=('PP_RR', 'mean'),
+                        Best_PP=('PP_Runs', 'max'),
+                        Total_Boundaries=('PP_Boundaries', 'sum'),
+                        Avg_Wickets_Lost=('PP_Wickets', 'mean')
+                    ).reset_index()
+                    venue_summary['Avg_PP_Runs'] = venue_summary['Avg_PP_Runs'].round(1)
+                    venue_summary['Avg_PP_RR'] = venue_summary['Avg_PP_RR'].round(2)
+                    venue_summary['Avg_Wickets_Lost'] = venue_summary['Avg_Wickets_Lost'].round(2)
+                    venue_summary = venue_summary.sort_values('Avg_PP_Runs', ascending=False)
+                    
+                    st.dataframe(venue_summary, use_container_width=True)
+                    
+                    # Chart
+                    fig = px.bar(venue_summary.head(15), x='Venue', y='Avg_PP_Runs',
+                                color='Avg_PP_RR', color_continuous_scale='RdYlGn',
+                                title="Avg Powerplay Runs by Venue (Top 15)")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+                else:
+                    venue_summary = venue_stats_df.groupby('Venue', observed=True).agg(
+                        Matches=('match_id', 'nunique'),
+                        Avg_Runs_Conceded=('PP_Runs_Conceded', 'mean'),
+                        Avg_Econ=('PP_Econ', 'mean'),
+                        Best_Bowling=('PP_Runs_Conceded', 'min'),
+                        Total_Wickets=('PP_Wickets_Taken', 'sum'),
+                        Avg_Wickets=('PP_Wickets_Taken', 'mean')
+                    ).reset_index()
+                    venue_summary['Avg_Runs_Conceded'] = venue_summary['Avg_Runs_Conceded'].round(1)
+                    venue_summary['Avg_Econ'] = venue_summary['Avg_Econ'].round(2)
+                    venue_summary['Avg_Wickets'] = venue_summary['Avg_Wickets'].round(2)
+                    venue_summary = venue_summary.sort_values('Avg_Runs_Conceded', ascending=True)
+                    
+                    st.dataframe(venue_summary, use_container_width=True)
+                    
+                    # Chart
+                    fig = px.bar(venue_summary.head(15), x='Venue', y='Avg_Runs_Conceded',
+                                color='Avg_Wickets', color_continuous_scale='RdYlGn_r',
+                                title="Avg Powerplay Runs Conceded by Venue (Top 15)")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("Venue data not available for match-level analysis.")
 
 
 elif metric_choice == "DRS Analysis":
@@ -349,7 +442,7 @@ elif metric_choice == "DRS Analysis":
         # DRS metric selection
         drs_metric = st.radio(
             "Select DRS View", 
-            ["Team Success Rate", "Bowling vs Batting", "Match-by-Match", "Umpire Analysis", "Player Analysis", "Against Player"], 
+            ["Team Success Rate", "Bowling vs Batting", "Match-by-Match", "Venue Analysis", "Umpire Analysis", "Player Analysis", "Against Player"], 
             horizontal=True
         )
         
@@ -545,6 +638,64 @@ elif metric_choice == "DRS Analysis":
                             title="DRS Reviews by Team (Top 20)")
                 fig.update_xaxes(tickangle=45)
                 st.plotly_chart(fig, use_container_width=True)
+            
+            # =====================
+            # NEW: VENUE ANALYSIS
+            # =====================
+            elif drs_metric == "Venue Analysis":
+                st.write("DRS reviews analyzed by venue - which grounds see the most reviews and overturns")
+                
+                # Add venue to reviews
+                reviews_with_venue = reviews.copy()
+                reviews_with_venue['Venue'] = reviews_with_venue['match_id'].astype(str).map(
+                    lambda x: venue_map.get(x, {}).get('venue', 'Unknown')
+                )
+                
+                venue_stats = reviews_with_venue.groupby('Venue', observed=True).agg(
+                    Total_Reviews=('has_review', 'count'),
+                    Matches_With_Reviews=('match_id', 'nunique'),
+                    Overturned=('review_decision', lambda x: (x == 'struck down').sum()),
+                    Upheld=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
+                ).reset_index()
+                
+                venue_stats['Overturn_Rate'] = (venue_stats['Overturned'] / venue_stats['Total_Reviews'] * 100).round(1)
+                venue_stats['Reviews_Per_Match'] = (venue_stats['Total_Reviews'] / venue_stats['Matches_With_Reviews']).round(2)
+                venue_stats = venue_stats.sort_values('Total_Reviews', ascending=False)
+                
+                st.dataframe(venue_stats, use_container_width=True)
+                
+                col1, col2 = st.columns(2)
+                with col1:
+                    fig = px.bar(venue_stats.head(15), x='Venue', y='Total_Reviews',
+                                color='Overturn_Rate', color_continuous_scale='RdYlGn',
+                                title="Most Reviewed Venues (Top 15)")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+                with col2:
+                    fig = px.bar(venue_stats.head(15), x='Venue', y='Overturn_Rate',
+                                title="DRS Overturn Rate by Venue (%) - Top 15")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                # Additional breakdown by venue and team
+                st.markdown("---")
+                st.markdown("#### Venue-Team DRS Breakdown")
+                
+                venue_team_stats = reviews_with_venue.groupby(['Venue', 'review_by_team'], observed=True).agg(
+                    Reviews=('has_review', 'count'),
+                    Successful=('review_decision', lambda x: (x == 'struck down').sum()),
+                    Failed=('review_decision', lambda x: (x == 'upheld').sum())
+                ).reset_index()
+                venue_team_stats['Success_Rate'] = (venue_team_stats['Successful'] / venue_team_stats['Reviews'] * 100).round(1)
+                venue_team_stats = venue_team_stats.rename(columns={'review_by_team': 'Team'})
+                venue_team_stats = venue_team_stats.sort_values(['Venue', 'Reviews'], ascending=[True, False])
+                
+                # Filter to top venues
+                top_venues = venue_stats.head(10)['Venue'].tolist()
+                venue_team_filtered = venue_team_stats[venue_team_stats['Venue'].isin(top_venues)]
+                
+                st.dataframe(venue_team_filtered, use_container_width=True)
             
             # =====================
             # 3. UMPIRE ANALYSIS

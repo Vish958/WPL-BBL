@@ -566,7 +566,14 @@ def run_rate_per_match(df_, match_id):
         over_end = gg.groupby('over', observed=True).apply(lambda d: d.iloc[-1]).reset_index(drop=True)
         over_end['RR'] = (over_end['cum_runs'] / over_end['cum_valid_balls'] * 6).replace([np.inf, np.nan], 0).round(2)
         over_summary = over_end[['over','RR']].rename(columns={'over':'Over'})
-        over_summary['Innings'] = f"Innings {int(inn)}"
+        # Handle inn which can be string ("Innings 1") or int (1)
+        if isinstance(inn, str) and inn.startswith('Innings'):
+            over_summary['Innings'] = inn
+        else:
+            try:
+                over_summary['Innings'] = f"Innings {int(inn)}"
+            except (ValueError, TypeError):
+                over_summary['Innings'] = str(inn)
         out.append(over_summary)
     if out: return pd.concat(out, ignore_index=True).sort_values(['Innings','Over'])
     return pd.DataFrame()
@@ -589,7 +596,14 @@ def run_rate_combined_per_over(df_):
         over_end = gg.groupby('over', observed=True).apply(lambda d: d.iloc[-1]).reset_index(drop=True)
         over_end['RR'] = (over_end['cum_runs'] / over_end['cum_valid_balls'] * 6).replace([np.inf, np.nan], 0).round(2)
         over_end = over_end.rename(columns={'over':'Over'})
-        over_end['Innings'] = f"Innings {int(inn)}"
+        # Handle inn which can be string ("Innings 1") or int (1)
+        if isinstance(inn, str) and inn.startswith('Innings'):
+            over_end['Innings'] = inn
+        else:
+            try:
+                over_end['Innings'] = f"Innings {int(inn)}"
+            except (ValueError, TypeError):
+                over_end['Innings'] = str(inn)
         out.append(over_end[['Over','Innings','RR']])
     if out: return pd.concat(out, ignore_index=True).sort_values(['Innings','Over'])
     return pd.DataFrame()
@@ -614,11 +628,16 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     if valid.empty:
         return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
     
+    # Convert all categorical columns to their base types to avoid "Cannot setitem on a Categorical" errors
+    for col in valid.columns:
+        if valid[col].dtype.name == 'category':
+            valid[col] = valid[col].astype(str) if valid[col].cat.categories.dtype == 'object' else valid[col].astype(valid[col].cat.categories.dtype)
+    
     # innings is now a string ("Innings 1", "Innings 2", "BAT1-SO", "BAT2-SO")
     if 'innings' in valid.columns: valid['innings'] = valid['innings'].astype(str)
     if 'batter' in valid.columns: valid['batter'] = valid['batter'].astype(str)
     for c in ['runs.batter', 'is_valid_delivery']:
-        if c in valid.columns: valid[c] = valid[c].astype('int64')
+        if c in valid.columns: valid[c] = pd.to_numeric(valid[c], errors='coerce').fillna(0).astype('int64')
     
     # Apply season filter if provided (for season comparison tabs)
     if season_filter is not None and 'year' in valid.columns:
@@ -652,6 +671,8 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     
     if 'is_super_over' in valid.columns and not is_per_innings_view:
         # Exclude super over from aggregate stats
+        # Convert to numeric to avoid categorical comparison issues
+        valid['is_super_over'] = pd.to_numeric(valid['is_super_over'], errors='coerce').fillna(0).astype(int)
         stats_df = valid[valid['is_super_over'] == 0]
     else:
         stats_df = valid
@@ -683,12 +704,25 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
                 # Rename non_striker back to batter for merging
                 ns_outs = ns_outs.rename_axis([c if c != 'non_striker' else 'batter' for c in ns_grp_cols])
             else:
-                ns_outs = pd.Series(dtype=float)
+                ns_outs = pd.Series(dtype=float, name='Outs')
         else:
-            ns_outs = pd.Series(dtype=float)
+            ns_outs = pd.Series(dtype=float, name='Outs')
         
-        # Combine batter outs + non-striker outs
-        outs = (batter_outs.add(ns_outs, fill_value=0)).rename('Outs')
+        # Ensure both series have proper index for addition
+        # Reset index to align for addition, then set back
+        batter_outs_df = batter_outs.reset_index()
+        ns_outs_df = ns_outs.reset_index()
+        
+        # Merge on grouping columns to combine outs
+        if not ns_outs_df.empty and len(ns_outs_df.columns) > 1:
+            combined = batter_outs_df.merge(ns_outs_df, on=grp_cols, how='outer', suffixes=('_batter', '_ns'))
+            combined = combined.fillna(0)
+            # Sum the two out columns
+            out_cols = [c for c in combined.columns if c not in grp_cols]
+            combined['Outs'] = combined[out_cols].sum(axis=1)
+            outs = combined.set_index(grp_cols)['Outs']
+        else:
+            outs = batter_outs.rename('Outs')
     else:
         outs = pd.Series(0, index=runs.index, name='Outs')
     
@@ -949,12 +983,26 @@ def death_wag_pct(df_):
     
     death['match_id'] = death['match_id'].astype(str)
     pos['match_id'] = pos['match_id'].astype(str)
-    death['innings'] = death['innings'].astype('int64')
-    pos['innings'] = pos['innings'].astype('int64')
+    
+    # Handle innings which could be string ("Innings 1") or int (1)
+    # Extract numeric part from string if needed
+    def extract_innings_num(val):
+        if isinstance(val, (int, float)) and not pd.isna(val):
+            return int(val)
+        if isinstance(val, str):
+            # Handle "Innings 1", "Innings 2", etc.
+            import re
+            match = re.search(r'(\d+)', val)
+            if match:
+                return int(match.group(1))
+        return 0
+    
+    death['innings_num'] = death['innings'].apply(extract_innings_num)
+    pos['innings_num'] = pos['innings'].apply(extract_innings_num)
     death['batter'] = death['batter'].astype(str)
     pos['batter'] = pos['batter'].astype(str)
 
-    merged = death.merge(pos, on=['match_id','innings','batter'], how='left')
+    merged = death.merge(pos, on=['match_id','innings_num','batter'], how='left', suffixes=('', '_pos'))
     merged['position'] = merged['position'].fillna(99).astype(int)
     
     group_col = 'teams' if 'teams' in merged.columns else 'team'
@@ -990,7 +1038,15 @@ def bowler_boundary_leakage_by_phase(df_):
         total_runs = g['runs.total'].sum()
         boundaries = g[g['runs.batter'].isin([4,6])]['runs.batter'].count()
         pct = (boundaries / total_runs * 100) if total_runs > 0 else 0
-        out_rows.append({'phase': phase, 'Innings': f"Innings {inn}", 'Bowler': bowler, 'Boundaries Conceded': boundaries, 'Phase Runs': total_runs, 'Leakage %': round(pct,2)})
+        # Handle inn which can be string ("Innings 1") or int (1)
+        if isinstance(inn, str) and inn.startswith('Innings'):
+            innings_label = inn
+        else:
+            try:
+                innings_label = f"Innings {int(inn)}"
+            except (ValueError, TypeError):
+                innings_label = str(inn)
+        out_rows.append({'phase': phase, 'Innings': innings_label, 'Bowler': bowler, 'Boundaries Conceded': boundaries, 'Phase Runs': total_runs, 'Leakage %': round(pct,2)})
     if not out_rows: return pd.DataFrame()
     return pd.DataFrame(out_rows).sort_values(['phase','Leakage %'], ascending=[True,False])
 
@@ -999,7 +1055,15 @@ def batter_contribution(df_):
     batter_runs = df_.groupby(['match_id','innings','batter'], observed=True)['runs.batter'].sum().rename('Runs').reset_index()
     merged = batter_runs.merge(innings_total, on=['match_id','innings'], how='left')
     merged['Contribution %'] = (merged['Runs'] / merged['InningsRuns'] * 100).replace([np.inf, np.nan], 0).round(2)
-    merged['Innings'] = merged['innings'].map({1:'Innings 1',2:'Innings 2'})
+    # Handle innings which can be string ("Innings 1") or int (1)
+    def format_innings(val):
+        if isinstance(val, str) and val.startswith('Innings'):
+            return val
+        try:
+            return f"Innings {int(val)}"
+        except (ValueError, TypeError):
+            return str(val)
+    merged['Innings'] = merged['innings'].apply(format_innings)
     agg = merged.groupby(['Innings','batter'], observed=True).agg({'Runs':'sum','InningsRuns':'sum','Contribution %':'mean'}).reset_index()
     agg['Contribution %'] = agg['Contribution %'].round(2)
     return agg[['Innings','batter','Runs','InningsRuns','Contribution %']].sort_values('Contribution %', ascending=False)
