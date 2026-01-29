@@ -148,6 +148,35 @@ def load_data(path=DATA_SOURCE):
         # Load data
         df = pd.read_parquet(path)
         
+        # --- FIX: Season Adjustment immediately after load (before optimization) ---
+        if 'date' in df.columns:
+            df['date'] = pd.to_datetime(df['date'])
+        
+        if 'league' in df.columns and 'date' in df.columns and 'year' in df.columns:
+            # SA20: If Month >= 10, shift to next year (e.g. Dec 2025 -> 2026)
+            mask_sa20 = (df['league'] == 'SA20') & (df['date'].dt.month >= 10)
+            df.loc[mask_sa20, 'year'] = df.loc[mask_sa20, 'year'] + 1
+            
+            # BBL (MBBL/WBBL): If Month <= 4, shift to prev year (e.g. Jan 2021 -> 2020)
+            mask_bbl = (df['league'].isin(['MBBL', 'WBBL'])) & (df['date'].dt.month <= 4)
+            df.loc[mask_bbl, 'year'] = df.loc[mask_bbl, 'year'] - 1
+            
+            # --- FIX: Format Season Display (YYYY/YY) ---
+            # Convert year to string to support "2025/26" format
+            df['year'] = df['year'].astype(str)
+            
+            # SA20: Year is End Year (2026). Display as "2025/26"
+            mask_sa20_all = df['league'] == 'SA20'
+            if mask_sa20_all.any():
+                y_sa20 = pd.to_numeric(df.loc[mask_sa20_all, 'year'])
+                df.loc[mask_sa20_all, 'year'] = (y_sa20 - 1).astype(str) + "/" + y_sa20.astype(str).str[-2:]
+                
+            # BBL: Year is Start Year (2020). Display as "2020/21"
+            mask_bbl_all = df['league'].isin(['MBBL', 'WBBL'])
+            if mask_bbl_all.any():
+                y_bbl = pd.to_numeric(df.loc[mask_bbl_all, 'year'])
+                df.loc[mask_bbl_all, 'year'] = y_bbl.astype(str) + "/" + (y_bbl + 1).astype(str).str[-2:]
+        
         # --- Memory Optimization ---
         if 'phase' in df.columns:
             df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
@@ -167,15 +196,13 @@ def load_data(path=DATA_SOURCE):
         for c in i_cols:
             df[c] = pd.to_numeric(df[c], downcast='integer')
 
-        if 'date' in df.columns:
-            df['date'] = pd.to_datetime(df['date'])
-
         # Ensure is_impact columns exist
         if 'is_impact_batter' not in df.columns: df['is_impact_batter'] = 0
         if 'is_impact_bowler' not in df.columns: df['is_impact_bowler'] = 0
 
         return df
     except Exception as e:
+        print(f"!!! Error in load_data: {e}")
         st.error(f"Data not found or failed to load: {e}")
         return pd.DataFrame()
 
