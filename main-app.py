@@ -650,10 +650,16 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
     sixes = valid[valid['runs.batter'] == 6].groupby(grp_cols, observed=True).size().rename('6s')
     dots = valid[(valid['runs.batter'] == 0) & (valid['wides'] == 0)].groupby(grp_cols, observed=True).size().rename('Dots')
     
+    # Calculate Outs (Times Dismissed)
+    if 'is_batter_out' in valid.columns:
+        outs = valid.groupby(grp_cols, observed=True)['is_batter_out'].sum().rename('Outs')
+    else:
+        outs = pd.Series(0, index=runs.index, name='Outs')
+    
     innings_played = valid.groupby(grp_cols, observed=True)['match_id'].nunique().rename('InningsPlayed')
     
     # Build stats - only include seasons if available and aggregating
-    series_to_concat = [runs, balls, fours, sixes, dots, innings_played]
+    series_to_concat = [runs, balls, fours, sixes, dots, outs, innings_played]
     
     # Count seasons played by each batter (only when aggregating)
     # Count by batter ONLY (not batter+team) so players who changed teams get correct total
@@ -667,8 +673,14 @@ def key_batting(df_, aggregate_seasons=False, season_filter=None):
     stats['4s'] = stats['4s'].astype(int)
     stats['6s'] = stats['6s'].astype(int)
     stats['Dots'] = stats['Dots'].astype(int)
+    stats['Outs'] = stats['Outs'].astype(int)
     stats['SR'] = (stats['Runs'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
-    stats['Avg'] = (stats['Runs'] / stats['InningsPlayed']).replace([np.inf, np.nan], 0).round(2)
+    
+    # Calculate Average: Runs / Outs. If Outs=0, use Runs/1 (or keep as infinity/0). 
+    # Standard: If 0 outs, Avg is undefined. Here we will use Runs/1 to show the runs as average (or handle as inf).
+    # Better logic: if Outs == 0, Avg = Runs.
+    stats['Avg'] = stats.apply(lambda x: x['Runs'] if x['Outs'] == 0 else x['Runs'] / x['Outs'], axis=1).round(2)
+    stats['Dot%'] = (stats['Dots'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
     stats['Dot%'] = (stats['Dots'] / stats['BF'] * 100).replace([np.inf, np.nan], 0).round(2)
     
     # Merge batter_seasons if include_seasons (count per batter, not per batter+team)

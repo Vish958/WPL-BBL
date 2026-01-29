@@ -227,6 +227,7 @@ def process_data(inference_power_surge=True):
                             'ball_float': ball_float,
                             'is_impact_batter': is_impact_batter,
                             'is_impact_bowler': is_impact_bowler,
+                            'is_batter_out': 1 if any(w.get('player_out') == batter_name for w in (d.get('wickets') or [])) else 0,
                             'winner': winner,
                             'win_by_wickets': win_by_wickets,
                             'win_by_runs': win_by_runs
@@ -252,7 +253,7 @@ def process_data(inference_power_surge=True):
         df = pd.DataFrame(rows)
         df['created'] = pd.to_datetime(df['created'])
         # ensure numeric columns
-        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count', 'is_impact_batter', 'is_impact_bowler']:
+        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count', 'is_impact_batter', 'is_impact_bowler', 'is_batter_out']:
             if c not in df.columns:
                 df[c] = 0
         df.to_parquet(DATA_DEST, index=False)
