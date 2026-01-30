@@ -711,16 +711,23 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
         # Ensure both series have proper index for addition
         # Reset index to align for addition, then set back
         batter_outs_df = batter_outs.reset_index()
+        batter_outs_df.columns = list(grp_cols) + ['is_batter_out']
         ns_outs_df = ns_outs.reset_index()
         
         # Merge on grouping columns to combine outs
+        # Check that ns_outs_df has the required columns matching grp_cols
         if not ns_outs_df.empty and len(ns_outs_df.columns) > 1:
-            combined = batter_outs_df.merge(ns_outs_df, on=grp_cols, how='outer', suffixes=('_batter', '_ns'))
-            combined = combined.fillna(0)
-            # Sum the two out columns
-            out_cols = [c for c in combined.columns if c not in grp_cols]
-            combined['Outs'] = combined[out_cols].sum(axis=1)
-            outs = combined.set_index(grp_cols)['Outs']
+            # Rename columns to match grp_cols + 'Outs'
+            ns_outs_df.columns = list(grp_cols) + ['ns_outs']
+            # Check that all grp_cols exist in both DataFrames before merging
+            if all(col in ns_outs_df.columns for col in grp_cols) and all(col in batter_outs_df.columns for col in grp_cols):
+                combined = batter_outs_df.merge(ns_outs_df, on=grp_cols, how='outer', suffixes=('_batter', '_ns'))
+                combined = combined.fillna(0)
+                # Sum the two out columns
+                combined['Outs'] = combined['is_batter_out'] + combined['ns_outs']
+                outs = combined.set_index(grp_cols)['Outs']
+            else:
+                outs = batter_outs.rename('Outs')
         else:
             outs = batter_outs.rename('Outs')
     else:
