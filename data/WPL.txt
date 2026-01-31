@@ -1,6 +1,6 @@
 
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 83 Women's Premier League matches.
+archive contains 85 Women's Premier League matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -22,6 +22,8 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-01-30 - club - WPL - female - 1513700 - Gujarat Giants vs Mumbai Indians
+2026-01-29 - club - WPL - female - 1513699 - UP Warriorz vs Royal Challengers Bengaluru
 2026-01-27 - club - WPL - female - 1513698 - Gujarat Giants vs Delhi Capitals
 2026-01-26 - club - WPL - female - 1513697 - Mumbai Indians vs Royal Challengers Bengaluru
 2026-01-24 - club - WPL - female - 1513696 - Royal Challengers Bengaluru vs Delhi Capitals
