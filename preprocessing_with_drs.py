@@ -241,7 +241,7 @@ def process_data_with_drs(inference_power_surge=True):
                             'runs.total': d.get('runs', {}).get('total', 0),
                             'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
                                 'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
-                                'caught and bowled', 'handled the ball'
+                                'caught and bowled', 'handled the ball', 'run out', 'obstructing the field'
                             ]),
                             'extras_type': ','.join([k for k in ['wides','noballs','byes','legbyes'] if k in extras]) or None,
                             'is_valid_delivery': 1 if is_valid else 0,

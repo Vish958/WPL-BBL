@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 2026-01-29")
+st.markdown("📅 Last updated: 2026-01-31")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -97,7 +97,13 @@ if selected_teams:
 
 # Metric selection
 st.sidebar.markdown("---")
-metric_choice = st.sidebar.radio("Select Metric", ["Powerplay Score Tracker", "DRS Analysis"])
+metric_choice = st.sidebar.radio("Select Metric", [
+    "Powerplay Score Tracker", 
+    "DRS Analysis",
+    "Super Over Analysis",
+    "Innings Progression",
+    "Franchise Debut Tracker"
+])
 
 if fdf.empty:
     st.warning("No data for selected filters.")
@@ -790,6 +796,439 @@ elif metric_choice == "DRS Analysis":
                                     title="Reviews Distribution (Top 10 Batters)")
                         st.plotly_chart(fig, use_container_width=True)
 
-st.markdown("---")
-st.markdown("*DRS data extracted from Cricsheet JSON files.*")
+# =========================================
+# SUPER OVER ANALYSIS
+# =========================================
+elif metric_choice == "Super Over Analysis":
+    st.subheader("🔥 Super Over Analysis")
+    st.write("Analysis of super over performances across matches")
+    
+    # Filter super over innings (innings >= 3) - use FULL df, not filtered fdf
+    super_overs = df[df['innings'] >= 3].copy()
+    
+    # Apply league/year filters only if selected
+    if selected_leagues:
+        super_overs = super_overs[super_overs['league'].isin(selected_leagues)]
+    if selected_years:
+        super_overs = super_overs[super_overs['year'].isin(selected_years)]
+    
+    if super_overs.empty:
+        st.info("No super over matches found for selected filters.")
+    else:
+        # Load eliminator data from JSON files (for tied matches, eliminator = winner)
+        @st.cache_data
+        def load_eliminators():
+            import os
+            from glob import glob
+            import json
+            elim_map = {}
+            files = glob(os.path.join(JSON_DIR, "*.json"))
+            for file in files:
+                try:
+                    with open(file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    match_id = os.path.basename(file).split('.')[0]
+                    outcome = data.get('info', {}).get('outcome', {})
+                    # For super overs, winner is in 'eliminator' field
+                    winner = outcome.get('winner') or outcome.get('eliminator')
+                    elim_map[match_id] = winner
+                except Exception:
+                    continue
+            return elim_map
+        
+        eliminator_map = load_eliminators()
+        
+        # Get unique super over matches
+        so_matches = super_overs['match_id'].unique()
+        st.write(f"**Total Super Over Matches: {len(so_matches)}**")
+        
+        tab1, tab2, tab3, tab4 = st.tabs(["📋 Match List", "🏏 Top Batters", "🎯 Top Bowlers", "📊 Team Stats"])
+        
+        with tab1:
+            # Match list with super over details
+            match_details = []
+            for match_id in so_matches:
+                match_so = super_overs[super_overs['match_id'] == match_id]
+                match_info = df[df['match_id'] == match_id].iloc[0]
+                
+                for inn in match_so['innings'].unique():
+                    inn_data = match_so[match_so['innings'] == inn]
+                    team = inn_data['team'].iloc[0] if not inn_data.empty else 'Unknown'
+                    runs = inn_data['runs.total'].sum()
+                    wickets = inn_data['wicket_count'].sum()
+                    balls = inn_data['is_valid_delivery'].sum()
+                    
+                    match_details.append({
+                        'Match': str(match_info['teams']),
+                        'Date': pd.to_datetime(match_info['date']).date(),
+                        'League': str(match_info['league']),
+                        'Team': str(team),
+                        'SO Runs': runs,
+                        'SO Wickets': wickets,
+                        'SO Balls': balls,
+                        'match_id': match_id
+                    })
+            
+            match_df = pd.DataFrame(match_details)
+            if not match_df.empty:
+                # Add winner info from eliminator map (handles tied matches correctly)
+                match_df['Winner'] = match_df['match_id'].astype(str).map(eliminator_map)
+                match_df = match_df.sort_values('Date', ascending=False)
+                st.dataframe(match_df[['Match', 'Date', 'League', 'Team', 'SO Runs', 'SO Wickets', 'Winner']], 
+                           use_container_width=True)
+        
+        with tab2:
+            # Top batters in super overs
+            batter_stats = super_overs.groupby('batter', observed=True).agg(
+                SO_Matches=('match_id', 'nunique'),
+                SO_Runs=('runs.batter', 'sum'),
+                SO_Balls=('is_valid_delivery', 'sum'),
+                SO_4s=('runs.batter', lambda x: (x == 4).sum()),
+                SO_6s=('runs.batter', lambda x: (x == 6).sum())
+            ).reset_index()
+            batter_stats['SO_SR'] = (batter_stats['SO_Runs'] / batter_stats['SO_Balls'] * 100).replace([np.inf, np.nan], 0).round(1)
+            batter_stats = batter_stats.rename(columns={'batter': 'Batter'})
+            batter_stats = batter_stats.sort_values('SO_Runs', ascending=False)
+            
+            st.dataframe(batter_stats.head(20), use_container_width=True)
+            
+            fig = px.bar(batter_stats.head(15), x='Batter', y='SO_Runs', 
+                        color='SO_SR', color_continuous_scale='RdYlGn',
+                        title="Top Super Over Run Scorers")
+            fig.update_xaxes(tickangle=45)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with tab3:
+            # Top bowlers in super overs
+            bowler_stats = super_overs.groupby('bowler', observed=True).agg(
+                SO_Matches=('match_id', 'nunique'),
+                SO_Runs_Conceded=('runs.total', 'sum'),
+                SO_Wickets=('wicket_count', 'sum'),
+                SO_Balls=('is_valid_delivery', 'sum')
+            ).reset_index()
+            bowler_stats['SO_Econ'] = (bowler_stats['SO_Runs_Conceded'] / (bowler_stats['SO_Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
+            bowler_stats = bowler_stats.rename(columns={'bowler': 'Bowler'})
+            bowler_stats = bowler_stats.sort_values('SO_Wickets', ascending=False)
+            
+            st.dataframe(bowler_stats.head(20), use_container_width=True)
+            
+            fig = px.bar(bowler_stats.head(15), x='Bowler', y='SO_Wickets',
+                        color='SO_Econ', color_continuous_scale='RdYlGn_r',
+                        title="Top Super Over Wicket Takers")
+            fig.update_xaxes(tickangle=45)
+            st.plotly_chart(fig, use_container_width=True)
+        
+        with tab4:
+            # Team super over win %
+            # Get SO match results using eliminator_map
+            so_team_stats = []
+            for match_id in so_matches:
+                match_data = df[df['match_id'] == match_id]
+                # Use eliminator_map for correct winner (handles tied matches)
+                winner = eliminator_map.get(str(match_id))
+                teams_str = match_data['teams'].iloc[0] if not match_data.empty else ''
+                
+                # Parse teams
+                parts = str(teams_str).replace(' vs ', ' v ').split(' v ')
+                if len(parts) == 2:
+                    for team in parts:
+                        team = team.strip()
+                        so_team_stats.append({
+                            'Team': team,
+                            'Played': 1,
+                            'Won': 1 if team == winner else 0
+                        })
+            
+            if so_team_stats:
+                team_df = pd.DataFrame(so_team_stats)
+                team_summary = team_df.groupby('Team').agg(
+                    SO_Played=('Played', 'sum'),
+                    SO_Won=('Won', 'sum')
+                ).reset_index()
+                team_summary['SO_Win%'] = (team_summary['SO_Won'] / team_summary['SO_Played'] * 100).round(1)
+                team_summary = team_summary.sort_values('SO_Played', ascending=False)
+                
+                st.dataframe(team_summary, use_container_width=True)
+                
+                fig = px.bar(team_summary, x='Team', y='SO_Win%', 
+                            color='SO_Played', color_continuous_scale='Blues',
+                            title="Super Over Win % by Team")
+                fig.update_xaxes(tickangle=45)
+                st.plotly_chart(fig, use_container_width=True)
 
+
+# =========================================
+# INNINGS PROGRESSION
+# =========================================
+elif metric_choice == "Innings Progression":
+    st.subheader("📈 Innings Progression")
+    st.write("Phase-by-phase breakdown of innings")
+    st.info("**Phases:** Powerplay (Overs 1-6), Middle (Overs 7-15), Death (Overs 16-20)")
+    
+    # Filter to regular innings only (exclude super overs)
+    regular_innings = fdf[fdf['innings'].isin([1, 2])].copy()
+    
+    if regular_innings.empty:
+        st.info("No match data available for selected filters.")
+    else:
+        # Helper function for phase stats
+        def get_phase_stats(data, phase_name, over_start, over_end):
+            phase_data = data[(data['over'] >= over_start) & (data['over'] <= over_end)]
+            if phase_data.empty:
+                return None
+            runs = phase_data['runs.total'].sum()
+            wickets = phase_data['wicket_count'].sum()
+            balls = phase_data['is_valid_delivery'].sum()
+            rr = (runs / (balls / 6)) if balls > 0 else 0
+            return {
+                'Phase': phase_name,
+                'Overs': f"{over_start+1}-{over_end+1}",
+                'Runs': int(runs),
+                'Wickets': int(wickets),
+                'Balls': int(balls),
+                'RR': round(rr, 2)
+            }
+        
+        view_mode = st.radio("View Mode", ["📊 All Matches Summary", "🔍 Single Match Detail"], horizontal=True)
+        
+        if view_mode == "📊 All Matches Summary":
+            # Show all matches at once grouped by team
+            st.markdown("### All Matches Phase Breakdown")
+            
+            # Get unique matches and teams
+            matches = regular_innings.groupby(['match_id', 'teams', 'date', 'team', 'innings'], observed=True).size().reset_index()
+            
+            all_match_phases = []
+            for _, row in matches.iterrows():
+                match_id = row['match_id']
+                inn_num = row['innings']
+                team = row['team']
+                match_date = pd.to_datetime(row['date']).strftime('%d %b %Y')
+                opponent = str(row['teams']).replace(' vs ', ' v ').split(' v ')
+                opponent = [t.strip() for t in opponent if t.strip() != str(team)]
+                opponent = opponent[0] if opponent else 'Unknown'
+                
+                inn_data = regular_innings[(regular_innings['match_id'] == match_id) & 
+                                           (regular_innings['innings'] == inn_num)]
+                
+                pp = get_phase_stats(inn_data, 'Powerplay', 0, 5)
+                mid = get_phase_stats(inn_data, 'Middle', 6, 14)
+                death = get_phase_stats(inn_data, 'Death', 15, 19)
+                
+                total_runs = inn_data['runs.total'].sum()
+                total_wkts = inn_data['wicket_count'].sum()
+                
+                all_match_phases.append({
+                    'Date': match_date,
+                    'Team': str(team),
+                    'Opponent': opponent,
+                    'Innings': '1st' if inn_num == 1 else '2nd',
+                    'Total': f"{int(total_runs)}/{int(total_wkts)}",
+                    'PP': f"{pp['Runs']}/{pp['Wickets']} ({pp['RR']})" if pp else '-',
+                    'Middle': f"{mid['Runs']}/{mid['Wickets']} ({mid['RR']})" if mid else '-',
+                    'Death': f"{death['Runs']}/{death['Wickets']} ({death['RR']})" if death else '-',
+                    'PP_Runs': pp['Runs'] if pp else 0,
+                    'Mid_Runs': mid['Runs'] if mid else 0,
+                    'Death_Runs': death['Runs'] if death else 0,
+                })
+            
+            phase_df = pd.DataFrame(all_match_phases)
+            phase_df = phase_df.sort_values('Date', ascending=False)
+            
+            # Display table
+            st.dataframe(phase_df[['Date', 'Team', 'Opponent', 'Innings', 'Total', 'PP', 'Middle', 'Death']], 
+                        use_container_width=True)
+            
+            # Summary stats
+            st.markdown("---")
+            st.markdown("### Average Phase Performance")
+            
+            # Calculate averages by team
+            if selected_teams:
+                team_filter = phase_df['Team'].isin([str(t) for t in selected_teams])
+                summary_df = phase_df[team_filter].copy()
+            else:
+                summary_df = phase_df.copy()
+            
+            if not summary_df.empty:
+                team_summary = summary_df.groupby('Team').agg(
+                    Matches=('Date', 'count'),
+                    Avg_PP_Runs=('PP_Runs', 'mean'),
+                    Avg_Mid_Runs=('Mid_Runs', 'mean'),
+                    Avg_Death_Runs=('Death_Runs', 'mean')
+                ).reset_index()
+                team_summary['Avg_PP_Runs'] = team_summary['Avg_PP_Runs'].round(1)
+                team_summary['Avg_Mid_Runs'] = team_summary['Avg_Mid_Runs'].round(1)
+                team_summary['Avg_Death_Runs'] = team_summary['Avg_Death_Runs'].round(1)
+                
+                st.dataframe(team_summary, use_container_width=True)
+                
+                # Chart
+                import plotly.graph_objects as go
+                fig = go.Figure()
+                for team in team_summary['Team'].unique():
+                    team_data = team_summary[team_summary['Team'] == team].iloc[0]
+                    fig.add_trace(go.Bar(
+                        name=str(team),
+                        x=['Powerplay', 'Middle', 'Death'],
+                        y=[team_data['Avg_PP_Runs'], team_data['Avg_Mid_Runs'], team_data['Avg_Death_Runs']],
+                        text=[team_data['Avg_PP_Runs'], team_data['Avg_Mid_Runs'], team_data['Avg_Death_Runs']],
+                        textposition='outside'
+                    ))
+                fig.update_layout(title="Average Runs by Phase", barmode='group')
+                st.plotly_chart(fig, use_container_width=True)
+        
+        else:
+            # Single match detail view (original functionality)
+            match_options = regular_innings.groupby(['match_id', 'teams', 'date'], observed=True).size().reset_index()
+            match_options['Match Label'] = match_options.apply(
+                lambda r: f"{r['teams']} ({pd.to_datetime(r['date']).strftime('%d %b %Y')})", axis=1
+            )
+            match_options = match_options.sort_values('date', ascending=False)
+            
+            selected_match = st.selectbox("Select Match", match_options['Match Label'].tolist())
+            
+            if selected_match:
+                match_id = match_options[match_options['Match Label'] == selected_match]['match_id'].iloc[0]
+                match_data = regular_innings[regular_innings['match_id'] == match_id]
+                
+                col1, col2 = st.columns(2)
+                
+                for idx, innings_num in enumerate([1, 2]):
+                    inn_data = match_data[match_data['innings'] == innings_num]
+                    if inn_data.empty:
+                        continue
+                    
+                    team = inn_data['team'].iloc[0]
+                    
+                    phases = [
+                        get_phase_stats(inn_data, 'Powerplay', 0, 5),
+                        get_phase_stats(inn_data, 'Middle', 6, 14),
+                        get_phase_stats(inn_data, 'Death', 15, 19)
+                    ]
+                    phases = [p for p in phases if p]
+                    
+                    with col1 if idx == 0 else col2:
+                        st.markdown(f"### Innings {innings_num}: {team}")
+                        
+                        total_runs = inn_data['runs.total'].sum()
+                        total_wickets = inn_data['wicket_count'].sum()
+                        st.markdown(f"**Total: {int(total_runs)}/{int(total_wickets)}**")
+                        
+                        for phase in phases:
+                            st.markdown(f"""
+                            **{phase['Phase']} (Overs {phase['Overs']}):** {phase['Runs']}/{phase['Wickets']} (RR: {phase['RR']})
+                            """)
+                        
+                        # Progress chart
+                        if phases:
+                            phase_df = pd.DataFrame(phases)
+                            fig = px.bar(phase_df, x='Phase', y='Runs', 
+                                        text='Runs', color='RR',
+                                        color_continuous_scale='RdYlGn',
+                                        title=f"{team} Phase Breakdown")
+                            fig.update_traces(textposition='outside')
+                            st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# FRANCHISE DEBUT TRACKER
+# =========================================
+elif metric_choice == "Franchise Debut Tracker":
+    st.subheader("🆕 Franchise Debut Tracker")
+    st.write("Track player debuts across different franchises")
+    
+    # Apply league filter first - use filtered data based on sidebar selection
+    if selected_leagues:
+        filtered_df = df[df['league'].isin(selected_leagues)]
+        st.info(f"Showing data for: {', '.join(selected_leagues)}")
+    else:
+        filtered_df = df.copy()
+        st.info("No league selected - showing all leagues. Select a league to filter teams.")
+    
+    # Get player-team first appearances (filtered by league)
+    # For batters: 'team' = batting team = batter's team (correct)
+    player_team_first = filtered_df.groupby(['batter', 'team', 'league'], observed=True).agg(
+        First_Match_Date=('date', 'min'),
+        Matches_Played=('match_id', 'nunique')
+    ).reset_index()
+    player_team_first = player_team_first.rename(columns={'batter': 'Player', 'team': 'Team', 'league': 'League'})
+    
+    # For bowlers: use 'bowling_team' = bowler's actual team
+    bowler_team_first = filtered_df.groupby(['bowler', 'bowling_team', 'league'], observed=True).agg(
+        First_Match_Date=('date', 'min'),
+        Matches_Played=('match_id', 'nunique')
+    ).reset_index()
+    bowler_team_first = bowler_team_first.rename(columns={'bowler': 'Player', 'bowling_team': 'Team', 'league': 'League'})
+    
+    # Combine batter and bowler data
+    all_player_team = pd.concat([player_team_first, bowler_team_first]).groupby(['Player', 'Team', 'League'], observed=True).agg(
+        First_Match_Date=('First_Match_Date', 'min'),
+        Matches_Played=('Matches_Played', 'max')
+    ).reset_index()
+    
+    # Get teams in selected leagues only
+    league_teams = sorted(filtered_df['team'].unique())
+    
+    tab1, tab2 = st.tabs(["🔍 Player Search", "📋 Debut List"])
+    
+    with tab1:
+        # Search for a player - show only players from filtered leagues
+        all_players = sorted(all_player_team['Player'].unique())
+        selected_player = st.selectbox("Select Player", all_players, key="debut_player")
+        
+        if selected_player:
+            player_data = all_player_team[all_player_team['Player'] == selected_player]
+            teams_played = [str(t) for t in player_data['Team'].tolist()]
+            
+            st.markdown(f"### {selected_player}")
+            st.write(f"**Teams played for in selected league(s):** {len(teams_played)}")
+            
+            # Show teams played with league
+            player_data_sorted = player_data.sort_values('First_Match_Date')
+            player_data_sorted['First_Match_Date'] = pd.to_datetime(player_data_sorted['First_Match_Date']).dt.date
+            st.dataframe(player_data_sorted[['Team', 'League', 'First_Match_Date', 'Matches_Played']], 
+                        use_container_width=True)
+            
+            # Show teams NOT played for (only from filtered leagues)
+            not_played = [str(t) for t in league_teams if str(t) not in teams_played]
+            
+            if not_played:
+                st.markdown(f"**Teams yet to debut for ({len(not_played)}):**")
+                cols = st.columns(3)
+                for i, team in enumerate(sorted(not_played)):
+                    cols[i % 3].write(f"• {team}")
+            else:
+                st.success("Has played for all teams in selected league(s)!")
+    
+    with tab2:
+        # Recent debuts
+        st.markdown("### Recent Franchise Debuts")
+        
+        if selected_years:
+            year_filter = all_player_team['First_Match_Date'].dt.year.isin(selected_years)
+            recent_debuts = all_player_team[year_filter].copy()
+        else:
+            recent_debuts = all_player_team.copy()
+        
+        recent_debuts = recent_debuts.sort_values('First_Match_Date', ascending=False)
+        recent_debuts['First_Match_Date'] = pd.to_datetime(recent_debuts['First_Match_Date']).dt.date
+        
+        st.dataframe(recent_debuts.head(100)[['Player', 'Team', 'League', 'First_Match_Date', 'Matches_Played']], 
+                    use_container_width=True)
+        
+        # Stats summary
+        st.markdown("---")
+        st.markdown("### Debut Stats by Team")
+        
+        team_debuts = recent_debuts.groupby('Team', observed=True).size().reset_index(name='Total_Debuts')
+        team_debuts = team_debuts.sort_values('Total_Debuts', ascending=False)
+        
+        fig = px.bar(team_debuts.head(15), x='Team', y='Total_Debuts',
+                    title="Teams with Most Player Debuts")
+        fig.update_xaxes(tickangle=45)
+        st.plotly_chart(fig, use_container_width=True)
+
+
+st.markdown("---")
+st.markdown("*Data extracted from Cricsheet JSON files.*")
