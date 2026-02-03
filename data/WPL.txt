@@ -22,6 +22,7 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-02-01 - club - WPL - female - 1513701 - UP Warriorz vs Delhi Capitals
 2026-01-30 - club - WPL - female - 1513700 - Gujarat Giants vs Mumbai Indians
 2026-01-29 - club - WPL - female - 1513699 - UP Warriorz vs Royal Challengers Bengaluru
 2026-01-27 - club - WPL - female - 1513698 - Gujarat Giants vs Delhi Capitals

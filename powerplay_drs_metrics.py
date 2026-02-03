@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 2026-01-31")
+st.markdown("📅 Last updated: 2026-02-03")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -266,7 +266,7 @@ def drs_success_rate(df_):
 
 def drs_reviews_lost(df_):
     """
-    Count reviews lost (failed) by team.
+    Count reviews lost (failed) by team
     """
     if 'has_review' not in df_.columns or 'review_decision' not in df_.columns:
         return pd.DataFrame()
