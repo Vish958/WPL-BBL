@@ -162,6 +162,10 @@ def process_data_with_drs(inference_power_surge=True):
             date = pd.to_datetime(info.get('dates', [None])[0]).date()
             year = pd.to_datetime(date).year
             event = info.get('event', {}).get('name', '') if info.get('event') else info.get('event', '')
+            # Extract event stage (Eliminator, Qualifier 1/2, Final, etc.)
+            event_stage = ''
+            if isinstance(info.get('event'), dict):
+                event_stage = info.get('event', {}).get('stage', '')
             gender = info.get('gender', 'female')
             league = detect_league(event, gender)
 
@@ -210,7 +214,7 @@ def process_data_with_drs(inference_power_surge=True):
                             'legbyes': extras.get('legbyes', 0),
                             'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
                                 'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
-                                'caught and bowled', 'handled the ball', 'run out', 'obstructing the field'
+                                'caught and bowled', 'handled the ball'  # Excludes run outs - not bowler's wickets
                             ])
                         })
                         
@@ -241,7 +245,7 @@ def process_data_with_drs(inference_power_surge=True):
                             'runs.total': d.get('runs', {}).get('total', 0),
                             'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
                                 'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
-                                'caught and bowled', 'handled the ball', 'run out', 'obstructing the field','retired out'
+                                'caught and bowled', 'handled the ball'  # Excludes 'run out' and 'obstructing the field' - not bowler's wickets
                             ]),
                             'extras_type': ','.join([k for k in ['wides','noballs','byes','legbyes'] if k in extras]) or None,
                             'is_valid_delivery': 1 if is_valid else 0,
@@ -251,6 +255,7 @@ def process_data_with_drs(inference_power_surge=True):
                             'leg_byes': extras.get('legbyes', 0),
                             'phase': None,
                             'league': league,
+                            'event_stage': event_stage,  # Playoff stage (Eliminator, Qualifier, Final, etc.)
                             'ball_float': ball_float,
                             'is_impact_batter': is_impact_batter,
                             'is_impact_bowler': is_impact_bowler,

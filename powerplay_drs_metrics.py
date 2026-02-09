@@ -17,6 +17,10 @@ st.markdown("📅 Last updated: 2026-02-03")
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
 
+# Force clear cache on startup to ensure new player matching logic is used
+# Remove this after confirming the fix works
+st.cache_data.clear()
+
 @st.cache_data
 def load_venue_data():
     """Load venue data from JSON files and create a match_id -> venue mapping."""
@@ -40,8 +44,8 @@ def load_venue_data():
     
     return venue_map
 
-@st.cache_data
-def load_data(path=DATA_SOURCE):
+@st.cache_data(ttl=3600)  # 1 hour TTL
+def load_data(path=DATA_SOURCE, _cache_version=6):  # Version 6: Added event_stage column for playoff filtering
     try:
         df = pd.read_parquet(path)
         
@@ -63,7 +67,233 @@ def load_data(path=DATA_SOURCE):
         st.error(f"Data not found or failed to load: {e}")
         return pd.DataFrame()
 
-df = load_data()
+# =========================================
+# PLAYER DATA LOADING (FOR PACE/SPIN & BATTING HAND)
+# =========================================
+PACE_KEYWORDS = ['fast', 'medium', 'pace']
+SPIN_KEYWORDS = ['offbreak', 'legbreak', 'orthodox', 'wrist-spin', 'slow']
+
+def classify_bowling_type(style):
+    """Classify bowling style as Pace, Spin, or Unknown"""
+    if pd.isna(style):
+        return 'Unknown'
+    style_lower = str(style).lower()
+    # Check for pace keywords first (medium can be in spin names too)
+    if any(kw in style_lower for kw in ['fast', 'medium-fast', 'medium']):
+        if 'offbreak' not in style_lower and 'legbreak' not in style_lower and 'orthodox' not in style_lower:
+            return 'Pace'
+    if any(kw in style_lower for kw in SPIN_KEYWORDS):
+        return 'Spin'
+    if 'medium' in style_lower:
+        return 'Pace'
+    return 'Unknown'
+
+@st.cache_data(ttl=3600)  # Cache for 1 hour, will refresh on restart
+def load_player_data(_cache_version=9):  # Version 9: Fixed batting_hand KeyError in manual overrides
+    """
+    Load player data from WPL and IPL Excel files for mapping bowling type and batting hand.
+    Creates multiple index keys to handle name format differences:
+    - Full name (lowercase): "meg lanning"
+    - Last name only: "lanning"
+    - First initial + last name: "m lanning" (to match "MM Lanning" -> "M Lanning")
+    - Initials pattern: "mm lanning" (to handle abbreviated names)
+    """
+    import os
+    player_data = {}
+    errors = []
+    
+    # Try multiple ways to find the base directory
+    possible_dirs = [
+        os.getcwd(),  # Current working directory (where streamlit is run from)
+        os.path.dirname(os.path.abspath(__file__)) if '__file__' in dir() else None,
+        '/Users/vishwesh/Documents/WPL&BBL',  # Fallback hardcoded path
+    ]
+    
+    base_dir = None
+    for d in possible_dirs:
+        if d and os.path.exists(os.path.join(d, 'WPL Players.xlsx')):
+            base_dir = d
+            break
+    
+    if not base_dir:
+        errors.append(f"Could not find Excel files in any of: {possible_dirs}")
+        return player_data  # Return empty
+    
+    def add_player_entry(name, batting_hand, bowling_style, player_data_dict):
+        """Add a player with multiple name variations for matching."""
+        name = str(name).strip()
+        if not name or name.lower() == 'nan':
+            return
+            
+        entry = {
+            'batting_hand': batting_hand if pd.notna(batting_hand) else 'Unknown',
+            'bowling_type': classify_bowling_type(bowling_style),
+            'full_name': name
+        }
+        
+        # Key 1: Full name lowercase (e.g., "meg lanning")
+        player_data_dict[name.lower()] = entry
+        
+        parts = name.split()
+        if len(parts) >= 2:
+            first_name = parts[0]
+            last_name = parts[-1]
+            
+            # Key 2: Last name only (e.g., "lanning")
+            # Only add if not already present (avoid overwriting)
+            if last_name.lower() not in player_data_dict:
+                player_data_dict[last_name.lower()] = entry
+            
+            # Key 3: First initial + last name (e.g., "m lanning")
+            # Only add if not already present (avoid IPL overwriting WPL)
+            first_initial = first_name[0].lower()
+            initial_key = f"{first_initial} {last_name.lower()}"
+            if initial_key not in player_data_dict:
+                player_data_dict[initial_key] = entry
+            
+            # Key 4: Double initial + last name (handle "MM Lanning" format)
+            # Common in cricket data where player has middle name initial
+            double_initial_key = f"{first_initial}{first_initial} {last_name.lower()}"
+            if double_initial_key not in player_data_dict:
+                player_data_dict[double_initial_key] = entry
+            
+            # Key 5: First initial only (no space, e.g., "mlanning")
+            no_space_key = f"{first_initial}{last_name.lower()}"
+            if no_space_key not in player_data_dict:
+                player_data_dict[no_space_key] = entry
+            
+        elif len(parts) == 1:
+            # Single name player (e.g., "Harmanpreet")
+            player_data_dict[parts[0].lower()] = entry
+    
+    try:
+        # Load WPL players
+        wpl_path = os.path.join(base_dir, 'WPL Players.xlsx')
+        wpl_df = pd.read_excel(wpl_path, engine='openpyxl')
+        for _, row in wpl_df.iterrows():
+            add_player_entry(
+                row['Name'],
+                row.get('Batting Styles'),
+                row.get('Bowling Styles'),
+                player_data
+            )
+    except Exception as e:
+        errors.append(f"WPL load error: {e}")
+    
+    try:
+        # Load IPL players
+        ipl_path = os.path.join(base_dir, 'IPL Player.xlsx')
+        ipl_df = pd.read_excel(ipl_path, engine='openpyxl')
+        for _, row in ipl_df.iterrows():
+            add_player_entry(
+                row['Name'],
+                row.get('Batting Styles'),
+                row.get('Bowling Styles'),
+                player_data
+            )
+    except Exception as e:
+        errors.append(f"IPL load error: {e}")
+    
+    
+    # Manual overrides for players with name variations between JSON and Excel
+    # K Goud (JSON) = Kranti Gaud (Excel) - Pace bowler (right-arm medium-fast)
+    # S Asha (JSON) = Asha Sobhana (Excel) - Spin bowler (legbreak googly)
+    manual_overrides = {
+        # K Goud -> Kranti Gaud (Pace)
+        'k goud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
+        'kgoud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
+        'goud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},  
+        'k gaud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
+        'kgaud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
+        # S Asha -> Asha Sobhana (Spin)
+        's asha': {'bowling_type': 'Spin', 'full_name': 'Asha Sobhana', 'batting_hand': 'Unknown'},
+        'sasha': {'bowling_type': 'Spin', 'full_name': 'Asha Sobhana', 'batting_hand': 'Unknown'},
+        # Add full Asha Sobhana variations too (prioritize over "asha" key from Excel)
+        'asha sobhana': {'bowling_type': 'Spin', 'full_name': 'Asha Sobhana', 'batting_hand': 'Unknown'},
+        'a sobhana': {'bowling_type': 'Spin', 'full_name': 'Asha Sobhana', 'batting_hand': 'Unknown'},
+    }
+    for key, value in manual_overrides.items():
+        if key not in player_data:
+            player_data[key] = value
+    
+    # Store errors for debugging (can be accessed if needed)
+    if errors:
+        player_data['_errors'] = errors
+    
+    return player_data
+
+def normalize_player_name(name):
+    """
+    Normalize a player name from parquet format to matchable format.
+    Handles: "MM Lanning" -> "m lanning", "Shafali Verma" -> "shafali verma"
+    """
+    if pd.isna(name):
+        return None
+    name = str(name).strip().lower()
+    parts = name.split()
+    if len(parts) >= 2:
+        first_part = parts[0]
+        last_name = parts[-1]
+        # Check if first part looks like initials (all caps pattern, 1-3 chars)
+        if len(first_part) <= 3 and first_part.replace('-', '').isalpha():
+            # It's likely initials like "mm", "nm", "ac"
+            first_initial = first_part[0]
+            return [
+                name,  # Original: "mm lanning"
+                f"{first_initial} {last_name}",  # "m lanning"
+                f"{first_initial}{last_name}",  # "mlanning"
+                last_name  # Just last name
+            ]
+        else:
+            # Full first name like "shafali"
+            first_initial = first_part[0]
+            return [
+                name,  # Original
+                f"{first_initial} {last_name}",  # Initial + last
+                f"{first_part[0]}{first_part[0]} {last_name}",  # Double initial
+                last_name
+            ]
+    return [name]
+
+def get_player_bowling_type(player_name, player_data_cache):
+    """Get bowling type (Pace/Spin) for a player"""
+    if pd.isna(player_name):
+        return 'Unknown'
+    
+    # Try all normalized name variations
+    name_variations = normalize_player_name(player_name)
+    if not name_variations:
+        return 'Unknown'
+    
+    for name_key in name_variations:
+        if name_key in player_data_cache:
+            return player_data_cache[name_key]['bowling_type']
+    
+    return 'Unknown'
+
+def get_player_batting_hand(player_name, player_data_cache):
+    """Get batting hand (left/right) for a player"""
+    if pd.isna(player_name):
+        return 'Unknown'
+    
+    # Try all normalized name variations
+    name_variations = normalize_player_name(player_name)
+    if not name_variations:
+        return 'Unknown'
+    
+    for name_key in name_variations:
+        if name_key in player_data_cache:
+            hand = player_data_cache[name_key]['batting_hand']
+            if pd.notna(hand):
+                hand_str = str(hand).lower()
+                if 'left' in hand_str:
+                    return 'Left'
+                elif 'right' in hand_str:
+                    return 'Right'
+    
+    return 'Unknown'
+
+df = load_data(_cache_version=6)  # Version 6: Added event_stage column for playoff filtering
 if df.empty:
     st.stop()
 
@@ -72,6 +302,11 @@ venue_map = load_venue_data()
 if venue_map:
     df['venue'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('venue', 'Unknown'))
     df['city'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('city', 'Unknown'))
+
+# Load player data for pace/spin and batting hand mapping
+player_data_cache = load_player_data(_cache_version=9)
+if player_data_cache:
+    st.sidebar.caption(f"📊 Player mappings: {len(player_data_cache)} entries loaded")
 
 # Sidebar Filters
 st.sidebar.header("Filters")
@@ -100,6 +335,11 @@ st.sidebar.markdown("---")
 metric_choice = st.sidebar.radio("Select Metric", [
     "Powerplay Score Tracker", 
     "DRS Analysis",
+    "Over-by-Over Analysis",
+    "Batter vs Bowler Matchup",
+    "Most Wickets in an Over",
+    "Left-Right Hand Index",
+    "Pace vs Spin Analysis",
     "Super Over Analysis",
     "Innings Progression",
     "Franchise Debut Tracker"
@@ -307,6 +547,10 @@ if metric_choice == "Powerplay Score Tracker":
     with col3:
         show_trend = st.checkbox("📈 Show Trend Chart", value=True)
     
+    # Playoff filter
+    exclude_playoffs = st.checkbox("🏆 Exclude Playoff Matches (Eliminator, Qualifiers, Final)", value=False, 
+                                   help="Filter out playoff matches to analyze only league/group stage performance")
+    
     mode_val = 'batting' if pp_mode == "Batting" else 'bowling'
     # For bowling mode, pass full df (without team filter) and let function filter by bowling_team
     if mode_val == 'bowling':
@@ -316,9 +560,16 @@ if metric_choice == "Powerplay Score Tracker":
             bowling_df = bowling_df[bowling_df['league'].isin(selected_leagues)]
         if selected_years:
             bowling_df = bowling_df[bowling_df['year'].isin(selected_years)]
+        # Exclude playoff matches if checkbox is selected
+        if exclude_playoffs:
+            bowling_df = bowling_df[bowling_df['event_stage'] == '']
         match_stats, season_summary = powerplay_score_tracker(bowling_df, mode=mode_val, filter_teams=selected_teams if selected_teams else None)
     else:
-        match_stats, season_summary = powerplay_score_tracker(fdf, mode=mode_val)
+        # Apply playoff filter to fdf if needed
+        filtered_fdf = fdf.copy()
+        if exclude_playoffs:
+            filtered_fdf = filtered_fdf[filtered_fdf['event_stage'] == '']
+        match_stats, season_summary = powerplay_score_tracker(filtered_fdf, mode=mode_val)
     
     if match_stats.empty:
         st.info("No powerplay data available for selected filters.")
@@ -340,7 +591,7 @@ if metric_choice == "Powerplay Score Tracker":
                 season_summary = season_summary[season_summary['Team'].isin([team1, team2])]
         
         # Tabs
-        tab1, tab2, tab3 = st.tabs(["📋 Match-by-Match", "📊 Season Summary", "🏟️ Venue-wise"])
+        tab1, tab2, tab3, tab4 = st.tabs(["📋 Match-by-Match", "📊 Season Summary", "🏟️ Venue-wise", "🏆 Playoff Matches"])
         
         with tab1:
             if mode_val == 'batting':
@@ -435,6 +686,107 @@ if metric_choice == "Powerplay Score Tracker":
                     st.plotly_chart(fig, use_container_width=True)
             else:
                 st.info("Venue data not available for match-level analysis.")
+        
+        with tab4:
+            st.markdown("##### 🏆 Playoff Matches Analysis")
+            st.caption("View powerplay performance in knockout/playoff matches (Final, Eliminator, etc.)")
+            
+            # Get playoff data
+            if mode_val == 'bowling':
+                playoff_source = bowling_df.copy() if 'bowling_df' in dir() else df.copy()
+            else:
+                playoff_source = fdf.copy()
+            
+            # Filter to only playoff matches
+            playoff_data = playoff_source[playoff_source['event_stage'] != ''].copy()
+            
+            if playoff_data.empty:
+                st.info("No playoff matches found for the selected filters. Try selecting different leagues/years.")
+            else:
+                # Get unique stages for this selection
+                available_stages = sorted(playoff_data['event_stage'].unique())
+                
+                # Stage filter
+                st.markdown("**Filter by Stage:**")
+                stage_options = ["All Playoffs"] + available_stages
+                selected_stage = st.selectbox("Select Stage", stage_options, key="playoff_stage_filter")
+                
+                if selected_stage != "All Playoffs":
+                    playoff_data = playoff_data[playoff_data['event_stage'] == selected_stage]
+                
+                # Calculate powerplay stats for playoff matches
+                playoff_pp = playoff_data[playoff_data['over'] < 6].copy()
+                
+                if playoff_pp.empty:
+                    st.info("No powerplay data available for playoff matches.")
+                else:
+                    if mode_val == 'batting':
+                        # Batting mode - group by batting team (column is 'team')
+                        playoff_stats = playoff_pp.groupby(['match_id', 'team', 'bowling_team', 'date', 'event_stage'], observed=True).agg(
+                            PP_Runs=('runs.total', 'sum'),
+                            PP_Balls=('is_valid_delivery', 'sum'),
+                            PP_Wickets=('wicket_count', 'sum'),
+                            PP_4s=('runs.batter', lambda x: (x == 4).sum()),
+                            PP_6s=('runs.batter', lambda x: (x == 6).sum())
+                        ).reset_index()
+                        playoff_stats['PP_RR'] = (playoff_stats['PP_Runs'] / (playoff_stats['PP_Balls'] / 6)).round(2)
+                        playoff_stats['PP_Boundaries'] = playoff_stats['PP_4s'] + playoff_stats['PP_6s']
+                        playoff_stats = playoff_stats.rename(columns={'team': 'Team', 'bowling_team': 'Opponent', 'event_stage': 'Stage'})
+                        
+                        display_cols = ['Team', 'Opponent', 'Stage', 'date', 'PP_Runs', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Wickets']
+                    else:
+                        # Bowling mode - group by bowling team  
+                        playoff_stats = playoff_pp.groupby(['match_id', 'bowling_team', 'team', 'date', 'event_stage'], observed=True).agg(
+                            PP_Runs_Conceded=('runs.total', 'sum'),
+                            PP_Balls=('is_valid_delivery', 'sum'),
+                            PP_Wickets_Taken=('wicket_count', 'sum'),
+                            PP_Dots=('runs.total', lambda x: (x == 0).sum())
+                        ).reset_index()
+                        playoff_stats['PP_Econ'] = (playoff_stats['PP_Runs_Conceded'] / (playoff_stats['PP_Balls'] / 6)).round(2)
+                        playoff_stats['PP_Dot%'] = ((playoff_stats['PP_Dots'] / playoff_stats['PP_Balls']) * 100).round(1)
+                        playoff_stats = playoff_stats.rename(columns={'bowling_team': 'Team', 'team': 'Against', 'event_stage': 'Stage'})
+                        
+                        display_cols = ['Team', 'Against', 'Stage', 'date', 'PP_Runs_Conceded', 'PP_Econ', 'PP_Dot%', 'PP_Wickets_Taken']
+                    
+                    playoff_stats = playoff_stats.sort_values('date', ascending=False)
+                    playoff_stats = playoff_stats.rename(columns={'date': 'Date'})
+                    
+                    # Show summary metrics
+                    col1, col2, col3 = st.columns(3)
+                    with col1:
+                        st.metric("Total Playoff Matches", playoff_stats['match_id'].nunique())
+                    with col2:
+                        finals_count = len(playoff_stats[playoff_stats['Stage'] == 'Final']) if 'Final' in playoff_stats['Stage'].values else 0
+                        st.metric("Finals", finals_count)
+                    with col3:
+                        eliminators_count = len(playoff_stats[playoff_stats['Stage'] == 'Eliminator']) if 'Eliminator' in playoff_stats['Stage'].values else 0
+                        st.metric("Eliminators", eliminators_count)
+                    
+                    # Show table
+                    st.dataframe(playoff_stats[[c for c in display_cols if c in playoff_stats.columns]], use_container_width=True)
+                    
+                    # Stage-wise summary
+                    st.markdown("##### Stage-wise Summary")
+                    if mode_val == 'batting':
+                        stage_summary = playoff_stats.groupby('Stage', observed=True).agg(
+                            Matches=('match_id', 'nunique'),
+                            Avg_PP_Runs=('PP_Runs', 'mean'),
+                            Avg_PP_RR=('PP_RR', 'mean'),
+                            Total_Boundaries=('PP_Boundaries', 'sum')
+                        ).reset_index()
+                        stage_summary['Avg_PP_Runs'] = stage_summary['Avg_PP_Runs'].round(1)
+                        stage_summary['Avg_PP_RR'] = stage_summary['Avg_PP_RR'].round(2)
+                    else:
+                        stage_summary = playoff_stats.groupby('Stage', observed=True).agg(
+                            Matches=('match_id', 'nunique'),
+                            Avg_Runs_Conceded=('PP_Runs_Conceded', 'mean'),
+                            Avg_Econ=('PP_Econ', 'mean'),
+                            Total_Wickets=('PP_Wickets_Taken', 'sum')
+                        ).reset_index()
+                        stage_summary['Avg_Runs_Conceded'] = stage_summary['Avg_Runs_Conceded'].round(1)
+                        stage_summary['Avg_Econ'] = stage_summary['Avg_Econ'].round(2)
+                    
+                    st.dataframe(stage_summary, use_container_width=True)
 
 
 elif metric_choice == "DRS Analysis":
@@ -795,6 +1147,625 @@ elif metric_choice == "DRS Analysis":
                         fig = px.pie(batter_stats.head(10), values='Total_Reviews', names='Batter',
                                     title="Reviews Distribution (Top 10 Batters)")
                         st.plotly_chart(fig, use_container_width=True)
+# =========================================
+# OVER-BY-OVER ANALYSIS
+# =========================================
+elif metric_choice == "Over-by-Over Analysis":
+    st.subheader("📊 Over-by-Over Analysis")
+    st.write("Identify which batters scored most runs in a single over and which bowlers conceded most")
+    
+    # Additional filters
+    col1, col2 = st.columns(2)
+    with col1:
+        venues = sorted(fdf['venue'].dropna().unique()) if 'venue' in fdf.columns else []
+        selected_venue = st.selectbox("Filter by Venue", ["All Venues"] + list(venues))
+    with col2:
+        obo_years = sorted(fdf['year'].dropna().unique())
+        selected_obo_year = st.selectbox("Filter by Year", ["All Years"] + list(obo_years), key="obo_year")
+    
+    # Apply filters
+    obo_df = fdf.copy()
+    if selected_venue != "All Venues" and 'venue' in obo_df.columns:
+        obo_df = obo_df[obo_df['venue'] == selected_venue]
+    if selected_obo_year != "All Years":
+        obo_df = obo_df[obo_df['year'] == selected_obo_year]
+    
+    # Exclude super overs
+    obo_df = obo_df[obo_df['innings'].isin([1, 2])]
+    
+    if obo_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        tab1, tab2, tab3 = st.tabs(["🏏 Top Run Scorers by Over", "🎯 Most Runs Conceded by Over", "📈 Over-wise Summary"])
+        
+        with tab1:
+            st.markdown("### Batters who scored most runs in a single over")
+            # Group by batter, over, match to find max runs in an over
+            batter_over = obo_df.groupby(['match_id', 'batter', 'over', 'team', 'year'], observed=True).agg(
+                Runs=('runs.batter', 'sum'),
+                Balls=('is_valid_delivery', 'sum')
+            ).reset_index()
+            
+            # Top individual overs
+            top_overs = batter_over.sort_values('Runs', ascending=False).head(50)
+            top_overs = top_overs.rename(columns={'batter': 'Batter', 'over': 'Over', 'team': 'Team', 'year': 'Season'})
+            top_overs['Over'] = top_overs['Over'] + 1  # Display 1-indexed overs
+            
+            st.dataframe(top_overs[['Batter', 'Team', 'Over', 'Runs', 'Balls', 'Season']].astype({'Batter': str, 'Team': str}), 
+                        use_container_width=True)
+            
+            # Aggregate: Which batter has most "big overs" (e.g., 15+ runs)
+            st.markdown("### Batters with most 15+ run overs")
+            big_overs = batter_over[batter_over['Runs'] >= 15].groupby(['batter', 'team'], observed=True).size().reset_index(name='Big_Overs')
+            big_overs = big_overs.sort_values('Big_Overs', ascending=False).head(20)
+            big_overs = big_overs.rename(columns={'batter': 'Batter', 'team': 'Team'})
+            
+            col1, col2 = st.columns([1, 2])
+            with col1:
+                st.dataframe(big_overs.astype({'Batter': str, 'Team': str}), use_container_width=True)
+            with col2:
+                if not big_overs.empty:
+                    fig = px.bar(big_overs.head(15).astype({'Batter': str, 'Team': str}), x='Batter', y='Big_Overs', color='Team',
+                                title="Batters with Most 15+ Run Overs")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+        
+        with tab2:
+            st.markdown("### Bowlers who conceded most runs in a single over")
+            # Group by bowler, over, match
+            bowler_over = obo_df.groupby(['match_id', 'bowler', 'over', 'bowling_team', 'year'], observed=True).agg(
+                Runs_Conceded=('runs.total', 'sum'),
+                Balls=('is_valid_delivery', 'sum'),
+                Wickets=('wicket_count', 'sum')
+            ).reset_index()
+            
+            # Top expensive overs
+            expensive_overs = bowler_over.sort_values('Runs_Conceded', ascending=False).head(50)
+            expensive_overs = expensive_overs.rename(columns={'bowler': 'Bowler', 'over': 'Over', 'bowling_team': 'Team', 'year': 'Season'})
+            expensive_overs['Over'] = expensive_overs['Over'] + 1  # Display 1-indexed
+            
+            st.dataframe(expensive_overs[['Bowler', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].astype({'Bowler': str, 'Team': str}), 
+                        use_container_width=True)
+            
+            # Aggregate: Bowlers with most "expensive overs" (20+ runs)
+            st.markdown("### Bowlers with most 20+ run overs conceded")
+            exp_overs = bowler_over[bowler_over['Runs_Conceded'] >= 20].groupby(['bowler', 'bowling_team'], observed=True).size().reset_index(name='Expensive_Overs')
+            exp_overs = exp_overs.sort_values('Expensive_Overs', ascending=False).head(20)
+            exp_overs = exp_overs.rename(columns={'bowler': 'Bowler', 'bowling_team': 'Team'})
+            
+            col1, col2 = st.columns([1, 2])
+            with col1:
+                st.dataframe(exp_overs.astype({'Bowler': str, 'Team': str}), use_container_width=True)
+            with col2:
+                if not exp_overs.empty:
+                    fig = px.bar(exp_overs.head(15).astype({'Bowler': str, 'Team': str}), x='Bowler', y='Expensive_Overs', color='Team',
+                                title="Bowlers with Most 20+ Run Overs")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+        
+        with tab3:
+            st.markdown("### Average runs per over across all matches")
+            # Overall over-wise stats
+            over_summary = obo_df.groupby('over', observed=True).agg(
+                Total_Runs=('runs.total', 'sum'),
+                Total_Balls=('is_valid_delivery', 'sum'),
+                Total_Wickets=('wicket_count', 'sum'),
+                Matches=('match_id', 'nunique')
+            ).reset_index()
+            over_summary['Avg_Runs'] = (over_summary['Total_Runs'] / over_summary['Matches']).round(2)
+            over_summary['Wicket_Rate'] = (over_summary['Total_Wickets'] / over_summary['Matches']).round(2)
+            over_summary = over_summary.rename(columns={'over': 'Over'})
+            over_summary['Over'] = over_summary['Over'] + 1  # Display 1-indexed
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                fig = px.bar(over_summary, x='Over', y='Avg_Runs', 
+                            title="Average Runs per Over",
+                            color='Avg_Runs', color_continuous_scale='RdYlGn')
+                st.plotly_chart(fig, use_container_width=True)
+            with col2:
+                fig = px.line(over_summary, x='Over', y='Wicket_Rate',
+                             title="Average Wickets per Over", markers=True)
+                st.plotly_chart(fig, use_container_width=True)
+            
+            st.dataframe(over_summary, use_container_width=True)
+
+# =========================================
+# BATTER VS BOWLER MATCHUP
+# =========================================
+elif metric_choice == "Batter vs Bowler Matchup":
+    st.subheader("⚔️ Batter vs Bowler Matchup")
+    st.write("Head-to-head statistics between batters and bowlers")
+    
+    # Additional filters
+    col1, col2 = st.columns(2)
+    with col1:
+        matchup_years = sorted(fdf['year'].dropna().unique())
+        selected_matchup_year = st.selectbox("Filter by Year", ["All Years"] + list(matchup_years), key="matchup_year")
+    with col2:
+        min_balls = st.slider("Minimum Balls Faced", 1, 50, 6)
+    
+    # Apply year filter
+    matchup_df = fdf.copy()
+    if selected_matchup_year != "All Years":
+        matchup_df = matchup_df[matchup_df['year'] == selected_matchup_year]
+    
+    # Exclude super overs
+    matchup_df = matchup_df[matchup_df['innings'].isin([1, 2])]
+    
+    if matchup_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # Calculate matchup stats - count unique innings for matches
+        matchup_stats = matchup_df.groupby(['batter', 'bowler', 'team', 'bowling_team'], observed=True).agg(
+            Runs=('runs.batter', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Dismissals=('wicket_count', 'sum'),
+            Innings=('match_id', 'nunique')
+        ).reset_index()
+        
+        # Filter by minimum balls
+        matchup_stats = matchup_stats[matchup_stats['Balls'] >= min_balls]
+        
+        if matchup_stats.empty:
+            st.info(f"No matchups with {min_balls}+ balls faced.")
+        else:
+            matchup_stats['SR'] = (matchup_stats['Runs'] / matchup_stats['Balls'] * 100).round(2)
+            matchup_stats['Avg'] = matchup_stats.apply(
+                lambda x: round(x['Runs'] / x['Dismissals'], 2) if x['Dismissals'] > 0 else x['Runs'], axis=1
+            )
+            # Convert to string to avoid categorical issues
+            matchup_stats['Batter'] = matchup_stats['batter'].astype(str)
+            matchup_stats['Bowler'] = matchup_stats['bowler'].astype(str)
+            matchup_stats['Batting_Team'] = matchup_stats['team'].astype(str)
+            matchup_stats['Bowling_Team'] = matchup_stats['bowling_team'].astype(str)
+            
+            tab1, tab2, tab3 = st.tabs(["🏏 Top Matchups (Batter Dominant)", "🎯 Top Matchups (Bowler Dominant)", "🔍 Search Matchup"])
+            
+            with tab1:
+                st.markdown("### Batters who dominate specific bowlers")
+                st.caption("Batters with most runs against a bowler without getting dismissed")
+                
+                # High runs, no dismissals
+                batter_dominant = matchup_stats[matchup_stats['Dismissals'] == 0].sort_values('Runs', ascending=False).head(30)
+                if batter_dominant.empty:
+                    batter_dominant = matchup_stats.sort_values(['Runs', 'SR'], ascending=[False, False]).head(30)
+                    st.caption("(Showing top run scorers as no never-out matchups found)")
+                
+                st.dataframe(batter_dominant[['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']], 
+                           use_container_width=True)
+                
+                if not batter_dominant.empty:
+                    # Create matchup label
+                    batter_dominant = batter_dominant.copy()
+                    batter_dominant['Matchup'] = batter_dominant['Batter'] + ' vs ' + batter_dominant['Bowler']
+                    fig = px.bar(batter_dominant.head(15), x='Matchup', y='Runs', color='SR',
+                                color_continuous_scale='RdYlGn',
+                                title="Top Batter vs Bowler (Most Runs, Never Out)")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+            
+            with tab2:
+                st.markdown("### Bowlers who dominate specific batters")
+                st.caption("Bowlers who have dismissed the same batter multiple times")
+                
+                # High dismissals, low avg
+                bowler_dominant = matchup_stats[matchup_stats['Dismissals'] >= 2].sort_values(
+                    ['Dismissals', 'Avg'], ascending=[False, True]
+                ).head(30)
+                
+                if bowler_dominant.empty:
+                    st.info("No bowler has dismissed the same batter 2+ times in filtered data.")
+                else:
+                    st.dataframe(bowler_dominant[['Bowler', 'Bowling_Team', 'Batter', 'Batting_Team', 'Innings', 'Dismissals', 'Runs', 'Balls', 'Avg']], 
+                               use_container_width=True)
+                    
+                    bowler_dominant = bowler_dominant.copy()
+                    bowler_dominant['Matchup'] = bowler_dominant['Bowler'] + ' vs ' + bowler_dominant['Batter']
+                    fig = px.bar(bowler_dominant.head(15), x='Matchup', y='Dismissals', color='Avg',
+                                color_continuous_scale='RdYlGn_r',
+                                title="Top Bowler vs Batter (Most Dismissals)")
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+            
+            with tab3:
+                st.markdown("### Search for specific matchup")
+                col1, col2 = st.columns(2)
+                with col1:
+                    all_batters = sorted(matchup_stats['Batter'].unique())
+                    search_batter = st.selectbox("Select Batter", [""] + list(all_batters))
+                with col2:
+                    all_bowlers = sorted(matchup_stats['Bowler'].unique())
+                    search_bowler = st.selectbox("Select Bowler", [""] + list(all_bowlers))
+                
+                if search_batter or search_bowler:
+                    search_result = matchup_stats.copy()
+                    if search_batter:
+                        search_result = search_result[search_result['Batter'] == search_batter]
+                    if search_bowler:
+                        search_result = search_result[search_result['Bowler'] == search_bowler]
+                    
+                    if search_result.empty:
+                        st.info("No matchup found for selected players.")
+                    else:
+                        st.dataframe(search_result[['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']], 
+                                   use_container_width=True)
+                        
+                        if len(search_result) > 1:
+                            if search_batter:
+                                # Show batter's record against all selected bowlers
+                                fig = px.bar(search_result.sort_values('Runs', ascending=False).head(15), 
+                                            x='Bowler', y='Runs', color='SR',
+                                            color_continuous_scale='RdYlGn',
+                                            title=f"{search_batter}'s Record Against Bowlers")
+                                fig.update_xaxes(tickangle=45)
+                                st.plotly_chart(fig, use_container_width=True)
+                            elif search_bowler:
+                                # Show bowler's record against all batters
+                                fig = px.bar(search_result.sort_values('Dismissals', ascending=False).head(15), 
+                                            x='Batter', y='Dismissals', color='Avg',
+                                            color_continuous_scale='RdYlGn_r',
+                                            title=f"{search_bowler}'s Record Against Batters")
+                                fig.update_xaxes(tickangle=45)
+                                st.plotly_chart(fig, use_container_width=True)
+
+# =========================================
+# MOST WICKETS IN AN OVER
+# =========================================
+elif metric_choice == "Most Wickets in an Over":
+    st.subheader("🎯 Most Wickets in an Over")
+    st.write("Identify which bowlers take the most wickets in a single over")
+    
+    # Exclude super overs
+    mwo_df = fdf[fdf['innings'].isin([1, 2])].copy()
+    
+    if mwo_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # Group by match, innings, bowler, over to find wickets per over
+        wickets_per_over = mwo_df.groupby(['match_id', 'innings', 'bowler', 'over', 'bowling_team', 'teams', 'date', 'year'], observed=True).agg(
+            Wickets=('wicket_count', 'sum'),
+            Runs_Conceded=('runs.total', 'sum'),
+            Balls=('is_valid_delivery', 'sum')
+        ).reset_index()
+        
+        # Convert to string to avoid categorical issues
+        wickets_per_over['Bowler'] = wickets_per_over['bowler'].astype(str)
+        wickets_per_over['Team'] = wickets_per_over['bowling_team'].astype(str)
+        wickets_per_over['Over'] = wickets_per_over['over'] + 1  # Display 1-indexed
+        wickets_per_over['Season'] = wickets_per_over['year']
+        wickets_per_over['Date'] = pd.to_datetime(wickets_per_over['date']).dt.date
+        wickets_per_over['Innings'] = wickets_per_over['innings'].map({1: '1st Inns', 2: '2nd Inns'})
+        
+        tab1, tab2, tab3 = st.tabs(["📋 Inning-wise", "🏏 Match-wise", "📊 Overall"])
+        
+        with tab1:
+            st.markdown("### Best Bowling Overs in Each Innings")
+            # Filter to overs with at least 2 wickets
+            multi_wicket_overs = wickets_per_over[wickets_per_over['Wickets'] >= 2].sort_values(['Wickets', 'Runs_Conceded'], ascending=[False, True])
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("#### 1st Innings")
+                first_inn = multi_wicket_overs[multi_wicket_overs['innings'] == 1].head(25)
+                if first_inn.empty:
+                    st.info("No 2+ wicket overs in 1st innings")
+                else:
+                    st.dataframe(first_inn[['Bowler', 'Team', 'Over', 'Wickets', 'Runs_Conceded', 'Date', 'Season']], use_container_width=True)
+            
+            with col2:
+                st.markdown("#### 2nd Innings")
+                second_inn = multi_wicket_overs[multi_wicket_overs['innings'] == 2].head(25)
+                if second_inn.empty:
+                    st.info("No 2+ wicket overs in 2nd innings")
+                else:
+                    st.dataframe(second_inn[['Bowler', 'Team', 'Over', 'Wickets', 'Runs_Conceded', 'Date', 'Season']], use_container_width=True)
+        
+        with tab2:
+            st.markdown("### Top Wicket-Taking Overs by Match")
+            # Show all multi-wicket overs with match context
+            multi_wicket_match = wickets_per_over[wickets_per_over['Wickets'] >= 2].sort_values(['Wickets', 'Runs_Conceded'], ascending=[False, True]).head(50)
+            multi_wicket_match['Match'] = multi_wicket_match['teams'].astype(str)
+            
+            if multi_wicket_match.empty:
+                st.info("No 2+ wicket overs found.")
+            else:
+                st.dataframe(multi_wicket_match[['Bowler', 'Team', 'Match', 'Innings', 'Over', 'Wickets', 'Runs_Conceded', 'Date']], use_container_width=True)
+                
+                # Chart
+                fig = px.bar(multi_wicket_match.head(20), x='Bowler', y='Wickets', color='Team',
+                            title="Top 20 Multi-Wicket Overs", text='Wickets')
+                fig.update_xaxes(tickangle=45)
+                st.plotly_chart(fig, use_container_width=True)
+        
+        with tab3:
+            st.markdown("### Overall - Bowlers with Most Multi-Wicket Overs")
+            # Aggregate: bowlers with most 2+ wicket overs
+            bowler_multi_wicket = wickets_per_over[wickets_per_over['Wickets'] >= 2].groupby(['Bowler', 'Team'], observed=True).agg(
+                Multi_Wicket_Overs=('match_id', 'count'),
+                Total_Wickets_in_MW=('Wickets', 'sum'),
+                Best_Over=('Wickets', 'max')
+            ).reset_index().sort_values('Multi_Wicket_Overs', ascending=False).head(30)
+            
+            if bowler_multi_wicket.empty:
+                st.info("No bowlers with 2+ wicket overs found.")
+            else:
+                st.dataframe(bowler_multi_wicket, use_container_width=True)
+                
+                fig = px.bar(bowler_multi_wicket.head(15), x='Bowler', y='Multi_Wicket_Overs', color='Team',
+                            title="Bowlers with Most 2+ Wicket Overs", text='Multi_Wicket_Overs')
+                fig.update_xaxes(tickangle=45)
+                st.plotly_chart(fig, use_container_width=True)
+
+# =========================================
+# LEFT-RIGHT HAND INDEX
+# =========================================
+elif metric_choice == "Left-Right Hand Index":
+    st.subheader("🔄 Left-Right Hand Index")
+    st.write("Analyze scoring when left-right batting pairs are at the crease")
+    
+    # Exclude super overs
+    lr_df = fdf[fdf['innings'].isin([1, 2])].copy()
+    
+    if lr_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # Add batting hand to data
+        lr_df['batter_hand'] = lr_df['batter'].apply(lambda x: get_player_batting_hand(x, player_data_cache))
+        
+        # Count how many players have known hand
+        known_count = (lr_df['batter_hand'] != 'Unknown').sum()
+        total_count = len(lr_df)
+        st.caption(f"📊 Player hand mapping: {known_count:,}/{total_count:,} balls ({known_count/total_count*100:.1f}%) with known batting hand")
+        
+        # Debug: Show player cache info and sample matches
+        with st.expander("🔍 Debug: Player Matching Info", expanded=(known_count == 0)):
+            st.write(f"**Player cache size:** {len(player_data_cache)} entries")
+            
+            # Show any errors from loading
+            if '_errors' in player_data_cache:
+                st.error("**Errors during player data loading:**")
+                for err in player_data_cache['_errors']:
+                    st.write(f"  ❌ {err}")
+            
+            # Sample batters from the data
+            sample_batters = lr_df['batter'].unique()[:10]
+            st.write("**Sample batter matching:**")
+            for batter in sample_batters:
+                hand = get_player_batting_hand(batter, player_data_cache)
+                st.write(f"  - `{batter}` → {hand}")
+            
+            # Show sample keys in cache
+            st.write("**Sample cache keys (first 20):**")
+            sample_keys = [k for k in list(player_data_cache.keys())[:20] if not k.startswith('_')]
+            st.write(", ".join([f"`{k}`" for k in sample_keys]))
+        
+        tab1, tab2, tab3 = st.tabs(["📋 Inning-wise", "🏏 Match-wise", "📊 Overall"])
+        
+        with tab1:
+            st.markdown("### Left vs Right Hand Performance by Innings")
+            # Group by innings and batting hand
+            hand_by_innings = lr_df.groupby(['innings', 'batter_hand'], observed=True).agg(
+                Runs=('runs.batter', 'sum'),
+                Balls=('is_valid_delivery', 'sum'),
+                Dismissals=('wicket_count', 'sum'),
+                Boundaries=('runs.batter', lambda x: ((x == 4) | (x == 6)).sum())
+            ).reset_index()
+            hand_by_innings['SR'] = (hand_by_innings['Runs'] / hand_by_innings['Balls'] * 100).round(2)
+            hand_by_innings['Innings'] = hand_by_innings['innings'].map({1: '1st Innings', 2: '2nd Innings'})
+            
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("#### 1st Innings")
+                first_inn = hand_by_innings[hand_by_innings['innings'] == 1]
+                st.dataframe(first_inn[['batter_hand', 'Runs', 'Balls', 'SR', 'Dismissals', 'Boundaries']].rename(columns={'batter_hand': 'Batting Hand'}), use_container_width=True)
+            with col2:
+                st.markdown("#### 2nd Innings")
+                second_inn = hand_by_innings[hand_by_innings['innings'] == 2]
+                st.dataframe(second_inn[['batter_hand', 'Runs', 'Balls', 'SR', 'Dismissals', 'Boundaries']].rename(columns={'batter_hand': 'Batting Hand'}), use_container_width=True)
+            
+            # Chart
+            if not hand_by_innings.empty:
+                fig = px.bar(hand_by_innings[hand_by_innings['batter_hand'] != 'Unknown'], 
+                            x='Innings', y='Runs', color='batter_hand', barmode='group',
+                            title="Runs by Batting Hand per Innings",
+                            color_discrete_map={'Left': '#2ecc71', 'Right': '#3498db'})
+                st.plotly_chart(fig, use_container_width=True)
+        
+        with tab2:
+            st.markdown("### Left vs Right Hand Performance by Match")
+            # Group by match, team, and batting hand
+            hand_by_match = lr_df.groupby(['match_id', 'teams', 'team', 'date', 'batter_hand'], observed=True).agg(
+                Runs=('runs.batter', 'sum'),
+                Balls=('is_valid_delivery', 'sum')
+            ).reset_index()
+            hand_by_match['SR'] = (hand_by_match['Runs'] / hand_by_match['Balls'] * 100).round(2)
+            hand_by_match['Date'] = pd.to_datetime(hand_by_match['date']).dt.date
+            hand_by_match['Team'] = hand_by_match['team'].astype(str)
+            hand_by_match['Match'] = hand_by_match['teams'].astype(str)
+            
+            # Pivot to show L-R comparison per match
+            hand_pivot = hand_by_match[hand_by_match['batter_hand'].isin(['Left', 'Right'])].pivot_table(
+                index=['Match', 'Team', 'Date'],
+                columns='batter_hand',
+                values=['Runs', 'Balls', 'SR'],
+                fill_value=0
+            ).reset_index()
+            hand_pivot.columns = ['Match', 'Team', 'Date'] + [f'{v}_{h}' for v, h in hand_pivot.columns[3:]]
+            hand_pivot = hand_pivot.sort_values('Date', ascending=False)
+            
+            st.dataframe(hand_pivot.head(30), use_container_width=True)
+        
+        with tab3:
+            st.markdown("### Overall Left vs Right Hand Comparison")
+            # Overall summary
+            hand_overall = lr_df.groupby('batter_hand', observed=True).agg(
+                Total_Runs=('runs.batter', 'sum'),
+                Total_Balls=('is_valid_delivery', 'sum'),
+                Dismissals=('wicket_count', 'sum'),
+                Fours=('runs.batter', lambda x: (x == 4).sum()),
+                Sixes=('runs.batter', lambda x: (x == 6).sum()),
+                Dots=('runs.batter', lambda x: (x == 0).sum())
+            ).reset_index()
+            hand_overall['SR'] = (hand_overall['Total_Runs'] / hand_overall['Total_Balls'] * 100).round(2)
+            hand_overall['Avg'] = (hand_overall['Total_Runs'] / hand_overall['Dismissals'].replace(0, 1)).round(2)
+            hand_overall['Dot%'] = (hand_overall['Dots'] / hand_overall['Total_Balls'] * 100).round(2)
+            hand_overall = hand_overall.rename(columns={'batter_hand': 'Batting Hand'})
+            
+            st.dataframe(hand_overall, use_container_width=True)
+            
+            # Charts
+            col1, col2 = st.columns(2)
+            with col1:
+                fig = px.pie(hand_overall[hand_overall['Batting Hand'] != 'Unknown'], 
+                            values='Total_Runs', names='Batting Hand',
+                            title="Run Distribution by Batting Hand",
+                            color='Batting Hand',
+                            color_discrete_map={'Left': '#2ecc71', 'Right': '#3498db'})
+                st.plotly_chart(fig, use_container_width=True)
+            with col2:
+                fig = px.bar(hand_overall[hand_overall['Batting Hand'] != 'Unknown'],
+                            x='Batting Hand', y='SR', color='Batting Hand',
+                            title="Strike Rate by Batting Hand",
+                            color_discrete_map={'Left': '#2ecc71', 'Right': '#3498db'})
+                st.plotly_chart(fig, use_container_width=True)
+
+# =========================================
+# PACE VS SPIN ANALYSIS
+# =========================================
+elif metric_choice == "Pace vs Spin Analysis":
+    st.subheader("⚡ Pace vs Spin Analysis")
+    st.write("Compare pace and spin bowling performance in each innings")
+    
+    # Exclude super overs
+    ps_df = fdf[fdf['innings'].isin([1, 2])].copy()
+    
+    if ps_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # Add bowling type to data
+        ps_df['bowling_type'] = ps_df['bowler'].apply(lambda x: get_player_bowling_type(x, player_data_cache))
+        
+        # Calculate bowler-conceded runs (excludes byes/leg-byes which don't count against bowler)
+        ps_df['bowler_runs'] = ps_df['runs.batter'] + ps_df['wides'] + ps_df['no_balls']
+        
+        # Count mapping success
+        known_count = (ps_df['bowling_type'] != 'Unknown').sum()
+        total_count = len(ps_df)
+        st.caption(f"📊 Bowler type mapping: {known_count:,}/{total_count:,} balls ({known_count/total_count*100:.1f}%) with known bowling type")
+        
+        tab1, tab2, tab3 = st.tabs(["📋 Inning-wise", "🏏 Match-wise", "📊 Overall"])
+        
+        with tab1:
+            st.markdown("### Pace vs Spin Performance by Innings Type")
+            # Group by innings and bowling type
+            type_by_innings = ps_df.groupby(['innings', 'bowling_type'], observed=True).agg(
+                Wickets=('wicket_count', 'sum'),
+                Runs=('bowler_runs', 'sum'),  # Use bowler_runs instead of runs.total
+                Balls=('is_valid_delivery', 'sum'),
+                Dots=('bowler_runs', lambda x: (x == 0).sum())  # Dots based on bowler_runs
+            ).reset_index()
+            type_by_innings['Overs'] = (type_by_innings['Balls'] / 6).round(1)
+            type_by_innings['ER'] = (type_by_innings['Runs'] / type_by_innings['Overs']).round(2)
+            type_by_innings['Dot%'] = (type_by_innings['Dots'] / type_by_innings['Balls'] * 100).round(1)
+            type_by_innings['Innings'] = type_by_innings['innings'].map({1: '1st Innings', 2: '2nd Innings'})
+            
+            # Display format: "Pace: 5/111 from 12 overs (ER: 9.25, Dot%: 37.8)"
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("#### 1st Innings")
+                for _, row in type_by_innings[type_by_innings['innings'] == 1].iterrows():
+                    if row['bowling_type'] != 'Unknown':
+                        emoji = "⚡" if row['bowling_type'] == 'Pace' else "🔄"
+                        st.markdown(f"**{emoji} {row['bowling_type']}:** {int(row['Wickets'])}/{int(row['Runs'])} from {row['Overs']} overs (ER: {row['ER']}, Dot%: {row['Dot%']})")
+            with col2:
+                st.markdown("#### 2nd Innings")
+                for _, row in type_by_innings[type_by_innings['innings'] == 2].iterrows():
+                    if row['bowling_type'] != 'Unknown':
+                        emoji = "⚡" if row['bowling_type'] == 'Pace' else "🔄"
+                        st.markdown(f"**{emoji} {row['bowling_type']}:** {int(row['Wickets'])}/{int(row['Runs'])} from {row['Overs']} overs (ER: {row['ER']}, Dot%: {row['Dot%']})")
+            
+            # Chart
+            if not type_by_innings.empty:
+                fig = px.bar(type_by_innings[type_by_innings['bowling_type'] != 'Unknown'],
+                            x='Innings', y='Wickets', color='bowling_type', barmode='group',
+                            title="Wickets by Bowling Type per Innings",
+                            color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
+                st.plotly_chart(fig, use_container_width=True)
+        
+        with tab2:
+            st.markdown("### Pace vs Spin by Match")
+            # Group by match and bowling type
+            type_by_match = ps_df.groupby(['match_id', 'teams', 'innings', 'date', 'bowling_type'], observed=True).agg(
+                Wickets=('wicket_count', 'sum'),
+                Runs=('bowler_runs', 'sum'),  # Use bowler_runs (excludes byes/leg-byes)
+                Balls=('is_valid_delivery', 'sum'),
+                Dots=('bowler_runs', lambda x: (x == 0).sum())
+            ).reset_index()
+            type_by_match['Overs'] = (type_by_match['Balls'] / 6).round(1)
+            type_by_match['ER'] = (type_by_match['Runs'] / type_by_match['Overs'].replace(0, 1)).round(2)
+            type_by_match['Dot%'] = (type_by_match['Dots'] / type_by_match['Balls'].replace(0, 1) * 100).round(1)
+            type_by_match['Date'] = pd.to_datetime(type_by_match['date']).dt.date
+            type_by_match['Match'] = type_by_match['teams'].astype(str)
+            type_by_match['Innings'] = type_by_match['innings'].map({1: '1st', 2: '2nd'})
+            type_by_match['Summary'] = type_by_match.apply(
+                lambda r: f"{int(r['Wickets'])}/{int(r['Runs'])} ({r['Overs']}ov, {r['ER']}ER)" if r['bowling_type'] != 'Unknown' else '',
+                axis=1
+            )
+            
+            # Pivot to show Pace vs Spin side by side
+            display_df = type_by_match[type_by_match['bowling_type'].isin(['Pace', 'Spin'])].pivot_table(
+                index=['Match', 'Innings', 'Date'],
+                columns='bowling_type',
+                values='Summary',
+                aggfunc='first'
+            ).reset_index()
+            display_df = display_df.sort_values('Date', ascending=False)
+            
+            st.dataframe(display_df.head(40), use_container_width=True)
+        
+        with tab3:
+            st.markdown("### Overall Pace vs Spin Comparison")
+            # Overall summary
+            type_overall = ps_df.groupby('bowling_type', observed=True).agg(
+                Wickets=('wicket_count', 'sum'),
+                Runs=('bowler_runs', 'sum'),  # Use bowler_runs (excludes byes/leg-byes)
+                Balls=('is_valid_delivery', 'sum'),
+                Dots=('bowler_runs', lambda x: (x == 0).sum()),
+                Matches=('match_id', 'nunique')
+            ).reset_index()
+            type_overall['Overs'] = (type_overall['Balls'] / 6).round(1)
+            type_overall['ER'] = (type_overall['Runs'] / type_overall['Overs']).round(2)
+            type_overall['Dot%'] = (type_overall['Dots'] / type_overall['Balls'] * 100).round(1)
+            type_overall['Avg'] = (type_overall['Runs'] / type_overall['Wickets'].replace(0, 1)).round(2)
+            type_overall['SR'] = (type_overall['Balls'] / type_overall['Wickets'].replace(0, 1)).round(2)
+            type_overall = type_overall.rename(columns={'bowling_type': 'Bowling Type'})
+            
+            st.dataframe(type_overall, use_container_width=True)
+            
+            # Display in user's format
+            st.markdown("---")
+            st.markdown("### Summary")
+            for _, row in type_overall.iterrows():
+                if row['Bowling Type'] != 'Unknown':
+                    emoji = "⚡" if row['Bowling Type'] == 'Pace' else "🔄"
+                    st.markdown(f"**{emoji} {row['Bowling Type']}:** {int(row['Wickets'])}/{int(row['Runs'])} from {row['Overs']} overs (ER: {row['ER']}, Dot%: {row['Dot%']})")
+            
+            # Charts
+            col1, col2 = st.columns(2)
+            with col1:
+                fig = px.pie(type_overall[type_overall['Bowling Type'] != 'Unknown'],
+                            values='Wickets', names='Bowling Type',
+                            title="Wickets Distribution",
+                            color='Bowling Type',
+                            color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
+                st.plotly_chart(fig, use_container_width=True)
+            with col2:
+                fig = px.bar(type_overall[type_overall['Bowling Type'] != 'Unknown'],
+                            x='Bowling Type', y='ER', color='Bowling Type',
+                            title="Economy Rate Comparison",
+                            color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
+                st.plotly_chart(fig, use_container_width=True)
 
 # =========================================
 # SUPER OVER ANALYSIS
