@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 2026-02-03")
+st.markdown("📅 Last updated: 2026-02-12")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -324,6 +324,9 @@ if selected_leagues:
 if selected_years:
     fdf = fdf[fdf['year'].isin(selected_years)]
 
+# Keep a copy before team filter (for metrics that need cross-team aggregation)
+fdf_no_team = fdf.copy()
+
 # Team filter (after league/year filtering)
 teams_available = sorted(fdf['team'].dropna().unique())
 selected_teams = st.sidebar.multiselect("Team", teams_available)
@@ -337,12 +340,23 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "DRS Analysis",
     "Over-by-Over Analysis",
     "Batter vs Bowler Matchup",
+    "Extras Impact Index (Bowler)",
+    "Overall Extras Summary",
     "Most Wickets in an Over",
     "Left-Right Hand Index",
     "Pace vs Spin Analysis",
     "Super Over Analysis",
     "Innings Progression",
-    "Franchise Debut Tracker"
+    "Franchise Debut Tracker",
+    "SR Comparison (Year-wise)",
+    "Fastest 50s & 100s (Player)",
+    "Fastest Team 50 & 100",
+    "Bowler First Spell Wickets",
+    "Back-to-Back 25+ Scores",
+    "Boundary-less Overs Spell",
+    "On This Day",
+    "Bowler Over Impact",
+    "Match Flow Chart"
 ])
 
 if fdf.empty:
@@ -388,7 +402,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets=('wicket_count', 'sum')
+            PP_Wickets=('team_wicket_count', 'sum')  # includes run-outs
         ).reset_index()
         
         stats['PP_RR'] = (stats['PP_Runs'] / (stats['PP_Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
@@ -531,6 +545,538 @@ def drs_reviews_lost(df_):
     return stats[['Team', 'Match', 'Date', 'Season', 'Reviews_Lost']] if 'Date' in stats.columns else stats[['Team', 'Match', 'Season', 'Reviews_Lost']]
 
 
+def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20):
+    """
+    Year-wise batter SR comparison with ball-range SR buckets.
+    Columns:
+    Name | Average | Strike Rate | Balls/Inn | 1-10 SR | 11-20 SR | ... | 51-60 SR
+    """
+    if df_.empty:
+        return pd.DataFrame()
+
+    required_cols = {'league', 'year', 'match_id', 'innings', 'team', 'batter', 'runs.batter', 'is_valid_delivery', 'over'}
+    if not required_cols.issubset(df_.columns):
+        return pd.DataFrame()
+
+    work_df = df_[df_['innings'].isin([1, 2])].copy()
+    if work_df.empty:
+        return pd.DataFrame()
+
+    # Legal deliveries only for balls faced and batter-ball indexing
+    legal = work_df[work_df['is_valid_delivery'] == 1].copy()
+    if legal.empty:
+        return pd.DataFrame()
+
+    legal = legal.sort_values(['match_id', 'innings', 'team', 'batter', 'over', 'ball_float'])
+    legal['batter_ball_no'] = legal.groupby(['match_id', 'innings', 'team', 'batter'], observed=True).cumcount() + 1
+
+    grouping = ['league', 'year', 'batter']
+    if not aggregate_across_teams:
+        grouping.append('team')
+
+    # Base totals
+    stats = legal.groupby(grouping, observed=True).agg(
+        Runs=('runs.batter', 'sum'),
+        Balls=('is_valid_delivery', 'sum')
+    ).reset_index()
+
+    # Innings batted (only innings where batter faced at least one legal delivery)
+    innings_counts = legal.groupby(grouping + ['match_id', 'innings'], observed=True).size().reset_index(name='x')
+    innings_counts = innings_counts.groupby(grouping, observed=True).size().reset_index(name='Innings')
+    stats = stats.merge(innings_counts, on=grouping, how='left')
+
+    # Dismissals (prefer player_dismissed if present)
+    if 'player_dismissed' in work_df.columns:
+        dis_df = work_df[(work_df['wicket_count'] > 0) & (work_df['player_dismissed'].notna())].copy()
+        if not dis_df.empty:
+            dis_df = dis_df.rename(columns={'player_dismissed': 'batter'})
+            if not aggregate_across_teams:
+                dis_group = ['league', 'year', 'batter', 'team']
+            else:
+                dis_group = ['league', 'year', 'batter']
+            dismissals = dis_df.groupby(dis_group, observed=True).size().reset_index(name='Dismissals')
+            stats = stats.merge(dismissals, on=grouping, how='left')
+        else:
+            stats['Dismissals'] = 0
+    else:
+        # Fallback approximation
+        dismissals = work_df.groupby(grouping, observed=True)['wicket_count'].sum().reset_index(name='Dismissals')
+        stats = stats.merge(dismissals, on=grouping, how='left')
+
+    stats['Dismissals'] = stats['Dismissals'].fillna(0)
+    stats['Average'] = np.where(stats['Dismissals'] > 0, stats['Runs'] / stats['Dismissals'], stats['Runs'])
+    stats['Strike Rate'] = (stats['Runs'] / stats['Balls'].replace(0, np.nan) * 100).fillna(0)
+    stats['Balls/Inn'] = (stats['Balls'] / stats['Innings'].replace(0, np.nan)).fillna(0)
+
+    # Ball-range SR buckets
+    buckets = [
+        (1, 10, '1-10 SR'),
+        (11, 20, '11-20 SR'),
+        (21, 30, '21-30 SR'),
+        (31, 40, '31-40 SR'),
+        (41, 50, '41-50 SR'),
+        (51, 60, '51-60 SR')
+    ]
+
+    for start, end, label in buckets:
+        legal[f'runs_{label}'] = np.where(
+            (legal['batter_ball_no'] >= start) & (legal['batter_ball_no'] <= end),
+            legal['runs.batter'],
+            0
+        )
+        legal[f'balls_{label}'] = np.where(
+            (legal['batter_ball_no'] >= start) & (legal['batter_ball_no'] <= end),
+            1,
+            0
+        )
+
+    bucket_agg_cols = {}
+    for _, _, label in buckets:
+        bucket_agg_cols[f'runs_{label}'] = (f'runs_{label}', 'sum')
+        bucket_agg_cols[f'balls_{label}'] = (f'balls_{label}', 'sum')
+
+    bucket_stats = legal.groupby(grouping, observed=True).agg(**bucket_agg_cols).reset_index()
+    stats = stats.merge(bucket_stats, on=grouping, how='left')
+
+    for _, _, label in buckets:
+        stats[label] = (
+            stats[f'runs_{label}'] / stats[f'balls_{label}'].replace(0, np.nan) * 100
+        ).replace([np.inf, -np.inf], np.nan).fillna(0)
+
+    # Format output
+    output = stats[stats['Balls'] >= min_balls].copy()
+    output = output.rename(columns={'league': 'League', 'year': 'Season', 'batter': 'Name', 'team': 'Team'})
+
+    out_cols = ['League', 'Season', 'Name']
+    if not aggregate_across_teams:
+        out_cols.append('Team')
+    out_cols += ['Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR', 'Runs', 'Balls']
+
+    for col in ['Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']:
+        output[col] = output[col].round(2)
+
+    return output[out_cols].sort_values(['League', 'Season', 'Strike Rate'], ascending=[True, False, False])
+
+
+# =========================================
+# FASTEST INDIVIDUAL 50s & 100s
+# =========================================
+def fastest_individual_milestones(df_):
+    """Per innings per batter: compute balls needed to reach 50 and 100."""
+    ipl = df_[df_['innings'].isin([1, 2])].copy()
+    if ipl.empty:
+        return pd.DataFrame()
+
+    ipl = ipl.sort_values(['match_id', 'innings', 'batter', 'ball_float'])
+
+    results = []
+    for (match_id, innings, batter, team), grp in ipl.groupby(
+        ['match_id', 'innings', 'batter', 'team'], observed=True
+    ):
+        grp = grp.sort_values('ball_float')
+        cumruns = grp['runs.batter'].cumsum()
+        legal_cum = grp['is_valid_delivery'].cumsum()
+        # No-balls are physically faced by the batter and count in official "balls faced" stats
+        balls_faced_flag = ((grp['is_valid_delivery'] == 1) | (grp['no_balls'] > 0)).astype(int)
+        balls_faced_cum = balls_faced_flag.cumsum()
+        total_runs = int(cumruns.iloc[-1])
+        total_balls = int(balls_faced_cum.iloc[-1])
+
+        # Last delivery: was the batter dismissed?
+        is_out = int(grp['is_batter_out'].iloc[-1]) if 'is_batter_out' in grp.columns else 0
+        not_out = (is_out == 0)
+
+        balls_to_50 = None
+        balls_to_100 = None
+        idx_50 = cumruns[cumruns >= 50].index
+        idx_100 = cumruns[cumruns >= 100].index
+        if len(idx_50):
+            balls_to_50 = int(balls_faced_cum.loc[idx_50[0]])
+        if len(idx_100):
+            balls_to_100 = int(balls_faced_cum.loc[idx_100[0]])
+
+        if balls_to_50 is None and total_runs < 50:
+            continue  # never reached 50, skip
+
+        # Get date and match info
+        date_val = grp['date'].iloc[0]
+        teams_str = str(grp['teams'].iloc[0])
+        year_val = grp['year'].iloc[0]
+
+        results.append({
+            'Match ID': match_id,
+            'Date': pd.to_datetime(date_val).date(),
+            'Season': year_val,
+            'Match': teams_str,
+            'Inning': innings,
+            'Batting Team': str(team),
+            'Batter': str(batter),
+            'Balls to 50': balls_to_50,
+            'Balls to 100': balls_to_100,
+            'Total Runs': total_runs,
+            'Total Balls': total_balls,
+            'SR': round(total_runs / total_balls * 100, 1) if total_balls > 0 else 0,
+            'Not Out': '*' if not_out else '',
+        })
+
+    if not results:
+        return pd.DataFrame()
+    return pd.DataFrame(results)
+
+
+# =========================================
+# FASTEST TEAM 50 & 100
+# =========================================
+def fastest_team_milestones(df_):
+    """Per innings per batting team: balls to team 50 and team 100.
+    Uses runs.total (includes byes/leg-byes) for runs, is_valid_delivery for balls.
+    """
+    ipl = df_[df_['innings'].isin([1, 2])].copy()
+    if ipl.empty:
+        return pd.DataFrame()
+
+    ipl = ipl.sort_values(['match_id', 'innings', 'team', 'ball_float'])
+
+    results = []
+    for (match_id, innings, team, teams_str, date_val, year_val), grp in ipl.groupby(
+        ['match_id', 'innings', 'team', 'teams', 'date', 'year'], observed=True
+    ):
+        grp = grp.sort_values('ball_float')
+        cumruns = grp['runs.total'].cumsum()
+        legal_cum = grp['is_valid_delivery'].cumsum()
+        # No-balls count as deliveries faced for milestone purposes (official T20 rules)
+        balls_for_milestone = ((grp['is_valid_delivery'] == 1) | (grp['no_balls'] > 0)).astype(int).cumsum()
+
+        total_runs = int(cumruns.iloc[-1])
+        total_balls = int(legal_cum.iloc[-1])  # legal deliveries only (over count)
+
+        balls_to_50 = None
+        balls_to_100 = None
+        idx_50 = cumruns[cumruns >= 50].index
+        idx_100 = cumruns[cumruns >= 100].index
+        if len(idx_50):
+            balls_to_50 = int(balls_for_milestone.loc[idx_50[0]])
+        if len(idx_100):
+            balls_to_100 = int(balls_for_milestone.loc[idx_100[0]])
+
+        if balls_to_50 is None:
+            continue
+
+        # Team 1 / Team 2 from 'teams' column (alphabetically sorted "A vs B")
+        parts = str(teams_str).split(' vs ')
+        team1 = parts[0].strip() if len(parts) >= 1 else str(teams_str)
+        team2 = parts[1].strip() if len(parts) >= 2 else ''
+
+        results.append({
+            'Match ID': match_id,
+            'Date': pd.to_datetime(date_val).date(),
+            'Season': year_val,
+            'Team 1': team1,
+            'Team 2': team2,
+            'Inning No': innings,
+            'Batting Team': str(team),
+            'Balls to 50': balls_to_50,
+            'Balls to 100': balls_to_100,
+            'Total Runs': total_runs,
+            'Total Balls': total_balls,
+        })
+
+    if not results:
+        return pd.DataFrame()
+    return pd.DataFrame(results)
+
+
+# =========================================
+# BOWLER FIRST SPELL WICKETS
+# =========================================
+def bowler_first_spell_wickets(df_):
+    """Wickets taken by each bowler in their first 3 overs (first spell) of an innings."""
+    ipl = df_[df_['innings'].isin([1, 2])].copy()
+    if ipl.empty:
+        return pd.DataFrame()
+
+    results = []
+    for (match_id, innings, bowler), grp in ipl.groupby(
+        ['match_id', 'innings', 'bowler'], observed=True
+    ):
+        grp = grp.sort_values('ball_float')
+        unique_overs = sorted(grp['over'].unique())
+        first_3_overs = unique_overs[:3]
+        spell = grp[grp['over'].isin(first_3_overs)]
+
+        wickets = int(spell['wicket_count'].sum())
+        runs = int(spell['runs.total'].sum())
+        balls = int(spell['is_valid_delivery'].sum())
+        overs_bowled = len(first_3_overs)
+        # over column is 0-indexed; add 1 for the cricket over number
+        spell_over_nos = ', '.join(str(o + 1) for o in first_3_overs)
+
+        date_val = grp['date'].iloc[0]
+        teams_str = str(grp['teams'].iloc[0])
+        year_val = grp['year'].iloc[0]
+        bowling_team = str(grp['bowling_team'].iloc[0]) if 'bowling_team' in grp.columns else ''
+
+        parts = str(teams_str).split(' vs ')
+        team1 = parts[0].strip() if len(parts) >= 1 else teams_str
+        team2 = parts[1].strip() if len(parts) >= 2 else ''
+
+        results.append({
+            'Match ID': match_id,
+            'Date': pd.to_datetime(date_val).date(),
+            'Season': year_val,
+            'Team 1': team1,
+            'Team 2': team2,
+            'Innings': innings,
+            'Bowling Team': bowling_team,
+            'Bowler': str(bowler),
+            'Wickets in First Spell': wickets,
+            'Overs in Spell': overs_bowled,
+            'Spell Over Nos': spell_over_nos,
+            'Runs Conceded': runs,
+            'Balls': balls,
+        })
+
+    if not results:
+        return pd.DataFrame()
+    return pd.DataFrame(results)
+
+
+# =========================================
+# BACK-TO-BACK 25+ SCORES (SEASON)
+# =========================================
+def consistent_batter_season(df_):
+    """Per season per batter: innings with 25+, no single-digit innings, and consistency metrics."""
+    ipl = df_[df_['innings'].isin([1, 2])].copy()
+    if ipl.empty:
+        return pd.DataFrame()
+
+    # Step 1: per-innings batter score
+    inn_scores = (
+        ipl.groupby(['match_id', 'innings', 'year', 'batter'], observed=True)
+        .agg(
+            batter_score=('runs.batter', 'sum'),
+            date=('date', 'min'),
+        )
+        .reset_index()
+    )
+    inn_scores['date'] = pd.to_datetime(inn_scores['date'])
+    inn_scores = inn_scores.sort_values(['year', 'batter', 'date', 'match_id', 'innings'])
+
+    # Step 2: per-season per-batter aggregation
+    results = []
+    for (year, batter), grp in inn_scores.groupby(['year', 'batter'], observed=True):
+        scores = grp['batter_score'].tolist()
+        total_innings = len(scores)
+        innings_25_plus = sum(1 for s in scores if s >= 25)
+        innings_no_single_digit = sum(1 for s in scores if s >= 10)
+        total_runs = sum(scores)
+
+        # Max consecutive 25+ streak
+        max_streak = 0
+        cur_streak = 0
+        for s in scores:
+            if s >= 25:
+                cur_streak += 1
+                max_streak = max(max_streak, cur_streak)
+            else:
+                cur_streak = 0
+
+        consistency_pct = round(innings_no_single_digit / total_innings * 100, 1) if total_innings > 0 else 0
+
+        results.append({
+            'Season': year,
+            'Batter': str(batter),
+            'Innings 25+': innings_25_plus,
+            'Max Consec 25+': max_streak,
+            'Innings No Single Digit': innings_no_single_digit,
+            'Total Runs': total_runs,
+            'Total Innings': total_innings,
+            'Consistency %': consistency_pct,
+        })
+
+    if not results:
+        return pd.DataFrame()
+    return pd.DataFrame(results)
+
+
+# =========================================
+# BOUNDARY-LESS OVERS SPELL
+# =========================================
+def boundary_less_overs_spell(df_):
+    """Bowlers who bowled 3+ consecutive overs without conceding a boundary in a single innings."""
+    ipl = df_[df_['innings'].isin([1, 2])].copy()
+    if ipl.empty:
+        return pd.DataFrame()
+
+    # Per over: did the bowler concede a boundary (runs.batter == 4 or 6)?
+    over_flags = (
+        ipl.groupby(['match_id', 'innings', 'over', 'bowler', 'bowling_team', 'teams', 'date', 'year'], observed=True)
+        .agg(
+            has_boundary=('runs.batter', lambda x: int((x == 4).any() or (x == 6).any())),
+            runs_in_over=('runs.total', 'sum'),
+            balls_in_over=('is_valid_delivery', 'sum'),
+        )
+        .reset_index()
+    )
+
+    # Per (match_id, innings, bowler): collect overs in order and find max run of boundary-less overs
+    # Also count total boundary-less overs across all spells
+    results = []
+    for (match_id, innings, bowler, bowling_team, teams_str, date_val, year_val), grp in over_flags.groupby(
+        ['match_id', 'innings', 'bowler', 'bowling_team', 'teams', 'date', 'year'], observed=True
+    ):
+        grp = grp.sort_values('over')
+        boundary_less_flags = grp['has_boundary'].tolist()
+        total_overs = len(boundary_less_flags)
+        total_boundary_less = sum(1 for f in boundary_less_flags if f == 0)
+        runs_in_boundary_less = int(grp.loc[grp['has_boundary'] == 0, 'runs_in_over'].sum())
+        total_runs = int(grp['runs_in_over'].sum())
+        # over column is 0-indexed; add 1 for the cricket over number
+        bl_over_nums = [int(row['over']) + 1 for _, row in grp.iterrows() if row['has_boundary'] == 0]
+        bl_over_nos_str = ', '.join(str(o) for o in bl_over_nums)
+
+        # Max consecutive boundary-less overs
+        max_consec = 0
+        cur = 0
+        for f in boundary_less_flags:
+            if f == 0:
+                cur += 1
+                max_consec = max(max_consec, cur)
+            else:
+                cur = 0
+
+        if total_boundary_less < 3:
+            continue
+
+        parts = str(teams_str).split(' vs ')
+        team1 = parts[0].strip() if len(parts) >= 1 else teams_str
+        team2 = parts[1].strip() if len(parts) >= 2 else ''
+
+        results.append({
+            'Match ID': match_id,
+            'Date': pd.to_datetime(date_val).date(),
+            'Season': year_val,
+            'Team 1': team1,
+            'Team 2': team2,
+            'Inning No': innings,
+            'Bowler': str(bowler),
+            'Bowling Team': str(bowling_team),
+            'Boundary-less Overs': total_boundary_less,
+            'Boundary-less Over Nos': bl_over_nos_str,
+            'Max Consec Boundary-less': max_consec,
+            'Total Overs Bowled': total_overs,
+            'Runs in Boundary-less Overs': runs_in_boundary_less,
+            'Total Runs Conceded': total_runs,
+        })
+
+    if not results:
+        return pd.DataFrame()
+    return pd.DataFrame(results)
+
+
+# =========================================
+# ON THIS DAY
+# =========================================
+def on_this_day_insights(df_, target_month, target_day):
+    """Filter data to the same calendar day across all years and return insights per category."""
+    dates = pd.to_datetime(df_['date'])
+    mask = (dates.dt.month == target_month) & (dates.dt.day == target_day)
+    sub = df_[mask].copy()
+    if sub.empty:
+        return {}
+
+    return {
+        'fastest_50s': fastest_individual_milestones(sub),
+        'fastest_team_50s': fastest_team_milestones(sub),
+        'first_spell': bowler_first_spell_wickets(sub),
+        'boundary_less': boundary_less_overs_spell(sub),
+    }
+
+
+# =========================================
+# BOWLER OVER IMPACT
+# =========================================
+def bowler_over_impact(df_, bowler_name, over_num):
+    """For a given bowler and over number, split their match appearances into 3 categories
+    based on what happened in that specific over, then return full-match stats for each category.
+    over_num is 1-indexed (1–20); Cricsheet 'over' column is 0-indexed.
+    """
+    bdf = df_[df_['bowler'] == bowler_name].copy()
+    if bdf.empty:
+        return {}
+
+    over_idx = over_num - 1  # convert to 0-indexed
+
+    # Per appearance (match_id + innings) in the selected over
+    target_over = bdf[bdf['over'] == over_idx]
+    if target_over.empty:
+        return {}
+
+    over_stats = (
+        target_over.groupby(['match_id', 'innings'], observed=True)
+        .agg(
+            wickets_in_over=('wicket_count', 'sum'),
+            runs_in_over=('runs.total', 'sum'),
+        )
+        .reset_index()
+    )
+
+    def _categorize(row):
+        if row['wickets_in_over'] >= 1 and row['runs_in_over'] <= 10:
+            return 'Wicket & \u226410 Runs'
+        elif row['wickets_in_over'] == 0 and row['runs_in_over'] <= 10:
+            return 'No Wicket & \u226410 Runs'
+        else:
+            return '>10 Runs in Over'
+
+    over_stats['category'] = over_stats.apply(_categorize, axis=1)
+
+    categories = ['Wicket & \u226410 Runs', 'No Wicket & \u226410 Runs', '>10 Runs in Over']
+    output = {}
+
+    for cat in categories:
+        cat_rows = over_stats[over_stats['category'] == cat]
+        if cat_rows.empty:
+            output[cat] = None
+            continue
+
+        # Full match deliveries for this bowler in these matches
+        match_ids = cat_rows['match_id'].unique()
+        full_match = bdf[bdf['match_id'].isin(match_ids)]
+
+        matches = int(len(match_ids))
+        wickets = int(full_match['wicket_count'].sum())
+        runs = int(full_match['runs.total'].sum())
+        balls = int(full_match['is_valid_delivery'].sum())
+        dots = int((full_match['runs.total'] == 0).sum())
+
+        economy = round(runs / (balls / 6), 2) if balls > 0 else 0.0
+        average = round(runs / wickets, 2) if wickets > 0 else float('inf')
+        sr = round(balls / wickets, 2) if wickets > 0 else float('inf')
+        # Balls per boundary (4s and 6s off bat)
+        boundaries = int(((full_match['runs.batter'] == 4) | (full_match['runs.batter'] == 6)).sum())
+        bpb = round(balls / boundaries, 2) if boundaries > 0 else float('inf')
+        # Balls per 6
+        sixes = int((full_match['runs.batter'] == 6).sum())
+        bp6 = round(balls / sixes, 2) if sixes > 0 else float('inf')
+        dot_pct = round(dots / balls * 100, 2) if balls > 0 else 0.0
+        wkts_per_match = round(wickets / matches, 2) if matches > 0 else 0.0
+
+        output[cat] = {
+            'Matches': matches,
+            'Wickets': wickets,
+            'Economy': economy,
+            'Avg': average,
+            'SR': sr,
+            'BPB': bpb,
+            'BP6': bp6,
+            'Dot %': dot_pct,
+            'Wkts / Match': wkts_per_match,
+        }
+
+    return output
+
+
 # =========================================
 # RENDER METRICS
 # =========================================
@@ -591,7 +1137,7 @@ if metric_choice == "Powerplay Score Tracker":
                 season_summary = season_summary[season_summary['Team'].isin([team1, team2])]
         
         # Tabs
-        tab1, tab2, tab3, tab4 = st.tabs(["📋 Match-by-Match", "📊 Season Summary", "🏟️ Venue-wise", "🏆 Playoff Matches"])
+        tab1, tab2, tab3, tab4 = st.tabs(["Match-by-Match", "Season Summary", "Venue-wise", "Playoff Matches"])
         
         with tab1:
             if mode_val == 'batting':
@@ -725,7 +1271,7 @@ if metric_choice == "Powerplay Score Tracker":
                         playoff_stats = playoff_pp.groupby(['match_id', 'team', 'bowling_team', 'date', 'event_stage'], observed=True).agg(
                             PP_Runs=('runs.total', 'sum'),
                             PP_Balls=('is_valid_delivery', 'sum'),
-                            PP_Wickets=('wicket_count', 'sum'),
+                            PP_Wickets=('team_wicket_count', 'sum'),  # includes run-outs
                             PP_4s=('runs.batter', lambda x: (x == 4).sum()),
                             PP_6s=('runs.batter', lambda x: (x == 6).sum())
                         ).reset_index()
@@ -1176,22 +1722,29 @@ elif metric_choice == "Over-by-Over Analysis":
     if obo_df.empty:
         st.warning("No data for selected filters.")
     else:
-        tab1, tab2, tab3 = st.tabs(["🏏 Top Run Scorers by Over", "🎯 Most Runs Conceded by Over", "📈 Over-wise Summary"])
+        tab1, tab2, tab3, tab4, tab5 = st.tabs([
+            "Top Run Scorers by Over",
+            "Most Runs Conceded by Over",
+            "Over-wise Summary",
+            "Batter Profile by Over",
+            "Bowler Profile by Over"
+        ])
         
         with tab1:
             st.markdown("### Batters who scored most runs in a single over")
             # Group by batter, over, match to find max runs in an over
-            batter_over = obo_df.groupby(['match_id', 'batter', 'over', 'team', 'year'], observed=True).agg(
+            batter_over = obo_df.groupby(['match_id', 'batter', 'over', 'team', 'year', 'date'], observed=True).agg(
                 Runs=('runs.batter', 'sum'),
                 Balls=('is_valid_delivery', 'sum')
             ).reset_index()
             
             # Top individual overs
             top_overs = batter_over.sort_values('Runs', ascending=False).head(50)
-            top_overs = top_overs.rename(columns={'batter': 'Batter', 'over': 'Over', 'team': 'Team', 'year': 'Season'})
+            top_overs = top_overs.rename(columns={'batter': 'Batter', 'over': 'Over', 'team': 'Team', 'year': 'Season', 'date': 'Date'})
             top_overs['Over'] = top_overs['Over'] + 1  # Display 1-indexed overs
+            top_overs['Date'] = pd.to_datetime(top_overs['Date']).dt.date
             
-            st.dataframe(top_overs[['Batter', 'Team', 'Over', 'Runs', 'Balls', 'Season']].astype({'Batter': str, 'Team': str}), 
+            st.dataframe(top_overs[['Batter', 'Team', 'Date', 'Over', 'Runs', 'Balls', 'Season']].astype({'Batter': str, 'Team': str}), 
                         use_container_width=True)
             
             # Aggregate: Which batter has most "big overs" (e.g., 15+ runs)
@@ -1213,7 +1766,7 @@ elif metric_choice == "Over-by-Over Analysis":
         with tab2:
             st.markdown("### Bowlers who conceded most runs in a single over")
             # Group by bowler, over, match
-            bowler_over = obo_df.groupby(['match_id', 'bowler', 'over', 'bowling_team', 'year'], observed=True).agg(
+            bowler_over = obo_df.groupby(['match_id', 'bowler', 'over', 'bowling_team', 'year', 'date'], observed=True).agg(
                 Runs_Conceded=('runs.total', 'sum'),
                 Balls=('is_valid_delivery', 'sum'),
                 Wickets=('wicket_count', 'sum')
@@ -1221,10 +1774,11 @@ elif metric_choice == "Over-by-Over Analysis":
             
             # Top expensive overs
             expensive_overs = bowler_over.sort_values('Runs_Conceded', ascending=False).head(50)
-            expensive_overs = expensive_overs.rename(columns={'bowler': 'Bowler', 'over': 'Over', 'bowling_team': 'Team', 'year': 'Season'})
+            expensive_overs = expensive_overs.rename(columns={'bowler': 'Bowler', 'over': 'Over', 'bowling_team': 'Team', 'year': 'Season', 'date': 'Date'})
             expensive_overs['Over'] = expensive_overs['Over'] + 1  # Display 1-indexed
+            expensive_overs['Date'] = pd.to_datetime(expensive_overs['Date']).dt.date
             
-            st.dataframe(expensive_overs[['Bowler', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].astype({'Bowler': str, 'Team': str}), 
+            st.dataframe(expensive_overs[['Bowler', 'Team', 'Date', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].astype({'Bowler': str, 'Team': str}), 
                         use_container_width=True)
             
             # Aggregate: Bowlers with most "expensive overs" (20+ runs)
@@ -1269,6 +1823,90 @@ elif metric_choice == "Over-by-Over Analysis":
                 st.plotly_chart(fig, use_container_width=True)
             
             st.dataframe(over_summary, use_container_width=True)
+        
+        with tab4:
+            st.markdown("### Batter — Performance by Over")
+            st.caption("Select a batter to see their scoring pattern across all individual overs")
+            
+            obo_batters = sorted(obo_df['batter'].astype(str).unique())
+            sel_obo_batter = st.selectbox("Select Batter", [""] + list(obo_batters), key="obo_t4_batter")
+            
+            if sel_obo_batter:
+                bp_df = obo_df[obo_df['batter'].astype(str) == sel_obo_batter].copy()
+                # Per over instance
+                bp_overs = bp_df.groupby(['match_id', 'over', 'date', 'teams', 'team', 'year'], observed=True).agg(
+                    Runs=('runs.batter', 'sum'),
+                    Balls=('is_valid_delivery', 'sum')
+                ).reset_index()
+                bp_overs['Over'] = bp_overs['over'] + 1
+                bp_overs['Date'] = pd.to_datetime(bp_overs['date']).dt.date
+                bp_overs['SR_Over'] = (bp_overs['Runs'] / bp_overs['Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                bp_overs = bp_overs.rename(columns={'team': 'Team', 'year': 'Season', 'teams': 'Match'})
+                bp_overs = bp_overs.sort_values('Runs', ascending=False)
+                
+                st.dataframe(
+                    bp_overs[['Date', 'Match', 'Team', 'Over', 'Runs', 'Balls', 'SR_Over', 'Season']].head(50),
+                    use_container_width=True
+                )
+                
+                # Aggregate by over number
+                bp_avg = bp_overs.groupby('Over', observed=True).agg(
+                    Avg_Runs=('Runs', 'mean'),
+                    Innings=('match_id', 'count')
+                ).reset_index()
+                bp_avg['Avg_Runs'] = bp_avg['Avg_Runs'].round(2)
+                
+                fig = px.bar(
+                    bp_avg, x='Over', y='Avg_Runs',
+                    color='Avg_Runs', color_continuous_scale='RdYlGn',
+                    title=f"{sel_obo_batter} — Average Runs by Over",
+                    hover_data=['Innings']
+                )
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("Select a batter to view their over-by-over profile.")
+        
+        with tab5:
+            st.markdown("### Bowler — Performance by Over")
+            st.caption("Select a bowler to see their economy and wickets across all individual overs")
+            
+            obo_bowlers = sorted(obo_df['bowler'].astype(str).unique())
+            sel_obo_bowler = st.selectbox("Select Bowler", [""] + list(obo_bowlers), key="obo_t5_bowler")
+            
+            if sel_obo_bowler:
+                bwp_df = obo_df[obo_df['bowler'].astype(str) == sel_obo_bowler].copy()
+                bwp_overs = bwp_df.groupby(['match_id', 'over', 'date', 'teams', 'bowling_team', 'year'], observed=True).agg(
+                    Runs_Conceded=('runs.total', 'sum'),
+                    Balls=('is_valid_delivery', 'sum'),
+                    Wickets=('wicket_count', 'sum')
+                ).reset_index()
+                bwp_overs['Over'] = bwp_overs['over'] + 1
+                bwp_overs['Date'] = pd.to_datetime(bwp_overs['date']).dt.date
+                bwp_overs = bwp_overs.rename(columns={'bowling_team': 'Team', 'year': 'Season', 'teams': 'Match'})
+                bwp_overs = bwp_overs.sort_values('Runs_Conceded', ascending=False)
+                
+                st.dataframe(
+                    bwp_overs[['Date', 'Match', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].head(50),
+                    use_container_width=True
+                )
+                
+                # Aggregate by over number
+                bwp_avg = bwp_overs.groupby('Over', observed=True).agg(
+                    Avg_Runs=('Runs_Conceded', 'mean'),
+                    Total_Wickets=('Wickets', 'sum'),
+                    Innings=('match_id', 'count')
+                ).reset_index()
+                bwp_avg['Avg_Runs'] = bwp_avg['Avg_Runs'].round(2)
+                
+                fig = px.bar(
+                    bwp_avg, x='Over', y='Avg_Runs',
+                    color='Total_Wickets', color_continuous_scale='Reds_r',
+                    title=f"{sel_obo_bowler} — Average Runs Conceded by Over (colour = wickets)",
+                    hover_data=['Total_Wickets', 'Innings']
+                )
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.info("Select a bowler to view their over-by-over profile.")
 
 # =========================================
 # BATTER VS BOWLER MATCHUP
@@ -1278,26 +1916,32 @@ elif metric_choice == "Batter vs Bowler Matchup":
     st.write("Head-to-head statistics between batters and bowlers")
     
     # Additional filters
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns([2, 1, 2])
     with col1:
         matchup_years = sorted(fdf['year'].dropna().unique())
         selected_matchup_year = st.selectbox("Filter by Year", ["All Years"] + list(matchup_years), key="matchup_year")
     with col2:
-        min_balls = st.slider("Minimum Balls Faced", 1, 50, 6)
+        min_balls = 1  # Default to 1
+    with col3:
+        matchup_aggregate = st.checkbox(
+            "Aggregate across teams (ignore team split)",
+            value=False,
+            key="matchup_aggregate",
+            help="Merge stats for players who played for multiple teams."
+        )
     
-    # Apply year filter
-    matchup_df = fdf.copy()
+    # Source df – use pre-team-filter df when aggregating
+    matchup_source = fdf_no_team.copy() if matchup_aggregate else fdf.copy()
     if selected_matchup_year != "All Years":
-        matchup_df = matchup_df[matchup_df['year'] == selected_matchup_year]
-    
-    # Exclude super overs
-    matchup_df = matchup_df[matchup_df['innings'].isin([1, 2])]
+        matchup_source = matchup_source[matchup_source['year'] == selected_matchup_year]
+    matchup_df = matchup_source[matchup_source['innings'].isin([1, 2])]
     
     if matchup_df.empty:
         st.warning("No data for selected filters.")
     else:
-        # Calculate matchup stats - count unique innings for matches
-        matchup_stats = matchup_df.groupby(['batter', 'bowler', 'team', 'bowling_team'], observed=True).agg(
+        # Calculate matchup stats
+        grp_cols = ['batter', 'bowler'] if matchup_aggregate else ['batter', 'bowler', 'team', 'bowling_team']
+        matchup_stats = matchup_df.groupby(grp_cols, observed=True).agg(
             Runs=('runs.batter', 'sum'),
             Balls=('is_valid_delivery', 'sum'),
             Dismissals=('wicket_count', 'sum'),
@@ -1314,29 +1958,35 @@ elif metric_choice == "Batter vs Bowler Matchup":
             matchup_stats['Avg'] = matchup_stats.apply(
                 lambda x: round(x['Runs'] / x['Dismissals'], 2) if x['Dismissals'] > 0 else x['Runs'], axis=1
             )
-            # Convert to string to avoid categorical issues
             matchup_stats['Batter'] = matchup_stats['batter'].astype(str)
             matchup_stats['Bowler'] = matchup_stats['bowler'].astype(str)
-            matchup_stats['Batting_Team'] = matchup_stats['team'].astype(str)
-            matchup_stats['Bowling_Team'] = matchup_stats['bowling_team'].astype(str)
+            if not matchup_aggregate:
+                matchup_stats['Batting_Team'] = matchup_stats['team'].astype(str)
+                matchup_stats['Bowling_Team'] = matchup_stats['bowling_team'].astype(str)
             
-            tab1, tab2, tab3 = st.tabs(["🏏 Top Matchups (Batter Dominant)", "🎯 Top Matchups (Bowler Dominant)", "🔍 Search Matchup"])
+            tab1, tab2, tab3, tab4, tab5 = st.tabs([
+                "Top Matchups (Batter Dominant)",
+                "Top Matchups (Bowler Dominant)",
+                "Search Matchup",
+                "Batter - Best Overs",
+                "Bowler - Most Expensive Overs"
+            ])
             
             with tab1:
                 st.markdown("### Batters who dominate specific bowlers")
                 st.caption("Batters with most runs against a bowler without getting dismissed")
                 
-                # High runs, no dismissals
                 batter_dominant = matchup_stats[matchup_stats['Dismissals'] == 0].sort_values('Runs', ascending=False).head(30)
                 if batter_dominant.empty:
                     batter_dominant = matchup_stats.sort_values(['Runs', 'SR'], ascending=[False, False]).head(30)
                     st.caption("(Showing top run scorers as no never-out matchups found)")
                 
-                st.dataframe(batter_dominant[['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']], 
-                           use_container_width=True)
+                dom_cols = ['Batter', 'Bowler', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']
+                if not matchup_aggregate:
+                    dom_cols = ['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team'] + dom_cols[2:]
+                st.dataframe(batter_dominant[dom_cols], use_container_width=True)
                 
                 if not batter_dominant.empty:
-                    # Create matchup label
                     batter_dominant = batter_dominant.copy()
                     batter_dominant['Matchup'] = batter_dominant['Batter'] + ' vs ' + batter_dominant['Bowler']
                     fig = px.bar(batter_dominant.head(15), x='Matchup', y='Runs', color='SR',
@@ -1349,7 +1999,6 @@ elif metric_choice == "Batter vs Bowler Matchup":
                 st.markdown("### Bowlers who dominate specific batters")
                 st.caption("Bowlers who have dismissed the same batter multiple times")
                 
-                # High dismissals, low avg
                 bowler_dominant = matchup_stats[matchup_stats['Dismissals'] >= 2].sort_values(
                     ['Dismissals', 'Avg'], ascending=[False, True]
                 ).head(30)
@@ -1357,8 +2006,10 @@ elif metric_choice == "Batter vs Bowler Matchup":
                 if bowler_dominant.empty:
                     st.info("No bowler has dismissed the same batter 2+ times in filtered data.")
                 else:
-                    st.dataframe(bowler_dominant[['Bowler', 'Bowling_Team', 'Batter', 'Batting_Team', 'Innings', 'Dismissals', 'Runs', 'Balls', 'Avg']], 
-                               use_container_width=True)
+                    dom2_cols = ['Bowler', 'Batter', 'Innings', 'Dismissals', 'Runs', 'Balls', 'Avg']
+                    if not matchup_aggregate:
+                        dom2_cols = ['Bowler', 'Bowling_Team', 'Batter', 'Batting_Team'] + dom2_cols[2:]
+                    st.dataframe(bowler_dominant[dom2_cols], use_container_width=True)
                     
                     bowler_dominant = bowler_dominant.copy()
                     bowler_dominant['Matchup'] = bowler_dominant['Bowler'] + ' vs ' + bowler_dominant['Batter']
@@ -1388,12 +2039,13 @@ elif metric_choice == "Batter vs Bowler Matchup":
                     if search_result.empty:
                         st.info("No matchup found for selected players.")
                     else:
-                        st.dataframe(search_result[['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']], 
-                                   use_container_width=True)
+                        sr_cols = ['Batter', 'Bowler', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']
+                        if not matchup_aggregate:
+                            sr_cols = ['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team'] + sr_cols[2:]
+                        st.dataframe(search_result[sr_cols], use_container_width=True)
                         
                         if len(search_result) > 1:
                             if search_batter:
-                                # Show batter's record against all selected bowlers
                                 fig = px.bar(search_result.sort_values('Runs', ascending=False).head(15), 
                                             x='Bowler', y='Runs', color='SR',
                                             color_continuous_scale='RdYlGn',
@@ -1401,13 +2053,92 @@ elif metric_choice == "Batter vs Bowler Matchup":
                                 fig.update_xaxes(tickangle=45)
                                 st.plotly_chart(fig, use_container_width=True)
                             elif search_bowler:
-                                # Show bowler's record against all batters
                                 fig = px.bar(search_result.sort_values('Dismissals', ascending=False).head(15), 
                                             x='Batter', y='Dismissals', color='Avg',
                                             color_continuous_scale='RdYlGn_r',
                                             title=f"{search_bowler}'s Record Against Batters")
                                 fig.update_xaxes(tickangle=45)
                                 st.plotly_chart(fig, use_container_width=True)
+            
+            with tab4:
+                st.markdown("### Batter — Most Runs in a Single Over")
+                st.caption("Select a batter to see their highest-scoring individual overs")
+                
+                all_batters_t4 = sorted(matchup_df['batter'].astype(str).unique())
+                sel_batter_t4 = st.selectbox("Select Batter", [""] + list(all_batters_t4), key="mu_t4_batter")
+                
+                if sel_batter_t4:
+                    batter_overs = matchup_df[matchup_df['batter'].astype(str) == sel_batter_t4].copy()
+                    batter_overs = batter_overs.groupby(['match_id', 'over', 'date', 'teams', 'team', 'year'], observed=True).agg(
+                        Runs=('runs.batter', 'sum'),
+                        Balls=('is_valid_delivery', 'sum')
+                    ).reset_index()
+                    batter_overs['Over'] = batter_overs['over'] + 1
+                    batter_overs['Date'] = pd.to_datetime(batter_overs['date']).dt.date
+                    batter_overs['Opponent'] = batter_overs['teams'].astype(str)
+                    batter_overs['SR_Over'] = (batter_overs['Runs'] / batter_overs['Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                    batter_overs = batter_overs.rename(columns={'team': 'Team', 'year': 'Season'})
+                    batter_overs = batter_overs.sort_values('Runs', ascending=False)
+                    
+                    st.markdown(f"**{sel_batter_t4} — Top Scoring Overs**")
+                    st.dataframe(
+                        batter_overs[['Date', 'Opponent', 'Team', 'Over', 'Runs', 'Balls', 'SR_Over', 'Season']].head(30),
+                        use_container_width=True
+                    )
+                    
+                    if not batter_overs.empty:
+                        fig = px.bar(
+                            batter_overs.head(20),
+                            x=batter_overs.head(20)['Date'].astype(str) + ' Ov' + batter_overs.head(20)['Over'].astype(str),
+                            y='Runs',
+                            color='SR_Over',
+                            color_continuous_scale='RdYlGn',
+                            title=f"{sel_batter_t4} — Most Runs in a Single Over"
+                        )
+                        fig.update_xaxes(title='Match / Over', tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.info("Select a batter to see their best individual overs.")
+            
+            with tab5:
+                st.markdown("### Bowler — Most Runs Conceded in a Single Over")
+                st.caption("Select a bowler to see their most expensive individual overs")
+                
+                all_bowlers_t5 = sorted(matchup_df['bowler'].astype(str).unique())
+                sel_bowler_t5 = st.selectbox("Select Bowler", [""] + list(all_bowlers_t5), key="mu_t5_bowler")
+                
+                if sel_bowler_t5:
+                    bowler_overs = matchup_df[matchup_df['bowler'].astype(str) == sel_bowler_t5].copy()
+                    bowler_overs = bowler_overs.groupby(['match_id', 'over', 'date', 'teams', 'bowling_team', 'year'], observed=True).agg(
+                        Runs_Conceded=('runs.total', 'sum'),
+                        Balls=('is_valid_delivery', 'sum'),
+                        Wickets=('wicket_count', 'sum')
+                    ).reset_index()
+                    bowler_overs['Over'] = bowler_overs['over'] + 1
+                    bowler_overs['Date'] = pd.to_datetime(bowler_overs['date']).dt.date
+                    bowler_overs['Match'] = bowler_overs['teams'].astype(str)
+                    bowler_overs = bowler_overs.rename(columns={'bowling_team': 'Team', 'year': 'Season'})
+                    bowler_overs = bowler_overs.sort_values('Runs_Conceded', ascending=False)
+                    
+                    st.markdown(f"**{sel_bowler_t5} — Most Expensive Overs**")
+                    st.dataframe(
+                        bowler_overs[['Date', 'Match', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].head(30),
+                        use_container_width=True
+                    )
+                    
+                    if not bowler_overs.empty:
+                        fig = px.bar(
+                            bowler_overs.head(20),
+                            x=bowler_overs.head(20)['Date'].astype(str) + ' Ov' + bowler_overs.head(20)['Over'].astype(str),
+                            y='Runs_Conceded',
+                            color='Wickets',
+                            color_continuous_scale='Reds',
+                            title=f"{sel_bowler_t5} — Most Runs Conceded in a Single Over"
+                        )
+                        fig.update_xaxes(title='Match / Over', tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
+                else:
+                    st.info("Select a bowler to see their most expensive overs.")
 
 # =========================================
 # MOST WICKETS IN AN OVER
@@ -1496,6 +2227,321 @@ elif metric_choice == "Most Wickets in an Over":
                             title="Bowlers with Most 2+ Wicket Overs", text='Multi_Wicket_Overs')
                 fig.update_xaxes(tickangle=45)
                 st.plotly_chart(fig, use_container_width=True)
+
+# =========================================
+# EXTRAS IMPACT INDEX (BOWLER)
+# =========================================
+elif metric_choice == "Extras Impact Index (Bowler)":
+    st.subheader("💸 Extras Impact Index (Bowler)")
+    st.write("Analyze the true cost of extras: Runs conceded on the extra delivery + Runs conceded on the immediate next delivery")
+    
+    # 1. Filters (Season | Match | Team | Bowler)
+    # We start with 'fdf' which is already filtered by League/Year/Team from sidebar if selected.
+    # We will add specific filters here as requested.
+    
+    ei_df = fdf.copy()
+    if ei_df.empty:
+        st.warning("No data for selected sidebar filters.")
+    else:
+        # Filter Layout
+        col1, col2, col3, col4 = st.columns(4)
+        
+        with col1:
+            years = sorted(ei_df['year'].unique())
+            sel_years = st.multiselect("Season", years, default=years, key="ei_season")
+            if sel_years:
+                ei_df = ei_df[ei_df['year'].isin(sel_years)]
+        
+        with col2:
+            matches = sorted(ei_df['match_id'].unique())
+            # Show matches as "Team vs Team (Date)"
+            match_labels = ei_df[['match_id', 'teams', 'date']].drop_duplicates().set_index('match_id')
+            match_labels['label'] = match_labels['teams'].astype(str) + ' (' + match_labels['date'].astype(str) + ')'
+            match_dict = match_labels['label'].to_dict()
+            
+            sel_matches = st.multiselect("Match", matches, format_func=lambda x: match_dict.get(x, x), key="ei_match")
+            if sel_matches:
+                ei_df = ei_df[ei_df['match_id'].isin(sel_matches)]
+                
+        with col3:
+            teams = sorted(ei_df['bowling_team'].unique())
+            sel_teams = st.multiselect("Team", teams, default=teams, key="ei_team")
+            if sel_teams:
+                ei_df = ei_df[ei_df['bowling_team'].isin(sel_teams)]
+                
+        with col4:
+            bowlers = sorted(ei_df['bowler'].unique())
+            sel_bowlers = st.multiselect("Bowler", bowlers, default=bowlers, key="ei_bowler")
+            if sel_bowlers:
+                ei_df = ei_df[ei_df['bowler'].isin(sel_bowlers)]
+        
+        if ei_df.empty:
+            st.warning("No data after applying filters.")
+        else:
+            # 2. Calculations
+            # Sort to ensure delivery order
+            ei_df = ei_df.sort_values(['match_id', 'innings', 'over', 'ball_float'])
+            
+            # Shift to get next ball details
+            ei_df['next_runs'] = ei_df['runs.total'].shift(-1)
+            ei_df['next_match'] = ei_df['match_id'].shift(-1)
+            ei_df['next_innings'] = ei_df['innings'].shift(-1)
+            
+            # Filter for Extras (Wides and No Balls)
+            # Use 'wides' > 0 or 'no_balls' > 0 logic
+            # Note: 'no_balls' in preprocessing is a flag (0/1), runs are in runs.extras or runs.total
+            extras_mask = (ei_df['wides'] > 0) | (ei_df['no_balls'] > 0)
+            
+            # Valid next ball check (same match, same innings)
+            valid_next = (ei_df['next_match'] == ei_df['match_id']) & (ei_df['next_innings'] == ei_df['innings'])
+            
+            # Dataframe for extras events
+            extras_events_df = ei_df[extras_mask & valid_next].copy()
+            
+            # Calculate cost per event
+            extras_events_df['Runs_on_Extra'] = extras_events_df['runs.total']
+            extras_events_df['Runs_Next_Ball'] = extras_events_df['next_runs'].fillna(0)
+            extras_events_df['Total_Extra_Impact_Runs'] = extras_events_df['Runs_on_Extra'] + extras_events_df['Runs_Next_Ball']
+            
+            # Aggregate stats by Bowler
+            # 1. Total Runs Conceded by Bowler (for denominator)
+            bowler_total_runs = ei_df.groupby(['bowler', 'bowling_team'], observed=True)['runs.total'].sum().reset_index(name='Total_Runs_Conceded')
+            
+            # 2. Extras Stats
+            if extras_events_df.empty:
+                st.info("No extras found in the filtered data.")
+            else:
+                extras_stats = extras_events_df.groupby(['bowler', 'bowling_team'], observed=True).agg(
+                    Extra_Balls=('match_id', 'count'), # Count of extra events (deliveries)
+                    Wide_Runs=('wides', 'sum'),       # Sum of wide runs
+                    NoBall_Runs=('no_balls', 'sum'),  # Sum of no-ball runs (if column is count, this might need check, but usually 'no_balls' in parquet is 0/1 flag. Checks needed.)
+                    # Wait, no_balls column in parquet is usually 0/1 flag. 
+                    # If we want NoBall RUNS, we should check preprocessing. 
+                    # Preprocessing: 'no_balls' is 1 if event['noballs'] > 0 else 0.
+                    # Runs for NoBall are in runs.extras.
+                    # But if it's a NoBall + Bye, runs.extras includes byes.
+                    # Standard convention: NoBall penalty is 1 run. 
+                    # We will assume 1 run per NoBall count for the "Extras" part.
+                    # But for "Impact", we want the cost.
+                    # Let's use specific columns if possible.
+                    # For now: NoBall Runs = Count * 1.
+                    Extra_Impact_Runs=('Total_Extra_Impact_Runs', 'sum')
+                ).reset_index()
+                
+                # Correction: "no_balls" column is count. Multiply by 1 for runs? 
+                # Actually, strictly speaking, a No Ball is 1 run.
+                extras_stats['NoBall_Runs'] = extras_events_df.groupby(['bowler', 'bowling_team'], observed=True)['no_balls'].sum().values
+                
+                # Merge
+                final_stats = pd.merge(bowler_total_runs, extras_stats, on=['bowler', 'bowling_team'], how='left')
+                # Fill NaNs only in numeric columns to avoid Categorical type errors
+                final_stats[['Extra_Balls', 'Wide_Runs', 'NoBall_Runs', 'Extra_Impact_Runs']] = final_stats[['Extra_Balls', 'Wide_Runs', 'NoBall_Runs', 'Extra_Impact_Runs']].fillna(0)
+                
+                # Impact %
+                final_stats['Impact_Percent'] = (final_stats['Extra_Impact_Runs'] / final_stats['Total_Runs_Conceded'] * 100).fillna(0).round(1)
+                final_stats = final_stats.sort_values('Extra_Impact_Runs', ascending=False)
+                
+                # 3. KPI Cards
+                total_extra_balls = int(final_stats['Extra_Balls'].sum())
+                total_wide_runs = int(final_stats['Wide_Runs'].sum())
+                total_nb_runs = int(final_stats['NoBall_Runs'].sum())
+                total_impact_runs = int(final_stats['Extra_Impact_Runs'].sum())
+                total_runs_conc = int(final_stats['Total_Runs_Conceded'].sum())
+                avg_impact_pct = (total_impact_runs / total_runs_conc * 100) if total_runs_conc > 0 else 0
+                
+                kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+                # Show Runs clearly
+                kpi1.metric("🟦 Extra Deliveries", f"{total_extra_balls}")
+                kpi2.metric("🟧 Wides / NBs (Runs)", f"{total_wide_runs} / {total_nb_runs}") 
+                kpi3.metric("🟥 Extra-Impact Runs", f"{total_impact_runs}")
+                kpi4.metric("🟨 Impact %", f"{avg_impact_pct:.1f}%")
+                
+                st.markdown("---")
+                
+                # 4. Charts and Table
+                col1, col2 = st.columns([2, 1])
+                
+                with col1:
+                    st.markdown("#### Bowler vs Extra-Impact Runs")
+                    fig = px.bar(final_stats.head(20), x='bowler', y='Extra_Impact_Runs', 
+                                color='Impact_Percent', 
+                                title="Extra-Impact Runs by Bowler (Color = Impact %)",
+                                labels={'bowler': 'Bowler', 'Extra_Impact_Runs': 'Extra-Impact Runs', 'Impact_Percent': 'Impact %'},
+                                color_continuous_scale='Reds')
+                    st.plotly_chart(fig, use_container_width=True)
+                
+                with col2:
+                    st.markdown("#### Top Bowlers (Impact Table)")
+                    st.dataframe(
+                        final_stats[['bowler', 'Extra_Balls', 'Wide_Runs', 'NoBall_Runs', 'Extra_Impact_Runs', 'Impact_Percent']]
+                        .rename(columns={'bowler': 'Bowler', 'Extra_Balls': 'Balls', 'Wide_Runs': 'Wides', 'NoBall_Runs': 'NBs', 'Extra_Impact_Runs': 'Impact Runs', 'Impact_Percent': 'Impact %'})
+                        .head(20),
+                        use_container_width=True,
+                        hide_index=True
+                    )
+
+                st.markdown("---")
+                st.markdown("#### 🔍 Ball-by-Ball Breakdown (Extras → Next Ball)")
+                
+                # Drill-down table
+                drill_down = extras_events_df[['over', 'ball_float', 'bowler', 'batter', 'bowling_team', 'wides', 'no_balls', 'Runs_on_Extra', 'Runs_Next_Ball']].copy()
+                drill_down['Over'] = drill_down['over'] + 1
+                drill_down['Ball'] = drill_down['ball_float'].apply(lambda x: f"{int(x)}.{(round((x % 1) * 6) + 1)}")
+                
+                def get_extra_type(row):
+                    types = []
+                    if row['wides'] > 0: types.append(f"Wide ({int(row['wides'])})")
+                    if row['no_balls'] > 0: types.append("No-ball")
+                    return ", ".join(types)
+                
+                drill_down['Extra Type'] = drill_down.apply(get_extra_type, axis=1)
+                
+                # Formatted table columns
+                display_table = drill_down[['bowler', 'Over', 'Ball', 'Extra Type', 'Runs_on_Extra', 'Runs_Next_Ball']]
+                display_table.columns = ['Bowler', 'Over', 'Ball', 'Extra Type', 'Runs on Extra', 'Runs Next Ball']
+                
+                st.dataframe(display_table, use_container_width=True)
+
+# =========================================
+# OVERALL EXTRAS SUMMARY (SEASON VIEW)
+# =========================================
+elif metric_choice == "Overall Extras Summary":
+    st.subheader("📊 Overall Extras Summary (Season View)")
+    st.write("Comprehensive analysis of extras (Wides, No-Balls) across teams and bowlers.")
+    
+    # Use raw 'df' to avoid phase filtering, but apply sidebar League/Year filters manually
+    # We want "Season Summary", so assume user wants full season data.
+    
+    # Filter by League/Year from sidebar (re-apply logic on raw df)
+    # We don't want 'fdf' because it might have other filters (though currently only League/Year/Team are in sidebar).
+    # But just in case 'fdf' has phase filter in future or default behavior, let's be safe.
+    # Actually, the sidebar code applies League/Year/Team to 'fdf'. 
+    # If we want to ignore Team filter for "Overall Summary" (to show all teams), we should use `df` and re-filter by Year/League.
+    # User said "Filters: Season | Match | Team | Bowler" for Impact Index.
+    # For "Season Summary", it usually implies showing ALL teams for the selected season.
+    # So we will filter by League/Year only.
+    
+    oes_df = df.copy()
+    if selected_leagues:
+        oes_df = oes_df[oes_df['league'].isin(selected_leagues)]
+    if selected_years:
+        oes_df = oes_df[oes_df['year'].isin(selected_years)]
+        
+    if oes_df.empty:
+        st.warning("No data for selected League/Year.")
+    else:
+        # 1. KPI Cards (Season Overview)
+        # Total Extras = Wides + NoBalls + Byes + Legbyes?
+        # User request: "Total Extras in Season: 412".
+        # Usually implies ALL extras.
+        # Wides + NB + Byes + Legbyes
+        total_wides = oes_df['wides'].sum()
+        total_nbs = oes_df['no_balls'].sum() # Assuming count = runs (approx) or check runs.extras logic
+        # Actually in parquet, 'runs.extras' is the sum of all extras runs.
+        # We can sum 'runs.extras'.
+        total_extras = oes_df['runs.extras'].sum()
+        
+        matches_count = oes_df['match_id'].nunique()
+        avg_extras = round(total_extras / matches_count, 1) if matches_count > 0 else 0
+        
+        # Most/Least Disciplined Team (Avg Extras/Match)
+        team_discipline = oes_df.groupby('bowling_team', observed=True)['runs.extras'].sum().reset_index()
+        team_matches = oes_df.groupby('bowling_team', observed=True)['match_id'].nunique().reset_index()
+        team_stats = pd.merge(team_discipline, team_matches, on='bowling_team')
+        team_stats['Avg_Extras'] = (team_stats['runs.extras'] / team_stats['match_id']).round(1)
+        team_stats = team_stats.sort_values('Avg_Extras')
+        
+        best_team = team_stats.iloc[0] if not team_stats.empty else None
+        worst_team = team_stats.iloc[-1] if not team_stats.empty else None
+        
+        kpi1, kpi2, kpi3, kpi4 = st.columns(4)
+        kpi1.metric("🟥 Total Extras", f"{int(total_extras)}")
+        kpi2.metric("🟨 Avg Extras/Match", f"{avg_extras}")
+        if best_team is not None:
+            kpi3.metric("🟩 Most Disciplined", f"{best_team['bowling_team']} ({best_team['Avg_Extras']})")
+        if worst_team is not None:
+            kpi4.metric("🟥 Least Disciplined", f"{worst_team['bowling_team']} ({worst_team['Avg_Extras']})")
+            
+        st.markdown("---")
+        
+        # 2. Stacked Bar Chart (Team vs Extras - Wides/NBs)
+        # User asked for "Wides (light) + No-balls (dark)"
+        team_breakdown = oes_df.groupby('bowling_team', observed=True).agg(
+            Wides=('wides', 'sum'),
+            NoBalls=('no_balls', 'sum') # Count as runs approximation
+        ).reset_index()
+        
+        # Setup for stacked bar (long format)
+        team_long = team_breakdown.melt(id_vars='bowling_team', value_vars=['Wides', 'NoBalls'], 
+                                      var_name='Extra_Type', value_name='Runs')
+        
+        st.markdown("### Team Comparison")
+        fig = px.bar(team_long, x='bowling_team', y='Runs', color='Extra_Type',
+                     title="Team Extras Breakdown (Wides vs No-Balls)",
+                     labels={'bowling_team': 'Team', 'Runs': 'Runs Conceded'},
+                     color_discrete_map={'Wides': '#ADD8E6', 'NoBalls': '#00008B'}, # Light/Dark blue
+                     barmode='stack')
+        st.plotly_chart(fig, use_container_width=True)
+        
+        # 3. Leaderboard (Bowlers)
+        # Columns: Bowler, Team, Wides, No-balls, Total Extras, Extras per Over
+        st.markdown("### Bowler Leaderboard")
+        
+        # Group by Bowler
+        bowler_stats = oes_df.groupby(['bowler', 'bowling_team'], observed=True).agg(
+            Wides=('wides', 'sum'),
+            NoBalls=('no_balls', 'sum'),
+            Balls_Bowled=('is_valid_delivery', 'sum') # For Extras/Over calculation
+        ).reset_index()
+        
+        bowler_stats['Total_Extras'] = bowler_stats['Wides'] + bowler_stats['NoBalls']
+        # Extras per over: Total Extras / (Balls/6)
+        bowler_stats['Overs'] = bowler_stats['Balls_Bowled'] / 6
+        bowler_stats['Extras_Per_Over'] = (bowler_stats['Total_Extras'] / bowler_stats['Overs']).replace([np.inf, np.nan], 0).round(2)
+        
+        # Filter for bowlers with minimum impact? Maybe just top 20.
+        bowler_stats = bowler_stats.sort_values('Total_Extras', ascending=False)
+        
+        # Top 10 Chart
+        col1, col2 = st.columns([1, 2])
+        
+        with col1:
+             st.markdown("**Top 10 Bowlers by Extras**")
+             fig = px.bar(bowler_stats.head(10), x='Total_Extras', y='bowler', orientation='h',
+                          color='bowling_team', title="Top 10 Bowlers (Most Extras)",
+                          labels={'Total_Extras': 'Total Wides + NBs', 'bowler': 'Bowler'})
+             fig.update_layout(yaxis={'categoryorder':'total ascending'})
+             st.plotly_chart(fig, use_container_width=True)
+             
+        with col2:
+            st.dataframe(
+                bowler_stats[['bowler', 'bowling_team', 'Wides', 'NoBalls', 'Total_Extras', 'Extras_Per_Over']]
+                .rename(columns={'bowler': 'Bowler', 'bowling_team': 'Team', 'Total_Extras': 'Total (W+NB)', 'Extras_Per_Over': 'Extras/Over'}),
+                use_container_width=True,
+                hide_index=True
+            )
+            
+        # 4. Insight Panel
+        st.markdown("---")
+        st.subheader("🧠 Insights")
+        
+        # Top 3 bowlers contribution
+        total_wides_season = bowler_stats['Wides'].sum()
+        top_3_wides = bowler_stats.sort_values('Wides', ascending=False).head(3)['Wides'].sum()
+        top_3_share = (top_3_wides / total_wides_season * 100) if total_wides_season > 0 else 0
+        
+        st.markdown(f"- **Top 3 Bowlers** contributed **{top_3_share:.1f}%** of all Wides this season.")
+        
+        # Death overs extras (Overs 16-20)
+        death_df = oes_df[(oes_df['over'] >= 15) & (oes_df['over'] <= 19)]
+        death_extras = death_df['runs.extras'].sum()
+        death_share = (death_extras / total_extras * 100) if total_extras > 0 else 0
+        
+        st.markdown(f"- **Death Overs (16-20)** account for **{death_share:.1f}%** of total extras.")
+        
+        # Low extras teams
+        disciplined_teams_count = len(team_stats[team_stats['Avg_Extras'] < 10])
+        st.markdown(f"- **{disciplined_teams_count} Teams** concede fewer than 10 extras per match on average.")
 
 # =========================================
 # LEFT-RIGHT HAND INDEX
@@ -1948,7 +2994,7 @@ elif metric_choice == "Innings Progression":
             if phase_data.empty:
                 return None
             runs = phase_data['runs.total'].sum()
-            wickets = phase_data['wicket_count'].sum()
+            wickets = phase_data['team_wicket_count'].sum() if 'team_wicket_count' in phase_data.columns else phase_data['wicket_count'].sum()
             balls = phase_data['is_valid_delivery'].sum()
             rr = (runs / (balls / 6)) if balls > 0 else 0
             return {
@@ -1987,7 +3033,7 @@ elif metric_choice == "Innings Progression":
                 death = get_phase_stats(inn_data, 'Death', 15, 19)
                 
                 total_runs = inn_data['runs.total'].sum()
-                total_wkts = inn_data['wicket_count'].sum()
+                total_wkts = inn_data['team_wicket_count'].sum() if 'team_wicket_count' in inn_data.columns else inn_data['wicket_count'].sum()
                 
                 all_match_phases.append({
                     'Date': match_date,
@@ -2083,7 +3129,7 @@ elif metric_choice == "Innings Progression":
                         st.markdown(f"### Innings {innings_num}: {team}")
                         
                         total_runs = inn_data['runs.total'].sum()
-                        total_wickets = inn_data['wicket_count'].sum()
+                        total_wickets = inn_data['team_wicket_count'].sum() if 'team_wicket_count' in inn_data.columns else inn_data['wicket_count'].sum()
                         st.markdown(f"**Total: {int(total_runs)}/{int(total_wickets)}**")
                         
                         for phase in phases:
@@ -2200,6 +3246,983 @@ elif metric_choice == "Franchise Debut Tracker":
         fig.update_xaxes(tickangle=45)
         st.plotly_chart(fig, use_container_width=True)
 
+# =========================================
+# SR COMPARISON (YEAR-WISE)
+# =========================================
+elif metric_choice == "SR Comparison (Year-wise)":
+    st.subheader("SR Comparison (Year-wise)")
+    st.write("Batter strike rate comparison across leagues and seasons with ball-range buckets")
+
+    sr_col1, sr_col2, sr_col3 = st.columns([2, 1, 1])
+    with sr_col1:
+        aggregate_across_teams = st.checkbox(
+            "Aggregate across teams (ignore Team filter)",
+            value=True,
+            key="sr_aggregate_teams",
+            help="Useful when a player has represented multiple teams — stats are merged."
+        )
+    with sr_col2:
+        min_sr_balls = st.number_input("Min Balls", min_value=1, max_value=300, value=20, step=1, key="sr_min_balls")
+    with sr_col3:
+        top_n_sr = st.number_input("Top N in chart", min_value=5, max_value=50, value=15, step=1, key="sr_top_n")
+
+    sr_source_df = fdf_no_team.copy() if aggregate_across_teams else fdf.copy()
+    sr_table = yearwise_batter_sr_comparison(
+        sr_source_df,
+        aggregate_across_teams=aggregate_across_teams,
+        min_balls=int(min_sr_balls)
+    )
+
+    if sr_table.empty:
+        st.info("No SR comparison data available for the selected filters.")
+    else:
+        leagues_in_sr = sorted(sr_table['League'].dropna().unique())
+        league_tabs = st.tabs([str(lg) for lg in leagues_in_sr])
+
+        for i, lg in enumerate(leagues_in_sr):
+            with league_tabs[i]:
+                lg_df = sr_table[sr_table['League'] == lg].copy()
+
+                year_options = sorted(lg_df['Season'].dropna().unique(), reverse=True)
+                selected_sr_year = st.selectbox("Season", year_options, key=f"sr_season_{i}")
+
+                year_df = lg_df[lg_df['Season'] == selected_sr_year].copy()
+                display_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn',
+                                '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
+                if not aggregate_across_teams and 'Team' in year_df.columns:
+                    display_cols = ['Name', 'Team'] + display_cols[1:]
+
+                st.dataframe(
+                    year_df[display_cols].sort_values('Strike Rate', ascending=False),
+                    use_container_width=True
+                )
+
+                chart_df = year_df.sort_values('Strike Rate', ascending=False).head(int(top_n_sr)).copy()
+                if not chart_df.empty:
+                    fig = px.bar(
+                        chart_df,
+                        x='Name',
+                        y='Strike Rate',
+                        color='Average',
+                        color_continuous_scale='Viridis',
+                        title=f"{lg} {selected_sr_year} — Strike Rate Comparison",
+                        hover_data=['Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR',
+                                    '31-40 SR', '41-50 SR', '51-60 SR']
+                    )
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# FASTEST 50s & 100s (PLAYER)
+# =========================================
+elif metric_choice == "Fastest 50s & 100s (Player)":
+    st.subheader("⚡ Fastest 50s & 100s (Player)")
+    st.write("Fastest individual batting milestones by legal balls faced — filter IPL via sidebar, then by player below.")
+
+    m1_df = fdf.copy()
+    if m1_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # In-section player filter
+        all_batters = sorted(m1_df['batter'].dropna().astype(str).unique())
+        sel_players = st.multiselect("Filter by Player(s)", all_batters, key="m1_players")
+
+        with st.spinner("Computing fastest milestones..."):
+            milestones_df = fastest_individual_milestones(m1_df)
+
+        if milestones_df.empty:
+            st.info("No 50+ innings found for the selected filters.")
+        else:
+            if sel_players:
+                milestones_df = milestones_df[milestones_df['Batter'].isin(sel_players)]
+
+            tab_50, tab_100 = st.tabs(["🏏 Fastest 50s", "💯 Fastest 100s"])
+
+            with tab_50:
+                st.markdown("### Fastest 50s — sorted by balls faced (ascending)")
+                df_50 = milestones_df[milestones_df['Balls to 50'].notna()].sort_values('Balls to 50').copy()
+                df_50['Balls to 50'] = df_50['Balls to 50'].astype(int)
+                df_50['Batter_Display'] = df_50['Batter'] + df_50['Not Out'].apply(lambda x: '' if x == '' else ' *')
+                display_50 = df_50[['Date', 'Season', 'Match', 'Inning', 'Batting Team',
+                                    'Batter', 'Balls to 50', 'Total Runs', 'Total Balls', 'SR', 'Not Out']].copy()
+                display_50 = display_50.reset_index(drop=True)
+                display_50.index += 1
+                st.dataframe(display_50.head(200), use_container_width=True)
+
+                if len(df_50) >= 5:
+                    fig = px.bar(
+                        df_50.head(20),
+                        x='Batter', y='Balls to 50', color='Batting Team',
+                        title='Top 20 Fastest 50s — Balls Faced',
+                        text='Balls to 50'
+                    )
+                    fig.update_layout(xaxis_tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+
+            with tab_100:
+                st.markdown("### Fastest 100s — sorted by balls faced (ascending)")
+                df_100 = milestones_df[milestones_df['Balls to 100'].notna()].sort_values('Balls to 100').copy()
+                if df_100.empty:
+                    st.info("No 100+ innings found for the selected filters.")
+                else:
+                    df_100['Balls to 100'] = df_100['Balls to 100'].astype(int)
+                    display_100 = df_100[['Date', 'Season', 'Match', 'Inning', 'Batting Team',
+                                         'Batter', 'Balls to 100', 'Total Runs', 'Total Balls', 'SR', 'Not Out']].copy()
+                    display_100 = display_100.reset_index(drop=True)
+                    display_100.index += 1
+                    st.dataframe(display_100.head(200), use_container_width=True)
+
+                    if len(df_100) >= 5:
+                        fig = px.bar(
+                            df_100.head(20),
+                            x='Batter', y='Balls to 100', color='Batting Team',
+                            title='Top 20 Fastest 100s — Balls Faced',
+                            text='Balls to 100'
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# FASTEST TEAM 50 & 100
+# =========================================
+elif metric_choice == "Fastest Team 50 & 100":
+    st.subheader("🚀 Fastest Team 50 & 100")
+    st.write("Team milestones by legal balls (runs include extras: byes, leg-byes). Filter IPL via sidebar, then by team below.")
+
+    m2_df = fdf.copy()
+    if m2_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        all_teams_m2 = sorted(m2_df['team'].dropna().astype(str).unique())
+        sel_teams_m2 = st.multiselect("Filter by Batting Team(s)", all_teams_m2, key="m2_teams")
+
+        with st.spinner("Computing fastest team milestones..."):
+            team_miles_df = fastest_team_milestones(m2_df)
+
+        if team_miles_df.empty:
+            st.info("No team innings reaching 50 found for the selected filters.")
+        else:
+            if sel_teams_m2:
+                team_miles_df = team_miles_df[team_miles_df['Batting Team'].isin(sel_teams_m2)]
+
+            tab_t50, tab_t100 = st.tabs(["🏏 Fastest Team 50s", "💯 Fastest Team 100s"])
+
+            with tab_t50:
+                st.markdown("### Fastest Team 50s — sorted by balls faced (ascending)")
+                df_t50 = team_miles_df[team_miles_df['Balls to 50'].notna()].sort_values('Balls to 50').copy()
+                df_t50['Balls to 50'] = df_t50['Balls to 50'].astype(int)
+                display_t50 = df_t50[['Date', 'Season', 'Team 1', 'Team 2', 'Inning No',
+                                      'Batting Team', 'Balls to 50', 'Total Runs', 'Total Balls']].copy()
+                display_t50 = display_t50.reset_index(drop=True)
+                display_t50.index += 1
+                st.dataframe(display_t50.head(300), use_container_width=True)
+
+                st.markdown("#### 🏆 Top 10 Fastest Team 50s")
+                st.dataframe(display_t50.head(10), use_container_width=True)
+
+                if len(df_t50) >= 5:
+                    fig = px.bar(
+                        df_t50.head(20),
+                        x='Batting Team', y='Balls to 50', color='Season',
+                        title='Top 20 Fastest Team 50s — Balls Faced',
+                        text='Balls to 50',
+                        hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
+                    )
+                    fig.update_layout(xaxis_tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+
+            with tab_t100:
+                st.markdown("### Fastest Team 100s — sorted by balls faced (ascending)")
+                df_t100 = team_miles_df[team_miles_df['Balls to 100'].notna()].sort_values('Balls to 100').copy()
+                if df_t100.empty:
+                    st.info("No team innings reaching 100 found for the selected filters.")
+                else:
+                    df_t100['Balls to 100'] = df_t100['Balls to 100'].astype(int)
+                    display_t100 = df_t100[['Date', 'Season', 'Team 1', 'Team 2', 'Inning No',
+                                           'Batting Team', 'Balls to 100', 'Total Runs', 'Total Balls']].copy()
+                    display_t100 = display_t100.reset_index(drop=True)
+                    display_t100.index += 1
+                    st.dataframe(display_t100.head(300), use_container_width=True)
+
+                    st.markdown("#### 🏆 Top 10 Fastest Team 100s")
+                    st.dataframe(display_t100.head(10), use_container_width=True)
+
+                    if len(df_t100) >= 5:
+                        fig = px.bar(
+                            df_t100.head(20),
+                            x='Batting Team', y='Balls to 100', color='Season',
+                            title='Top 20 Fastest Team 100s — Balls Faced',
+                            text='Balls to 100',
+                            hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# BOWLER FIRST SPELL WICKETS
+# =========================================
+elif metric_choice == "Bowler First Spell Wickets":
+    st.subheader("🎯 Bowler First Spell Wickets")
+    st.write("Wickets taken by bowlers in their first spell (first 3 overs) of an innings.")
+
+    m3_df = fdf.copy()
+    if m3_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        col_m3a, col_m3b = st.columns([1, 3])
+        with col_m3a:
+            min_wkts_spell = st.slider("Min Wickets in First Spell", 1, 5, 2, key="m3_min_wkts")
+
+        with st.spinner("Computing first spell wickets..."):
+            spell_df = bowler_first_spell_wickets(m3_df)
+
+        if spell_df.empty:
+            st.info("No data found.")
+        else:
+            tab_match, tab_agg = st.tabs(["📋 Match-by-Match", "📊 Career Aggregate"])
+
+            with tab_match:
+                st.markdown(f"### Performances with {min_wkts_spell}+ Wickets in First Spell")
+                filtered_spell = spell_df[spell_df['Wickets in First Spell'] >= min_wkts_spell].sort_values(
+                    ['Wickets in First Spell', 'Runs Conceded'], ascending=[False, True]
+                ).copy()
+                if filtered_spell.empty:
+                    st.info(f"No bowlers with {min_wkts_spell}+ wickets in first spell.")
+                else:
+                    disp_spell = filtered_spell[['Date', 'Season', 'Team 1', 'Team 2', 'Innings',
+                                                  'Bowler', 'Bowling Team', 'Wickets in First Spell',
+                                                  'Overs in Spell', 'Spell Over Nos', 'Runs Conceded']].copy()
+                    disp_spell = disp_spell.reset_index(drop=True)
+                    disp_spell.index += 1
+                    st.dataframe(disp_spell, use_container_width=True)
+
+                    if len(disp_spell) >= 3:
+                        fig = px.bar(
+                            filtered_spell.head(25),
+                            x='Bowler', y='Wickets in First Spell', color='Bowling Team',
+                            title=f'Top 25 First Spell Performances ({min_wkts_spell}+ wickets)',
+                            text='Wickets in First Spell',
+                            hover_data=['Date', 'Runs Conceded', 'Overs in Spell']
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
+
+            with tab_agg:
+                st.markdown("### All-Time: Bowlers with Most Multi-Wicket First Spells")
+                threshold = st.slider("Count spells with at least N wickets", 2, 5, 2, key="m3_agg_thresh")
+                agg_spell = (
+                    spell_df[spell_df['Wickets in First Spell'] >= threshold]
+                    .groupby(['Bowler', 'Bowling Team'], observed=True)
+                    .agg(
+                        Such_Spells=('Match ID', 'count'),
+                        Total_Wickets=('Wickets in First Spell', 'sum'),
+                        Best_Spell=('Wickets in First Spell', 'max'),
+                        Avg_Runs_Conceded=('Runs Conceded', 'mean'),
+                    )
+                    .reset_index()
+                    .sort_values('Such_Spells', ascending=False)
+                )
+                agg_spell['Avg_Runs_Conceded'] = agg_spell['Avg_Runs_Conceded'].round(1)
+                agg_spell = agg_spell.rename(columns={'Such_Spells': f'{threshold}+ Wkt Spells'})
+                if agg_spell.empty:
+                    st.info(f"No bowlers with {threshold}+ wicket first spells found.")
+                else:
+                    st.dataframe(agg_spell.head(50), use_container_width=True)
+
+
+# =========================================
+# BACK-TO-BACK 25+ SCORES
+# =========================================
+elif metric_choice == "Back-to-Back 25+ Scores":
+    st.subheader("🔥 Back-to-Back 25+ Scores")
+    st.write("Batters with most 25+ scores and no single-digit innings in a season.")
+
+    m4_df = fdf.copy()
+    if m4_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        col_m4a, col_m4b, col_m4c = st.columns([2, 2, 1])
+        with col_m4a:
+            all_seasons_m4 = sorted(m4_df['year'].dropna().unique(), reverse=True)
+            sel_seasons_m4 = st.multiselect("Season(s)", all_seasons_m4, key="m4_seasons")
+        with col_m4b:
+            all_batters_m4 = sorted(m4_df['batter'].dropna().astype(str).unique())
+            sel_batters_m4 = st.multiselect("Batter(s)", all_batters_m4, key="m4_batters")
+        with col_m4c:
+            strict_no_sd = st.checkbox("Strict: 0 single-digit innings", value=False, key="m4_strict")
+
+        src_m4 = m4_df.copy()
+        if sel_seasons_m4:
+            src_m4 = src_m4[src_m4['year'].isin(sel_seasons_m4)]
+        if sel_batters_m4:
+            src_m4 = src_m4[src_m4['batter'].isin(sel_batters_m4)]
+
+        with st.spinner("Computing consistency metrics..."):
+            cons_df = consistent_batter_season(src_m4)
+
+        if cons_df.empty:
+            st.info("No data found.")
+        else:
+            if strict_no_sd:
+                cons_df = cons_df[cons_df['Innings No Single Digit'] == cons_df['Total Innings']]
+
+            # Show only batters with at least 1 back-to-back (Max Consec 25+ >= 2)
+            min_innings_25 = st.slider("Min Innings with 25+", 1, 20, 2, key="m4_min_25")
+            cons_df = cons_df[cons_df['Innings 25+'] >= min_innings_25]
+
+            cons_df = cons_df.sort_values(['Innings 25+', 'Max Consec 25+', 'Consistency %'],
+                                          ascending=[False, False, False])
+            cons_df = cons_df.reset_index(drop=True)
+            cons_df.index += 1
+
+            st.dataframe(
+                cons_df[['Season', 'Batter', 'Innings 25+', 'Max Consec 25+',
+                         'Innings No Single Digit', 'Total Runs', 'Total Innings', 'Consistency %']],
+                use_container_width=True
+            )
+
+            if len(cons_df) >= 3:
+                top_chart = cons_df.head(20).copy()
+                fig = px.bar(
+                    top_chart,
+                    x='Batter', y='Innings 25+', color='Season',
+                    title='Top 20 — Most 25+ Innings in a Season',
+                    text='Innings 25+',
+                    hover_data=['Max Consec 25+', 'Consistency %', 'Total Runs']
+                )
+                fig.update_layout(xaxis_tickangle=45)
+                st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# BOUNDARY-LESS OVERS SPELL
+# =========================================
+elif metric_choice == "Boundary-less Overs Spell":
+    st.subheader("🛡️ Boundary-less Overs Spell")
+    st.write("Bowlers who bowled 3+ overs without conceding a boundary in an innings (no 4 or 6 off the bat).")
+
+    m5_df = fdf.copy()
+    if m5_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        col_m5a, col_m5b = st.columns([1, 3])
+        with col_m5a:
+            min_bl_overs = st.slider("Min Boundary-less Overs", 3, 10, 3, key="m5_min_bl")
+
+        with st.spinner("Computing boundary-less overs..."):
+            bl_df = boundary_less_overs_spell(m5_df)
+
+        if bl_df.empty:
+            st.info("No performances with 3+ boundary-less overs found for the selected filters.")
+        else:
+            bl_filtered = bl_df[bl_df['Boundary-less Overs'] >= min_bl_overs].sort_values(
+                ['Boundary-less Overs', 'Max Consec Boundary-less'], ascending=[False, False]
+            ).copy()
+
+            tab_bl_match, tab_bl_agg = st.tabs(["📋 Match Performances", "📊 All-Time Leaders"])
+
+            with tab_bl_match:
+                st.markdown(f"### Performances with {min_bl_overs}+ Boundary-less Overs")
+                if bl_filtered.empty:
+                    st.info(f"No performances with {min_bl_overs}+ boundary-less overs.")
+                else:
+                    disp_bl = bl_filtered[['Date', 'Season', 'Team 1', 'Team 2', 'Inning No',
+                                           'Bowler', 'Bowling Team', 'Boundary-less Overs',
+                                           'Boundary-less Over Nos',
+                                           'Max Consec Boundary-less', 'Total Overs Bowled',
+                                           'Runs in Boundary-less Overs', 'Total Runs Conceded']].copy()
+                    disp_bl = disp_bl.reset_index(drop=True)
+                    disp_bl.index += 1
+                    st.dataframe(disp_bl, use_container_width=True)
+
+                    if len(disp_bl) >= 3:
+                        fig = px.bar(
+                            bl_filtered.head(25),
+                            x='Bowler', y='Boundary-less Overs', color='Bowling Team',
+                            title=f'Top 25 — Boundary-less Overs ({min_bl_overs}+)',
+                            text='Boundary-less Overs',
+                            hover_data=['Date', 'Max Consec Boundary-less', 'Total Runs Conceded']
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
+
+            with tab_bl_agg:
+                st.markdown("### All-Time Leaders — Most Boundary-less Overs Performances")
+                bl_agg = (
+                    bl_df[bl_df['Boundary-less Overs'] >= min_bl_overs]
+                    .groupby(['Bowler', 'Bowling Team'], observed=True)
+                    .agg(
+                        Such_Performances=('Match ID', 'count'),
+                        Total_BL_Overs=('Boundary-less Overs', 'sum'),
+                        Best_Match=('Boundary-less Overs', 'max'),
+                        Best_Max_Consec=('Max Consec Boundary-less', 'max'),
+                        Avg_Runs_in_BL=('Runs in Boundary-less Overs', 'mean'),
+                    )
+                    .reset_index()
+                    .sort_values('Such_Performances', ascending=False)
+                )
+                bl_agg['Avg_Runs_in_BL'] = bl_agg['Avg_Runs_in_BL'].round(1)
+                bl_agg = bl_agg.rename(columns={'Such_Performances': f'{min_bl_overs}+ BL Overs Perfs'})
+
+                if bl_agg.empty:
+                    st.info("No all-time leaders found.")
+                else:
+                    st.dataframe(bl_agg.head(50), use_container_width=True)
+
+                    fig = px.bar(
+                        bl_agg.head(20),
+                        x='Bowler', y=f'{min_bl_overs}+ BL Overs Perfs', color='Bowling Team',
+                        title=f'Top 20 — Most {min_bl_overs}+ Boundary-less Overs Performances',
+                        text=f'{min_bl_overs}+ BL Overs Perfs',
+                        hover_data=['Total_BL_Overs', 'Best_Max_Consec']
+                    )
+                    fig.update_layout(xaxis_tickangle=45)
+                    st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# ON THIS DAY
+# =========================================
+elif metric_choice == "On This Day":
+    today = date.today()
+    month_name = today.strftime("%B")
+    day_num = today.day
+    st.subheader(f"📅 On This Day — {month_name} {day_num}")
+    st.write(
+        f"Historical records from all datasets for every **{month_name} {day_num}** in cricket history."
+    )
+
+    with st.spinner("Searching historical records for today's date..."):
+        otd = on_this_day_insights(fdf, today.month, today.day)
+
+    if not otd:
+        st.info(f"No matches found in the dataset on {month_name} {day_num} across any year.")
+    else:
+        # ---- Fastest individual 50s & 100s ----
+        with st.expander("⚡ Fastest Individual Milestones", expanded=True):
+            f50_df = otd.get('fastest_50s', pd.DataFrame())
+            if f50_df.empty:
+                st.info("No individual milestone innings on this date.")
+            else:
+                rows_50 = f50_df[f50_df['Balls to 50'].notna()].sort_values('Balls to 50').copy()
+                rows_100 = f50_df[f50_df['Balls to 100'].notna()].sort_values('Balls to 100').copy()
+
+                if not rows_50.empty:
+                    st.markdown("**Fastest 50s on this date:**")
+                    for _, r in rows_50.head(10).iterrows():
+                        st.markdown(
+                            f"- **On This Day in {r['Season']}**: *{r['Batter']}* ({r['Batting Team']}) reached 50 in "
+                            f"**{int(r['Balls to 50'])} balls** — {r['Total Runs']} runs vs {r['Match']} (Inning {r['Inning']})"
+                        )
+
+                if not rows_100.empty:
+                    st.markdown("**Fastest 100s on this date:**")
+                    for _, r in rows_100.head(10).iterrows():
+                        st.markdown(
+                            f"- **On This Day in {r['Season']}**: *{r['Batter']}* ({r['Batting Team']}) reached 100 in "
+                            f"**{int(r['Balls to 100'])} balls** — {r['Total Runs']} runs vs {r['Match']} (Inning {r['Inning']})"
+                        )
+
+                with st.expander("View full data table"):
+                    st.dataframe(f50_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+
+        # ---- Fastest team 50s & 100s ----
+        with st.expander("🚀 Fastest Team Milestones", expanded=True):
+            ft_df = otd.get('fastest_team_50s', pd.DataFrame())
+            if ft_df.empty:
+                st.info("No team milestone innings on this date.")
+            else:
+                rows_t50 = ft_df[ft_df['Balls to 50'].notna()].sort_values('Balls to 50').copy()
+                rows_t100 = ft_df[ft_df['Balls to 100'].notna()].sort_values('Balls to 100').copy()
+
+                if not rows_t50.empty:
+                    st.markdown("**Fastest team 50s on this date:**")
+                    for _, r in rows_t50.head(10).iterrows():
+                        st.markdown(
+                            f"- **On This Day in {r['Season']}**: *{r['Batting Team']}* reached team 50 in "
+                            f"**{int(r['Balls to 50'])} balls** — {r['Total Runs']} total vs {r['Team 1']} vs {r['Team 2']} (Inning {r['Inning No']})"
+                        )
+
+                if not rows_t100.empty:
+                    st.markdown("**Fastest team 100s on this date:**")
+                    for _, r in rows_t100.head(10).iterrows():
+                        st.markdown(
+                            f"- **On This Day in {r['Season']}**: *{r['Batting Team']}* reached team 100 in "
+                            f"**{int(r['Balls to 100'])} balls** — {r['Total Runs']} total (Inning {r['Inning No']})"
+                        )
+
+                with st.expander("View full data table"):
+                    st.dataframe(ft_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+
+        # ---- Bowler first spell wickets ----
+        with st.expander("🎯 Bowler First Spell Wickets", expanded=True):
+            fs_df = otd.get('first_spell', pd.DataFrame())
+            if fs_df.empty:
+                st.info("No notable first spell performances on this date.")
+            else:
+                notable = fs_df[fs_df['Wickets in First Spell'] >= 2].sort_values(
+                    ['Wickets in First Spell', 'Runs Conceded'], ascending=[False, True]
+                )
+                if notable.empty:
+                    st.info("No bowler took 2+ wickets in their first spell on this date.")
+                else:
+                    for _, r in notable.iterrows():
+                        st.markdown(
+                            f"- **On This Day in {r['Season']}**: *{r['Bowler']}* ({r['Bowling Team']}) took "
+                            f"**{r['Wickets in First Spell']} wickets** in {r['Overs in Spell']} overs "
+                            f"(overs {r['Spell Over Nos']}) conceding {r['Runs Conceded']} runs — "
+                            f"{r['Team 1']} vs {r['Team 2']} (Inning {r['Innings']})"
+                        )
+
+                with st.expander("View full data table"):
+                    st.dataframe(fs_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+
+        # ---- Boundary-less overs ----
+        with st.expander("🛡️ Boundary-less Overs Performances", expanded=True):
+            bl_df = otd.get('boundary_less', pd.DataFrame())
+            if bl_df.empty:
+                st.info("No 3+ boundary-less over performances on this date.")
+            else:
+                notable_bl = bl_df[bl_df['Boundary-less Overs'] >= 3].sort_values(
+                    'Boundary-less Overs', ascending=False
+                )
+                for _, r in notable_bl.iterrows():
+                    st.markdown(
+                        f"- **On This Day in {r['Season']}**: *{r['Bowler']}* ({r['Bowling Team']}) bowled "
+                        f"**{r['Boundary-less Overs']} boundary-less overs** "
+                        f"(overs {r['Boundary-less Over Nos']}) — "
+                        f"{r['Team 1']} vs {r['Team 2']} (Inning {r['Inning No']})"
+                    )
+
+                with st.expander("View full data table"):
+                    st.dataframe(bl_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+
+
+# =========================================
+# BOWLER OVER IMPACT
+# =========================================
+elif metric_choice == "Bowler Over Impact":
+    st.subheader("🎯 Bowler Over Impact")
+    st.write(
+        "Split a bowler's innings appearances by what happened in a specific over "
+        "(Wicket & ≤10 Runs / No Wicket & ≤10 Runs / >10 Runs), then compare their "
+        "full-match bowling stats across those categories."
+    )
+
+    boi_df = fdf.copy()
+    if boi_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        col_boi1, col_boi2 = st.columns([3, 1])
+        with col_boi1:
+            all_bowlers_boi = sorted(boi_df['bowler'].dropna().astype(str).unique())
+            sel_bowler = st.selectbox("Select Bowler", all_bowlers_boi, key="boi_bowler")
+        with col_boi2:
+            sel_over = st.slider("Over Number (1–20)", 1, 20, 1, key="boi_over")
+
+        with st.spinner(f"Computing over impact for {sel_bowler}, over {sel_over}..."):
+            impact = bowler_over_impact(boi_df, sel_bowler, sel_over)
+
+        if not impact:
+            st.info(f"No data found for **{sel_bowler}** bowling over {sel_over}.")
+        else:
+            # ── header ───────────────────────────────────────────────────────────
+            st.markdown(
+                f"<h4 style='margin-bottom:2px;'>{sel_bowler} — Over {sel_over} Impact</h4>"
+                f"<p style='color:#888;font-size:13px;margin-top:0;margin-bottom:18px;'>"
+                f"Stats from the bowler's <b>full match deliveries</b> in each category of appearances.</p>",
+                unsafe_allow_html=True,
+            )
+
+            CATEGORIES = ['Wicket & \u226410 Runs', 'No Wicket & \u226410 Runs', '>10 Runs in Over']
+            # accent colour per category
+            CAT_META = {
+                'Wicket & \u226410 Runs':     {'accent': '#00c853', 'icon': '🟢', 'border': '#00c853'},
+                'No Wicket & \u226410 Runs':  {'accent': '#2979ff', 'icon': '🔵', 'border': '#2979ff'},
+                '>10 Runs in Over':           {'accent': '#ff1744', 'icon': '🔴', 'border': '#ff1744'},
+            }
+            stat_keys = ['Matches', 'Wickets', 'Economy', 'Avg', 'SR', 'BPB', 'BP6', 'Dot %', 'Wkts / Match']
+
+            def _val_color(key, val):
+                """Return a hex colour: green = good for bowler, red = bad, white = neutral."""
+                if val == float('inf'):
+                    return '#888888'
+                if key in ('Economy', 'Avg', 'SR'):
+                    return '#00c853' if val <= 7.5 else ('#ff1744' if val >= 10 else '#e0e0e0')
+                if key == 'Dot %':
+                    return '#00c853' if val >= 40 else ('#ff1744' if val < 28 else '#e0e0e0')
+                if key == 'Wkts / Match':
+                    return '#00c853' if val >= 2 else ('#ff1744' if val < 1 else '#e0e0e0')
+                return '#e0e0e0'
+
+            def _fmt(val):
+                if val == float('inf'):
+                    return '—'
+                if isinstance(val, float):
+                    return f'{val:.2f}'
+                return str(val)
+
+            def _build_card(cat, data):
+                meta = CAT_META[cat]
+                accent = meta['accent']
+                if data is None:
+                    body_html = "<p style='color:#888;font-size:13px;margin:12px 0;'>No appearances in this category</p>"
+                else:
+                    rows = []
+                    for key in stat_keys:
+                        val = data[key]
+                        disp = _fmt(val)
+                        vc = _val_color(key, val)
+                        rows.append(
+                            f"<div style='display:flex;justify-content:space-between;"
+                            f"align-items:center;padding:7px 0;"
+                            f"border-bottom:1px solid #2a2a3a;'>"
+                            f"<span style='color:#9e9e9e;font-size:13px;'>{key}</span>"
+                            f"<span style='color:{vc};font-weight:700;font-size:15px;"
+                            f"letter-spacing:0.3px;'>{disp}</span>"
+                            f"</div>"
+                        )
+                    body_html = ''.join(rows)
+
+                return (
+                    f"<div style='"
+                    f"background:#12121f;"
+                    f"border-radius:12px;"
+                    f"border-top:3px solid {accent};"
+                    f"padding:18px 20px 10px 20px;"
+                    f"height:100%;'>"
+                    f"<p style='color:{accent};font-weight:700;font-size:14px;"
+                    f"letter-spacing:0.5px;margin:0 0 4px 0;text-transform:uppercase;'>"
+                    f"{meta['icon']} {cat}</p>"
+                    f"{body_html}"
+                    f"</div>"
+                )
+
+            cols = st.columns(3)
+            for col_widget, cat in zip(cols, CATEGORIES):
+                with col_widget:
+                    st.markdown(_build_card(cat, impact.get(cat)), unsafe_allow_html=True)
+
+            # ── comparison chart ─────────────────────────────────────────────────
+            st.markdown("<br>", unsafe_allow_html=True)
+            COLORS = [CAT_META[c]['accent'] for c in CATEGORIES]
+
+            chart_stat = st.selectbox(
+                "Compare stat across categories",
+                ['Economy', 'Avg', 'SR', 'Dot %', 'Wkts / Match', 'Wickets', 'Matches'],
+                key="boi_chart_stat",
+            )
+
+            chart_rows = []
+            for cat in CATEGORIES:
+                data = impact.get(cat)
+                if data is not None:
+                    val = data.get(chart_stat, 0)
+                    if val == float('inf'):
+                        val = 0
+                    chart_rows.append({'Category': cat, chart_stat: val})
+
+            if chart_rows:
+                chart_df = pd.DataFrame(chart_rows)
+                fig = px.bar(
+                    chart_df,
+                    x='Category',
+                    y=chart_stat,
+                    color='Category',
+                    color_discrete_sequence=COLORS,
+                    text=chart_stat,
+                    title=f"{sel_bowler} — {chart_stat} by Over-{sel_over} Outcome",
+                )
+                fig.update_traces(texttemplate='%{text:.2f}', textposition='outside')
+                fig.update_layout(
+                    showlegend=False,
+                    xaxis_title='',
+                    plot_bgcolor='rgba(0,0,0,0)',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    font_color='#e0e0e0',
+                    title_font_size=14,
+                    margin=dict(t=50, b=20),
+                )
+                fig.update_xaxes(showgrid=False)
+                fig.update_yaxes(gridcolor='#2a2a3a')
+                st.plotly_chart(fig, use_container_width=True)
+
+
+elif metric_choice == "Match Flow Chart":
+    st.subheader("🏏 Match Flow Chart")
+    st.caption("Ball-by-ball run progression for both innings. Red dots = wickets. Dashed line = Required Run Rate (chasing team).")
+
+    import os as _os, json as _json
+    import plotly.graph_objects as go
+    from plotly.subplots import make_subplots
+
+    @st.cache_data
+    def _load_match_flow(match_id_str):
+        path = _os.path.join(JSON_DIR, f"{match_id_str}.json")
+        if not _os.path.exists(path):
+            return None
+        with open(path, 'r', encoding='utf-8') as _f:
+            return _json.load(_f)
+
+    def _parse_innings(inn_json):
+        rows, ball_no, cumulative = [], 0, 0
+        for over in inn_json.get('overs', []):
+            for d_idx, delivery in enumerate(over.get('deliveries', [])):
+                ball_no += 1
+                runs = delivery['runs']['total']
+                cumulative += runs
+                is_wicket = 'wickets' in delivery
+                rows.append({
+                    'ball': ball_no,
+                    'cumulative': cumulative,
+                    'wicket': is_wicket,
+                    'player_out': delivery['wickets'][0]['player_out'] if is_wicket else '',
+                    'kind': delivery['wickets'][0]['kind'] if is_wicket else '',
+                    'batter': delivery.get('batter', ''),
+                    'bowler': delivery.get('bowler', ''),
+                    'over_ball': f"Over {over['over']+1}.{d_idx+1}",
+                })
+        return rows
+
+    # Match selector
+    _match_opts = (
+        fdf[fdf['innings'].isin([1, 2])]
+        .groupby(['match_id', 'teams', 'date'], observed=True)
+        .size().reset_index()
+    )
+    _match_opts['Label'] = _match_opts.apply(
+        lambda r: f"{r['teams']} — {pd.to_datetime(r['date']).strftime('%d %b %Y')}", axis=1
+    )
+    _match_opts = _match_opts.sort_values('date', ascending=False)
+
+    if _match_opts.empty:
+        st.info("No matches available for selected filters.")
+    else:
+        _sel_label = st.selectbox("Select Match", _match_opts['Label'].tolist(), key="mfc_sel")
+        _match_id = str(_match_opts[_match_opts['Label'] == _sel_label]['match_id'].iloc[0])
+
+        _data = _load_match_flow(_match_id)
+        if _data is None:
+            st.warning(f"JSON not found for match {_match_id}.")
+        else:
+            _info = _data.get('info', {})
+            _innings_list = _data.get('innings', [])
+
+            # Result string
+            _outcome = _info.get('outcome', {})
+            _winner = _outcome.get('winner', '')
+            _by = _outcome.get('by', {})
+            if 'wickets' in _by:
+                _result_str = f"🏆 {_winner} won by {_by['wickets']} wicket(s)"
+            elif 'runs' in _by:
+                _result_str = f"🏆 {_winner} won by {_by['runs']} run(s)"
+            elif 'winner' in _outcome:
+                _result_str = f"🏆 {_winner} won"
+            else:
+                _result_str = _outcome.get('result', 'Result unknown')
+
+            if len(_innings_list) < 1:
+                st.warning("Insufficient innings data in this match file.")
+            else:
+                _inn1 = _parse_innings(_innings_list[0])
+                _inn2 = _parse_innings(_innings_list[1]) if len(_innings_list) > 1 else []
+
+                _team1 = _innings_list[0].get('team', 'Team 1')
+                _team2 = _innings_list[1].get('team', 'Team 2') if len(_innings_list) > 1 else 'Team 2'
+
+                _total1 = _inn1[-1]['cumulative'] if _inn1 else 0
+                _total2 = _inn2[-1]['cumulative'] if _inn2 else 0
+                _wkts1 = sum(1 for r in _inn1 if r['wicket'])
+                _wkts2 = sum(1 for r in _inn2 if r['wicket'])
+                _target = _total1 + 1
+
+                # Compute RRR for chasing team (max 120 balls in T20)
+                _MAX_BALLS = 120
+                for r in _inn2:
+                    _balls_rem = max(_MAX_BALLS - r['ball'], 1)
+                    _runs_needed = max(_target - r['cumulative'], 0)
+                    r['rrr'] = round((_runs_needed / _balls_rem) * 6, 2)
+
+                # ── Single unified chart with secondary y-axis for RRR ──
+                # Innings 2 is offset on the x-axis so both fit side-by-side.
+                # Innings 1 balls stay as-is (1–N1).
+                # Innings 2 balls are offset by a gap so the x-axis reads
+                # "1st Inns balls 1-N1 | 2nd Inns balls 1-N2" seamlessly.
+                _N1 = len(_inn1)
+                _GAP = 5   # small visual gap between innings
+
+                _x2_runs = [r['ball'] + _N1 + _GAP for r in _inn2]
+                _x2_rrr  = [r['ball'] + _N1 + _GAP for r in _inn2]
+
+                _fig = make_subplots(specs=[[{"secondary_y": True}]])
+
+                # ── 1st innings run curve (teal) ──
+                _fig.add_trace(go.Scatter(
+                    x=[r['ball'] for r in _inn1],
+                    y=[r['cumulative'] for r in _inn1],
+                    mode='lines',
+                    name=f"{_team1} ({_total1}/{_wkts1})",
+                    line=dict(color='#48cae4', width=2.5),
+                    hovertemplate='<b>Inn1</b> %{customdata[0]}<br>Batter: %{customdata[1]}<br>Bowler: %{customdata[2]}<br>Score: <b>%{y}</b><extra></extra>',
+                    customdata=[[r['over_ball'], r['batter'], r['bowler']] for r in _inn1],
+                ), secondary_y=False)
+
+                # ── 1st innings wickets (red circles) ──
+                _w1 = [r for r in _inn1 if r['wicket']]
+                if _w1:
+                    _fig.add_trace(go.Scatter(
+                        x=[r['ball'] for r in _w1],
+                        y=[r['cumulative'] for r in _w1],
+                        mode='markers',
+                        name='Wicket (Inn1)',
+                        marker=dict(color='#ff4d6d', size=11, symbol='circle',
+                                    line=dict(color='white', width=1.5)),
+                        hovertemplate='🔴 <b>%{customdata[0]}</b> — %{customdata[1]}<br>%{customdata[2]}<extra></extra>',
+                        customdata=[[r['player_out'], r['kind'], r['over_ball']] for r in _w1],
+                    ), secondary_y=False)
+
+                if _inn2:
+                    # ── 2nd innings run curve (amber) ──
+                    _fig.add_trace(go.Scatter(
+                        x=_x2_runs,
+                        y=[r['cumulative'] for r in _inn2],
+                        mode='lines',
+                        name=f"{_team2} ({_total2}/{_wkts2})",
+                        line=dict(color='#f4a261', width=2.5),
+                        hovertemplate='<b>Inn2</b> %{customdata[0]}<br>Batter: %{customdata[1]}<br>RRR: %{customdata[2]}<br>Score: <b>%{y}</b><extra></extra>',
+                        customdata=[[r['over_ball'], r['batter'], r['rrr']] for r in _inn2],
+                    ), secondary_y=False)
+
+                    # ── Target line — spans only the 2nd innings x range ──
+                    _fig.add_shape(
+                        type='line',
+                        x0=_N1 + _GAP, x1=_x2_runs[-1] + 2,
+                        y0=_target, y1=_target,
+                        line=dict(color='#80ffdb', width=1.5, dash='dot'),
+                        layer='below',
+                    )
+                    _fig.add_annotation(
+                        x=_x2_runs[-1] + 2, y=_target,
+                        text=f"  Target {_target}",
+                        showarrow=False,
+                        font=dict(color='#80ffdb', size=11),
+                        xanchor='left',
+                    )
+
+                    # ── RRR on secondary y (lime-yellow dashed) ──
+                    _fig.add_trace(go.Scatter(
+                        x=_x2_rrr,
+                        y=[r['rrr'] for r in _inn2],
+                        mode='lines',
+                        name='Req. Run Rate',
+                        line=dict(color='#ffe66d', width=1.5, dash='dash'),
+                        hovertemplate='Ball %{customdata}<br>RRR: <b>%{y:.2f}</b><extra></extra>',
+                        customdata=[r['over_ball'] for r in _inn2],
+                        opacity=0.85,
+                    ), secondary_y=True)
+
+                    # ── 2nd innings wickets (pink) ──
+                    _w2 = [r for r in _inn2 if r['wicket']]
+                    if _w2:
+                        _fig.add_trace(go.Scatter(
+                            x=[r['ball'] + _N1 + _GAP for r in _w2],
+                            y=[r['cumulative'] for r in _w2],
+                            mode='markers',
+                            name='Wicket (Inn2)',
+                            marker=dict(color='#ff4d6d', size=11, symbol='circle',
+                                        line=dict(color='white', width=1.5)),
+                            hovertemplate='🔴 <b>%{customdata[0]}</b> — %{customdata[1]}<br>%{customdata[2]}<extra></extra>',
+                            customdata=[[r['player_out'], r['kind'], r['over_ball']] for r in _w2],
+                        ), secondary_y=False)
+
+                # ── Vertical divider between innings ──
+                _fig.add_vline(
+                    x=_N1 + _GAP / 2,
+                    line=dict(color='#555577', width=1.5, dash='dot'),
+                    annotation_text='Innings Break',
+                    annotation_font=dict(color='#aaaacc', size=10),
+                    annotation_position='top',
+                )
+
+                # ── Custom x-axis tick labels (Over numbers) ──
+                _tick_vals, _tick_text = [], []
+                for ov in range(0, 21, 5):
+                    b = ov * 6
+                    if b <= _N1:
+                        _tick_vals.append(b if b > 0 else 1)
+                        _tick_text.append(f"Ov {ov}" if ov > 0 else "Start")
+                if _inn2:
+                    for ov in range(0, 21, 5):
+                        b = ov * 6
+                        xpos = b + _N1 + _GAP
+                        if xpos <= _x2_runs[-1] + _GAP:
+                            _tick_vals.append(xpos)
+                            _tick_text.append(f"Ov {ov}" if ov > 0 else "Start")
+
+                # ── Result annotation ──
+                _fig.add_annotation(
+                    text=_result_str,
+                    xref='paper', yref='paper',
+                    x=0.5, y=-0.12,
+                    showarrow=False,
+                    font=dict(size=13, color='#90e0ef', family='Arial Black'),
+                    align='center',
+                )
+
+                _fig.update_layout(
+                    height=520,
+                    title=dict(
+                        text=f"<b>Match Flow</b>  ·  {_sel_label}",
+                        font=dict(size=15, color='#e0e0e0'),
+                        x=0.0,
+                    ),
+                    plot_bgcolor='#0d1117',
+                    paper_bgcolor='rgba(0,0,0,0)',
+                    font_color='#c9d1d9',
+                    legend=dict(
+                        orientation='h',
+                        yanchor='bottom', y=1.01,
+                        xanchor='left', x=0,
+                        bgcolor='rgba(0,0,0,0)',
+                        font=dict(size=11),
+                    ),
+                    margin=dict(b=90, t=70, l=60, r=70),
+                    hovermode='x unified',
+                )
+                _fig.update_xaxes(
+                    tickvals=_tick_vals,
+                    ticktext=_tick_text,
+                    showgrid=True,
+                    gridcolor='#21262d',
+                    zeroline=False,
+                    tickfont=dict(size=10),
+                    title_text='',
+                )
+                _fig.update_yaxes(
+                    title_text='Cumulative Runs',
+                    gridcolor='#21262d',
+                    zeroline=False,
+                    secondary_y=False,
+                )
+                _fig.update_yaxes(
+                    title_text='Req. Run Rate',
+                    gridcolor='rgba(0,0,0,0)',
+                    showgrid=False,
+                    zeroline=False,
+                    secondary_y=True,
+                )
+
+                st.plotly_chart(_fig, use_container_width=True)
+
+                # Quick scorecard summary
+                _c1, _c2 = st.columns(2)
+                with _c1:
+                    st.metric(f"🏏 {_team1}", f"{_total1}/{_wkts1}")
+                with _c2:
+                    st.metric(f"🏏 {_team2}", f"{_total2}/{_wkts2}", delta=f"Target {_target}")
 
 st.markdown("---")
 st.markdown("*Data extracted from Cricsheet JSON files.*")

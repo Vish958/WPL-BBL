@@ -247,6 +247,7 @@ def process_data_with_drs(inference_power_surge=True):
                                 'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
                                 'caught and bowled', 'handled the ball'  # Excludes 'run out' and 'obstructing the field' - not bowler's wickets
                             ]),
+                            'team_wicket_count': len(d.get('wickets') or []), # Includes ALL wickets (run outs etc)
                             'extras_type': ','.join([k for k in ['wides','noballs','byes','legbyes'] if k in extras]) or None,
                             'is_valid_delivery': 1 if is_valid else 0,
                             'no_balls': 1 if noball_flag else 0,

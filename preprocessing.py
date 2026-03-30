@@ -127,6 +127,7 @@ def get_impact_players_from_match(json_data):
 def process_data(inference_power_surge=True):
     files = glob(os.path.join(JSON_DIR, "*.json"))
     rows = []
+    xi_rows = []  # Playing XI rows
 
     for file in files:
         try:
@@ -155,6 +156,23 @@ def process_data(inference_power_surge=True):
             win_by = outcome.get('by', {})
             win_by_wickets = win_by.get('wickets', 0) if win_by else 0
             win_by_runs = win_by.get('runs', 0) if win_by else 0
+
+            # ── Extract Playing XI ──
+            players_dict = info.get('players', {})
+            event_stage = info.get('event', {}).get('stage', 'group') if isinstance(info.get('event'), dict) else 'group'
+            for team_name, player_list in players_dict.items():
+                for player_name in player_list:
+                    xi_rows.append({
+                        'match_id': match_id,
+                        'player': player_name,
+                        'team': team_name,
+                        'league': league,
+                        'year': year,
+                        'date': pd.to_datetime(date),
+                        'winner': winner,
+                        'event_stage': event_stage,
+                        'teams': ' vs '.join(sorted(teams)),
+                    })
 
             for inning_idx, inning in enumerate(data.get('innings', []), start=1):
                 team = inning.get('team')  # batting team
@@ -249,6 +267,7 @@ def process_data(inference_power_surge=True):
                             'is_batter_out': 1 if any(w.get('player_out') == batter_name for w in (d.get('wickets') or [])) else 0,
                             'is_non_striker_out': 1 if any(w.get('player_out') == d.get('non_striker') for w in (d.get('wickets') or [])) else 0,
                             'player_out': next((w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')), None),
+                            'wicket_kind': next((w.get('kind') for w in (d.get('wickets') or []) if w.get('kind')), None),
                             'winner': winner,
                             'win_by_wickets': win_by_wickets,
                             'win_by_runs': win_by_runs
@@ -281,6 +300,14 @@ def process_data(inference_power_surge=True):
         logger.info(f"Saved: {DATA_DEST} ({len(df):,} rows)")
     else:
         logger.info("No rows processed.")
+
+    # ── Save Playing XI parquet ──
+    if xi_rows:
+        xi_df = pd.DataFrame(xi_rows)
+        xi_df['date'] = pd.to_datetime(xi_df['date'])
+        xi_dest = os.path.join(os.path.dirname(DATA_DEST), 'playing_xi.parquet')
+        xi_df.to_parquet(xi_dest, index=False)
+        logger.info(f"Saved: {xi_dest} ({len(xi_df):,} rows, {xi_df['match_id'].nunique():,} matches)")
 
 if __name__ == '__main__':
     process_data(inference_power_surge=True)
