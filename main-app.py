@@ -34,6 +34,7 @@ st.markdown("📅 Last updated: 30 Mar 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
+st.markdown("New metrics are in early stages. Feedback welcome!")
 
 st.markdown("""
 <style>
