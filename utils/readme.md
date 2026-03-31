@@ -29,4 +29,3 @@ run new-function-testing.py (testing file & copy (main-app) of original app file
 
 # Add the new feature called inning, sr, many more in the new file.
 test-app-memory.py
-

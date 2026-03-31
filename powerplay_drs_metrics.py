@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 2026-02-12")
+st.markdown("📅 Last updated: 31 Mar 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -545,11 +545,12 @@ def drs_reviews_lost(df_):
     return stats[['Team', 'Match', 'Date', 'Season', 'Reviews_Lost']] if 'Date' in stats.columns else stats[['Team', 'Match', 'Season', 'Reviews_Lost']]
 
 
-def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20):
+def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20, include_year=True):
     """
     Year-wise batter SR comparison with ball-range SR buckets.
     Columns:
     Name | Average | Strike Rate | Balls/Inn | 1-10 SR | 11-20 SR | ... | 51-60 SR
+    When include_year=False, aggregates across all seasons (no Season column).
     """
     if df_.empty:
         return pd.DataFrame()
@@ -570,7 +571,7 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     legal = legal.sort_values(['match_id', 'innings', 'team', 'batter', 'over', 'ball_float'])
     legal['batter_ball_no'] = legal.groupby(['match_id', 'innings', 'team', 'batter'], observed=True).cumcount() + 1
 
-    grouping = ['league', 'year', 'batter']
+    grouping = ['league', 'batter'] if not include_year else ['league', 'year', 'batter']
     if not aggregate_across_teams:
         grouping.append('team')
 
@@ -645,9 +646,15 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
 
     # Format output
     output = stats[stats['Balls'] >= min_balls].copy()
-    output = output.rename(columns={'league': 'League', 'year': 'Season', 'batter': 'Name', 'team': 'Team'})
+    rename_map = {'league': 'League', 'batter': 'Name', 'team': 'Team'}
+    if include_year:
+        rename_map['year'] = 'Season'
+    output = output.rename(columns=rename_map)
 
-    out_cols = ['League', 'Season', 'Name']
+    out_cols = ['League']
+    if include_year:
+        out_cols.append('Season')
+    out_cols.append('Name')
     if not aggregate_across_teams:
         out_cols.append('Team')
     out_cols += ['Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR', 'Runs', 'Balls']
@@ -655,7 +662,9 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     for col in ['Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']:
         output[col] = output[col].round(2)
 
-    return output[out_cols].sort_values(['League', 'Season', 'Strike Rate'], ascending=[True, False, False])
+    sort_cols = ['League', 'Strike Rate'] if not include_year else ['League', 'Season', 'Strike Rate']
+    sort_asc = [True, False] if not include_year else [True, False, False]
+    return output[out_cols].sort_values(sort_cols, ascending=sort_asc)
 
 
 # =========================================
@@ -3253,7 +3262,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
     st.subheader("SR Comparison (Year-wise)")
     st.write("Batter strike rate comparison across leagues and seasons with ball-range buckets")
 
-    sr_col1, sr_col2, sr_col3 = st.columns([2, 1, 1])
+    sr_col1, sr_col2, sr_col3, sr_col4 = st.columns([2, 1, 1, 2])
     with sr_col1:
         aggregate_across_teams = st.checkbox(
             "Aggregate across teams (ignore Team filter)",
@@ -3265,13 +3274,23 @@ elif metric_choice == "SR Comparison (Year-wise)":
         min_sr_balls = st.number_input("Min Balls", min_value=1, max_value=300, value=20, step=1, key="sr_min_balls")
     with sr_col3:
         top_n_sr = st.number_input("Top N in chart", min_value=5, max_value=50, value=15, step=1, key="sr_top_n")
+    with sr_col4:
+        sr_view_mode = st.radio("View Mode", ["Year-wise", "Overall (All Seasons)"], key="sr_view_mode", horizontal=True)
 
     sr_source_df = fdf_no_team.copy() if aggregate_across_teams else fdf.copy()
     sr_table = yearwise_batter_sr_comparison(
         sr_source_df,
         aggregate_across_teams=aggregate_across_teams,
-        min_balls=int(min_sr_balls)
+        min_balls=int(min_sr_balls),
+        include_year=(sr_view_mode == "Year-wise")
     )
+
+    # Player filter (applies to both view modes)
+    if not sr_table.empty:
+        all_sr_players = sorted(sr_table['Name'].dropna().astype(str).unique())
+        sr_player_filter = st.multiselect("Filter by Player(s) — leave empty to show all", all_sr_players, key="sr_player_filter")
+        if sr_player_filter:
+            sr_table = sr_table[sr_table['Name'].isin(sr_player_filter)]
 
     if sr_table.empty:
         st.info("No SR comparison data available for the selected filters.")
@@ -3283,21 +3302,26 @@ elif metric_choice == "SR Comparison (Year-wise)":
             with league_tabs[i]:
                 lg_df = sr_table[sr_table['League'] == lg].copy()
 
-                year_options = sorted(lg_df['Season'].dropna().unique(), reverse=True)
-                selected_sr_year = st.selectbox("Season", year_options, key=f"sr_season_{i}")
+                if sr_view_mode == "Year-wise":
+                    year_options = sorted(lg_df['Season'].dropna().unique(), reverse=True)
+                    selected_sr_year = st.selectbox("Season", year_options, key=f"sr_season_{i}")
+                    view_df = lg_df[lg_df['Season'] == selected_sr_year].copy()
+                    chart_title = f"{lg} {selected_sr_year} — Strike Rate Comparison"
+                else:
+                    view_df = lg_df.copy()
+                    chart_title = f"{lg} — Overall Strike Rate Comparison (All Seasons)"
 
-                year_df = lg_df[lg_df['Season'] == selected_sr_year].copy()
                 display_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn',
                                 '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
-                if not aggregate_across_teams and 'Team' in year_df.columns:
+                if not aggregate_across_teams and 'Team' in view_df.columns:
                     display_cols = ['Name', 'Team'] + display_cols[1:]
 
                 st.dataframe(
-                    year_df[display_cols].sort_values('Strike Rate', ascending=False),
+                    view_df[display_cols].sort_values('Strike Rate', ascending=False),
                     use_container_width=True
                 )
 
-                chart_df = year_df.sort_values('Strike Rate', ascending=False).head(int(top_n_sr)).copy()
+                chart_df = view_df.sort_values('Strike Rate', ascending=False).head(int(top_n_sr)).copy()
                 if not chart_df.empty:
                     fig = px.bar(
                         chart_df,
@@ -3305,7 +3329,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                         y='Strike Rate',
                         color='Average',
                         color_continuous_scale='Viridis',
-                        title=f"{lg} {selected_sr_year} — Strike Rate Comparison",
+                        title=chart_title,
                         hover_data=['Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR',
                                     '31-40 SR', '41-50 SR', '51-60 SR']
                     )
@@ -3688,15 +3712,25 @@ elif metric_choice == "Boundary-less Overs Spell":
 # =========================================
 elif metric_choice == "On This Day":
     today = date.today()
-    month_name = today.strftime("%B")
-    day_num = today.day
+    otd_date_col, _ = st.columns([2, 3])
+    with otd_date_col:
+        selected_otd_date = st.date_input(
+            "📅 Select Date",
+            value=today,
+            min_value=date(2000, 1, 1),
+            max_value=today,
+            key="otd_date_picker",
+            help="Pick any date to explore historical cricket milestones on that calendar day across all years."
+        )
+    month_name = selected_otd_date.strftime("%B")
+    day_num = selected_otd_date.day
     st.subheader(f"📅 On This Day — {month_name} {day_num}")
     st.write(
         f"Historical records from all datasets for every **{month_name} {day_num}** in cricket history."
     )
 
-    with st.spinner("Searching historical records for today's date..."):
-        otd = on_this_day_insights(fdf, today.month, today.day)
+    with st.spinner(f"Searching historical records for {month_name} {day_num}..."):
+        otd = on_this_day_insights(fdf, selected_otd_date.month, selected_otd_date.day)
 
     if not otd:
         st.info(f"No matches found in the dataset on {month_name} {day_num} across any year.")
