@@ -683,7 +683,20 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     valid = df_.copy()
     if valid.empty:
         return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
-    
+
+    # Exclude no-result matches (abandoned/rain) — ESPN/ICC convention: these innings don't
+    # count towards averages or innings-played totals.
+    # For no-result matches (winner=None), only exclude innings that were truncated
+    # (max over index < 19). Completed innings in no-result matches DO count.
+    if 'winner' in valid.columns:
+        no_result_mask = valid['winner'].isna()
+        if no_result_mask.any():
+            max_over_per_inn = valid.groupby(['match_id', 'innings'], observed=True)['over'].transform('max')
+            truncated = no_result_mask & (max_over_per_inn < 19)
+            valid = valid[~truncated]
+    if valid.empty:
+        return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
+
     # Convert all categorical columns to their base types to avoid "Cannot setitem on a Categorical" errors
     for col in valid.columns:
         if valid[col].dtype.name == 'category':
@@ -876,7 +889,18 @@ def key_bowling(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     g = df_.copy()
     if g.empty:
         return pd.DataFrame(columns=['Innings','Bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots'])
-    
+
+    # Exclude no-result matches (abandoned/rain) — official stats don't include these.
+    # For no-result matches (winner=None), only exclude truncated innings (max over < 19).
+    if 'winner' in g.columns:
+        no_result_mask = g['winner'].isna()
+        if no_result_mask.any():
+            max_over_per_inn = g.groupby(['match_id', 'innings'], observed=True)['over'].transform('max')
+            truncated = no_result_mask & (max_over_per_inn < 19)
+            g = g[~truncated]
+    if g.empty:
+        return pd.DataFrame(columns=['Innings','Bowler','Team','Overs','Balls','Runs','Wkts','Econ','Avg','SR','Maidens','Dots'])
+
     if 'byes' not in g.columns: g['byes'] = 0
     if 'leg_byes' not in g.columns: g['leg_byes'] = 0
     g['runs_to_bowler'] = g['runs.total'] - g['byes'] - g['leg_byes']

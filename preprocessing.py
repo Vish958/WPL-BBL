@@ -152,7 +152,9 @@ def process_data(inference_power_surge=True):
             
             # Extract outcome/winner data
             outcome = info.get('outcome', {})
-            winner = outcome.get('winner', None)
+            # Use 'winner' for normal wins; fall back to 'eliminator' for tied matches
+            # resolved by super over. Leave as None only for true no-result matches.
+            winner = outcome.get('winner') or outcome.get('eliminator')
             win_by = outcome.get('by', {})
             win_by_wickets = win_by.get('wickets', 0) if win_by else 0
             win_by_runs = win_by.get('runs', 0) if win_by else 0

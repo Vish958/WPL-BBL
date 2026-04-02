@@ -177,7 +177,9 @@ def process_data_with_drs(inference_power_surge=True):
             match_impact_players = get_impact_players_from_match(data)
             
             outcome = info.get('outcome', {})
-            winner = outcome.get('winner', None)
+            # Use 'winner' for normal wins; fall back to 'eliminator' for tied matches
+            # resolved by super over. Leave as None only for true no-result matches.
+            winner = outcome.get('winner') or outcome.get('eliminator')
             win_by = outcome.get('by', {})
             win_by_wickets = win_by.get('wickets', 0) if win_by else 0
             win_by_runs = win_by.get('runs', 0) if win_by else 0
@@ -247,7 +249,18 @@ def process_data_with_drs(inference_power_surge=True):
                                 'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
                                 'caught and bowled', 'handled the ball'  # Excludes 'run out' and 'obstructing the field' - not bowler's wickets
                             ]),
-                            'team_wicket_count': len(d.get('wickets') or []), # Includes ALL wickets (run outs etc)
+                            # Actual dismissals only — excludes 'retired hurt' / 'retired not out' which are NOT dismissals
+                            'team_wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') not in [
+                                'retired hurt', 'retired not out'
+                            ]),
+                            'wicket_kind': next((w.get('kind') for w in (d.get('wickets') or [])
+                                                 if w.get('kind') not in ('retired hurt', 'retired not out')), None),  # First actual dismissal kind
+                            # player_dismissed: the player who was OUT on this delivery (any kind incl. run outs).
+                            # Captures non-striker run-outs correctly — player_out may differ from batter.
+                            'player_dismissed': next(
+                                (w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')),
+                                None
+                            ),
                             'extras_type': ','.join([k for k in ['wides','noballs','byes','legbyes'] if k in extras]) or None,
                             'is_valid_delivery': 1 if is_valid else 0,
                             'no_balls': 1 if noball_flag else 0,

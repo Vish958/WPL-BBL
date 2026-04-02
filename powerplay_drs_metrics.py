@@ -392,7 +392,18 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
     
     # Add bowling_team column (opponent of batting team)
     pp['bowling_team'] = pp.apply(lambda row: get_opponent_team(row['teams'], str(row['team'])), axis=1)
-    
+
+    # Ensure wicket_kind exists as a plain string column for aggregation.
+    # If absent (older parquet), synthesise it from wicket_count so lambdas always work.
+    _WK_NULL = {'nan', 'None', '<NA>', ''}
+    if 'wicket_kind' in pp.columns:
+        pp['wicket_kind'] = pp['wicket_kind'].astype(str)
+    else:
+        # Synthetic fallback: use team_wicket_count (includes run-outs) if available,
+        # otherwise fall back to wicket_count (bowler wickets only).
+        _wk_col = 'team_wicket_count' if 'team_wicket_count' in pp.columns else 'wicket_count'
+        pp['wicket_kind'] = pp[_wk_col].apply(lambda v: 'Wicket' if v > 0 else 'nan')
+
     if mode == 'batting':
         grp = pp.groupby(['match_id', 'team', 'innings', 'date', 'year', 'teams'], observed=True)
         
@@ -402,7 +413,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets=('team_wicket_count', 'sum')  # includes run-outs
+            PP_Wickets=('wicket_kind', lambda x: (~x.isin(_WK_NULL)).sum())  # all dismissals incl. run out
         ).reset_index()
         
         stats['PP_RR'] = (stats['PP_Runs'] / (stats['PP_Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
@@ -442,7 +453,10 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s_Conceded=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s_Conceded=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots_Bowled=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets_Taken=('wicket_count', 'sum')
+            PP_Wickets_Taken=('wicket_kind', lambda x: (~x.isin(_WK_NULL)).sum()),  # all dismissals incl. run out
+            PP_Wicket_Types=('wicket_kind', lambda x: ', '.join(
+                f"{str(k).title()}({v})" for k, v in x[~x.isin(_WK_NULL)].value_counts().items()
+            ) if (~x.isin(_WK_NULL)).any() else '')
         ).reset_index()
         
         stats['PP_Econ'] = (stats['PP_Runs_Conceded'] / (stats['PP_Balls_Bowled'] / 6)).replace([np.inf, np.nan], 0).round(2)
@@ -456,7 +470,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         
         match_stats = stats[['bowling_team', 'Against', 'Date', 'year', 'Innings', 'PP_Runs_Conceded', 
                              'PP_Balls_Bowled', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 
-                             'PP_Wickets_Taken', 'match_id']].copy()
+                             'PP_Wickets_Taken', 'PP_Wicket_Types', 'match_id']].copy()
         match_stats = match_stats.rename(columns={'bowling_team': 'Team', 'year': 'Season'})
         match_stats = match_stats.sort_values('Date', ascending=False)
     
@@ -563,53 +577,83 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     if work_df.empty:
         return pd.DataFrame()
 
-    # Legal deliveries only for balls faced and batter-ball indexing
-    legal = work_df[work_df['is_valid_delivery'] == 1].copy()
-    if legal.empty:
+    # Exclude no-result matches (abandoned/rain) — ESPN/ICC convention: these innings don't
+    # count towards averages or innings-played totals.
+    # Specifically: for no-result matches (winner=None), only keep innings that were completed
+    # (all 20 overs bowled, i.e. max over index >= 19). Truncated innings (rain mid-innings)
+    # are excluded. Tie+super-over matches already have winner set via 'eliminator' in preprocessing.
+    if 'winner' in work_df.columns:
+        no_result_mask = work_df['winner'].isna()
+        if no_result_mask.any():
+            max_over_per_inn = work_df.groupby(['match_id', 'innings'], observed=True)['over'].transform('max')
+            # Only exclude rows from no-result matches WHERE that innings was cut short
+            truncated = no_result_mask & (max_over_per_inn < 19)
+            work_df = work_df[~truncated]
+    if work_df.empty:
         return pd.DataFrame()
 
-    legal = legal.sort_values(['match_id', 'innings', 'team', 'batter', 'over', 'ball_float'])
-    legal['batter_ball_no'] = legal.groupby(['match_id', 'innings', 'team', 'batter'], observed=True).cumcount() + 1
+    # Validate there is at least one legal delivery
+    legal_check = work_df[work_df['is_valid_delivery'] == 1]
+    if legal_check.empty:
+        return pd.DataFrame()
+
+    # "Balls faced" for BATTER stats = all deliveries EXCEPT wides.
+    # No-balls ARE faced by the batter (they can score off them) and are counted
+    # by ESPN/ICC in balls-faced. Wides do NOT reach the batter so are excluded.
+    balls_faced = work_df[work_df['extras_type'].astype(str).fillna('') != 'wides'].copy()
+    if balls_faced.empty:
+        return pd.DataFrame()
+
+    balls_faced = balls_faced.sort_values(['match_id', 'innings', 'team', 'batter', 'over', 'ball_float'])
+    balls_faced['batter_ball_no'] = balls_faced.groupby(
+        ['match_id', 'innings', 'team', 'batter'], observed=True
+    ).cumcount() + 1
 
     grouping = ['league', 'batter'] if not include_year else ['league', 'year', 'batter']
     if not aggregate_across_teams:
         grouping.append('team')
 
-    # Base totals
-    stats = legal.groupby(grouping, observed=True).agg(
+    # Base totals — use balls_faced so SR/Balls aligns with ESPN/ICC convention
+    stats = balls_faced.groupby(grouping, observed=True).agg(
         Runs=('runs.batter', 'sum'),
-        Balls=('is_valid_delivery', 'sum')
+        Balls=('runs.batter', 'count')   # count rows = balls faced (legal + no-balls)
     ).reset_index()
 
-    # Innings batted (only innings where batter faced at least one legal delivery)
-    innings_counts = legal.groupby(grouping + ['match_id', 'innings'], observed=True).size().reset_index(name='x')
+    # Innings batted (innings where batter faced at least one delivery, including no-balls)
+    innings_counts = balls_faced.groupby(grouping + ['match_id', 'innings'], observed=True).size().reset_index(name='x')
     innings_counts = innings_counts.groupby(grouping, observed=True).size().reset_index(name='Innings')
     stats = stats.merge(innings_counts, on=grouping, how='left')
 
-    # Dismissals (prefer player_dismissed if present)
+    # Dismissals — use player_dismissed or player_out (synonyms across parquet versions).
+    dismissed_col = None
     if 'player_dismissed' in work_df.columns:
-        dis_df = work_df[(work_df['wicket_count'] > 0) & (work_df['player_dismissed'].notna())].copy()
+        dismissed_col = 'player_dismissed'
+    elif 'player_out' in work_df.columns:
+        dismissed_col = 'player_out'
+
+    if dismissed_col is not None:
+        dis_df = work_df[work_df[dismissed_col].notna() & (work_df[dismissed_col].astype(str).str.strip() != '')].copy()
         if not dis_df.empty:
-            dis_df = dis_df.rename(columns={'player_dismissed': 'batter'})
-            if not aggregate_across_teams:
-                dis_group = ['league', 'year', 'batter', 'team']
-            else:
-                dis_group = ['league', 'year', 'batter']
-            dismissals = dis_df.groupby(dis_group, observed=True).size().reset_index(name='Dismissals')
+            dis_df = dis_df.drop(columns=['batter'], errors='ignore')
+            dis_df = dis_df.rename(columns={dismissed_col: 'batter'})
+            dis_df['batter'] = dis_df['batter'].astype(str)
+            dismissals = dis_df.groupby(grouping, observed=True).size().reset_index(name='Dismissals')
             stats = stats.merge(dismissals, on=grouping, how='left')
         else:
             stats['Dismissals'] = 0
-    else:
-        # Fallback approximation
-        dismissals = work_df.groupby(grouping, observed=True)['wicket_count'].sum().reset_index(name='Dismissals')
+    elif 'is_batter_out' in work_df.columns:
+        # Fallback: use batter-specific out flag (misses non-striker run-outs)
+        dismissals = work_df[work_df['is_batter_out'] == True].groupby(grouping, observed=True).size().reset_index(name='Dismissals')
         stats = stats.merge(dismissals, on=grouping, how='left')
+    else:
+        stats['Dismissals'] = 0
 
     stats['Dismissals'] = stats['Dismissals'].fillna(0)
     stats['Average'] = np.where(stats['Dismissals'] > 0, stats['Runs'] / stats['Dismissals'], stats['Runs'])
     stats['Strike Rate'] = (stats['Runs'] / stats['Balls'].replace(0, np.nan) * 100).fillna(0)
     stats['Balls/Inn'] = (stats['Balls'] / stats['Innings'].replace(0, np.nan)).fillna(0)
 
-    # Ball-range SR buckets
+    # Ball-range SR buckets — use batter_ball_no on balls_faced for accurate bucket assignment
     buckets = [
         (1, 10, '1-10 SR'),
         (11, 20, '11-20 SR'),
@@ -620,13 +664,13 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     ]
 
     for start, end, label in buckets:
-        legal[f'runs_{label}'] = np.where(
-            (legal['batter_ball_no'] >= start) & (legal['batter_ball_no'] <= end),
-            legal['runs.batter'],
+        balls_faced[f'runs_{label}'] = np.where(
+            (balls_faced['batter_ball_no'] >= start) & (balls_faced['batter_ball_no'] <= end),
+            balls_faced['runs.batter'],
             0
         )
-        legal[f'balls_{label}'] = np.where(
-            (legal['batter_ball_no'] >= start) & (legal['batter_ball_no'] <= end),
+        balls_faced[f'balls_{label}'] = np.where(
+            (balls_faced['batter_ball_no'] >= start) & (balls_faced['batter_ball_no'] <= end),
             1,
             0
         )
@@ -636,7 +680,7 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
         bucket_agg_cols[f'runs_{label}'] = (f'runs_{label}', 'sum')
         bucket_agg_cols[f'balls_{label}'] = (f'balls_{label}', 'sum')
 
-    bucket_stats = legal.groupby(grouping, observed=True).agg(**bucket_agg_cols).reset_index()
+    bucket_stats = balls_faced.groupby(grouping, observed=True).agg(**bucket_agg_cols).reset_index()
     stats = stats.merge(bucket_stats, on=grouping, how='left')
 
     for _, _, label in buckets:
@@ -1152,7 +1196,7 @@ if metric_choice == "Powerplay Score Tracker":
             if mode_val == 'batting':
                 display_cols = ['Team', 'Opponent', 'Date', 'Season', 'Innings', 'PP_Runs', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Dot%', 'PP_Wickets']
             else:
-                display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'PP_Runs_Conceded', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken']
+                display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'PP_Runs_Conceded', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types']
             
             st.dataframe(match_stats[[c for c in display_cols if c in match_stats.columns]], use_container_width=True)
             
