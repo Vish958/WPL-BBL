@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 1173 Indian Premier League matches.
+archive contains 1175 Indian Premier League matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -21,6 +21,8 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+2026-04-02 - club - IPL - male - 1527679 - Sunrisers Hyderabad vs Kolkata Knight Riders
+2026-04-01 - club - IPL - male - 1527678 - Lucknow Super Giants vs Delhi Capitals
 2026-03-31 - club - IPL - male - 1527677 - Gujarat Titans vs Punjab Kings
 2026-03-30 - club - IPL - male - 1527676 - Chennai Super Kings vs Rajasthan Royals
 2026-03-29 - club - IPL - male - 1527675 - Kolkata Knight Riders vs Mumbai Indians

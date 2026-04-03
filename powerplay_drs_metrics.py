@@ -356,7 +356,8 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Boundary-less Overs Spell",
     "On This Day",
     "Bowler Over Impact",
-    "Match Flow Chart"
+    "Match Flow Chart",
+    "Extra Deliveries Cost"
 ])
 
 if fdf.empty:
@@ -1025,6 +1026,106 @@ def boundary_less_overs_spell(df_):
     if not results:
         return pd.DataFrame()
     return pd.DataFrame(results)
+
+
+# =========================================
+# EXTRA DELIVERIES COST
+# =========================================
+def extra_deliveries_cost(df_):
+    """
+    Match-wise & innings-wise breakdown of extra deliveries (wides + no-balls)
+    bowled by each BOWLING team, and the total runs conceded purely because of
+    those extra deliveries versus the team's overall total.
+
+    Returns a tuple: (match_df, innings_df, season_df)
+      match_df   — one row per match per bowling team (both innings combined)
+      innings_df — one row per innings per bowling team
+      season_df  — season-level aggregation per bowling team
+    """
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+    # Identify extra-ball deliveries (wides OR no-balls) — these cost an extra ball
+    work['is_wide_ball']    = (work['wides'] > 0).astype(int)
+    work['is_nb_ball']      = (work['no_balls'] > 0).astype(int)
+    work['is_extra_ball']   = ((work['is_wide_ball'] | work['is_nb_ball'])).astype(int)
+
+    # Runs directly FROM those extra deliveries (penalty + anything scored off them)
+    work['wide_runs']       = work['wides']
+    work['nb_runs']         = work.apply(
+        lambda r: r['runs.total'] if r['is_nb_ball'] else 0, axis=1
+    )
+    work['extra_ball_runs'] = work.apply(
+        lambda r: r['runs.total'] if r['is_extra_ball'] else 0, axis=1
+    )
+
+    # ---- Innings-level ----
+    grp_inn = work.groupby(
+        ['match_id', 'league', 'year', 'date', 'teams', 'bowling_team', 'team', 'innings'], observed=True
+    )
+    inn_stats = grp_inn.agg(
+        Total_Deliveries=('is_valid_delivery', lambda x: len(x)),          # all balls incl. extras
+        Legal_Deliveries=('is_valid_delivery', 'sum'),
+        Wide_Balls=('is_wide_ball', 'sum'),
+        NoBall_Balls=('is_nb_ball', 'sum'),
+        Extra_Balls=('is_extra_ball', 'sum'),
+        Wide_Runs=('wide_runs', 'sum'),
+        NoBall_Runs=('nb_runs', 'sum'),
+        Extra_Ball_Runs=('extra_ball_runs', 'sum'),
+        Team_Total_Runs=('runs.total', 'sum'),
+    ).reset_index()
+
+    inn_stats['Extra_Ball_%'] = (inn_stats['Extra_Balls'] / inn_stats['Total_Deliveries'] * 100).round(1)
+    inn_stats['Extra_Run_%']  = (inn_stats['Extra_Ball_Runs'] / inn_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
+    inn_stats['Date']         = pd.to_datetime(inn_stats['date']).dt.date
+    inn_stats['Innings_Label']= inn_stats['innings'].map({1: '1st', 2: '2nd'})
+    inn_stats = inn_stats.rename(columns={
+        'bowling_team': 'Bowling_Team', 'team': 'Batting_Team', 'year': 'Season', 'league': 'League'
+    }).sort_values('Date', ascending=False)
+
+    # ---- Match-level (sum both innings for same bowling team) ----
+    match_stats = inn_stats.groupby(
+        ['match_id', 'League', 'Season', 'Date', 'teams', 'Bowling_Team'], observed=True
+    ).agg(
+        Wide_Balls=('Wide_Balls', 'sum'),
+        NoBall_Balls=('NoBall_Balls', 'sum'),
+        Extra_Balls=('Extra_Balls', 'sum'),
+        Wide_Runs=('Wide_Runs', 'sum'),
+        NoBall_Runs=('NoBall_Runs', 'sum'),
+        Extra_Ball_Runs=('Extra_Ball_Runs', 'sum'),
+        Team_Total_Runs=('Team_Total_Runs', 'sum'),
+        Total_Deliveries=('Total_Deliveries', 'sum'),
+    ).reset_index()
+    match_stats['Extra_Ball_%'] = (match_stats['Extra_Balls'] / match_stats['Total_Deliveries'] * 100).round(1)
+    match_stats['Extra_Run_%']  = (match_stats['Extra_Ball_Runs'] / match_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
+    match_stats['Opponent']     = match_stats.apply(
+        lambda row: ' v '.join(
+            [t.strip() for t in str(row['teams']).replace(' vs ', ' v ').split(' v ')
+             if t.strip() != str(row['Bowling_Team'])]
+        ) or 'N/A', axis=1
+    )
+    match_stats = match_stats.sort_values('Date', ascending=False)
+
+    # ---- Season-level ----
+    season_stats = inn_stats.groupby(['League', 'Season', 'Bowling_Team'], observed=True).agg(
+        Matches=('match_id', 'nunique'),
+        Total_Wide_Balls=('Wide_Balls', 'sum'),
+        Total_NoBall_Balls=('NoBall_Balls', 'sum'),
+        Total_Extra_Balls=('Extra_Balls', 'sum'),
+        Total_Wide_Runs=('Wide_Runs', 'sum'),
+        Total_NoBall_Runs=('NoBall_Runs', 'sum'),
+        Total_Extra_Ball_Runs=('Extra_Ball_Runs', 'sum'),
+        Total_Runs_Conceded=('Team_Total_Runs', 'sum'),
+    ).reset_index()
+    season_stats['Avg_Extra_Balls_Per_Match'] = (season_stats['Total_Extra_Balls'] / season_stats['Matches']).round(1)
+    season_stats['Avg_Extra_Runs_Per_Match']  = (season_stats['Total_Extra_Ball_Runs'] / season_stats['Matches']).round(1)
+    season_stats['Extra_Run_%'] = (
+        season_stats['Total_Extra_Ball_Runs'] / season_stats['Total_Runs_Conceded'].replace(0, np.nan) * 100
+    ).round(1).fillna(0)
+    season_stats = season_stats.sort_values(['Season', 'Total_Extra_Balls'], ascending=[False, False])
+
+    return match_stats, inn_stats, season_stats
 
 
 # =========================================
@@ -4301,6 +4402,170 @@ elif metric_choice == "Match Flow Chart":
                     st.metric(f"🏏 {_team1}", f"{_total1}/{_wkts1}")
                 with _c2:
                     st.metric(f"🏏 {_team2}", f"{_total2}/{_wkts2}", delta=f"Target {_target}")
+
+
+# =========================================
+# EXTRA DELIVERIES COST
+# =========================================
+elif metric_choice == "Extra Deliveries Cost":
+    st.subheader("💸 Extra Deliveries Cost")
+    st.write("Innings-wise & match-wise view of wides and no-balls bowled by each team, "
+             "and the total runs conceded purely because of those extra re-bowled deliveries.")
+
+    # Filters
+    edc_col1, edc_col2 = st.columns([2, 2])
+    with edc_col1:
+        edc_mode = st.radio("View Mode", ["Match-wise", "Innings-wise", "Season Summary"], horizontal=True)
+    with edc_col2:
+        edc_phase = st.radio("Phase", ["Full Match", "Powerplay", "Middle", "Death"], horizontal=True)
+
+    # Build source dataframe
+    edc_df = df.copy()
+    if selected_leagues:
+        edc_df = edc_df[edc_df['league'].isin(selected_leagues)]
+    if selected_years:
+        edc_df = edc_df[edc_df['year'].isin(selected_years)]
+
+    if edc_phase != "Full Match":
+        phase_map = {"Powerplay": "Powerplay", "Middle": "Middle", "Death": "Death"}
+        edc_df = edc_df[edc_df['phase'].astype(str) == phase_map[edc_phase]]
+
+    if selected_teams:
+        # Show only selected bowling team(s)
+        edc_df = edc_df[edc_df['bowling_team'].astype(str).isin([str(t) for t in selected_teams])]
+
+    if edc_df.empty:
+        st.warning("No data for the selected filters.")
+    else:
+        match_df, inn_df, season_df = extra_deliveries_cost(edc_df)
+
+        if match_df.empty:
+            st.info("No data available.")
+        else:
+            # ---- KPI Cards ----
+            total_extra_balls = match_df['Extra_Balls'].sum()
+            total_extra_runs  = match_df['Extra_Ball_Runs'].sum()
+            total_runs        = match_df['Team_Total_Runs'].sum()
+            total_wides       = match_df['Wide_Balls'].sum()
+            total_nbs         = match_df['NoBall_Balls'].sum()
+            overall_pct       = round(total_extra_runs / total_runs * 100, 1) if total_runs else 0
+
+            k1, k2, k3, k4, k5 = st.columns(5)
+            k1.metric("🔴 Total Wide Balls",    f"{int(total_wides)}")
+            k2.metric("🟠 Total No-Ball Balls", f"{int(total_nbs)}")
+            k3.metric("⚡ Total Extra Balls",   f"{int(total_extra_balls)}")
+            k4.metric("💰 Runs from Extra Balls", f"{int(total_extra_runs)}")
+            k5.metric("📊 Extra Balls Run %",   f"{overall_pct}%",
+                      help="Extra-ball runs as % of total runs conceded by these teams")
+            st.markdown("---")
+
+            # ---- Match-wise view ----
+            if edc_mode == "Match-wise":
+                disp_cols = ['Bowling_Team', 'Opponent', 'Date', 'Season', 'League',
+                             'Wide_Balls', 'NoBall_Balls', 'Extra_Balls',
+                             'Wide_Runs', 'NoBall_Runs', 'Extra_Ball_Runs',
+                             'Team_Total_Runs', 'Extra_Run_%', 'Extra_Ball_%']
+                rename = {
+                    'Bowling_Team': 'Bowling Team', 'Extra_Ball_Runs': 'Runs from Extra Balls',
+                    'Team_Total_Runs': 'Total Runs Conceded', 'Extra_Run_%': 'Extra Run%',
+                    'Extra_Ball_%': 'Extra Ball%', 'Wide_Balls': 'Wides',
+                    'NoBall_Balls': 'No-Balls', 'Extra_Balls': 'Total Extra Balls',
+                    'Wide_Runs': 'Wide Runs', 'NoBall_Runs': 'No-Ball Runs'
+                }
+                show_df = match_df[[c for c in disp_cols if c in match_df.columns]].rename(columns=rename)
+                st.dataframe(show_df, use_container_width=True, hide_index=True)
+
+                # Chart: Extra Ball Runs vs Total Runs per match
+                fig_bar = px.bar(
+                    match_df.sort_values('Date').tail(40),
+                    x='Date', y=['Team_Total_Runs', 'Extra_Ball_Runs'],
+                    color_discrete_map={'Team_Total_Runs': '#4C9BE8', 'Extra_Ball_Runs': '#FF6B6B'},
+                    barmode='overlay', opacity=0.85,
+                    labels={'value': 'Runs', 'variable': 'Type', 'Date': 'Match Date'},
+                    title="Total Runs vs Runs from Extra Balls (last 40 innings, per bowling team)",
+                    color='Bowling_Team' if match_df['Bowling_Team'].nunique() == 1 else None
+                )
+                if match_df['Bowling_Team'].nunique() > 1:
+                    # simple overlay chart by date
+                    fig_bar = px.bar(
+                        match_df.sort_values('Date').tail(50),
+                        x='Date', y='Extra_Ball_Runs', color='Bowling_Team',
+                        title="Runs from Extra Balls per Match by Bowling Team",
+                        labels={'Extra_Ball_Runs': 'Runs from Extra Balls'}
+                    )
+                st.plotly_chart(fig_bar, use_container_width=True)
+
+            # ---- Innings-wise view ----
+            elif edc_mode == "Innings-wise":
+                disp_cols = ['Bowling_Team', 'Batting_Team', 'Innings_Label', 'Date', 'Season', 'League',
+                             'Wide_Balls', 'NoBall_Balls', 'Extra_Balls',
+                             'Wide_Runs', 'NoBall_Runs', 'Extra_Ball_Runs',
+                             'Team_Total_Runs', 'Extra_Run_%', 'Extra_Ball_%']
+                rename = {
+                    'Bowling_Team': 'Bowling Team', 'Batting_Team': 'Batting Team',
+                    'Innings_Label': 'Innings', 'Extra_Ball_Runs': 'Runs from Extra Balls',
+                    'Team_Total_Runs': 'Total Runs Conceded', 'Extra_Run_%': 'Extra Run%',
+                    'Extra_Ball_%': 'Extra Ball%', 'Wide_Balls': 'Wides',
+                    'NoBall_Balls': 'No-Balls', 'Extra_Balls': 'Total Extra Balls',
+                    'Wide_Runs': 'Wide Runs', 'NoBall_Runs': 'No-Ball Runs'
+                }
+                show_df = inn_df[[c for c in disp_cols if c in inn_df.columns]].rename(columns=rename)
+                st.dataframe(show_df, use_container_width=True, hide_index=True)
+
+                # 1st vs 2nd innings comparison
+                inn_compare = inn_df.groupby('Innings_Label', observed=True).agg(
+                    Avg_Extra_Balls=('Extra_Balls', 'mean'),
+                    Avg_Extra_Runs=('Extra_Ball_Runs', 'mean'),
+                    Avg_Wides=('Wide_Balls', 'mean'),
+                    Avg_NoBalls=('NoBall_Balls', 'mean'),
+                ).round(1).reset_index()
+                st.markdown("#### 1st vs 2nd Innings Average Comparison")
+                st.dataframe(inn_compare.rename(columns={'Innings_Label': 'Innings'}),
+                             use_container_width=True, hide_index=True)
+
+                fig_inn = px.bar(inn_compare, x='Innings_Label', y=['Avg_Wides', 'Avg_NoBalls'],
+                                 barmode='group',
+                                 title="Avg Wides & No-Balls: 1st Inn vs 2nd Inn",
+                                 labels={'value': 'Avg Balls', 'variable': 'Type', 'Innings_Label': 'Innings'},
+                                 color_discrete_map={'Avg_Wides': '#4CC3D9', 'Avg_NoBalls': '#FF8C00'})
+                st.plotly_chart(fig_inn, use_container_width=True)
+
+            # ---- Season Summary ----
+            else:
+                rename = {
+                    'Bowling_Team': 'Bowling Team', 'Total_Wide_Balls': 'Total Wides',
+                    'Total_NoBall_Balls': 'Total No-Balls', 'Total_Extra_Balls': 'Total Extra Balls',
+                    'Total_Wide_Runs': 'Wide Runs', 'Total_NoBall_Runs': 'No-Ball Runs',
+                    'Total_Extra_Ball_Runs': 'Runs from Extra Balls',
+                    'Total_Runs_Conceded': 'Total Runs Conceded',
+                    'Extra_Run_%': 'Extra Run%', 'Avg_Extra_Balls_Per_Match': 'Avg Extra Balls/Match',
+                    'Avg_Extra_Runs_Per_Match': 'Avg Extra Runs/Match'
+                }
+                show_df = season_df.rename(columns=rename)
+                st.dataframe(show_df, use_container_width=True, hide_index=True)
+
+                # Team bar chart
+                fig_s = px.bar(
+                    season_df.sort_values('Total_Extra_Balls', ascending=False),
+                    x='Bowling_Team', y=['Total_Wide_Balls', 'Total_NoBall_Balls'],
+                    barmode='stack', color_discrete_map={'Total_Wide_Balls': '#4CC3D9', 'Total_NoBall_Balls': '#FF8C00'},
+                    title="Total Wide Balls & No-Ball Balls Bowled (Season)",
+                    labels={'value': 'Balls', 'variable': 'Type', 'Bowling_Team': 'Team'}
+                )
+                fig_s.update_xaxes(tickangle=30)
+                st.plotly_chart(fig_s, use_container_width=True)
+
+                fig_r = px.bar(
+                    season_df.sort_values('Extra_Run_%', ascending=False),
+                    x='Bowling_Team', y='Extra_Run_%', color='Season',
+                    title="Runs from Extra Balls as % of Total Runs Conceded",
+                    labels={'Extra_Run_%': 'Extra Run %', 'Bowling_Team': 'Team'},
+                    text='Extra_Run_%'
+                )
+                fig_r.update_traces(texttemplate='%{text}%', textposition='outside')
+                fig_r.update_xaxes(tickangle=30)
+                st.plotly_chart(fig_r, use_container_width=True)
+
 
 st.markdown("---")
 st.markdown("*Data extracted from Cricsheet JSON files.*")
