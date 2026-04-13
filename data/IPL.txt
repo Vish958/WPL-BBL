@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 1175 Indian Premier League matches.
+archive contains 1188 Indian Premier League matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -9,7 +9,7 @@ https://cricsheet.org/format/json/
 
 You can find the available downloads at https://cricsheet.org/downloads/, and
 you can find the most up-to-date version of this zip file at
-https://cricsheet.org/downloads/ipl_json.zip
+https://cricsheet.org/downloads/ipl_male_json.zip
 
 
 The matches contained in this zip archive are listed below. The first field is
@@ -21,6 +21,20 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+
+2026-04-12 - club - IPL - male - 1527692 - Lucknow Super Giants vs Gujarat Titans
+2026-04-11 - club - IPL - male - 1527691 - Chennai Super Kings vs Delhi Capitals
+2026-04-11 - club - IPL - male - 1527690 - Sunrisers Hyderabad vs Punjab Kings
+2026-04-10 - club - IPL - male - 1527689 - Royal Challengers Bengaluru vs Rajasthan Royals
+2026-04-09 - club - IPL - male - 1527688 - Kolkata Knight Riders vs Lucknow Super Giants
+2026-04-08 - club - IPL - male - 1527687 - Gujarat Titans vs Delhi Capitals
+2026-04-07 - club - IPL - male - 1527686 - Rajasthan Royals vs Mumbai Indians
+2026-04-06 - club - IPL - male - 1527685 - Kolkata Knight Riders vs Punjab Kings
+2026-04-05 - club - IPL - male - 1527684 - Royal Challengers Bengaluru vs Chennai Super Kings
+2026-04-05 - club - IPL - male - 1527683 - Sunrisers Hyderabad vs Lucknow Super Giants
+2026-04-04 - club - IPL - male - 1527682 - Rajasthan Royals vs Gujarat Titans
+2026-04-04 - club - IPL - male - 1527681 - Mumbai Indians vs Delhi Capitals
+2026-04-03 - club - IPL - male - 1527680 - Chennai Super Kings vs Punjab Kings
 2026-04-02 - club - IPL - male - 1527679 - Sunrisers Hyderabad vs Kolkata Knight Riders
 2026-04-01 - club - IPL - male - 1527678 - Lucknow Super Giants vs Delhi Capitals
 2026-03-31 - club - IPL - male - 1527677 - Gujarat Titans vs Punjab Kings

@@ -30,7 +30,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 02 April 2026")
+st.markdown("📅 Last updated: 13 April 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -496,43 +496,140 @@ def render_with_season_tabs(fdf, metric_func, metric_name, x_col, y_col, chart_t
 def calculate_impact_player_stats(df):
     if 'is_impact_batter' not in df.columns:
         st.warning("Data missing impact flags. Please update via preprocessing.")
-        return pd.DataFrame(), pd.DataFrame()
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
-    # 1. Batting Impact
-    impact_bat = df[df['is_impact_batter'] == 1].copy()
-    if not impact_bat.empty:
-        bat_stats = impact_bat.groupby(['batter'], observed=True).agg(
+    def _bat_agg(grp_df, grp_cols):
+        d = grp_df.copy()
+        for c in ['runs.batter', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+        stats = d.groupby(grp_cols, observed=True).agg(
             Runs=('runs.batter', 'sum'),
             Balls=('is_valid_delivery', 'sum'),
-            Fours=('runs.batter', lambda x: (x==4).sum()),
-            Sixes=('runs.batter', lambda x: (x==6).sum())
+            Fours=('runs.batter', lambda x: (x == 4).sum()),
+            Sixes=('runs.batter', lambda x: (x == 6).sum())
         ).reset_index()
-        bat_stats['Strike Rate'] = (bat_stats['Runs'] / bat_stats['Balls'] * 100).round(2)
-        bat_stats = bat_stats[bat_stats['Balls'] > 0].sort_values('Runs', ascending=False)
-    else:
-        bat_stats = pd.DataFrame()
+        stats['Strike Rate'] = (stats['Runs'] / stats['Balls'] * 100).round(2)
+        return stats[stats['Balls'] > 0].sort_values('Runs', ascending=False)
 
-    # 2. Bowling Impact
-    impact_bowl = df[df['is_impact_bowler'] == 1].copy()
-    if not impact_bowl.empty:
-        # Calculate runs conceded by bowler
-        if 'leg_byes' not in impact_bowl.columns: impact_bowl['leg_byes'] = 0
-        if 'byes' not in impact_bowl.columns: impact_bowl['byes'] = 0
-        impact_bowl['bowler_runs'] = impact_bowl['runs.total'] - impact_bowl['leg_byes'] - impact_bowl['byes']
-        
-        bowl_stats = impact_bowl.groupby(['bowler'], observed=True).agg(
+    def _bowl_agg(grp_df, grp_cols):
+        d = grp_df.copy()
+        if 'leg_byes' not in d.columns: d['leg_byes'] = 0
+        if 'byes' not in d.columns: d['byes'] = 0
+        d['bowler_runs'] = d['runs.total'] - d['leg_byes'] - d['byes']
+        stats = d.groupby(grp_cols, observed=True).agg(
             Wickets=('wicket_count', 'sum'),
             Runs_Conceded=('bowler_runs', 'sum'),
             Balls_Bowled=('is_valid_delivery', 'sum')
         ).reset_index()
-        
-        bowl_stats['Overs'] = bowl_stats['Balls_Bowled'].apply(overs_from_balls)
-        bowl_stats['Economy'] = (bowl_stats['Runs_Conceded'] / (bowl_stats['Balls_Bowled']/6)).round(2)
-        bowl_stats = bowl_stats[bowl_stats['Balls_Bowled'] > 0].sort_values('Wickets', ascending=False)
-    else:
-        bowl_stats = pd.DataFrame()
+        stats['Overs'] = stats['Balls_Bowled'].apply(overs_from_balls)
+        stats['Economy'] = (stats['Runs_Conceded'] / (stats['Balls_Bowled'] / 6)).round(2)
+        return stats[stats['Balls_Bowled'] > 0].sort_values('Wickets', ascending=False)
 
-    return bat_stats, bowl_stats
+    def _bat_per_match(grp_df):
+        """Per-match view: one row per (innings, batter, match) with Team, Against, Date."""
+        d = grp_df.copy()
+        for c in ['runs.batter', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+        d['team'] = d['team'].astype(str)
+
+        grp_cols = [c for c in ['innings', 'batter', 'team', 'match_id', 'date'] if c in d.columns]
+        stats = d.groupby(grp_cols, observed=True).agg(
+            Runs=('runs.batter', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Fours=('runs.batter', lambda x: (x == 4).sum()),
+            Sixes=('runs.batter', lambda x: (x == 6).sum())
+        ).reset_index()
+        stats['SR'] = (stats['Runs'] / stats['Balls'] * 100).round(2)
+        stats = stats[stats['Balls'] > 0]
+
+        # Derive 'Against' from the 'teams' column (e.g. "CSK vs MI")
+        if 'teams' in d.columns and 'match_id' in stats.columns:
+            meta = d.drop_duplicates('match_id')[['match_id', 'teams']].copy()
+            meta['teams'] = meta['teams'].astype(str)
+            stats = stats.merge(meta, on='match_id', how='left')
+            stats['Against'] = stats.apply(
+                lambda r: next(
+                    (p.strip() for p in str(r.get('teams', '')).split(' vs ') if p.strip() != r.get('team', '')),
+                    ''
+                ), axis=1
+            )
+            stats = stats.drop(columns=['teams', 'match_id'])
+
+        if 'date' in stats.columns:
+            stats['date'] = pd.to_datetime(stats['date']).dt.strftime('%d %b %Y')
+
+        stats = stats.rename(columns={
+            'innings': 'Innings', 'batter': 'Batter', 'team': 'Team', 'date': 'Date'
+        })
+        col_order = ['Innings', 'Batter', 'Team', 'Against', 'Date', 'Runs', 'Balls', 'SR', 'Fours', 'Sixes']
+        return stats[[c for c in col_order if c in stats.columns]].sort_values(
+            ['Innings', 'Runs'], ascending=[True, False]
+        )
+
+    def _bowl_per_match(grp_df):
+        """Per-match view: one row per (innings, bowler, match) with Team, Against, Date."""
+        d = grp_df.copy()
+        if 'leg_byes' not in d.columns: d['leg_byes'] = 0
+        if 'byes' not in d.columns: d['byes'] = 0
+        d['bowler_runs'] = d['runs.total'] - d['leg_byes'] - d['byes']
+
+        # bowling_team = the bowler's own team; if absent, derive it below
+        team_col = 'bowling_team' if 'bowling_team' in d.columns else None
+        if team_col:
+            d[team_col] = d[team_col].astype(str)
+
+        grp_cols = [c for c in ['innings', 'bowler', team_col, 'match_id', 'date'] if c]
+        grp_cols = [c for c in grp_cols if c in d.columns]
+        stats = d.groupby(grp_cols, observed=True).agg(
+            Wickets=('wicket_count', 'sum'),
+            Runs_Conceded=('bowler_runs', 'sum'),
+            Balls_Bowled=('is_valid_delivery', 'sum')
+        ).reset_index()
+        stats['Overs'] = stats['Balls_Bowled'].apply(overs_from_balls)
+        stats['Economy'] = (stats['Runs_Conceded'] / (stats['Balls_Bowled'] / 6)).round(2)
+        stats = stats[stats['Balls_Bowled'] > 0]
+
+        if 'teams' in d.columns and 'match_id' in stats.columns:
+            d['team'] = d['team'].astype(str)
+            meta = d.drop_duplicates('match_id')[['match_id', 'teams', 'team']].copy()
+            meta['teams'] = meta['teams'].astype(str)
+            stats = stats.merge(meta, on='match_id', how='left')
+            # Against = batting team (always the 'team' column per delivery)
+            stats = stats.rename(columns={'team': 'Against'})
+            if team_col:
+                stats = stats.rename(columns={team_col: 'Team'})
+            else:
+                # Derive bowler's team as the non-batting side from teams string
+                stats['Team'] = stats.apply(
+                    lambda r: next(
+                        (p.strip() for p in str(r.get('teams', '')).split(' vs ') if p.strip() != r.get('Against', '')),
+                        ''
+                    ), axis=1
+                )
+            stats = stats.drop(columns=['teams', 'match_id'], errors='ignore')
+
+        if 'date' in stats.columns:
+            stats['date'] = pd.to_datetime(stats['date']).dt.strftime('%d %b %Y')
+
+        stats = stats.rename(columns={'innings': 'Innings', 'bowler': 'Bowler', 'date': 'Date'})
+        col_order = ['Innings', 'Bowler', 'Team', 'Against', 'Date', 'Wickets', 'Runs_Conceded', 'Overs', 'Economy']
+        return stats[[c for c in col_order if c in stats.columns]].sort_values(
+            ['Innings', 'Wickets'], ascending=[True, False]
+        )
+
+    # ---- Batting ----
+    impact_bat = df[df['is_impact_batter'] == 1].copy()
+    bat_stats = _bat_agg(impact_bat, ['batter']) if not impact_bat.empty else pd.DataFrame()
+    bat_match  = _bat_per_match(impact_bat) if not impact_bat.empty else pd.DataFrame()
+
+    # ---- Bowling ----
+    impact_bowl = df[df['is_impact_bowler'] == 1].copy()
+    bowl_stats = _bowl_agg(impact_bowl, ['bowler']) if not impact_bowl.empty else pd.DataFrame()
+    bowl_match  = _bowl_per_match(impact_bowl) if not impact_bowl.empty else pd.DataFrame()
+
+    return bat_stats, bowl_stats, bat_match, bowl_match
 
 # -------------------------
 # Existing Metric Functions
@@ -2102,24 +2199,118 @@ for i, metric in enumerate(st.session_state['metrics']):
             if 'IPL' not in st.session_state.get('leagues', []) and 'IPL' not in fdf['league'].unique():
                 st.info("Impact Players are primarily an IPL feature. Select IPL league to view.")
             else:
-                res_bat, res_bowl = calculate_impact_player_stats(fdf)
-                
-                # Tabbed view for Batting vs Bowling
+                res_bat, res_bowl, res_bat_match, res_bowl_match = calculate_impact_player_stats(fdf)
+
+                # Tabbed view: Batting vs Bowling
                 tab1, tab2 = st.tabs(["Batting Impact", "Bowling Impact"])
-                
+
                 with tab1:
                     if not res_bat.empty:
-                        show_table(res_bat)
-                        fig = px.bar(res_bat.head(10), x='batter', y='Runs', title="Top Impact Batsmen", color='Strike Rate')
-                        st.plotly_chart(fig, width='stretch')
+                        sub1, sub2, sub3 = st.tabs(["Overall", "Innings-wise", "All Matches (No Team Filter)"])
+
+                        with sub1:
+                            show_table(res_bat)
+                            fig = px.bar(res_bat.head(10), x='batter', y='Runs',
+                                        title="Top Impact Batsmen (Overall)", color='Strike Rate')
+                            st.plotly_chart(fig, use_container_width=True)
+
+                        with sub2:
+                            if not res_bat_match.empty and 'Innings' in res_bat_match.columns:
+                                innings_list = sorted(res_bat_match['Innings'].unique())
+                                inn_tabs = st.tabs([str(inn) for inn in innings_list])
+                                for inn_tab, inn_label in zip(inn_tabs, innings_list):
+                                    with inn_tab:
+                                        inn_data = res_bat_match[res_bat_match['Innings'] == inn_label].drop(columns='Innings')
+                                        show_table(inn_data)
+                                        if not inn_data.empty and 'Batter' in inn_data.columns:
+                                            fig = px.bar(inn_data.head(10), x='Batter', y='Runs',
+                                                        title=f"Top Impact Batsmen — {inn_label}",
+                                                        color='SR')
+                                            st.plotly_chart(fig, use_container_width=True)
+                            else:
+                                st.info("No innings-wise match data available.")
+
+                        with sub3:
+                            # All match appearances combined — no innings split, no team filtering applied
+                            if not res_bat_match.empty:
+                                show_table(res_bat_match)
+                                if 'Batter' in res_bat_match.columns:
+                                    agg_no_filter = res_bat_match.groupby('Batter', as_index=False).agg(
+                                        Appearances=('Runs', 'count'),
+                                        Total_Runs=('Runs', 'sum'),
+                                        Total_Balls=('Balls', 'sum'),
+                                        Total_Fours=('Fours', 'sum'),
+                                        Total_Sixes=('Sixes', 'sum')
+                                    )
+                                    agg_no_filter['SR'] = (agg_no_filter['Total_Runs'] / agg_no_filter['Total_Balls'] * 100).round(2)
+                                    agg_no_filter = agg_no_filter.sort_values('Total_Runs', ascending=False)
+                                    st.markdown("**Aggregate (all innings combined)**")
+                                    show_table(agg_no_filter)
+                                    fig = px.bar(agg_no_filter.head(10), x='Batter', y='Total_Runs',
+                                                title="Impact Batsmen — All Appearances (No Team Filter)",
+                                                color='SR')
+                                    st.plotly_chart(fig, use_container_width=True)
+                            else:
+                                st.info("No match data available.")
                     else:
                         st.info("No Impact Batters found in selected data.")
-                        
+
                 with tab2:
                     if not res_bowl.empty:
-                        show_table(res_bowl)
-                        fig = px.bar(res_bowl.head(10), x='bowler', y='Wickets', title="Top Impact Bowlers", color='Economy')
-                        st.plotly_chart(fig, width='stretch')
+                        sub4, sub5, sub6 = st.tabs(["Overall", "Innings-wise", "All Matches (No Team Filter)"])
+
+                        with sub4:
+                            show_table(res_bowl)
+                            fig = px.bar(res_bowl.head(10), x='bowler', y='Wickets',
+                                        title="Top Impact Bowlers (Overall)", color='Economy')
+                            st.plotly_chart(fig, use_container_width=True)
+
+                        with sub5:
+                            if not res_bowl_match.empty and 'Innings' in res_bowl_match.columns:
+                                innings_list_b = sorted(res_bowl_match['Innings'].unique())
+                                inn_tabs_b = st.tabs([str(inn) for inn in innings_list_b])
+                                for inn_tab_b, inn_label_b in zip(inn_tabs_b, innings_list_b):
+                                    with inn_tab_b:
+                                        inn_data_b = res_bowl_match[res_bowl_match['Innings'] == inn_label_b].drop(columns='Innings')
+                                        show_table(inn_data_b)
+                                        if not inn_data_b.empty and 'Bowler' in inn_data_b.columns:
+                                            fig = px.bar(inn_data_b.head(10), x='Bowler', y='Wickets',
+                                                        title=f"Top Impact Bowlers — {inn_label_b}",
+                                                        color='Economy')
+                                            st.plotly_chart(fig, use_container_width=True)
+                            else:
+                                st.info("No innings-wise match data available.")
+
+                        with sub6:
+                            # All match appearances combined — no innings split, no team filtering applied
+                            if not res_bowl_match.empty:
+                                show_table(res_bowl_match)
+                                if 'Bowler' in res_bowl_match.columns:
+                                    agg_b_no_filter = res_bowl_match.groupby('Bowler', as_index=False).agg(
+                                        Appearances=('Wickets', 'count'),
+                                        Total_Wickets=('Wickets', 'sum'),
+                                        Total_Runs=('Runs_Conceded', 'sum'),
+                                        Total_Balls=('Overs', 'count')
+                                    )
+                                    agg_b_no_filter['Economy'] = (
+                                        agg_b_no_filter['Total_Runs'] /
+                                        res_bowl_match.groupby('Bowler')['Overs'].apply(
+                                            lambda x: sum(
+                                                int(str(o).split('.')[0]) + int(str(o).split('.')[1]) / 6
+                                                if '.' in str(o) else int(str(o))
+                                                for o in x
+                                            )
+                                        ).reindex(agg_b_no_filter['Bowler']).values
+                                    ).round(2)
+                                    agg_b_no_filter = agg_b_no_filter.sort_values('Total_Wickets', ascending=False)
+                                    st.markdown("**Aggregate (all innings combined)**")
+                                    show_table(agg_b_no_filter)
+                                    fig = px.bar(agg_b_no_filter.head(10), x='Bowler', y='Total_Wickets',
+                                                title="Impact Bowlers — All Appearances (No Team Filter)",
+                                                color='Economy')
+                                    st.plotly_chart(fig, use_container_width=True)
+                            else:
+                                st.info("No match data available.")
                     else:
                         st.info("No Impact Bowlers found in selected data.")
 
