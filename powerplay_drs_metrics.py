@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 13 April 2026")
+st.markdown("📅 Last updated: 14 April 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -358,7 +358,10 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "On This Day",
     "Bowler Over Impact",
     "Match Flow Chart",
-    "Extra Deliveries Cost"
+    "Extra Deliveries Cost",
+    "Debutant Bowler Wickets",
+    "Longest Wicketless Streaks",
+    "Balls Bowled Per Match"
 ])
 
 if fdf.empty:
@@ -3509,6 +3512,10 @@ elif metric_choice == "SR Comparison (Year-wise)":
     if sr_table.empty:
         st.info("No SR comparison data available for the selected filters.")
     else:
+        # Helper columns
+        _bucket_cols = ['1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
+        _base_cols   = ['Name', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+
         leagues_in_sr = sorted(sr_table['League'].dropna().unique())
         league_tabs = st.tabs([str(lg) for lg in leagues_in_sr])
 
@@ -3523,51 +3530,141 @@ elif metric_choice == "SR Comparison (Year-wise)":
                         year_options,
                         default=list(year_options[:1]),
                         key=f"sr_season_{i}",
-                        help="Pick multiple seasons to compare players side-by-side across years."
+                        help="Pick multiple seasons to see each year separately or compare side-by-side."
                     )
-                    if selected_sr_years:
-                        view_df = lg_df[lg_df['Season'].isin(selected_sr_years)].copy()
-                        season_label = ", ".join(str(y) for y in sorted(selected_sr_years, reverse=True))
+                    active_years = selected_sr_years if selected_sr_years else list(year_options)
+
+                    # Build per-year display cols (add Team when not aggregating)
+                    def _make_display_cols(include_season=False):
+                        cols = list(_base_cols)
+                        if not aggregate_across_teams and 'Team' in lg_df.columns:
+                            cols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+                        if include_season:
+                            cols = ['Season'] + cols
+                        return cols
+
+                    if len(active_years) == 1:
+                        # Single year — plain table + chart, no sub-tabs needed
+                        yr_data = lg_df[lg_df['Season'] == active_years[0]].copy()
+                        dcols = _make_display_cols(include_season=False)
+                        st.dataframe(
+                            yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Strike Rate', ascending=False),
+                            use_container_width=True
+                        )
+                        chart_df = yr_data.sort_values('Strike Rate', ascending=False).head(int(top_n_sr))
+                        if not chart_df.empty:
+                            fig = px.bar(chart_df, x='Name', y='Strike Rate',
+                                         color='Average', color_continuous_scale='Viridis',
+                                         title=f"{lg} {active_years[0]} — Strike Rate Comparison",
+                                         hover_data=['Balls/Inn'] + _bucket_cols)
+                            fig.update_xaxes(tickangle=45)
+                            st.plotly_chart(fig, use_container_width=True)
                     else:
-                        view_df = lg_df.copy()
-                        season_label = "All Seasons"
-                    chart_title = f"{lg} {season_label} — Strike Rate Comparison"
-                    # Show Season column whenever multiple years are selected
-                    show_season_col = len(selected_sr_years) != 1
+                        # Multiple years — one sub-tab per year + a Compare tab
+                        year_tab_labels = [str(y) for y in active_years] + ["⚖️ Compare"]
+                        year_sub_tabs = st.tabs(year_tab_labels)
+
+                        for j, yr in enumerate(active_years):
+                            with year_sub_tabs[j]:
+                                yr_data = lg_df[lg_df['Season'] == yr].copy()
+                                if yr_data.empty:
+                                    st.info(f"No data for {yr}.")
+                                    continue
+
+                                dcols = _make_display_cols(include_season=False)
+                                st.markdown(f"**{lg} — Season {yr}**")
+                                st.dataframe(
+                                    yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Strike Rate', ascending=False),
+                                    use_container_width=True
+                                )
+                                chart_df = yr_data.sort_values('Strike Rate', ascending=False).head(int(top_n_sr))
+                                if not chart_df.empty:
+                                    fig = px.bar(chart_df, x='Name', y='Strike Rate',
+                                                 color='Average', color_continuous_scale='Viridis',
+                                                 title=f"{lg} {yr} — Strike Rate",
+                                                 hover_data=['Balls/Inn'] + _bucket_cols)
+                                    fig.update_xaxes(tickangle=45)
+                                    st.plotly_chart(fig, use_container_width=True)
+
+                                # Ball-bucket breakdown per player for this year
+                                if not yr_data.empty:
+                                    st.markdown("**Ball-range SR Buckets**")
+                                    bucket_melt = yr_data[['Name'] + _bucket_cols].melt(
+                                        id_vars='Name', var_name='Ball Range', value_name='SR'
+                                    )
+                                    fig_b = px.bar(
+                                        bucket_melt[bucket_melt['SR'] > 0].sort_values('SR', ascending=False),
+                                        x='Ball Range', y='SR', color='Name', barmode='group',
+                                        title=f"{lg} {yr} — Ball-range SR Buckets"
+                                    )
+                                    fig_b.update_xaxes(tickangle=0)
+                                    st.plotly_chart(fig_b, use_container_width=True)
+
+                        # Compare tab — side-by-side grouped bars, all years together
+                        with year_sub_tabs[-1]:
+                            compare_df = lg_df[lg_df['Season'].isin(active_years)].copy()
+                            if compare_df.empty:
+                                st.info("No data for selected seasons.")
+                            else:
+                                dcols_cmp = _make_display_cols(include_season=True)
+                                st.markdown("**All Selected Seasons — Side-by-side**")
+                                st.dataframe(
+                                    compare_df[[c for c in dcols_cmp if c in compare_df.columns]].sort_values(
+                                        ['Name', 'Season'], ascending=[True, True]
+                                    ),
+                                    use_container_width=True
+                                )
+
+                                # Grouped bar: SR by player, coloured by season
+                                season_label = ", ".join(str(y) for y in active_years)
+                                chart_cmp = compare_df.copy()
+                                chart_cmp['Season'] = chart_cmp['Season'].astype(str)
+                                fig_cmp = px.bar(
+                                    chart_cmp.sort_values('Strike Rate', ascending=False),
+                                    x='Name', y='Strike Rate', color='Season',
+                                    barmode='group',
+                                    title=f"{lg} {season_label} — Year-wise SR Comparison",
+                                    hover_data=['Average', 'Balls/Inn'] + _bucket_cols
+                                )
+                                fig_cmp.update_xaxes(tickangle=45)
+                                st.plotly_chart(fig_cmp, use_container_width=True)
+
+                                # Bucket heatmap per player per year
+                                if sr_player_filter:
+                                    st.markdown("**Ball-bucket progression across seasons (selected players)**")
+                                    for player in sr_player_filter:
+                                        p_df = compare_df[compare_df['Name'] == player].copy()
+                                        if p_df.empty:
+                                            continue
+                                        p_melt = p_df[['Season'] + _bucket_cols].melt(
+                                            id_vars='Season', var_name='Ball Range', value_name='SR'
+                                        )
+                                        p_melt['Season'] = p_melt['Season'].astype(str)
+                                        fig_p = px.line(
+                                            p_melt, x='Ball Range', y='SR',
+                                            color='Season', markers=True,
+                                            title=f"{player} — Ball-range SR by Season"
+                                        )
+                                        st.plotly_chart(fig_p, use_container_width=True)
+
                 else:
+                    # Overall (All Seasons) — aggregate, no year split
                     view_df = lg_df.copy()
-                    chart_title = f"{lg} — Overall Strike Rate Comparison (All Seasons)"
-                    show_season_col = False
-
-                display_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn',
-                                '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
-                if not aggregate_across_teams and 'Team' in view_df.columns:
-                    display_cols = ['Name', 'Team'] + display_cols[1:]
-                if show_season_col and 'Season' in view_df.columns:
-                    display_cols = ['Season'] + display_cols
-
-                st.dataframe(
-                    view_df[[c for c in display_cols if c in view_df.columns]].sort_values('Strike Rate', ascending=False),
-                    use_container_width=True
-                )
-
-                chart_df = view_df.sort_values('Strike Rate', ascending=False).head(int(top_n_sr)).copy()
-                if not chart_df.empty:
-                    # Colour by Season when multiple seasons are selected, else by Average
-                    use_season_color = show_season_col and 'Season' in chart_df.columns and chart_df['Season'].nunique() > 1
-                    fig = px.bar(
-                        chart_df,
-                        x='Name',
-                        y='Strike Rate',
-                        color='Season' if use_season_color else 'Average',
-                        color_continuous_scale=None if use_season_color else 'Viridis',
-                        barmode='group' if use_season_color else 'relative',
-                        title=chart_title,
-                        hover_data=['Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR',
-                                    '31-40 SR', '41-50 SR', '51-60 SR']
+                    dcols = list(_base_cols)
+                    if not aggregate_across_teams and 'Team' in view_df.columns:
+                        dcols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+                    st.dataframe(
+                        view_df[[c for c in dcols if c in view_df.columns]].sort_values('Strike Rate', ascending=False),
+                        use_container_width=True
                     )
-                    fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    chart_df = view_df.sort_values('Strike Rate', ascending=False).head(int(top_n_sr)).copy()
+                    if not chart_df.empty:
+                        fig = px.bar(chart_df, x='Name', y='Strike Rate',
+                                     color='Average', color_continuous_scale='Viridis',
+                                     title=f"{lg} — Overall Strike Rate Comparison (All Seasons)",
+                                     hover_data=['Balls/Inn'] + _bucket_cols)
+                        fig.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
 
 
 # =========================================
@@ -4866,6 +4963,969 @@ elif metric_choice == "Extra Deliveries Cost":
                 fig_r.update_traces(texttemplate='%{text}%', textposition='outside')
                 fig_r.update_xaxes(tickangle=30)
                 st.plotly_chart(fig_r, use_container_width=True)
+
+
+# =========================================
+# DEBUTANT BOWLER WICKETS
+# =========================================
+elif metric_choice == "Debutant Bowler Wickets":
+    st.subheader("🎓 Debutant Bowler Wickets")
+    st.write(
+        "Wickets taken by bowlers on their debut appearance in a league or for a franchise. "
+        "Debut = the first match that bowler ever appeared in for that league / team."
+    )
+
+    @st.cache_data(show_spinner=False)
+    def debutant_bowler_wickets(df_, use_playing_xi=True):
+        """
+        For every (player, league) pair, find their TRUE debut match from playing_xi
+        (first match they APPEARED in, regardless of whether they bowled).
+        Then look up bowling stats for that debut match — players who didn't bowl
+        appear with 0 wickets / 0 overs.
+        Falls back to bowling-data-based debut when use_playing_xi=False (Franchise mode).
+        """
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        for c in ['wicket_count', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+        if 'byes' not in d.columns: d['byes'] = 0
+        if 'leg_byes' not in d.columns: d['leg_byes'] = 0
+        d['bowler_runs'] = d['runs.total'] - d['byes'] - d['leg_byes']
+
+        team_col = 'bowling_team' if 'bowling_team' in d.columns else None
+
+        # ── XI-based debut path (League Debut) ──────────────────────────────
+        if use_playing_xi:
+            try:
+                xi = pd.read_parquet('playing_xi.parquet')
+                xi['date'] = pd.to_datetime(xi['date'])
+            except Exception:
+                xi = pd.DataFrame()
+
+            if not xi.empty:
+                leagues_in = d['league'].astype(str).unique().tolist()
+                xi = xi[xi['league'].astype(str).isin(leagues_in)].copy()
+
+                # True debut = first match in playing XI per (player, league)
+                debut_idx = (
+                    xi.groupby(['player', 'league'], observed=True)['date']
+                    .min().reset_index()
+                    .rename(columns={'date': 'debut_date'})
+                )
+
+                # Only keep debutants whose debut year is in the user's year selection
+                if 'year' in d.columns:
+                    years_in = set(d['year'].dropna().unique().tolist())
+                    debut_idx = debut_idx[
+                        pd.to_datetime(debut_idx['debut_date']).dt.year.isin(years_in)
+                    ]
+
+                if debut_idx.empty:
+                    return pd.DataFrame()
+
+                # Resolve debut match_id, team, teams from xi
+                xi_debuts = xi.merge(debut_idx, on=['player', 'league'], how='inner')
+                xi_debuts = xi_debuts[xi_debuts['date'] == xi_debuts['debut_date']]
+                xi_debuts = (
+                    xi_debuts[['player', 'league', 'match_id', 'debut_date', 'team', 'teams']]
+                    .drop_duplicates()
+                    .rename(columns={'player': 'bowler'})
+                )
+
+                # Load full ball-by-ball (all years) for bowling stats on debut
+                full_d = load_data()
+                full_d = full_d[full_d['league'].astype(str).isin(leagues_in)].copy()
+                for c in ['wicket_count', 'is_valid_delivery']:
+                    if c in full_d.columns:
+                        full_d[c] = pd.to_numeric(full_d[c], errors='coerce').fillna(0)
+                if 'byes' not in full_d.columns: full_d['byes'] = 0
+                if 'leg_byes' not in full_d.columns: full_d['leg_byes'] = 0
+                full_d['bowler_runs'] = full_d['runs.total'] - full_d['byes'] - full_d['leg_byes']
+
+                # Bowling stats for debut matches only
+                debut_bowl = full_d.merge(
+                    xi_debuts[['bowler', 'league', 'match_id']],
+                    on=['bowler', 'league', 'match_id'], how='inner'
+                )
+
+                if not debut_bowl.empty:
+                    bowl_stats = debut_bowl.groupby(
+                        ['bowler', 'league', 'match_id'], observed=True
+                    ).agg(
+                        Wickets=('wicket_count', 'sum'),
+                        Runs_Conceded=('bowler_runs', 'sum'),
+                        Balls_Bowled=('is_valid_delivery', 'sum'),
+                    ).reset_index()
+                else:
+                    bowl_stats = pd.DataFrame(
+                        columns=['bowler', 'league', 'match_id',
+                                 'Wickets', 'Runs_Conceded', 'Balls_Bowled']
+                    )
+
+                # Left-join: players in XI but who didn't bowl get 0 stats
+                result = xi_debuts.merge(
+                    bowl_stats, on=['bowler', 'league', 'match_id'], how='left'
+                )
+                for c in ['Wickets', 'Runs_Conceded', 'Balls_Bowled']:
+                    if c in result.columns:
+                        result[c] = result[c].fillna(0).astype(int)
+
+                result['Overs'] = result['Balls_Bowled'].apply(
+                    lambda b: f"{int(b)//6}.{int(b)%6}"
+                )
+                result['Economy'] = (
+                    result['Runs_Conceded'] / (result['Balls_Bowled'] / 6)
+                ).replace([np.inf, -np.inf], 0).round(2)
+
+                # Against from teams column (already in xi_debuts via 'teams')
+                result['teams'] = result['teams'].astype(str)
+                result['team'] = result['team'].astype(str)
+                result['Against'] = result.apply(
+                    lambda r: next(
+                        (p.strip() for p in r['teams'].split(' vs ')
+                         if p.strip() != r['team']),
+                        ''
+                    ), axis=1
+                )
+
+                # Season from full_d
+                if 'year' in full_d.columns:
+                    yr_meta = full_d.drop_duplicates('match_id')[['match_id', 'year']].copy()
+                    result = result.merge(yr_meta, on='match_id', how='left')
+                    result = result.rename(columns={'year': 'Season'})
+
+                result['Date'] = pd.to_datetime(result['debut_date']).dt.strftime('%d %b %Y')
+                result = result.rename(columns={
+                    'bowler': 'Bowler', 'league': 'League',
+                    'match_id': 'Match ID', 'team': 'Team',
+                })
+                result = result.drop(columns=['debut_date', 'teams'], errors='ignore')
+
+                col_order = ['Bowler', 'Team', 'Against', 'League', 'Season', 'Date',
+                             'Wickets', 'Runs_Conceded', 'Overs', 'Economy',
+                             'Balls_Bowled', 'Match ID']
+                return result[[c for c in col_order if c in result.columns]].sort_values(
+                    'Wickets', ascending=False
+                ).reset_index(drop=True)
+
+        # ── Fallback / Franchise-mode: bowling-data-based debut ─────────────
+        debut_index = (
+            d.groupby(['bowler', 'league'], observed=True)['date']
+            .min().reset_index()
+            .rename(columns={'date': 'debut_date'})
+        )
+        d = d.merge(debut_index, on=['bowler', 'league'], how='left')
+        debut_rows = d[d['date'] == d['debut_date']].copy()
+
+        if debut_rows.empty:
+            return pd.DataFrame()
+
+        grp_cols = ['bowler', 'league', 'match_id', 'debut_date']
+        if team_col:
+            grp_cols.append(team_col)
+
+        stats = debut_rows.groupby(grp_cols, observed=True).agg(
+            Wickets=('wicket_count', 'sum'),
+            Runs_Conceded=('bowler_runs', 'sum'),
+            Balls_Bowled=('is_valid_delivery', 'sum'),
+        ).reset_index()
+
+        stats['Overs'] = stats['Balls_Bowled'].apply(
+            lambda b: f"{int(b)//6}.{int(b)%6}"
+        )
+        stats['Economy'] = (
+            stats['Runs_Conceded'] / (stats['Balls_Bowled'] / 6)
+        ).replace([np.inf, -np.inf], 0).round(2)
+
+        if 'teams' in debut_rows.columns and team_col:
+            meta = debut_rows.drop_duplicates('match_id')[['match_id', 'teams']].copy()
+            meta['teams'] = meta['teams'].astype(str)
+            stats = stats.merge(meta, on='match_id', how='left')
+            stats[team_col] = stats[team_col].astype(str)
+            stats['Against'] = stats.apply(
+                lambda r: next(
+                    (p.strip() for p in str(r.get('teams', '')).split(' vs ')
+                     if p.strip() != r.get(team_col, '')),
+                    ''
+                ), axis=1
+            )
+            stats = stats.drop(columns=['teams'], errors='ignore')
+        elif 'teams' in debut_rows.columns:
+            meta = debut_rows.drop_duplicates('match_id')[['match_id', 'teams']].copy()
+            stats = stats.merge(meta, on='match_id', how='left')
+            stats['Against'] = stats['teams'].astype(str)
+            stats = stats.drop(columns=['teams'], errors='ignore')
+
+        if 'year' in debut_rows.columns:
+            yr_meta = debut_rows.drop_duplicates('match_id')[['match_id', 'year']].copy()
+            stats = stats.merge(yr_meta, on='match_id', how='left')
+            stats = stats.rename(columns={'year': 'Season'})
+
+        stats['Date'] = pd.to_datetime(stats['debut_date']).dt.strftime('%d %b %Y')
+        rename = {'bowler': 'Bowler', 'league': 'League',
+                  'match_id': 'Match ID', 'debut_date': '_drop'}
+        if team_col:
+            rename[team_col] = 'Team'
+        stats = stats.rename(columns=rename).drop(columns=['_drop'], errors='ignore')
+
+        col_order = ['Bowler', 'Team', 'Against', 'League', 'Season', 'Date',
+                     'Wickets', 'Runs_Conceded', 'Overs', 'Economy', 'Balls_Bowled', 'Match ID']
+        return stats[[c for c in col_order if c in stats.columns]].sort_values(
+            'Wickets', ascending=False
+        ).reset_index(drop=True)
+
+    deb_df_src = fdf.copy()
+    if deb_df_src.empty:
+        st.warning("No data for selected filters.")
+    else:
+        deb_col1, deb_col2, deb_col3 = st.columns([2, 1, 1])
+        with deb_col1:
+            deb_scope = st.radio(
+                "Debut Scope",
+                ["League Debut (first ever match in that league)",
+                 "Franchise Debut (first match for each team)"],
+                key="deb_scope", horizontal=True
+            )
+        with deb_col2:
+            min_debut_wkts = st.number_input("Min Wickets on Debut", min_value=0, max_value=10,
+                                              value=1, step=1, key="deb_min_wkts")
+        with deb_col3:
+            top_n_deb = st.number_input("Top N in chart", min_value=5, max_value=50,
+                                        value=15, step=1, key="deb_top_n")
+
+        # Player filter
+        all_bowlers_deb = sorted(deb_df_src['bowler'].dropna().astype(str).unique())
+        deb_player_filter = st.multiselect(
+            "Filter by Bowler(s) — leave empty to show all",
+            all_bowlers_deb, key="deb_player_filter"
+        )
+
+        if deb_scope.startswith("Franchise"):
+            # Franchise debut: group by (bowler, team), find first date per team
+            tc = 'bowling_team' if 'bowling_team' in deb_df_src.columns else 'team'
+            fran_debut_idx = (
+                deb_df_src.groupby(['bowler', tc], observed=True)['date']
+                .min().reset_index().rename(columns={'date': 'debut_date'})
+            )
+            deb_df_src2 = deb_df_src.merge(fran_debut_idx, on=['bowler', tc], how='left')
+            deb_df_src2 = deb_df_src2[deb_df_src2['date'] == deb_df_src2['debut_date']]
+            # Temporarily patch 'league' with team so the shared function groups by team
+            deb_df_src2 = deb_df_src2.copy()
+            deb_df_src2['_orig_league'] = deb_df_src2['league']
+            deb_df_src2['league'] = deb_df_src2[tc].astype(str)
+            debut_result = debutant_bowler_wickets(deb_df_src2, use_playing_xi=False)
+            if 'League' in debut_result.columns:
+                debut_result = debut_result.rename(columns={'League': 'Franchise'})
+        else:
+            debut_result = debutant_bowler_wickets(deb_df_src, use_playing_xi=True)
+
+        if deb_player_filter:
+            debut_result = debut_result[debut_result['Bowler'].isin(deb_player_filter)]
+
+        debut_result = debut_result[debut_result['Wickets'] >= int(min_debut_wkts)]
+
+        if debut_result.empty:
+            st.info("No debutant bowlers found matching the selected filters.")
+        else:
+            tab_all, tab_league, tab_top = st.tabs(["All Debuts", "By League", "Top Performers"])
+
+            with tab_all:
+                st.markdown(f"**{len(debut_result)} debut appearances** matching filters")
+                st.dataframe(debut_result, use_container_width=True)
+
+            with tab_league:
+                league_col = 'Franchise' if deb_scope.startswith("Franchise") else 'League'
+                if league_col in debut_result.columns:
+                    leagues_deb = sorted(debut_result[league_col].dropna().unique())
+                    lg_tabs_deb = st.tabs([str(l) for l in leagues_deb])
+                    for li, lg in enumerate(leagues_deb):
+                        with lg_tabs_deb[li]:
+                            lg_deb = debut_result[debut_result[league_col] == lg].copy()
+                            st.dataframe(lg_deb, use_container_width=True)
+                            chart_deb = lg_deb.head(int(top_n_deb))
+                            if not chart_deb.empty:
+                                color_col = 'Team' if 'Team' in chart_deb.columns else 'Bowler'
+                                fig_deb = px.bar(
+                                    chart_deb, x='Bowler', y='Wickets',
+                                    color=color_col,
+                                    hover_data=[c for c in ['Team', 'Against', 'Date', 'Overs', 'Economy']
+                                                if c in chart_deb.columns],
+                                    title=f"Top {int(top_n_deb)} Debut Wicket Performances — {lg}",
+                                    text='Wickets'
+                                )
+                                fig_deb.update_traces(textposition='outside')
+                                fig_deb.update_xaxes(tickangle=45)
+                                st.plotly_chart(fig_deb, use_container_width=True)
+                else:
+                    st.dataframe(debut_result, use_container_width=True)
+
+            with tab_top:
+                st.markdown("### Bowlers with Most Wickets on Debut (Career Best Debut)")
+                # Keep the best debut (most wickets) per bowler
+                top_deb = (
+                    debut_result
+                    .sort_values('Wickets', ascending=False)
+                    .drop_duplicates(subset='Bowler', keep='first')
+                    .head(int(top_n_deb))
+                    .reset_index(drop=True)
+                )
+                st.dataframe(top_deb, use_container_width=True)
+                if not top_deb.empty:
+                    color_col_top = 'Team' if 'Team' in top_deb.columns else 'Bowler'
+                    fig_top = px.bar(
+                        top_deb, x='Bowler', y='Wickets',
+                        color=color_col_top,
+                        hover_data=[c for c in ['Team', 'Against', 'Date', 'Overs', 'Economy']
+                                    if c in top_deb.columns],
+                        title=f"Best Debut Performances — Top {int(top_n_deb)} Bowlers",
+                        text='Wickets'
+                    )
+                    fig_top.update_traces(textposition='outside')
+                    fig_top.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_top, use_container_width=True)
+
+                # Distribution histogram
+                wkt_dist = debut_result['Wickets'].value_counts().sort_index().reset_index()
+                wkt_dist.columns = ['Wickets on Debut', 'Count']
+                fig_hist = px.bar(
+                    wkt_dist, x='Wickets on Debut', y='Count',
+                    title="Distribution of Wickets Taken on Debut",
+                    text='Count'
+                )
+                fig_hist.update_traces(textposition='outside')
+                st.plotly_chart(fig_hist, use_container_width=True)
+
+
+# =========================================
+# LONGEST WICKETLESS STREAKS
+# =========================================
+elif metric_choice == "Longest Wicketless Streaks":
+    st.subheader("🔵 Longest Wicketless Streaks")
+    st.write(
+        "Longest consecutive deliveries bowled without taking a wicket — "
+        "measured in legal (valid) balls across the filtered data."
+    )
+
+    @st.cache_data(show_spinner=False)
+    def longest_wicketless_streaks(df_):
+        """
+        For each bowler, find ALL runs of consecutive legal deliveries
+        (is_valid_delivery == 1) without a wicket (wicket_count == 0).
+        Returns one row per streak — a bowler may appear multiple times.
+        """
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        for c in ['wicket_count', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+
+        required = {'bowler', 'wicket_count', 'is_valid_delivery', 'match_id', 'date'}
+        if not required.issubset(d.columns):
+            return pd.DataFrame()
+
+        sort_cols = ['bowler', 'date', 'match_id']
+        extra = [c for c in ['innings', 'over', 'ball_float'] if c in d.columns]
+        d = d.sort_values(sort_cols + extra).reset_index(drop=True)
+
+        legal = d[d['is_valid_delivery'] == 1].copy().reset_index(drop=True)
+        if legal.empty:
+            return pd.DataFrame()
+
+        team_col = 'bowling_team' if 'bowling_team' in legal.columns else (
+            'team' if 'team' in legal.columns else None
+        )
+
+        def _safe_mode(series):
+            m = series.dropna()
+            return str(m.mode().iloc[0]) if len(m.mode()) > 0 else ''
+
+        def _flush(bowler, grp, streak_start, streak_len, records, last_wicket_match_id):
+            if streak_len == 0:
+                return
+            window = grp.iloc[streak_start: streak_start + streak_len]
+            if window.empty:
+                return
+            # Streak start/span = from the first NEW match after the wicket match
+            if last_wicket_match_id is not None and 'match_id' in window.columns:
+                new_match_rows = window[window['match_id'] != last_wicket_match_id]
+                start_date = pd.to_datetime(new_match_rows['date'].iloc[0]).strftime('%d %b %Y') if not new_match_rows.empty else pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
+                matches_spanned = new_match_rows['match_id'].nunique()
+            else:
+                start_date = pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
+                matches_spanned = window['match_id'].nunique()
+            records.append({
+                'Bowler':          str(bowler),
+                'Team':            _safe_mode(window[team_col]) if (team_col and team_col in window.columns) else '',
+                'League':          _safe_mode(window['league']) if 'league' in window.columns else '',
+                'Season':          _safe_mode(window['year']) if 'year' in window.columns else '',
+                'Streak (Balls)':  streak_len,
+                'Streak (Overs)':  round(streak_len / 6, 1),
+                'Matches Spanned': matches_spanned,
+                'Streak Start':    start_date,
+                'Streak End':      pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+            })
+
+        records = []
+        for bowler, grp in legal.groupby('bowler', observed=True, sort=False):
+            grp = grp.reset_index(drop=True)
+            streak = 0
+            streak_start = 0
+            last_wicket_match_id = None
+
+            for idx, row in grp.iterrows():
+                if row['wicket_count'] == 0:
+                    streak += 1
+                else:
+                    _flush(bowler, grp, streak_start, streak, records, last_wicket_match_id)
+                    streak = 0
+                    streak_start = idx + 1
+                    last_wicket_match_id = row['match_id']
+
+            # flush any active streak at end of data
+            _flush(bowler, grp, streak_start, streak, records, last_wicket_match_id)
+
+        if not records:
+            return pd.DataFrame()
+        return (
+            pd.DataFrame(records)
+            .sort_values('Streak (Balls)', ascending=False)
+            .reset_index(drop=True)
+        )
+
+    @st.cache_data(show_spinner=False)
+    def wicketless_over_streaks(df_):
+        """
+        Longest consecutive OVERS (complete) without conceding a wicket, per bowler.
+        An over 'has a wicket' if wicket_count > 0 for any ball in that over.
+        """
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        for c in ['wicket_count', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+
+        needed = {'bowler', 'wicket_count', 'over', 'match_id', 'date', 'innings'}
+        if not needed.issubset(d.columns):
+            return pd.DataFrame()
+
+        d = d[d['innings'].isin([1, 2])].copy()
+        if d.empty:
+            return pd.DataFrame()
+
+        # Summarise to one row per (bowler, match, innings, over)
+        over_grp = d.groupby(
+            ['bowler', 'match_id', 'innings', 'over', 'date'], observed=True
+        ).agg(
+            wickets_in_over=('wicket_count', 'sum'),
+            league=('league', 'first') if 'league' in d.columns else ('wicket_count', 'count'),
+            year=('year', 'first') if 'year' in d.columns else ('wicket_count', 'count'),
+            team=('bowling_team' if 'bowling_team' in d.columns else 'team', 'first'),
+        ).reset_index()
+
+        team_col_og = 'bowling_team' if 'bowling_team' in d.columns else 'team'
+        over_grp = over_grp.sort_values(['bowler', 'date', 'match_id', 'innings', 'over'])
+
+        def _safe_mode2(series):
+            m = series.dropna()
+            return str(m.mode().iloc[0]) if len(m.mode()) > 0 else ''
+
+        def _flush_over(bowler, grp, streak_start, streak_len, records, last_wicket_match_id):
+            if streak_len == 0:
+                return
+            window = grp.iloc[streak_start: streak_start + streak_len]
+            if window.empty:
+                return
+            # Streak start/span = from the first NEW match after the wicket match
+            if last_wicket_match_id is not None and 'match_id' in window.columns:
+                new_match_rows = window[window['match_id'] != last_wicket_match_id]
+                start_date = pd.to_datetime(new_match_rows['date'].iloc[0]).strftime('%d %b %Y') if not new_match_rows.empty else pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
+                matches_spanned = new_match_rows['match_id'].nunique()
+            else:
+                start_date = pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
+                matches_spanned = window['match_id'].nunique()
+            records.append({
+                'Bowler':          str(bowler),
+                'Team':            _safe_mode2(window['team']) if not window.empty else '',
+                'League':          _safe_mode2(window['league']) if ('league' in window.columns and not window.empty) else '',
+                'Season':          _safe_mode2(window['year']) if ('year' in window.columns and not window.empty) else '',
+                'Streak (Overs)':  streak_len,
+                'Matches Spanned': matches_spanned,
+                'Streak Start':    start_date,
+                'Streak End':      pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+            })
+
+        records = []
+        for bowler, grp in over_grp.groupby('bowler', observed=True, sort=False):
+            grp = grp.reset_index(drop=True)
+            streak = 0
+            streak_start = 0
+            last_wicket_match_id = None
+
+            for idx, row in grp.iterrows():
+                if row['wickets_in_over'] == 0:
+                    streak += 1
+                else:
+                    _flush_over(bowler, grp, streak_start, streak, records, last_wicket_match_id)
+                    streak = 0
+                    streak_start = idx + 1
+                    last_wicket_match_id = row['match_id']
+
+            _flush_over(bowler, grp, streak_start, streak, records, last_wicket_match_id)
+
+        if not records:
+            return pd.DataFrame()
+        return (
+            pd.DataFrame(records)
+            .sort_values('Streak (Overs)', ascending=False)
+            .reset_index(drop=True)
+        )
+
+    @st.cache_data(show_spinner=False)
+    def wicketless_match_streaks(df_):
+        """
+        Longest consecutive MATCHES without taking a wicket, per bowler.
+        A match 'has a wicket' if wicket_count > 0 for any delivery in that match.
+        This is the most player-inclusive definition of a wicketless streak.
+        """
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        if 'wicket_count' in d.columns:
+            d['wicket_count'] = pd.to_numeric(d['wicket_count'], errors='coerce').fillna(0)
+
+        needed = {'bowler', 'wicket_count', 'match_id', 'date'}
+        if not needed.issubset(d.columns):
+            return pd.DataFrame()
+
+        team_col = 'bowling_team' if 'bowling_team' in d.columns else (
+            'team' if 'team' in d.columns else None
+        )
+
+        # Build aggregation dict for match-level summary
+        agg_dict = {
+            'wickets_in_match': ('wicket_count', 'sum'),
+            'date': ('date', 'first'),
+        }
+        if team_col:
+            agg_dict['team'] = (team_col, 'first')
+        if 'year' in d.columns:
+            agg_dict['year'] = ('year', 'first')
+        if 'league' in d.columns:
+            agg_dict['league'] = ('league', 'first')
+
+        match_grp = (
+            d.groupby(['bowler', 'match_id'], observed=True)
+            .agg(**agg_dict)
+            .reset_index()
+        )
+        match_grp = match_grp.sort_values(['bowler', 'date', 'match_id'])
+
+        def _safe_mode(series):
+            m = series.dropna()
+            return str(m.mode().iloc[0]) if len(m.mode()) > 0 else ''
+
+        def _flush_match(bowler, grp, streak_start, streak_len, records):
+            if streak_len == 0:
+                return
+            window = grp.iloc[streak_start: streak_start + streak_len]
+            if window.empty:
+                return
+            records.append({
+                'Bowler':           str(bowler),
+                'Team':             _safe_mode(window['team']) if ('team' in window.columns and not window.empty) else '',
+                'League':           _safe_mode(window['league']) if ('league' in window.columns and not window.empty) else '',
+                'Season':           _safe_mode(window['year']) if ('year' in window.columns and not window.empty) else '',
+                'Streak (Matches)': streak_len,
+                'Streak Start':     pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y'),
+                'Streak End':       pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+            })
+
+        records = []
+        for bowler, grp in match_grp.groupby('bowler', observed=True, sort=False):
+            grp = grp.reset_index(drop=True)
+            streak = 0
+            streak_start = 0
+
+            for idx, row in grp.iterrows():
+                if row['wickets_in_match'] == 0:
+                    streak += 1
+                else:
+                    _flush_match(bowler, grp, streak_start, streak, records)
+                    streak = 0
+                    streak_start = idx + 1
+
+            _flush_match(bowler, grp, streak_start, streak, records)
+
+        if not records:
+            return pd.DataFrame()
+        return (
+            pd.DataFrame(records)
+            .sort_values('Streak (Matches)', ascending=False)
+            .reset_index(drop=True)
+        )
+
+    # Use fdf_no_team so ALL bowling deliveries are included regardless of
+    # which batting team is selected in the sidebar (bowler streaks span both innings).
+    wls_source = fdf_no_team.copy()
+    if selected_teams:
+        # Re-apply team filter using bowling_team (the bowler's own team)
+        bowling_team_col = 'bowling_team' if 'bowling_team' in wls_source.columns else None
+        if bowling_team_col:
+            wls_source = wls_source[wls_source[bowling_team_col].astype(str).isin([str(t) for t in selected_teams])]
+    if wls_source.empty:
+        st.warning("No data for selected filters.")
+    else:
+        wls_col1, wls_col2, wls_col3 = st.columns([2, 1, 1])
+        with wls_col1:
+            wls_scope = st.radio(
+                "Streak measured in",
+                ["Matches (consecutive matches without wicket)", "Balls (legal deliveries)", "Overs (complete overs)"],
+                key="wls_scope", horizontal=True
+            )
+        with wls_col2:
+            top_n_wls = st.number_input(
+                "Top N", min_value=5, max_value=100, value=20, step=5, key="wls_top_n"
+            )
+        with wls_col3:
+            if wls_scope.startswith("Matches"):
+                wls_min = st.number_input(
+                    "Min Matches", min_value=1, max_value=100, value=2, step=1, key="wls_min_match"
+                )
+            elif wls_scope.startswith("Overs"):
+                wls_min = st.number_input(
+                    "Min Overs", min_value=1, max_value=100, value=3, step=1, key="wls_min_over"
+                )
+            else:
+                wls_min = st.number_input(
+                    "Min Balls", min_value=1, max_value=500, value=12, step=6, key="wls_min_ball"
+                )
+
+        # Optional player filter — built from full bowling data for the league/year
+        all_bowlers_wls = sorted(wls_source['bowler'].dropna().astype(str).unique())
+        wls_player_filter = st.multiselect(
+            "Filter by Bowler(s) — leave empty to show all",
+            all_bowlers_wls, key="wls_player_filter"
+        )
+
+        with st.spinner("Computing wicketless streaks..."):
+            if wls_scope.startswith("Balls"):
+                wls_df = longest_wicketless_streaks(wls_source)
+                streak_col = 'Streak (Balls)'
+                unit = 'balls'
+            elif wls_scope.startswith("Overs"):
+                wls_df = wicketless_over_streaks(wls_source)
+                streak_col = 'Streak (Overs)'
+                unit = 'overs'
+            else:
+                wls_df = wicketless_match_streaks(wls_source)
+                streak_col = 'Streak (Matches)'
+                unit = 'matches'
+
+        if wls_player_filter and not wls_df.empty:
+            wls_df = wls_df[wls_df['Bowler'].isin(wls_player_filter)]
+
+        if not wls_df.empty and streak_col in wls_df.columns:
+            wls_df = wls_df[wls_df[streak_col] >= int(wls_min)]
+
+        if wls_df is None or wls_df.empty:
+            st.info("No wicketless streak data found for the selected filters. Try reducing the minimum threshold.")
+        else:
+            tab_all, tab_league, tab_chart = st.tabs(["All Streaks", "By League", "Charts"])
+
+            display_df = wls_df.head(int(top_n_wls)).reset_index(drop=True)
+            display_df.index += 1
+
+            with tab_all:
+                st.markdown(f"**Top {int(top_n_wls)} longest wicketless streaks — measured in {unit}**")
+                st.dataframe(display_df, use_container_width=True)
+
+            with tab_league:
+                if 'League' in wls_df.columns:
+                    leagues_wls = sorted(wls_df['League'].dropna().unique())
+                    lg_tabs_wls = st.tabs([str(l) for l in leagues_wls])
+                    for li, lg in enumerate(leagues_wls):
+                        with lg_tabs_wls[li]:
+                            lg_wls = wls_df[wls_df['League'] == lg].head(int(top_n_wls)).reset_index(drop=True)
+                            lg_wls.index += 1
+                            st.dataframe(lg_wls, use_container_width=True)
+
+            with tab_chart:
+                chart_wls = wls_df.head(int(top_n_wls)).copy()
+                if not chart_wls.empty:
+                    color_wls = 'Team' if 'Team' in chart_wls.columns else 'Bowler'
+                    fig_wls = px.bar(
+                        chart_wls,
+                        x='Bowler', y=streak_col,
+                        color=color_wls,
+                        hover_data=[c for c in ['Team', 'League', 'Season',
+                                                'Matches Spanned', 'Streak Start', 'Streak End']
+                                    if c in chart_wls.columns],
+                        title=f"Top {int(top_n_wls)} Longest Wicketless Streaks ({unit})",
+                        text=streak_col
+                    )
+                    fig_wls.update_traces(textposition='outside')
+                    fig_wls.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_wls, use_container_width=True)
+
+                    # Distribution
+                    if len(wls_df) >= 5:
+                        st.markdown("**Distribution of wicketless streak lengths**")
+                        fig_dist = px.histogram(
+                            wls_df, x=streak_col, nbins=30,
+                            title=f"Distribution of Wicketless Streak Lengths ({unit})",
+                            labels={streak_col: f'Streak ({unit})', 'count': 'Number of Bowlers'}
+                        )
+                        st.plotly_chart(fig_dist, use_container_width=True)
+
+
+# =========================================
+# BALLS BOWLED PER MATCH
+# =========================================
+elif metric_choice == "Balls Bowled Per Match":
+    st.subheader("⚾ Balls Bowled Per Match")
+    st.write(
+        "Total legal deliveries (valid balls) bowled in each match, "
+        "broken down by innings and phase. Useful for identifying "
+        "matches cut short by rain, DLS, or super overs."
+    )
+
+    @st.cache_data(show_spinner=False)
+    def balls_bowled_per_match(df_):
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        for c in ['is_valid_delivery', 'wides', 'no_balls']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+            else:
+                d[c] = 0
+
+        needed = {'match_id', 'date', 'innings', 'is_valid_delivery'}
+        if not needed.issubset(d.columns):
+            return pd.DataFrame()
+
+        d = d[d['innings'].isin([1, 2])].copy()
+        if d.empty:
+            return pd.DataFrame()
+
+        team_col = 'batting_team' if 'batting_team' in d.columns else 'team'
+
+        agg_cols = {
+            'Legal Balls': ('is_valid_delivery', 'sum'),
+            'Wides':       ('wides', 'sum'),
+            'No Balls':    ('no_balls', 'sum'),
+            'date':        ('date', 'first'),
+        }
+        if team_col in d.columns:
+            agg_cols['Batting Team'] = (team_col, 'first')
+        if 'teams' in d.columns:
+            agg_cols['Match'] = ('teams', 'first')
+        if 'league' in d.columns:
+            agg_cols['League'] = ('league', 'first')
+        if 'year' in d.columns:
+            agg_cols['Season'] = ('year', 'first')
+        if 'venue' in d.columns:
+            agg_cols['Venue'] = ('venue', 'first')
+
+        inn_grp = (
+            d.groupby(['match_id', 'innings'], observed=True)
+            .agg(**agg_cols)
+            .reset_index()
+        )
+        inn_grp['Total Deliveries'] = inn_grp['Legal Balls'] + inn_grp['Wides'] + inn_grp['No Balls']
+        inn_grp['Overs Bowled'] = inn_grp['Legal Balls'].apply(
+            lambda b: f"{int(b)//6}.{int(b)%6}"
+        )
+        inn_grp['Date'] = pd.to_datetime(inn_grp['date']).dt.strftime('%d %b %Y')
+        inn_grp = inn_grp.drop(columns=['date'], errors='ignore')
+        inn_grp['innings'] = inn_grp['innings'].astype(int)
+        inn_grp = inn_grp.rename(columns={'match_id': 'Match ID', 'innings': 'Innings'})
+
+        # Match-level totals (both innings combined)
+        match_agg = {'Total_Balls': ('Legal Balls', 'sum'),
+                     'Total_Wides': ('Wides', 'sum'),
+                     'Total_NoBalls': ('No Balls', 'sum'),
+                     'Total_Deliveries': ('Total Deliveries', 'sum'),
+                     'Date': ('Date', 'first')}
+        for col in ['Match', 'League', 'Season', 'Venue']:
+            if col in inn_grp.columns:
+                match_agg[col] = (col, 'first')
+        match_total = (
+            inn_grp.groupby('Match ID', observed=True)
+            .agg(**match_agg)
+            .reset_index()
+        )
+        match_total['Total Overs'] = match_total['Total_Balls'].apply(
+            lambda b: f"{int(b)//6}.{int(b)%6}"
+        )
+        match_total = match_total.rename(columns={
+            'Total_Balls':      'Total Legal Balls',
+            'Total_Wides':      'Total Wides',
+            'Total_NoBalls':    'Total No Balls',
+            'Total_Deliveries': 'Total Deliveries',
+        })
+
+        return inn_grp, match_total
+
+    src_bbpm = fdf.copy()
+    if src_bbpm.empty:
+        st.warning("No data for selected filters.")
+    else:
+        result_bbpm = balls_bowled_per_match(src_bbpm)
+        if not result_bbpm or (isinstance(result_bbpm, tuple) and result_bbpm[0].empty):
+            st.info("No data found for selected filters.")
+        else:
+            inn_df, match_df = result_bbpm
+
+            bbpm_col1, bbpm_col2 = st.columns([2, 1])
+            with bbpm_col1:
+                bbpm_view = st.radio(
+                    "View by",
+                    ["Match Total", "Innings Breakdown"],
+                    key="bbpm_view", horizontal=True
+                )
+            with bbpm_col2:
+                bbpm_top_n = st.number_input(
+                    "Top N matches", min_value=5, max_value=500, value=20, step=5, key="bbpm_top_n"
+                )
+
+            tab_table, tab_chart, tab_phase = st.tabs(["Table", "Chart", "Phase Breakdown"])
+
+            with tab_table:
+                if bbpm_view == "Match Total":
+                    # Build a pivoted view: one row per match, team1 vs team2 side-by-side
+                    inn_sorted = inn_df.sort_values(['Match ID', 'Innings'])
+                    rows = []
+                    for match_id, grp in inn_sorted.groupby('Match ID', observed=True, sort=False):
+                        grp = grp.sort_values('Innings').reset_index(drop=True)
+                        row = {
+                            'Date':            grp['Date'].iloc[0] if 'Date' in grp.columns else '',
+                            'Venue':           grp['Venue'].iloc[0] if 'Venue' in grp.columns else '',
+                            'League':          grp['League'].iloc[0] if 'League' in grp.columns else '',
+                            'Season':          grp['Season'].iloc[0] if 'Season' in grp.columns else '',
+                            'Total Balls':     int(grp['Total Deliveries'].sum()),
+                        }
+                        for i in range(min(2, len(grp))):
+                            r = grp.iloc[i]
+                            label = f"Inn {int(r['Innings'])}"
+                            team = str(r.get('Batting Team', ''))
+                            stats = (
+                                f"Balls: {int(r['Legal Balls'])} | "
+                                f"Wd: {int(r['Wides'])} | "
+                                f"Nb: {int(r['No Balls'])}"
+                            )
+                            row[f'{label} Team']  = team
+                            row[f'{label} Stats'] = stats
+                        rows.append(row)
+
+                    pivot_df = pd.DataFrame(rows)
+                    pivot_df = pivot_df.sort_values('Total Balls', ascending=False).head(int(bbpm_top_n)).reset_index(drop=True)
+                    pivot_df.index += 1
+
+                    col_order = [c for c in [
+                        'Date', 'Venue', 'League', 'Season', 'Total Balls',
+                        'Inn 1 Team', 'Inn 1 Stats', 'Inn 2 Team', 'Inn 2 Stats'
+                    ] if c in pivot_df.columns]
+                    st.dataframe(pivot_df[col_order], use_container_width=True)
+                else:
+                    disp = inn_df.sort_values(['Date', 'Match ID', 'Innings']).head(int(bbpm_top_n) * 2).reset_index(drop=True)
+                    disp.index += 1
+                    col_order = [c for c in ['Match', 'Innings', 'Batting Team', 'League',
+                                              'Season', 'Date', 'Legal Balls', 'Overs Bowled',
+                                              'Wides', 'No Balls', 'Total Deliveries']
+                                 if c in disp.columns]
+                    st.dataframe(disp[col_order], use_container_width=True)
+
+            with tab_chart:
+                if bbpm_view == "Match Total":
+                    chart_data = match_df.sort_values('Total Legal Balls', ascending=False).head(int(bbpm_top_n)).copy()
+                    color_col = 'League' if 'League' in chart_data.columns else 'Match ID'
+                    label_col = 'Match' if 'Match' in chart_data.columns else 'Match ID'
+                    fig_bbpm = px.bar(
+                        chart_data,
+                        x=label_col, y='Total Deliveries',
+                        color=color_col,
+                        text='Total Overs',
+                        hover_data=[c for c in ['Total Legal Balls', 'Total Wides', 'Total No Balls',
+                                                 'League', 'Season', 'Date', 'Venue']
+                                    if c in chart_data.columns],
+                        title=f"Top {int(bbpm_top_n)} Matches by Total Deliveries (incl. Wides & No Balls)"
+                    )
+                    fig_bbpm.update_traces(textposition='outside')
+                    fig_bbpm.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_bbpm, use_container_width=True)
+                else:
+                    chart_data = inn_df.copy()
+                    if 'Match' in chart_data.columns:
+                        chart_data['Match Label'] = chart_data['Match'].astype(str) + ' Inn' + chart_data['Innings'].astype(str)
+                    else:
+                        chart_data['Match Label'] = chart_data['Match ID'].astype(str) + ' Inn' + chart_data['Innings'].astype(str)
+                    chart_data = chart_data.sort_values('Total Deliveries', ascending=False).head(int(bbpm_top_n))
+                    fig_inn = px.bar(
+                        chart_data,
+                        x='Match Label', y='Total Deliveries',
+                        color='Innings',
+                        text='Overs Bowled',
+                        hover_data=[c for c in ['Legal Balls', 'Wides', 'No Balls'] if c in chart_data.columns],
+                        title=f"Top {int(bbpm_top_n)} Innings by Total Deliveries"
+                    )
+                    fig_inn.update_traces(textposition='outside')
+                    fig_inn.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_inn, use_container_width=True)
+
+            with tab_phase:
+                if 'phase' in src_bbpm.columns:
+                    phase_cols = {
+                        'Legal Balls': ('is_valid_delivery', 'sum'),
+                    }
+                    if 'league' in src_bbpm.columns:
+                        phase_cols['League'] = ('league', 'first')
+                    if 'year' in src_bbpm.columns:
+                        phase_cols['Season'] = ('year', 'first')
+
+                    phase_src = src_bbpm[src_bbpm['innings'].isin([1, 2])].copy()
+                    phase_src['is_valid_delivery'] = pd.to_numeric(phase_src['is_valid_delivery'], errors='coerce').fillna(0)
+                    for ec in ['wides', 'no_balls']:
+                        if ec in phase_src.columns:
+                            phase_src[ec] = pd.to_numeric(phase_src[ec], errors='coerce').fillna(0)
+                        else:
+                            phase_src[ec] = 0
+                    phase_df = (
+                        phase_src.groupby(['phase'], observed=True)
+                        .agg(
+                            Legal_Balls=('is_valid_delivery', 'sum'),
+                            Wides=('wides', 'sum'),
+                            No_Balls=('no_balls', 'sum'),
+                        )
+                        .reset_index()
+                    )
+                    phase_df['Total Deliveries'] = phase_df['Legal_Balls'] + phase_df['Wides'] + phase_df['No_Balls']
+                    phase_df['Overs'] = phase_df['Legal_Balls'].apply(
+                        lambda b: f"{int(b)//6}.{int(b)%6}"
+                    )
+                    phase_df = phase_df.rename(columns={
+                        'phase': 'Phase', 'Legal_Balls': 'Legal Balls',
+                        'No_Balls': 'No Balls'
+                    })
+                    st.markdown("**Balls bowled by phase (across all selected matches)**")
+                    st.dataframe(phase_df, use_container_width=True)
+
+                    fig_phase = px.pie(
+                        phase_df, names='Phase', values='Legal Balls',
+                        title="Share of Balls Bowled by Phase"
+                    )
+                    st.plotly_chart(fig_phase, use_container_width=True)
+                else:
+                    st.info("Phase data not available.")
 
 
 st.markdown("---")
