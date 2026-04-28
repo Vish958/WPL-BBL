@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 14 April 2026")
+st.markdown("📅 Last updated: 27 April 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -324,6 +324,11 @@ if selected_leagues:
 if selected_years:
     fdf = fdf[fdf['year'].isin(selected_years)]
 
+# Add Match Number filter (tracks match sequence per team per season)
+# Do this BEFORE team filter so it applies uniformly
+if 'match_number' not in fdf.columns:
+    fdf['match_number'] = fdf.groupby(['league', 'year', 'team'])['match_id'].transform(lambda x: pd.factorize(x)[0] + 1)
+
 # Keep a copy before team filter (for metrics that need cross-team aggregation)
 fdf_no_team = fdf.copy()
 
@@ -332,6 +337,20 @@ teams_available = sorted(fdf['team'].dropna().unique())
 selected_teams = st.sidebar.multiselect("Team", teams_available)
 if selected_teams:
     fdf = fdf[fdf['team'].isin(selected_teams)]
+
+max_matches = int(fdf['match_number'].max()) if not fdf.empty else 1
+match_range = st.sidebar.slider(
+    "Match Range",
+    min_value=1,
+    max_value=max_matches,
+    value=(1, max_matches),
+    step=1,
+    help="Filter by match sequence per team per season. E.g., (1, 4) = first 4 matches"
+)
+
+# Apply match range filter to both fdf and fdf_no_team
+fdf = fdf[(fdf['match_number'] >= match_range[0]) & (fdf['match_number'] <= match_range[1])]
+fdf_no_team = fdf_no_team[(fdf_no_team['match_number'] >= match_range[0]) & (fdf_no_team['match_number'] <= match_range[1])]
 
 # Metric selection
 st.sidebar.markdown("---")
@@ -349,6 +368,7 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Innings Progression",
     "Franchise Debut Tracker",
     "SR Comparison (Year-wise)",
+    "Batting Order Performance (Team-wise)",
     "Fastest 50s & 100s (Player)",
     "Fastest Team 50 & 100",
     "Bowler First Spell Wickets",
@@ -361,7 +381,10 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Extra Deliveries Cost",
     "Debutant Bowler Wickets",
     "Longest Wicketless Streaks",
-    "Balls Bowled Per Match"
+    "Balls Bowled Per Match",
+    "Most Deliveries Without a Six (Bowler)",
+    "Team Dot Balls (Innings & Match)",
+    "Team Boundary-less Ball Streak"
 ])
 
 if fdf.empty:
@@ -3473,6 +3496,374 @@ elif metric_choice == "Franchise Debut Tracker":
         st.plotly_chart(fig, use_container_width=True)
 
 # =========================================
+# BATTING ORDER PERFORMANCE (TEAM-WISE)
+# =========================================
+elif metric_choice == "Batting Order Performance (Team-wise)":
+    st.subheader("🏏 Batting Order Performance (Team-wise)")
+    st.write("Analyze team batting performance by position (1-11) with year-wise comparison")
+    
+    # Helper functions
+    @st.cache_data(show_spinner=False)
+    def compute_batting_positions_bo(df_all):
+        """Compute batting positions (1-11) for each match/innings/batter."""
+        orders = []
+        needed_cols = ['match_id', 'innings', 'batter', 'ball_float']
+        available = [c for c in needed_cols if c in df_all.columns]
+        
+        for (mid, inn), g in df_all[available].groupby(['match_id', 'innings'], observed=True):
+            first = g.groupby('batter', observed=True)['ball_float'].min().reset_index().sort_values('ball_float')
+            first['position'] = range(1, len(first) + 1)
+            first['match_id'] = mid
+            first['innings'] = inn
+            orders.append(first[['match_id', 'innings', 'batter', 'position']])
+        
+        if orders:
+            return pd.concat(orders, ignore_index=True)
+        return pd.DataFrame(columns=['match_id', 'innings', 'batter', 'position'])
+    
+    def batting_order_stats(df_, positions_df, include_year=True):
+        """Calculate team-wise batting performance by position (1-11)."""
+        if df_.empty or positions_df.empty:
+            return pd.DataFrame()
+        
+        year_col = 'season' if 'season' in df_.columns else 'year'
+        work_df = df_[df_['innings'].isin([1, 2])].copy()
+        if work_df.empty:
+            return pd.DataFrame()
+        
+        # Merge with positions
+        positions_df_work = positions_df[['match_id', 'innings', 'batter', 'position']].copy()
+        positions_df_work['match_id'] = positions_df_work['match_id'].astype(str)
+        positions_df_work['innings'] = positions_df_work['innings'].astype(int)
+        
+        work_df['match_id'] = work_df['match_id'].astype(str)
+        work_df['innings'] = work_df['innings'].astype(int)
+        
+        merged = work_df.merge(positions_df_work, on=['match_id', 'innings', 'batter'], how='left')
+        merged['position'] = merged['position'].fillna(99).astype(int)
+        merged = merged[merged['position'].between(1, 11)].copy()
+        
+        if merged.empty:
+            return pd.DataFrame()
+        
+        balls_faced = merged[merged['extras_type'].astype(str).fillna('') != 'wides'].copy()
+        grouping = ['league', 'team', 'position'] if not include_year else ['league', year_col, 'team', 'position']
+        
+        inn_count = balls_faced.groupby(grouping + ['match_id', 'innings'], observed=True).size().reset_index(name='x')
+        inn_count = inn_count.groupby(grouping, observed=True).size().reset_index(name='Innings')
+        
+        stats = balls_faced.groupby(grouping, observed=True).agg(
+            Runs=('runs.batter', 'sum'),
+            Balls=('runs.batter', 'count'),
+            Fours=('runs.batter', lambda x: (x == 4).sum()),
+            Sixes=('runs.batter', lambda x: (x == 6).sum())
+        ).reset_index()
+        
+        stats = stats.merge(inn_count, on=grouping, how='left')
+        
+        # Dismissals
+        dis_df = merged[merged['player_dismissed'].notna()]
+        if not dis_df.empty:
+            dismissals = dis_df.groupby(grouping, observed=True).size().reset_index(name='Dismissals')
+            stats = stats.merge(dismissals, on=grouping, how='left')
+        else:
+            stats['Dismissals'] = 0
+        
+        stats['Dismissals'] = stats['Dismissals'].fillna(0).astype(int)
+        stats['SR'] = (stats['Runs'] / stats['Balls'].replace(0, np.nan) * 100).fillna(0).round(2)
+        stats['Avg'] = np.where(stats['Dismissals'] > 0, (stats['Runs'] / stats['Dismissals']).round(2), stats['Runs']).astype(float)
+        
+        # Milestones
+        milestones = balls_faced.groupby(grouping + ['match_id', 'innings']).agg(position_runs=('runs.batter', 'sum')).reset_index()
+        for threshold, col_name in [(25, '25+'), (50, '50+'), (100, '100+')]:
+            ms_count = milestones[milestones['position_runs'] >= threshold].groupby(grouping, observed=True).size().reset_index(name=col_name)
+            stats = stats.merge(ms_count, on=grouping, how='left')
+            stats[col_name] = stats[col_name].fillna(0).astype(int)
+        
+        # Rename
+        rename_map = {'league': 'League', 'team': 'Team', 'position': 'Position'}
+        if include_year:
+            rename_map[year_col] = 'Season'
+        stats = stats.rename(columns=rename_map)
+        
+        out_cols = ['League']
+        if include_year:
+            out_cols.append('Season')
+        out_cols += ['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', 'Fours', 'Sixes', '25+', '50+', '100+']
+        
+        return stats[out_cols].sort_values(['League', 'Team', 'Position'])
+    
+    # Compute positions
+    batting_pos = compute_batting_positions_bo(fdf)
+    
+    # Controls
+    bo_view_mode = st.radio("View Mode", ["Year-wise Comparison", "Overall (All Seasons)"], key="bo_view_mode", horizontal=True)
+    
+    col1, col2 = st.columns([2, 2])
+    with col2:
+        # Select leagues FIRST
+        available_leagues = sorted(fdf['league'].dropna().unique())
+        selected_leagues = st.multiselect("Select League(s)", available_leagues, default=available_leagues, key="bo_leagues")
+    
+    # Filter data by selected leagues BEFORE showing teams
+    if selected_leagues:
+        fdf_by_league = fdf[fdf['league'].isin(selected_leagues)].copy()
+    else:
+        fdf_by_league = fdf.copy()
+    
+    with col1:
+        # Now show teams ONLY from selected leagues
+        available_teams = sorted(fdf_by_league['team'].dropna().unique())
+        default_teams = [available_teams[0]] if len(available_teams) > 0 else []
+        selected_teams = st.multiselect("Select Team(s)", available_teams, default=default_teams, key="bo_teams")
+    
+    # Filter and compute
+    if len(selected_teams) > 0 and len(selected_leagues) > 0:
+        bo_filter_df = fdf_by_league[fdf_by_league['team'].isin(selected_teams)].copy()
+    else:
+        bo_filter_df = pd.DataFrame()
+    
+    if bo_filter_df.empty:
+        st.info("No data available for selected filters.")
+    else:
+        bo_data = batting_order_stats(bo_filter_df, batting_pos, include_year=(bo_view_mode == "Year-wise Comparison"))
+        
+        if bo_data.empty:
+            st.info("No batting order data available.")
+        else:
+            # Filter leagues to only show SELECTED leagues
+            leagues_in_bo = sorted([lg for lg in bo_data['League'].dropna().unique() if lg in selected_leagues])
+            league_tabs = st.tabs([str(lg) for lg in leagues_in_bo])
+            
+            for i, lg in enumerate(leagues_in_bo):
+                with league_tabs[i]:
+                    # CRITICAL FIX: Filter lg_df by BOTH league AND selected teams
+                    lg_df = bo_data[
+                        (bo_data['League'] == lg) & 
+                        (bo_data['Team'].isin(selected_teams))
+                    ].copy()
+                    
+                    if bo_view_mode == "Year-wise Comparison":
+                        year_options = sorted(lg_df['Season'].dropna().unique(), reverse=True)
+                        selected_bo_years = st.multiselect(
+                            "Season(s)", year_options,
+                            default=list(year_options[:2]) if len(year_options) >= 2 else list(year_options),
+                            key=f"bo_season_{i}", help="Pick multiple seasons to compare."
+                        )
+                        active_years = selected_bo_years if selected_bo_years else list(year_options)
+                        
+                        if len(active_years) == 1:
+                            # Get teams that actually exist in this league
+                            valid_teams_in_league = sorted(lg_df['Team'].unique())
+                            teams_to_display = [t for t in selected_teams if t in valid_teams_in_league]
+                            
+                            yr_data = lg_df[
+                                (lg_df['Season'] == active_years[0]) &
+                                (lg_df['Team'].isin(teams_to_display))
+                            ].copy().sort_values(['Team', 'Position'])
+                            if not yr_data.empty:
+                                st.markdown(f"#### {lg} — Season {active_years[0]}")
+                                st.dataframe(yr_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], use_container_width=True)
+                                
+                                # Heatmap
+                                try:
+                                    yr_data_num = yr_data.copy()
+                                    yr_data_num['Position'] = yr_data_num['Position'].astype(int)
+                                    pivot = yr_data_num.pivot_table(values='Runs', index='Team', columns='Position', fill_value=0)
+                                    fig = px.imshow(pivot, labels=dict(x="Position", y="Team", color="Runs"),
+                                                   title=f"{lg} {active_years[0]} — Runs by Position", color_continuous_scale="Blues", aspect="auto")
+                                    st.plotly_chart(fig, use_container_width=True)
+                                except Exception as e:
+                                    st.warning(f"Could not create heatmap: {e}")
+                                
+                                # SR chart
+                                try:
+                                    sr_data = yr_data.groupby('Position').agg({'SR': 'mean', 'Runs': 'sum'}).reset_index()
+                                    sr_data['Position'] = sr_data['Position'].astype(int)
+                                    sr_data = sr_data.sort_values('Position')
+                                    fig_sr = px.bar(sr_data, x='Position', y='SR', color='Runs', title=f"{lg} {active_years[0]} — SR by Position", color_continuous_scale='Viridis')
+                                    st.plotly_chart(fig_sr, use_container_width=True)
+                                except Exception as e:
+                                    st.warning(f"Could not create SR chart: {e}")
+                        else:
+                            year_tabs = st.tabs([str(y) for y in active_years] + ["📊 Compare"])
+                            
+                            # Get teams that actually exist in this league (once, before the loop)
+                            valid_teams_in_league = sorted(lg_df['Team'].unique())
+                            teams_to_display = [t for t in selected_teams if t in valid_teams_in_league]
+                            
+                            for j, yr in enumerate(active_years):
+                                with year_tabs[j]:
+                                    yr_data = lg_df[
+                                        (lg_df['Season'] == yr) &
+                                        (lg_df['Team'].isin(teams_to_display))
+                                    ].copy()
+                                    if not yr_data.empty:
+                                        st.dataframe(yr_data.sort_values(['Team', 'Position'])[['Team', 'Position', 'Innings', 'Runs', 'SR', 'Avg']], use_container_width=True)
+                            
+                            # Comparison - Side-by-side table (like SR Comparison)
+                            with year_tabs[-1]:
+                                st.markdown("#### Year-wise Comparison Table - All Positions & Seasons")
+                                try:
+                                    # Get teams that actually exist in this league
+                                    valid_teams_in_league = sorted(lg_df['Team'].unique())
+                                    
+                                    # Filter selected_teams to only those in this league
+                                    teams_to_display = [t for t in selected_teams if t in valid_teams_in_league]
+                                    
+                                    # Filter lg_df to only selected years, teams that are in THIS league, AND current league
+                                    comp_df = lg_df[
+                                        (lg_df['Season'].isin(active_years)) & 
+                                        (lg_df['Team'].isin(teams_to_display)) &
+                                        (lg_df['League'] == lg)
+                                    ].copy()
+                                    
+                                    if comp_df.empty:
+                                        st.info("No data available for selected filters")
+                                    else:
+                                        # Get position selector
+                                        pos_values = sorted([int(p) for p in comp_df['Position'].dropna().unique()])
+                                        selected_positions = st.multiselect(
+                                            "Select Batting Position(s)",
+                                            pos_values,
+                                            default=pos_values[:3] if len(pos_values) >= 3 else pos_values,
+                                            key=f"bo_pos_compare_{i}"
+                                        )
+                                        
+                                        if selected_positions:
+                                            # Filter to selected positions
+                                            comp_df_filtered = comp_df[comp_df['Position'].isin(selected_positions)].copy()
+                                            
+                                            if not comp_df_filtered.empty:
+                                                    # Create unified comparison table with Position + Season columns
+                                                # Build a comprehensive table: Rows = Teams, Columns = Pos_Season_Metric
+                                                
+                                                # Create hierarchical structure
+                                                comp_df_filtered['Position'] = comp_df_filtered['Position'].astype(int)
+                                                comp_df_filtered['PosSeasonKey'] = (
+                                                    'Pos_' + comp_df_filtered['Position'].astype(str) + 
+                                                    '_' + comp_df_filtered['Season'].astype(int).astype(str)
+                                                )
+                                                
+                                                # Pivot with Position-Season as columns
+                                                consolidated = comp_df_filtered.pivot_table(
+                                                    index='Team',
+                                                    columns=['Position', 'Season'],
+                                                    values=['Runs', 'SR', 'Avg', 'Innings'],
+                                                    aggfunc='sum'
+                                                ).fillna(0)
+                                                
+                                                # Format the table nicely
+                                                consolidated_display = consolidated.copy()
+                                                consolidated_display = consolidated_display.round(2)
+                                                consolidated_display = consolidated_display.reset_index()
+                                                
+                                                # Filter to only show teams that are actually in the filtered data
+                                                valid_teams = sorted(comp_df_filtered['Team'].unique())
+                                                
+                                                st.info(f"📊 Compact Table View: {len(valid_teams)} team(s) | Positions {selected_positions} | Seasons {sorted(active_years)}")
+                                                
+                                                # Build compact table format
+                                                table_rows = []
+                                                
+                                                for team in sorted(valid_teams):
+                                                    team_comp_data = comp_df_filtered[comp_df_filtered['Team'] == team].copy()
+                                                    
+                                                    if not team_comp_data.empty:
+                                                        for pos in sorted(selected_positions):
+                                                            pos_data = team_comp_data[team_comp_data['Position'] == pos]
+                                                            if not pos_data.empty:
+                                                                # Aggregate by season for this position
+                                                                pos_season_data = pos_data.groupby('Season').agg({
+                                                                    'Runs': 'sum',
+                                                                    'SR': 'mean',
+                                                                    'Innings': 'sum'
+                                                                }).reset_index().sort_values('Season')
+                                                                
+                                                                row = {'Team': team, 'Position': f"#{pos}"}
+                                                                
+                                                                # Add season data with growth indicators
+                                                                for idx, season_row in pos_season_data.iterrows():
+                                                                    year = int(season_row['Season'])
+                                                                    runs = int(season_row['Runs'])
+                                                                    sr = season_row['SR']
+                                                                    
+                                                                    # Calculate growth
+                                                                    if idx > 0:
+                                                                        prev_runs = int(pos_season_data.iloc[idx-1]['Runs'])
+                                                                        if runs > prev_runs:
+                                                                            growth = "📈"
+                                                                        elif runs < prev_runs:
+                                                                            growth = "📉"
+                                                                        else:
+                                                                            growth = "📊"
+                                                                    else:
+                                                                        growth = "🆕"
+                                                                    
+                                                                    row[f"{year}\nRuns"] = runs
+                                                                    row[f"{year}\nSR %"] = f"{sr:.1f}"
+                                                                    row[f"{year}\nGrowth"] = growth
+                                                                
+                                                                table_rows.append(row)
+                                                
+                                                # Convert to DataFrame and display
+                                                if table_rows:
+                                                    table_df = pd.DataFrame(table_rows)
+                                                    st.dataframe(table_df, use_container_width=True, hide_index=True)
+                                                
+                                except Exception as e:
+                                    st.error(f"Error creating comparison table: {e}")
+                    else:
+                        # Overall view - filter by current league only
+                        lg_only_df = lg_df.copy()
+                        
+                        # Filter to only teams that actually exist in this league
+                        valid_teams_in_league = sorted(lg_only_df['Team'].unique())
+                        teams_to_display = [t for t in selected_teams if t in valid_teams_in_league]
+                        
+                        # Further filter by valid teams
+                        lg_only_df = lg_only_df[lg_only_df['Team'].isin(teams_to_display)].copy()
+                        
+                        agg_data = lg_only_df.groupby(['Team', 'Position']).agg({
+                            'Innings': 'sum', 'Runs': 'sum', 'Balls': 'sum',
+                            'Fours': 'sum', 'Sixes': 'sum', '25+': 'sum', '50+': 'sum'
+                        }).reset_index()
+                        agg_data['SR'] = (agg_data['Runs'] / agg_data['Balls'].replace(0, 1) * 100).round(2)
+                        agg_data['Avg'] = (agg_data['Runs'] / agg_data['Innings'].replace(0, 1)).round(2)
+                        
+                        st.markdown("#### Overall Performance (All Seasons)")
+                        
+                        # Position selector for overall view
+                        pos_values = sorted([int(p) for p in agg_data['Position'].dropna().unique()])
+                        selected_pos_overall = st.multiselect(
+                            "Select Batting Position(s) to display",
+                            pos_values,
+                            default=pos_values,
+                            key=f"bo_pos_overall_{i}",
+                            help="Select one or more positions to see side-by-side comparison"
+                        )
+                        
+                        if selected_pos_overall:
+                            # Filter to selected positions
+                            display_data = agg_data[agg_data['Position'].isin(selected_pos_overall)].copy()
+                            display_data = display_data.sort_values(['Team', 'Position'])
+                            st.dataframe(display_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], use_container_width=True)
+                            
+                            # Heatmap for selected positions
+                            if len(selected_pos_overall) > 1:
+                                try:
+                                    display_data_num = display_data.copy()
+                                    display_data_num['Position'] = display_data_num['Position'].astype(int)
+                                    pivot = display_data_num.pivot_table(values='Runs', index='Team', columns='Position', fill_value=0)
+                                    fig = px.imshow(pivot, labels=dict(x="Position", y="Team", color="Runs"),
+                                                   title=f"{lg} Overall — Runs by Selected Positions", color_continuous_scale="Blues", aspect="auto")
+                                    st.plotly_chart(fig, use_container_width=True)
+                                except Exception as e:
+                                    st.warning(f"Could not create heatmap: {e}")
+                        else:
+                            st.info("Please select at least one batting position")
+
+# =========================================
 # SR COMPARISON (YEAR-WISE)
 # =========================================
 elif metric_choice == "SR Comparison (Year-wise)":
@@ -5926,6 +6317,697 @@ elif metric_choice == "Balls Bowled Per Match":
                     st.plotly_chart(fig_phase, use_container_width=True)
                 else:
                     st.info("Phase data not available.")
+
+
+
+# =========================================
+# MOST DELIVERIES WITHOUT A SIX (BOWLER)
+# =========================================
+elif metric_choice == "Most Deliveries Without a Six (Bowler)":
+    st.subheader("🚫 Most Deliveries Without a Six (Bowler)")
+    st.write(
+        "Bowlers who went the longest stretches of consecutive legal deliveries without conceding a six "
+        "(runs.batter == 6). Streaks are tracked across matches in chronological order."
+    )
+
+    @st.cache_data(show_spinner=False)
+    def longest_six_free_streaks(df_):
+        """
+        For each bowler, find ALL runs of consecutive legal deliveries (is_valid_delivery == 1)
+        where no six (runs.batter == 6) was conceded.
+        Returns one row per streak — a bowler may appear multiple times.
+        """
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        for c in ['runs.batter', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+
+        required = {'bowler', 'runs.batter', 'is_valid_delivery', 'match_id', 'date'}
+        if not required.issubset(d.columns):
+            return pd.DataFrame()
+
+        sort_cols = ['bowler', 'date', 'match_id']
+        extra = [c for c in ['innings', 'over', 'ball_float'] if c in d.columns]
+        d = d.sort_values(sort_cols + extra).reset_index(drop=True)
+
+        # Only count legal deliveries in regular innings
+        legal = d[(d['is_valid_delivery'] == 1) & d['innings'].isin([1, 2])].copy().reset_index(drop=True)
+        if legal.empty:
+            return pd.DataFrame()
+
+        team_col = 'bowling_team' if 'bowling_team' in legal.columns else (
+            'team' if 'team' in legal.columns else None
+        )
+
+        def _safe_mode(series):
+            m = series.dropna()
+            return str(m.mode().iloc[0]) if len(m.mode()) > 0 else ''
+
+        def _flush(bowler, grp, streak_start, streak_len, records, last_six_match_id):
+            if streak_len == 0:
+                return
+            window = grp.iloc[streak_start: streak_start + streak_len]
+            if window.empty:
+                return
+            if last_six_match_id is not None and 'match_id' in window.columns:
+                new_match_rows = window[window['match_id'] != last_six_match_id]
+                start_date = pd.to_datetime(new_match_rows['date'].iloc[0]).strftime('%d %b %Y') if not new_match_rows.empty else pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
+                matches_spanned = new_match_rows['match_id'].nunique()
+            else:
+                start_date = pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
+                matches_spanned = window['match_id'].nunique()
+            records.append({
+                'Bowler':          str(bowler),
+                'Team':            _safe_mode(window[team_col]) if (team_col and team_col in window.columns) else '',
+                'League':          _safe_mode(window['league']) if 'league' in window.columns else '',
+                'Season':          _safe_mode(window['year']) if 'year' in window.columns else '',
+                'Streak (Balls)':  streak_len,
+                'Streak (Overs)':  round(streak_len / 6, 1),
+                'Matches Spanned': matches_spanned,
+                'Streak Start':    start_date,
+                'Streak End':      pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+            })
+
+        records = []
+        for bowler, grp in legal.groupby('bowler', observed=True, sort=False):
+            grp = grp.reset_index(drop=True)
+            streak = 0
+            streak_start = 0
+            last_six_match_id = None
+
+            for idx, row in grp.iterrows():
+                if int(row['runs.batter']) != 6:
+                    streak += 1
+                else:
+                    _flush(bowler, grp, streak_start, streak, records, last_six_match_id)
+                    streak = 0
+                    streak_start = idx + 1
+                    last_six_match_id = row['match_id']
+
+            # flush trailing streak at end of data (may be an active streak)
+            _flush(bowler, grp, streak_start, streak, records, last_six_match_id)
+
+        if not records:
+            return pd.DataFrame()
+        return (
+            pd.DataFrame(records)
+            .sort_values('Streak (Balls)', ascending=False)
+            .reset_index(drop=True)
+        )
+
+    @st.cache_data(show_spinner=False)
+    def six_free_innings_streaks(df_):
+        """
+        Longest six-free spell within a single innings per bowler.
+        Returns one row per (match, innings, bowler) with their longest consecutive
+        six-free delivery run within that innings.
+        """
+        if df_.empty:
+            return pd.DataFrame()
+
+        d = df_.copy()
+        for c in ['runs.batter', 'is_valid_delivery']:
+            if c in d.columns:
+                d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
+
+        required = {'bowler', 'runs.batter', 'is_valid_delivery', 'match_id', 'date', 'innings'}
+        if not required.issubset(d.columns):
+            return pd.DataFrame()
+
+        d = d[d['innings'].isin([1, 2])].copy()
+        sort_cols = ['bowler', 'match_id', 'innings']
+        extra = [c for c in ['over', 'ball_float'] if c in d.columns]
+        d = d.sort_values(sort_cols + extra).reset_index(drop=True)
+
+        legal = d[d['is_valid_delivery'] == 1].copy().reset_index(drop=True)
+        if legal.empty:
+            return pd.DataFrame()
+
+        team_col = 'bowling_team' if 'bowling_team' in legal.columns else (
+            'team' if 'team' in legal.columns else None
+        )
+
+        records = []
+        for (bowler, match_id, innings), grp in legal.groupby(
+            ['bowler', 'match_id', 'innings'], observed=True, sort=False
+        ):
+            grp = grp.reset_index(drop=True)
+            max_streak = 0
+            cur_streak = 0
+            for _, row in grp.iterrows():
+                if int(row['runs.batter']) != 6:
+                    cur_streak += 1
+                    max_streak = max(max_streak, cur_streak)
+                else:
+                    cur_streak = 0
+
+            if max_streak == 0:
+                continue
+
+            team_val = ''
+            if team_col and team_col in grp.columns:
+                tmode = grp[team_col].dropna().mode()
+                team_val = str(tmode.iloc[0]) if not tmode.empty else ''
+
+            records.append({
+                'Bowler':             str(bowler),
+                'Team':               team_val,
+                'Match':              str(grp['teams'].iloc[0]) if 'teams' in grp.columns else str(match_id),
+                'Date':               pd.to_datetime(grp['date'].iloc[0]).strftime('%d %b %Y'),
+                'League':             str(grp['league'].iloc[0]) if 'league' in grp.columns else '',
+                'Season':             str(grp['year'].iloc[0]) if 'year' in grp.columns else '',
+                'Innings':            f"{int(innings)}{'st' if innings == 1 else 'nd'}",
+                'Max Six-Free Balls': max_streak,
+                'Max Six-Free Overs': round(max_streak / 6, 1),
+                'Total Balls':        len(grp),
+                'Sixes Conceded':     int((grp['runs.batter'] == 6).sum()),
+            })
+
+        if not records:
+            return pd.DataFrame()
+        return (
+            pd.DataFrame(records)
+            .sort_values('Max Six-Free Balls', ascending=False)
+            .reset_index(drop=True)
+        )
+
+    # Source — use fdf_no_team so bowler streaks aren't clipped by batting-team sidebar filter
+    sf_source = fdf_no_team.copy()
+    if selected_teams:
+        bowling_col = 'bowling_team' if 'bowling_team' in sf_source.columns else None
+        if bowling_col:
+            sf_source = sf_source[sf_source[bowling_col].astype(str).isin([str(t) for t in selected_teams])]
+
+    if sf_source.empty:
+        st.warning("No data for selected filters.")
+    else:
+        sf_col1, sf_col2, sf_col3 = st.columns([2, 1, 1])
+        with sf_col1:
+            sf_view = st.radio(
+                "Streak type",
+                ["Career (across matches)", "Single Innings Best"],
+                key="sf_view", horizontal=True
+            )
+        with sf_col2:
+            top_n_sf = st.number_input(
+                "Top N", min_value=5, max_value=100, value=20, step=5, key="sf_top_n"
+            )
+        with sf_col3:
+            sf_min = st.number_input(
+                "Min Balls", min_value=1, max_value=500,
+                value=18 if sf_view == "Career (across matches)" else 6,
+                step=6, key="sf_min_balls"
+            )
+
+        all_bowlers_sf = sorted(sf_source['bowler'].dropna().astype(str).unique())
+        sf_player_filter = st.multiselect(
+            "Filter by Bowler(s) — leave empty to show all",
+            all_bowlers_sf, key="sf_player_filter"
+        )
+
+        if sf_view == "Career (across matches)":
+            with st.spinner("Computing six-free career streaks..."):
+                sf_df = longest_six_free_streaks(sf_source)
+            streak_col = 'Streak (Balls)'
+            overs_col  = 'Streak (Overs)'
+        else:
+            with st.spinner("Computing single-innings six-free streaks..."):
+                sf_df = six_free_innings_streaks(sf_source)
+            streak_col = 'Max Six-Free Balls'
+            overs_col  = 'Max Six-Free Overs'
+
+        if sf_player_filter and not sf_df.empty:
+            sf_df = sf_df[sf_df['Bowler'].isin(sf_player_filter)]
+
+        if not sf_df.empty and streak_col in sf_df.columns:
+            sf_df = sf_df[sf_df[streak_col] >= int(sf_min)]
+
+        if sf_df is None or sf_df.empty:
+            st.info("No six-free streak data found. Try reducing the minimum balls threshold.")
+        else:
+            tab_table, tab_league, tab_chart = st.tabs(["📋 Leaderboard", "🏏 By League", "📊 Chart"])
+
+            display_sf = sf_df.head(int(top_n_sf)).reset_index(drop=True)
+            display_sf.index += 1
+
+            if sf_view == "Career (across matches)":
+                show_cols = [c for c in [
+                    'Bowler', 'Team', 'League', 'Season',
+                    'Streak (Balls)', 'Streak (Overs)',
+                    'Matches Spanned', 'Streak Start', 'Streak End'
+                ] if c in display_sf.columns]
+            else:
+                show_cols = [c for c in [
+                    'Bowler', 'Team', 'Match', 'Date', 'League', 'Season',
+                    'Innings', 'Max Six-Free Balls', 'Max Six-Free Overs',
+                    'Total Balls', 'Sixes Conceded'
+                ] if c in display_sf.columns]
+
+            with tab_table:
+                if sf_view == "Career (across matches)":
+                    st.markdown(
+                        f"**Top {int(top_n_sf)} career six-free streaks** — "
+                        "consecutive legal deliveries without a six, across matches"
+                    )
+                else:
+                    st.markdown(
+                        f"**Top {int(top_n_sf)} single-innings six-free spells** — "
+                        "maximum consecutive deliveries without a six within one innings"
+                    )
+                st.dataframe(display_sf[show_cols], use_container_width=True)
+
+                k1, k2, k3 = st.columns(3)
+                k1.metric("Longest Streak (Balls)", int(sf_df[streak_col].max()))
+                k2.metric("Longest Streak (Overs)", f"{sf_df[overs_col].max():.1f}")
+                if sf_view == "Career (across matches)" and 'Matches Spanned' in sf_df.columns:
+                    k3.metric("Max Matches Spanned", int(sf_df['Matches Spanned'].max()))
+                else:
+                    k3.metric("Bowlers in Table", sf_df['Bowler'].nunique())
+
+            with tab_league:
+                if 'League' in sf_df.columns:
+                    leagues_sf = sorted(sf_df['League'].dropna().unique())
+                    if leagues_sf:
+                        lg_tabs_sf = st.tabs([str(lg) for lg in leagues_sf])
+                        for li, lg in enumerate(leagues_sf):
+                            with lg_tabs_sf[li]:
+                                lg_sf = sf_df[sf_df['League'] == lg].head(int(top_n_sf)).reset_index(drop=True)
+                                lg_sf.index += 1
+                                st.dataframe(lg_sf[[c for c in show_cols if c in lg_sf.columns]], use_container_width=True)
+                    else:
+                        st.info("No league data available.")
+                else:
+                    st.info("League data not available.")
+
+            with tab_chart:
+                chart_sf = sf_df.head(int(top_n_sf)).copy()
+                if not chart_sf.empty:
+                    color_sf = 'Team' if 'Team' in chart_sf.columns and chart_sf['Team'].nunique() > 1 else 'League'
+                    if color_sf not in chart_sf.columns:
+                        color_sf = 'Bowler'
+
+                    hover_extras = [c for c in [
+                        'Team', 'League', 'Season', 'Streak (Overs)',
+                        'Max Six-Free Overs', 'Matches Spanned',
+                        'Streak Start', 'Streak End', 'Sixes Conceded'
+                    ] if c in chart_sf.columns]
+
+                    fig_sf = px.bar(
+                        chart_sf,
+                        x='Bowler', y=streak_col,
+                        color=color_sf,
+                        text=streak_col,
+                        hover_data=hover_extras,
+                        title=f"Top {int(top_n_sf)} — Most Consecutive Deliveries Without a Six",
+                        labels={streak_col: 'Consecutive Deliveries (No Six)', 'Bowler': 'Bowler'}
+                    )
+                    fig_sf.update_traces(textposition='outside')
+                    fig_sf.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_sf, use_container_width=True)
+
+                    if len(sf_df) >= 5:
+                        st.markdown("**Distribution of six-free streak lengths**")
+                        fig_dist_sf = px.histogram(
+                            sf_df, x=streak_col, nbins=30,
+                            title="Distribution of Six-Free Streak Lengths (Balls)",
+                            labels={streak_col: 'Consecutive Six-Free Balls', 'count': 'Count'}
+                        )
+                        st.plotly_chart(fig_dist_sf, use_container_width=True)
+
+
+
+# =========================================
+# TEAM DOT BALLS (INNINGS & MATCH)
+# =========================================
+elif metric_choice == "Team Dot Balls (Innings & Match)":
+    st.subheader("🔴 Team Dot Balls (Innings & Match)")
+    st.write(
+        "Most dot balls (legal deliveries where the batting team scored zero runs) faced by a team "
+        "in a single innings and across a full match."
+    )
+
+    tdb_df = fdf[fdf['innings'].isin([1, 2])].copy()
+
+    if tdb_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # A dot ball = legal delivery (is_valid_delivery == 1) with runs.total == 0
+        tdb_df['is_valid_delivery'] = pd.to_numeric(tdb_df['is_valid_delivery'], errors='coerce').fillna(0)
+        tdb_df['runs.total'] = pd.to_numeric(tdb_df['runs.total'], errors='coerce').fillna(0)
+        tdb_df['is_dot'] = ((tdb_df['is_valid_delivery'] == 1) & (tdb_df['runs.total'] == 0)).astype(int)
+
+        # ---- Innings-level dot ball counts ----
+        @st.cache_data(show_spinner=False)
+        def team_dots_innings(df_):
+            grp = df_.groupby(
+                ['match_id', 'innings', 'team', 'bowling_team', 'date', 'teams', 'year', 'league'],
+                observed=True
+            ).agg(
+                Dot_Balls=('is_dot', 'sum'),
+                Total_Legal_Balls=('is_valid_delivery', 'sum'),
+                Total_Runs=('runs.total', 'sum'),
+            ).reset_index()
+            grp['Dot%'] = (grp['Dot_Balls'] / grp['Total_Legal_Balls'].replace(0, np.nan) * 100).round(1)
+            grp['Date'] = pd.to_datetime(grp['date']).dt.date
+            grp['Innings'] = grp['innings'].map({1: '1st', 2: '2nd'})
+            grp['Batting Team'] = grp['team'].astype(str)
+            grp['Bowling Team'] = grp['bowling_team'].astype(str)
+            grp['Match'] = grp['teams'].astype(str)
+            grp['Season'] = grp['year']
+            grp['League'] = grp['league'].astype(str)
+            return grp.sort_values('Dot_Balls', ascending=False).reset_index(drop=True)
+
+        # ---- Match-level dot ball counts (summed across both innings for a team) ----
+        @st.cache_data(show_spinner=False)
+        def team_dots_match(df_):
+            grp = df_.groupby(
+                ['match_id', 'team', 'date', 'teams', 'year', 'league'],
+                observed=True
+            ).agg(
+                Dot_Balls=('is_dot', 'sum'),
+                Total_Legal_Balls=('is_valid_delivery', 'sum'),
+                Total_Runs=('runs.total', 'sum'),
+            ).reset_index()
+            grp['Dot%'] = (grp['Dot_Balls'] / grp['Total_Legal_Balls'].replace(0, np.nan) * 100).round(1)
+            grp['Date'] = pd.to_datetime(grp['date']).dt.date
+            grp['Batting Team'] = grp['team'].astype(str)
+            grp['Match'] = grp['teams'].astype(str)
+            grp['Season'] = grp['year']
+            grp['League'] = grp['league'].astype(str)
+            return grp.sort_values('Dot_Balls', ascending=False).reset_index(drop=True)
+
+        with st.spinner("Computing dot ball counts..."):
+            inn_dots = team_dots_innings(tdb_df)
+            match_dots = team_dots_match(tdb_df)
+
+        top_n_tdb = st.number_input("Top N rows", min_value=5, max_value=200, value=25, step=5, key="tdb_top_n")
+
+        tab_innings, tab_match, tab_agg, tab_chart = st.tabs([
+            "📋 Innings-wise", "🏏 Match-wise", "📊 Team Summary", "📈 Charts"
+        ])
+
+        with tab_innings:
+            st.markdown("### Most Dot Balls in a Single Innings")
+            disp_inn = inn_dots.head(int(top_n_tdb)).reset_index(drop=True)
+            disp_inn.index += 1
+            st.dataframe(
+                disp_inn[['Batting Team', 'Bowling Team', 'Innings', 'Match', 'Date',
+                           'Season', 'League', 'Dot_Balls', 'Total_Legal_Balls', 'Total_Runs', 'Dot%']]
+                .rename(columns={'Dot_Balls': 'Dot Balls', 'Total_Legal_Balls': 'Legal Balls', 'Total_Runs': 'Runs'}),
+                use_container_width=True
+            )
+
+        with tab_match:
+            st.markdown("### Most Dot Balls Faced in a Full Match (Both Innings Combined)")
+            disp_match = match_dots.head(int(top_n_tdb)).reset_index(drop=True)
+            disp_match.index += 1
+            st.dataframe(
+                disp_match[['Batting Team', 'Match', 'Date', 'Season', 'League',
+                             'Dot_Balls', 'Total_Legal_Balls', 'Total_Runs', 'Dot%']]
+                .rename(columns={'Dot_Balls': 'Dot Balls', 'Total_Legal_Balls': 'Legal Balls', 'Total_Runs': 'Runs'}),
+                use_container_width=True
+            )
+
+        with tab_agg:
+            st.markdown("### Team Career Dot Ball Summary")
+            team_agg = (
+                inn_dots.groupby(['Batting Team', 'League'], observed=True)
+                .agg(
+                    Innings_Played=('match_id', 'count'),
+                    Total_Dot_Balls=('Dot_Balls', 'sum'),
+                    Avg_Dots_Per_Innings=('Dot_Balls', 'mean'),
+                    Most_Dots_In_Innings=('Dot_Balls', 'max'),
+                    Total_Legal_Balls=('Total_Legal_Balls', 'sum'),
+                )
+                .reset_index()
+            )
+            team_agg['Avg_Dots_Per_Innings'] = team_agg['Avg_Dots_Per_Innings'].round(1)
+            team_agg['Career_Dot%'] = (
+                team_agg['Total_Dot_Balls'] / team_agg['Total_Legal_Balls'].replace(0, np.nan) * 100
+            ).round(1)
+            team_agg = team_agg.sort_values('Total_Dot_Balls', ascending=False)
+            st.dataframe(team_agg, use_container_width=True)
+
+        with tab_chart:
+            col1, col2 = st.columns(2)
+            with col1:
+                st.markdown("#### Top Innings (Most Dot Balls)")
+                chart_inn = inn_dots.head(15).copy()
+                chart_inn['Label'] = chart_inn['Batting Team'] + ' vs ' + chart_inn['Bowling Team'] + ' (' + chart_inn['Innings'] + ')'
+                fig_inn = px.bar(
+                    chart_inn, x='Label', y='Dot_Balls', color='Batting Team',
+                    text='Dot_Balls',
+                    title="Top 15 Innings — Most Dot Balls Faced",
+                    labels={'Dot_Balls': 'Dot Balls', 'Label': ''}
+                )
+                fig_inn.update_traces(textposition='outside')
+                fig_inn.update_xaxes(tickangle=45)
+                st.plotly_chart(fig_inn, use_container_width=True)
+
+            with col2:
+                st.markdown("#### Top Matches (Most Dot Balls)")
+                chart_match = match_dots.head(15).copy()
+                fig_match = px.bar(
+                    chart_match, x='Batting Team', y='Dot_Balls', color='Season',
+                    text='Dot_Balls',
+                    title="Top 15 Matches — Most Dot Balls Faced (Full Match)",
+                    labels={'Dot_Balls': 'Dot Balls'}
+                )
+                fig_match.update_traces(textposition='outside')
+                fig_match.update_xaxes(tickangle=45)
+                st.plotly_chart(fig_match, use_container_width=True)
+
+            # Dot% distribution across teams
+            st.markdown("#### Average Dot Ball % by Team")
+            avg_dot_pct = (
+                inn_dots.groupby('Batting Team', observed=True)['Dot%']
+                .mean().round(1).reset_index()
+                .sort_values('Dot%', ascending=False)
+            )
+            fig_pct = px.bar(
+                avg_dot_pct, x='Batting Team', y='Dot%',
+                color='Dot%', color_continuous_scale='Reds',
+                title="Average Dot Ball % per Innings by Team",
+                text='Dot%'
+            )
+            fig_pct.update_traces(textposition='outside')
+            fig_pct.update_xaxes(tickangle=45)
+            st.plotly_chart(fig_pct, use_container_width=True)
+
+
+# =========================================
+# TEAM BOUNDARY-LESS BALL STREAK
+# =========================================
+elif metric_choice == "Team Boundary-less Ball Streak":
+    st.subheader("🧱 Team Boundary-less Ball Streak")
+    st.write(
+        "Longest consecutive stretch of legal deliveries faced by a team in a single innings "
+        "without hitting a boundary (4 or 6 off the bat)."
+    )
+
+    tbl_df = fdf[fdf['innings'].isin([1, 2])].copy()
+
+    if tbl_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        tbl_df['is_valid_delivery'] = pd.to_numeric(tbl_df['is_valid_delivery'], errors='coerce').fillna(0)
+        tbl_df['runs.batter'] = pd.to_numeric(tbl_df['runs.batter'], errors='coerce').fillna(0)
+
+        @st.cache_data(show_spinner=False)
+        def team_boundary_less_streak(df_):
+            """
+            For each (match, innings, batting team), find the longest consecutive run of
+            legal deliveries (is_valid_delivery == 1) with no boundary (runs.batter != 4 and != 6).
+            Also records the overall career-longest such streak per team.
+            """
+            if df_.empty:
+                return pd.DataFrame(), pd.DataFrame()
+
+            sort_extra = [c for c in ['over', 'ball_float'] if c in df_.columns]
+            d = df_.sort_values(['match_id', 'innings', 'team'] + sort_extra).reset_index(drop=True)
+
+            legal = d[d['is_valid_delivery'] == 1].copy().reset_index(drop=True)
+            if legal.empty:
+                return pd.DataFrame(), pd.DataFrame()
+
+            legal['is_boundary'] = ((legal['runs.batter'] == 4) | (legal['runs.batter'] == 6)).astype(int)
+
+            records = []
+            for (match_id, innings, team), grp in legal.groupby(
+                ['match_id', 'innings', 'team'], observed=True, sort=False
+            ):
+                grp = grp.reset_index(drop=True)
+                max_streak = 0
+                cur_streak = 0
+                cur_start = 0
+                best_start = 0
+                best_end = 0
+                for i, row in grp.iterrows():
+                    if row['is_boundary'] == 0:
+                        if cur_streak == 0:
+                            cur_start = i
+                        cur_streak += 1
+                        if cur_streak > max_streak:
+                            max_streak = cur_streak
+                            best_start = cur_start
+                            best_end = i
+                    else:
+                        cur_streak = 0
+
+                if max_streak == 0:
+                    continue
+
+                # Over numbers (1-indexed) for the best streak window
+                has_over = 'over' in grp.columns
+                streak_window = grp.iloc[best_start: best_end + 1]
+                if has_over and not streak_window.empty:
+                    over_from = int(streak_window['over'].iloc[0]) + 1
+                    over_to   = int(streak_window['over'].iloc[-1]) + 1
+                    over_range = f"Ov {over_from}–{over_to}"
+                else:
+                    over_from  = None
+                    over_to    = None
+                    over_range = "—"
+
+                bowling_team = str(grp['bowling_team'].iloc[0]) if 'bowling_team' in grp.columns else ''
+                records.append({
+                    'Batting Team':          str(team),
+                    'Bowling Team':          bowling_team,
+                    'Match':                 str(grp['teams'].iloc[0]) if 'teams' in grp.columns else str(match_id),
+                    'Date':                  pd.to_datetime(grp['date'].iloc[0]).date(),
+                    'Innings':               f"{int(innings)}{'st' if innings == 1 else 'nd'}",
+                    'League':                str(grp['league'].iloc[0]) if 'league' in grp.columns else '',
+                    'Season':                str(grp['year'].iloc[0]) if 'year' in grp.columns else '',
+                    'Boundary-less Balls':   max_streak,
+                    'Boundary-less Overs':   round(max_streak / 6, 1),
+                    'Over Range':            over_range,
+                    'From Over':             over_from,
+                    'To Over':               over_to,
+                    'Total Legal Balls':      len(grp),
+                    'Boundaries Hit':         int(grp['is_boundary'].sum()),
+                    'Runs in Innings':        int(grp['runs.batter'].sum()),
+                })
+
+            inn_df = pd.DataFrame(records).sort_values('Boundary-less Balls', ascending=False).reset_index(drop=True) if records else pd.DataFrame()
+
+            # Career (team-level) best: each team's overall longest single-innings boundary-less stretch
+            career_records = []
+            if not inn_df.empty:
+                for team, grp in inn_df.groupby('Batting Team', observed=True):
+                    best_row = grp.nlargest(1, 'Boundary-less Balls').iloc[0]
+                    career_records.append({
+                        'Batting Team':        team,
+                        'League':              best_row['League'],
+                        'Career Best (Balls)': best_row['Boundary-less Balls'],
+                        'Career Best (Overs)': best_row['Boundary-less Overs'],
+                        'Over Range':          best_row['Over Range'],
+                        'vs':                  best_row['Bowling Team'],
+                        'Match':               best_row['Match'],
+                        'Date':                best_row['Date'],
+                        'Season':              best_row['Season'],
+                        'Innings':             best_row['Innings'],
+                        'Total Occurrences (20+)': int((grp['Boundary-less Balls'] >= 20).sum()),
+                    })
+                career_df = pd.DataFrame(career_records).sort_values('Career Best (Balls)', ascending=False).reset_index(drop=True)
+            else:
+                career_df = pd.DataFrame()
+
+            return inn_df, career_df
+
+        with st.spinner("Computing boundary-less streaks..."):
+            tbl_inn_df, tbl_career_df = team_boundary_less_streak(tbl_df)
+
+        top_n_tbl = st.number_input("Top N rows", min_value=5, max_value=200, value=25, step=5, key="tbl_top_n")
+        min_streak_tbl = st.number_input(
+            "Min streak length (balls)", min_value=1, max_value=120, value=12, step=6, key="tbl_min_streak"
+        )
+
+        if tbl_inn_df.empty:
+            st.info("No boundary-less streak data found for selected filters.")
+        else:
+            filtered_tbl = tbl_inn_df[tbl_inn_df['Boundary-less Balls'] >= int(min_streak_tbl)]
+
+            tab_inn, tab_career, tab_chart = st.tabs([
+                "📋 Innings Performances", "🏆 Team Career Best", "📊 Charts"
+            ])
+
+            with tab_inn:
+                st.markdown(f"### Longest Boundary-less Stretches in a Single Innings ({min_streak_tbl}+ balls)")
+                if filtered_tbl.empty:
+                    st.info(f"No innings with {min_streak_tbl}+ consecutive boundary-less balls.")
+                else:
+                    disp_tbl = filtered_tbl.head(int(top_n_tbl)).reset_index(drop=True)
+                    disp_tbl.index += 1
+                    st.dataframe(
+                        disp_tbl[['Batting Team', 'Bowling Team', 'Innings', 'Over Range', 'Match', 'Date',
+                                   'Season', 'League', 'Boundary-less Balls', 'Boundary-less Overs',
+                                   'Total Legal Balls', 'Boundaries Hit', 'Runs in Innings']],
+                        use_container_width=True
+                    )
+
+                    k1, k2, k3 = st.columns(3)
+                    k1.metric("Longest Streak (Balls)", int(filtered_tbl['Boundary-less Balls'].max()))
+                    k2.metric("Longest Streak (Overs)", f"{filtered_tbl['Boundary-less Overs'].max():.1f}")
+                    k3.metric("Innings in Table", len(filtered_tbl))
+
+            with tab_career:
+                st.markdown("### Each Team's Career-Best Boundary-less Streak (Single Innings)")
+                if tbl_career_df.empty:
+                    st.info("No career data available.")
+                else:
+                    disp_career = tbl_career_df.reset_index(drop=True)
+                    disp_career.index += 1
+                    st.dataframe(
+                        disp_career[['Batting Team', 'League', 'Career Best (Balls)', 'Career Best (Overs)',
+                                     'Over Range', 'vs', 'Match', 'Date', 'Season', 'Innings', 'Total Occurrences (20+)']],
+                        use_container_width=True
+                    )
+
+            with tab_chart:
+                col1, col2 = st.columns(2)
+                with col1:
+                    st.markdown("#### Top Innings — Longest Boundary-less Stretch")
+                    chart_tbl = (filtered_tbl if not filtered_tbl.empty else tbl_inn_df).head(15).copy()
+                    chart_tbl['Label'] = (
+                        chart_tbl['Batting Team'] + ' vs ' +
+                        chart_tbl['Bowling Team'] + ' (' + chart_tbl['Innings'] + ')'
+                    )
+                    fig_tbl = px.bar(
+                        chart_tbl, x='Label', y='Boundary-less Balls',
+                        color='Batting Team', text='Boundary-less Balls',
+                        title="Top 15 — Boundary-less Ball Streaks (Innings)",
+                        labels={'Boundary-less Balls': 'Consecutive Balls Without Boundary', 'Label': ''}
+                    )
+                    fig_tbl.update_traces(textposition='outside')
+                    fig_tbl.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_tbl, use_container_width=True)
+
+                with col2:
+                    st.markdown("#### Team Career Best")
+                    if not tbl_career_df.empty:
+                        fig_career = px.bar(
+                            tbl_career_df.head(15),
+                            x='Batting Team', y='Career Best (Balls)',
+                            color='League', text='Career Best (Balls)',
+                            title="Each Team's Career-Best Boundary-less Streak",
+                            labels={'Career Best (Balls)': 'Balls', 'Batting Team': 'Team'}
+                        )
+                        fig_career.update_traces(textposition='outside')
+                        fig_career.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig_career, use_container_width=True)
+
+                # Distribution histogram
+                if not tbl_inn_df.empty and len(tbl_inn_df) >= 5:
+                    st.markdown("#### Distribution of Boundary-less Streak Lengths")
+                    fig_dist_tbl = px.histogram(
+                        tbl_inn_df, x='Boundary-less Balls', nbins=30,
+                        title="Distribution — Boundary-less Streak Lengths (Balls)",
+                        labels={'Boundary-less Balls': 'Consecutive Boundary-less Balls', 'count': 'Count'}
+                    )
+                    st.plotly_chart(fig_dist_tbl, use_container_width=True)
 
 
 st.markdown("---")
