@@ -12,7 +12,7 @@ st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
 
 st.markdown("# Powerplay Score Tracker & DRS Analysis")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 27 April 2026")
+st.markdown("📅 Last updated: 30 April 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -338,7 +338,7 @@ selected_teams = st.sidebar.multiselect("Team", teams_available)
 if selected_teams:
     fdf = fdf[fdf['team'].isin(selected_teams)]
 
-max_matches = int(fdf['match_number'].max()) if not fdf.empty else 1
+max_matches = max(80, int(fdf['match_number'].max()) if not fdf.empty else 1)
 match_range = st.sidebar.slider(
     "Match Range",
     min_value=1,
@@ -384,7 +384,11 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Balls Bowled Per Match",
     "Most Deliveries Without a Six (Bowler)",
     "Team Dot Balls (Innings & Match)",
-    "Team Boundary-less Ball Streak"
+    "Team Boundary-less Ball Streak",
+    "Balls Per Boundary (Phase)",
+    "Boundary Runs % (Year-wise)",
+    "Powerplay Run Rate (Year-wise)",
+    "Bowling Comparison (Year-wise)"
 ])
 
 if fdf.empty:
@@ -1329,6 +1333,307 @@ def boundary_less_ball_streak(df_):
 # =========================================
 # RENDER METRICS
 # =========================================
+
+# =========================================
+# HELPER: TOURNAMENT MATCH NUMBER
+# =========================================
+def add_tournament_match_number(df_):
+    """
+    Add a 'tournament_match_no' column: chronological match number per league+year
+    (1 = first match of the season, N = last match). Unlike the global match_number
+    which is per-team, this counts unique matches across the whole tournament.
+    """
+    if df_.empty:
+        return df_
+    d = df_.copy()
+    d = d.sort_values('date')
+    d['tournament_match_no'] = d.groupby(['league', 'year'], observed=True)['match_id'].transform(
+        lambda x: pd.factorize(x, sort=False)[0] + 1
+    )
+    return d
+
+
+# =========================================
+# HELPER: BALLS PER BOUNDARY BY PHASE
+# =========================================
+def balls_per_boundary_phase(df_):
+    """
+    Compute balls per boundary for each phase (Powerplay / Middle / Death) per year.
+    Returns a DataFrame with columns: League, Year, Phase, Legal_Balls, Boundaries, BPB
+    BPB = legal balls faced per boundary hit. Lower = more attacking.
+    """
+    if df_.empty:
+        return pd.DataFrame()
+
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame()
+
+    # Only meaningful phases
+    phase_map = {'Powerplay': 'Powerplay', 'Middle': 'Middle', 'Death': 'Death'}
+    work = work[work['phase'].astype(str).isin(phase_map)]
+    if work.empty:
+        return pd.DataFrame()
+
+    work['is_boundary'] = ((work['runs.batter'] == 4) | (work['runs.batter'] == 6)).astype(int)
+
+    grp = work.groupby(['league', 'year', 'phase'], observed=True).agg(
+        Legal_Balls=('is_valid_delivery', 'sum'),
+        Boundaries=('is_boundary', 'sum')
+    ).reset_index()
+
+    grp['BPB'] = (grp['Legal_Balls'] / grp['Boundaries'].replace(0, np.nan)).round(1)
+    grp = grp.rename(columns={'league': 'League', 'year': 'Year', 'phase': 'Phase'})
+    grp = grp.sort_values(['League', 'Year', 'Phase']).reset_index(drop=True)
+    return grp
+
+
+# =========================================
+# HELPER: BOUNDARY RUNS % YEAR-WISE
+# =========================================
+def boundary_runs_pct(df_):
+    """
+    Compute % of total runs scored in boundaries (4s and 6s) per year per league.
+    Returns: League, Year, Total_Runs, Fours, Sixes, Boundary_Runs, Pct
+    """
+    if df_.empty:
+        return pd.DataFrame()
+
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame()
+
+    grp = work.groupby(['league', 'year'], observed=True).agg(
+        Total_Runs=('runs.total', 'sum'),
+        Fours=('runs.batter', lambda x: (x == 4).sum()),
+        Sixes=('runs.batter', lambda x: (x == 6).sum())
+    ).reset_index()
+
+    grp['Boundary_Runs'] = grp['Fours'] * 4 + grp['Sixes'] * 6
+    grp['Pct'] = (grp['Boundary_Runs'] / grp['Total_Runs'].replace(0, np.nan) * 100).round(1)
+    grp = grp.rename(columns={'league': 'League', 'year': 'Year'})
+    grp = grp.sort_values(['League', 'Year']).reset_index(drop=True)
+    return grp
+
+
+# =========================================
+# HELPER: POWERPLAY RUN RATE YEAR-WISE
+# =========================================
+def powerplay_rr_yearwise(df_):
+    """
+    Compute average powerplay run rate per year per league.
+    Calculates RR per innings first, then averages across all innings in a year.
+    Returns: League, Year, Avg_RR, Matches, Total_Innings
+    """
+    if df_.empty:
+        return pd.DataFrame()
+
+    pp = df_[(df_['phase'] == 'Powerplay') & (df_['innings'].isin([1, 2]))].copy()
+    if pp.empty:
+        return pd.DataFrame()
+
+    # Per-innings aggregation
+    inn_stats = pp.groupby(['league', 'year', 'match_id', 'innings'], observed=True).agg(
+        PP_Runs=('runs.total', 'sum'),
+        PP_Balls=('is_valid_delivery', 'sum')
+    ).reset_index()
+
+    inn_stats = inn_stats[inn_stats['PP_Balls'] > 0].copy()
+    inn_stats['Innings_RR'] = (inn_stats['PP_Runs'] / (inn_stats['PP_Balls'] / 6)).round(2)
+
+    # Year-level summary
+    summary = inn_stats.groupby(['league', 'year'], observed=True).agg(
+        Avg_RR=('Innings_RR', 'mean'),
+        Matches=('match_id', 'nunique'),
+        Total_Innings=('innings', 'count')
+    ).reset_index()
+
+    summary['Avg_RR'] = summary['Avg_RR'].round(2)
+    summary = summary.rename(columns={'league': 'League', 'year': 'Year'})
+    summary = summary.sort_values(['League', 'Year']).reset_index(drop=True)
+    return summary
+
+
+# =========================================
+# HELPER: BPB BY PHASE — TEAM-WISE
+# =========================================
+def balls_per_boundary_phase_team(df_):
+    """
+    Like balls_per_boundary_phase but grouped by team as well.
+    Returns: League, Year, Team, Phase, Legal_Balls, Boundaries, BPB
+    """
+    if df_.empty:
+        return pd.DataFrame()
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    work = work[work['phase'].astype(str).isin(['Powerplay', 'Middle', 'Death'])]
+    if work.empty:
+        return pd.DataFrame()
+    work['is_boundary'] = ((work['runs.batter'] == 4) | (work['runs.batter'] == 6)).astype(int)
+    grp = work.groupby(['league', 'year', 'team', 'phase'], observed=True).agg(
+        Legal_Balls=('is_valid_delivery', 'sum'),
+        Boundaries=('is_boundary', 'sum')
+    ).reset_index()
+    grp['BPB'] = (grp['Legal_Balls'] / grp['Boundaries'].replace(0, np.nan)).round(1)
+    grp = grp.rename(columns={'league': 'League', 'year': 'Year', 'team': 'Team', 'phase': 'Phase'})
+    return grp.sort_values(['League', 'Year', 'Team', 'Phase']).reset_index(drop=True)
+
+
+# =========================================
+# HELPER: BOUNDARY RUNS % — TEAM-WISE
+# =========================================
+def boundary_runs_pct_team(df_):
+    """
+    Like boundary_runs_pct but grouped by team as well.
+    Returns: League, Year, Team, Total_Runs, Fours, Sixes, Boundary_Runs, Pct
+    """
+    if df_.empty:
+        return pd.DataFrame()
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame()
+    grp = work.groupby(['league', 'year', 'team'], observed=True).agg(
+        Total_Runs=('runs.total', 'sum'),
+        Fours=('runs.batter', lambda x: (x == 4).sum()),
+        Sixes=('runs.batter', lambda x: (x == 6).sum())
+    ).reset_index()
+    grp['Boundary_Runs'] = grp['Fours'] * 4 + grp['Sixes'] * 6
+    grp['Pct'] = (grp['Boundary_Runs'] / grp['Total_Runs'].replace(0, np.nan) * 100).round(1)
+    grp = grp.rename(columns={'league': 'League', 'year': 'Year', 'team': 'Team'})
+    return grp.sort_values(['League', 'Year', 'Team']).reset_index(drop=True)
+
+
+# =========================================
+# HELPER: POWERPLAY RUN RATE — TEAM-WISE
+# =========================================
+def powerplay_rr_yearwise_team(df_):
+    """
+    Like powerplay_rr_yearwise but grouped by team.
+    Returns: League, Year, Team, Avg_RR, Innings
+    """
+    if df_.empty:
+        return pd.DataFrame()
+    pp = df_[(df_['phase'] == 'Powerplay') & (df_['innings'].isin([1, 2]))].copy()
+    if pp.empty:
+        return pd.DataFrame()
+    inn_stats = pp.groupby(['league', 'year', 'team', 'match_id', 'innings'], observed=True).agg(
+        PP_Runs=('runs.total', 'sum'),
+        PP_Balls=('is_valid_delivery', 'sum')
+    ).reset_index()
+    inn_stats = inn_stats[inn_stats['PP_Balls'] > 0].copy()
+    inn_stats['Innings_RR'] = (inn_stats['PP_Runs'] / (inn_stats['PP_Balls'] / 6)).round(2)
+    summary = inn_stats.groupby(['league', 'year', 'team'], observed=True).agg(
+        Avg_RR=('Innings_RR', 'mean'),
+        Innings=('innings', 'count')
+    ).reset_index()
+    summary['Avg_RR'] = summary['Avg_RR'].round(2)
+    summary = summary.rename(columns={'league': 'League', 'year': 'Year', 'team': 'Team'})
+    return summary.sort_values(['League', 'Year', 'Team']).reset_index(drop=True)
+
+
+# =========================================
+# HELPER: YEAR-WISE BOWLER COMPARISON
+# =========================================
+def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, include_year=True):
+    """
+    Year-wise bowler economy/average/SR comparison with phase-wise economy buckets.
+    Columns: Name | Economy | Average | Bowling SR | Wickets | Wkts/Match | Dot% | PP Econ | Middle Econ | Death Econ
+    When include_year=False, aggregates across all seasons.
+    """
+    if df_.empty:
+        return pd.DataFrame()
+
+    required_cols = {'league', 'year', 'match_id', 'innings', 'bowler',
+                     'runs.total', 'is_valid_delivery', 'wicket_count', 'phase'}
+    if not required_cols.issubset(df_.columns):
+        return pd.DataFrame()
+
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame()
+
+    # Exclude no-result incomplete innings (same logic as batter SR function)
+    if 'winner' in work.columns:
+        no_result_ids = work[work['winner'].isna()].groupby('match_id', observed=True)['over'].max()
+        no_result_incomplete = no_result_ids[no_result_ids < 19].index
+        work = work[~work['match_id'].isin(no_result_incomplete)]
+    if work.empty:
+        return pd.DataFrame()
+
+    team_col = 'bowling_team' if 'bowling_team' in work.columns else 'team'
+    grouping = ['league', 'bowler'] if not include_year else ['league', 'year', 'bowler']
+    if not aggregate_across_teams:
+        grouping = grouping + [team_col]
+
+    # Dot ball = valid delivery where batter scored 0
+    work['is_dot'] = ((work['is_valid_delivery'] == 1) & (work['runs.batter'] == 0)).astype(int)
+
+    # Bowler's runs = total runs EXCLUDING byes and leg-byes (Cricinfo/ICC standard:
+    # byes and leg-byes are charged to fielding/wicketkeeper, not the bowler)
+    work['bowler_runs'] = (
+        work['runs.total']
+        - work['byes'].fillna(0)
+        - work['leg_byes'].fillna(0)
+    )
+
+    # Base stats
+    stats = work.groupby(grouping, observed=True).agg(
+        Runs=('bowler_runs', 'sum'),
+        Legal_Balls=('is_valid_delivery', 'sum'),
+        Wickets=('wicket_count', 'sum'),
+        Dot_Balls=('is_dot', 'sum'),
+        Matches=('match_id', 'nunique'),
+    ).reset_index()
+
+    stats = stats[stats['Legal_Balls'] >= min_balls].copy()
+    if stats.empty:
+        return pd.DataFrame()
+
+    stats['Economy']    = (stats['Runs'] / (stats['Legal_Balls'] / 6)).round(2)
+    stats['Average']    = np.where(stats['Wickets'] > 0,
+                                   (stats['Runs'] / stats['Wickets']).round(2), np.nan)
+    stats['Bowling SR'] = np.where(stats['Wickets'] > 0,
+                                   (stats['Legal_Balls'] / stats['Wickets']).round(1), np.nan)
+    stats['Dot%']       = (stats['Dot_Balls'] / stats['Legal_Balls'].replace(0, np.nan) * 100).round(1)
+    stats['Wkts/Match'] = (stats['Wickets'] / stats['Matches'].replace(0, np.nan)).round(2)
+
+    # Phase-wise economy buckets (PP, Middle, Death)
+    for phase_label, col_name in [('Powerplay', 'PP Econ'), ('Middle', 'Middle Econ'), ('Death', 'Death Econ')]:
+        phase_df = work[work['phase'].astype(str).str.strip() == phase_label].copy()
+        if phase_df.empty:
+            stats[col_name] = np.nan
+            continue
+        ph_grp = phase_df.groupby(grouping, observed=True).agg(
+            ph_runs=('bowler_runs', 'sum'),
+            ph_balls=('is_valid_delivery', 'sum'),
+        ).reset_index()
+        ph_grp[col_name] = np.where(
+            ph_grp['ph_balls'] > 0,
+            (ph_grp['ph_runs'] / (ph_grp['ph_balls'] / 6)).round(2),
+            np.nan
+        )
+        stats = stats.merge(ph_grp[grouping + [col_name]], on=grouping, how='left')
+
+    # Rename for display
+    rename_map = {'league': 'League', 'bowler': 'Name', 'year': 'Season', team_col: 'Team'}
+    stats = stats.rename(columns=rename_map)
+
+    out_cols = ['League']
+    if include_year:
+        out_cols += ['Season']
+    out_cols += ['Name']
+    if not aggregate_across_teams and 'Team' in stats.columns:
+        out_cols += ['Team']
+    out_cols += ['Economy', 'Average', 'Bowling SR', 'Wickets', 'Wkts/Match', 'Dot%',
+                 'PP Econ', 'Middle Econ', 'Death Econ', 'Legal_Balls']
+
+    for col in ['Economy', 'Average', 'Bowling SR', 'Dot%', 'PP Econ', 'Middle Econ', 'Death Econ', 'Wkts/Match']:
+        if col in stats.columns:
+            stats[col] = pd.to_numeric(stats[col], errors='coerce')
+
+    sort_cols = ['League', 'Economy'] if not include_year else ['League', 'Season', 'Economy']
+    sort_asc  = [True, True]        if not include_year else [True, False, True]
+    return stats[[c for c in out_cols if c in stats.columns]].sort_values(sort_cols, ascending=sort_asc)
+
 
 if metric_choice == "Powerplay Score Tracker":
     st.subheader("🎯 Powerplay Score Tracker")
@@ -7008,6 +7313,658 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                         labels={'Boundary-less Balls': 'Consecutive Boundary-less Balls', 'count': 'Count'}
                     )
                     st.plotly_chart(fig_dist_tbl, use_container_width=True)
+
+
+# =========================================
+# BALLS PER BOUNDARY (PHASE)
+# =========================================
+elif metric_choice == "Balls Per Boundary (Phase)":
+    st.subheader("🎯 Balls Per Boundary by Phase (Year-wise)")
+    st.write(
+        "Average number of legal balls faced per boundary hit (4 or 6), broken down by phase. "
+        "**Lower BPB = more attacking batting.**"
+    )
+    st.caption("Phases — Powerplay (PP), Middle Overs (MO), Death Overs (DO)")
+
+    # Base source
+    _bpb_base = fdf_no_team if not selected_teams else fdf
+    _bpb_base = add_tournament_match_number(_bpb_base)
+    _bpb_max_tm = int(_bpb_base['tournament_match_no'].max()) if not _bpb_base.empty else 1
+
+    bpb_c1, bpb_c2 = st.columns([3, 1])
+    with bpb_c1:
+        bpb_tm_range = st.slider(
+            "Tournament Match Range",
+            min_value=1, max_value=_bpb_max_tm,
+            value=(1, _bpb_max_tm), step=1,
+            key="bpb_tm_range",
+            help=f"Filter by tournament match number (1 = first match of the season). Max: {_bpb_max_tm}."
+        )
+    with bpb_c2:
+        bpb_view = st.radio("View", ["Overall", "Team-wise"], key="bpb_view", horizontal=False)
+
+    _bpb_src = _bpb_base[
+        (_bpb_base['tournament_match_no'] >= bpb_tm_range[0]) &
+        (_bpb_base['tournament_match_no'] <= bpb_tm_range[1])
+    ]
+    st.caption(f"📊 {_bpb_src['match_id'].nunique():,} matches | "
+               f"{len(_bpb_src[_bpb_src['innings'].isin([1,2])]):,} deliveries in scope")
+
+    bpb_df = balls_per_boundary_phase(_bpb_src)
+
+    # Build Overall (all-phases combined) for league-level
+    if not bpb_df.empty:
+        _bpb_overall = bpb_df.groupby(['League', 'Year'], observed=True).agg(
+            Legal_Balls=('Legal_Balls', 'sum'),
+            Boundaries=('Boundaries', 'sum')
+        ).reset_index()
+        _bpb_overall['BPB'] = (_bpb_overall['Legal_Balls'] / _bpb_overall['Boundaries'].replace(0, np.nan)).round(1)
+        _bpb_overall['Phase'] = 'Overall'
+
+    if bpb_df.empty:
+        st.info("No data available for selected filters.")
+    elif bpb_view == "Overall":
+        phase_colors = {'Powerplay': '#1f77b4', 'Middle': '#2ca02c', 'Death': '#d62728', 'Overall': '#9467bd'}
+
+        bpb_phase_opts = ['Overall', 'Powerplay', 'Middle', 'Death']
+        bpb_selected_phases = st.multiselect(
+            "Show phases",
+            options=bpb_phase_opts,
+            default=bpb_phase_opts,
+            key="bpb_phase_sel",
+            help="'Overall' = all phases combined."
+        )
+        if not bpb_selected_phases:
+            bpb_selected_phases = bpb_phase_opts
+
+        chart_type_bpb = st.radio("Chart type", ["Bar", "Line"], horizontal=True, key="bpb_chart_type")
+
+        _bpb_frames = []
+        if 'Overall' in bpb_selected_phases:
+            _bpb_frames.append(_bpb_overall)
+        _specific = [p for p in bpb_selected_phases if p != 'Overall']
+        if _specific:
+            _bpb_frames.append(bpb_df[bpb_df['Phase'].isin(_specific)])
+        bpb_plot_df = pd.concat(_bpb_frames, ignore_index=True) if _bpb_frames else pd.DataFrame()
+
+        leagues_bpb = sorted(bpb_df['League'].dropna().unique())
+        bpb_tabs = st.tabs([str(lg) for lg in leagues_bpb])
+
+        for i, lg in enumerate(leagues_bpb):
+            with bpb_tabs[i]:
+                lg_df = bpb_plot_df[bpb_plot_df['League'] == lg].copy() if not bpb_plot_df.empty else pd.DataFrame()
+                if lg_df.empty:
+                    st.info("No data for this league.")
+                    continue
+
+                kpi_cols = st.columns(len(bpb_selected_phases))
+                for ki, ph in enumerate(bpb_selected_phases):
+                    ph_data = lg_df[lg_df['Phase'] == ph]['BPB']
+                    val = f"{ph_data.mean():.1f}" if not ph_data.empty and not np.isnan(ph_data.mean()) else "—"
+                    kpi_cols[ki].metric(f"Avg {ph} BPB", val)
+
+                title_phases = " / ".join(bpb_selected_phases)
+                if chart_type_bpb == "Bar":
+                    fig_bpb = px.bar(lg_df, x='Year', y='BPB', color='Phase', barmode='group',
+                        color_discrete_map=phase_colors, text='BPB',
+                        title=f"{lg} — BPB: {title_phases} (Year-wise)",
+                        labels={'BPB': 'Balls Per Boundary', 'Year': 'Season'})
+                    fig_bpb.update_traces(textposition='outside', texttemplate='%{text:.1f}')
+                    fig_bpb.update_layout(xaxis=dict(type='category', tickangle=0),
+                        yaxis_title="Balls Per Boundary", legend_title="Phase",
+                        bargap=0.15, bargroupgap=0.08)
+                else:
+                    fig_bpb = px.line(lg_df, x='Year', y='BPB', color='Phase',
+                        color_discrete_map=phase_colors, markers=True, text='BPB',
+                        title=f"{lg} — BPB Trend: {title_phases} (Year-wise)",
+                        labels={'BPB': 'Balls Per Boundary', 'Year': 'Season'})
+                    fig_bpb.update_traces(textposition='top center', texttemplate='%{text:.1f}')
+                    fig_bpb.update_layout(xaxis=dict(type='category'), yaxis_title="Balls Per Boundary")
+                st.plotly_chart(fig_bpb, use_container_width=True)
+
+                with st.expander("📋 Data Table"):
+                    disp = lg_df[['Year', 'Phase', 'Legal_Balls', 'Boundaries', 'BPB']].sort_values(['Year', 'Phase']).reset_index(drop=True)
+                    disp.index += 1
+                    st.dataframe(disp, use_container_width=True)
+
+    else:  # Team-wise
+        bpb_team_df = balls_per_boundary_phase_team(_bpb_src)
+        if bpb_team_df.empty:
+            st.info("No team data available.")
+        else:
+            phase_colors_t = {'Powerplay': '#1f77b4', 'Middle': '#2ca02c', 'Death': '#d62728'}
+
+            bpb_t_phase_opts = ['Powerplay', 'Middle', 'Death']
+            bpb_t_phase = st.selectbox("Phase to compare teams on", bpb_t_phase_opts, key="bpb_t_phase")
+            chart_type_bpb_t = st.radio("Chart type", ["Bar", "Line"], horizontal=True, key="bpb_chart_type_team")
+
+            leagues_bpb_t = sorted(bpb_team_df['League'].dropna().unique())
+            bpb_t_tabs = st.tabs([str(lg) for lg in leagues_bpb_t])
+
+            for i, lg in enumerate(leagues_bpb_t):
+                with bpb_t_tabs[i]:
+                    lg_df = bpb_team_df[(bpb_team_df['League'] == lg) & (bpb_team_df['Phase'] == bpb_t_phase)].copy()
+                    if lg_df.empty:
+                        st.info("No data for this league.")
+                        continue
+
+                    # Also add league overall as a reference line
+                    lg_overall = bpb_df[(bpb_df['League'] == lg) & (bpb_df['Phase'] == bpb_t_phase)][['Year', 'BPB']].copy()
+                    lg_overall['Team'] = '— League Avg —'
+
+                    # Best team per year
+                    best_per_year = lg_df.loc[lg_df.groupby('Year')['BPB'].idxmin()][['Year', 'Team', 'BPB']].copy()
+                    best_per_year.columns = ['Year', 'Best Team', 'Best BPB']
+
+                    k1, k2 = st.columns(2)
+                    k1.metric("Best Overall BPB", f"{lg_df['BPB'].min():.1f} — {lg_df.loc[lg_df['BPB'].idxmin(), 'Team']}")
+                    k2.metric("Highest BPB (least attacking)", f"{lg_df['BPB'].max():.1f} — {lg_df.loc[lg_df['BPB'].idxmax(), 'Team']}")
+
+                    # Combine teams + league avg for reference
+                    plot_df = pd.concat([lg_df[['Year', 'Team', 'BPB']], lg_overall], ignore_index=True)
+
+                    if chart_type_bpb_t == "Bar":
+                        fig_t = px.bar(lg_df, x='Year', y='BPB', color='Team', barmode='group',
+                            text='BPB',
+                            title=f"{lg} — BPB by Team ({bpb_t_phase}, Year-wise)",
+                            labels={'BPB': 'Balls Per Boundary', 'Year': 'Season'})
+                        fig_t.update_traces(textposition='outside', texttemplate='%{text:.1f}')
+                        fig_t.update_layout(xaxis=dict(type='category'), yaxis_title="Balls Per Boundary",
+                            bargap=0.15, bargroupgap=0.05)
+                    else:
+                        fig_t = px.line(plot_df, x='Year', y='BPB', color='Team',
+                            markers=True, text='BPB',
+                            title=f"{lg} — BPB Trend by Team ({bpb_t_phase}, Year-wise)",
+                            labels={'BPB': 'Balls Per Boundary', 'Year': 'Season'},
+                            line_dash_map={'— League Avg —': 'dash'})
+                        fig_t.update_traces(textposition='top center', texttemplate='%{text:.1f}')
+                        fig_t.update_layout(xaxis=dict(type='category'), yaxis_title="Balls Per Boundary")
+                    st.plotly_chart(fig_t, use_container_width=True)
+
+                    st.markdown("##### Best Team per Season")
+                    st.dataframe(best_per_year.reset_index(drop=True), use_container_width=True)
+
+                    with st.expander("📋 Full Data Table"):
+                        disp_t = lg_df[['Year', 'Team', 'Phase', 'Legal_Balls', 'Boundaries', 'BPB']].sort_values(['Year', 'BPB']).reset_index(drop=True)
+                        disp_t.index += 1
+                        st.dataframe(disp_t, use_container_width=True)
+
+
+# =========================================
+# BOUNDARY RUNS % (YEAR-WISE)
+# =========================================
+elif metric_choice == "Boundary Runs % (Year-wise)":
+    st.subheader("💥 Boundary Runs % (Year-wise)")
+    st.write(
+        "Percentage of total runs scored via boundaries (4s and 6s) each season. "
+        "Tracks how reliant teams are on boundaries."
+    )
+
+    _brp_base = fdf_no_team if not selected_teams else fdf
+    _brp_base = add_tournament_match_number(_brp_base)
+    _brp_max_tm = int(_brp_base['tournament_match_no'].max()) if not _brp_base.empty else 1
+
+    brp_c1, brp_c2 = st.columns([3, 1])
+    with brp_c1:
+        brp_tm_range = st.slider(
+            "Tournament Match Range",
+            min_value=1, max_value=_brp_max_tm,
+            value=(1, _brp_max_tm), step=1,
+            key="brp_tm_range",
+            help=f"Filter by tournament match number. Max: {_brp_max_tm}."
+        )
+    with brp_c2:
+        brp_view = st.radio("View", ["Overall", "Team-wise"], key="brp_view", horizontal=False)
+
+    _brp_src = _brp_base[
+        (_brp_base['tournament_match_no'] >= brp_tm_range[0]) &
+        (_brp_base['tournament_match_no'] <= brp_tm_range[1])
+    ]
+    st.caption(f"📊 {_brp_src['match_id'].nunique():,} matches | "
+               f"{len(_brp_src[_brp_src['innings'].isin([1,2])]):,} deliveries in scope")
+
+    brp_df = boundary_runs_pct(_brp_src)
+
+    if brp_df.empty:
+        st.info("No data available for selected filters.")
+    elif brp_view == "Overall":
+        leagues_brp = sorted(brp_df['League'].dropna().unique())
+        brp_tabs = st.tabs([str(lg) for lg in leagues_brp])
+
+        for i, lg in enumerate(leagues_brp):
+            with brp_tabs[i]:
+                lg_df = brp_df[brp_df['League'] == lg].copy()
+                if lg_df.empty:
+                    st.info("No data for this league.")
+                    continue
+
+                k1, k2, k3, k4 = st.columns(4)
+                k1.metric("Avg Boundary %",  f"{lg_df['Pct'].mean():.1f}%")
+                k2.metric("Peak Boundary %", f"{lg_df['Pct'].max():.1f}% ({int(lg_df.loc[lg_df['Pct'].idxmax(), 'Year'])})")
+                k3.metric("Total Fours",     f"{int(lg_df['Fours'].sum()):,}")
+                k4.metric("Total Sixes",     f"{int(lg_df['Sixes'].sum()):,}")
+
+                fig_brp = px.bar(lg_df, x='Year', y='Pct', text='Pct', color='Pct',
+                    color_continuous_scale='RdYlGn',
+                    title=f"{lg} — Boundary Runs % per Season",
+                    labels={'Pct': '% of Runs in Boundaries', 'Year': 'Season'})
+                fig_brp.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
+                fig_brp.update_layout(xaxis=dict(type='category'),
+                    yaxis_title="% of Runs Scored in Boundaries", coloraxis_showscale=False)
+                st.plotly_chart(fig_brp, use_container_width=True)
+
+                lg_stack = lg_df.copy()
+                lg_stack['Non_Boundary_Runs'] = lg_stack['Total_Runs'] - lg_stack['Boundary_Runs']
+                stack_long = pd.concat([
+                    lg_stack[['Year', 'Boundary_Runs']].rename(columns={'Boundary_Runs': 'Runs'}).assign(Type='Boundary Runs'),
+                    lg_stack[['Year', 'Non_Boundary_Runs']].rename(columns={'Non_Boundary_Runs': 'Runs'}).assign(Type='Non-Boundary Runs'),
+                ])
+                fig_stack = px.bar(stack_long, x='Year', y='Runs', color='Type', barmode='stack',
+                    color_discrete_map={'Boundary Runs': '#e45756', 'Non-Boundary Runs': '#4e79a7'},
+                    title=f"{lg} — Boundary vs Non-Boundary Runs (Stacked)",
+                    labels={'Runs': 'Total Runs', 'Year': 'Season'})
+                fig_stack.update_layout(xaxis=dict(type='category'), yaxis_title="Total Runs")
+                st.plotly_chart(fig_stack, use_container_width=True)
+
+                with st.expander("📋 Data Table"):
+                    disp_brp = lg_df[['Year', 'Fours', 'Sixes', 'Boundary_Runs', 'Total_Runs', 'Pct']].rename(
+                        columns={'Pct': 'Boundary %'}).sort_values('Year').reset_index(drop=True)
+                    disp_brp.index += 1
+                    st.dataframe(disp_brp, use_container_width=True)
+
+    else:  # Team-wise
+        brp_team_df = boundary_runs_pct_team(_brp_src)
+        if brp_team_df.empty:
+            st.info("No team data available.")
+        else:
+            chart_type_brp_t = st.radio("Chart type", ["Bar", "Line"], horizontal=True, key="brp_chart_type_team")
+            brp_metric = st.radio("Y-axis metric", ["Boundary %", "Boundary Runs"], horizontal=True, key="brp_team_metric")
+            y_col = 'Pct' if brp_metric == "Boundary %" else 'Boundary_Runs'
+            y_label = "% of Runs in Boundaries" if brp_metric == "Boundary %" else "Boundary Runs"
+
+            leagues_brp_t = sorted(brp_team_df['League'].dropna().unique())
+            brp_t_tabs = st.tabs([str(lg) for lg in leagues_brp_t])
+
+            for i, lg in enumerate(leagues_brp_t):
+                with brp_t_tabs[i]:
+                    lg_df = brp_team_df[brp_team_df['League'] == lg].copy()
+                    lg_overall = brp_df[brp_df['League'] == lg][['Year', y_col]].copy()
+                    lg_overall['Team'] = '— League Avg —'
+                    if lg_df.empty:
+                        st.info("No data for this league.")
+                        continue
+
+                    best_row = lg_df.loc[lg_df[y_col].idxmax()]
+                    worst_row = lg_df.loc[lg_df[y_col].idxmin()]
+                    k1, k2 = st.columns(2)
+                    suffix = "%" if brp_metric == "Boundary %" else ""
+                    k1.metric(f"Highest {brp_metric}", f"{best_row[y_col]:.1f}{suffix} — {best_row['Team']} ({int(best_row['Year'])})")
+                    k2.metric(f"Lowest {brp_metric}",  f"{worst_row[y_col]:.1f}{suffix} — {worst_row['Team']} ({int(worst_row['Year'])})")
+
+                    plot_df = pd.concat([lg_df[['Year', 'Team', y_col]], lg_overall], ignore_index=True)
+                    text_fmt = '%{text:.1f}%' if brp_metric == "Boundary %" else '%{text:,}'
+
+                    if chart_type_brp_t == "Bar":
+                        fig_t = px.bar(lg_df, x='Year', y=y_col, color='Team', barmode='group',
+                            text=y_col,
+                            title=f"{lg} — {brp_metric} by Team (Year-wise)",
+                            labels={y_col: y_label, 'Year': 'Season'})
+                        fig_t.update_traces(textposition='outside', texttemplate=text_fmt)
+                        fig_t.update_layout(xaxis=dict(type='category'), yaxis_title=y_label,
+                            bargap=0.15, bargroupgap=0.05)
+                    else:
+                        fig_t = px.line(plot_df, x='Year', y=y_col, color='Team',
+                            markers=True, text=y_col,
+                            title=f"{lg} — {brp_metric} Trend by Team (Year-wise)",
+                            labels={y_col: y_label, 'Year': 'Season'},
+                            line_dash_map={'— League Avg —': 'dash'})
+                        fig_t.update_traces(textposition='top center', texttemplate=text_fmt)
+                        fig_t.update_layout(xaxis=dict(type='category'), yaxis_title=y_label)
+                    st.plotly_chart(fig_t, use_container_width=True)
+
+                    # Best team per year
+                    best_per_yr = lg_df.loc[lg_df.groupby('Year')[y_col].idxmax()][['Year', 'Team', y_col]].copy()
+                    best_per_yr.columns = ['Year', 'Best Team', brp_metric]
+                    st.markdown("##### Best Team per Season")
+                    st.dataframe(best_per_yr.reset_index(drop=True), use_container_width=True)
+
+                    with st.expander("📋 Full Data Table"):
+                        disp_t = lg_df[['Year', 'Team', 'Fours', 'Sixes', 'Boundary_Runs', 'Total_Runs', 'Pct']].rename(
+                            columns={'Pct': 'Boundary %'}).sort_values(['Year', 'Boundary %'], ascending=[True, False]).reset_index(drop=True)
+                        disp_t.index += 1
+                        st.dataframe(disp_t, use_container_width=True)
+
+
+# =========================================
+# POWERPLAY RUN RATE (YEAR-WISE)
+# =========================================
+elif metric_choice == "Powerplay Run Rate (Year-wise)":
+    st.subheader("⚡ Powerplay Run Rate (Year-wise)")
+    st.write(
+        "Average powerplay run rate (overs 1-6) per season. "
+        "Calculated as the mean RR across all first and second innings powerplays."
+    )
+
+    _pprr_base = fdf_no_team if not selected_teams else fdf
+    _pprr_base = add_tournament_match_number(_pprr_base)
+    _pprr_max_tm = int(_pprr_base['tournament_match_no'].max()) if not _pprr_base.empty else 1
+
+    pprr_c1, pprr_c2 = st.columns([3, 1])
+    with pprr_c1:
+        pprr_tm_range = st.slider(
+            "Tournament Match Range",
+            min_value=1, max_value=_pprr_max_tm,
+            value=(1, _pprr_max_tm), step=1,
+            key="pprr_tm_range",
+            help=f"Filter by tournament match number. Max: {_pprr_max_tm}."
+        )
+    with pprr_c2:
+        pprr_view = st.radio("View", ["Overall", "Team-wise"], key="pprr_view", horizontal=False)
+
+    _pprr_src = _pprr_base[
+        (_pprr_base['tournament_match_no'] >= pprr_tm_range[0]) &
+        (_pprr_base['tournament_match_no'] <= pprr_tm_range[1])
+    ]
+    _pprr_pp = _pprr_src[(_pprr_src['phase'] == 'Powerplay') & (_pprr_src['innings'].isin([1, 2]))]
+    st.caption(f"📊 {_pprr_src['match_id'].nunique():,} matches | "
+               f"{len(_pprr_pp):,} PP deliveries in scope")
+
+    pprr_df = powerplay_rr_yearwise(_pprr_src)
+
+    if pprr_df.empty:
+        st.info("No powerplay data available for selected filters.")
+    elif pprr_view == "Overall":
+        leagues_pprr = sorted(pprr_df['League'].dropna().unique())
+        pprr_tabs = st.tabs([str(lg) for lg in leagues_pprr])
+
+        for i, lg in enumerate(leagues_pprr):
+            with pprr_tabs[i]:
+                lg_df = pprr_df[pprr_df['League'] == lg].copy()
+                if lg_df.empty:
+                    st.info("No data for this league.")
+                    continue
+
+                k1, k2, k3 = st.columns(3)
+                k1.metric("Avg PP Run Rate", f"{lg_df['Avg_RR'].mean():.2f}")
+                peak_row = lg_df.loc[lg_df['Avg_RR'].idxmax()]
+                k2.metric("Peak PP RR",      f"{peak_row['Avg_RR']:.2f} ({int(peak_row['Year'])})")
+                k3.metric("Total Matches",   f"{int(lg_df['Matches'].sum())}")
+
+                fig_pprr = px.bar(lg_df, x='Year', y='Avg_RR', text='Avg_RR',
+                    color='Avg_RR', color_continuous_scale='Blues',
+                    title=f"{lg} — Average Powerplay Run Rate per Season",
+                    labels={'Avg_RR': 'Avg PP Run Rate', 'Year': 'Season'},
+                    custom_data=['Matches'])
+                fig_pprr.update_traces(
+                    texttemplate='%{text:.2f}', textposition='outside',
+                    hovertemplate='Year: %{x}<br>Avg PP RR: %{y:.2f}<br>Matches: %{customdata[0]}<extra></extra>')
+                fig_line = px.line(lg_df, x='Year', y='Avg_RR', markers=True,
+                    color_discrete_sequence=['#ff7f0e'])
+                for trace in fig_line.data:
+                    trace.showlegend = False
+                    fig_pprr.add_trace(trace)
+                fig_pprr.update_layout(xaxis=dict(type='category'),
+                    yaxis_title="Average PP Run Rate", coloraxis_showscale=False)
+                st.plotly_chart(fig_pprr, use_container_width=True)
+
+                with st.expander("📋 Data Table"):
+                    disp_pprr = lg_df[['Year', 'Avg_RR', 'Matches', 'Total_Innings']].rename(columns={
+                        'Avg_RR': 'Avg PP Run Rate', 'Total_Innings': 'Innings'
+                    }).sort_values('Year').reset_index(drop=True)
+                    disp_pprr.index += 1
+                    st.dataframe(disp_pprr, use_container_width=True)
+
+    else:  # Team-wise
+        pprr_team_df = powerplay_rr_yearwise_team(_pprr_src)
+        if pprr_team_df.empty:
+            st.info("No team data available.")
+        else:
+            chart_type_pprr_t = st.radio("Chart type", ["Bar", "Line"], horizontal=True, key="pprr_chart_type_team")
+
+            leagues_pprr_t = sorted(pprr_team_df['League'].dropna().unique())
+            pprr_t_tabs = st.tabs([str(lg) for lg in leagues_pprr_t])
+
+            for i, lg in enumerate(leagues_pprr_t):
+                with pprr_t_tabs[i]:
+                    lg_df = pprr_team_df[pprr_team_df['League'] == lg].copy()
+                    lg_overall = pprr_df[pprr_df['League'] == lg][['Year', 'Avg_RR']].copy()
+                    lg_overall['Team'] = '— League Avg —'
+                    if lg_df.empty:
+                        st.info("No data for this league.")
+                        continue
+
+                    best_row = lg_df.loc[lg_df['Avg_RR'].idxmax()]
+                    worst_row = lg_df.loc[lg_df['Avg_RR'].idxmin()]
+                    k1, k2 = st.columns(2)
+                    k1.metric("Highest PP RR", f"{best_row['Avg_RR']:.2f} — {best_row['Team']} ({int(best_row['Year'])})")
+                    k2.metric("Lowest PP RR",  f"{worst_row['Avg_RR']:.2f} — {worst_row['Team']} ({int(worst_row['Year'])})")
+
+                    plot_df = pd.concat([lg_df[['Year', 'Team', 'Avg_RR']], lg_overall], ignore_index=True)
+
+                    if chart_type_pprr_t == "Bar":
+                        fig_t = px.bar(lg_df, x='Year', y='Avg_RR', color='Team', barmode='group',
+                            text='Avg_RR',
+                            title=f"{lg} — PP Run Rate by Team (Year-wise)",
+                            labels={'Avg_RR': 'Avg PP Run Rate', 'Year': 'Season'})
+                        fig_t.update_traces(textposition='outside', texttemplate='%{text:.2f}')
+                        fig_t.update_layout(xaxis=dict(type='category'), yaxis_title="Avg PP Run Rate",
+                            bargap=0.15, bargroupgap=0.05)
+                    else:
+                        fig_t = px.line(plot_df, x='Year', y='Avg_RR', color='Team',
+                            markers=True, text='Avg_RR',
+                            title=f"{lg} — PP RR Trend by Team (Year-wise)",
+                            labels={'Avg_RR': 'Avg PP Run Rate', 'Year': 'Season'},
+                            line_dash_map={'— League Avg —': 'dash'})
+                        fig_t.update_traces(textposition='top center', texttemplate='%{text:.2f}')
+                        fig_t.update_layout(xaxis=dict(type='category'), yaxis_title="Avg PP Run Rate")
+                    st.plotly_chart(fig_t, use_container_width=True)
+
+                    # Best team per year
+                    best_per_yr = lg_df.loc[lg_df.groupby('Year')['Avg_RR'].idxmax()][['Year', 'Team', 'Avg_RR']].copy()
+                    best_per_yr.columns = ['Year', 'Best Team', 'PP Run Rate']
+                    st.markdown("##### Best PP Run Rate per Season")
+                    st.dataframe(best_per_yr.reset_index(drop=True), use_container_width=True)
+
+                    with st.expander("📋 Full Data Table"):
+                        disp_t = lg_df[['Year', 'Team', 'Avg_RR', 'Innings']].rename(
+                            columns={'Avg_RR': 'Avg PP Run Rate'}
+                        ).sort_values(['Year', 'Avg PP Run Rate'], ascending=[True, False]).reset_index(drop=True)
+                        disp_t.index += 1
+                        st.dataframe(disp_t, use_container_width=True)
+
+
+# =========================================
+# BOWLING COMPARISON (YEAR-WISE)
+# =========================================
+elif metric_choice == "Bowling Comparison (Year-wise)":
+    st.subheader("🎳 Bowling Comparison (Year-wise)")
+    st.write("Bowler economy, average, and strike rate comparison across leagues and seasons with phase-wise economy buckets")
+
+    bc_col1, bc_col2, bc_col3, bc_col4 = st.columns([2, 1, 1, 2])
+    with bc_col1:
+        bc_aggregate = st.checkbox(
+            "Aggregate across teams (ignore Team filter)",
+            value=True, key="bc_aggregate_teams",
+            help="Useful when a player has represented multiple teams — stats are merged."
+        )
+    with bc_col2:
+        bc_min_balls = st.number_input("Min Balls", min_value=1, max_value=500, value=12, step=6, key="bc_min_balls")
+    with bc_col3:
+        bc_top_n = st.number_input("Top N in chart", min_value=5, max_value=50, value=15, step=1, key="bc_top_n")
+    with bc_col4:
+        bc_view_mode = st.radio("View Mode", ["Year-wise", "Overall (All Seasons)"], key="bc_view_mode", horizontal=True)
+
+    bc_source_df = fdf_no_team.copy() if bc_aggregate else fdf.copy()
+    bc_table = yearwise_bowler_comparison(
+        bc_source_df,
+        aggregate_across_teams=bc_aggregate,
+        min_balls=int(bc_min_balls),
+        include_year=(bc_view_mode == "Year-wise")
+    )
+
+    if not bc_table.empty:
+        all_bc_players = sorted(bc_table['Name'].dropna().astype(str).unique())
+        bc_player_filter = st.multiselect("Filter by Player(s) — leave empty to show all", all_bc_players, key="bc_player_filter")
+        if bc_player_filter:
+            bc_table = bc_table[bc_table['Name'].isin(bc_player_filter)]
+
+    if bc_table.empty:
+        st.info("No bowling comparison data available for the selected filters.")
+    else:
+        _phase_cols = ['PP Econ', 'Middle Econ', 'Death Econ']
+        _base_cols  = ['Name', 'Economy', 'Average', 'Bowling SR', 'Wickets', 'Wkts/Match', 'Dot%'] + _phase_cols
+
+        leagues_in_bc = sorted(bc_table['League'].dropna().unique())
+        league_tabs = st.tabs([str(lg) for lg in leagues_in_bc])
+
+        for i, lg in enumerate(leagues_in_bc):
+            with league_tabs[i]:
+                lg_df = bc_table[bc_table['League'] == lg].copy()
+
+                def _bc_display_cols(include_season=False):
+                    cols = list(_base_cols)
+                    if not bc_aggregate and 'Team' in lg_df.columns:
+                        cols = ['Name', 'Team', 'Economy', 'Average', 'Bowling SR',
+                                'Wickets', 'Wkts/Match', 'Dot%'] + _phase_cols
+                    if include_season:
+                        cols = ['Season'] + cols
+                    return cols
+
+                if bc_view_mode == "Year-wise":
+                    year_options = sorted(lg_df['Season'].dropna().unique(), reverse=True)
+                    selected_bc_years = st.multiselect(
+                        "Season(s) — select one or more", year_options,
+                        default=list(year_options[:1]),
+                        key=f"bc_season_{i}",
+                        help="Pick multiple seasons to see each year separately or compare side-by-side."
+                    )
+                    active_years = selected_bc_years if selected_bc_years else list(year_options)
+
+                    if len(active_years) == 1:
+                        yr_data = lg_df[lg_df['Season'] == active_years[0]].copy()
+                        dcols = _bc_display_cols(include_season=False)
+                        st.dataframe(
+                            yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Economy'),
+                            use_container_width=True
+                        )
+                        chart_df = yr_data.sort_values('Economy').head(int(bc_top_n))
+                        if not chart_df.empty:
+                            fig = px.bar(chart_df, x='Name', y='Economy',
+                                         color='Average', color_continuous_scale='RdYlGn_r',
+                                         title=f"{lg} {active_years[0]} — Economy Rate Comparison",
+                                         hover_data=['Bowling SR', 'Wickets', 'Dot%'] + _phase_cols)
+                            fig.update_xaxes(tickangle=45)
+                            st.plotly_chart(fig, use_container_width=True)
+
+                        st.markdown("**Phase Economy Buckets**")
+                        phase_melt = yr_data[['Name'] + _phase_cols].melt(
+                            id_vars='Name', var_name='Phase', value_name='Economy'
+                        ).dropna()
+                        if not phase_melt.empty:
+                            fig_p = px.bar(
+                                phase_melt.sort_values('Economy'),
+                                x='Phase', y='Economy', color='Name', barmode='group',
+                                title=f"{lg} {active_years[0]} — Phase Economy Buckets"
+                            )
+                            st.plotly_chart(fig_p, use_container_width=True)
+
+                    else:
+                        year_tab_labels = [str(y) for y in active_years] + ["⚖️ Compare"]
+                        year_sub_tabs = st.tabs(year_tab_labels)
+
+                        for j, yr in enumerate(active_years):
+                            with year_sub_tabs[j]:
+                                yr_data = lg_df[lg_df['Season'] == yr].copy()
+                                if yr_data.empty:
+                                    st.info(f"No data for {yr}.")
+                                    continue
+                                dcols = _bc_display_cols(include_season=False)
+                                st.markdown(f"**{lg} — Season {yr}**")
+                                st.dataframe(
+                                    yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Economy'),
+                                    use_container_width=True
+                                )
+                                chart_df = yr_data.sort_values('Economy').head(int(bc_top_n))
+                                if not chart_df.empty:
+                                    fig = px.bar(chart_df, x='Name', y='Economy',
+                                                 color='Average', color_continuous_scale='RdYlGn_r',
+                                                 title=f"{lg} {yr} — Economy Rate",
+                                                 hover_data=['Bowling SR', 'Wickets', 'Dot%'] + _phase_cols)
+                                    fig.update_xaxes(tickangle=45)
+                                    st.plotly_chart(fig, use_container_width=True)
+
+                                st.markdown("**Phase Economy Buckets**")
+                                phase_melt = yr_data[['Name'] + _phase_cols].melt(
+                                    id_vars='Name', var_name='Phase', value_name='Economy'
+                                ).dropna()
+                                if not phase_melt.empty:
+                                    fig_b = px.bar(
+                                        phase_melt.sort_values('Economy'),
+                                        x='Phase', y='Economy', color='Name', barmode='group',
+                                        title=f"{lg} {yr} — Phase Economy Buckets"
+                                    )
+                                    st.plotly_chart(fig_b, use_container_width=True)
+
+                        # Compare tab
+                        with year_sub_tabs[-1]:
+                            compare_df = lg_df[lg_df['Season'].isin(active_years)].copy()
+                            if compare_df.empty:
+                                st.info("No data for selected seasons.")
+                            else:
+                                dcols_cmp = _bc_display_cols(include_season=True)
+                                st.markdown("**All Selected Seasons — Side-by-side**")
+                                st.dataframe(
+                                    compare_df[[c for c in dcols_cmp if c in compare_df.columns]].sort_values(
+                                        ['Name', 'Season'], ascending=[True, True]
+                                    ),
+                                    use_container_width=True
+                                )
+                                compare_df = compare_df.copy()
+                                compare_df['Season'] = compare_df['Season'].astype(str)
+                                season_label = ", ".join(str(y) for y in active_years)
+                                fig_cmp = px.bar(
+                                    compare_df.sort_values('Economy'),
+                                    x='Name', y='Economy', color='Season',
+                                    barmode='group',
+                                    title=f"{lg} {season_label} — Year-wise Economy Comparison",
+                                    hover_data=['Average', 'Bowling SR', 'Wickets', 'Dot%'] + _phase_cols
+                                )
+                                fig_cmp.update_xaxes(tickangle=45)
+                                st.plotly_chart(fig_cmp, use_container_width=True)
+
+                                if bc_player_filter:
+                                    st.markdown("**Phase economy progression across seasons (selected players)**")
+                                    for player in bc_player_filter:
+                                        p_df = compare_df[compare_df['Name'] == player].copy()
+                                        if p_df.empty:
+                                            continue
+                                        p_melt = p_df[['Season'] + _phase_cols].melt(
+                                            id_vars='Season', var_name='Phase', value_name='Economy'
+                                        ).dropna()
+                                        if not p_melt.empty:
+                                            fig_pl = px.line(
+                                                p_melt, x='Phase', y='Economy',
+                                                color='Season', markers=True,
+                                                title=f"{player} — Phase Economy by Season"
+                                            )
+                                            st.plotly_chart(fig_pl, use_container_width=True)
+
+                else:
+                    # Overall (All Seasons)
+                    view_df = lg_df.copy()
+                    dcols = _bc_display_cols(include_season=False)
+                    st.dataframe(
+                        view_df[[c for c in dcols if c in view_df.columns]].sort_values('Economy'),
+                        use_container_width=True
+                    )
+                    chart_df = view_df.sort_values('Economy').head(int(bc_top_n)).copy()
+                    if not chart_df.empty:
+                        fig = px.bar(chart_df, x='Name', y='Economy',
+                                     color='Average', color_continuous_scale='RdYlGn_r',
+                                     title=f"{lg} — Overall Economy Rate Comparison (All Seasons)",
+                                     hover_data=['Bowling SR', 'Wickets', 'Dot%'] + _phase_cols)
+                        fig.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig, use_container_width=True)
 
 
 st.markdown("---")

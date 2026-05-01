@@ -13,7 +13,8 @@ DATA_DEST = "t20_data.parquet"
 
 LEAGUE_START_DATES = {
     'WBBL': '2020-10-25', 'MBBL': '2020-12-10',
-    'WPL': '2023-03-04', 'SA20': '2023-01-10', 'IPL': '2008-04-18'
+    'WPL': '2023-03-04', 'SA20': '2023-01-10', 'IPL': '2008-04-18',
+    'MLC': '2023-07-13'
 }
 
 LEAGUE_PP_DEFAULT = {
@@ -43,6 +44,7 @@ def detect_league(event_name, gender):
     if 'big bash' in e: return 'WBBL' if gender == 'female' else 'MBBL'
     if 'sa20' in e: return 'SA20'
     if 'ipl' in e or 'indian premier league' in e: return 'IPL'
+    if 'major league cricket' in e: return 'MLC'
     return 'OTHER'
 
 # Leagues that have Power Surge (BBL only)

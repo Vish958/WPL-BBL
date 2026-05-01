@@ -30,11 +30,10 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 27 April 2026")
+st.markdown("📅 Last updated: 30 April 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
-st.markdown("New metrics are in early stages. Feedback welcome!")
 
 st.markdown("""
 <style>
@@ -86,7 +85,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 st.markdown("""
-<h1 style='background: linear-gradient(90deg, #6C63FF, #FF6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.2rem;'>🏏 Global T20 Dashboard: IPL, MBBL, WBBL, SA20 & WPL Insights</h1>
+<h1 style='background: linear-gradient(90deg, #6C63FF, #FF6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.2rem;'>🏏 Global T20 Dashboard: IPL, MBBL, WBBL, SA20, WPL & MLC Insights</h1>
 """, unsafe_allow_html=True)
 
 DATA_SOURCE = "t20_data.parquet"
@@ -107,7 +106,8 @@ LEAGUE_START_DATES = {
     'MBBL': '2020-12-10',
     'WPL':  '2023-03-04',
     'SA20': '2023-01-10',
-    'IPL':  '2008-04-18'
+    'IPL':  '2008-04-18',
+    'MLC':  '2023-07-13'
 }
 
 st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in LEAGUE_START_DATES.items()]))
@@ -260,7 +260,7 @@ st.sidebar.multiselect("Phase", available_phases, key="phases", on_change=clear_
 
 with st.sidebar.expander("ℹ️ Phase Definitions", expanded=False):
     st.markdown("""
-    **General (IPL, WPL, SA20)**
+    **General (IPL, WPL, SA20, MLC)**
     - **Powerplay**: Overs 1-6
     - **Middle**: Overs 7-16
     - **Death**: Overs 17-20
