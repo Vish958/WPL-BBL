@@ -8,11 +8,11 @@ import numpy as np
 import plotly.express as px
 from datetime import date
 
-st.set_page_config(page_title="Powerplay & DRS Metrics", layout="wide")
+st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
-st.markdown("# Powerplay Score Tracker & DRS Analysis")
+st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("📅 Last updated: 30 April 2026")
+st.markdown("Last updated: 01 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
@@ -377,7 +377,6 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Boundary-less Ball Streak",
     "On This Day",
     "Bowler Over Impact",
-    "Match Flow Chart",
     "Extra Deliveries Cost",
     "Debutant Bowler Wickets",
     "Longest Wicketless Streaks",
@@ -875,7 +874,11 @@ def fastest_team_milestones(df_):
 # BOWLER FIRST SPELL WICKETS
 # =========================================
 def bowler_first_spell_wickets(df_):
-    """Wickets taken by each bowler in their first 3 overs (first spell) of an innings."""
+    """Wickets taken by each bowler in their first spell of an innings.
+    First spell = initial continuous set of overs before being replaced.
+    Since the same end bowls every other over, a gap > 2 between consecutive
+    overs the bowler appeared in indicates they were rested (spell ended).
+    """
     ipl = df_[df_['innings'].isin([1, 2])].copy()
     if ipl.empty:
         return pd.DataFrame()
@@ -886,15 +889,23 @@ def bowler_first_spell_wickets(df_):
     ):
         grp = grp.sort_values('ball_float')
         unique_overs = sorted(grp['over'].unique())
-        first_3_overs = unique_overs[:3]
-        spell = grp[grp['over'].isin(first_3_overs)]
+
+        # First spell: initial overs until first gap > 2 (bowler was rested)
+        first_spell_overs = [unique_overs[0]]
+        for i in range(1, len(unique_overs)):
+            if unique_overs[i] - unique_overs[i - 1] <= 2:
+                first_spell_overs.append(unique_overs[i])
+            else:
+                break  # gap > 2 means spell ended
+
+        spell = grp[grp['over'].isin(first_spell_overs)]
 
         wickets = int(spell['wicket_count'].sum())
         runs = int(spell['runs.total'].sum())
         balls = int(spell['is_valid_delivery'].sum())
-        overs_bowled = len(first_3_overs)
+        overs_bowled = len(first_spell_overs)
         # over column is 0-indexed; add 1 for the cricket over number
-        spell_over_nos = ', '.join(str(o + 1) for o in first_3_overs)
+        spell_over_nos = ', '.join(str(o + 1) for o in first_spell_overs)
 
         date_val = grp['date'].iloc[0]
         teams_str = str(grp['teams'].iloc[0])
@@ -1636,7 +1647,7 @@ def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, i
 
 
 if metric_choice == "Powerplay Score Tracker":
-    st.subheader("🎯 Powerplay Score Tracker")
+    st.subheader("Powerplay Score Tracker")
     st.write("Track powerplay performance (overs 1-6) by team across matches")
     
     col1, col2, col3 = st.columns([2, 2, 2])
@@ -1788,7 +1799,7 @@ if metric_choice == "Powerplay Score Tracker":
                 st.info("Venue data not available for match-level analysis.")
         
         with tab4:
-            st.markdown("##### 🏆 Playoff Matches Analysis")
+            st.markdown("##### Playoff Matches Analysis")
             st.caption("View powerplay performance in knockout/playoff matches (Final, Eliminator, etc.)")
             
             # Get playoff data
@@ -1890,7 +1901,7 @@ if metric_choice == "Powerplay Score Tracker":
 
 
 elif metric_choice == "DRS Analysis":
-    st.subheader("⚖️ DRS Analysis")
+    st.subheader("DRS Analysis")
     
     # Check if DRS data is available
     if 'has_review' not in fdf.columns:
@@ -2251,7 +2262,7 @@ elif metric_choice == "DRS Analysis":
 # OVER-BY-OVER ANALYSIS
 # =========================================
 elif metric_choice == "Over-by-Over Analysis":
-    st.subheader("📊 Over-by-Over Analysis")
+    st.subheader("Over-by-Over Analysis")
     st.write("Identify which batters scored most runs in a single over and which bowlers conceded most")
     
     # Additional filters
@@ -2466,7 +2477,7 @@ elif metric_choice == "Over-by-Over Analysis":
 # BATTER VS BOWLER MATCHUP
 # =========================================
 elif metric_choice == "Batter vs Bowler Matchup":
-    st.subheader("⚔️ Batter vs Bowler Matchup")
+    st.subheader("Batter vs Bowler Matchup")
     st.write("Head-to-head statistics between batters and bowlers")
     
     # Additional filters
@@ -2698,7 +2709,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
 # MOST WICKETS IN AN OVER
 # =========================================
 elif metric_choice == "Most Wickets in an Over":
-    st.subheader("🎯 Most Wickets in an Over")
+    st.subheader("Most Wickets in an Over")
     st.write("Identify which bowlers take the most wickets in a single over")
     
     # Exclude super overs
@@ -2786,7 +2797,7 @@ elif metric_choice == "Most Wickets in an Over":
 # EXTRAS IMPACT INDEX (BOWLER)
 # =========================================
 elif metric_choice == "Extras Impact Index (Bowler)":
-    st.subheader("💸 Extras Impact Index (Bowler)")
+    st.subheader("Extras Impact Index (Bowler)")
     st.write("Analyze the true cost of extras: Runs conceded on the extra delivery + Runs conceded on the immediate next delivery")
     
     # 1. Filters (Season | Match | Team | Bowler)
@@ -2960,7 +2971,7 @@ elif metric_choice == "Extras Impact Index (Bowler)":
 # OVERALL EXTRAS SUMMARY (SEASON VIEW)
 # =========================================
 elif metric_choice == "Overall Extras Summary":
-    st.subheader("📊 Overall Extras Summary (Season View)")
+    st.subheader("Overall Extras Summary (Season View)")
     st.write("Comprehensive analysis of extras (Wides, No-Balls) across teams and bowlers.")
     
     # Use raw 'df' to avoid phase filtering, but apply sidebar League/Year filters manually
@@ -3077,7 +3088,7 @@ elif metric_choice == "Overall Extras Summary":
             
         # 4. Insight Panel
         st.markdown("---")
-        st.subheader("🧠 Insights")
+        st.subheader("Insights")
         
         # Top 3 bowlers contribution
         total_wides_season = bowler_stats['Wides'].sum()
@@ -3101,7 +3112,7 @@ elif metric_choice == "Overall Extras Summary":
 # LEFT-RIGHT HAND INDEX
 # =========================================
 elif metric_choice == "Left-Right Hand Index":
-    st.subheader("🔄 Left-Right Hand Index")
+    st.subheader("Left-Right Hand Index")
     st.write("Analyze scoring when left-right batting pairs are at the crease")
     
     # Exclude super overs
@@ -3234,7 +3245,7 @@ elif metric_choice == "Left-Right Hand Index":
 # PACE VS SPIN ANALYSIS
 # =========================================
 elif metric_choice == "Pace vs Spin Analysis":
-    st.subheader("⚡ Pace vs Spin Analysis")
+    st.subheader("Pace vs Spin Analysis")
     st.write("Compare pace and spin bowling performance in each innings")
     
     # Exclude super overs
@@ -3371,7 +3382,7 @@ elif metric_choice == "Pace vs Spin Analysis":
 # SUPER OVER ANALYSIS
 # =========================================
 elif metric_choice == "Super Over Analysis":
-    st.subheader("🔥 Super Over Analysis")
+    st.subheader("Super Over Analysis")
     st.write("Analysis of super over performances across matches")
     
     # Filter super over innings (innings >= 3) - use FULL df, not filtered fdf
@@ -3532,7 +3543,7 @@ elif metric_choice == "Super Over Analysis":
 # INNINGS PROGRESSION
 # =========================================
 elif metric_choice == "Innings Progression":
-    st.subheader("📈 Innings Progression")
+    st.subheader("Innings Progression")
     st.write("Phase-by-phase breakdown of innings")
     st.info("**Phases:** Powerplay (Overs 1-6), Middle (Overs 7-15), Death (Overs 16-20)")
     
@@ -3706,7 +3717,7 @@ elif metric_choice == "Innings Progression":
 # FRANCHISE DEBUT TRACKER
 # =========================================
 elif metric_choice == "Franchise Debut Tracker":
-    st.subheader("🆕 Franchise Debut Tracker")
+    st.subheader("Franchise Debut Tracker")
     st.write("Track player debuts across different franchises")
     
     # Apply league filter first - use filtered data based on sidebar selection
@@ -3804,7 +3815,7 @@ elif metric_choice == "Franchise Debut Tracker":
 # BATTING ORDER PERFORMANCE (TEAM-WISE)
 # =========================================
 elif metric_choice == "Batting Order Performance (Team-wise)":
-    st.subheader("🏏 Batting Order Performance (Team-wise)")
+    st.subheader("Batting Order Performance (Team-wise)")
     st.write("Analyze team batting performance by position (1-11) with year-wise comparison")
     
     # Helper functions
@@ -4367,7 +4378,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
 # FASTEST 50s & 100s (PLAYER)
 # =========================================
 elif metric_choice == "Fastest 50s & 100s (Player)":
-    st.subheader("⚡ Fastest 50s & 100s (Player)")
+    st.subheader("Fastest 50s & 100s (Player)")
     st.write("Fastest individual batting milestones by legal balls faced — filter IPL via sidebar, then by player below.")
 
     m1_df = fdf.copy()
@@ -4438,7 +4449,7 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
 # FASTEST TEAM 50 & 100
 # =========================================
 elif metric_choice == "Fastest Team 50 & 100":
-    st.subheader("🚀 Fastest Team 50 & 100")
+    st.subheader("Fastest Team 50 & 100")
     st.write("Team milestones by legal balls (runs include extras: byes, leg-byes). Filter IPL via sidebar, then by team below.")
 
     m2_df = fdf.copy()
@@ -4469,7 +4480,7 @@ elif metric_choice == "Fastest Team 50 & 100":
                 display_t50.index += 1
                 st.dataframe(display_t50.head(300), use_container_width=True)
 
-                st.markdown("#### 🏆 Top 10 Fastest Team 50s")
+                st.markdown("#### Top 10 Fastest Team 50s")
                 st.dataframe(display_t50.head(10), use_container_width=True)
 
                 if len(df_t50) >= 5:
@@ -4496,7 +4507,7 @@ elif metric_choice == "Fastest Team 50 & 100":
                     display_t100.index += 1
                     st.dataframe(display_t100.head(300), use_container_width=True)
 
-                    st.markdown("#### 🏆 Top 10 Fastest Team 100s")
+                    st.markdown("#### Top 10 Fastest Team 100s")
                     st.dataframe(display_t100.head(10), use_container_width=True)
 
                     if len(df_t100) >= 5:
@@ -4515,8 +4526,8 @@ elif metric_choice == "Fastest Team 50 & 100":
 # BOWLER FIRST SPELL WICKETS
 # =========================================
 elif metric_choice == "Bowler First Spell Wickets":
-    st.subheader("🎯 Bowler First Spell Wickets")
-    st.write("Wickets taken by bowlers in their first spell (first 3 overs) of an innings.")
+    st.subheader("Bowler First Spell Wickets")
+    st.write("Wickets taken by bowlers in their first spell (initial continuous overs before being replaced) of an innings.")
 
     m3_df = fdf.copy()
     if m3_df.empty:
@@ -4587,7 +4598,7 @@ elif metric_choice == "Bowler First Spell Wickets":
 # BACK-TO-BACK 25+ SCORES
 # =========================================
 elif metric_choice == "Back-to-Back 25+ Scores":
-    st.subheader("🔥 Back-to-Back 25+ Scores")
+    st.subheader("Back-to-Back 25+ Scores")
     st.write("Batters with most 25+ scores and no single-digit innings in a season.")
 
     m4_df = fdf.copy()
@@ -4651,7 +4662,7 @@ elif metric_choice == "Back-to-Back 25+ Scores":
 # BOUNDARY-LESS OVERS SPELL
 # =========================================
 elif metric_choice == "Boundary-less Overs Spell":
-    st.subheader("🛡️ Boundary-less Overs Spell")
+    st.subheader("Boundary-less Overs Spell")
     st.write("Bowlers who bowled 3+ overs without conceding a boundary in an innings (no 4 or 6 off the bat).")
 
     m5_df = fdf.copy()
@@ -4737,7 +4748,7 @@ elif metric_choice == "Boundary-less Overs Spell":
 # BOUNDARY-LESS BALL STREAK
 # =========================================
 elif metric_choice == "Boundary-less Ball Streak":
-    st.subheader("🚫 Boundary-less Ball Streak")
+    st.subheader("Boundary-less Ball Streak")
     st.write("Tracks consecutive deliveries where the batting team went without hitting a boundary (no 4 or 6 off the bat).")
 
     if fdf.empty:
@@ -4920,7 +4931,7 @@ elif metric_choice == "On This Day":
         )
     month_name = selected_otd_date.strftime("%B")
     day_num = selected_otd_date.day
-    st.subheader(f"📅 On This Day — {month_name} {day_num}")
+    st.subheader(f"On This Day — {month_name} {day_num}")
     st.write(
         f"Historical records from all datasets for every **{month_name} {day_num}** in cricket history."
     )
@@ -5035,7 +5046,7 @@ elif metric_choice == "On This Day":
 # BOWLER OVER IMPACT
 # =========================================
 elif metric_choice == "Bowler Over Impact":
-    st.subheader("🎯 Bowler Over Impact")
+    st.subheader("Bowler Over Impact")
     st.write(
         "Split a bowler's innings appearances by what happened in a specific over "
         "(Wicket & ≤10 Runs / No Wicket & ≤10 Runs / >10 Runs), then compare their "
@@ -5181,285 +5192,13 @@ elif metric_choice == "Bowler Over Impact":
                 st.plotly_chart(fig, use_container_width=True)
 
 
-elif metric_choice == "Match Flow Chart":
-    st.subheader("🏏 Match Flow Chart")
-    st.caption("Ball-by-ball run progression for both innings. Red dots = wickets. Dashed line = Required Run Rate (chasing team).")
-
-    import os as _os, json as _json
-    import plotly.graph_objects as go
-    from plotly.subplots import make_subplots
-
-    @st.cache_data
-    def _load_match_flow(match_id_str):
-        path = _os.path.join(JSON_DIR, f"{match_id_str}.json")
-        if not _os.path.exists(path):
-            return None
-        with open(path, 'r', encoding='utf-8') as _f:
-            return _json.load(_f)
-
-    def _parse_innings(inn_json):
-        rows, ball_no, cumulative = [], 0, 0
-        for over in inn_json.get('overs', []):
-            for d_idx, delivery in enumerate(over.get('deliveries', [])):
-                ball_no += 1
-                runs = delivery['runs']['total']
-                cumulative += runs
-                is_wicket = 'wickets' in delivery
-                rows.append({
-                    'ball': ball_no,
-                    'cumulative': cumulative,
-                    'wicket': is_wicket,
-                    'player_out': delivery['wickets'][0]['player_out'] if is_wicket else '',
-                    'kind': delivery['wickets'][0]['kind'] if is_wicket else '',
-                    'batter': delivery.get('batter', ''),
-                    'bowler': delivery.get('bowler', ''),
-                    'over_ball': f"Over {over['over']+1}.{d_idx+1}",
-                })
-        return rows
-
-    # Match selector
-    _match_opts = (
-        fdf[fdf['innings'].isin([1, 2])]
-        .groupby(['match_id', 'teams', 'date'], observed=True)
-        .size().reset_index()
-    )
-    _match_opts['Label'] = _match_opts.apply(
-        lambda r: f"{r['teams']} — {pd.to_datetime(r['date']).strftime('%d %b %Y')}", axis=1
-    )
-    _match_opts = _match_opts.sort_values('date', ascending=False)
-
-    if _match_opts.empty:
-        st.info("No matches available for selected filters.")
-    else:
-        _sel_label = st.selectbox("Select Match", _match_opts['Label'].tolist(), key="mfc_sel")
-        _match_id = str(_match_opts[_match_opts['Label'] == _sel_label]['match_id'].iloc[0])
-
-        _data = _load_match_flow(_match_id)
-        if _data is None:
-            st.warning(f"JSON not found for match {_match_id}.")
-        else:
-            _info = _data.get('info', {})
-            _innings_list = _data.get('innings', [])
-
-            # Result string
-            _outcome = _info.get('outcome', {})
-            _winner = _outcome.get('winner', '')
-            _by = _outcome.get('by', {})
-            if 'wickets' in _by:
-                _result_str = f"🏆 {_winner} won by {_by['wickets']} wicket(s)"
-            elif 'runs' in _by:
-                _result_str = f"🏆 {_winner} won by {_by['runs']} run(s)"
-            elif 'winner' in _outcome:
-                _result_str = f"🏆 {_winner} won"
-            else:
-                _result_str = _outcome.get('result', 'Result unknown')
-
-            if len(_innings_list) < 1:
-                st.warning("Insufficient innings data in this match file.")
-            else:
-                _inn1 = _parse_innings(_innings_list[0])
-                _inn2 = _parse_innings(_innings_list[1]) if len(_innings_list) > 1 else []
-
-                _team1 = _innings_list[0].get('team', 'Team 1')
-                _team2 = _innings_list[1].get('team', 'Team 2') if len(_innings_list) > 1 else 'Team 2'
-
-                _total1 = _inn1[-1]['cumulative'] if _inn1 else 0
-                _total2 = _inn2[-1]['cumulative'] if _inn2 else 0
-                _wkts1 = sum(1 for r in _inn1 if r['wicket'])
-                _wkts2 = sum(1 for r in _inn2 if r['wicket'])
-                _target = _total1 + 1
-
-                # Compute RRR for chasing team (max 120 balls in T20)
-                _MAX_BALLS = 120
-                for r in _inn2:
-                    _balls_rem = max(_MAX_BALLS - r['ball'], 1)
-                    _runs_needed = max(_target - r['cumulative'], 0)
-                    r['rrr'] = round((_runs_needed / _balls_rem) * 6, 2)
-
-                # ── Single unified chart with secondary y-axis for RRR ──
-                # Innings 2 is offset on the x-axis so both fit side-by-side.
-                # Innings 1 balls stay as-is (1–N1).
-                # Innings 2 balls are offset by a gap so the x-axis reads
-                # "1st Inns balls 1-N1 | 2nd Inns balls 1-N2" seamlessly.
-                _N1 = len(_inn1)
-                _GAP = 5   # small visual gap between innings
-
-                _x2_runs = [r['ball'] + _N1 + _GAP for r in _inn2]
-                _x2_rrr  = [r['ball'] + _N1 + _GAP for r in _inn2]
-
-                _fig = make_subplots(specs=[[{"secondary_y": True}]])
-
-                # ── 1st innings run curve (teal) ──
-                _fig.add_trace(go.Scatter(
-                    x=[r['ball'] for r in _inn1],
-                    y=[r['cumulative'] for r in _inn1],
-                    mode='lines',
-                    name=f"{_team1} ({_total1}/{_wkts1})",
-                    line=dict(color='#48cae4', width=2.5),
-                    hovertemplate='<b>Inn1</b> %{customdata[0]}<br>Batter: %{customdata[1]}<br>Bowler: %{customdata[2]}<br>Score: <b>%{y}</b><extra></extra>',
-                    customdata=[[r['over_ball'], r['batter'], r['bowler']] for r in _inn1],
-                ), secondary_y=False)
-
-                # ── 1st innings wickets (red circles) ──
-                _w1 = [r for r in _inn1 if r['wicket']]
-                if _w1:
-                    _fig.add_trace(go.Scatter(
-                        x=[r['ball'] for r in _w1],
-                        y=[r['cumulative'] for r in _w1],
-                        mode='markers',
-                        name='Wicket (Inn1)',
-                        marker=dict(color='#ff4d6d', size=11, symbol='circle',
-                                    line=dict(color='white', width=1.5)),
-                        hovertemplate='🔴 <b>%{customdata[0]}</b> — %{customdata[1]}<br>%{customdata[2]}<extra></extra>',
-                        customdata=[[r['player_out'], r['kind'], r['over_ball']] for r in _w1],
-                    ), secondary_y=False)
-
-                if _inn2:
-                    # ── 2nd innings run curve (amber) ──
-                    _fig.add_trace(go.Scatter(
-                        x=_x2_runs,
-                        y=[r['cumulative'] for r in _inn2],
-                        mode='lines',
-                        name=f"{_team2} ({_total2}/{_wkts2})",
-                        line=dict(color='#f4a261', width=2.5),
-                        hovertemplate='<b>Inn2</b> %{customdata[0]}<br>Batter: %{customdata[1]}<br>RRR: %{customdata[2]}<br>Score: <b>%{y}</b><extra></extra>',
-                        customdata=[[r['over_ball'], r['batter'], r['rrr']] for r in _inn2],
-                    ), secondary_y=False)
-
-                    # ── Target line — spans only the 2nd innings x range ──
-                    _fig.add_shape(
-                        type='line',
-                        x0=_N1 + _GAP, x1=_x2_runs[-1] + 2,
-                        y0=_target, y1=_target,
-                        line=dict(color='#80ffdb', width=1.5, dash='dot'),
-                        layer='below',
-                    )
-                    _fig.add_annotation(
-                        x=_x2_runs[-1] + 2, y=_target,
-                        text=f"  Target {_target}",
-                        showarrow=False,
-                        font=dict(color='#80ffdb', size=11),
-                        xanchor='left',
-                    )
-
-                    # ── RRR on secondary y (lime-yellow dashed) ──
-                    _fig.add_trace(go.Scatter(
-                        x=_x2_rrr,
-                        y=[r['rrr'] for r in _inn2],
-                        mode='lines',
-                        name='Req. Run Rate',
-                        line=dict(color='#ffe66d', width=1.5, dash='dash'),
-                        hovertemplate='Ball %{customdata}<br>RRR: <b>%{y:.2f}</b><extra></extra>',
-                        customdata=[r['over_ball'] for r in _inn2],
-                        opacity=0.85,
-                    ), secondary_y=True)
-
-                    # ── 2nd innings wickets (pink) ──
-                    _w2 = [r for r in _inn2 if r['wicket']]
-                    if _w2:
-                        _fig.add_trace(go.Scatter(
-                            x=[r['ball'] + _N1 + _GAP for r in _w2],
-                            y=[r['cumulative'] for r in _w2],
-                            mode='markers',
-                            name='Wicket (Inn2)',
-                            marker=dict(color='#ff4d6d', size=11, symbol='circle',
-                                        line=dict(color='white', width=1.5)),
-                            hovertemplate='🔴 <b>%{customdata[0]}</b> — %{customdata[1]}<br>%{customdata[2]}<extra></extra>',
-                            customdata=[[r['player_out'], r['kind'], r['over_ball']] for r in _w2],
-                        ), secondary_y=False)
-
-                # ── Vertical divider between innings ──
-                _fig.add_vline(
-                    x=_N1 + _GAP / 2,
-                    line=dict(color='#555577', width=1.5, dash='dot'),
-                    annotation_text='Innings Break',
-                    annotation_font=dict(color='#aaaacc', size=10),
-                    annotation_position='top',
-                )
-
-                # ── Custom x-axis tick labels (Over numbers) ──
-                _tick_vals, _tick_text = [], []
-                for ov in range(0, 21, 5):
-                    b = ov * 6
-                    if b <= _N1:
-                        _tick_vals.append(b if b > 0 else 1)
-                        _tick_text.append(f"Ov {ov}" if ov > 0 else "Start")
-                if _inn2:
-                    for ov in range(0, 21, 5):
-                        b = ov * 6
-                        xpos = b + _N1 + _GAP
-                        if xpos <= _x2_runs[-1] + _GAP:
-                            _tick_vals.append(xpos)
-                            _tick_text.append(f"Ov {ov}" if ov > 0 else "Start")
-
-                # ── Result annotation ──
-                _fig.add_annotation(
-                    text=_result_str,
-                    xref='paper', yref='paper',
-                    x=0.5, y=-0.12,
-                    showarrow=False,
-                    font=dict(size=13, color='#90e0ef', family='Arial Black'),
-                    align='center',
-                )
-
-                _fig.update_layout(
-                    height=520,
-                    title=dict(
-                        text=f"<b>Match Flow</b>  ·  {_sel_label}",
-                        font=dict(size=15, color='#e0e0e0'),
-                        x=0.0,
-                    ),
-                    plot_bgcolor='#0d1117',
-                    paper_bgcolor='rgba(0,0,0,0)',
-                    font_color='#c9d1d9',
-                    legend=dict(
-                        orientation='h',
-                        yanchor='bottom', y=1.01,
-                        xanchor='left', x=0,
-                        bgcolor='rgba(0,0,0,0)',
-                        font=dict(size=11),
-                    ),
-                    margin=dict(b=90, t=70, l=60, r=70),
-                    hovermode='x unified',
-                )
-                _fig.update_xaxes(
-                    tickvals=_tick_vals,
-                    ticktext=_tick_text,
-                    showgrid=True,
-                    gridcolor='#21262d',
-                    zeroline=False,
-                    tickfont=dict(size=10),
-                    title_text='',
-                )
-                _fig.update_yaxes(
-                    title_text='Cumulative Runs',
-                    gridcolor='#21262d',
-                    zeroline=False,
-                    secondary_y=False,
-                )
-                _fig.update_yaxes(
-                    title_text='Req. Run Rate',
-                    gridcolor='rgba(0,0,0,0)',
-                    showgrid=False,
-                    zeroline=False,
-                    secondary_y=True,
-                )
-
-                st.plotly_chart(_fig, use_container_width=True)
-
-                # Quick scorecard summary
-                _c1, _c2 = st.columns(2)
-                with _c1:
-                    st.metric(f"🏏 {_team1}", f"{_total1}/{_wkts1}")
-                with _c2:
-                    st.metric(f"🏏 {_team2}", f"{_total2}/{_wkts2}", delta=f"Target {_target}")
 
 
 # =========================================
 # EXTRA DELIVERIES COST
 # =========================================
 elif metric_choice == "Extra Deliveries Cost":
-    st.subheader("💸 Extra Deliveries Cost")
+    st.subheader("Extra Deliveries Cost")
     st.write("Innings-wise & match-wise view of wides and no-balls bowled by each team, "
              "and the total runs conceded purely because of those extra re-bowled deliveries.")
 
@@ -5665,7 +5404,7 @@ elif metric_choice == "Extra Deliveries Cost":
 # DEBUTANT BOWLER WICKETS
 # =========================================
 elif metric_choice == "Debutant Bowler Wickets":
-    st.subheader("🎓 Debutant Bowler Wickets")
+    st.subheader("Debutant Bowler Wickets")
     st.write(
         "Wickets taken by bowlers on their debut appearance in a league or for a franchise. "
         "Debut = the first match that bowler ever appeared in for that league / team."
@@ -5999,7 +5738,7 @@ elif metric_choice == "Debutant Bowler Wickets":
 # LONGEST WICKETLESS STREAKS
 # =========================================
 elif metric_choice == "Longest Wicketless Streaks":
-    st.subheader("🔵 Longest Wicketless Streaks")
+    st.subheader("Longest Wicketless Streaks")
     st.write(
         "Longest consecutive deliveries bowled without taking a wicket — "
         "measured in legal (valid) balls across the filtered data."
@@ -6386,7 +6125,7 @@ elif metric_choice == "Longest Wicketless Streaks":
 # BALLS BOWLED PER MATCH
 # =========================================
 elif metric_choice == "Balls Bowled Per Match":
-    st.subheader("⚾ Balls Bowled Per Match")
+    st.subheader("Balls Bowled Per Match")
     st.write(
         "Total legal deliveries (valid balls) bowled in each match, "
         "broken down by innings and phase. Useful for identifying "
@@ -6629,7 +6368,7 @@ elif metric_choice == "Balls Bowled Per Match":
 # MOST DELIVERIES WITHOUT A SIX (BOWLER)
 # =========================================
 elif metric_choice == "Most Deliveries Without a Six (Bowler)":
-    st.subheader("🚫 Most Deliveries Without a Six (Bowler)")
+    st.subheader("Most Deliveries Without a Six (Bowler)")
     st.write(
         "Bowlers who went the longest stretches of consecutive legal deliveries without conceding a six "
         "(runs.batter == 6). Streaks are tracked across matches in chronological order."
@@ -6948,7 +6687,7 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
 # TEAM DOT BALLS (INNINGS & MATCH)
 # =========================================
 elif metric_choice == "Team Dot Balls (Innings & Match)":
-    st.subheader("🔴 Team Dot Balls (Innings & Match)")
+    st.subheader("Team Dot Balls (Innings & Match)")
     st.write(
         "Most dot balls (legal deliveries where the batting team scored zero runs) faced by a team "
         "in a single innings and across a full match."
@@ -7107,7 +6846,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
 # TEAM BOUNDARY-LESS BALL STREAK
 # =========================================
 elif metric_choice == "Team Boundary-less Ball Streak":
-    st.subheader("🧱 Team Boundary-less Ball Streak")
+    st.subheader("Team Boundary-less Ball Streak")
     st.write(
         "Longest consecutive stretch of legal deliveries faced by a team in a single innings "
         "without hitting a boundary (4 or 6 off the bat)."
@@ -7319,7 +7058,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
 # BALLS PER BOUNDARY (PHASE)
 # =========================================
 elif metric_choice == "Balls Per Boundary (Phase)":
-    st.subheader("🎯 Balls Per Boundary by Phase (Year-wise)")
+    st.subheader("Balls Per Boundary by Phase (Year-wise)")
     st.write(
         "Average number of legal balls faced per boundary hit (4 or 6), broken down by phase. "
         "**Lower BPB = more attacking batting.**"
@@ -7494,7 +7233,7 @@ elif metric_choice == "Balls Per Boundary (Phase)":
 # BOUNDARY RUNS % (YEAR-WISE)
 # =========================================
 elif metric_choice == "Boundary Runs % (Year-wise)":
-    st.subheader("💥 Boundary Runs % (Year-wise)")
+    st.subheader("Boundary Runs % (Year-wise)")
     st.write(
         "Percentage of total runs scored via boundaries (4s and 6s) each season. "
         "Tracks how reliant teams are on boundaries."
@@ -7639,7 +7378,7 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
 # POWERPLAY RUN RATE (YEAR-WISE)
 # =========================================
 elif metric_choice == "Powerplay Run Rate (Year-wise)":
-    st.subheader("⚡ Powerplay Run Rate (Year-wise)")
+    st.subheader("Powerplay Run Rate (Year-wise)")
     st.write(
         "Average powerplay run rate (overs 1-6) per season. "
         "Calculated as the mean RR across all first and second innings powerplays."
@@ -7777,7 +7516,7 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
 # BOWLING COMPARISON (YEAR-WISE)
 # =========================================
 elif metric_choice == "Bowling Comparison (Year-wise)":
-    st.subheader("🎳 Bowling Comparison (Year-wise)")
+    st.subheader("Bowling Comparison (Year-wise)")
     st.write("Bowler economy, average, and strike rate comparison across leagues and seasons with phase-wise economy buckets")
 
     bc_col1, bc_col2, bc_col3, bc_col4 = st.columns([2, 1, 1, 2])
