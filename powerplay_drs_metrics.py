@@ -14,8 +14,8 @@ st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
 st.markdown("Last updated: 01 May 2026")
 
-DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
-JSON_DIR = "data"  # Directory containing JSON files
+DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
+JSON_DIR = "data" # Directory containing JSON files
 
 # Force clear cache on startup to ensure new player matching logic is used
 # Remove this after confirming the fix works
@@ -44,8 +44,8 @@ def load_venue_data():
     
     return venue_map
 
-@st.cache_data(ttl=3600)  # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=6):  # Version 6: Added event_stage column for playoff filtering
+@st.cache_data(ttl=3600) # 1 hour TTL
+def load_data(path=DATA_SOURCE, _cache_version=6): # Version 6: Added event_stage column for playoff filtering
     try:
         df = pd.read_parquet(path)
         
@@ -88,8 +88,8 @@ def classify_bowling_type(style):
         return 'Pace'
     return 'Unknown'
 
-@st.cache_data(ttl=3600)  # Cache for 1 hour, will refresh on restart
-def load_player_data(_cache_version=9):  # Version 9: Fixed batting_hand KeyError in manual overrides
+@st.cache_data(ttl=3600) # Cache for 1 hour, will refresh on restart
+def load_player_data(_cache_version=9): # Version 9: Fixed batting_hand KeyError in manual overrides
     """
     Load player data from WPL and IPL Excel files for mapping bowling type and batting hand.
     Creates multiple index keys to handle name format differences:
@@ -104,9 +104,9 @@ def load_player_data(_cache_version=9):  # Version 9: Fixed batting_hand KeyErro
     
     # Try multiple ways to find the base directory
     possible_dirs = [
-        os.getcwd(),  # Current working directory (where streamlit is run from)
+        os.getcwd(), # Current working directory (where streamlit is run from)
         os.path.dirname(os.path.abspath(__file__)) if '__file__' in dir() else None,
-        '/Users/vishwesh/Documents/WPL&BBL',  # Fallback hardcoded path
+        '/Users/vishwesh/Documents/WPL&BBL', # Fallback hardcoded path
     ]
     
     base_dir = None
@@ -117,7 +117,7 @@ def load_player_data(_cache_version=9):  # Version 9: Fixed batting_hand KeyErro
     
     if not base_dir:
         errors.append(f"Could not find Excel files in any of: {possible_dirs}")
-        return player_data  # Return empty
+        return player_data # Return empty
     
     def add_player_entry(name, batting_hand, bowling_style, player_data_dict):
         """Add a player with multiple name variations for matching."""
@@ -202,7 +202,7 @@ def load_player_data(_cache_version=9):  # Version 9: Fixed batting_hand KeyErro
         # K Goud -> Kranti Gaud (Pace)
         'k goud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
         'kgoud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
-        'goud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},  
+        'goud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'}, 
         'k gaud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
         'kgaud': {'bowling_type': 'Pace', 'full_name': 'Kranti Gaud', 'batting_hand': 'Unknown'},
         # S Asha -> Asha Sobhana (Spin)
@@ -239,18 +239,18 @@ def normalize_player_name(name):
             # It's likely initials like "mm", "nm", "ac"
             first_initial = first_part[0]
             return [
-                name,  # Original: "mm lanning"
-                f"{first_initial} {last_name}",  # "m lanning"
-                f"{first_initial}{last_name}",  # "mlanning"
-                last_name  # Just last name
+                name, # Original: "mm lanning"
+                f"{first_initial} {last_name}", # "m lanning"
+                f"{first_initial}{last_name}", # "mlanning"
+                last_name # Just last name
             ]
         else:
             # Full first name like "shafali"
             first_initial = first_part[0]
             return [
-                name,  # Original
-                f"{first_initial} {last_name}",  # Initial + last
-                f"{first_part[0]}{first_part[0]} {last_name}",  # Double initial
+                name, # Original
+                f"{first_initial} {last_name}", # Initial + last
+                f"{first_part[0]}{first_part[0]} {last_name}", # Double initial
                 last_name
             ]
     return [name]
@@ -293,7 +293,7 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=6)  # Version 6: Added event_stage column for playoff filtering
+df = load_data(_cache_version=6) # Version 6: Added event_stage column for playoff filtering
 if df.empty:
     st.stop()
 
@@ -306,7 +306,7 @@ if venue_map:
 # Load player data for pace/spin and batting hand mapping
 player_data_cache = load_player_data(_cache_version=9)
 if player_data_cache:
-    st.sidebar.caption(f"📊 Player mappings: {len(player_data_cache)} entries loaded")
+    st.sidebar.caption(f" Player mappings: {len(player_data_cache)} entries loaded")
 
 # Sidebar Filters
 st.sidebar.header("Filters")
@@ -448,7 +448,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets=('is_wicket', 'sum')  # all dismissals incl. run out
+            PP_Wickets=('is_wicket', 'sum') # all dismissals incl. run out
         ).reset_index()
         
         stats['PP_RR'] = (stats['PP_Runs'] / (stats['PP_Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
@@ -472,7 +472,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         match_stats = match_stats.rename(columns={'team': 'Team', 'year': 'Season'})
         match_stats = match_stats.sort_values('Date', ascending=False)
         
-    else:  # bowling mode - filter by BOWLING team (not batting team)
+    else: # bowling mode - filter by BOWLING team (not batting team)
         # For bowling, filter by bowling_team if filter_teams provided
         if filter_teams:
             pp = pp[pp['bowling_team'].isin(filter_teams)]
@@ -488,7 +488,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s_Conceded=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s_Conceded=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots_Bowled=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets_Taken=('is_wicket', 'sum'),  # all dismissals incl. run out
+            PP_Wickets_Taken=('is_wicket', 'sum'), # all dismissals incl. run out
             PP_Wicket_Types=('wicket_kind', lambda x: ', '.join(
                 f"{str(k).title()}({v})" for k, v in x[~x.isin(_WK_NULL)].value_counts().items()
             ) if (~x.isin(_WK_NULL)).any() else '')
@@ -651,7 +651,7 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     # Base totals — use balls_faced so SR/Balls aligns with ESPN/ICC convention
     stats = balls_faced.groupby(grouping, observed=True).agg(
         Runs=('runs.batter', 'sum'),
-        Balls=('runs.batter', 'count')   # count rows = balls faced (legal + no-balls)
+        Balls=('runs.batter', 'count') # count rows = balls faced (legal + no-balls)
     ).reset_index()
 
     # Innings batted (innings where batter faced at least one delivery, including no-balls)
@@ -784,7 +784,7 @@ def fastest_individual_milestones(df_):
             balls_to_100 = int(balls_faced_cum.loc[idx_100[0]])
 
         if balls_to_50 is None and total_runs < 50:
-            continue  # never reached 50, skip
+            continue # never reached 50, skip
 
         # Get date and match info
         date_val = grp['date'].iloc[0]
@@ -836,7 +836,7 @@ def fastest_team_milestones(df_):
         balls_for_milestone = ((grp['is_valid_delivery'] == 1) | (grp['no_balls'] > 0)).astype(int).cumsum()
 
         total_runs = int(cumruns.iloc[-1])
-        total_balls = int(legal_cum.iloc[-1])  # legal deliveries only (over count)
+        total_balls = int(legal_cum.iloc[-1]) # legal deliveries only (over count)
 
         balls_to_50 = None
         balls_to_100 = None
@@ -900,7 +900,7 @@ def bowler_first_spell_wickets(df_):
             if unique_overs[i] - unique_overs[i - 1] <= 2:
                 first_spell_overs.append(unique_overs[i])
             else:
-                break  # gap > 2 means spell ended
+                break # gap > 2 means spell ended
 
         spell = grp[grp['over'].isin(first_spell_overs)]
 
@@ -1084,22 +1084,22 @@ def extra_deliveries_cost(df_):
     those extra deliveries versus the team's overall total.
 
     Returns a tuple: (match_df, innings_df, season_df)
-      match_df   — one row per match per bowling team (both innings combined)
+      match_df — one row per match per bowling team (both innings combined)
       innings_df — one row per innings per bowling team
-      season_df  — season-level aggregation per bowling team
+      season_df — season-level aggregation per bowling team
     """
     work = df_[df_['innings'].isin([1, 2])].copy()
     if work.empty:
         return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
 
     # Identify extra-ball deliveries (wides OR no-balls) — these cost an extra ball
-    work['is_wide_ball']    = (work['wides'] > 0).astype(int)
-    work['is_nb_ball']      = (work['no_balls'] > 0).astype(int)
-    work['is_extra_ball']   = ((work['is_wide_ball'] | work['is_nb_ball'])).astype(int)
+    work['is_wide_ball'] = (work['wides'] > 0).astype(int)
+    work['is_nb_ball'] = (work['no_balls'] > 0).astype(int)
+    work['is_extra_ball'] = ((work['is_wide_ball'] | work['is_nb_ball'])).astype(int)
 
     # Runs directly FROM those extra deliveries (penalty + anything scored off them)
-    work['wide_runs']       = work['wides']
-    work['nb_runs']         = work.apply(
+    work['wide_runs'] = work['wides']
+    work['nb_runs'] = work.apply(
         lambda r: r['runs.total'] if r['is_nb_ball'] else 0, axis=1
     )
     work['extra_ball_runs'] = work.apply(
@@ -1122,7 +1122,7 @@ def extra_deliveries_cost(df_):
         ['match_id', 'league', 'year', 'date', 'teams', 'bowling_team', 'team', 'innings'], observed=True
     )
     inn_stats = grp_inn.agg(
-        Total_Deliveries=('is_valid_delivery', lambda x: len(x)),          # all balls incl. extras
+        Total_Deliveries=('is_valid_delivery', lambda x: len(x)), # all balls incl. extras
         Legal_Deliveries=('is_valid_delivery', 'sum'),
         # Wide_Balls = SUM of wides column = total wide run penalties (scorecard convention).
         # e.g. a delivery with wides:2 contributes 2 here (1 penalty + 1 run off the wide).
@@ -1139,8 +1139,8 @@ def extra_deliveries_cost(df_):
     ).reset_index()
 
     inn_stats['Extra_Ball_%'] = (inn_stats['Extra_Balls'] / inn_stats['Total_Deliveries'] * 100).round(1)
-    inn_stats['Extra_Run_%']  = (inn_stats['Extra_Ball_Runs'] / inn_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
-    inn_stats['Date']         = pd.to_datetime(inn_stats['date']).dt.date
+    inn_stats['Extra_Run_%'] = (inn_stats['Extra_Ball_Runs'] / inn_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
+    inn_stats['Date'] = pd.to_datetime(inn_stats['date']).dt.date
     inn_stats['Innings_Label']= inn_stats['innings'].map({1: '1st', 2: '2nd'})
     inn_stats = inn_stats.rename(columns={
         'bowling_team': 'Bowling_Team', 'team': 'Batting_Team', 'year': 'Season', 'league': 'League'
@@ -1161,8 +1161,8 @@ def extra_deliveries_cost(df_):
         Total_Deliveries=('Total_Deliveries', 'sum'),
     ).reset_index()
     match_stats['Extra_Ball_%'] = (match_stats['Extra_Balls'] / match_stats['Total_Deliveries'] * 100).round(1)
-    match_stats['Extra_Run_%']  = (match_stats['Extra_Ball_Runs'] / match_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
-    match_stats['Opponent']     = match_stats.apply(
+    match_stats['Extra_Run_%'] = (match_stats['Extra_Ball_Runs'] / match_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
+    match_stats['Opponent'] = match_stats.apply(
         lambda row: ' v '.join(
             [t.strip() for t in str(row['teams']).replace(' vs ', ' v ').split(' v ')
              if t.strip() != str(row['Bowling_Team'])]
@@ -1173,8 +1173,8 @@ def extra_deliveries_cost(df_):
     # ---- Season-level ----
     season_stats = inn_stats.groupby(['League', 'Season', 'Bowling_Team'], observed=True).agg(
         Matches=('match_id', 'nunique'),
-        Total_Wide_Balls=('Wide_Balls', 'sum'),        # sum of wide run penalties
-        Total_Wide_Deliveries=('Wide_Deliveries', 'sum'),  # count of wide extra balls
+        Total_Wide_Balls=('Wide_Balls', 'sum'), # sum of wide run penalties
+        Total_Wide_Deliveries=('Wide_Deliveries', 'sum'), # count of wide extra balls
         Total_NoBall_Balls=('NoBall_Balls', 'sum'),
         Total_Extra_Balls=('Extra_Balls', 'sum'),
         Total_NoBall_Runs=('NoBall_Runs', 'sum'),
@@ -1183,7 +1183,7 @@ def extra_deliveries_cost(df_):
         Total_Runs_Conceded=('Team_Total_Runs', 'sum'),
     ).reset_index()
     season_stats['Avg_Extra_Balls_Per_Match'] = (season_stats['Total_Extra_Balls'] / season_stats['Matches']).round(1)
-    season_stats['Avg_Extra_Runs_Per_Match']  = (season_stats['Total_Extra_Ball_Runs'] / season_stats['Matches']).round(1)
+    season_stats['Avg_Extra_Runs_Per_Match'] = (season_stats['Total_Extra_Ball_Runs'] / season_stats['Matches']).round(1)
     season_stats['Extra_Run_%'] = (
         season_stats['Total_Extra_Ball_Runs'] / season_stats['Total_Runs_Conceded'].replace(0, np.nan) * 100
     ).round(1).fillna(0)
@@ -1223,7 +1223,7 @@ def bowler_over_impact(df_, bowler_name, over_num):
     if bdf.empty:
         return {}
 
-    over_idx = over_num - 1  # convert to 0-indexed
+    over_idx = over_num - 1 # convert to 0-indexed
 
     # Per appearance (match_id + innings) in the selected over
     target_over = bdf[bdf['over'] == over_idx]
@@ -1603,12 +1603,12 @@ def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, i
     if stats.empty:
         return pd.DataFrame()
 
-    stats['Economy']    = (stats['Runs'] / (stats['Legal_Balls'] / 6)).round(2)
-    stats['Average']    = np.where(stats['Wickets'] > 0,
+    stats['Economy'] = (stats['Runs'] / (stats['Legal_Balls'] / 6)).round(2)
+    stats['Average'] = np.where(stats['Wickets'] > 0,
                                    (stats['Runs'] / stats['Wickets']).round(2), np.nan)
     stats['Bowling SR'] = np.where(stats['Wickets'] > 0,
                                    (stats['Legal_Balls'] / stats['Wickets']).round(1), np.nan)
-    stats['Dot%']       = (stats['Dot_Balls'] / stats['Legal_Balls'].replace(0, np.nan) * 100).round(1)
+    stats['Dot%'] = (stats['Dot_Balls'] / stats['Legal_Balls'].replace(0, np.nan) * 100).round(1)
     stats['Wkts/Match'] = (stats['Wickets'] / stats['Matches'].replace(0, np.nan)).round(2)
 
     # Phase-wise economy buckets (PP, Middle, Death)
@@ -1646,7 +1646,7 @@ def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, i
             stats[col] = pd.to_numeric(stats[col], errors='coerce')
 
     sort_cols = ['League', 'Economy'] if not include_year else ['League', 'Season', 'Economy']
-    sort_asc  = [True, True]        if not include_year else [True, False, True]
+    sort_asc = [True, True] if not include_year else [True, False, True]
     return stats[[c for c in out_cols if c in stats.columns]].sort_values(sort_cols, ascending=sort_asc)
 
 
@@ -1658,12 +1658,12 @@ if metric_choice == "Powerplay Score Tracker":
     with col1:
         pp_mode = st.radio("Mode", ["Batting", "Bowling"], horizontal=True)
     with col2:
-        compare_teams = st.checkbox("📊 Compare Teams")
+        compare_teams = st.checkbox(" Compare Teams")
     with col3:
-        show_trend = st.checkbox("📈 Show Trend Chart", value=True)
+        show_trend = st.checkbox(" Show Trend Chart", value=True)
     
     # Playoff filter
-    exclude_playoffs = st.checkbox("🏆 Exclude Playoff Matches (Eliminator, Qualifiers, Final)", value=False, 
+    exclude_playoffs = st.checkbox(" Exclude Playoff Matches (Eliminator, Qualifiers, Final)", value=False, 
                                    help="Filter out playoff matches to analyze only league/group stage performance")
     
     mode_val = 'batting' if pp_mode == "Batting" else 'bowling'
@@ -1840,7 +1840,7 @@ if metric_choice == "Powerplay Score Tracker":
                         playoff_stats = playoff_pp.groupby(['match_id', 'team', 'bowling_team', 'date', 'event_stage'], observed=True).agg(
                             PP_Runs=('runs.total', 'sum'),
                             PP_Balls=('is_valid_delivery', 'sum'),
-                            PP_Wickets=('team_wicket_count', 'sum'),  # includes run-outs
+                            PP_Wickets=('team_wicket_count', 'sum'), # includes run-outs
                             PP_4s=('runs.batter', lambda x: (x == 4).sum()),
                             PP_6s=('runs.batter', lambda x: (x == 6).sum())
                         ).reset_index()
@@ -1850,7 +1850,7 @@ if metric_choice == "Powerplay Score Tracker":
                         
                         display_cols = ['Team', 'Opponent', 'Stage', 'date', 'PP_Runs', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Wickets']
                     else:
-                        # Bowling mode - group by bowling team  
+                        # Bowling mode - group by bowling team 
                         playoff_stats = playoff_pp.groupby(['match_id', 'bowling_team', 'team', 'date', 'event_stage'], observed=True).agg(
                             PP_Runs_Conceded=('runs.total', 'sum'),
                             PP_Balls=('is_valid_delivery', 'sum'),
@@ -1909,7 +1909,7 @@ elif metric_choice == "DRS Analysis":
     
     # Check if DRS data is available
     if 'has_review' not in fdf.columns:
-        st.warning("⚠️ DRS data not available in current dataset.")
+        st.warning(" DRS data not available in current dataset.")
         st.info("To enable DRS Analysis, run the preprocessing script with DRS extraction enabled.")
     else:
         # DRS metric selection
@@ -1938,7 +1938,7 @@ elif metric_choice == "DRS Analysis":
             # Show breakdown
             bowling_count = (reviews['review_type_role'] == 'Bowling').sum()
             batting_count = (reviews['review_type_role'] == 'Batting').sum()
-            st.caption(f"📊 Bowling Team Reviews: {bowling_count} | Batting Team Reviews: {batting_count}")
+            st.caption(f" Bowling Team Reviews: {bowling_count} | Batting Team Reviews: {batting_count}")
             
             # =====================
             # 1. TEAM SUCCESS RATE
@@ -2310,7 +2310,7 @@ elif metric_choice == "Over-by-Over Analysis":
             # Top individual overs
             top_overs = batter_over.sort_values('Runs', ascending=False).head(50)
             top_overs = top_overs.rename(columns={'batter': 'Batter', 'over': 'Over', 'team': 'Team', 'year': 'Season', 'date': 'Date'})
-            top_overs['Over'] = top_overs['Over'] + 1  # Display 1-indexed overs
+            top_overs['Over'] = top_overs['Over'] + 1 # Display 1-indexed overs
             top_overs['Date'] = pd.to_datetime(top_overs['Date']).dt.date
             
             st.dataframe(top_overs[['Batter', 'Team', 'Date', 'Over', 'Runs', 'Balls', 'Season']].astype({'Batter': str, 'Team': str}), 
@@ -2344,7 +2344,7 @@ elif metric_choice == "Over-by-Over Analysis":
             # Top expensive overs
             expensive_overs = bowler_over.sort_values('Runs_Conceded', ascending=False).head(50)
             expensive_overs = expensive_overs.rename(columns={'bowler': 'Bowler', 'over': 'Over', 'bowling_team': 'Team', 'year': 'Season', 'date': 'Date'})
-            expensive_overs['Over'] = expensive_overs['Over'] + 1  # Display 1-indexed
+            expensive_overs['Over'] = expensive_overs['Over'] + 1 # Display 1-indexed
             expensive_overs['Date'] = pd.to_datetime(expensive_overs['Date']).dt.date
             
             st.dataframe(expensive_overs[['Bowler', 'Team', 'Date', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].astype({'Bowler': str, 'Team': str}), 
@@ -2378,7 +2378,7 @@ elif metric_choice == "Over-by-Over Analysis":
             over_summary['Avg_Runs'] = (over_summary['Total_Runs'] / over_summary['Matches']).round(2)
             over_summary['Wicket_Rate'] = (over_summary['Total_Wickets'] / over_summary['Matches']).round(2)
             over_summary = over_summary.rename(columns={'over': 'Over'})
-            over_summary['Over'] = over_summary['Over'] + 1  # Display 1-indexed
+            over_summary['Over'] = over_summary['Over'] + 1 # Display 1-indexed
             
             col1, col2 = st.columns(2)
             with col1:
@@ -2490,7 +2490,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
         matchup_years = sorted(fdf['year'].dropna().unique())
         selected_matchup_year = st.selectbox("Filter by Year", ["All Years"] + list(matchup_years), key="matchup_year")
     with col2:
-        min_balls = 1  # Default to 1
+        min_balls = 1 # Default to 1
     with col3:
         matchup_aggregate = st.checkbox(
             "Aggregate across teams (ignore team split)",
@@ -2732,12 +2732,12 @@ elif metric_choice == "Most Wickets in an Over":
         # Convert to string to avoid categorical issues
         wickets_per_over['Bowler'] = wickets_per_over['bowler'].astype(str)
         wickets_per_over['Team'] = wickets_per_over['bowling_team'].astype(str)
-        wickets_per_over['Over'] = wickets_per_over['over'] + 1  # Display 1-indexed
+        wickets_per_over['Over'] = wickets_per_over['over'] + 1 # Display 1-indexed
         wickets_per_over['Season'] = wickets_per_over['year']
         wickets_per_over['Date'] = pd.to_datetime(wickets_per_over['date']).dt.date
         wickets_per_over['Innings'] = wickets_per_over['innings'].map({1: '1st Inns', 2: '2nd Inns'})
         
-        tab1, tab2, tab3 = st.tabs(["📋 Inning-wise", "🏏 Match-wise", "📊 Overall"])
+        tab1, tab2, tab3 = st.tabs([" Inning-wise", " Match-wise", " Overall"])
         
         with tab1:
             st.markdown("### Best Bowling Overs in Each Innings")
@@ -2882,8 +2882,8 @@ elif metric_choice == "Extras Impact Index (Bowler)":
             else:
                 extras_stats = extras_events_df.groupby(['bowler', 'bowling_team'], observed=True).agg(
                     Extra_Balls=('match_id', 'count'), # Count of extra events (deliveries)
-                    Wide_Runs=('wides', 'sum'),       # Sum of wide runs
-                    NoBall_Runs=('no_balls', 'sum'),  # Sum of no-ball runs (if column is count, this might need check, but usually 'no_balls' in parquet is 0/1 flag. Checks needed.)
+                    Wide_Runs=('wides', 'sum'), # Sum of wide runs
+                    NoBall_Runs=('no_balls', 'sum'), # Sum of no-ball runs (if column is count, this might need check, but usually 'no_balls' in parquet is 0/1 flag. Checks needed.)
                     # Wait, no_balls column in parquet is usually 0/1 flag. 
                     # If we want NoBall RUNS, we should check preprocessing. 
                     # Preprocessing: 'no_balls' is 1 if event['noballs'] > 0 else 0.
@@ -2920,10 +2920,10 @@ elif metric_choice == "Extras Impact Index (Bowler)":
                 
                 kpi1, kpi2, kpi3, kpi4 = st.columns(4)
                 # Show Runs clearly
-                kpi1.metric("🟦 Extra Deliveries", f"{total_extra_balls}")
-                kpi2.metric("🟧 Wides / NBs (Runs)", f"{total_wide_runs} / {total_nb_runs}") 
-                kpi3.metric("🟥 Extra-Impact Runs", f"{total_impact_runs}")
-                kpi4.metric("🟨 Impact %", f"{avg_impact_pct:.1f}%")
+                kpi1.metric(" Extra Deliveries", f"{total_extra_balls}")
+                kpi2.metric(" Wides / NBs (Runs)", f"{total_wide_runs} / {total_nb_runs}") 
+                kpi3.metric(" Extra-Impact Runs", f"{total_impact_runs}")
+                kpi4.metric(" Impact %", f"{avg_impact_pct:.1f}%")
                 
                 st.markdown("---")
                 
@@ -2950,7 +2950,7 @@ elif metric_choice == "Extras Impact Index (Bowler)":
                     )
 
                 st.markdown("---")
-                st.markdown("#### 🔍 Ball-by-Ball Breakdown (Extras → Next Ball)")
+                st.markdown("#### Ball-by-Ball Breakdown (Extras → Next Ball)")
                 
                 # Drill-down table
                 drill_down = extras_events_df[['over', 'ball_float', 'bowler', 'batter', 'bowling_team', 'wides', 'no_balls', 'Runs_on_Extra', 'Runs_Next_Ball']].copy()
@@ -3024,12 +3024,12 @@ elif metric_choice == "Overall Extras Summary":
         worst_team = team_stats.iloc[-1] if not team_stats.empty else None
         
         kpi1, kpi2, kpi3, kpi4 = st.columns(4)
-        kpi1.metric("🟥 Total Extras", f"{int(total_extras)}")
-        kpi2.metric("🟨 Avg Extras/Match", f"{avg_extras}")
+        kpi1.metric(" Total Extras", f"{int(total_extras)}")
+        kpi2.metric(" Avg Extras/Match", f"{avg_extras}")
         if best_team is not None:
-            kpi3.metric("🟩 Most Disciplined", f"{best_team['bowling_team']} ({best_team['Avg_Extras']})")
+            kpi3.metric(" Most Disciplined", f"{best_team['bowling_team']} ({best_team['Avg_Extras']})")
         if worst_team is not None:
-            kpi4.metric("🟥 Least Disciplined", f"{worst_team['bowling_team']} ({worst_team['Avg_Extras']})")
+            kpi4.metric(" Least Disciplined", f"{worst_team['bowling_team']} ({worst_team['Avg_Extras']})")
             
         st.markdown("---")
         
@@ -3131,31 +3131,31 @@ elif metric_choice == "Left-Right Hand Index":
         # Count how many players have known hand
         known_count = (lr_df['batter_hand'] != 'Unknown').sum()
         total_count = len(lr_df)
-        st.caption(f"📊 Player hand mapping: {known_count:,}/{total_count:,} balls ({known_count/total_count*100:.1f}%) with known batting hand")
+        st.caption(f" Player hand mapping: {known_count:,}/{total_count:,} balls ({known_count/total_count*100:.1f}%) with known batting hand")
         
         # Debug: Show player cache info and sample matches
-        with st.expander("🔍 Debug: Player Matching Info", expanded=(known_count == 0)):
+        with st.expander(" Debug: Player Matching Info", expanded=(known_count == 0)):
             st.write(f"**Player cache size:** {len(player_data_cache)} entries")
             
             # Show any errors from loading
             if '_errors' in player_data_cache:
                 st.error("**Errors during player data loading:**")
                 for err in player_data_cache['_errors']:
-                    st.write(f"  ❌ {err}")
+                    st.write(f" {err}")
             
             # Sample batters from the data
             sample_batters = lr_df['batter'].unique()[:10]
             st.write("**Sample batter matching:**")
             for batter in sample_batters:
                 hand = get_player_batting_hand(batter, player_data_cache)
-                st.write(f"  - `{batter}` → {hand}")
+                st.write(f" - `{batter}` → {hand}")
             
             # Show sample keys in cache
             st.write("**Sample cache keys (first 20):**")
             sample_keys = [k for k in list(player_data_cache.keys())[:20] if not k.startswith('_')]
             st.write(", ".join([f"`{k}`" for k in sample_keys]))
         
-        tab1, tab2, tab3 = st.tabs(["📋 Inning-wise", "🏏 Match-wise", "📊 Overall"])
+        tab1, tab2, tab3 = st.tabs([" Inning-wise", " Match-wise", " Overall"])
         
         with tab1:
             st.markdown("### Left vs Right Hand Performance by Innings")
@@ -3267,18 +3267,18 @@ elif metric_choice == "Pace vs Spin Analysis":
         # Count mapping success
         known_count = (ps_df['bowling_type'] != 'Unknown').sum()
         total_count = len(ps_df)
-        st.caption(f"📊 Bowler type mapping: {known_count:,}/{total_count:,} balls ({known_count/total_count*100:.1f}%) with known bowling type")
+        st.caption(f" Bowler type mapping: {known_count:,}/{total_count:,} balls ({known_count/total_count*100:.1f}%) with known bowling type")
         
-        tab1, tab2, tab3 = st.tabs(["📋 Inning-wise", "🏏 Match-wise", "📊 Overall"])
+        tab1, tab2, tab3 = st.tabs([" Inning-wise", " Match-wise", " Overall"])
         
         with tab1:
             st.markdown("### Pace vs Spin Performance by Innings Type")
             # Group by innings and bowling type
             type_by_innings = ps_df.groupby(['innings', 'bowling_type'], observed=True).agg(
                 Wickets=('wicket_count', 'sum'),
-                Runs=('bowler_runs', 'sum'),  # Use bowler_runs instead of runs.total
+                Runs=('bowler_runs', 'sum'), # Use bowler_runs instead of runs.total
                 Balls=('is_valid_delivery', 'sum'),
-                Dots=('bowler_runs', lambda x: (x == 0).sum())  # Dots based on bowler_runs
+                Dots=('bowler_runs', lambda x: (x == 0).sum()) # Dots based on bowler_runs
             ).reset_index()
             type_by_innings['Overs'] = (type_by_innings['Balls'] / 6).round(1)
             type_by_innings['ER'] = (type_by_innings['Runs'] / type_by_innings['Overs']).round(2)
@@ -3291,13 +3291,13 @@ elif metric_choice == "Pace vs Spin Analysis":
                 st.markdown("#### 1st Innings")
                 for _, row in type_by_innings[type_by_innings['innings'] == 1].iterrows():
                     if row['bowling_type'] != 'Unknown':
-                        emoji = "⚡" if row['bowling_type'] == 'Pace' else "🔄"
+                        emoji = "" if row['bowling_type'] == 'Pace' else ""
                         st.markdown(f"**{emoji} {row['bowling_type']}:** {int(row['Wickets'])}/{int(row['Runs'])} from {row['Overs']} overs (ER: {row['ER']}, Dot%: {row['Dot%']})")
             with col2:
                 st.markdown("#### 2nd Innings")
                 for _, row in type_by_innings[type_by_innings['innings'] == 2].iterrows():
                     if row['bowling_type'] != 'Unknown':
-                        emoji = "⚡" if row['bowling_type'] == 'Pace' else "🔄"
+                        emoji = "" if row['bowling_type'] == 'Pace' else ""
                         st.markdown(f"**{emoji} {row['bowling_type']}:** {int(row['Wickets'])}/{int(row['Runs'])} from {row['Overs']} overs (ER: {row['ER']}, Dot%: {row['Dot%']})")
             
             # Chart
@@ -3313,7 +3313,7 @@ elif metric_choice == "Pace vs Spin Analysis":
             # Group by match and bowling type
             type_by_match = ps_df.groupby(['match_id', 'teams', 'innings', 'date', 'bowling_type'], observed=True).agg(
                 Wickets=('wicket_count', 'sum'),
-                Runs=('bowler_runs', 'sum'),  # Use bowler_runs (excludes byes/leg-byes)
+                Runs=('bowler_runs', 'sum'), # Use bowler_runs (excludes byes/leg-byes)
                 Balls=('is_valid_delivery', 'sum'),
                 Dots=('bowler_runs', lambda x: (x == 0).sum())
             ).reset_index()
@@ -3344,7 +3344,7 @@ elif metric_choice == "Pace vs Spin Analysis":
             # Overall summary
             type_overall = ps_df.groupby('bowling_type', observed=True).agg(
                 Wickets=('wicket_count', 'sum'),
-                Runs=('bowler_runs', 'sum'),  # Use bowler_runs (excludes byes/leg-byes)
+                Runs=('bowler_runs', 'sum'), # Use bowler_runs (excludes byes/leg-byes)
                 Balls=('is_valid_delivery', 'sum'),
                 Dots=('bowler_runs', lambda x: (x == 0).sum()),
                 Matches=('match_id', 'nunique')
@@ -3363,7 +3363,7 @@ elif metric_choice == "Pace vs Spin Analysis":
             st.markdown("### Summary")
             for _, row in type_overall.iterrows():
                 if row['Bowling Type'] != 'Unknown':
-                    emoji = "⚡" if row['Bowling Type'] == 'Pace' else "🔄"
+                    emoji = "" if row['Bowling Type'] == 'Pace' else ""
                     st.markdown(f"**{emoji} {row['Bowling Type']}:** {int(row['Wickets'])}/{int(row['Runs'])} from {row['Overs']} overs (ER: {row['ER']}, Dot%: {row['Dot%']})")
             
             # Charts
@@ -3428,7 +3428,7 @@ elif metric_choice == "Super Over Analysis":
         so_matches = super_overs['match_id'].unique()
         st.write(f"**Total Super Over Matches: {len(so_matches)}**")
         
-        tab1, tab2, tab3, tab4 = st.tabs(["📋 Match List", "🏏 Top Batters", "🎯 Top Bowlers", "📊 Team Stats"])
+        tab1, tab2, tab3, tab4 = st.tabs([" Match List", " Top Batters", " Top Bowlers", " Team Stats"])
         
         with tab1:
             # Match list with super over details
@@ -3575,9 +3575,9 @@ elif metric_choice == "Innings Progression":
                 'RR': round(rr, 2)
             }
         
-        view_mode = st.radio("View Mode", ["📊 All Matches Summary", "🔍 Single Match Detail"], horizontal=True)
+        view_mode = st.radio("View Mode", [" All Matches Summary", " Single Match Detail"], horizontal=True)
         
-        if view_mode == "📊 All Matches Summary":
+        if view_mode == " All Matches Summary":
             # Show all matches at once grouped by team
             st.markdown("### All Matches Phase Breakdown")
             
@@ -3756,7 +3756,7 @@ elif metric_choice == "Franchise Debut Tracker":
     # Get teams in selected leagues only
     league_teams = sorted(filtered_df['team'].unique())
     
-    tab1, tab2 = st.tabs(["🔍 Player Search", "📋 Debut List"])
+    tab1, tab2 = st.tabs([" Player Search", " Debut List"])
     
     with tab1:
         # Search for a player - show only players from filtered leagues
@@ -4006,7 +4006,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                 except Exception as e:
                                     st.warning(f"Could not create SR chart: {e}")
                         else:
-                            year_tabs = st.tabs([str(y) for y in active_years] + ["📊 Compare"])
+                            year_tabs = st.tabs([str(y) for y in active_years] + [" Compare"])
                             
                             # Get teams that actually exist in this league (once, before the loop)
                             valid_teams_in_league = sorted(lg_df['Team'].unique())
@@ -4081,7 +4081,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                                 # Filter to only show teams that are actually in the filtered data
                                                 valid_teams = sorted(comp_df_filtered['Team'].unique())
                                                 
-                                                st.info(f"📊 Compact Table View: {len(valid_teams)} team(s) | Positions {selected_positions} | Seasons {sorted(active_years)}")
+                                                st.info(f" Compact Table View: {len(valid_teams)} team(s) | Positions {selected_positions} | Seasons {sorted(active_years)}")
                                                 
                                                 # Build compact table format
                                                 table_rows = []
@@ -4112,13 +4112,13 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                                                     if idx > 0:
                                                                         prev_runs = int(pos_season_data.iloc[idx-1]['Runs'])
                                                                         if runs > prev_runs:
-                                                                            growth = "📈"
+                                                                            growth = ""
                                                                         elif runs < prev_runs:
-                                                                            growth = "📉"
+                                                                            growth = ""
                                                                         else:
-                                                                            growth = "📊"
+                                                                            growth = ""
                                                                     else:
-                                                                        growth = "🆕"
+                                                                        growth = ""
                                                                     
                                                                     row[f"{year}\nRuns"] = runs
                                                                     row[f"{year}\nSR %"] = f"{sr:.1f}"
@@ -4225,7 +4225,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
     else:
         # Helper columns
         _bucket_cols = ['1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
-        _base_cols   = ['Name', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+        _base_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
 
         leagues_in_sr = sorted(sr_table['League'].dropna().unique())
         league_tabs = st.tabs([str(lg) for lg in leagues_in_sr])
@@ -4272,7 +4272,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                             st.plotly_chart(fig, width="stretch")
                     else:
                         # Multiple years — one sub-tab per year + a Compare tab
-                        year_tab_labels = [str(y) for y in active_years] + ["⚖️ Compare"]
+                        year_tab_labels = [str(y) for y in active_years] + [" Compare"]
                         year_sub_tabs = st.tabs(year_tab_labels)
 
                         for j, yr in enumerate(active_years):
@@ -4402,7 +4402,7 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
             if sel_players:
                 milestones_df = milestones_df[milestones_df['Batter'].isin(sel_players)]
 
-            tab_50, tab_100 = st.tabs(["🏏 Fastest 50s", "💯 Fastest 100s"])
+            tab_50, tab_100 = st.tabs([" Fastest 50s", " Fastest 100s"])
 
             with tab_50:
                 st.markdown("### Fastest 50s — sorted by balls faced (ascending)")
@@ -4472,7 +4472,7 @@ elif metric_choice == "Fastest Team 50 & 100":
             if sel_teams_m2:
                 team_miles_df = team_miles_df[team_miles_df['Batting Team'].isin(sel_teams_m2)]
 
-            tab_t50, tab_t100 = st.tabs(["🏏 Fastest Team 50s", "💯 Fastest Team 100s"])
+            tab_t50, tab_t100 = st.tabs([" Fastest Team 50s", " Fastest Team 100s"])
 
             with tab_t50:
                 st.markdown("### Fastest Team 50s — sorted by balls faced (ascending)")
@@ -4547,7 +4547,7 @@ elif metric_choice == "Bowler First Spell Wickets":
         if spell_df.empty:
             st.info("No data found.")
         else:
-            tab_match, tab_agg = st.tabs(["📋 Match-by-Match", "📊 Career Aggregate"])
+            tab_match, tab_agg = st.tabs([" Match-by-Match", " Career Aggregate"])
 
             with tab_match:
                 st.markdown(f"### Performances with {min_wkts_spell}+ Wickets in First Spell")
@@ -4687,7 +4687,7 @@ elif metric_choice == "Boundary-less Overs Spell":
                 ['Boundary-less Overs', 'Max Consec Boundary-less'], ascending=[False, False]
             ).copy()
 
-            tab_bl_match, tab_bl_agg = st.tabs(["📋 Match Performances", "📊 All-Time Leaders"])
+            tab_bl_match, tab_bl_agg = st.tabs([" Match Performances", " All-Time Leaders"])
 
             with tab_bl_match:
                 st.markdown(f"### Performances with {min_bl_overs}+ Boundary-less Overs")
@@ -4803,7 +4803,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                 .rename(columns={'Max_Streak': 'Max Balls Without Boundary', 'Num_Droughts': 'No. of Droughts'})
             )
 
-            tab_inn, tab_match, tab_dist = st.tabs(["📋 Innings-wise", "📊 Match-wise", "📈 Distribution"])
+            tab_inn, tab_match, tab_dist = st.tabs([" Innings-wise", " Match-wise", " Distribution"])
 
             with tab_inn:
                 st.markdown(f"#### Innings with {min_balls}+ Consecutive Balls Without a Boundary")
@@ -4926,7 +4926,7 @@ elif metric_choice == "On This Day":
     otd_date_col, _ = st.columns([2, 3])
     with otd_date_col:
         selected_otd_date = st.date_input(
-            "📅 Select Date",
+            " Select Date",
             value=today,
             min_value=date(2000, 1, 1),
             max_value=today,
@@ -4947,7 +4947,7 @@ elif metric_choice == "On This Day":
         st.info(f"No matches found in the dataset on {month_name} {day_num} across any year.")
     else:
         # ---- Fastest individual 50s & 100s ----
-        with st.expander("⚡ Fastest Individual Milestones", expanded=True):
+        with st.expander(" Fastest Individual Milestones", expanded=True):
             f50_df = otd.get('fastest_50s', pd.DataFrame())
             if f50_df.empty:
                 st.info("No individual milestone innings on this date.")
@@ -4975,7 +4975,7 @@ elif metric_choice == "On This Day":
                     st.dataframe(f50_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
         # ---- Fastest team 50s & 100s ----
-        with st.expander("🚀 Fastest Team Milestones", expanded=True):
+        with st.expander(" Fastest Team Milestones", expanded=True):
             ft_df = otd.get('fastest_team_50s', pd.DataFrame())
             if ft_df.empty:
                 st.info("No team milestone innings on this date.")
@@ -5003,7 +5003,7 @@ elif metric_choice == "On This Day":
                     st.dataframe(ft_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
         # ---- Bowler first spell wickets ----
-        with st.expander("🎯 Bowler First Spell Wickets", expanded=True):
+        with st.expander(" Bowler First Spell Wickets", expanded=True):
             fs_df = otd.get('first_spell', pd.DataFrame())
             if fs_df.empty:
                 st.info("No notable first spell performances on this date.")
@@ -5026,7 +5026,7 @@ elif metric_choice == "On This Day":
                     st.dataframe(fs_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
         # ---- Boundary-less overs ----
-        with st.expander("🛡️ Boundary-less Overs Performances", expanded=True):
+        with st.expander(" Boundary-less Overs Performances", expanded=True):
             bl_df = otd.get('boundary_less', pd.DataFrame())
             if bl_df.empty:
                 st.info("No 3+ boundary-less over performances on this date.")
@@ -5085,9 +5085,9 @@ elif metric_choice == "Bowler Over Impact":
             CATEGORIES = ['Wicket & \u226410 Runs', 'No Wicket & \u226410 Runs', '>10 Runs in Over']
             # accent colour per category
             CAT_META = {
-                'Wicket & \u226410 Runs':     {'accent': '#00c853', 'icon': '🟢', 'border': '#00c853'},
-                'No Wicket & \u226410 Runs':  {'accent': '#2979ff', 'icon': '🔵', 'border': '#2979ff'},
-                '>10 Runs in Over':           {'accent': '#ff1744', 'icon': '🔴', 'border': '#ff1744'},
+                'Wicket & \u226410 Runs': {'accent': '#00c853', 'icon': '', 'border': '#00c853'},
+                'No Wicket & \u226410 Runs': {'accent': '#2979ff', 'icon': '', 'border': '#2979ff'},
+                '>10 Runs in Over': {'accent': '#ff1744', 'icon': '', 'border': '#ff1744'},
             }
             stat_keys = ['Matches', 'Wickets', 'Economy', 'Avg', 'SR', 'BPB', 'BP6', 'Dot %', 'Wkts / Match']
 
@@ -5237,27 +5237,27 @@ elif metric_choice == "Extra Deliveries Cost":
             st.info("No data available.")
         else:
             # ---- KPI Cards ----
-            total_wide_dels    = match_df['Wide_Deliveries'].sum()
-            total_wide_runs    = match_df['Wide_Balls'].sum()
-            total_nb_dels      = match_df['NoBall_Balls'].sum()
-            total_nb_runs      = match_df['NoBall_Runs'].sum()
-            total_extra_runs   = match_df['Extra_Ball_Runs'].sum()
-            total_after_extra  = match_df['Runs_After_Extra'].sum()
-            total_runs         = match_df['Team_Total_Runs'].sum()
-            overall_pct        = round(total_extra_runs / total_runs * 100, 1) if total_runs else 0
+            total_wide_dels = match_df['Wide_Deliveries'].sum()
+            total_wide_runs = match_df['Wide_Balls'].sum()
+            total_nb_dels = match_df['NoBall_Balls'].sum()
+            total_nb_runs = match_df['NoBall_Runs'].sum()
+            total_extra_runs = match_df['Extra_Ball_Runs'].sum()
+            total_after_extra = match_df['Runs_After_Extra'].sum()
+            total_runs = match_df['Team_Total_Runs'].sum()
+            overall_pct = round(total_extra_runs / total_runs * 100, 1) if total_runs else 0
 
             k1, k2, k3, k4, k5, k6 = st.columns(6)
-            k1.metric("🔴 Wide Deliveries",    f"{int(total_wide_dels)}",
+            k1.metric(" Wide Deliveries", f"{int(total_wide_dels)}",
                       help="Number of extra balls re-bowled due to wides")
-            k2.metric("💧 Wide Runs",           f"{int(total_wide_runs)}",
+            k2.metric(" Wide Runs", f"{int(total_wide_runs)}",
                       help="Total runs conceded from wide deliveries (penalty + any batter runs)")
-            k3.metric("🟠 No-Ball Deliveries",  f"{int(total_nb_dels)}",
+            k3.metric(" No-Ball Deliveries", f"{int(total_nb_dels)}",
                       help="Number of no-ball deliveries bowled")
-            k4.metric("🔥 No-Ball Runs",        f"{int(total_nb_runs)}",
+            k4.metric(" No-Ball Runs", f"{int(total_nb_runs)}",
                       help="Total runs conceded from no-ball deliveries (penalty + batter runs)")
-            k5.metric("🎯 Runs After Extra",    f"{int(total_after_extra)}",
+            k5.metric(" Runs After Extra", f"{int(total_after_extra)}",
                       help="Runs scored on the re-bowled delivery immediately after each wide/no-ball")
-            k6.metric("📊 Extra Run %",         f"{overall_pct}%",
+            k6.metric(" Extra Run %", f"{overall_pct}%",
                       help=f"{int(total_extra_runs)} runs from extra balls as % of {int(total_runs)} total runs conceded")
             st.markdown("---")
 
@@ -5798,15 +5798,15 @@ elif metric_choice == "Longest Wicketless Streaks":
                 start_date = pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
                 matches_spanned = window['match_id'].nunique()
             records.append({
-                'Bowler':          str(bowler),
-                'Team':            _safe_mode(window[team_col]) if (team_col and team_col in window.columns) else '',
-                'League':          _safe_mode(window['league']) if 'league' in window.columns else '',
-                'Season':          _safe_mode(window['year']) if 'year' in window.columns else '',
-                'Streak (Balls)':  streak_len,
-                'Streak (Overs)':  round(streak_len / 6, 1),
+                'Bowler': str(bowler),
+                'Team': _safe_mode(window[team_col]) if (team_col and team_col in window.columns) else '',
+                'League': _safe_mode(window['league']) if 'league' in window.columns else '',
+                'Season': _safe_mode(window['year']) if 'year' in window.columns else '',
+                'Streak (Balls)': streak_len,
+                'Streak (Overs)': round(streak_len / 6, 1),
                 'Matches Spanned': matches_spanned,
-                'Streak Start':    start_date,
-                'Streak End':      pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+                'Streak Start': start_date,
+                'Streak End': pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
             })
 
         records = []
@@ -5890,14 +5890,14 @@ elif metric_choice == "Longest Wicketless Streaks":
                 start_date = pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
                 matches_spanned = window['match_id'].nunique()
             records.append({
-                'Bowler':          str(bowler),
-                'Team':            _safe_mode2(window['team']) if not window.empty else '',
-                'League':          _safe_mode2(window['league']) if ('league' in window.columns and not window.empty) else '',
-                'Season':          _safe_mode2(window['year']) if ('year' in window.columns and not window.empty) else '',
-                'Streak (Overs)':  streak_len,
+                'Bowler': str(bowler),
+                'Team': _safe_mode2(window['team']) if not window.empty else '',
+                'League': _safe_mode2(window['league']) if ('league' in window.columns and not window.empty) else '',
+                'Season': _safe_mode2(window['year']) if ('year' in window.columns and not window.empty) else '',
+                'Streak (Overs)': streak_len,
                 'Matches Spanned': matches_spanned,
-                'Streak Start':    start_date,
-                'Streak End':      pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+                'Streak Start': start_date,
+                'Streak End': pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
             })
 
         records = []
@@ -5978,13 +5978,13 @@ elif metric_choice == "Longest Wicketless Streaks":
             if window.empty:
                 return
             records.append({
-                'Bowler':           str(bowler),
-                'Team':             _safe_mode(window['team']) if ('team' in window.columns and not window.empty) else '',
-                'League':           _safe_mode(window['league']) if ('league' in window.columns and not window.empty) else '',
-                'Season':           _safe_mode(window['year']) if ('year' in window.columns and not window.empty) else '',
+                'Bowler': str(bowler),
+                'Team': _safe_mode(window['team']) if ('team' in window.columns and not window.empty) else '',
+                'League': _safe_mode(window['league']) if ('league' in window.columns and not window.empty) else '',
+                'Season': _safe_mode(window['year']) if ('year' in window.columns and not window.empty) else '',
                 'Streak (Matches)': streak_len,
-                'Streak Start':     pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y'),
-                'Streak End':       pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+                'Streak Start': pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y'),
+                'Streak End': pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
             })
 
         records = []
@@ -6160,9 +6160,9 @@ elif metric_choice == "Balls Bowled Per Match":
 
         agg_cols = {
             'Legal Balls': ('is_valid_delivery', 'sum'),
-            'Wides':       ('wides', 'sum'),
-            'No Balls':    ('no_balls', 'sum'),
-            'date':        ('date', 'first'),
+            'Wides': ('wides', 'sum'),
+            'No Balls': ('no_balls', 'sum'),
+            'date': ('date', 'first'),
         }
         if team_col in d.columns:
             agg_cols['Batting Team'] = (team_col, 'first')
@@ -6207,9 +6207,9 @@ elif metric_choice == "Balls Bowled Per Match":
             lambda b: f"{int(b)//6}.{int(b)%6}"
         )
         match_total = match_total.rename(columns={
-            'Total_Balls':      'Total Legal Balls',
-            'Total_Wides':      'Total Wides',
-            'Total_NoBalls':    'Total No Balls',
+            'Total_Balls': 'Total Legal Balls',
+            'Total_Wides': 'Total Wides',
+            'Total_NoBalls': 'Total No Balls',
             'Total_Deliveries': 'Total Deliveries',
         })
 
@@ -6247,11 +6247,11 @@ elif metric_choice == "Balls Bowled Per Match":
                     for match_id, grp in inn_sorted.groupby('Match ID', observed=True, sort=False):
                         grp = grp.sort_values('Innings').reset_index(drop=True)
                         row = {
-                            'Date':            grp['Date'].iloc[0] if 'Date' in grp.columns else '',
-                            'Venue':           grp['Venue'].iloc[0] if 'Venue' in grp.columns else '',
-                            'League':          grp['League'].iloc[0] if 'League' in grp.columns else '',
-                            'Season':          grp['Season'].iloc[0] if 'Season' in grp.columns else '',
-                            'Total Balls':     int(grp['Total Deliveries'].sum()),
+                            'Date': grp['Date'].iloc[0] if 'Date' in grp.columns else '',
+                            'Venue': grp['Venue'].iloc[0] if 'Venue' in grp.columns else '',
+                            'League': grp['League'].iloc[0] if 'League' in grp.columns else '',
+                            'Season': grp['Season'].iloc[0] if 'Season' in grp.columns else '',
+                            'Total Balls': int(grp['Total Deliveries'].sum()),
                         }
                         for i in range(min(2, len(grp))):
                             r = grp.iloc[i]
@@ -6262,7 +6262,7 @@ elif metric_choice == "Balls Bowled Per Match":
                                 f"Wd: {int(r['Wides'])} | "
                                 f"Nb: {int(r['No Balls'])}"
                             )
-                            row[f'{label} Team']  = team
+                            row[f'{label} Team'] = team
                             row[f'{label} Stats'] = stats
                         rows.append(row)
 
@@ -6428,15 +6428,15 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
                 start_date = pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y')
                 matches_spanned = window['match_id'].nunique()
             records.append({
-                'Bowler':          str(bowler),
-                'Team':            _safe_mode(window[team_col]) if (team_col and team_col in window.columns) else '',
-                'League':          _safe_mode(window['league']) if 'league' in window.columns else '',
-                'Season':          _safe_mode(window['year']) if 'year' in window.columns else '',
-                'Streak (Balls)':  streak_len,
-                'Streak (Overs)':  round(streak_len / 6, 1),
+                'Bowler': str(bowler),
+                'Team': _safe_mode(window[team_col]) if (team_col and team_col in window.columns) else '',
+                'League': _safe_mode(window['league']) if 'league' in window.columns else '',
+                'Season': _safe_mode(window['year']) if 'year' in window.columns else '',
+                'Streak (Balls)': streak_len,
+                'Streak (Overs)': round(streak_len / 6, 1),
                 'Matches Spanned': matches_spanned,
-                'Streak Start':    start_date,
-                'Streak End':      pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+                'Streak Start': start_date,
+                'Streak End': pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
             })
 
         records = []
@@ -6521,17 +6521,17 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
                 team_val = str(tmode.iloc[0]) if not tmode.empty else ''
 
             records.append({
-                'Bowler':             str(bowler),
-                'Team':               team_val,
-                'Match':              str(grp['teams'].iloc[0]) if 'teams' in grp.columns else str(match_id),
-                'Date':               pd.to_datetime(grp['date'].iloc[0]).strftime('%d %b %Y'),
-                'League':             str(grp['league'].iloc[0]) if 'league' in grp.columns else '',
-                'Season':             str(grp['year'].iloc[0]) if 'year' in grp.columns else '',
-                'Innings':            f"{int(innings)}{'st' if innings == 1 else 'nd'}",
+                'Bowler': str(bowler),
+                'Team': team_val,
+                'Match': str(grp['teams'].iloc[0]) if 'teams' in grp.columns else str(match_id),
+                'Date': pd.to_datetime(grp['date'].iloc[0]).strftime('%d %b %Y'),
+                'League': str(grp['league'].iloc[0]) if 'league' in grp.columns else '',
+                'Season': str(grp['year'].iloc[0]) if 'year' in grp.columns else '',
+                'Innings': f"{int(innings)}{'st' if innings == 1 else 'nd'}",
                 'Max Six-Free Balls': max_streak,
                 'Max Six-Free Overs': round(max_streak / 6, 1),
-                'Total Balls':        len(grp),
-                'Sixes Conceded':     int((grp['runs.batter'] == 6).sum()),
+                'Total Balls': len(grp),
+                'Sixes Conceded': int((grp['runs.batter'] == 6).sum()),
             })
 
         if not records:
@@ -6580,12 +6580,12 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
             with st.spinner("Computing six-free career streaks..."):
                 sf_df = longest_six_free_streaks(sf_source)
             streak_col = 'Streak (Balls)'
-            overs_col  = 'Streak (Overs)'
+            overs_col = 'Streak (Overs)'
         else:
             with st.spinner("Computing single-innings six-free streaks..."):
                 sf_df = six_free_innings_streaks(sf_source)
             streak_col = 'Max Six-Free Balls'
-            overs_col  = 'Max Six-Free Overs'
+            overs_col = 'Max Six-Free Overs'
 
         if sf_player_filter and not sf_df.empty:
             sf_df = sf_df[sf_df['Bowler'].isin(sf_player_filter)]
@@ -6596,7 +6596,7 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
         if sf_df is None or sf_df.empty:
             st.info("No six-free streak data found. Try reducing the minimum balls threshold.")
         else:
-            tab_table, tab_league, tab_chart = st.tabs(["📋 Leaderboard", "🏏 By League", "📊 Chart"])
+            tab_table, tab_league, tab_chart = st.tabs([" Leaderboard", " By League", " Chart"])
 
             display_sf = sf_df.head(int(top_n_sf)).reset_index(drop=True)
             display_sf.index += 1
@@ -6754,7 +6754,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
         top_n_tdb = st.number_input("Top N rows", min_value=5, max_value=200, value=25, step=5, key="tdb_top_n")
 
         tab_innings, tab_match, tab_agg, tab_chart = st.tabs([
-            "📋 Innings-wise", "🏏 Match-wise", "📊 Team Summary", "📈 Charts"
+            " Innings-wise", " Match-wise", " Team Summary", " Charts"
         ])
 
         with tab_innings:
@@ -6913,30 +6913,30 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                 streak_window = grp.iloc[best_start: best_end + 1]
                 if has_over and not streak_window.empty:
                     over_from = int(streak_window['over'].iloc[0]) + 1
-                    over_to   = int(streak_window['over'].iloc[-1]) + 1
+                    over_to = int(streak_window['over'].iloc[-1]) + 1
                     over_range = f"Ov {over_from}–{over_to}"
                 else:
-                    over_from  = None
-                    over_to    = None
+                    over_from = None
+                    over_to = None
                     over_range = "—"
 
                 bowling_team = str(grp['bowling_team'].iloc[0]) if 'bowling_team' in grp.columns else ''
                 records.append({
-                    'Batting Team':          str(team),
-                    'Bowling Team':          bowling_team,
-                    'Match':                 str(grp['teams'].iloc[0]) if 'teams' in grp.columns else str(match_id),
-                    'Date':                  pd.to_datetime(grp['date'].iloc[0]).date(),
-                    'Innings':               f"{int(innings)}{'st' if innings == 1 else 'nd'}",
-                    'League':                str(grp['league'].iloc[0]) if 'league' in grp.columns else '',
-                    'Season':                str(grp['year'].iloc[0]) if 'year' in grp.columns else '',
-                    'Boundary-less Balls':   max_streak,
-                    'Boundary-less Overs':   round(max_streak / 6, 1),
-                    'Over Range':            over_range,
-                    'From Over':             over_from,
-                    'To Over':               over_to,
-                    'Total Legal Balls':      len(grp),
-                    'Boundaries Hit':         int(grp['is_boundary'].sum()),
-                    'Runs in Innings':        int(grp['runs.batter'].sum()),
+                    'Batting Team': str(team),
+                    'Bowling Team': bowling_team,
+                    'Match': str(grp['teams'].iloc[0]) if 'teams' in grp.columns else str(match_id),
+                    'Date': pd.to_datetime(grp['date'].iloc[0]).date(),
+                    'Innings': f"{int(innings)}{'st' if innings == 1 else 'nd'}",
+                    'League': str(grp['league'].iloc[0]) if 'league' in grp.columns else '',
+                    'Season': str(grp['year'].iloc[0]) if 'year' in grp.columns else '',
+                    'Boundary-less Balls': max_streak,
+                    'Boundary-less Overs': round(max_streak / 6, 1),
+                    'Over Range': over_range,
+                    'From Over': over_from,
+                    'To Over': over_to,
+                    'Total Legal Balls': len(grp),
+                    'Boundaries Hit': int(grp['is_boundary'].sum()),
+                    'Runs in Innings': int(grp['runs.batter'].sum()),
                 })
 
             inn_df = pd.DataFrame(records).sort_values('Boundary-less Balls', ascending=False).reset_index(drop=True) if records else pd.DataFrame()
@@ -6947,16 +6947,16 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                 for team, grp in inn_df.groupby('Batting Team', observed=True):
                     best_row = grp.nlargest(1, 'Boundary-less Balls').iloc[0]
                     career_records.append({
-                        'Batting Team':        team,
-                        'League':              best_row['League'],
+                        'Batting Team': team,
+                        'League': best_row['League'],
                         'Career Best (Balls)': best_row['Boundary-less Balls'],
                         'Career Best (Overs)': best_row['Boundary-less Overs'],
-                        'Over Range':          best_row['Over Range'],
-                        'vs':                  best_row['Bowling Team'],
-                        'Match':               best_row['Match'],
-                        'Date':                best_row['Date'],
-                        'Season':              best_row['Season'],
-                        'Innings':             best_row['Innings'],
+                        'Over Range': best_row['Over Range'],
+                        'vs': best_row['Bowling Team'],
+                        'Match': best_row['Match'],
+                        'Date': best_row['Date'],
+                        'Season': best_row['Season'],
+                        'Innings': best_row['Innings'],
                         'Total Occurrences (20+)': int((grp['Boundary-less Balls'] >= 20).sum()),
                     })
                 career_df = pd.DataFrame(career_records).sort_values('Career Best (Balls)', ascending=False).reset_index(drop=True)
@@ -6979,7 +6979,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
             filtered_tbl = tbl_inn_df[tbl_inn_df['Boundary-less Balls'] >= int(min_streak_tbl)]
 
             tab_inn, tab_career, tab_chart = st.tabs([
-                "📋 Innings Performances", "🏆 Team Career Best", "📊 Charts"
+                " Innings Performances", " Team Career Best", " Charts"
             ])
 
             with tab_inn:
@@ -7090,7 +7090,7 @@ elif metric_choice == "Balls Per Boundary (Phase)":
         (_bpb_base['tournament_match_no'] >= bpb_tm_range[0]) &
         (_bpb_base['tournament_match_no'] <= bpb_tm_range[1])
     ]
-    st.caption(f"📊 {_bpb_src['match_id'].nunique():,} matches | "
+    st.caption(f" {_bpb_src['match_id'].nunique():,} matches | "
                f"{len(_bpb_src[_bpb_src['innings'].isin([1,2])]):,} deliveries in scope")
 
     bpb_df = balls_per_boundary_phase(_bpb_src)
@@ -7165,12 +7165,12 @@ elif metric_choice == "Balls Per Boundary (Phase)":
                     fig_bpb.update_layout(xaxis=dict(type='category'), yaxis_title="Balls Per Boundary")
                 st.plotly_chart(fig_bpb, width="stretch")
 
-                with st.expander("📋 Data Table"):
+                with st.expander(" Data Table"):
                     disp = lg_df[['Year', 'Phase', 'Legal_Balls', 'Boundaries', 'BPB']].sort_values(['Year', 'Phase']).reset_index(drop=True)
                     disp.index += 1
                     st.dataframe(disp, width="stretch")
 
-    else:  # Team-wise
+    else: # Team-wise
         bpb_team_df = balls_per_boundary_phase_team(_bpb_src)
         if bpb_team_df.empty:
             st.info("No team data available.")
@@ -7227,7 +7227,7 @@ elif metric_choice == "Balls Per Boundary (Phase)":
                     st.markdown("##### Best Team per Season")
                     st.dataframe(best_per_year.reset_index(drop=True), width="stretch")
 
-                    with st.expander("📋 Full Data Table"):
+                    with st.expander(" Full Data Table"):
                         disp_t = lg_df[['Year', 'Team', 'Phase', 'Legal_Balls', 'Boundaries', 'BPB']].sort_values(['Year', 'BPB']).reset_index(drop=True)
                         disp_t.index += 1
                         st.dataframe(disp_t, width="stretch")
@@ -7263,7 +7263,7 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
         (_brp_base['tournament_match_no'] >= brp_tm_range[0]) &
         (_brp_base['tournament_match_no'] <= brp_tm_range[1])
     ]
-    st.caption(f"📊 {_brp_src['match_id'].nunique():,} matches | "
+    st.caption(f" {_brp_src['match_id'].nunique():,} matches | "
                f"{len(_brp_src[_brp_src['innings'].isin([1,2])]):,} deliveries in scope")
 
     brp_df = boundary_runs_pct(_brp_src)
@@ -7282,10 +7282,10 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                     continue
 
                 k1, k2, k3, k4 = st.columns(4)
-                k1.metric("Avg Boundary %",  f"{lg_df['Pct'].mean():.1f}%")
+                k1.metric("Avg Boundary %", f"{lg_df['Pct'].mean():.1f}%")
                 k2.metric("Peak Boundary %", f"{lg_df['Pct'].max():.1f}% ({int(lg_df.loc[lg_df['Pct'].idxmax(), 'Year'])})")
-                k3.metric("Total Fours",     f"{int(lg_df['Fours'].sum()):,}")
-                k4.metric("Total Sixes",     f"{int(lg_df['Sixes'].sum()):,}")
+                k3.metric("Total Fours", f"{int(lg_df['Fours'].sum()):,}")
+                k4.metric("Total Sixes", f"{int(lg_df['Sixes'].sum()):,}")
 
                 fig_brp = px.bar(lg_df, x='Year', y='Pct', text='Pct', color='Pct',
                     color_continuous_scale='RdYlGn',
@@ -7309,13 +7309,13 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                 fig_stack.update_layout(xaxis=dict(type='category'), yaxis_title="Total Runs")
                 st.plotly_chart(fig_stack, width="stretch")
 
-                with st.expander("📋 Data Table"):
+                with st.expander(" Data Table"):
                     disp_brp = lg_df[['Year', 'Fours', 'Sixes', 'Boundary_Runs', 'Total_Runs', 'Pct']].rename(
                         columns={'Pct': 'Boundary %'}).sort_values('Year').reset_index(drop=True)
                     disp_brp.index += 1
                     st.dataframe(disp_brp, width="stretch")
 
-    else:  # Team-wise
+    else: # Team-wise
         brp_team_df = boundary_runs_pct_team(_brp_src)
         if brp_team_df.empty:
             st.info("No team data available.")
@@ -7342,7 +7342,7 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                     k1, k2 = st.columns(2)
                     suffix = "%" if brp_metric == "Boundary %" else ""
                     k1.metric(f"Highest {brp_metric}", f"{best_row[y_col]:.1f}{suffix} — {best_row['Team']} ({int(best_row['Year'])})")
-                    k2.metric(f"Lowest {brp_metric}",  f"{worst_row[y_col]:.1f}{suffix} — {worst_row['Team']} ({int(worst_row['Year'])})")
+                    k2.metric(f"Lowest {brp_metric}", f"{worst_row[y_col]:.1f}{suffix} — {worst_row['Team']} ({int(worst_row['Year'])})")
 
                     plot_df = pd.concat([lg_df[['Year', 'Team', y_col]], lg_overall], ignore_index=True)
                     text_fmt = '%{text:.1f}%' if brp_metric == "Boundary %" else '%{text:,}'
@@ -7371,7 +7371,7 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                     st.markdown("##### Best Team per Season")
                     st.dataframe(best_per_yr.reset_index(drop=True), width="stretch")
 
-                    with st.expander("📋 Full Data Table"):
+                    with st.expander(" Full Data Table"):
                         disp_t = lg_df[['Year', 'Team', 'Fours', 'Sixes', 'Boundary_Runs', 'Total_Runs', 'Pct']].rename(
                             columns={'Pct': 'Boundary %'}).sort_values(['Year', 'Boundary %'], ascending=[True, False]).reset_index(drop=True)
                         disp_t.index += 1
@@ -7409,7 +7409,7 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
         (_pprr_base['tournament_match_no'] <= pprr_tm_range[1])
     ]
     _pprr_pp = _pprr_src[(_pprr_src['phase'] == 'Powerplay') & (_pprr_src['innings'].isin([1, 2]))]
-    st.caption(f"📊 {_pprr_src['match_id'].nunique():,} matches | "
+    st.caption(f" {_pprr_src['match_id'].nunique():,} matches | "
                f"{len(_pprr_pp):,} PP deliveries in scope")
 
     pprr_df = powerplay_rr_yearwise(_pprr_src)
@@ -7430,8 +7430,8 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
                 k1, k2, k3 = st.columns(3)
                 k1.metric("Avg PP Run Rate", f"{lg_df['Avg_RR'].mean():.2f}")
                 peak_row = lg_df.loc[lg_df['Avg_RR'].idxmax()]
-                k2.metric("Peak PP RR",      f"{peak_row['Avg_RR']:.2f} ({int(peak_row['Year'])})")
-                k3.metric("Total Matches",   f"{int(lg_df['Matches'].sum())}")
+                k2.metric("Peak PP RR", f"{peak_row['Avg_RR']:.2f} ({int(peak_row['Year'])})")
+                k3.metric("Total Matches", f"{int(lg_df['Matches'].sum())}")
 
                 fig_pprr = px.bar(lg_df, x='Year', y='Avg_RR', text='Avg_RR',
                     color='Avg_RR', color_continuous_scale='Blues',
@@ -7450,14 +7450,14 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
                     yaxis_title="Average PP Run Rate", coloraxis_showscale=False)
                 st.plotly_chart(fig_pprr, width="stretch")
 
-                with st.expander("📋 Data Table"):
+                with st.expander(" Data Table"):
                     disp_pprr = lg_df[['Year', 'Avg_RR', 'Matches', 'Total_Innings']].rename(columns={
                         'Avg_RR': 'Avg PP Run Rate', 'Total_Innings': 'Innings'
                     }).sort_values('Year').reset_index(drop=True)
                     disp_pprr.index += 1
                     st.dataframe(disp_pprr, width="stretch")
 
-    else:  # Team-wise
+    else: # Team-wise
         pprr_team_df = powerplay_rr_yearwise_team(_pprr_src)
         if pprr_team_df.empty:
             st.info("No team data available.")
@@ -7480,7 +7480,7 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
                     worst_row = lg_df.loc[lg_df['Avg_RR'].idxmin()]
                     k1, k2 = st.columns(2)
                     k1.metric("Highest PP RR", f"{best_row['Avg_RR']:.2f} — {best_row['Team']} ({int(best_row['Year'])})")
-                    k2.metric("Lowest PP RR",  f"{worst_row['Avg_RR']:.2f} — {worst_row['Team']} ({int(worst_row['Year'])})")
+                    k2.metric("Lowest PP RR", f"{worst_row['Avg_RR']:.2f} — {worst_row['Team']} ({int(worst_row['Year'])})")
 
                     plot_df = pd.concat([lg_df[['Year', 'Team', 'Avg_RR']], lg_overall], ignore_index=True)
 
@@ -7508,7 +7508,7 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
                     st.markdown("##### Best PP Run Rate per Season")
                     st.dataframe(best_per_yr.reset_index(drop=True), width="stretch")
 
-                    with st.expander("📋 Full Data Table"):
+                    with st.expander(" Full Data Table"):
                         disp_t = lg_df[['Year', 'Team', 'Avg_RR', 'Innings']].rename(
                             columns={'Avg_RR': 'Avg PP Run Rate'}
                         ).sort_values(['Year', 'Avg PP Run Rate'], ascending=[True, False]).reset_index(drop=True)
@@ -7555,7 +7555,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
         st.info("No bowling comparison data available for the selected filters.")
     else:
         _phase_cols = ['PP Econ', 'Middle Econ', 'Death Econ']
-        _base_cols  = ['Name', 'Economy', 'Average', 'Bowling SR', 'Wickets', 'Wkts/Match', 'Dot%'] + _phase_cols
+        _base_cols = ['Name', 'Economy', 'Average', 'Bowling SR', 'Wickets', 'Wkts/Match', 'Dot%'] + _phase_cols
 
         leagues_in_bc = sorted(bc_table['League'].dropna().unique())
         league_tabs = st.tabs([str(lg) for lg in leagues_in_bc])
@@ -7612,7 +7612,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                             st.plotly_chart(fig_p, width="stretch")
 
                     else:
-                        year_tab_labels = [str(y) for y in active_years] + ["⚖️ Compare"]
+                        year_tab_labels = [str(y) for y in active_years] + [" Compare"]
                         year_sub_tabs = st.tabs(year_tab_labels)
 
                         for j, yr in enumerate(active_years):
