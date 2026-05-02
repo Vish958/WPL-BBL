@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 from datetime import date
+import gc
 
 st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
@@ -16,10 +17,6 @@ st.markdown("Last updated: 01 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
-
-# Force clear cache on startup to ensure new player matching logic is used
-# Remove this after confirming the fix works
-st.cache_data.clear()
 
 @st.cache_data
 def load_venue_data():
@@ -49,10 +46,21 @@ def load_data(path=DATA_SOURCE, _cache_version=6):  # Version 6: Added event_sta
     try:
         df = pd.read_parquet(path)
         
-        # Memory optimization
+        # Memory optimization: phase normalization
         if 'phase' in df.columns:
             df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
         
+        # Downcast numeric columns to reduce memory footprint
+        for col in df.select_dtypes(include=['int64']).columns:
+            col_min, col_max = df[col].min(), df[col].max()
+            if col_min >= np.iinfo(np.int16).min and col_max <= np.iinfo(np.int16).max:
+                df[col] = df[col].astype(np.int16)
+            elif col_min >= np.iinfo(np.int32).min and col_max <= np.iinfo(np.int32).max:
+                df[col] = df[col].astype(np.int32)
+        for col in df.select_dtypes(include=['float64']).columns:
+            df[col] = pd.to_numeric(df[col], downcast='float')
+        
+        # Convert high-cardinality string columns to category
         cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
         for col in df.columns:
             if col in cat_cols or df[col].dtype == 'object':
@@ -62,6 +70,7 @@ def load_data(path=DATA_SOURCE, _cache_version=6):  # Version 6: Added event_sta
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
         
+        gc.collect()
         return df
     except Exception as e:
         st.error(f"Data not found or failed to load: {e}")
@@ -297,11 +306,13 @@ df = load_data(_cache_version=6)  # Version 6: Added event_stage column for play
 if df.empty:
     st.stop()
 
-# Load and merge venue data
+# Venue data is now merged inside load_data via cache.
+# If venue/city columns are missing (old cache), add them once.
 venue_map = load_venue_data()
-if venue_map:
+if venue_map and 'city' not in df.columns:
     df['venue'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('venue', 'Unknown'))
     df['city'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('city', 'Unknown'))
+
 
 # Load player data for pace/spin and batting hand mapping
 player_data_cache = load_player_data(_cache_version=9)
@@ -1710,7 +1721,7 @@ if metric_choice == "Powerplay Score Tracker":
             else:
                 display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'PP_Runs_Conceded', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types']
             
-            st.dataframe(match_stats[[c for c in display_cols if c in match_stats.columns]], use_container_width=True)
+            st.dataframe(match_stats[[c for c in display_cols if c in match_stats.columns]], width="stretch")
             
             # Trend chart
             if show_trend and not match_stats.empty:
@@ -1726,11 +1737,11 @@ if metric_choice == "Powerplay Score Tracker":
                     title = "Powerplay Runs Conceded Trend Over Matches"
                 
                 fig = px.line(trend_df, x='Date', y=y_col, color='Team', markers=True, title=title)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
         
         with tab2:
             if not season_summary.empty:
-                st.dataframe(season_summary, use_container_width=True)
+                st.dataframe(season_summary, width="stretch")
                 
                 if mode_val == 'batting':
                     fig = px.bar(season_summary, x='Team', y='Avg_PP_Runs', color='Season', 
@@ -1738,7 +1749,7 @@ if metric_choice == "Powerplay Score Tracker":
                 else:
                     fig = px.bar(season_summary, x='Team', y='Avg_Runs_Conceded', color='Season',
                                 barmode='group', title="Average PP Runs Conceded by Team")
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
         
         with tab3:
             st.markdown("#### Venue-wise Powerplay Performance")
@@ -1765,14 +1776,14 @@ if metric_choice == "Powerplay Score Tracker":
                     venue_summary['Avg_Wickets_Lost'] = venue_summary['Avg_Wickets_Lost'].round(2)
                     venue_summary = venue_summary.sort_values('Avg_PP_Runs', ascending=False)
                     
-                    st.dataframe(venue_summary, use_container_width=True)
+                    st.dataframe(venue_summary, width="stretch")
                     
                     # Chart
                     fig = px.bar(venue_summary.head(15), x='Venue', y='Avg_PP_Runs',
                                 color='Avg_PP_RR', color_continuous_scale='RdYlGn',
                                 title="Avg Powerplay Runs by Venue (Top 15)")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 else:
                     venue_summary = venue_stats_df.groupby('Venue', observed=True).agg(
                         Matches=('match_id', 'nunique'),
@@ -1787,14 +1798,14 @@ if metric_choice == "Powerplay Score Tracker":
                     venue_summary['Avg_Wickets'] = venue_summary['Avg_Wickets'].round(2)
                     venue_summary = venue_summary.sort_values('Avg_Runs_Conceded', ascending=True)
                     
-                    st.dataframe(venue_summary, use_container_width=True)
+                    st.dataframe(venue_summary, width="stretch")
                     
                     # Chart
                     fig = px.bar(venue_summary.head(15), x='Venue', y='Avg_Runs_Conceded',
                                 color='Avg_Wickets', color_continuous_scale='RdYlGn_r',
                                 title="Avg Powerplay Runs Conceded by Venue (Top 15)")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
             else:
                 st.info("Venue data not available for match-level analysis.")
         
@@ -1874,7 +1885,7 @@ if metric_choice == "Powerplay Score Tracker":
                         st.metric("Eliminators", eliminators_count)
                     
                     # Show table
-                    st.dataframe(playoff_stats[[c for c in display_cols if c in playoff_stats.columns]], use_container_width=True)
+                    st.dataframe(playoff_stats[[c for c in display_cols if c in playoff_stats.columns]], width="stretch")
                     
                     # Stage-wise summary
                     st.markdown("##### Stage-wise Summary")
@@ -1897,7 +1908,7 @@ if metric_choice == "Powerplay Score Tracker":
                         stage_summary['Avg_Runs_Conceded'] = stage_summary['Avg_Runs_Conceded'].round(1)
                         stage_summary['Avg_Econ'] = stage_summary['Avg_Econ'].round(2)
                     
-                    st.dataframe(stage_summary, use_container_width=True)
+                    st.dataframe(stage_summary, width="stretch")
 
 
 elif metric_choice == "DRS Analysis":
@@ -1970,11 +1981,11 @@ elif metric_choice == "DRS Analysis":
                     stats['Reviews_Lost'] = stats['Failed']
                     stats = stats.rename(columns={'review_by_team': 'Team', 'year': 'Season'})
                     
-                    st.dataframe(stats[['Team', 'Season', 'Total_Reviews', 'Successful', 'Reviews_Lost', 'Success_Rate', 'Umpires_Call']], use_container_width=True)
+                    st.dataframe(stats[['Team', 'Season', 'Total_Reviews', 'Successful', 'Reviews_Lost', 'Success_Rate', 'Umpires_Call']], width="stretch")
                     
                     fig = px.bar(stats, x='Team', y='Success_Rate', color='Season',
                                 barmode='group', title=f"DRS Success Rate by Team (%) - {review_role_filter}")
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
             
             # =====================
             # NEW: BOWLING VS BATTING REVIEWS
@@ -1995,12 +2006,12 @@ elif metric_choice == "DRS Analysis":
                 col1, col2 = st.columns(2)
                 with col1:
                     st.markdown("#### Summary by Role")
-                    st.dataframe(role_summary[['Review By', 'Season', 'Total_Reviews', 'Successful', 'Failed', 'Success_Rate', 'Umpires_Call']], use_container_width=True)
+                    st.dataframe(role_summary[['Review By', 'Season', 'Total_Reviews', 'Successful', 'Failed', 'Success_Rate', 'Umpires_Call']], width="stretch")
                 
                 with col2:
                     fig = px.bar(role_summary, x='Review By', y='Total_Reviews', color='Season',
                                 barmode='group', title="Total Reviews: Bowling vs Batting")
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 
                 # Success rate comparison
                 st.markdown("---")
@@ -2019,7 +2030,7 @@ elif metric_choice == "DRS Analysis":
                                 title="Reviews Distribution: Bowling vs Batting",
                                 color='review_type_role',
                                 color_discrete_map={'Bowling': '#1f77b4', 'Batting': '#ff7f0e'})
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 
                 with col2:
                     fig = px.bar(role_agg, x='review_type_role', y='Success_Rate',
@@ -2027,7 +2038,7 @@ elif metric_choice == "DRS Analysis":
                                 title="Success Rate by Review Type (%)",
                                 color_discrete_map={'Bowling': '#1f77b4', 'Batting': '#ff7f0e'})
                     fig.update_layout(showlegend=False)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 
                 # Team-wise breakdown
                 st.markdown("---")
@@ -2050,12 +2061,12 @@ elif metric_choice == "DRS Analysis":
                 ).reset_index()
                 pivot_df.columns = ['Team'] + [f'{col[0]}_{col[1]}' for col in pivot_df.columns[1:]]
                 
-                st.dataframe(team_role.sort_values('Reviews', ascending=False), use_container_width=True)
+                st.dataframe(team_role.sort_values('Reviews', ascending=False), width="stretch")
                 
                 fig = px.bar(team_role, x='Team', y='Reviews', color='Review Type',
                             barmode='group', title="Reviews by Team: Bowling vs Batting")
                 fig.update_xaxes(tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             
             # =====================
             # 2. MATCH-BY-MATCH DRS
@@ -2099,14 +2110,14 @@ elif metric_choice == "DRS Analysis":
                 display_df = match_team_stats[display_cols].copy()
                 display_df.columns = ['Match', 'Date', 'Review Taken By', 'Total Reviews', 'Successful', 'Unsuccessful', 'Ump Call']
                 
-                st.dataframe(display_df, use_container_width=True)
+                st.dataframe(display_df, width="stretch")
                 
                 # Bar chart
                 fig = px.bar(display_df.head(20), x='Review Taken By', y='Total Reviews', 
                             color='Successful', barmode='group',
                             title="DRS Reviews by Team (Top 20)")
                 fig.update_xaxes(tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             
             # =====================
             # NEW: VENUE ANALYSIS
@@ -2132,7 +2143,7 @@ elif metric_choice == "DRS Analysis":
                 venue_stats['Reviews_Per_Match'] = (venue_stats['Total_Reviews'] / venue_stats['Matches_With_Reviews']).round(2)
                 venue_stats = venue_stats.sort_values('Total_Reviews', ascending=False)
                 
-                st.dataframe(venue_stats, use_container_width=True)
+                st.dataframe(venue_stats, width="stretch")
                 
                 col1, col2 = st.columns(2)
                 with col1:
@@ -2140,12 +2151,12 @@ elif metric_choice == "DRS Analysis":
                                 color='Overturn_Rate', color_continuous_scale='RdYlGn',
                                 title="Most Reviewed Venues (Top 15)")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 with col2:
                     fig = px.bar(venue_stats.head(15), x='Venue', y='Overturn_Rate',
                                 title="DRS Overturn Rate by Venue (%) - Top 15")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 
                 # Additional breakdown by venue and team
                 st.markdown("---")
@@ -2164,7 +2175,7 @@ elif metric_choice == "DRS Analysis":
                 top_venues = venue_stats.head(10)['Venue'].tolist()
                 venue_team_filtered = venue_team_stats[venue_team_stats['Venue'].isin(top_venues)]
                 
-                st.dataframe(venue_team_filtered, use_container_width=True)
+                st.dataframe(venue_team_filtered, width="stretch")
             
             # =====================
             # 3. UMPIRE ANALYSIS
@@ -2186,19 +2197,19 @@ elif metric_choice == "DRS Analysis":
                     umpire_stats = umpire_stats.rename(columns={'review_umpire': 'Umpire'})
                     umpire_stats = umpire_stats.sort_values('Total_Reviews', ascending=False)
                     
-                    st.dataframe(umpire_stats, use_container_width=True)
+                    st.dataframe(umpire_stats, width="stretch")
                     
                     col1, col2 = st.columns(2)
                     with col1:
                         fig = px.bar(umpire_stats.head(15), x='Umpire', y='Total_Reviews', 
                                     title="Most Reviewed Umpires")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
                     with col2:
                         fig = px.bar(umpire_stats.head(15), x='Umpire', y='Overturn_Rate',
                                     title="Umpire Overturn Rate (%)")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
             
             # =====================
             # 4. PLAYER ANALYSIS (WHO TOOK REVIEWS)
@@ -2218,12 +2229,12 @@ elif metric_choice == "DRS Analysis":
                 player_stats = player_stats.rename(columns={'bowler': 'Bowler', 'review_by_team': 'Team'})
                 player_stats = player_stats.sort_values('Total_Reviews', ascending=False)
                 
-                st.dataframe(player_stats, use_container_width=True)
+                st.dataframe(player_stats, width="stretch")
                 
                 fig = px.bar(player_stats.head(20), x='Bowler', y='Total_Reviews', color='Team',
                             title="Top 20 Bowlers by DRS Reviews Involved")
                 fig.update_xaxes(tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             
             # =====================
             # 5. AGAINST PLAYER (BATTER REVIEWED)
@@ -2246,18 +2257,18 @@ elif metric_choice == "DRS Analysis":
                     batter_stats = batter_stats.rename(columns={'review_batter': 'Batter'})
                     batter_stats = batter_stats.sort_values('Total_Reviews', ascending=False)
                     
-                    st.dataframe(batter_stats, use_container_width=True)
+                    st.dataframe(batter_stats, width="stretch")
                     
                     col1, col2 = st.columns(2)
                     with col1:
                         fig = px.bar(batter_stats.head(15), x='Batter', y='Total_Reviews',
                                     title="Top 15 Batters with Most Reviews Against")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
                     with col2:
                         fig = px.pie(batter_stats.head(10), values='Total_Reviews', names='Batter',
                                     title="Reviews Distribution (Top 10 Batters)")
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 # =========================================
 # OVER-BY-OVER ANALYSIS
 # =========================================
@@ -2310,7 +2321,7 @@ elif metric_choice == "Over-by-Over Analysis":
             top_overs['Date'] = pd.to_datetime(top_overs['Date']).dt.date
             
             st.dataframe(top_overs[['Batter', 'Team', 'Date', 'Over', 'Runs', 'Balls', 'Season']].astype({'Batter': str, 'Team': str}), 
-                        use_container_width=True)
+                        width="stretch")
             
             # Aggregate: Which batter has most "big overs" (e.g., 15+ runs)
             st.markdown("### Batters with most 15+ run overs")
@@ -2320,13 +2331,13 @@ elif metric_choice == "Over-by-Over Analysis":
             
             col1, col2 = st.columns([1, 2])
             with col1:
-                st.dataframe(big_overs.astype({'Batter': str, 'Team': str}), use_container_width=True)
+                st.dataframe(big_overs.astype({'Batter': str, 'Team': str}), width="stretch")
             with col2:
                 if not big_overs.empty:
                     fig = px.bar(big_overs.head(15).astype({'Batter': str, 'Team': str}), x='Batter', y='Big_Overs', color='Team',
                                 title="Batters with Most 15+ Run Overs")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
         
         with tab2:
             st.markdown("### Bowlers who conceded most runs in a single over")
@@ -2344,7 +2355,7 @@ elif metric_choice == "Over-by-Over Analysis":
             expensive_overs['Date'] = pd.to_datetime(expensive_overs['Date']).dt.date
             
             st.dataframe(expensive_overs[['Bowler', 'Team', 'Date', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].astype({'Bowler': str, 'Team': str}), 
-                        use_container_width=True)
+                        width="stretch")
             
             # Aggregate: Bowlers with most "expensive overs" (20+ runs)
             st.markdown("### Bowlers with most 20+ run overs conceded")
@@ -2354,13 +2365,13 @@ elif metric_choice == "Over-by-Over Analysis":
             
             col1, col2 = st.columns([1, 2])
             with col1:
-                st.dataframe(exp_overs.astype({'Bowler': str, 'Team': str}), use_container_width=True)
+                st.dataframe(exp_overs.astype({'Bowler': str, 'Team': str}), width="stretch")
             with col2:
                 if not exp_overs.empty:
                     fig = px.bar(exp_overs.head(15).astype({'Bowler': str, 'Team': str}), x='Bowler', y='Expensive_Overs', color='Team',
                                 title="Bowlers with Most 20+ Run Overs")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
         
         with tab3:
             st.markdown("### Average runs per over across all matches")
@@ -2381,13 +2392,13 @@ elif metric_choice == "Over-by-Over Analysis":
                 fig = px.bar(over_summary, x='Over', y='Avg_Runs', 
                             title="Average Runs per Over",
                             color='Avg_Runs', color_continuous_scale='RdYlGn')
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             with col2:
                 fig = px.line(over_summary, x='Over', y='Wicket_Rate',
                              title="Average Wickets per Over", markers=True)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             
-            st.dataframe(over_summary, use_container_width=True)
+            st.dataframe(over_summary, width="stretch")
         
         with tab4:
             st.markdown("### Batter — Performance by Over")
@@ -2411,7 +2422,7 @@ elif metric_choice == "Over-by-Over Analysis":
                 
                 st.dataframe(
                     bp_overs[['Date', 'Match', 'Team', 'Over', 'Runs', 'Balls', 'SR_Over', 'Season']].head(50),
-                    use_container_width=True
+                    width="stretch"
                 )
                 
                 # Aggregate by over number
@@ -2427,7 +2438,7 @@ elif metric_choice == "Over-by-Over Analysis":
                     title=f"{sel_obo_batter} — Average Runs by Over",
                     hover_data=['Innings']
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             else:
                 st.info("Select a batter to view their over-by-over profile.")
         
@@ -2452,7 +2463,7 @@ elif metric_choice == "Over-by-Over Analysis":
                 
                 st.dataframe(
                     bwp_overs[['Date', 'Match', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].head(50),
-                    use_container_width=True
+                    width="stretch"
                 )
                 
                 # Aggregate by over number
@@ -2469,7 +2480,7 @@ elif metric_choice == "Over-by-Over Analysis":
                     title=f"{sel_obo_bowler} — Average Runs Conceded by Over (colour = wickets)",
                     hover_data=['Total_Wickets', 'Innings']
                 )
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             else:
                 st.info("Select a bowler to view their over-by-over profile.")
 
@@ -2549,7 +2560,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                 dom_cols = ['Batter', 'Bowler', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']
                 if not matchup_aggregate:
                     dom_cols = ['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team'] + dom_cols[2:]
-                st.dataframe(batter_dominant[dom_cols], use_container_width=True)
+                st.dataframe(batter_dominant[dom_cols], width="stretch")
                 
                 if not batter_dominant.empty:
                     batter_dominant = batter_dominant.copy()
@@ -2558,7 +2569,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                                 color_continuous_scale='RdYlGn',
                                 title="Top Batter vs Bowler (Most Runs, Never Out)")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
             
             with tab2:
                 st.markdown("### Bowlers who dominate specific batters")
@@ -2574,7 +2585,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                     dom2_cols = ['Bowler', 'Batter', 'Innings', 'Dismissals', 'Runs', 'Balls', 'Avg']
                     if not matchup_aggregate:
                         dom2_cols = ['Bowler', 'Bowling_Team', 'Batter', 'Batting_Team'] + dom2_cols[2:]
-                    st.dataframe(bowler_dominant[dom2_cols], use_container_width=True)
+                    st.dataframe(bowler_dominant[dom2_cols], width="stretch")
                     
                     bowler_dominant = bowler_dominant.copy()
                     bowler_dominant['Matchup'] = bowler_dominant['Bowler'] + ' vs ' + bowler_dominant['Batter']
@@ -2582,7 +2593,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                                 color_continuous_scale='RdYlGn_r',
                                 title="Top Bowler vs Batter (Most Dismissals)")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
             
             with tab3:
                 st.markdown("### Search for specific matchup")
@@ -2607,7 +2618,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                         sr_cols = ['Batter', 'Bowler', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg']
                         if not matchup_aggregate:
                             sr_cols = ['Batter', 'Batting_Team', 'Bowler', 'Bowling_Team'] + sr_cols[2:]
-                        st.dataframe(search_result[sr_cols], use_container_width=True)
+                        st.dataframe(search_result[sr_cols], width="stretch")
                         
                         if len(search_result) > 1:
                             if search_batter:
@@ -2616,14 +2627,14 @@ elif metric_choice == "Batter vs Bowler Matchup":
                                             color_continuous_scale='RdYlGn',
                                             title=f"{search_batter}'s Record Against Bowlers")
                                 fig.update_xaxes(tickangle=45)
-                                st.plotly_chart(fig, use_container_width=True)
+                                st.plotly_chart(fig, width="stretch")
                             elif search_bowler:
                                 fig = px.bar(search_result.sort_values('Dismissals', ascending=False).head(15), 
                                             x='Batter', y='Dismissals', color='Avg',
                                             color_continuous_scale='RdYlGn_r',
                                             title=f"{search_bowler}'s Record Against Batters")
                                 fig.update_xaxes(tickangle=45)
-                                st.plotly_chart(fig, use_container_width=True)
+                                st.plotly_chart(fig, width="stretch")
             
             with tab4:
                 st.markdown("### Batter — Most Runs in a Single Over")
@@ -2648,7 +2659,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                     st.markdown(f"**{sel_batter_t4} — Top Scoring Overs**")
                     st.dataframe(
                         batter_overs[['Date', 'Opponent', 'Team', 'Over', 'Runs', 'Balls', 'SR_Over', 'Season']].head(30),
-                        use_container_width=True
+                        width="stretch"
                     )
                     
                     if not batter_overs.empty:
@@ -2661,7 +2672,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                             title=f"{sel_batter_t4} — Most Runs in a Single Over"
                         )
                         fig.update_xaxes(title='Match / Over', tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
                 else:
                     st.info("Select a batter to see their best individual overs.")
             
@@ -2688,7 +2699,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                     st.markdown(f"**{sel_bowler_t5} — Most Expensive Overs**")
                     st.dataframe(
                         bowler_overs[['Date', 'Match', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].head(30),
-                        use_container_width=True
+                        width="stretch"
                     )
                     
                     if not bowler_overs.empty:
@@ -2701,7 +2712,7 @@ elif metric_choice == "Batter vs Bowler Matchup":
                             title=f"{sel_bowler_t5} — Most Runs Conceded in a Single Over"
                         )
                         fig.update_xaxes(title='Match / Over', tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
                 else:
                     st.info("Select a bowler to see their most expensive overs.")
 
@@ -2747,7 +2758,7 @@ elif metric_choice == "Most Wickets in an Over":
                 if first_inn.empty:
                     st.info("No 2+ wicket overs in 1st innings")
                 else:
-                    st.dataframe(first_inn[['Bowler', 'Team', 'Over', 'Wickets', 'Runs_Conceded', 'Date', 'Season']], use_container_width=True)
+                    st.dataframe(first_inn[['Bowler', 'Team', 'Over', 'Wickets', 'Runs_Conceded', 'Date', 'Season']], width="stretch")
             
             with col2:
                 st.markdown("#### 2nd Innings")
@@ -2755,7 +2766,7 @@ elif metric_choice == "Most Wickets in an Over":
                 if second_inn.empty:
                     st.info("No 2+ wicket overs in 2nd innings")
                 else:
-                    st.dataframe(second_inn[['Bowler', 'Team', 'Over', 'Wickets', 'Runs_Conceded', 'Date', 'Season']], use_container_width=True)
+                    st.dataframe(second_inn[['Bowler', 'Team', 'Over', 'Wickets', 'Runs_Conceded', 'Date', 'Season']], width="stretch")
         
         with tab2:
             st.markdown("### Top Wicket-Taking Overs by Match")
@@ -2766,13 +2777,13 @@ elif metric_choice == "Most Wickets in an Over":
             if multi_wicket_match.empty:
                 st.info("No 2+ wicket overs found.")
             else:
-                st.dataframe(multi_wicket_match[['Bowler', 'Team', 'Match', 'Innings', 'Over', 'Wickets', 'Runs_Conceded', 'Date']], use_container_width=True)
+                st.dataframe(multi_wicket_match[['Bowler', 'Team', 'Match', 'Innings', 'Over', 'Wickets', 'Runs_Conceded', 'Date']], width="stretch")
                 
                 # Chart
                 fig = px.bar(multi_wicket_match.head(20), x='Bowler', y='Wickets', color='Team',
                             title="Top 20 Multi-Wicket Overs", text='Wickets')
                 fig.update_xaxes(tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
         
         with tab3:
             st.markdown("### Overall - Bowlers with Most Multi-Wicket Overs")
@@ -2786,12 +2797,12 @@ elif metric_choice == "Most Wickets in an Over":
             if bowler_multi_wicket.empty:
                 st.info("No bowlers with 2+ wicket overs found.")
             else:
-                st.dataframe(bowler_multi_wicket, use_container_width=True)
+                st.dataframe(bowler_multi_wicket, width="stretch")
                 
                 fig = px.bar(bowler_multi_wicket.head(15), x='Bowler', y='Multi_Wicket_Overs', color='Team',
                             title="Bowlers with Most 2+ Wicket Overs", text='Multi_Wicket_Overs')
                 fig.update_xaxes(tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 # =========================================
 # EXTRAS IMPACT INDEX (BOWLER)
@@ -2933,7 +2944,7 @@ elif metric_choice == "Extras Impact Index (Bowler)":
                                 title="Extra-Impact Runs by Bowler (Color = Impact %)",
                                 labels={'bowler': 'Bowler', 'Extra_Impact_Runs': 'Extra-Impact Runs', 'Impact_Percent': 'Impact %'},
                                 color_continuous_scale='Reds')
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
                 
                 with col2:
                     st.markdown("#### Top Bowlers (Impact Table)")
@@ -2941,7 +2952,7 @@ elif metric_choice == "Extras Impact Index (Bowler)":
                         final_stats[['bowler', 'Extra_Balls', 'Wide_Runs', 'NoBall_Runs', 'Extra_Impact_Runs', 'Impact_Percent']]
                         .rename(columns={'bowler': 'Bowler', 'Extra_Balls': 'Balls', 'Wide_Runs': 'Wides', 'NoBall_Runs': 'NBs', 'Extra_Impact_Runs': 'Impact Runs', 'Impact_Percent': 'Impact %'})
                         .head(20),
-                        use_container_width=True,
+                        width="stretch",
                         hide_index=True
                     )
 
@@ -2965,7 +2976,7 @@ elif metric_choice == "Extras Impact Index (Bowler)":
                 display_table = drill_down[['bowler', 'Over', 'Ball', 'Extra Type', 'Runs_on_Extra', 'Runs_Next_Ball']]
                 display_table.columns = ['Bowler', 'Over', 'Ball', 'Extra Type', 'Runs on Extra', 'Runs Next Ball']
                 
-                st.dataframe(display_table, use_container_width=True)
+                st.dataframe(display_table, width="stretch")
 
 # =========================================
 # OVERALL EXTRAS SUMMARY (SEASON VIEW)
@@ -3046,7 +3057,7 @@ elif metric_choice == "Overall Extras Summary":
                      labels={'bowling_team': 'Team', 'Runs': 'Runs Conceded'},
                      color_discrete_map={'Wides': '#ADD8E6', 'NoBalls': '#00008B'}, # Light/Dark blue
                      barmode='stack')
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
         
         # 3. Leaderboard (Bowlers)
         # Columns: Bowler, Team, Wides, No-balls, Total Extras, Extras per Over
@@ -3076,13 +3087,13 @@ elif metric_choice == "Overall Extras Summary":
                           color='bowling_team', title="Top 10 Bowlers (Most Extras)",
                           labels={'Total_Extras': 'Total Wides + NBs', 'bowler': 'Bowler'})
              fig.update_layout(yaxis={'categoryorder':'total ascending'})
-             st.plotly_chart(fig, use_container_width=True)
+             st.plotly_chart(fig, width="stretch")
              
         with col2:
             st.dataframe(
                 bowler_stats[['bowler', 'bowling_team', 'Wides', 'NoBalls', 'Total_Extras', 'Extras_Per_Over']]
                 .rename(columns={'bowler': 'Bowler', 'bowling_team': 'Team', 'Total_Extras': 'Total (W+NB)', 'Extras_Per_Over': 'Extras/Over'}),
-                use_container_width=True,
+                width="stretch",
                 hide_index=True
             )
             
@@ -3169,11 +3180,11 @@ elif metric_choice == "Left-Right Hand Index":
             with col1:
                 st.markdown("#### 1st Innings")
                 first_inn = hand_by_innings[hand_by_innings['innings'] == 1]
-                st.dataframe(first_inn[['batter_hand', 'Runs', 'Balls', 'SR', 'Dismissals', 'Boundaries']].rename(columns={'batter_hand': 'Batting Hand'}), use_container_width=True)
+                st.dataframe(first_inn[['batter_hand', 'Runs', 'Balls', 'SR', 'Dismissals', 'Boundaries']].rename(columns={'batter_hand': 'Batting Hand'}), width="stretch")
             with col2:
                 st.markdown("#### 2nd Innings")
                 second_inn = hand_by_innings[hand_by_innings['innings'] == 2]
-                st.dataframe(second_inn[['batter_hand', 'Runs', 'Balls', 'SR', 'Dismissals', 'Boundaries']].rename(columns={'batter_hand': 'Batting Hand'}), use_container_width=True)
+                st.dataframe(second_inn[['batter_hand', 'Runs', 'Balls', 'SR', 'Dismissals', 'Boundaries']].rename(columns={'batter_hand': 'Batting Hand'}), width="stretch")
             
             # Chart
             if not hand_by_innings.empty:
@@ -3181,7 +3192,7 @@ elif metric_choice == "Left-Right Hand Index":
                             x='Innings', y='Runs', color='batter_hand', barmode='group',
                             title="Runs by Batting Hand per Innings",
                             color_discrete_map={'Left': '#2ecc71', 'Right': '#3498db'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
         
         with tab2:
             st.markdown("### Left vs Right Hand Performance by Match")
@@ -3205,7 +3216,7 @@ elif metric_choice == "Left-Right Hand Index":
             hand_pivot.columns = ['Match', 'Team', 'Date'] + [f'{v}_{h}' for v, h in hand_pivot.columns[3:]]
             hand_pivot = hand_pivot.sort_values('Date', ascending=False)
             
-            st.dataframe(hand_pivot.head(30), use_container_width=True)
+            st.dataframe(hand_pivot.head(30), width="stretch")
         
         with tab3:
             st.markdown("### Overall Left vs Right Hand Comparison")
@@ -3223,7 +3234,7 @@ elif metric_choice == "Left-Right Hand Index":
             hand_overall['Dot%'] = (hand_overall['Dots'] / hand_overall['Total_Balls'] * 100).round(2)
             hand_overall = hand_overall.rename(columns={'batter_hand': 'Batting Hand'})
             
-            st.dataframe(hand_overall, use_container_width=True)
+            st.dataframe(hand_overall, width="stretch")
             
             # Charts
             col1, col2 = st.columns(2)
@@ -3233,13 +3244,13 @@ elif metric_choice == "Left-Right Hand Index":
                             title="Run Distribution by Batting Hand",
                             color='Batting Hand',
                             color_discrete_map={'Left': '#2ecc71', 'Right': '#3498db'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             with col2:
                 fig = px.bar(hand_overall[hand_overall['Batting Hand'] != 'Unknown'],
                             x='Batting Hand', y='SR', color='Batting Hand',
                             title="Strike Rate by Batting Hand",
                             color_discrete_map={'Left': '#2ecc71', 'Right': '#3498db'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 # =========================================
 # PACE VS SPIN ANALYSIS
@@ -3302,7 +3313,7 @@ elif metric_choice == "Pace vs Spin Analysis":
                             x='Innings', y='Wickets', color='bowling_type', barmode='group',
                             title="Wickets by Bowling Type per Innings",
                             color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
         
         with tab2:
             st.markdown("### Pace vs Spin by Match")
@@ -3333,7 +3344,7 @@ elif metric_choice == "Pace vs Spin Analysis":
             ).reset_index()
             display_df = display_df.sort_values('Date', ascending=False)
             
-            st.dataframe(display_df.head(40), use_container_width=True)
+            st.dataframe(display_df.head(40), width="stretch")
         
         with tab3:
             st.markdown("### Overall Pace vs Spin Comparison")
@@ -3352,7 +3363,7 @@ elif metric_choice == "Pace vs Spin Analysis":
             type_overall['SR'] = (type_overall['Balls'] / type_overall['Wickets'].replace(0, 1)).round(2)
             type_overall = type_overall.rename(columns={'bowling_type': 'Bowling Type'})
             
-            st.dataframe(type_overall, use_container_width=True)
+            st.dataframe(type_overall, width="stretch")
             
             # Display in user's format
             st.markdown("---")
@@ -3370,13 +3381,13 @@ elif metric_choice == "Pace vs Spin Analysis":
                             title="Wickets Distribution",
                             color='Bowling Type',
                             color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
             with col2:
                 fig = px.bar(type_overall[type_overall['Bowling Type'] != 'Unknown'],
                             x='Bowling Type', y='ER', color='Bowling Type',
                             title="Economy Rate Comparison",
                             color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 # =========================================
 # SUPER OVER ANALYSIS
@@ -3457,7 +3468,7 @@ elif metric_choice == "Super Over Analysis":
                 match_df['Winner'] = match_df['match_id'].astype(str).map(eliminator_map)
                 match_df = match_df.sort_values('Date', ascending=False)
                 st.dataframe(match_df[['Match', 'Date', 'League', 'Team', 'SO Runs', 'SO Wickets', 'Winner']], 
-                           use_container_width=True)
+                           width="stretch")
         
         with tab2:
             # Top batters in super overs
@@ -3472,13 +3483,13 @@ elif metric_choice == "Super Over Analysis":
             batter_stats = batter_stats.rename(columns={'batter': 'Batter'})
             batter_stats = batter_stats.sort_values('SO_Runs', ascending=False)
             
-            st.dataframe(batter_stats.head(20), use_container_width=True)
+            st.dataframe(batter_stats.head(20), width="stretch")
             
             fig = px.bar(batter_stats.head(15), x='Batter', y='SO_Runs', 
                         color='SO_SR', color_continuous_scale='RdYlGn',
                         title="Top Super Over Run Scorers")
             fig.update_xaxes(tickangle=45)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         
         with tab3:
             # Top bowlers in super overs
@@ -3492,13 +3503,13 @@ elif metric_choice == "Super Over Analysis":
             bowler_stats = bowler_stats.rename(columns={'bowler': 'Bowler'})
             bowler_stats = bowler_stats.sort_values('SO_Wickets', ascending=False)
             
-            st.dataframe(bowler_stats.head(20), use_container_width=True)
+            st.dataframe(bowler_stats.head(20), width="stretch")
             
             fig = px.bar(bowler_stats.head(15), x='Bowler', y='SO_Wickets',
                         color='SO_Econ', color_continuous_scale='RdYlGn_r',
                         title="Top Super Over Wicket Takers")
             fig.update_xaxes(tickangle=45)
-            st.plotly_chart(fig, use_container_width=True)
+            st.plotly_chart(fig, width="stretch")
         
         with tab4:
             # Team super over win %
@@ -3530,13 +3541,13 @@ elif metric_choice == "Super Over Analysis":
                 team_summary['SO_Win%'] = (team_summary['SO_Won'] / team_summary['SO_Played'] * 100).round(1)
                 team_summary = team_summary.sort_values('SO_Played', ascending=False)
                 
-                st.dataframe(team_summary, use_container_width=True)
+                st.dataframe(team_summary, width="stretch")
                 
                 fig = px.bar(team_summary, x='Team', y='SO_Win%', 
                             color='SO_Played', color_continuous_scale='Blues',
                             title="Super Over Win % by Team")
                 fig.update_xaxes(tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -3619,7 +3630,7 @@ elif metric_choice == "Innings Progression":
             
             # Display table
             st.dataframe(phase_df[['Date', 'Team', 'Opponent', 'Innings', 'Total', 'PP', 'Middle', 'Death']], 
-                        use_container_width=True)
+                        width="stretch")
             
             # Summary stats
             st.markdown("---")
@@ -3643,7 +3654,7 @@ elif metric_choice == "Innings Progression":
                 team_summary['Avg_Mid_Runs'] = team_summary['Avg_Mid_Runs'].round(1)
                 team_summary['Avg_Death_Runs'] = team_summary['Avg_Death_Runs'].round(1)
                 
-                st.dataframe(team_summary, use_container_width=True)
+                st.dataframe(team_summary, width="stretch")
                 
                 # Chart
                 import plotly.graph_objects as go
@@ -3658,7 +3669,7 @@ elif metric_choice == "Innings Progression":
                         textposition='outside'
                     ))
                 fig.update_layout(title="Average Runs by Phase", barmode='group')
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
         
         else:
             # Single match detail view (original functionality)
@@ -3710,7 +3721,7 @@ elif metric_choice == "Innings Progression":
                                         color_continuous_scale='RdYlGn',
                                         title=f"{team} Phase Breakdown")
                             fig.update_traces(textposition='outside')
-                            st.plotly_chart(fig, use_container_width=True)
+                            st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -3770,7 +3781,7 @@ elif metric_choice == "Franchise Debut Tracker":
             player_data_sorted = player_data.sort_values('First_Match_Date')
             player_data_sorted['First_Match_Date'] = pd.to_datetime(player_data_sorted['First_Match_Date']).dt.date
             st.dataframe(player_data_sorted[['Team', 'League', 'First_Match_Date', 'Matches_Played']], 
-                        use_container_width=True)
+                        width="stretch")
             
             # Show teams NOT played for (only from filtered leagues)
             not_played = [str(t) for t in league_teams if str(t) not in teams_played]
@@ -3797,7 +3808,7 @@ elif metric_choice == "Franchise Debut Tracker":
         recent_debuts['First_Match_Date'] = pd.to_datetime(recent_debuts['First_Match_Date']).dt.date
         
         st.dataframe(recent_debuts.head(100)[['Player', 'Team', 'League', 'First_Match_Date', 'Matches_Played']], 
-                    use_container_width=True)
+                    width="stretch")
         
         # Stats summary
         st.markdown("---")
@@ -3809,7 +3820,7 @@ elif metric_choice == "Franchise Debut Tracker":
         fig = px.bar(team_debuts.head(15), x='Team', y='Total_Debuts',
                     title="Teams with Most Player Debuts")
         fig.update_xaxes(tickangle=45)
-        st.plotly_chart(fig, use_container_width=True)
+        st.plotly_chart(fig, width="stretch")
 
 # =========================================
 # BATTING ORDER PERFORMANCE (TEAM-WISE)
@@ -3979,7 +3990,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                             ].copy().sort_values(['Team', 'Position'])
                             if not yr_data.empty:
                                 st.markdown(f"#### {lg} — Season {active_years[0]}")
-                                st.dataframe(yr_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], use_container_width=True)
+                                st.dataframe(yr_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], width="stretch")
                                 
                                 # Heatmap
                                 try:
@@ -3988,7 +3999,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                     pivot = yr_data_num.pivot_table(values='Runs', index='Team', columns='Position', fill_value=0)
                                     fig = px.imshow(pivot, labels=dict(x="Position", y="Team", color="Runs"),
                                                    title=f"{lg} {active_years[0]} — Runs by Position", color_continuous_scale="Blues", aspect="auto")
-                                    st.plotly_chart(fig, use_container_width=True)
+                                    st.plotly_chart(fig, width="stretch")
                                 except Exception as e:
                                     st.warning(f"Could not create heatmap: {e}")
                                 
@@ -3998,7 +4009,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                     sr_data['Position'] = sr_data['Position'].astype(int)
                                     sr_data = sr_data.sort_values('Position')
                                     fig_sr = px.bar(sr_data, x='Position', y='SR', color='Runs', title=f"{lg} {active_years[0]} — SR by Position", color_continuous_scale='Viridis')
-                                    st.plotly_chart(fig_sr, use_container_width=True)
+                                    st.plotly_chart(fig_sr, width="stretch")
                                 except Exception as e:
                                     st.warning(f"Could not create SR chart: {e}")
                         else:
@@ -4015,7 +4026,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                         (lg_df['Team'].isin(teams_to_display))
                                     ].copy()
                                     if not yr_data.empty:
-                                        st.dataframe(yr_data.sort_values(['Team', 'Position'])[['Team', 'Position', 'Innings', 'Runs', 'SR', 'Avg']], use_container_width=True)
+                                        st.dataframe(yr_data.sort_values(['Team', 'Position'])[['Team', 'Position', 'Innings', 'Runs', 'SR', 'Avg']], width="stretch")
                             
                             # Comparison - Side-by-side table (like SR Comparison)
                             with year_tabs[-1]:
@@ -4125,7 +4136,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                                 # Convert to DataFrame and display
                                                 if table_rows:
                                                     table_df = pd.DataFrame(table_rows)
-                                                    st.dataframe(table_df, use_container_width=True, hide_index=True)
+                                                    st.dataframe(table_df, width="stretch", hide_index=True)
                                                 
                                 except Exception as e:
                                     st.error(f"Error creating comparison table: {e}")
@@ -4163,7 +4174,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                             # Filter to selected positions
                             display_data = agg_data[agg_data['Position'].isin(selected_pos_overall)].copy()
                             display_data = display_data.sort_values(['Team', 'Position'])
-                            st.dataframe(display_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], use_container_width=True)
+                            st.dataframe(display_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], width="stretch")
                             
                             # Heatmap for selected positions
                             if len(selected_pos_overall) > 1:
@@ -4173,7 +4184,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                     pivot = display_data_num.pivot_table(values='Runs', index='Team', columns='Position', fill_value=0)
                                     fig = px.imshow(pivot, labels=dict(x="Position", y="Team", color="Runs"),
                                                    title=f"{lg} Overall — Runs by Selected Positions", color_continuous_scale="Blues", aspect="auto")
-                                    st.plotly_chart(fig, use_container_width=True)
+                                    st.plotly_chart(fig, width="stretch")
                                 except Exception as e:
                                     st.warning(f"Could not create heatmap: {e}")
                         else:
@@ -4256,7 +4267,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                         dcols = _make_display_cols(include_season=False)
                         st.dataframe(
                             yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Strike Rate', ascending=False),
-                            use_container_width=True
+                            width="stretch"
                         )
                         chart_df = yr_data.sort_values('Strike Rate', ascending=False).head(int(top_n_sr))
                         if not chart_df.empty:
@@ -4265,7 +4276,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                          title=f"{lg} {active_years[0]} — Strike Rate Comparison",
                                          hover_data=['Balls/Inn'] + _bucket_cols)
                             fig.update_xaxes(tickangle=45)
-                            st.plotly_chart(fig, use_container_width=True)
+                            st.plotly_chart(fig, width="stretch")
                     else:
                         # Multiple years — one sub-tab per year + a Compare tab
                         year_tab_labels = [str(y) for y in active_years] + ["⚖️ Compare"]
@@ -4282,7 +4293,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                 st.markdown(f"**{lg} — Season {yr}**")
                                 st.dataframe(
                                     yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Strike Rate', ascending=False),
-                                    use_container_width=True
+                                    width="stretch"
                                 )
                                 chart_df = yr_data.sort_values('Strike Rate', ascending=False).head(int(top_n_sr))
                                 if not chart_df.empty:
@@ -4291,7 +4302,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                                  title=f"{lg} {yr} — Strike Rate",
                                                  hover_data=['Balls/Inn'] + _bucket_cols)
                                     fig.update_xaxes(tickangle=45)
-                                    st.plotly_chart(fig, use_container_width=True)
+                                    st.plotly_chart(fig, width="stretch")
 
                                 # Ball-bucket breakdown per player for this year
                                 if not yr_data.empty:
@@ -4305,7 +4316,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                         title=f"{lg} {yr} — Ball-range SR Buckets"
                                     )
                                     fig_b.update_xaxes(tickangle=0)
-                                    st.plotly_chart(fig_b, use_container_width=True)
+                                    st.plotly_chart(fig_b, width="stretch")
 
                         # Compare tab — side-by-side grouped bars, all years together
                         with year_sub_tabs[-1]:
@@ -4319,7 +4330,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                     compare_df[[c for c in dcols_cmp if c in compare_df.columns]].sort_values(
                                         ['Name', 'Season'], ascending=[True, True]
                                     ),
-                                    use_container_width=True
+                                    width="stretch"
                                 )
 
                                 # Grouped bar: SR by player, coloured by season
@@ -4334,7 +4345,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                     hover_data=['Average', 'Balls/Inn'] + _bucket_cols
                                 )
                                 fig_cmp.update_xaxes(tickangle=45)
-                                st.plotly_chart(fig_cmp, use_container_width=True)
+                                st.plotly_chart(fig_cmp, width="stretch")
 
                                 # Bucket heatmap per player per year
                                 if sr_player_filter:
@@ -4352,7 +4363,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                             color='Season', markers=True,
                                             title=f"{player} — Ball-range SR by Season"
                                         )
-                                        st.plotly_chart(fig_p, use_container_width=True)
+                                        st.plotly_chart(fig_p, width="stretch")
 
                 else:
                     # Overall (All Seasons) — aggregate, no year split
@@ -4362,7 +4373,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                         dcols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
                     st.dataframe(
                         view_df[[c for c in dcols if c in view_df.columns]].sort_values('Strike Rate', ascending=False),
-                        use_container_width=True
+                        width="stretch"
                     )
                     chart_df = view_df.sort_values('Strike Rate', ascending=False).head(int(top_n_sr)).copy()
                     if not chart_df.empty:
@@ -4371,7 +4382,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                      title=f"{lg} — Overall Strike Rate Comparison (All Seasons)",
                                      hover_data=['Balls/Inn'] + _bucket_cols)
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -4409,7 +4420,7 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
                                     'Batter', 'Balls to 50', 'Total Runs', 'Total Balls', 'SR', 'Not Out']].copy()
                 display_50 = display_50.reset_index(drop=True)
                 display_50.index += 1
-                st.dataframe(display_50.head(200), use_container_width=True)
+                st.dataframe(display_50.head(200), width="stretch")
 
                 if len(df_50) >= 5:
                     fig = px.bar(
@@ -4419,7 +4430,7 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
                         text='Balls to 50'
                     )
                     fig.update_layout(xaxis_tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
             with tab_100:
                 st.markdown("### Fastest 100s — sorted by balls faced (ascending)")
@@ -4432,7 +4443,7 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
                                          'Batter', 'Balls to 100', 'Total Runs', 'Total Balls', 'SR', 'Not Out']].copy()
                     display_100 = display_100.reset_index(drop=True)
                     display_100.index += 1
-                    st.dataframe(display_100.head(200), use_container_width=True)
+                    st.dataframe(display_100.head(200), width="stretch")
 
                     if len(df_100) >= 5:
                         fig = px.bar(
@@ -4442,7 +4453,7 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
                             text='Balls to 100'
                         )
                         fig.update_layout(xaxis_tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -4478,10 +4489,10 @@ elif metric_choice == "Fastest Team 50 & 100":
                                       'Batting Team', 'Balls to 50', 'Total Runs', 'Total Balls']].copy()
                 display_t50 = display_t50.reset_index(drop=True)
                 display_t50.index += 1
-                st.dataframe(display_t50.head(300), use_container_width=True)
+                st.dataframe(display_t50.head(300), width="stretch")
 
                 st.markdown("#### Top 10 Fastest Team 50s")
-                st.dataframe(display_t50.head(10), use_container_width=True)
+                st.dataframe(display_t50.head(10), width="stretch")
 
                 if len(df_t50) >= 5:
                     fig = px.bar(
@@ -4492,7 +4503,7 @@ elif metric_choice == "Fastest Team 50 & 100":
                         hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
                     )
                     fig.update_layout(xaxis_tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
             with tab_t100:
                 st.markdown("### Fastest Team 100s — sorted by balls faced (ascending)")
@@ -4505,10 +4516,10 @@ elif metric_choice == "Fastest Team 50 & 100":
                                            'Batting Team', 'Balls to 100', 'Total Runs', 'Total Balls']].copy()
                     display_t100 = display_t100.reset_index(drop=True)
                     display_t100.index += 1
-                    st.dataframe(display_t100.head(300), use_container_width=True)
+                    st.dataframe(display_t100.head(300), width="stretch")
 
                     st.markdown("#### Top 10 Fastest Team 100s")
-                    st.dataframe(display_t100.head(10), use_container_width=True)
+                    st.dataframe(display_t100.head(10), width="stretch")
 
                     if len(df_t100) >= 5:
                         fig = px.bar(
@@ -4519,7 +4530,7 @@ elif metric_choice == "Fastest Team 50 & 100":
                             hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
                         )
                         fig.update_layout(xaxis_tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -4558,7 +4569,7 @@ elif metric_choice == "Bowler First Spell Wickets":
                                                   'Overs in Spell', 'Spell Over Nos', 'Runs Conceded']].copy()
                     disp_spell = disp_spell.reset_index(drop=True)
                     disp_spell.index += 1
-                    st.dataframe(disp_spell, use_container_width=True)
+                    st.dataframe(disp_spell, width="stretch")
 
                     if len(disp_spell) >= 3:
                         fig = px.bar(
@@ -4569,7 +4580,7 @@ elif metric_choice == "Bowler First Spell Wickets":
                             hover_data=['Date', 'Runs Conceded', 'Overs in Spell']
                         )
                         fig.update_layout(xaxis_tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
             with tab_agg:
                 st.markdown("### All-Time: Bowlers with Most Multi-Wicket First Spells")
@@ -4591,7 +4602,7 @@ elif metric_choice == "Bowler First Spell Wickets":
                 if agg_spell.empty:
                     st.info(f"No bowlers with {threshold}+ wicket first spells found.")
                 else:
-                    st.dataframe(agg_spell.head(50), use_container_width=True)
+                    st.dataframe(agg_spell.head(50), width="stretch")
 
 
 # =========================================
@@ -4642,7 +4653,7 @@ elif metric_choice == "Back-to-Back 25+ Scores":
             st.dataframe(
                 cons_df[['Season', 'Batter', 'Innings 25+', 'Max Consec 25+',
                          'Innings No Single Digit', 'Total Runs', 'Total Innings', 'Consistency %']],
-                use_container_width=True
+                width="stretch"
             )
 
             if len(cons_df) >= 3:
@@ -4655,7 +4666,7 @@ elif metric_choice == "Back-to-Back 25+ Scores":
                     hover_data=['Max Consec 25+', 'Consistency %', 'Total Runs']
                 )
                 fig.update_layout(xaxis_tickangle=45)
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -4697,7 +4708,7 @@ elif metric_choice == "Boundary-less Overs Spell":
                                            'Runs in Boundary-less Overs', 'Total Runs Conceded']].copy()
                     disp_bl = disp_bl.reset_index(drop=True)
                     disp_bl.index += 1
-                    st.dataframe(disp_bl, use_container_width=True)
+                    st.dataframe(disp_bl, width="stretch")
 
                     if len(disp_bl) >= 3:
                         fig = px.bar(
@@ -4708,7 +4719,7 @@ elif metric_choice == "Boundary-less Overs Spell":
                             hover_data=['Date', 'Max Consec Boundary-less', 'Total Runs Conceded']
                         )
                         fig.update_layout(xaxis_tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
             with tab_bl_agg:
                 st.markdown("### All-Time Leaders — Most Boundary-less Overs Performances")
@@ -4731,7 +4742,7 @@ elif metric_choice == "Boundary-less Overs Spell":
                 if bl_agg.empty:
                     st.info("No all-time leaders found.")
                 else:
-                    st.dataframe(bl_agg.head(50), use_container_width=True)
+                    st.dataframe(bl_agg.head(50), width="stretch")
 
                     fig = px.bar(
                         bl_agg.head(20),
@@ -4741,7 +4752,7 @@ elif metric_choice == "Boundary-less Overs Spell":
                         hover_data=['Total_BL_Overs', 'Best_Max_Consec']
                     )
                     fig.update_layout(xaxis_tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    st.plotly_chart(fig, width="stretch")
 
 
 # =========================================
@@ -4816,7 +4827,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                     st.dataframe(
                         inn_filtered[['Batting Team', 'Match', 'Date', 'Season', 'Innings',
                                       'Max Balls Without Boundary', 'No. of Droughts', 'All Streak Lengths']],
-                        use_container_width=True
+                        width="stretch"
                     )
 
                     if len(inn_filtered) >= 3:
@@ -4828,7 +4839,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                             text='Max Balls Without Boundary'
                         )
                         fig_inn.update_layout(xaxis_tickangle=30, showlegend=True)
-                        st.plotly_chart(fig_inn, use_container_width=True)
+                        st.plotly_chart(fig_inn, width="stretch")
 
             with tab_match:
                 st.markdown(f"#### Matches with {min_balls}+ Consecutive Balls Without a Boundary")
@@ -4844,7 +4855,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                     st.dataframe(
                         match_filtered[['Batting Team', 'Match', 'Date', 'Season',
                                         'Max Balls Without Boundary', 'No. of Droughts']],
-                        use_container_width=True
+                        width="stretch"
                     )
 
                     # Team aggregation
@@ -4865,7 +4876,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                         'Avg_Max_Streak': 'Avg Max Streak',
                         'Best_Max_Streak': 'Longest Single Streak',
                     })
-                    st.dataframe(team_agg, use_container_width=True)
+                    st.dataframe(team_agg, width="stretch")
 
                     fig_match = px.bar(
                         team_agg,
@@ -4876,7 +4887,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                         hover_data=['Matches', 'Total_Droughts']
                     )
                     fig_match.update_layout(xaxis_tickangle=30)
-                    st.plotly_chart(fig_match, use_container_width=True)
+                    st.plotly_chart(fig_match, width="stretch")
 
             with tab_dist:
                 st.markdown("#### Distribution of Streak Lengths")
@@ -4895,7 +4906,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                         labels={'Balls Without Boundary': 'Consecutive Balls Without Boundary', 'count': 'Frequency'},
                     )
                     fig_hist.update_layout(bargap=0.1)
-                    st.plotly_chart(fig_hist, use_container_width=True)
+                    st.plotly_chart(fig_hist, width="stretch")
 
                     # Season breakdown
                     season_dist = (
@@ -4911,7 +4922,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                     season_dist['Avg_Streak'] = season_dist['Avg_Streak'].round(1)
                     season_dist = season_dist.rename(columns={'Count': f'{min_balls}+ Ball Droughts', 'Avg_Streak': 'Avg Streak', 'Max_Streak': 'Longest Streak'})
                     st.markdown("#### Season-wise Summary")
-                    st.dataframe(season_dist, use_container_width=True)
+                    st.dataframe(season_dist, width="stretch")
 
 
 # =========================================
@@ -4968,7 +4979,7 @@ elif metric_choice == "On This Day":
                         )
 
                 with st.expander("View full data table"):
-                    st.dataframe(f50_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+                    st.dataframe(f50_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
         # ---- Fastest team 50s & 100s ----
         with st.expander("🚀 Fastest Team Milestones", expanded=True):
@@ -4996,7 +5007,7 @@ elif metric_choice == "On This Day":
                         )
 
                 with st.expander("View full data table"):
-                    st.dataframe(ft_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+                    st.dataframe(ft_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
         # ---- Bowler first spell wickets ----
         with st.expander("🎯 Bowler First Spell Wickets", expanded=True):
@@ -5019,7 +5030,7 @@ elif metric_choice == "On This Day":
                         )
 
                 with st.expander("View full data table"):
-                    st.dataframe(fs_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+                    st.dataframe(fs_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
         # ---- Boundary-less overs ----
         with st.expander("🛡️ Boundary-less Overs Performances", expanded=True):
@@ -5039,7 +5050,7 @@ elif metric_choice == "On This Day":
                     )
 
                 with st.expander("View full data table"):
-                    st.dataframe(bl_df.sort_values('Date').reset_index(drop=True), use_container_width=True)
+                    st.dataframe(bl_df.sort_values('Date').reset_index(drop=True), width="stretch")
 
 
 # =========================================
@@ -5189,7 +5200,7 @@ elif metric_choice == "Bowler Over Impact":
                 )
                 fig.update_xaxes(showgrid=False)
                 fig.update_yaxes(gridcolor='#2a2a3a')
-                st.plotly_chart(fig, use_container_width=True)
+                st.plotly_chart(fig, width="stretch")
 
 
 
@@ -5276,7 +5287,7 @@ elif metric_choice == "Extra Deliveries Cost":
                 show_df = match_df[[c for c in disp_cols if c in match_df.columns]].rename(columns=rename)
                 st.dataframe(
                     show_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True,
                     column_config={
                         'Extra Run %': st.column_config.NumberColumn(format='%.1f%%'),
@@ -5301,7 +5312,7 @@ elif metric_choice == "Extra Deliveries Cost":
                         title="Runs from Extra Balls per Match by Bowling Team",
                         labels={'Extra_Ball_Runs': 'Runs from Extra Balls'}
                     )
-                st.plotly_chart(fig_bar, use_container_width=True)
+                st.plotly_chart(fig_bar, width="stretch")
 
             # ---- Innings-wise view ----
             elif edc_mode == "Innings-wise":
@@ -5323,7 +5334,7 @@ elif metric_choice == "Extra Deliveries Cost":
                 show_df = inn_df[[c for c in disp_cols if c in inn_df.columns]].rename(columns=rename)
                 st.dataframe(
                     show_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True,
                     column_config={
                         'Extra Run %': st.column_config.NumberColumn(format='%.1f%%'),
@@ -5340,14 +5351,14 @@ elif metric_choice == "Extra Deliveries Cost":
                 ).round(1).reset_index()
                 st.markdown("#### 1st vs 2nd Innings Average Comparison")
                 st.dataframe(inn_compare.rename(columns={'Innings_Label': 'Innings'}),
-                             use_container_width=True, hide_index=True)
+                             width="stretch", hide_index=True)
 
                 fig_inn = px.bar(inn_compare, x='Innings_Label', y=['Avg_Wide_Runs', 'Avg_NoBalls'],
                                  barmode='group',
                                  title="Avg Wide Run Penalties & No-Ball Deliveries: 1st Inn vs 2nd Inn",
                                  labels={'value': 'Avg', 'variable': 'Type', 'Innings_Label': 'Innings'},
                                  color_discrete_map={'Avg_Wide_Runs': '#4CC3D9', 'Avg_NoBalls': '#FF8C00'})
-                st.plotly_chart(fig_inn, use_container_width=True)
+                st.plotly_chart(fig_inn, width="stretch")
 
             # ---- Season Summary ----
             else:
@@ -5370,7 +5381,7 @@ elif metric_choice == "Extra Deliveries Cost":
                 show_df = season_df[[c for c in season_disp if c in season_df.columns]].rename(columns=rename)
                 st.dataframe(
                     show_df,
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True,
                     column_config={
                         'Extra Run %': st.column_config.NumberColumn(format='%.1f%%'),
@@ -5386,7 +5397,7 @@ elif metric_choice == "Extra Deliveries Cost":
                     labels={'value': 'Count', 'variable': 'Type', 'Bowling_Team': 'Team'}
                 )
                 fig_s.update_xaxes(tickangle=30)
-                st.plotly_chart(fig_s, use_container_width=True)
+                st.plotly_chart(fig_s, width="stretch")
 
                 fig_r = px.bar(
                     season_df.sort_values('Extra_Run_%', ascending=False),
@@ -5397,7 +5408,7 @@ elif metric_choice == "Extra Deliveries Cost":
                 )
                 fig_r.update_traces(texttemplate='%{text}%', textposition='outside')
                 fig_r.update_xaxes(tickangle=30)
-                st.plotly_chart(fig_r, use_container_width=True)
+                st.plotly_chart(fig_r, width="stretch")
 
 
 # =========================================
@@ -5669,7 +5680,7 @@ elif metric_choice == "Debutant Bowler Wickets":
 
             with tab_all:
                 st.markdown(f"**{len(debut_result)} debut appearances** matching filters")
-                st.dataframe(debut_result, use_container_width=True)
+                st.dataframe(debut_result, width="stretch")
 
             with tab_league:
                 league_col = 'Franchise' if deb_scope.startswith("Franchise") else 'League'
@@ -5679,7 +5690,7 @@ elif metric_choice == "Debutant Bowler Wickets":
                     for li, lg in enumerate(leagues_deb):
                         with lg_tabs_deb[li]:
                             lg_deb = debut_result[debut_result[league_col] == lg].copy()
-                            st.dataframe(lg_deb, use_container_width=True)
+                            st.dataframe(lg_deb, width="stretch")
                             chart_deb = lg_deb.head(int(top_n_deb))
                             if not chart_deb.empty:
                                 color_col = 'Team' if 'Team' in chart_deb.columns else 'Bowler'
@@ -5693,9 +5704,9 @@ elif metric_choice == "Debutant Bowler Wickets":
                                 )
                                 fig_deb.update_traces(textposition='outside')
                                 fig_deb.update_xaxes(tickangle=45)
-                                st.plotly_chart(fig_deb, use_container_width=True)
+                                st.plotly_chart(fig_deb, width="stretch")
                 else:
-                    st.dataframe(debut_result, use_container_width=True)
+                    st.dataframe(debut_result, width="stretch")
 
             with tab_top:
                 st.markdown("### Bowlers with Most Wickets on Debut (Career Best Debut)")
@@ -5707,7 +5718,7 @@ elif metric_choice == "Debutant Bowler Wickets":
                     .head(int(top_n_deb))
                     .reset_index(drop=True)
                 )
-                st.dataframe(top_deb, use_container_width=True)
+                st.dataframe(top_deb, width="stretch")
                 if not top_deb.empty:
                     color_col_top = 'Team' if 'Team' in top_deb.columns else 'Bowler'
                     fig_top = px.bar(
@@ -5720,7 +5731,7 @@ elif metric_choice == "Debutant Bowler Wickets":
                     )
                     fig_top.update_traces(textposition='outside')
                     fig_top.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig_top, use_container_width=True)
+                    st.plotly_chart(fig_top, width="stretch")
 
                 # Distribution histogram
                 wkt_dist = debut_result['Wickets'].value_counts().sort_index().reset_index()
@@ -5731,7 +5742,7 @@ elif metric_choice == "Debutant Bowler Wickets":
                     text='Count'
                 )
                 fig_hist.update_traces(textposition='outside')
-                st.plotly_chart(fig_hist, use_container_width=True)
+                st.plotly_chart(fig_hist, width="stretch")
 
 
 # =========================================
@@ -6080,7 +6091,7 @@ elif metric_choice == "Longest Wicketless Streaks":
 
             with tab_all:
                 st.markdown(f"**Top {int(top_n_wls)} longest wicketless streaks — measured in {unit}**")
-                st.dataframe(display_df, use_container_width=True)
+                st.dataframe(display_df, width="stretch")
 
             with tab_league:
                 if 'League' in wls_df.columns:
@@ -6090,7 +6101,7 @@ elif metric_choice == "Longest Wicketless Streaks":
                         with lg_tabs_wls[li]:
                             lg_wls = wls_df[wls_df['League'] == lg].head(int(top_n_wls)).reset_index(drop=True)
                             lg_wls.index += 1
-                            st.dataframe(lg_wls, use_container_width=True)
+                            st.dataframe(lg_wls, width="stretch")
 
             with tab_chart:
                 chart_wls = wls_df.head(int(top_n_wls)).copy()
@@ -6108,7 +6119,7 @@ elif metric_choice == "Longest Wicketless Streaks":
                     )
                     fig_wls.update_traces(textposition='outside')
                     fig_wls.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig_wls, use_container_width=True)
+                    st.plotly_chart(fig_wls, width="stretch")
 
                     # Distribution
                     if len(wls_df) >= 5:
@@ -6118,7 +6129,7 @@ elif metric_choice == "Longest Wicketless Streaks":
                             title=f"Distribution of Wicketless Streak Lengths ({unit})",
                             labels={streak_col: f'Streak ({unit})', 'count': 'Number of Bowlers'}
                         )
-                        st.plotly_chart(fig_dist, use_container_width=True)
+                        st.plotly_chart(fig_dist, width="stretch")
 
 
 # =========================================
@@ -6270,7 +6281,7 @@ elif metric_choice == "Balls Bowled Per Match":
                         'Date', 'Venue', 'League', 'Season', 'Total Balls',
                         'Inn 1 Team', 'Inn 1 Stats', 'Inn 2 Team', 'Inn 2 Stats'
                     ] if c in pivot_df.columns]
-                    st.dataframe(pivot_df[col_order], use_container_width=True)
+                    st.dataframe(pivot_df[col_order], width="stretch")
                 else:
                     disp = inn_df.sort_values(['Date', 'Match ID', 'Innings']).head(int(bbpm_top_n) * 2).reset_index(drop=True)
                     disp.index += 1
@@ -6278,7 +6289,7 @@ elif metric_choice == "Balls Bowled Per Match":
                                               'Season', 'Date', 'Legal Balls', 'Overs Bowled',
                                               'Wides', 'No Balls', 'Total Deliveries']
                                  if c in disp.columns]
-                    st.dataframe(disp[col_order], use_container_width=True)
+                    st.dataframe(disp[col_order], width="stretch")
 
             with tab_chart:
                 if bbpm_view == "Match Total":
@@ -6297,7 +6308,7 @@ elif metric_choice == "Balls Bowled Per Match":
                     )
                     fig_bbpm.update_traces(textposition='outside')
                     fig_bbpm.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig_bbpm, use_container_width=True)
+                    st.plotly_chart(fig_bbpm, width="stretch")
                 else:
                     chart_data = inn_df.copy()
                     if 'Match' in chart_data.columns:
@@ -6315,7 +6326,7 @@ elif metric_choice == "Balls Bowled Per Match":
                     )
                     fig_inn.update_traces(textposition='outside')
                     fig_inn.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig_inn, use_container_width=True)
+                    st.plotly_chart(fig_inn, width="stretch")
 
             with tab_phase:
                 if 'phase' in src_bbpm.columns:
@@ -6352,13 +6363,13 @@ elif metric_choice == "Balls Bowled Per Match":
                         'No_Balls': 'No Balls'
                     })
                     st.markdown("**Balls bowled by phase (across all selected matches)**")
-                    st.dataframe(phase_df, use_container_width=True)
+                    st.dataframe(phase_df, width="stretch")
 
                     fig_phase = px.pie(
                         phase_df, names='Phase', values='Legal Balls',
                         title="Share of Balls Bowled by Phase"
                     )
-                    st.plotly_chart(fig_phase, use_container_width=True)
+                    st.plotly_chart(fig_phase, width="stretch")
                 else:
                     st.info("Phase data not available.")
 
@@ -6621,7 +6632,7 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
                         f"**Top {int(top_n_sf)} single-innings six-free spells** — "
                         "maximum consecutive deliveries without a six within one innings"
                     )
-                st.dataframe(display_sf[show_cols], use_container_width=True)
+                st.dataframe(display_sf[show_cols], width="stretch")
 
                 k1, k2, k3 = st.columns(3)
                 k1.metric("Longest Streak (Balls)", int(sf_df[streak_col].max()))
@@ -6640,7 +6651,7 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
                             with lg_tabs_sf[li]:
                                 lg_sf = sf_df[sf_df['League'] == lg].head(int(top_n_sf)).reset_index(drop=True)
                                 lg_sf.index += 1
-                                st.dataframe(lg_sf[[c for c in show_cols if c in lg_sf.columns]], use_container_width=True)
+                                st.dataframe(lg_sf[[c for c in show_cols if c in lg_sf.columns]], width="stretch")
                     else:
                         st.info("No league data available.")
                 else:
@@ -6670,7 +6681,7 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
                     )
                     fig_sf.update_traces(textposition='outside')
                     fig_sf.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig_sf, use_container_width=True)
+                    st.plotly_chart(fig_sf, width="stretch")
 
                     if len(sf_df) >= 5:
                         st.markdown("**Distribution of six-free streak lengths**")
@@ -6679,7 +6690,7 @@ elif metric_choice == "Most Deliveries Without a Six (Bowler)":
                             title="Distribution of Six-Free Streak Lengths (Balls)",
                             labels={streak_col: 'Consecutive Six-Free Balls', 'count': 'Count'}
                         )
-                        st.plotly_chart(fig_dist_sf, use_container_width=True)
+                        st.plotly_chart(fig_dist_sf, width="stretch")
 
 
 
@@ -6761,7 +6772,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
                 disp_inn[['Batting Team', 'Bowling Team', 'Innings', 'Match', 'Date',
                            'Season', 'League', 'Dot_Balls', 'Total_Legal_Balls', 'Total_Runs', 'Dot%']]
                 .rename(columns={'Dot_Balls': 'Dot Balls', 'Total_Legal_Balls': 'Legal Balls', 'Total_Runs': 'Runs'}),
-                use_container_width=True
+                width="stretch"
             )
 
         with tab_match:
@@ -6772,7 +6783,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
                 disp_match[['Batting Team', 'Match', 'Date', 'Season', 'League',
                              'Dot_Balls', 'Total_Legal_Balls', 'Total_Runs', 'Dot%']]
                 .rename(columns={'Dot_Balls': 'Dot Balls', 'Total_Legal_Balls': 'Legal Balls', 'Total_Runs': 'Runs'}),
-                use_container_width=True
+                width="stretch"
             )
 
         with tab_agg:
@@ -6793,7 +6804,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
                 team_agg['Total_Dot_Balls'] / team_agg['Total_Legal_Balls'].replace(0, np.nan) * 100
             ).round(1)
             team_agg = team_agg.sort_values('Total_Dot_Balls', ascending=False)
-            st.dataframe(team_agg, use_container_width=True)
+            st.dataframe(team_agg, width="stretch")
 
         with tab_chart:
             col1, col2 = st.columns(2)
@@ -6809,7 +6820,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
                 )
                 fig_inn.update_traces(textposition='outside')
                 fig_inn.update_xaxes(tickangle=45)
-                st.plotly_chart(fig_inn, use_container_width=True)
+                st.plotly_chart(fig_inn, width="stretch")
 
             with col2:
                 st.markdown("#### Top Matches (Most Dot Balls)")
@@ -6822,7 +6833,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
                 )
                 fig_match.update_traces(textposition='outside')
                 fig_match.update_xaxes(tickangle=45)
-                st.plotly_chart(fig_match, use_container_width=True)
+                st.plotly_chart(fig_match, width="stretch")
 
             # Dot% distribution across teams
             st.markdown("#### Average Dot Ball % by Team")
@@ -6839,7 +6850,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
             )
             fig_pct.update_traces(textposition='outside')
             fig_pct.update_xaxes(tickangle=45)
-            st.plotly_chart(fig_pct, use_container_width=True)
+            st.plotly_chart(fig_pct, width="stretch")
 
 
 # =========================================
@@ -6989,7 +7000,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                         disp_tbl[['Batting Team', 'Bowling Team', 'Innings', 'Over Range', 'Match', 'Date',
                                    'Season', 'League', 'Boundary-less Balls', 'Boundary-less Overs',
                                    'Total Legal Balls', 'Boundaries Hit', 'Runs in Innings']],
-                        use_container_width=True
+                        width="stretch"
                     )
 
                     k1, k2, k3 = st.columns(3)
@@ -7007,7 +7018,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                     st.dataframe(
                         disp_career[['Batting Team', 'League', 'Career Best (Balls)', 'Career Best (Overs)',
                                      'Over Range', 'vs', 'Match', 'Date', 'Season', 'Innings', 'Total Occurrences (20+)']],
-                        use_container_width=True
+                        width="stretch"
                     )
 
             with tab_chart:
@@ -7027,7 +7038,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                     )
                     fig_tbl.update_traces(textposition='outside')
                     fig_tbl.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig_tbl, use_container_width=True)
+                    st.plotly_chart(fig_tbl, width="stretch")
 
                 with col2:
                     st.markdown("#### Team Career Best")
@@ -7041,7 +7052,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                         )
                         fig_career.update_traces(textposition='outside')
                         fig_career.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig_career, use_container_width=True)
+                        st.plotly_chart(fig_career, width="stretch")
 
                 # Distribution histogram
                 if not tbl_inn_df.empty and len(tbl_inn_df) >= 5:
@@ -7051,7 +7062,7 @@ elif metric_choice == "Team Boundary-less Ball Streak":
                         title="Distribution — Boundary-less Streak Lengths (Balls)",
                         labels={'Boundary-less Balls': 'Consecutive Boundary-less Balls', 'count': 'Count'}
                     )
-                    st.plotly_chart(fig_dist_tbl, use_container_width=True)
+                    st.plotly_chart(fig_dist_tbl, width="stretch")
 
 
 # =========================================
@@ -7159,12 +7170,12 @@ elif metric_choice == "Balls Per Boundary (Phase)":
                         labels={'BPB': 'Balls Per Boundary', 'Year': 'Season'})
                     fig_bpb.update_traces(textposition='top center', texttemplate='%{text:.1f}')
                     fig_bpb.update_layout(xaxis=dict(type='category'), yaxis_title="Balls Per Boundary")
-                st.plotly_chart(fig_bpb, use_container_width=True)
+                st.plotly_chart(fig_bpb, width="stretch")
 
                 with st.expander("📋 Data Table"):
                     disp = lg_df[['Year', 'Phase', 'Legal_Balls', 'Boundaries', 'BPB']].sort_values(['Year', 'Phase']).reset_index(drop=True)
                     disp.index += 1
-                    st.dataframe(disp, use_container_width=True)
+                    st.dataframe(disp, width="stretch")
 
     else:  # Team-wise
         bpb_team_df = balls_per_boundary_phase_team(_bpb_src)
@@ -7218,15 +7229,15 @@ elif metric_choice == "Balls Per Boundary (Phase)":
                             line_dash_map={'— League Avg —': 'dash'})
                         fig_t.update_traces(textposition='top center', texttemplate='%{text:.1f}')
                         fig_t.update_layout(xaxis=dict(type='category'), yaxis_title="Balls Per Boundary")
-                    st.plotly_chart(fig_t, use_container_width=True)
+                    st.plotly_chart(fig_t, width="stretch")
 
                     st.markdown("##### Best Team per Season")
-                    st.dataframe(best_per_year.reset_index(drop=True), use_container_width=True)
+                    st.dataframe(best_per_year.reset_index(drop=True), width="stretch")
 
                     with st.expander("📋 Full Data Table"):
                         disp_t = lg_df[['Year', 'Team', 'Phase', 'Legal_Balls', 'Boundaries', 'BPB']].sort_values(['Year', 'BPB']).reset_index(drop=True)
                         disp_t.index += 1
-                        st.dataframe(disp_t, use_container_width=True)
+                        st.dataframe(disp_t, width="stretch")
 
 
 # =========================================
@@ -7290,7 +7301,7 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                 fig_brp.update_traces(texttemplate='%{text:.1f}%', textposition='outside')
                 fig_brp.update_layout(xaxis=dict(type='category'),
                     yaxis_title="% of Runs Scored in Boundaries", coloraxis_showscale=False)
-                st.plotly_chart(fig_brp, use_container_width=True)
+                st.plotly_chart(fig_brp, width="stretch")
 
                 lg_stack = lg_df.copy()
                 lg_stack['Non_Boundary_Runs'] = lg_stack['Total_Runs'] - lg_stack['Boundary_Runs']
@@ -7303,13 +7314,13 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                     title=f"{lg} — Boundary vs Non-Boundary Runs (Stacked)",
                     labels={'Runs': 'Total Runs', 'Year': 'Season'})
                 fig_stack.update_layout(xaxis=dict(type='category'), yaxis_title="Total Runs")
-                st.plotly_chart(fig_stack, use_container_width=True)
+                st.plotly_chart(fig_stack, width="stretch")
 
                 with st.expander("📋 Data Table"):
                     disp_brp = lg_df[['Year', 'Fours', 'Sixes', 'Boundary_Runs', 'Total_Runs', 'Pct']].rename(
                         columns={'Pct': 'Boundary %'}).sort_values('Year').reset_index(drop=True)
                     disp_brp.index += 1
-                    st.dataframe(disp_brp, use_container_width=True)
+                    st.dataframe(disp_brp, width="stretch")
 
     else:  # Team-wise
         brp_team_df = boundary_runs_pct_team(_brp_src)
@@ -7359,19 +7370,19 @@ elif metric_choice == "Boundary Runs % (Year-wise)":
                             line_dash_map={'— League Avg —': 'dash'})
                         fig_t.update_traces(textposition='top center', texttemplate=text_fmt)
                         fig_t.update_layout(xaxis=dict(type='category'), yaxis_title=y_label)
-                    st.plotly_chart(fig_t, use_container_width=True)
+                    st.plotly_chart(fig_t, width="stretch")
 
                     # Best team per year
                     best_per_yr = lg_df.loc[lg_df.groupby('Year')[y_col].idxmax()][['Year', 'Team', y_col]].copy()
                     best_per_yr.columns = ['Year', 'Best Team', brp_metric]
                     st.markdown("##### Best Team per Season")
-                    st.dataframe(best_per_yr.reset_index(drop=True), use_container_width=True)
+                    st.dataframe(best_per_yr.reset_index(drop=True), width="stretch")
 
                     with st.expander("📋 Full Data Table"):
                         disp_t = lg_df[['Year', 'Team', 'Fours', 'Sixes', 'Boundary_Runs', 'Total_Runs', 'Pct']].rename(
                             columns={'Pct': 'Boundary %'}).sort_values(['Year', 'Boundary %'], ascending=[True, False]).reset_index(drop=True)
                         disp_t.index += 1
-                        st.dataframe(disp_t, use_container_width=True)
+                        st.dataframe(disp_t, width="stretch")
 
 
 # =========================================
@@ -7444,14 +7455,14 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
                     fig_pprr.add_trace(trace)
                 fig_pprr.update_layout(xaxis=dict(type='category'),
                     yaxis_title="Average PP Run Rate", coloraxis_showscale=False)
-                st.plotly_chart(fig_pprr, use_container_width=True)
+                st.plotly_chart(fig_pprr, width="stretch")
 
                 with st.expander("📋 Data Table"):
                     disp_pprr = lg_df[['Year', 'Avg_RR', 'Matches', 'Total_Innings']].rename(columns={
                         'Avg_RR': 'Avg PP Run Rate', 'Total_Innings': 'Innings'
                     }).sort_values('Year').reset_index(drop=True)
                     disp_pprr.index += 1
-                    st.dataframe(disp_pprr, use_container_width=True)
+                    st.dataframe(disp_pprr, width="stretch")
 
     else:  # Team-wise
         pprr_team_df = powerplay_rr_yearwise_team(_pprr_src)
@@ -7496,20 +7507,20 @@ elif metric_choice == "Powerplay Run Rate (Year-wise)":
                             line_dash_map={'— League Avg —': 'dash'})
                         fig_t.update_traces(textposition='top center', texttemplate='%{text:.2f}')
                         fig_t.update_layout(xaxis=dict(type='category'), yaxis_title="Avg PP Run Rate")
-                    st.plotly_chart(fig_t, use_container_width=True)
+                    st.plotly_chart(fig_t, width="stretch")
 
                     # Best team per year
                     best_per_yr = lg_df.loc[lg_df.groupby('Year')['Avg_RR'].idxmax()][['Year', 'Team', 'Avg_RR']].copy()
                     best_per_yr.columns = ['Year', 'Best Team', 'PP Run Rate']
                     st.markdown("##### Best PP Run Rate per Season")
-                    st.dataframe(best_per_yr.reset_index(drop=True), use_container_width=True)
+                    st.dataframe(best_per_yr.reset_index(drop=True), width="stretch")
 
                     with st.expander("📋 Full Data Table"):
                         disp_t = lg_df[['Year', 'Team', 'Avg_RR', 'Innings']].rename(
                             columns={'Avg_RR': 'Avg PP Run Rate'}
                         ).sort_values(['Year', 'Avg PP Run Rate'], ascending=[True, False]).reset_index(drop=True)
                         disp_t.index += 1
-                        st.dataframe(disp_t, use_container_width=True)
+                        st.dataframe(disp_t, width="stretch")
 
 
 # =========================================
@@ -7584,7 +7595,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                         dcols = _bc_display_cols(include_season=False)
                         st.dataframe(
                             yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Economy'),
-                            use_container_width=True
+                            width="stretch"
                         )
                         chart_df = yr_data.sort_values('Economy').head(int(bc_top_n))
                         if not chart_df.empty:
@@ -7593,7 +7604,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                          title=f"{lg} {active_years[0]} — Economy Rate Comparison",
                                          hover_data=['Bowling SR', 'Wickets', 'Dot%'] + _phase_cols)
                             fig.update_xaxes(tickangle=45)
-                            st.plotly_chart(fig, use_container_width=True)
+                            st.plotly_chart(fig, width="stretch")
 
                         st.markdown("**Phase Economy Buckets**")
                         phase_melt = yr_data[['Name'] + _phase_cols].melt(
@@ -7605,7 +7616,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                 x='Phase', y='Economy', color='Name', barmode='group',
                                 title=f"{lg} {active_years[0]} — Phase Economy Buckets"
                             )
-                            st.plotly_chart(fig_p, use_container_width=True)
+                            st.plotly_chart(fig_p, width="stretch")
 
                     else:
                         year_tab_labels = [str(y) for y in active_years] + ["⚖️ Compare"]
@@ -7621,7 +7632,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                 st.markdown(f"**{lg} — Season {yr}**")
                                 st.dataframe(
                                     yr_data[[c for c in dcols if c in yr_data.columns]].sort_values('Economy'),
-                                    use_container_width=True
+                                    width="stretch"
                                 )
                                 chart_df = yr_data.sort_values('Economy').head(int(bc_top_n))
                                 if not chart_df.empty:
@@ -7630,7 +7641,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                                  title=f"{lg} {yr} — Economy Rate",
                                                  hover_data=['Bowling SR', 'Wickets', 'Dot%'] + _phase_cols)
                                     fig.update_xaxes(tickangle=45)
-                                    st.plotly_chart(fig, use_container_width=True)
+                                    st.plotly_chart(fig, width="stretch")
 
                                 st.markdown("**Phase Economy Buckets**")
                                 phase_melt = yr_data[['Name'] + _phase_cols].melt(
@@ -7642,7 +7653,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                         x='Phase', y='Economy', color='Name', barmode='group',
                                         title=f"{lg} {yr} — Phase Economy Buckets"
                                     )
-                                    st.plotly_chart(fig_b, use_container_width=True)
+                                    st.plotly_chart(fig_b, width="stretch")
 
                         # Compare tab
                         with year_sub_tabs[-1]:
@@ -7656,7 +7667,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                     compare_df[[c for c in dcols_cmp if c in compare_df.columns]].sort_values(
                                         ['Name', 'Season'], ascending=[True, True]
                                     ),
-                                    use_container_width=True
+                                    width="stretch"
                                 )
                                 compare_df = compare_df.copy()
                                 compare_df['Season'] = compare_df['Season'].astype(str)
@@ -7669,7 +7680,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                     hover_data=['Average', 'Bowling SR', 'Wickets', 'Dot%'] + _phase_cols
                                 )
                                 fig_cmp.update_xaxes(tickangle=45)
-                                st.plotly_chart(fig_cmp, use_container_width=True)
+                                st.plotly_chart(fig_cmp, width="stretch")
 
                                 if bc_player_filter:
                                     st.markdown("**Phase economy progression across seasons (selected players)**")
@@ -7686,7 +7697,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                                 color='Season', markers=True,
                                                 title=f"{player} — Phase Economy by Season"
                                             )
-                                            st.plotly_chart(fig_pl, use_container_width=True)
+                                            st.plotly_chart(fig_pl, width="stretch")
 
                 else:
                     # Overall (All Seasons)
@@ -7694,7 +7705,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                     dcols = _bc_display_cols(include_season=False)
                     st.dataframe(
                         view_df[[c for c in dcols if c in view_df.columns]].sort_values('Economy'),
-                        use_container_width=True
+                        width="stretch"
                     )
                     chart_df = view_df.sort_values('Economy').head(int(bc_top_n)).copy()
                     if not chart_df.empty:
@@ -7703,7 +7714,7 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                                      title=f"{lg} — Overall Economy Rate Comparison (All Seasons)",
                                      hover_data=['Bowling SR', 'Wickets', 'Dot%'] + _phase_cols)
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        st.plotly_chart(fig, width="stretch")
 
 
 st.markdown("---")
