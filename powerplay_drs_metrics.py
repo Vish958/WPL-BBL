@@ -7,7 +7,6 @@ import pandas as pd
 import numpy as np
 import plotly.express as px
 from datetime import date
-import gc
 
 st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
@@ -17,6 +16,10 @@ st.markdown("Last updated: 01 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet"  # Updated to include DRS data
 JSON_DIR = "data"  # Directory containing JSON files
+
+# Force clear cache on startup to ensure new player matching logic is used
+# Remove this after confirming the fix works
+st.cache_data.clear()
 
 @st.cache_data
 def load_venue_data():
@@ -46,21 +49,10 @@ def load_data(path=DATA_SOURCE, _cache_version=6):  # Version 6: Added event_sta
     try:
         df = pd.read_parquet(path)
         
-        # Memory optimization: phase normalization
+        # Memory optimization
         if 'phase' in df.columns:
             df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
         
-        # Downcast numeric columns to reduce memory footprint
-        for col in df.select_dtypes(include=['int64']).columns:
-            col_min, col_max = df[col].min(), df[col].max()
-            if col_min >= np.iinfo(np.int16).min and col_max <= np.iinfo(np.int16).max:
-                df[col] = df[col].astype(np.int16)
-            elif col_min >= np.iinfo(np.int32).min and col_max <= np.iinfo(np.int32).max:
-                df[col] = df[col].astype(np.int32)
-        for col in df.select_dtypes(include=['float64']).columns:
-            df[col] = pd.to_numeric(df[col], downcast='float')
-        
-        # Convert high-cardinality string columns to category
         cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
         for col in df.columns:
             if col in cat_cols or df[col].dtype == 'object':
@@ -70,7 +62,6 @@ def load_data(path=DATA_SOURCE, _cache_version=6):  # Version 6: Added event_sta
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
         
-        gc.collect()
         return df
     except Exception as e:
         st.error(f"Data not found or failed to load: {e}")
@@ -306,13 +297,11 @@ df = load_data(_cache_version=6)  # Version 6: Added event_stage column for play
 if df.empty:
     st.stop()
 
-# Venue data is now merged inside load_data via cache.
-# If venue/city columns are missing (old cache), add them once.
+# Load and merge venue data
 venue_map = load_venue_data()
-if venue_map and 'city' not in df.columns:
+if venue_map:
     df['venue'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('venue', 'Unknown'))
     df['city'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('city', 'Unknown'))
-
 
 # Load player data for pace/spin and batting hand mapping
 player_data_cache = load_player_data(_cache_version=9)
@@ -437,14 +426,18 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
 
     # Ensure wicket_kind exists as a plain string column for aggregation.
     # If absent (older parquet), synthesise it from wicket_count so lambdas always work.
-    _WK_NULL = {'nan', 'None', '<NA>', ''}
+    _WK_NULL = {'nan', 'NaN', 'None', '<NA>', ''}
     if 'wicket_kind' in pp.columns:
+        # Create a robust boolean flag BEFORE converting to string,
+        # because different pandas versions convert NaN to 'nan' vs 'NaN'.
+        pp['is_wicket'] = pp['wicket_kind'].notna() & (pp['wicket_kind'].astype(str).str.strip() != '') & (~pp['wicket_kind'].astype(str).isin(_WK_NULL))
         pp['wicket_kind'] = pp['wicket_kind'].astype(str)
     else:
         # Synthetic fallback: use team_wicket_count (includes run-outs) if available,
         # otherwise fall back to wicket_count (bowler wickets only).
         _wk_col = 'team_wicket_count' if 'team_wicket_count' in pp.columns else 'wicket_count'
         pp['wicket_kind'] = pp[_wk_col].apply(lambda v: 'Wicket' if v > 0 else 'nan')
+        pp['is_wicket'] = pp[_wk_col] > 0
 
     if mode == 'batting':
         grp = pp.groupby(['match_id', 'team', 'innings', 'date', 'year', 'teams'], observed=True)
@@ -455,7 +448,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets=('wicket_kind', lambda x: (~x.isin(_WK_NULL)).sum())  # all dismissals incl. run out
+            PP_Wickets=('is_wicket', 'sum')  # all dismissals incl. run out
         ).reset_index()
         
         stats['PP_RR'] = (stats['PP_Runs'] / (stats['PP_Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
@@ -495,7 +488,7 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
             PP_4s_Conceded=('runs.batter', lambda x: (x == 4).sum()),
             PP_6s_Conceded=('runs.batter', lambda x: (x == 6).sum()),
             PP_Dots_Bowled=('runs.batter', lambda x: ((x == 0) & (pp.loc[x.index, 'is_valid_delivery'] == 1)).sum()),
-            PP_Wickets_Taken=('wicket_kind', lambda x: (~x.isin(_WK_NULL)).sum()),  # all dismissals incl. run out
+            PP_Wickets_Taken=('is_wicket', 'sum'),  # all dismissals incl. run out
             PP_Wicket_Types=('wicket_kind', lambda x: ', '.join(
                 f"{str(k).title()}({v})" for k, v in x[~x.isin(_WK_NULL)].value_counts().items()
             ) if (~x.isin(_WK_NULL)).any() else '')
