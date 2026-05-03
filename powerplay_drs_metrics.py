@@ -17,9 +17,8 @@ st.markdown("Last updated: 01 May 2026")
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Directory containing JSON files
 
-# Force clear cache on startup to ensure new player matching logic is used
-# Remove this after confirming the fix works
-st.cache_data.clear()
+# Cache version parameters handle invalidation — do NOT use st.cache_data.clear()
+# as it forces re-read of the parquet file on every single widget interaction.
 
 @st.cache_data
 def load_venue_data():
@@ -45,14 +44,25 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=6): # Version 6: Added event_stage column for playoff filtering
+def load_data(path=DATA_SOURCE, _cache_version=7): # Version 7: Performance optimizations
     try:
         df = pd.read_parquet(path)
         
-        # Memory optimization
-        if 'phase' in df.columns:
-            df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
+        # Memory optimization: downcast integers to int16 where possible (~50% RAM saving)
+        for col in df.select_dtypes(include=['int64']).columns:
+            col_min, col_max = df[col].min(), df[col].max()
+            if col_min >= np.iinfo(np.int16).min and col_max <= np.iinfo(np.int16).max:
+                df[col] = df[col].astype(np.int16)
+            elif col_min >= np.iinfo(np.int32).min and col_max <= np.iinfo(np.int32).max:
+                df[col] = df[col].astype(np.int32)
         
+        # Normalize phase column (vectorized — no apply/lambda)
+        if 'phase' in df.columns:
+            df['phase'] = (df['phase'].astype(str).str.strip()
+                           .str.title()
+                           .str.replace('Power Play', 'Powerplay', regex=False))
+        
+        # Convert low-cardinality columns to category dtype
         cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
         for col in df.columns:
             if col in cat_cols or df[col].dtype == 'object':
@@ -61,6 +71,32 @@ def load_data(path=DATA_SOURCE, _cache_version=6): # Version 6: Added event_stag
         
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
+        
+        # Pre-compute venue mapping inside cache (avoids 1M lambda calls per rerun)
+        try:
+            import os
+            from glob import glob
+            import json
+            venue_s, city_s = {}, {}
+            files = glob(os.path.join(JSON_DIR, "*.json"))
+            for file in files:
+                try:
+                    with open(file, 'r', encoding='utf-8') as f:
+                        data = json.load(f)
+                    mid = os.path.basename(file).split('.')[0]
+                    venue_s[mid] = data.get('info', {}).get('venue', 'Unknown')
+                    city_s[mid] = data.get('info', {}).get('city', 'Unknown')
+                except Exception:
+                    continue
+            if venue_s:
+                match_ids_str = df['match_id'].astype(str)
+                df['venue'] = match_ids_str.map(venue_s).fillna('Unknown')
+                df['city'] = match_ids_str.map(city_s).fillna('Unknown')
+                # Re-categorize these new columns
+                df['venue'] = df['venue'].astype('category')
+                df['city'] = df['city'].astype('category')
+        except Exception:
+            pass  # venue mapping is optional, don't break data loading
         
         return df
     except Exception as e:
@@ -293,15 +329,13 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=6) # Version 6: Added event_stage column for playoff filtering
+df = load_data(_cache_version=7) # Version 7: Performance optimizations
 if df.empty:
     st.stop()
 
-# Load and merge venue data
+# Venue data is now pre-computed inside load_data() for caching.
+# Keep venue_map loaded separately for match_id -> venue lookups in UI code.
 venue_map = load_venue_data()
-if venue_map:
-    df['venue'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('venue', 'Unknown'))
-    df['city'] = df['match_id'].astype(str).map(lambda x: venue_map.get(x, {}).get('city', 'Unknown'))
 
 # Load player data for pace/spin and batting hand mapping
 player_data_cache = load_player_data(_cache_version=9)
@@ -317,20 +351,21 @@ selected_leagues = st.sidebar.multiselect("League", leagues)
 years = sorted(df['year'].dropna().unique())
 selected_years = st.sidebar.multiselect("Year", years)
 
-# Apply filters
-fdf = df.copy()
+# Apply filters — use views (no .copy()) for read-only boolean filtering.
+# Only .copy() when we need to add columns (match_number).
+fdf = df
 if selected_leagues:
     fdf = fdf[fdf['league'].isin(selected_leagues)]
 if selected_years:
     fdf = fdf[fdf['year'].isin(selected_years)]
 
-# Add Match Number filter (tracks match sequence per team per season)
-# Do this BEFORE team filter so it applies uniformly
+# Add Match Number — requires .copy() because we add a new column
+fdf = fdf.copy()
 if 'match_number' not in fdf.columns:
-    fdf['match_number'] = fdf.groupby(['league', 'year', 'team'])['match_id'].transform(lambda x: pd.factorize(x)[0] + 1)
+    fdf['match_number'] = fdf.groupby(['league', 'year', 'team'], observed=True)['match_id'].transform(lambda x: pd.factorize(x)[0] + 1)
 
-# Keep a copy before team filter (for metrics that need cross-team aggregation)
-fdf_no_team = fdf.copy()
+# Reference before team filter (no .copy() needed — fdf_no_team is read-only)
+fdf_no_team = fdf
 
 # Team filter (after league/year filtering)
 teams_available = sorted(fdf['team'].dropna().unique())
@@ -414,15 +449,12 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
     if pp.empty:
         return pd.DataFrame(), pd.DataFrame()
     
-    # Helper to get opponent
-    def get_opponent_team(teams_str, my_team):
-        parts = str(teams_str).replace(' vs ', ' v ').split(' v ')
-        if len(parts) == 2:
-            return parts[1].strip() if parts[0].strip() == my_team else parts[0].strip()
-        return 'N/A'
-    
-    # Add bowling_team column (opponent of batting team)
-    pp['bowling_team'] = pp.apply(lambda row: get_opponent_team(row['teams'], str(row['team'])), axis=1)
+    # Add bowling_team column (opponent of batting team) — vectorized
+    _teams_split = pp['teams'].astype(str).str.replace(' vs ', ' v ', regex=False).str.split(' v ', n=1)
+    _team_a = _teams_split.str[0].str.strip()
+    _team_b = _teams_split.str[1].str.strip()
+    _my_team = pp['team'].astype(str)
+    pp['bowling_team'] = np.where(_team_a == _my_team, _team_b, _team_a)
 
     # Ensure wicket_kind exists as a plain string column for aggregation.
     # If absent (older parquet), synthesise it from wicket_count so lambdas always work.
@@ -455,15 +487,12 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         stats['PP_Boundaries'] = stats['PP_4s'] + stats['PP_6s']
         stats['PP_Dot%'] = (stats['PP_Dots'] / stats['PP_Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
         
-        def get_opponent(row):
-            teams_str = str(row['teams'])
-            team = str(row['team'])
-            parts = teams_str.replace(' vs ', ' v ').split(' v ')
-            if len(parts) == 2:
-                return parts[1].strip() if parts[0].strip() == team else parts[0].strip()
-            return 'N/A'
-        
-        stats['Opponent'] = stats.apply(get_opponent, axis=1)
+        # Vectorized opponent extraction
+        _s_split = stats['teams'].astype(str).str.replace(' vs ', ' v ', regex=False).str.split(' v ', n=1)
+        _s_a = _s_split.str[0].str.strip()
+        _s_b = _s_split.str[1].str.strip()
+        _s_team = stats['team'].astype(str)
+        stats['Opponent'] = np.where(_s_a == _s_team, _s_b, _s_a)
         stats['Date'] = pd.to_datetime(stats['date']).dt.date
         stats['Innings'] = stats['innings'].map({1: '1st', 2: '2nd'})
         
@@ -1097,14 +1126,10 @@ def extra_deliveries_cost(df_):
     work['is_nb_ball'] = (work['no_balls'] > 0).astype(int)
     work['is_extra_ball'] = ((work['is_wide_ball'] | work['is_nb_ball'])).astype(int)
 
-    # Runs directly FROM those extra deliveries (penalty + anything scored off them)
+    # Runs directly FROM those extra deliveries (penalty + anything scored off them) — vectorized
     work['wide_runs'] = work['wides']
-    work['nb_runs'] = work.apply(
-        lambda r: r['runs.total'] if r['is_nb_ball'] else 0, axis=1
-    )
-    work['extra_ball_runs'] = work.apply(
-        lambda r: r['runs.total'] if r['is_extra_ball'] else 0, axis=1
-    )
+    work['nb_runs'] = np.where(work['is_nb_ball'], work['runs.total'], 0)
+    work['extra_ball_runs'] = np.where(work['is_extra_ball'], work['runs.total'], 0)
 
     # Runs scored on the RE-BOWLED delivery immediately after each extra ball.
     # e.g. Kartik Tyagi bowls a wide (5.2), batter hits SIX off the re-bowled 5.2 → next_ball_runs = 6.
@@ -1162,12 +1187,12 @@ def extra_deliveries_cost(df_):
     ).reset_index()
     match_stats['Extra_Ball_%'] = (match_stats['Extra_Balls'] / match_stats['Total_Deliveries'] * 100).round(1)
     match_stats['Extra_Run_%'] = (match_stats['Extra_Ball_Runs'] / match_stats['Team_Total_Runs'].replace(0, np.nan) * 100).round(1).fillna(0)
-    match_stats['Opponent'] = match_stats.apply(
-        lambda row: ' v '.join(
-            [t.strip() for t in str(row['teams']).replace(' vs ', ' v ').split(' v ')
-             if t.strip() != str(row['Bowling_Team'])]
-        ) or 'N/A', axis=1
-    )
+    # Vectorized opponent extraction
+    _edc_split = match_stats['teams'].astype(str).str.replace(' vs ', ' v ', regex=False).str.split(' v ', n=1)
+    _edc_a = _edc_split.str[0].str.strip()
+    _edc_b = _edc_split.str[1].str.strip()
+    _edc_bt = match_stats['Bowling_Team'].astype(str)
+    match_stats['Opponent'] = np.where(_edc_a == _edc_bt, _edc_b, _edc_a)
     match_stats = match_stats.sort_values('Date', ascending=False)
 
     # ---- Season-level ----
@@ -1669,8 +1694,8 @@ if metric_choice == "Powerplay Score Tracker":
     mode_val = 'batting' if pp_mode == "Batting" else 'bowling'
     # For bowling mode, pass full df (without team filter) and let function filter by bowling_team
     if mode_val == 'bowling':
-        # Get data before team filtering for bowling mode
-        bowling_df = df.copy()
+        # Get data before team filtering for bowling mode — use views (no .copy())
+        bowling_df = df
         if selected_leagues:
             bowling_df = bowling_df[bowling_df['league'].isin(selected_leagues)]
         if selected_years:
@@ -1680,8 +1705,8 @@ if metric_choice == "Powerplay Score Tracker":
             bowling_df = bowling_df[bowling_df['event_stage'] == '']
         match_stats, season_summary = powerplay_score_tracker(bowling_df, mode=mode_val, filter_teams=selected_teams if selected_teams else None)
     else:
-        # Apply playoff filter to fdf if needed
-        filtered_fdf = fdf.copy()
+        # Apply playoff filter to fdf if needed — no .copy() needed, just filter view
+        filtered_fdf = fdf
         if exclude_playoffs:
             filtered_fdf = filtered_fdf[filtered_fdf['event_stage'] == '']
         match_stats, season_summary = powerplay_score_tracker(filtered_fdf, mode=mode_val)
@@ -1922,12 +1947,12 @@ elif metric_choice == "DRS Analysis":
         # Get all reviews
         reviews = fdf[fdf['has_review'] == 1].copy()
         
-        # Add helper to determine if review was by bowling or batting team
+        # Add helper to determine if review was by bowling or batting team — vectorized
         if not reviews.empty:
             # The 'team' column is the batting team, so if review_by_team == team, it's a batting review
-            reviews['review_type_role'] = reviews.apply(
-                lambda row: 'Batting' if str(row.get('review_by_team', '')) == str(row.get('team', '')) else 'Bowling',
-                axis=1
+            reviews['review_type_role'] = np.where(
+                reviews['review_by_team'].astype(str) == reviews['team'].astype(str),
+                'Batting', 'Bowling'
             )
         
         if reviews.empty:
