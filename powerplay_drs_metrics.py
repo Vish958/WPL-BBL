@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 06 May 2026")
+st.markdown("Last updated: 07 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Directory containing JSON files
@@ -359,10 +359,15 @@ if selected_leagues:
 if selected_years:
     fdf = fdf[fdf['year'].isin(selected_years)]
 
-# Add Match Number — requires .copy() because we add a new column
+# Add Match Number — requires .copy() because we add a new column.
+# IMPORTANT: sort by date first so match_number=1 = chronologically first match.
 fdf = fdf.copy()
 if 'match_number' not in fdf.columns:
-    fdf['match_number'] = fdf.groupby(['league', 'year', 'team'], observed=True)['match_id'].transform(lambda x: pd.factorize(x)[0] + 1)
+    fdf = fdf.sort_values('date')  # sort so factorize gives chronological order
+    fdf['match_number'] = fdf.groupby(['league', 'year', 'team'], observed=True)['match_id'].transform(
+        lambda x: pd.factorize(x)[0] + 1
+    )
+    fdf = fdf.sort_index()  # restore original row order
 
 # Reference before team filter (no .copy() needed — fdf_no_team is read-only)
 fdf_no_team = fdf
@@ -397,6 +402,7 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Extras Impact Index (Bowler)",
     "Overall Extras Summary",
     "Most Wickets in an Over",
+    "20+ Runs in an Over",
     "Left-Right Hand Index",
     "Pace vs Spin Analysis",
     "Super Over Analysis",
@@ -3138,6 +3144,287 @@ elif metric_choice == "Overall Extras Summary":
         st.markdown(f"- **{disciplined_teams_count} Teams** concede fewer than 10 extras per match on average.")
 
 # =========================================
+# 20+ RUNS IN AN OVER
+# =========================================
+elif metric_choice == "20+ Runs in an Over":
+    st.subheader("20+ Runs in an Over")
+    st.write("Track overs where 20 or more runs were scored -- year-wise trends, match-wise breakdown, and innings-wise split")
+
+    # Exclude super overs
+    big_over_df = fdf[fdf['innings'].isin([1, 2])].copy()
+
+    if big_over_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # Group by match, innings, over to get runs per over
+        runs_per_over = big_over_df.groupby(
+            ['match_id', 'innings', 'over', 'team', 'bowling_team', 'teams', 'date', 'year', 'league'],
+            observed=True
+        ).agg(
+            Runs=('runs.total', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Wickets=('wicket_count', 'sum'),
+            Fours=('runs.batter', lambda x: (x == 4).sum()),
+            Sixes=('runs.batter', lambda x: (x == 6).sum())
+        ).reset_index()
+
+        # Display-friendly columns
+        runs_per_over['Over'] = runs_per_over['over'] + 1  # 1-indexed
+        runs_per_over['Season'] = runs_per_over['year']
+        runs_per_over['Date'] = pd.to_datetime(runs_per_over['date']).dt.date
+        runs_per_over['Match'] = runs_per_over['teams'].astype(str)
+        runs_per_over['Batting Team'] = runs_per_over['team'].astype(str)
+        runs_per_over['Bowling Team'] = runs_per_over['bowling_team'].astype(str)
+        runs_per_over['Innings'] = runs_per_over['innings'].map({1: '1st Inns', 2: '2nd Inns'})
+        runs_per_over['Boundaries'] = runs_per_over['Fours'] + runs_per_over['Sixes']
+
+        # Filter to 20+ run overs
+        big_overs = runs_per_over[runs_per_over['Runs'] >= 20].sort_values('Runs', ascending=False)
+
+        # KPI Cards
+        total_big_overs = len(big_overs)
+        total_overs_all = len(runs_per_over)
+        pct = round(total_big_overs / total_overs_all * 100, 2) if total_overs_all > 0 else 0
+        max_runs = int(big_overs['Runs'].max()) if not big_overs.empty else 0
+        avg_runs = round(big_overs['Runs'].mean(), 1) if not big_overs.empty else 0
+
+        k1, k2, k3, k4 = st.columns(4)
+        k1.metric("Total 20+ Run Overs", f"{total_big_overs}")
+        k2.metric("% of All Overs", f"{pct}%")
+        k3.metric("Highest in a Single Over", f"{max_runs}")
+        k4.metric("Average Runs (20+ Overs)", f"{avg_runs}")
+
+        if big_overs.empty:
+            st.info("No overs with 20+ runs found for selected filters.")
+        else:
+            # Configurable threshold
+            threshold = st.slider("Minimum Runs Threshold", min_value=15, max_value=36, value=20, step=1,
+                                  help="Adjust the threshold to see overs with 15+, 20+, 25+, etc.")
+            big_overs = runs_per_over[runs_per_over['Runs'] >= threshold].sort_values('Runs', ascending=False)
+
+            if big_overs.empty:
+                st.info(f"No overs with {threshold}+ runs found.")
+            else:
+                tab1, tab2, tab3, tab4, tab5 = st.tabs([
+                    "Year-wise Summary", "Match-wise", "Innings-wise",
+                    "Top Batters", "Top Bowlers (Conceded)"
+                ])
+
+                with tab1:
+                    st.markdown(f"### Year-wise {threshold}+ Run Overs")
+
+                    year_summary = big_overs.groupby('Season', observed=True).agg(
+                        Big_Overs=('match_id', 'count'),
+                        Avg_Runs=('Runs', 'mean'),
+                        Max_Runs=('Runs', 'max'),
+                        Total_Boundaries=('Boundaries', 'sum'),
+                        Total_Sixes=('Sixes', 'sum')
+                    ).reset_index()
+                    year_summary['Avg_Runs'] = year_summary['Avg_Runs'].round(1)
+
+                    # Total overs per year for context
+                    total_per_year = runs_per_over.groupby('Season', observed=True).size().reset_index(name='Total_Overs')
+                    year_summary = year_summary.merge(total_per_year, on='Season', how='left')
+                    year_summary['Percentage'] = (year_summary['Big_Overs'] / year_summary['Total_Overs'] * 100).round(2)
+                    year_summary = year_summary.sort_values('Season', ascending=False)
+
+                    st.dataframe(year_summary.rename(columns={
+                        'Big_Overs': f'{threshold}+ Overs',
+                        'Avg_Runs': 'Avg Runs',
+                        'Max_Runs': 'Max Runs',
+                        'Total_Boundaries': 'Boundaries',
+                        'Total_Sixes': 'Sixes',
+                        'Total_Overs': 'Total Overs',
+                        'Percentage': '% of Overs'
+                    }), width="stretch", hide_index=True)
+
+                    # Trend chart
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        fig = px.bar(year_summary, x='Season', y='Big_Overs',
+                                     color='Avg_Runs', color_continuous_scale='Reds',
+                                     title=f"Number of {threshold}+ Run Overs per Season",
+                                     labels={'Big_Overs': f'{threshold}+ Overs', 'Avg_Runs': 'Avg Runs'},
+                                     text='Big_Overs')
+                        fig.update_traces(textposition='outside')
+                        st.plotly_chart(fig, width="stretch")
+                    with col2:
+                        fig = px.line(year_summary, x='Season', y='Percentage',
+                                      markers=True,
+                                      title=f"% of Overs That Were {threshold}+ Runs (by Season)",
+                                      labels={'Percentage': '% of Overs'})
+                        st.plotly_chart(fig, width="stretch")
+
+                    # League breakdown if multiple leagues
+                    if big_overs['league'].nunique() > 1:
+                        st.markdown("---")
+                        st.markdown("#### League-wise Breakdown")
+                        league_summary = big_overs.groupby(['league', 'Season'], observed=True).agg(
+                            Big_Overs=('match_id', 'count'),
+                            Avg_Runs=('Runs', 'mean')
+                        ).reset_index()
+                        league_summary['Avg_Runs'] = league_summary['Avg_Runs'].round(1)
+                        league_summary = league_summary.rename(columns={
+                            'league': 'League', 'Big_Overs': f'{threshold}+ Overs', 'Avg_Runs': 'Avg Runs'
+                        })
+                        st.dataframe(league_summary.sort_values(['Season', 'League'], ascending=[False, True]),
+                                     width="stretch", hide_index=True)
+
+                        fig = px.bar(league_summary, x='Season', y=f'{threshold}+ Overs',
+                                     color='League', barmode='group',
+                                     title=f"{threshold}+ Run Overs by League & Season")
+                        st.plotly_chart(fig, width="stretch")
+
+                with tab2:
+                    st.markdown(f"### All {threshold}+ Run Overs (Match-wise)")
+
+                    display_cols = ['Date', 'Match', 'Batting Team', 'Bowling Team', 'Innings',
+                                    'Over', 'Runs', 'Fours', 'Sixes', 'Wickets', 'Season']
+                    st.dataframe(
+                        big_overs[[c for c in display_cols if c in big_overs.columns]].head(100),
+                        width="stretch", hide_index=True
+                    )
+
+                    # Chart: Top 25 biggest overs
+                    top_25 = big_overs.head(25).copy()
+                    top_25['Label'] = (top_25['Batting Team'] + ' vs ' + top_25['Bowling Team']
+                                       + ' (Ov ' + top_25['Over'].astype(str) + ')')
+                    fig = px.bar(top_25, x='Label', y='Runs',
+                                 color='Sixes', color_continuous_scale='Reds',
+                                 title=f"Top 25 Biggest Overs ({threshold}+ Runs)",
+                                 hover_data=['Date', 'Match', 'Innings'])
+                    fig.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig, width="stretch")
+
+                    # Phase distribution
+                    st.markdown("---")
+                    st.markdown("#### Which Overs See the Most Big Hits?")
+                    over_dist = big_overs.groupby('Over', observed=True).size().reset_index(name='Count')
+                    fig = px.bar(over_dist, x='Over', y='Count',
+                                 title=f"Distribution of {threshold}+ Run Overs by Over Number",
+                                 color='Count', color_continuous_scale='YlOrRd')
+                    st.plotly_chart(fig, width="stretch")
+
+                with tab3:
+                    st.markdown(f"### {threshold}+ Run Overs: 1st Innings vs 2nd Innings")
+
+                    inn_summary = big_overs.groupby('Innings', observed=True).agg(
+                        Count=('match_id', 'count'),
+                        Avg_Runs=('Runs', 'mean'),
+                        Max_Runs=('Runs', 'max'),
+                        Total_Sixes=('Sixes', 'sum'),
+                        Total_Boundaries=('Boundaries', 'sum')
+                    ).reset_index()
+                    inn_summary['Avg_Runs'] = inn_summary['Avg_Runs'].round(1)
+
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.dataframe(inn_summary.rename(columns={
+                            'Count': f'{threshold}+ Overs',
+                            'Avg_Runs': 'Avg Runs', 'Max_Runs': 'Max Runs',
+                            'Total_Sixes': 'Sixes', 'Total_Boundaries': 'Boundaries'
+                        }), width="stretch", hide_index=True)
+                    with col2:
+                        fig = px.pie(inn_summary, values='Count', names='Innings',
+                                     title=f"{threshold}+ Run Overs: Innings Split",
+                                     color='Innings',
+                                     color_discrete_map={'1st Inns': '#3498db', '2nd Inns': '#e74c3c'})
+                        st.plotly_chart(fig, width="stretch")
+
+                    # Year-wise innings breakdown
+                    st.markdown("---")
+                    st.markdown("#### Year-wise Innings Breakdown")
+                    inn_year = big_overs.groupby(['Season', 'Innings'], observed=True).size().reset_index(name='Count')
+                    fig = px.bar(inn_year, x='Season', y='Count', color='Innings',
+                                 barmode='group',
+                                 title=f"{threshold}+ Run Overs per Season (by Innings)",
+                                 color_discrete_map={'1st Inns': '#3498db', '2nd Inns': '#e74c3c'})
+                    st.plotly_chart(fig, width="stretch")
+
+                    # Innings-wise: 1st vs 2nd detail tables
+                    col1, col2 = st.columns(2)
+                    with col1:
+                        st.markdown("#### 1st Innings")
+                        first_inn = big_overs[big_overs['innings'] == 1].head(30)
+                        if first_inn.empty:
+                            st.info(f"No {threshold}+ run overs in 1st innings")
+                        else:
+                            st.dataframe(first_inn[['Date', 'Batting Team', 'Bowling Team', 'Over', 'Runs', 'Sixes', 'Season']],
+                                         width="stretch", hide_index=True)
+                    with col2:
+                        st.markdown("#### 2nd Innings")
+                        second_inn = big_overs[big_overs['innings'] == 2].head(30)
+                        if second_inn.empty:
+                            st.info(f"No {threshold}+ run overs in 2nd innings")
+                        else:
+                            st.dataframe(second_inn[['Date', 'Batting Team', 'Bowling Team', 'Over', 'Runs', 'Sixes', 'Season']],
+                                         width="stretch", hide_index=True)
+
+                with tab4:
+                    st.markdown(f"### Batters in {threshold}+ Run Overs")
+                    st.caption("Which batters were at the crease during the biggest overs")
+
+                    # Get batter-level stats for big overs
+                    big_over_ids = big_overs[['match_id', 'innings', 'over']].drop_duplicates()
+                    batter_big = big_over_df.merge(big_over_ids, on=['match_id', 'innings', 'over'], how='inner')
+
+                    batter_stats = batter_big.groupby('batter', observed=True).agg(
+                        Big_Overs=('match_id', lambda x: x.nunique()),
+                        Runs=('runs.batter', 'sum'),
+                        Balls=('is_valid_delivery', 'sum'),
+                        Fours=('runs.batter', lambda x: (x == 4).sum()),
+                        Sixes=('runs.batter', lambda x: (x == 6).sum())
+                    ).reset_index()
+                    batter_stats['SR'] = (batter_stats['Runs'] / batter_stats['Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                    batter_stats = batter_stats.rename(columns={'batter': 'Batter'})
+                    batter_stats['Batter'] = batter_stats['Batter'].astype(str)
+                    batter_stats = batter_stats.sort_values('Big_Overs', ascending=False)
+
+                    st.dataframe(batter_stats.head(30).rename(columns={
+                        'Big_Overs': f'{threshold}+ Overs'
+                    }), width="stretch", hide_index=True)
+
+                    if not batter_stats.empty:
+                        fig = px.bar(batter_stats.head(20), x='Batter', y='Big_Overs',
+                                     color='Runs', color_continuous_scale='YlOrRd',
+                                     title=f"Top 20 Batters by {threshold}+ Run Over Appearances",
+                                     text='Big_Overs')
+                        fig.update_traces(textposition='outside')
+                        fig.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig, width="stretch")
+
+                with tab5:
+                    st.markdown(f"### Bowlers Who Conceded {threshold}+ Runs in an Over")
+                    st.caption("Which bowlers gave away the most big overs")
+
+                    # Get bowler from the big overs
+                    bowler_big = big_over_df.merge(big_over_ids, on=['match_id', 'innings', 'over'], how='inner')
+
+                    bowler_stats = bowler_big.groupby('bowler', observed=True).agg(
+                        Big_Overs_Conceded=('match_id', lambda x: x.nunique()),
+                        Runs_Conceded=('runs.total', 'sum'),
+                        Wickets=('wicket_count', 'sum'),
+                        Sixes_Conceded=('runs.batter', lambda x: (x == 6).sum())
+                    ).reset_index()
+                    bowler_stats = bowler_stats.rename(columns={'bowler': 'Bowler'})
+                    bowler_stats['Bowler'] = bowler_stats['Bowler'].astype(str)
+                    bowler_stats = bowler_stats.sort_values('Big_Overs_Conceded', ascending=False)
+
+                    st.dataframe(bowler_stats.head(30).rename(columns={
+                        'Big_Overs_Conceded': f'{threshold}+ Overs Conceded',
+                        'Runs_Conceded': 'Runs', 'Sixes_Conceded': 'Sixes Conceded'
+                    }), width="stretch", hide_index=True)
+
+                    if not bowler_stats.empty:
+                        fig = px.bar(bowler_stats.head(20), x='Bowler', y='Big_Overs_Conceded',
+                                     color='Sixes_Conceded', color_continuous_scale='Reds',
+                                     title=f"Top 20 Bowlers by {threshold}+ Run Overs Conceded",
+                                     text='Big_Overs_Conceded')
+                        fig.update_traces(textposition='outside')
+                        fig.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig, width="stretch")
+
+# =========================================
 # LEFT-RIGHT HAND INDEX
 # =========================================
 elif metric_choice == "Left-Right Hand Index":
@@ -3849,19 +4136,89 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
     
     # Helper functions
     @st.cache_data(show_spinner=False)
+    def _load_innings_sequences():
+        """Load full batter/non_striker delivery sequence from all JSON files.
+        Returns dict: {(match_id_str, innings_int): [(batter, non_striker), ...]}
+        This is cached separately so it's built once and shared across reruns.
+        """
+        import os, json as _json
+        from glob import glob
+        seq_map = {}
+        try:
+            for jf in glob(os.path.join(JSON_DIR, "*.json")):
+                try:
+                    mid_str = os.path.basename(jf).split('.')[0]
+                    with open(jf, 'r', encoding='utf-8') as f:
+                        data = _json.load(f)
+                    for i, inn in enumerate(data.get('innings', []), start=1):
+                        deliveries_list = []
+                        for ov in inn.get('overs', []):
+                            for dl in ov.get('deliveries', []):
+                                deliveries_list.append(
+                                    (dl.get('batter', ''), dl.get('non_striker', ''))
+                                )
+                        if deliveries_list:
+                            seq_map[(mid_str, i)] = deliveries_list
+                except Exception:
+                    continue
+        except Exception:
+            pass
+        return seq_map
+
+    @st.cache_data(show_spinner=False)
     def compute_batting_positions_bo(df_all):
-        """Compute batting positions (1-11) for each match/innings/batter."""
+        """Compute correct batting positions (1-11) for each match/innings/batter.
+
+        Algorithm:
+        - For each innings, walk through deliveries in order from the JSON.
+        - Delivery 1: batter = position 1, non_striker = position 2 (both openers).
+        - Delivery 2+: whenever a batter appears as the STRIKER for the first time,
+          they just walked in after a wicket → assign them the next position.
+        - This exactly mirrors ESPNcricinfo's batting order.
+        - Falls back to ball_float-ordering if JSON data is unavailable.
+        """
+        seq_map = _load_innings_sequences()
+
         orders = []
-        needed_cols = ['match_id', 'innings', 'batter', 'ball_float']
-        available = [c for c in needed_cols if c in df_all.columns]
-        
-        for (mid, inn), g in df_all[available].groupby(['match_id', 'innings'], observed=True):
-            first = g.groupby('batter', observed=True)['ball_float'].min().reset_index().sort_values('ball_float')
-            first['position'] = range(1, len(first) + 1)
-            first['match_id'] = mid
-            first['innings'] = inn
-            orders.append(first[['match_id', 'innings', 'batter', 'position']])
-        
+        for (mid, inn), g in df_all.groupby(['match_id', 'innings'], observed=True):
+            mid_str = str(mid)
+            inn_int = int(inn)
+            deliveries = seq_map.get((mid_str, inn_int), [])
+
+            position_map = {}  # batter_name -> position number
+
+            if deliveries:
+                # First delivery: striker = pos 1, non-striker = pos 2 (openers walk out together)
+                first_batter, first_ns = deliveries[0]
+                if first_batter:
+                    position_map[first_batter] = 1
+                if first_ns and first_ns != first_batter:
+                    position_map[first_ns] = 2
+
+                # Remaining deliveries: check non_striker BEFORE batter.
+                # When a wicket falls on the LAST ball of an over, the new batter
+                # walks in as the non_striker in the next over (ends swap).
+                # So the new batter first appears in the non_striker column, NOT the
+                # batter column — we must assign their position here, not later.
+                for batter, ns in deliveries[1:]:
+                    if ns and ns not in position_map:
+                        position_map[ns] = len(position_map) + 1
+                    if batter and batter not in position_map:
+                        position_map[batter] = len(position_map) + 1
+            else:
+                # Fallback: assign positions by first-ball-faced order (ball_float)
+                g_sorted = g.sort_values('ball_float')
+                for _, row in g_sorted.iterrows():
+                    b = str(row['batter'])
+                    if b not in position_map:
+                        position_map[b] = len(position_map) + 1
+
+            if position_map:
+                orders.append(pd.DataFrame([
+                    {'match_id': mid, 'innings': inn, 'batter': b, 'position': p}
+                    for b, p in position_map.items()
+                ]))
+
         if orders:
             return pd.concat(orders, ignore_index=True)
         return pd.DataFrame(columns=['match_id', 'innings', 'batter', 'position'])
@@ -3938,23 +4295,31 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
         
         return stats[out_cols].sort_values(['League', 'Team', 'Position'])
     
-    # Compute positions
-    batting_pos = compute_batting_positions_bo(fdf)
+    # NOTE: positions are now computed inside the filter block below,
+    # from the match-range-filtered bo_filter_df (single source of truth).
     
     # Controls
     bo_view_mode = st.radio("View Mode", ["Year-wise Comparison", "Overall (All Seasons)"], key="bo_view_mode", horizontal=True)
     
     col1, col2 = st.columns([2, 2])
     with col2:
-        # Select leagues FIRST
+        # Select leagues — default to whatever the sidebar already filtered to
         available_leagues = sorted(fdf['league'].dropna().unique())
-        selected_leagues = st.multiselect("Select League(s)", available_leagues, default=available_leagues, key="bo_leagues")
+        # Use sidebar selection as default (avoids showing all leagues by default)
+        # Default: if sidebar already filtered to <=2 leagues, use those; else show first only
+        _bo_default_leagues = available_leagues if len(available_leagues) <= 2 else available_leagues[:1]
+        selected_leagues_bo = st.multiselect(
+            "Select League(s)", available_leagues,
+            default=_bo_default_leagues,
+            key="bo_leagues"
+        )
+        selected_leagues = selected_leagues_bo  # local alias
     
     # Filter data by selected leagues BEFORE showing teams
     if selected_leagues:
-        fdf_by_league = fdf[fdf['league'].isin(selected_leagues)].copy()
+        fdf_by_league = fdf[fdf['league'].isin(selected_leagues)]
     else:
-        fdf_by_league = fdf.copy()
+        fdf_by_league = fdf
     
     with col1:
         # Now show teams ONLY from selected leagues
@@ -3962,16 +4327,41 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
         default_teams = [available_teams[0]] if len(available_teams) > 0 else []
         selected_teams = st.multiselect("Select Team(s)", available_teams, default=default_teams, key="bo_teams")
     
-    # Filter and compute
+    # Match range filter — placed here so bo_filter_df (and everything downstream)
+    # uses ONE consistent filtered dataset. No per-tab recompute needed.
+    if 'match_number' in fdf.columns and len(selected_teams) > 0 and len(selected_leagues) > 0:
+        _mn_data = fdf_by_league[fdf_by_league['team'].isin(selected_teams)]
+        _max_mn = int(_mn_data['match_number'].max()) if not _mn_data.empty else 14
+        _max_mn = max(_max_mn, 1)
+        bo_match_range = st.slider(
+            "Match Range (within each season)",
+            min_value=1, max_value=_max_mn,
+            value=(1, _max_mn), step=1,
+            key="bo_match_range_global",
+            help="Restrict to first N matches of each season (e.g. 1-5 = first 5 matches)"
+        )
+    else:
+        bo_match_range = (1, 9999)
+
+    # Filter and compute — ONE source of truth
     if len(selected_teams) > 0 and len(selected_leagues) > 0:
-        bo_filter_df = fdf_by_league[fdf_by_league['team'].isin(selected_teams)].copy()
+        _base = fdf_by_league[fdf_by_league['team'].isin(selected_teams)]
+        if 'match_number' in _base.columns:
+            bo_filter_df = _base[
+                (_base['match_number'] >= bo_match_range[0]) &
+                (_base['match_number'] <= bo_match_range[1])
+            ]
+        else:
+            bo_filter_df = _base
     else:
         bo_filter_df = pd.DataFrame()
-    
+
     if bo_filter_df.empty:
         st.info("No data available for selected filters.")
     else:
-        bo_data = batting_order_stats(bo_filter_df, batting_pos, include_year=(bo_view_mode == "Year-wise Comparison"))
+        # Positions and stats computed ONCE from the already-filtered bo_filter_df
+        batting_pos_filtered = compute_batting_positions_bo(bo_filter_df)
+        bo_data = batting_order_stats(bo_filter_df, batting_pos_filtered, include_year=(bo_view_mode == "Year-wise Comparison"))
         
         if bo_data.empty:
             st.info("No batting order data available.")
@@ -3996,20 +4386,21 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                             key=f"bo_season_{i}", help="Pick multiple seasons to compare."
                         )
                         active_years = selected_bo_years if selected_bo_years else list(year_options)
-                        
+
                         if len(active_years) == 1:
                             # Get teams that actually exist in this league
                             valid_teams_in_league = sorted(lg_df['Team'].unique())
                             teams_to_display = [t for t in selected_teams if t in valid_teams_in_league]
-                            
+
                             yr_data = lg_df[
                                 (lg_df['Season'] == active_years[0]) &
                                 (lg_df['Team'].isin(teams_to_display))
                             ].copy().sort_values(['Team', 'Position'])
+
                             if not yr_data.empty:
                                 st.markdown(f"#### {lg} — Season {active_years[0]}")
                                 st.dataframe(yr_data[['Team', 'Position', 'Innings', 'Runs', 'Balls', 'SR', 'Avg', '25+', '50+']], width="stretch")
-                                
+
                                 # Heatmap
                                 try:
                                     yr_data_num = yr_data.copy()
@@ -4020,7 +4411,7 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                                     st.plotly_chart(fig, width="stretch")
                                 except Exception as e:
                                     st.warning(f"Could not create heatmap: {e}")
-                                
+
                                 # SR chart
                                 try:
                                     sr_data = yr_data.groupby('Position').agg({'SR': 'mean', 'Runs': 'sum'}).reset_index()
@@ -4169,10 +4560,12 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
                         # Further filter by valid teams
                         lg_only_df = lg_only_df[lg_only_df['Team'].isin(teams_to_display)].copy()
                         
-                        agg_data = lg_only_df.groupby(['Team', 'Position']).agg({
+                        agg_data = lg_only_df.groupby(['League', 'Team', 'Position'], observed=True).agg({
                             'Innings': 'sum', 'Runs': 'sum', 'Balls': 'sum',
                             'Fours': 'sum', 'Sixes': 'sum', '25+': 'sum', '50+': 'sum'
                         }).reset_index()
+                        # Drop League column after aggregation (already scoped to one league tab)
+                        agg_data = agg_data.drop(columns=['League'])
                         agg_data['SR'] = (agg_data['Runs'] / agg_data['Balls'].replace(0, 1) * 100).round(2)
                         agg_data['Avg'] = (agg_data['Runs'] / agg_data['Innings'].replace(0, 1)).round(2)
                         
