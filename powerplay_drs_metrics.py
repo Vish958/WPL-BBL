@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 10 May 2026")
+st.markdown("Last updated: 13 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Directory containing JSON files
@@ -428,7 +428,8 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Balls Per Boundary (Phase)",
     "Boundary Runs % (Year-wise)",
     "Powerplay Run Rate (Year-wise)",
-    "Bowling Comparison (Year-wise)"
+    "Bowling Comparison (Year-wise)",
+    "Most Sixes in First 10 Balls",
 ])
 
 if fdf.empty:
@@ -557,6 +558,27 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         ).reset_index()
         season_summary['Avg_PP_Runs'] = season_summary['Avg_PP_Runs'].round(1)
         season_summary['Avg_PP_RR'] = season_summary['Avg_PP_RR'].round(2)
+
+        # ── Aggregate PP: combined PP runs of BOTH teams in the same match ──
+        # For each match, sum the PP_Runs across both innings (both teams batting).
+        # Only keep matches where both teams have a PP score (inner join on match_id).
+        match_agg = (
+            match_stats.groupby(['match_id', 'Season'], observed=True)['PP_Runs']
+            .sum()
+            .reset_index(name='Aggregate_PP')
+        )
+        # Attach team info: both teams from the match
+        match_teams = match_stats[['match_id', 'Team']].drop_duplicates()
+        match_agg = match_agg.merge(match_teams, on='match_id', how='left')
+
+        # Per-team aggregate summary (highest / lowest aggregate match in their season)
+        team_agg_summary = (
+            match_agg.groupby(['Team', 'Season'], observed=True)['Aggregate_PP']
+            .agg(Highest_Aggregate_PP='max', Lowest_Aggregate_PP='min')
+            .reset_index()
+        )
+        season_summary = season_summary.merge(team_agg_summary, on=['Team', 'Season'], how='left')
+
     else:
         season_summary = match_stats.groupby(['Team', 'Season'], observed=True).agg(
             Matches=('match_id', 'nunique'),
@@ -568,8 +590,11 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         ).reset_index()
         season_summary['Avg_Runs_Conceded'] = season_summary['Avg_Runs_Conceded'].round(1)
         season_summary['Avg_Econ'] = season_summary['Avg_Econ'].round(2)
-    
-    return match_stats, season_summary
+        match_agg = pd.DataFrame()  # not applicable for bowling mode
+
+    if mode == 'batting':
+        return match_stats, season_summary, match_agg
+    return match_stats, season_summary, pd.DataFrame()
 
 
 # =========================================
@@ -1377,6 +1402,75 @@ def boundary_less_ball_streak(df_):
 
 
 # =========================================
+# MOST SIXES IN FIRST 10 BALLS (BATTER)
+# =========================================
+def most_sixes_first_n_balls(df_, max_balls=10):
+    """
+    For each innings, count sixes scored by each batter in their first `max_balls`
+    legal deliveries faced (excluding wides, same logic as SR buckets).
+    Args:
+        df_      : raw filtered dataframe
+        max_balls: number of first legal balls to consider (default 10)
+    Returns:
+        innings_df  — one row per batter per innings (match-level)
+        season_df   — aggregate per batter per season
+    """
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame()
+
+    # Exclude wides from balls faced (same ESPN/ICC convention as SR buckets)
+    balls_faced = work[work['extras_type'].astype(str).fillna('') != 'wides'].copy()
+    if balls_faced.empty:
+        return pd.DataFrame(), pd.DataFrame()
+
+    balls_faced = balls_faced.sort_values(['match_id', 'innings', 'batter', 'over', 'ball_float'])
+    balls_faced['batter_ball_no'] = balls_faced.groupby(
+        ['match_id', 'innings', 'batter'], observed=True
+    ).cumcount() + 1
+
+    # Keep only first max_balls balls faced per batter per innings
+    first_n = balls_faced[balls_faced['batter_ball_no'] <= max_balls].copy()
+    if first_n.empty:
+        return pd.DataFrame(), pd.DataFrame()
+
+    first_n['is_six'] = (first_n['runs.batter'] == 6).astype(int)
+
+    # Column name labels to reflect chosen ball count
+    six_col   = f'Sixes_in_First{max_balls}'
+    balls_col = f'Balls_Faced_First{max_balls}'
+    runs_col  = f'Runs_in_First{max_balls}'
+
+    # Innings-level table
+    innings_df = first_n.groupby(
+        ['match_id', 'innings', 'batter', 'team', 'year', 'date', 'teams'], observed=True
+    ).agg(
+        **{six_col:   ('is_six', 'sum'),
+           balls_col: ('batter_ball_no', 'count'),
+           runs_col:  ('runs.batter', 'sum')}
+    ).reset_index()
+    innings_df['Date'] = pd.to_datetime(innings_df['date']).dt.date
+    innings_df = innings_df.rename(columns={
+        'batter': 'Batter', 'team': 'Team', 'year': 'Season', 'teams': 'Match'
+    })
+    innings_df = innings_df.sort_values(six_col, ascending=False)
+
+    # Season aggregate per batter
+    total_six_col  = f'Total_Sixes_First{max_balls}'
+    total_runs_col = f'Total_Runs_First{max_balls}'
+    season_df = first_n.groupby(['batter', 'team', 'year'], observed=True).agg(
+        **{total_six_col:  ('is_six', 'sum'),
+           'Innings':      ('match_id', 'nunique'),
+           total_runs_col: ('runs.batter', 'sum')}
+    ).reset_index()
+    season_df = season_df.rename(columns={'batter': 'Batter', 'team': 'Team', 'year': 'Season'})
+    season_df['Sixes_Per_Innings'] = (season_df[total_six_col] / season_df['Innings'].replace(0, np.nan)).round(2)
+    season_df = season_df.sort_values(total_six_col, ascending=False)
+
+    return innings_df, season_df
+
+
+# =========================================
 # RENDER METRICS
 # =========================================
 
@@ -1709,18 +1803,19 @@ if metric_choice == "Powerplay Score Tracker":
         # Exclude playoff matches if checkbox is selected
         if exclude_playoffs:
             bowling_df = bowling_df[bowling_df['event_stage'] == '']
-        match_stats, season_summary = powerplay_score_tracker(bowling_df, mode=mode_val, filter_teams=selected_teams if selected_teams else None)
+        match_stats, season_summary, match_agg = powerplay_score_tracker(bowling_df, mode=mode_val, filter_teams=selected_teams if selected_teams else None)
     else:
         # Apply playoff filter to fdf if needed — no .copy() needed, just filter view
         filtered_fdf = fdf
         if exclude_playoffs:
             filtered_fdf = filtered_fdf[filtered_fdf['event_stage'] == '']
-        match_stats, season_summary = powerplay_score_tracker(filtered_fdf, mode=mode_val)
+        match_stats, season_summary, match_agg = powerplay_score_tracker(filtered_fdf, mode=mode_val)
     
     if match_stats.empty:
         st.info("No powerplay data available for selected filters.")
     else:
         # Team comparison mode
+        team1, team2 = None, None
         if compare_teams:
             available_teams = sorted(match_stats['Team'].unique())
             if len(available_teams) < 2:
@@ -1735,9 +1830,11 @@ if metric_choice == "Powerplay Score Tracker":
                 
                 match_stats = match_stats[match_stats['Team'].isin([team1, team2])]
                 season_summary = season_summary[season_summary['Team'].isin([team1, team2])]
+                if not match_agg.empty:
+                    match_agg = match_agg[match_agg['Team'].isin([team1, team2])]
         
         # Tabs
-        tab1, tab2, tab3, tab4 = st.tabs(["Match-by-Match", "Season Summary", "Venue-wise", "Playoff Matches"])
+        tab1, tab2, tab3, tab4, tab5_agg = st.tabs(["Match-by-Match", "Season Summary", "Venue-wise", "Playoff Matches", "Aggregate Analysis"])
         
         with tab1:
             if mode_val == 'batting':
@@ -1765,7 +1862,15 @@ if metric_choice == "Powerplay Score Tracker":
         
         with tab2:
             if not season_summary.empty:
-                st.dataframe(season_summary, width="stretch")
+                if mode_val == 'batting':
+                    ss_display_cols = ['Team', 'Season', 'Matches', 'Avg_PP_Runs', 'Best_PP', 'Worst_PP',
+                                       'Total_PP_Runs', 'Avg_PP_RR', 'Total_Boundaries',
+                                       'Highest_Aggregate_PP', 'Lowest_Aggregate_PP']
+                    st.caption("🔵 **Highest/Lowest Aggregate PP** = combined PP runs of *both* batting teams in a single match (e.g., Team A 55 + Team B 42 = 97). Highest = best-scoring match the team was part of.")
+                else:
+                    ss_display_cols = ['Team', 'Season', 'Matches', 'Avg_Runs_Conceded', 'Best_PP_Bowling',
+                                       'Worst_PP_Bowling', 'Total_Wickets', 'Avg_Econ']
+                st.dataframe(season_summary[[c for c in ss_display_cols if c in season_summary.columns]], width="stretch")
                 
                 if mode_val == 'batting':
                     fig = px.bar(season_summary, x='Team', y='Avg_PP_Runs', color='Season', 
@@ -1774,6 +1879,19 @@ if metric_choice == "Powerplay Score Tracker":
                     fig = px.bar(season_summary, x='Team', y='Avg_Runs_Conceded', color='Season',
                                 barmode='group', title="Average PP Runs Conceded by Team")
                 st.plotly_chart(fig, width="stretch")
+                
+                # Aggregate PP chart (batting only)
+                if mode_val == 'batting' and 'Highest_Aggregate_PP' in season_summary.columns:
+                    agg_melt = season_summary[['Team', 'Season', 'Highest_Aggregate_PP', 'Lowest_Aggregate_PP']].copy()
+                    agg_melt_long = agg_melt.melt(id_vars=['Team', 'Season'],
+                                                   value_vars=['Highest_Aggregate_PP', 'Lowest_Aggregate_PP'],
+                                                   var_name='Aggregate_Type', value_name='Combined_PP')
+                    fig_agg = px.bar(agg_melt_long, x='Team', y='Combined_PP',
+                                     color='Aggregate_Type', barmode='group',
+                                     color_discrete_map={'Highest_Aggregate_PP': '#2ECC71', 'Lowest_Aggregate_PP': '#E74C3C'},
+                                     title="Highest & Lowest Combined PP Score (Both Teams) — per Team")
+                    fig_agg.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_agg, width="stretch")
         
         with tab3:
             st.markdown("#### Venue-wise Powerplay Performance")
@@ -1934,8 +2052,113 @@ if metric_choice == "Powerplay Score Tracker":
                     
                     st.dataframe(stage_summary, width="stretch")
 
+        with tab5_agg:
+            st.markdown("#### Aggregate PP Analysis — Combined Score of Both Teams")
+            st.caption("Aggregate PP = sum of both teams' PP runs in a single match. Helps identify high/low scoring PP phases for a match.")
+
+            if mode_val != 'batting':
+                st.info("Aggregate Analysis is only available in Batting mode.")
+            elif match_agg.empty:
+                st.info("No aggregate PP data available for selected filters.")
+            else:
+                # Deduplicate: each match appears twice (once per team), keep unique match rows
+                match_agg_unique = match_agg.drop_duplicates(subset='match_id').copy()
+                match_agg_unique = match_agg_unique.sort_values('Aggregate_PP', ascending=False)
+
+                # Attach date from match_stats for context
+                date_map = match_stats[['match_id', 'Date']].drop_duplicates().set_index('match_id')['Date']
+                opp_map = match_stats.groupby('match_id')['Opponent'].first()
+                team_map = match_stats.groupby('match_id')['Team'].first()
+                match_agg_unique['Date'] = match_agg_unique['match_id'].map(date_map)
+                match_agg_unique['Team_A'] = match_agg_unique['match_id'].map(team_map)
+                match_agg_unique['Team_B'] = match_agg_unique['match_id'].map(opp_map)
+
+                # KPI metrics
+                highest_agg = int(match_agg_unique['Aggregate_PP'].max())
+                lowest_agg = int(match_agg_unique['Aggregate_PP'].min())
+                avg_agg = round(match_agg_unique['Aggregate_PP'].mean(), 1)
+                k1, k2, k3 = st.columns(3)
+                k1.metric("Highest Aggregate PP", highest_agg)
+                k2.metric("Lowest Aggregate PP", lowest_agg)
+                k3.metric("Average Aggregate PP", avg_agg)
+
+                st.markdown("---")
+
+                # Full table
+                st.markdown("##### All Matches — Combined PP Score")
+                display_agg = match_agg_unique[
+                    [c for c in ['Date', 'Team_A', 'Team_B', 'Aggregate_PP', 'Season'] if c in match_agg_unique.columns]
+                ].rename(columns={'Team_A': 'Batting Team', 'Team_B': 'Bowling Team / Opponent', 'Aggregate_PP': 'Combined PP Runs'})
+                st.dataframe(display_agg, width="stretch")
+
+                # Chart
+                fig_agg_bar = px.bar(
+                    match_agg_unique.head(20),
+                    x=match_agg_unique.head(20)['Date'].astype(str) + ': ' + match_agg_unique.head(20)['Team_A'].astype(str),
+                    y='Aggregate_PP',
+                    color='Aggregate_PP',
+                    color_continuous_scale='RdYlGn',
+                    title="Top 20 Matches by Combined PP Score (Both Teams)"
+                )
+                fig_agg_bar.update_xaxes(title='Match', tickangle=45)
+                fig_agg_bar.update_yaxes(title='Combined PP Runs')
+                st.plotly_chart(fig_agg_bar, width="stretch")
+
+                # Team comparison difference section
+                if compare_teams and team1 and team2:
+                    st.markdown("---")
+                    st.markdown(f"##### Team Comparison Difference: **{team1}** vs **{team2}**")
+                    st.caption("Matches where both teams played (same match_id). Shows how each team's own PP score contributed to the combined total.")
+
+                    # Get per-team PP per match
+                    t1_pp = match_stats[match_stats['Team'] == team1][['match_id', 'Date', 'PP_Runs']].rename(columns={'PP_Runs': f'{team1}_PP'})
+                    t2_pp = match_stats[match_stats['Team'] == team2][['match_id', 'PP_Runs']].rename(columns={'PP_Runs': f'{team2}_PP'})
+                    compare_matches = t1_pp.merge(t2_pp, on='match_id', how='inner')
+                    compare_matches['Combined_PP'] = compare_matches[f'{team1}_PP'] + compare_matches[f'{team2}_PP']
+                    compare_matches['Difference'] = compare_matches[f'{team1}_PP'] - compare_matches[f'{team2}_PP']
+                    compare_matches['Advantage'] = compare_matches['Difference'].apply(
+                        lambda d: f"{team1} +{d}" if d > 0 else (f"{team2} +{abs(d)}" if d < 0 else "Equal")
+                    )
+                    compare_matches = compare_matches.sort_values('Date', ascending=False)
+
+                    if compare_matches.empty:
+                        st.info(f"No head-to-head matches found between {team1} and {team2}.")
+                    else:
+                        col_m, col_d = st.columns([2, 1])
+                        with col_m:
+                            st.dataframe(
+                                compare_matches[['Date', f'{team1}_PP', f'{team2}_PP', 'Combined_PP', 'Advantage']],
+                                width="stretch"
+                            )
+                        with col_d:
+                            diff_kpi_c1, diff_kpi_c2 = st.columns(2)
+                            diff_kpi_c1.metric(f"Avg {team1} PP", round(compare_matches[f'{team1}_PP'].mean(), 1))
+                            diff_kpi_c2.metric(f"Avg {team2} PP", round(compare_matches[f'{team2}_PP'].mean(), 1))
+                            t1_wins = (compare_matches['Difference'] > 0).sum()
+                            t2_wins = (compare_matches['Difference'] < 0).sum()
+                            st.metric(f"{team1} Higher PP Count", t1_wins)
+                            st.metric(f"{team2} Higher PP Count", t2_wins)
+
+                        # Side-by-side comparison chart
+                        comp_melt = compare_matches.melt(
+                            id_vars=['Date'],
+                            value_vars=[f'{team1}_PP', f'{team2}_PP'],
+                            var_name='Team', value_name='PP_Runs'
+                        )
+                        comp_melt['Team'] = comp_melt['Team'].str.replace('_PP', '')
+                        comp_melt['Date_str'] = comp_melt['Date'].astype(str)
+                        fig_comp = px.bar(
+                            comp_melt, x='Date_str', y='PP_Runs', color='Team',
+                            barmode='group',
+                            title=f"{team1} vs {team2} — PP Runs per Match",
+                            labels={'Date_str': 'Match Date', 'PP_Runs': 'PP Runs'}
+                        )
+                        fig_comp.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig_comp, width="stretch")
+
 
 elif metric_choice == "DRS Analysis":
+
     st.subheader("DRS Analysis")
     
     # Check if DRS data is available
@@ -2662,10 +2885,23 @@ elif metric_choice == "Batter vs Bowler Matchup":
             
             with tab4:
                 st.markdown("### Batter — Most Runs in a Single Over")
-                st.caption("Select a batter to see their highest-scoring individual overs")
+                st.caption("Filter by batting team first, then select a batter to see their highest-scoring individual overs")
                 
-                all_batters_t4 = sorted(matchup_df['batter'].astype(str).unique())
-                sel_batter_t4 = st.selectbox("Select Batter", [""] + list(all_batters_t4), key="mu_t4_batter")
+                # Team filter first (makes it easy to browse squad without knowing all names)
+                all_bat_teams_t4 = sorted(matchup_df['team'].astype(str).unique())
+                sel_bat_team_t4 = st.selectbox(
+                    "Filter by Batting Team", ["All Teams"] + list(all_bat_teams_t4), key="mu_t4_team",
+                    help="Select a team to narrow down the batter list to that team's players."
+                )
+                
+                # Filter batter list by selected team
+                if sel_bat_team_t4 != "All Teams":
+                    batters_in_team_t4 = sorted(matchup_df[matchup_df['team'].astype(str) == sel_bat_team_t4]['batter'].astype(str).unique())
+                    st.caption(f"Showing {len(batters_in_team_t4)} batter(s) from **{sel_bat_team_t4}**")
+                else:
+                    batters_in_team_t4 = sorted(matchup_df['batter'].astype(str).unique())
+                
+                sel_batter_t4 = st.selectbox("Select Batter", [""] + list(batters_in_team_t4), key="mu_t4_batter")
                 
                 if sel_batter_t4:
                     batter_overs = matchup_df[matchup_df['batter'].astype(str) == sel_batter_t4].copy()
@@ -2702,43 +2938,114 @@ elif metric_choice == "Batter vs Bowler Matchup":
             
             with tab5:
                 st.markdown("### Bowler — Most Runs Conceded in a Single Over")
-                st.caption("Select a bowler to see their most expensive individual overs")
-                
-                all_bowlers_t5 = sorted(matchup_df['bowler'].astype(str).unique())
-                sel_bowler_t5 = st.selectbox("Select Bowler", [""] + list(all_bowlers_t5), key="mu_t5_bowler")
-                
-                if sel_bowler_t5:
-                    bowler_overs = matchup_df[matchup_df['bowler'].astype(str) == sel_bowler_t5].copy()
-                    bowler_overs = bowler_overs.groupby(['match_id', 'over', 'date', 'teams', 'bowling_team', 'year'], observed=True).agg(
+                st.caption("Filter by bowling team to browse the squad, then optionally select specific bowlers for detail.")
+
+                # -- Step 1: Team filter
+                all_bowl_teams_t5 = sorted(matchup_df['bowling_team'].astype(str).unique())
+                sel_bowl_team_t5 = st.selectbox(
+                    "Filter by Bowling Team", ["All Teams"] + list(all_bowl_teams_t5), key="mu_t5_team",
+                    help="Select a team to narrow down the bowler list. E.g., pick 'DC' to see only DC bowlers."
+                )
+
+                # -- Apply team filter to base data
+                if sel_bowl_team_t5 != "All Teams":
+                    t5_base_df = matchup_df[matchup_df['bowling_team'].astype(str) == sel_bowl_team_t5].copy()
+                    bowlers_in_team_t5 = sorted(t5_base_df['bowler'].astype(str).unique())
+                    st.caption(f"Showing {len(bowlers_in_team_t5)} bowler(s) from **{sel_bowl_team_t5}**")
+                else:
+                    t5_base_df = matchup_df.copy()
+                    bowlers_in_team_t5 = sorted(t5_base_df['bowler'].astype(str).unique())
+
+                # -- Step 2: Optional season filter
+                t5_seasons = sorted(t5_base_df['year'].astype(str).unique(), reverse=True)
+                sel_t5_season = st.selectbox(
+                    "Filter by Season (optional)", ["All Seasons"] + list(t5_seasons), key="mu_t5_season"
+                )
+                if sel_t5_season != "All Seasons":
+                    t5_base_df = t5_base_df[t5_base_df['year'].astype(str) == sel_t5_season]
+
+                # -- Team-level overview table: most expensive overs across all bowlers in team/season
+                if not t5_base_df.empty:
+                    st.markdown("---")
+                    st.markdown("#### Most Runs Conceded in a Single Over — Team Overview")
+
+                    team_overs_all = t5_base_df.groupby(
+                        ['match_id', 'bowler', 'over', 'date', 'teams', 'bowling_team', 'year'], observed=True
+                    ).agg(
                         Runs_Conceded=('runs.total', 'sum'),
                         Balls=('is_valid_delivery', 'sum'),
                         Wickets=('wicket_count', 'sum')
                     ).reset_index()
-                    bowler_overs['Over'] = bowler_overs['over'] + 1
-                    bowler_overs['Date'] = pd.to_datetime(bowler_overs['date']).dt.date
-                    bowler_overs['Match'] = bowler_overs['teams'].astype(str)
-                    bowler_overs = bowler_overs.rename(columns={'bowling_team': 'Team', 'year': 'Season'})
-                    bowler_overs = bowler_overs.sort_values('Runs_Conceded', ascending=False)
-                    
-                    st.markdown(f"**{sel_bowler_t5} — Most Expensive Overs**")
+                    team_overs_all['Over_No'] = team_overs_all['over'] + 1
+                    team_overs_all['Date'] = pd.to_datetime(team_overs_all['date']).dt.date
+                    team_overs_all['Match'] = team_overs_all['teams'].astype(str)
+                    team_overs_all = team_overs_all.rename(columns={'bowling_team': 'Team', 'year': 'Season', 'bowler': 'Bowler'})
+                    team_overs_all = team_overs_all.sort_values('Runs_Conceded', ascending=False)
+
+                    top_n_t5 = st.number_input("Show Top N overs", min_value=5, max_value=100, value=20, step=5, key="mu_t5_topn")
                     st.dataframe(
-                        bowler_overs[['Date', 'Match', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].head(30),
+                        team_overs_all[['Date', 'Bowler', 'Team', 'Match', 'Over_No', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']]
+                        .head(int(top_n_t5))
+                        .rename(columns={'Over_No': 'Over'}),
                         width="stretch"
                     )
-                    
-                    if not bowler_overs.empty:
-                        fig = px.bar(
-                            bowler_overs.head(20),
-                            x=bowler_overs.head(20)['Date'].astype(str) + ' Ov' + bowler_overs.head(20)['Over'].astype(str),
-                            y='Runs_Conceded',
-                            color='Wickets',
-                            color_continuous_scale='Reds',
-                            title=f"{sel_bowler_t5} — Most Runs Conceded in a Single Over"
+
+                    if len(team_overs_all) > 0:
+                        chart_t5 = team_overs_all.head(20).copy()
+                        chart_t5['Label'] = chart_t5['Bowler'].astype(str) + ' ' + chart_t5['Date'].astype(str) + ' Ov' + chart_t5['Over_No'].astype(str)
+                        fig_team_t5 = px.bar(
+                            chart_t5, x='Label', y='Runs_Conceded',
+                            color='Wickets', color_continuous_scale='Reds',
+                            title=f"Most Expensive Overs — {sel_bowl_team_t5}" + (f" ({sel_t5_season})" if sel_t5_season != "All Seasons" else ""),
+                            hover_data=['Bowler', 'Match', 'Season']
                         )
-                        fig.update_xaxes(title='Match / Over', tickangle=45)
-                        st.plotly_chart(fig, width="stretch")
+                        fig_team_t5.update_xaxes(title='Bowler / Match / Over', tickangle=45)
+                        st.plotly_chart(fig_team_t5, width="stretch")
+
+                # -- Step 3: Optional individual bowler(s) drill-down (multiple selection)
+                st.markdown("---")
+                st.markdown("#### Drill Down by Bowler(s)")
+                sel_bowlers_t5 = st.multiselect(
+                    "Select Bowler(s) for detailed view (optional)",
+                    bowlers_in_team_t5,
+                    key="mu_t5_bowler",
+                    help="Select one or more bowlers to compare their expensive overs side by side."
+                )
+
+                if sel_bowlers_t5:
+                    for bowler_name in sel_bowlers_t5:
+                        bowler_overs = t5_base_df[t5_base_df['bowler'].astype(str) == bowler_name].copy()
+                        bowler_overs = bowler_overs.groupby(
+                            ['match_id', 'over', 'date', 'teams', 'bowling_team', 'year'], observed=True
+                        ).agg(
+                            Runs_Conceded=('runs.total', 'sum'),
+                            Balls=('is_valid_delivery', 'sum'),
+                            Wickets=('wicket_count', 'sum')
+                        ).reset_index()
+                        bowler_overs['Over'] = bowler_overs['over'] + 1
+                        bowler_overs['Date'] = pd.to_datetime(bowler_overs['date']).dt.date
+                        bowler_overs['Match'] = bowler_overs['teams'].astype(str)
+                        bowler_overs = bowler_overs.rename(columns={'bowling_team': 'Team', 'year': 'Season'})
+                        bowler_overs = bowler_overs.sort_values('Runs_Conceded', ascending=False)
+
+                        with st.expander(f"{bowler_name} — Most Expensive Overs", expanded=(len(sel_bowlers_t5) == 1)):
+                            st.dataframe(
+                                bowler_overs[['Date', 'Match', 'Team', 'Over', 'Runs_Conceded', 'Balls', 'Wickets', 'Season']].head(30),
+                                width="stretch"
+                            )
+                            if not bowler_overs.empty:
+                                fig = px.bar(
+                                    bowler_overs.head(20),
+                                    x=bowler_overs.head(20)['Date'].astype(str) + ' Ov' + bowler_overs.head(20)['Over'].astype(str),
+                                    y='Runs_Conceded',
+                                    color='Wickets',
+                                    color_continuous_scale='Reds',
+                                    title=f"{bowler_name} — Most Runs Conceded in a Single Over"
+                                )
+                                fig.update_xaxes(title='Match / Over', tickangle=45)
+                                st.plotly_chart(fig, width="stretch")
                 else:
-                    st.info("Select a bowler to see their most expensive overs.")
+                    st.info("Optionally select specific bowler(s) above for a detailed drill-down view.")
 
 # =========================================
 # MOST WICKETS IN AN OVER
@@ -4608,7 +4915,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
     st.subheader("SR Comparison (Year-wise)")
     st.write("Batter strike rate comparison across leagues and seasons with ball-range buckets")
 
-    sr_col1, sr_col2, sr_col3, sr_col4 = st.columns([2, 1, 1, 2])
+    sr_col1, sr_col2, sr_col3, sr_col4, sr_col5 = st.columns([2, 1, 1, 2, 1])
     with sr_col1:
         aggregate_across_teams = st.checkbox(
             "Aggregate across teams (ignore Team filter)",
@@ -4622,6 +4929,9 @@ elif metric_choice == "SR Comparison (Year-wise)":
         top_n_sr = st.number_input("Top N in chart", min_value=5, max_value=50, value=15, step=1, key="sr_top_n")
     with sr_col4:
         sr_view_mode = st.radio("View Mode", ["Year-wise", "Overall (All Seasons)"], key="sr_view_mode", horizontal=True)
+    with sr_col5:
+        sr_show_runs = st.checkbox("Show Runs", value=True, key="sr_show_runs",
+                                   help="Include player Runs column in the table and chart hover.")
 
     sr_source_df = fdf_no_team.copy() if aggregate_across_teams else fdf.copy()
     sr_table = yearwise_batter_sr_comparison(
@@ -4643,7 +4953,10 @@ elif metric_choice == "SR Comparison (Year-wise)":
     else:
         # Helper columns
         _bucket_cols = ['1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
-        _base_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+        # Conditionally include Runs column
+        _runs_cols = ['Runs'] if sr_show_runs else []
+        _base_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
+        _chart_hover = ['Balls/Inn'] + _runs_cols + _bucket_cols
 
         leagues_in_sr = sorted(sr_table['League'].dropna().unique())
         league_tabs = st.tabs([str(lg) for lg in leagues_in_sr])
@@ -4667,7 +4980,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                     def _make_display_cols(include_season=False):
                         cols = list(_base_cols)
                         if not aggregate_across_teams and 'Team' in lg_df.columns:
-                            cols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+                            cols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
                         if include_season:
                             cols = ['Season'] + cols
                         return cols
@@ -4685,7 +4998,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                             fig = px.bar(chart_df, x='Name', y='Strike Rate',
                                          color='Average', color_continuous_scale='Viridis',
                                          title=f"{lg} {active_years[0]} — Strike Rate Comparison",
-                                         hover_data=['Balls/Inn'] + _bucket_cols)
+                                         hover_data=_chart_hover)
                             fig.update_xaxes(tickangle=45)
                             st.plotly_chart(fig, width="stretch")
                     else:
@@ -4711,7 +5024,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                     fig = px.bar(chart_df, x='Name', y='Strike Rate',
                                                  color='Average', color_continuous_scale='Viridis',
                                                  title=f"{lg} {yr} — Strike Rate",
-                                                 hover_data=['Balls/Inn'] + _bucket_cols)
+                                                 hover_data=_chart_hover)
                                     fig.update_xaxes(tickangle=45)
                                     st.plotly_chart(fig, width="stretch")
 
@@ -4753,7 +5066,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                                     x='Name', y='Strike Rate', color='Season',
                                     barmode='group',
                                     title=f"{lg} {season_label} — Year-wise SR Comparison",
-                                    hover_data=['Average', 'Balls/Inn'] + _bucket_cols
+                                    hover_data=['Average'] + _chart_hover
                                 )
                                 fig_cmp.update_xaxes(tickangle=45)
                                 st.plotly_chart(fig_cmp, width="stretch")
@@ -4781,7 +5094,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                     view_df = lg_df.copy()
                     dcols = list(_base_cols)
                     if not aggregate_across_teams and 'Team' in view_df.columns:
-                        dcols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _bucket_cols
+                        dcols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
                     st.dataframe(
                         view_df[[c for c in dcols if c in view_df.columns]].sort_values('Strike Rate', ascending=False),
                         width="stretch"
@@ -4791,7 +5104,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                         fig = px.bar(chart_df, x='Name', y='Strike Rate',
                                      color='Average', color_continuous_scale='Viridis',
                                      title=f"{lg} — Overall Strike Rate Comparison (All Seasons)",
-                                     hover_data=['Balls/Inn'] + _bucket_cols)
+                                     hover_data=_chart_hover)
                         fig.update_xaxes(tickangle=45)
                         st.plotly_chart(fig, width="stretch")
 
@@ -8127,6 +8440,205 @@ elif metric_choice == "Bowling Comparison (Year-wise)":
                         fig.update_xaxes(tickangle=45)
                         st.plotly_chart(fig, width="stretch")
 
+
+
+
+# =========================================
+# MOST SIXES IN FIRST N BALLS (BATTER)
+# =========================================
+elif metric_choice == "Most Sixes in First 10 Balls":
+    st.subheader("Most Sixes in First N Balls (Batter)")
+    st.write("Which batters hit the most (or fewest) sixes in their first N legal deliveries faced per innings?")
+    st.caption("Balls counted = all deliveries faced excluding wides (no-balls are counted per ICC/ESPN convention).")
+
+    s10_source = fdf.copy()
+    if s10_source.empty:
+        st.warning("No data for selected filters.")
+    else:
+        ctrl_c1, ctrl_c2, ctrl_c3 = st.columns([2, 1, 1])
+        with ctrl_c1:
+            # Optional team filter within the metric
+            s10_all_teams = sorted(s10_source['team'].dropna().astype(str).unique())
+            s10_team_filter = st.multiselect(
+                "Filter by Batting Team(s) — leave empty for all",
+                s10_all_teams,
+                key="s10_team_filter"
+            )
+        with ctrl_c2:
+            # Ball count slider — user can choose 10, 11, 12, ... 30
+            s10_max_balls = st.number_input(
+                "First N balls", min_value=5, max_value=30, value=10, step=1, key="s10_max_balls",
+                help="Set how many first legal balls to consider. Default 10. Increase to see sixes in first 11, 12, ... balls."
+            )
+        with ctrl_c3:
+            min_inn_s10 = st.number_input("Min Innings (Aggregate view)", min_value=1, max_value=50, value=3, step=1, key="s10_min_inn")
+
+        if s10_team_filter:
+            s10_source = s10_source[s10_source['team'].isin(s10_team_filter)]
+
+        max_balls = int(s10_max_balls)
+
+        with st.spinner(f"Computing sixes in first {max_balls} balls..."):
+            s10_innings_df, s10_season_df = most_sixes_first_n_balls(s10_source, max_balls=max_balls)
+
+        # Dynamic column names matching what the helper produces
+        six_col        = f'Sixes_in_First{max_balls}'
+        balls_col      = f'Balls_Faced_First{max_balls}'
+        runs_col       = f'Runs_in_First{max_balls}'
+        total_six_col  = f'Total_Sixes_First{max_balls}'
+        total_runs_col = f'Total_Runs_First{max_balls}'
+
+        if s10_innings_df.empty:
+            st.info("No data found for selected filters.")
+        else:
+            tab_high, tab_low, tab_inn, tab_player = st.tabs([
+                "Highest (Most Sixes)",
+                "Lowest (Fewest Sixes)",
+                "Per-Inning Details",
+                "Player Search"
+            ])
+
+            # KPI row (above all tabs, always visible)
+            max_s10   = int(s10_innings_df[six_col].max())
+            avg_s10   = round(s10_innings_df[six_col].mean(), 2)
+            innings_with_six = (s10_innings_df[six_col] >= 1).sum()
+            total_inn = len(s10_innings_df)
+            kc1, kc2, kc3 = st.columns(3)
+            kc1.metric(f"Max Sixes in First {max_balls} Balls (Innings)", max_s10)
+            kc2.metric("Avg Sixes per Innings", avg_s10)
+            kc3.metric("Innings with 1+ Six (%)", f"{round(innings_with_six / total_inn * 100, 1)}%")
+
+            with tab_high:
+                st.markdown(f"### Highest Sixes in First {max_balls} Balls — per Innings")
+                top_inn = s10_innings_df[s10_innings_df[six_col] >= 1].head(50)
+                st.dataframe(
+                    top_inn[['Date', 'Batter', 'Team', 'Match', 'innings', six_col, runs_col, balls_col, 'Season']].rename(
+                        columns={'innings': 'Inning', six_col: f'Sixes (First {max_balls})', runs_col: f'Runs (First {max_balls})', balls_col: 'Balls Faced'}
+                    ),
+                    width="stretch"
+                )
+
+                st.markdown(f"### Season Aggregate — Most Sixes in First {max_balls} Balls")
+                top_season = s10_season_df[s10_season_df['Innings'] >= int(min_inn_s10)].head(30)
+                st.dataframe(
+                    top_season[['Batter', 'Team', 'Season', total_six_col, 'Innings', 'Sixes_Per_Innings', total_runs_col]].rename(
+                        columns={total_six_col: 'Total Sixes', 'Sixes_Per_Innings': 'Sixes/Inn', total_runs_col: 'Total Runs'}
+                    ),
+                    width="stretch"
+                )
+
+                if not top_season.empty:
+                    fig_high = px.bar(
+                        top_season.head(20),
+                        x='Batter', y=total_six_col,
+                        color='Sixes_Per_Innings',
+                        color_continuous_scale='YlOrRd',
+                        title=f"Most Sixes in First {max_balls} Balls — Season Aggregate (Top 20)",
+                        hover_data=['Team', 'Season', 'Innings', total_runs_col]
+                    )
+                    fig_high.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_high, width="stretch")
+
+            with tab_low:
+                st.markdown(f"### Lowest Sixes in First {max_balls} Balls — Season Aggregate")
+                st.caption(f"Batters who rarely (or never) hit a six in their first {max_balls} deliveries. Filtered to minimum innings threshold.")
+                low_season = s10_season_df[s10_season_df['Innings'] >= int(min_inn_s10)].sort_values(total_six_col, ascending=True).head(30)
+                st.dataframe(
+                    low_season[['Batter', 'Team', 'Season', total_six_col, 'Innings', 'Sixes_Per_Innings', total_runs_col]].rename(
+                        columns={total_six_col: 'Total Sixes', 'Sixes_Per_Innings': 'Sixes/Inn', total_runs_col: 'Total Runs'}
+                    ),
+                    width="stretch"
+                )
+
+                if not low_season.empty:
+                    fig_low = px.bar(
+                        low_season.head(20),
+                        x='Batter', y=total_six_col,
+                        color='Innings',
+                        color_continuous_scale='Blues',
+                        title=f"Fewest Sixes in First {max_balls} Balls — Season Aggregate (Top 20 by Innings)",
+                        hover_data=['Team', 'Season', 'Sixes_Per_Innings']
+                    )
+                    fig_low.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_low, width="stretch")
+
+            with tab_inn:
+                st.markdown(f"### Per-Inning Details — All Innings (First {max_balls} Balls)")
+                st.caption("Every innings included. Use the filter below to narrow by minimum sixes.")
+                min_sixes_filter = st.number_input(
+                    f"Show innings with at least N sixes in first {max_balls} balls",
+                    min_value=0, max_value=max_balls, value=0, step=1, key="s10_min_sixes"
+                )
+                inn_filtered = s10_innings_df[s10_innings_df[six_col] >= int(min_sixes_filter)]
+                st.dataframe(
+                    inn_filtered[['Date', 'Batter', 'Team', 'Match', 'innings', six_col, runs_col, balls_col, 'Season']].rename(
+                        columns={'innings': 'Inning', six_col: f'Sixes (First {max_balls})', runs_col: f'Runs (First {max_balls})', balls_col: 'Balls Faced'}
+                    ).head(200),
+                    width="stretch"
+                )
+
+                # Distribution chart
+                s10_dist = s10_innings_df.groupby(six_col).size().reset_index(name='Innings_Count')
+                fig_dist = px.bar(
+                    s10_dist, x=six_col, y='Innings_Count',
+                    title=f"Distribution — Sixes in First {max_balls} Balls per Innings",
+                    color='Innings_Count', color_continuous_scale='Oranges',
+                    labels={six_col: f'Sixes in First {max_balls} Balls', 'Innings_Count': 'Number of Innings'}
+                )
+                st.plotly_chart(fig_dist, width="stretch")
+
+            with tab_player:
+                st.markdown(f"### Player Search — First {max_balls} Balls Profile")
+                all_s10_batters = sorted(s10_innings_df['Batter'].dropna().astype(str).unique())
+                sel_s10_batter = st.selectbox("Select Batter", [""] + list(all_s10_batters), key="s10_player")
+
+                if sel_s10_batter:
+                    p_s10 = s10_innings_df[s10_innings_df['Batter'] == sel_s10_batter].copy()
+                    p_s10_season = s10_season_df[s10_season_df['Batter'] == sel_s10_batter].copy()
+
+                    if p_s10.empty:
+                        st.info(f"No data found for {sel_s10_batter}.")
+                    else:
+                        total_s6  = int(p_s10[six_col].sum())
+                        p_inn     = len(p_s10)
+                        best_inn  = int(p_s10[six_col].max())
+                        p_avg     = round(total_s6 / p_inn, 2) if p_inn > 0 else 0
+                        pk1, pk2, pk3, pk4 = st.columns(4)
+                        pk1.metric(f"Total Sixes (First {max_balls})", total_s6)
+                        pk2.metric("Innings Played", p_inn)
+                        pk3.metric("Best Innings (Sixes)", best_inn)
+                        pk4.metric("Avg Sixes/Inn", p_avg)
+
+                        st.markdown(f"**{sel_s10_batter} — Innings-by-Innings (First {max_balls} Balls)**")
+                        st.dataframe(
+                            p_s10[['Date', 'Team', 'Match', 'innings', six_col, runs_col, balls_col, 'Season']].rename(
+                                columns={'innings': 'Inning', six_col: f'Sixes (First {max_balls})', runs_col: f'Runs (First {max_balls})', balls_col: 'Balls Faced'}
+                            ),
+                            width="stretch"
+                        )
+
+                        if not p_s10_season.empty:
+                            st.markdown(f"**{sel_s10_batter} — Season Breakdown**")
+                            st.dataframe(
+                                p_s10_season[['Season', 'Team', total_six_col, 'Innings', 'Sixes_Per_Innings', total_runs_col]].rename(
+                                    columns={total_six_col: 'Total Sixes', 'Sixes_Per_Innings': 'Sixes/Inn', total_runs_col: 'Total Runs'}
+                                ),
+                                width="stretch"
+                            )
+
+                        p_s10_chart = p_s10.copy()
+                        p_s10_chart['Match_Label'] = p_s10_chart['Date'].astype(str) + ' (' + p_s10_chart['Team'].astype(str) + ')'
+                        fig_player = px.bar(
+                            p_s10_chart.sort_values('Date'),
+                            x='Match_Label', y=six_col,
+                            color='Season', text=six_col,
+                            title=f"{sel_s10_batter} — Sixes in First {max_balls} Balls per Innings",
+                            labels={'Match_Label': 'Match', six_col: f'Sixes (First {max_balls} Balls)'}
+                        )
+                        fig_player.update_xaxes(tickangle=45)
+                        st.plotly_chart(fig_player, width="stretch")
+                else:
+                    st.info(f"Select a batter to see their first-{max_balls}-ball six-hitting profile.")
 
 st.markdown("---")
 st.markdown("*Data extracted from Cricsheet JSON files.*")
