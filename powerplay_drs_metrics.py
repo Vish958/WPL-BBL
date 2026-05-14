@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 13 May 2026")
+st.markdown("Last updated: 14 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Directory containing JSON files
@@ -430,6 +430,8 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Powerplay Run Rate (Year-wise)",
     "Bowling Comparison (Year-wise)",
     "Most Sixes in First 10 Balls",
+    "Maiden Over Analysis",
+    "Over-wise Batting Analysis",
 ])
 
 if fdf.empty:
@@ -1404,6 +1406,77 @@ def boundary_less_ball_streak(df_):
 # =========================================
 # MOST SIXES IN FIRST 10 BALLS (BATTER)
 # =========================================
+# MAIDEN OVER ANALYSIS
+# =========================================
+def maiden_over_analysis(df_):
+    """
+    Identifies maiden overs from ball-by-ball data.
+
+    A maiden over (per cricket law / ESPNcricinfo StatGuru definition):
+        - Bowler concedes 0 runs: batter_runs + wides + no_ball_runs == 0
+        - Byes and Leg-byes are NOT charged to the bowler, so they do NOT
+          break a maiden — this is why runs.total must NOT be used here.
+        - The over must be complete: is_valid_delivery sum >= 6
+
+    Returns:
+        over_df   — one row per over (all overs, with is_maiden flag)
+        maiden_df — only maiden overs
+    """
+    work = df_[df_['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame()
+
+    required = {'match_id', 'innings', 'bowler', 'bowling_team', 'over',
+                'year', 'date', 'teams', 'runs.batter', 'wides', 'no_balls',
+                'is_valid_delivery', 'phase'}
+    missing = required - set(work.columns)
+    if missing:
+        return pd.DataFrame(), pd.DataFrame()
+
+    # Ensure numeric types (Categorical columns from parquet can cause issues)
+    for col in ['runs.batter', 'wides', 'no_balls', 'is_valid_delivery']:
+        work[col] = pd.to_numeric(work[col], errors='coerce').fillna(0)
+
+    # Bowler's runs = batter runs + wides + no-ball penalties (NOT byes/leg-byes)
+    work['bowler_runs_ball'] = work['runs.batter'] + work['wides'] + work['no_balls']
+
+    agg_dict = {
+        'Total_Runs':       ('runs.total',        'sum'),   # for reference only
+        'Bowler_Runs':      ('bowler_runs_ball',   'sum'),   # what the bowler is charged
+        'Batter_Runs':      ('runs.batter',        'sum'),
+        'Wide_Runs':        ('wides',              'sum'),
+        'NoBall_Runs':      ('no_balls',           'sum'),
+        'Legal_Balls':      ('is_valid_delivery',  'sum'),
+    }
+    if 'wicket_count' in work.columns:
+        agg_dict['Wickets'] = ('wicket_count', 'sum')
+
+    over_df = work.groupby(
+        ['match_id', 'innings', 'bowler', 'bowling_team', 'over',
+         'year', 'date', 'teams', 'phase'],
+        observed=True
+    ).agg(**agg_dict).reset_index()
+
+    over_df['Over_No'] = over_df['over'] + 1
+    over_df['Date']    = pd.to_datetime(over_df['date']).dt.date
+    over_df['Season']  = over_df['year'].astype(str)
+    over_df['Bowler']  = over_df['bowler'].astype(str)
+    over_df['Team']    = over_df['bowling_team'].astype(str)
+    over_df['Match']   = over_df['teams'].astype(str)
+
+    if 'Wickets' not in over_df.columns:
+        over_df['Wickets'] = 0
+
+    # Maiden: bowler charged 0 runs AND the over was complete (>= 6 legal balls)
+    over_df['is_maiden'] = (
+        (over_df['Bowler_Runs'] == 0) & (over_df['Legal_Balls'] >= 6)
+    ).astype(int)
+
+    maiden_df = over_df[over_df['is_maiden'] == 1].copy()
+    return over_df, maiden_df
+
+
+
 def most_sixes_first_n_balls(df_, max_balls=10):
     """
     For each innings, count sixes scored by each batter in their first `max_balls`
@@ -1416,6 +1489,7 @@ def most_sixes_first_n_balls(df_, max_balls=10):
         season_df   — aggregate per batter per season
     """
     work = df_[df_['innings'].isin([1, 2])].copy()
+
     if work.empty:
         return pd.DataFrame(), pd.DataFrame()
 
@@ -8639,6 +8713,689 @@ elif metric_choice == "Most Sixes in First 10 Balls":
                         st.plotly_chart(fig_player, width="stretch")
                 else:
                     st.info(f"Select a batter to see their first-{max_balls}-ball six-hitting profile.")
+
+# =========================================
+# MAIDEN OVER ANALYSIS UI
+# =========================================
+elif metric_choice == "Maiden Over Analysis":
+    st.subheader("Maiden Over Analysis")
+    st.write("Track maiden overs across teams, bowlers, phases, and seasons. A maiden over = 0 runs conceded in a complete over (6 legal balls).")
+
+    maiden_source = fdf.copy()
+    if maiden_source.empty:
+        st.warning("No data for selected filters.")
+    else:
+        with st.spinner("Computing maiden overs..."):
+            mo_all, mo_maiden = maiden_over_analysis(maiden_source)
+
+        if mo_maiden.empty:
+            st.info("No maiden overs found for the selected filters.")
+        else:
+            # -- Global KPIs
+            total_maidens  = len(mo_maiden)
+            total_overs    = len(mo_all)
+            maiden_pct     = round(total_maidens / total_overs * 100, 2) if total_overs > 0 else 0
+            top_bowler_row = mo_maiden.groupby('Bowler', observed=True).size().idxmax()
+            top_team_row   = mo_maiden.groupby('Team', observed=True).size().idxmax()
+
+            kp1, kp2, kp3, kp4, kp5 = st.columns(5)
+            kp1.metric("Total Maiden Overs", total_maidens)
+            kp2.metric("Total Overs Bowled", total_overs)
+            kp3.metric("Maiden %", f"{maiden_pct}%")
+            kp4.metric("Top Bowler", str(top_bowler_row))
+            kp5.metric("Top Team", str(top_team_row))
+
+            st.markdown("---")
+
+            tab_team, tab_bowler, tab_over, tab_phase, tab_match = st.tabs([
+                "Team (Year-wise)",
+                "Bowler Leaderboard",
+                "Over Number Breakdown",
+                "Phase Analysis",
+                "Match Details"
+            ])
+
+            # =====================
+            # TAB 1: TEAM YEAR-WISE
+            # =====================
+            with tab_team:
+                st.markdown("### Team-wise Maiden Overs — by Season")
+                st.caption("Which team bowled the most maiden overs in a single IPL/WPL/BBL season?")
+
+                team_season = mo_maiden.groupby(['Team', 'Season'], observed=True).agg(
+                    Maidens=('is_maiden', 'sum'),
+                    Matches=('match_id', 'nunique')
+                ).reset_index()
+                team_season['Maidens_Per_Match'] = (team_season['Maidens'] / team_season['Matches'].replace(0, np.nan)).round(2)
+                team_season = team_season.sort_values('Maidens', ascending=False)
+
+                # Season selector
+                all_seasons_mo = sorted(mo_maiden['Season'].unique(), reverse=True)
+                sel_seasons_mo = st.multiselect(
+                    "Filter by Season(s) — leave empty for all",
+                    all_seasons_mo, key="mo_seasons"
+                )
+                ts_view = team_season[team_season['Season'].isin(sel_seasons_mo)] if sel_seasons_mo else team_season
+
+                st.dataframe(ts_view, width="stretch")
+
+                # Bar chart: maidens per team per season (grouped)
+                if not ts_view.empty:
+                    ts_chart = ts_view.copy()
+                    ts_chart['Season'] = ts_chart['Season'].astype(str)
+                    fig_ts = px.bar(
+                        ts_chart.sort_values('Maidens', ascending=False).head(40),
+                        x='Team', y='Maidens', color='Season',
+                        barmode='group',
+                        title="Maiden Overs by Team & Season",
+                        hover_data=['Matches', 'Maidens_Per_Match']
+                    )
+                    fig_ts.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_ts, width="stretch")
+
+                # Overall team aggregate (all seasons)
+                st.markdown("#### Overall Team Aggregate (All Seasons)")
+                team_total = mo_maiden.groupby('Team', observed=True).agg(
+                    Maidens=('is_maiden', 'sum'),
+                    Matches=('match_id', 'nunique'),
+                    Seasons=('Season', 'nunique')
+                ).reset_index().sort_values('Maidens', ascending=False)
+                team_total['Maidens_Per_Match'] = (team_total['Maidens'] / team_total['Matches'].replace(0, np.nan)).round(2)
+                st.dataframe(team_total, width="stretch")
+
+                fig_team_total = px.bar(
+                    team_total.head(20),
+                    x='Team', y='Maidens',
+                    color='Maidens_Per_Match',
+                    color_continuous_scale='Teal',
+                    title="All-time Maiden Overs by Team",
+                    hover_data=['Matches', 'Seasons']
+                )
+                fig_team_total.update_xaxes(tickangle=45)
+                st.plotly_chart(fig_team_total, width="stretch")
+
+            # =========================
+            # =========================
+            # TAB 2: BOWLER LEADERBOARD
+            # =========================
+            with tab_bowler:
+                st.markdown("### Bowler Maiden Over Leaderboard")
+
+                bl_c1, bl_c2 = st.columns([1, 2])
+                with bl_c1:
+                    mo_agg_teams = st.checkbox(
+                        "Aggregate across teams",
+                        value=False,
+                        key="mo_agg_teams",
+                        help="Tick to combine a bowler's maiden overs across all franchises they have played for. "
+                             "Useful for bowlers like Bumrah or Narine who may appear under multiple teams across seasons."
+                    )
+                with bl_c2:
+                    min_mo_inn = st.number_input(
+                        "Minimum overs bowled (for rate calculation)",
+                        min_value=1, max_value=200, value=10, step=5, key="mo_min_inn"
+                    )
+
+                # ── Build aggregates based on toggle ──
+                if mo_agg_teams:
+                    # Combine across all teams — group only by Bowler
+                    bowler_total = mo_all.groupby('Bowler', observed=True).agg(
+                        Total_Overs_Bowled=('is_maiden', 'count'),
+                        Total_Maidens=('is_maiden', 'sum'),
+                        Matches=('match_id', 'nunique'),
+                        Teams=('Team', lambda x: ', '.join(sorted(x.astype(str).unique())))
+                    ).reset_index()
+
+                    bowler_season = mo_maiden.groupby(['Bowler', 'Season'], observed=True).agg(
+                        Maidens=('is_maiden', 'sum'),
+                        Matches=('match_id', 'nunique'),
+                        Teams=('Team', lambda x: ', '.join(sorted(x.astype(str).unique())))
+                    ).reset_index().sort_values('Maidens', ascending=False)
+
+                    hover_extra = ['Teams', 'Matches', 'Maiden_%', 'Maidens_Per_Match']
+                    chart_color_col = 'Maiden_%'
+                else:
+                    # Per-team breakdown (default)
+                    bowler_total = mo_all.groupby(['Bowler', 'Team'], observed=True).agg(
+                        Total_Overs_Bowled=('is_maiden', 'count'),
+                        Total_Maidens=('is_maiden', 'sum'),
+                        Matches=('match_id', 'nunique')
+                    ).reset_index()
+
+                    bowler_season = mo_maiden.groupby(['Bowler', 'Team', 'Season'], observed=True).agg(
+                        Maidens=('is_maiden', 'sum'),
+                        Matches=('match_id', 'nunique')
+                    ).reset_index().sort_values('Maidens', ascending=False)
+
+                    hover_extra = ['Team', 'Matches', 'Maiden_%', 'Maidens_Per_Match']
+                    chart_color_col = 'Maiden_%'
+
+                bowler_total['Maiden_%'] = (
+                    bowler_total['Total_Maidens'] / bowler_total['Total_Overs_Bowled'].replace(0, np.nan) * 100
+                ).round(2)
+                bowler_total['Maidens_Per_Match'] = (
+                    bowler_total['Total_Maidens'] / bowler_total['Matches'].replace(0, np.nan)
+                ).round(2)
+                bowler_total = bowler_total[bowler_total['Total_Overs_Bowled'] >= int(min_mo_inn)]
+                bowler_total = bowler_total.sort_values('Total_Maidens', ascending=False)
+
+                label = "Career Aggregate (All Teams Combined)" if mo_agg_teams else "Career/Season Aggregate (per Team)"
+                st.markdown(f"**{label}**")
+                st.dataframe(
+                    bowler_total.rename(columns={
+                        'Total_Overs_Bowled': 'Overs Bowled',
+                        'Total_Maidens': 'Maidens',
+                        'Maiden_%': 'Maiden%',
+                        'Maidens_Per_Match': 'Maidens/Match'
+                    }),
+                    width="stretch"
+                )
+
+                if not bowler_total.empty:
+                    fig_bow = px.bar(
+                        bowler_total.head(20),
+                        x='Bowler', y='Total_Maidens',
+                        color='Maiden_%',
+                        color_continuous_scale='Blues',
+                        title="Top 20 Bowlers — Total Maiden Overs" + (" (All Teams Combined)" if mo_agg_teams else ""),
+                        hover_data=hover_extra
+                    )
+                    fig_bow.update_xaxes(tickangle=45)
+                    st.plotly_chart(fig_bow, width="stretch")
+
+                # ── Year-wise breakdown for a selected bowler ──
+                st.markdown("#### Year-wise breakdown for a Bowler")
+                all_mo_bowlers = sorted(mo_maiden['Bowler'].unique())
+                sel_mo_bowler = st.selectbox("Select Bowler", [""] + list(all_mo_bowlers), key="mo_bowler")
+                if sel_mo_bowler:
+                    byr = bowler_season[bowler_season['Bowler'] == sel_mo_bowler].copy()
+                    if not byr.empty:
+                        st.dataframe(byr, width="stretch")
+                        color_col = 'Season'
+                        fig_byr = px.bar(
+                            byr, x='Season', y='Maidens',
+                            color=color_col, text='Maidens',
+                            title=f"{sel_mo_bowler} — Maiden Overs by Season"
+                                  + (" (All Teams)" if mo_agg_teams else " (per Team)")
+                        )
+                        st.plotly_chart(fig_byr, width="stretch")
+
+
+
+            # ===========================
+            # TAB 3: OVER NUMBER BREAKDOWN
+            # ===========================
+            with tab_over:
+                st.markdown("### Maiden Overs by Over Number")
+                st.caption("Which over number (1–20) produces the most maiden overs? Usually early overs and death overs tell very different stories.")
+
+                over_breakdown = mo_maiden.groupby('Over_No', observed=True).agg(
+                    Maidens=('is_maiden', 'sum'),
+                    Bowlers=('Bowler', 'nunique')
+                ).reset_index().sort_values('Over_No')
+
+                # Total overs bowled per over number (denominator for rate)
+                over_total_bowled = mo_all.groupby('Over_No', observed=True).size().reset_index(name='Total_Bowled')
+                over_breakdown = over_breakdown.merge(over_total_bowled, on='Over_No', how='left')
+                over_breakdown['Maiden_%'] = (over_breakdown['Maidens'] / over_breakdown['Total_Bowled'].replace(0, np.nan) * 100).round(2)
+
+                st.dataframe(
+                    over_breakdown.rename(columns={'Over_No': 'Over', 'Total_Bowled': 'Overs Bowled', 'Maiden_%': 'Maiden%'}),
+                    width="stretch"
+                )
+
+                fig_over = px.bar(
+                    over_breakdown, x='Over_No', y='Maidens',
+                    color='Maiden_%',
+                    color_continuous_scale='Viridis',
+                    title="Maiden Overs Distribution by Over Number",
+                    labels={'Over_No': 'Over Number', 'Maiden_%': 'Maiden %'},
+                    hover_data=['Total_Bowled', 'Maiden_%', 'Bowlers']
+                )
+                fig_over.update_xaxes(dtick=1)
+                st.plotly_chart(fig_over, width="stretch")
+
+                # Maiden % line chart across overs
+                fig_pct = px.line(
+                    over_breakdown, x='Over_No', y='Maiden_%',
+                    markers=True,
+                    title="Maiden Over % by Over Number",
+                    labels={'Over_No': 'Over Number', 'Maiden_%': 'Maiden %'}
+                )
+                fig_pct.update_xaxes(dtick=1)
+                st.plotly_chart(fig_pct, width="stretch")
+
+            # ====================
+            # TAB 4: PHASE ANALYSIS
+            # ====================
+            with tab_phase:
+                st.markdown("### Maiden Overs by Phase")
+                st.caption("Powerplay, Middle Overs, and Death — which phase has the most maiden overs?")
+
+                phase_maiden = mo_maiden.groupby(['phase', 'Season'], observed=True).agg(
+                    Maidens=('is_maiden', 'sum'),
+                    Matches=('match_id', 'nunique')
+                ).reset_index()
+
+                phase_total = mo_all.groupby('phase', observed=True).size().reset_index(name='Total_Overs')
+                phase_maiden_agg = mo_maiden.groupby('phase', observed=True).agg(
+                    Maidens=('is_maiden', 'sum'),
+                    Matches=('match_id', 'nunique'),
+                    Bowlers=('Bowler', 'nunique')
+                ).reset_index()
+                phase_maiden_agg = phase_maiden_agg.merge(phase_total, on='phase', how='left')
+                phase_maiden_agg['Maiden_%'] = (phase_maiden_agg['Maidens'] / phase_maiden_agg['Total_Overs'].replace(0, np.nan) * 100).round(2)
+                st.dataframe(
+                    phase_maiden_agg.rename(columns={'phase': 'Phase', 'Total_Overs': 'Overs Bowled', 'Maiden_%': 'Maiden%'}),
+                    width="stretch"
+                )
+
+                fig_phase = px.bar(
+                    phase_maiden_agg,
+                    x='phase', y='Maidens',
+                    color='Maiden_%',
+                    color_continuous_scale='RdYlGn',
+                    title="Maiden Overs by Phase (Overall)",
+                    labels={'phase': 'Phase', 'Maiden_%': 'Maiden %'},
+                    hover_data=['Total_Overs', 'Maiden_%', 'Bowlers']
+                )
+                st.plotly_chart(fig_phase, width="stretch")
+
+                # Year-wise phase trend
+                st.markdown("#### Phase Maiden Trend by Season")
+                phase_season_chart = phase_maiden.copy()
+                phase_season_chart['Season'] = phase_season_chart['Season'].astype(str)
+                fig_phase_yr = px.bar(
+                    phase_season_chart,
+                    x='Season', y='Maidens', color='phase',
+                    barmode='group',
+                    title="Maiden Overs by Phase per Season",
+                    labels={'phase': 'Phase'}
+                )
+                fig_phase_yr.update_xaxes(tickangle=45)
+                st.plotly_chart(fig_phase_yr, width="stretch")
+
+                # Team-wise phase breakdown
+                st.markdown("#### Team-wise Phase Breakdown")
+                team_phase = mo_maiden.groupby(['Team', 'phase'], observed=True).agg(
+                    Maidens=('is_maiden', 'sum')
+                ).reset_index()
+                fig_team_phase = px.bar(
+                    team_phase,
+                    x='Team', y='Maidens', color='phase',
+                    barmode='stack',
+                    title="Maiden Overs by Team — Phase Stack",
+                    labels={'phase': 'Phase'}
+                )
+                fig_team_phase.update_xaxes(tickangle=45)
+                st.plotly_chart(fig_team_phase, width="stretch")
+
+            # ====================
+            # TAB 5: MATCH DETAILS
+            # ====================
+            with tab_match:
+                st.markdown("### Match-level Maiden Over Log")
+                st.caption("Full record of every maiden over. Filter by team and season to drill down.")
+
+                m_teams = ["All Teams"] + sorted(mo_maiden['Team'].astype(str).unique())
+                m_seasons = ["All Seasons"] + sorted(mo_maiden['Season'].astype(str).unique(), reverse=True)
+
+                mc1, mc2 = st.columns(2)
+                with mc1:
+                    sel_md_team = st.selectbox("Filter by Bowling Team", m_teams, key="mo_match_team")
+                with mc2:
+                    sel_md_season = st.selectbox("Filter by Season", m_seasons, key="mo_match_season")
+
+                md_view = mo_maiden.copy()
+                if sel_md_team != "All Teams":
+                    md_view = md_view[md_view['Team'].astype(str) == sel_md_team]
+                if sel_md_season != "All Seasons":
+                    md_view = md_view[md_view['Season'].astype(str) == sel_md_season]
+
+                md_view = md_view.sort_values(['Date', 'innings', 'Over_No'])
+
+                st.dataframe(
+                    md_view[['Date', 'Bowler', 'Team', 'Match', 'innings', 'Over_No', 'Legal_Balls', 'Wickets', 'Season', 'phase']].rename(
+                        columns={'innings': 'Inning', 'Over_No': 'Over', 'phase': 'Phase'}
+                    ).head(300),
+                    width="stretch"
+                )
+
+                # Most maiden overs in a single match
+                st.markdown("#### Most Maiden Overs in a Single Match (Team)")
+                match_team_maiden = mo_maiden.groupby(['match_id', 'Team', 'Match', 'Date', 'Season'], observed=True).agg(
+                    Maidens=('is_maiden', 'sum')
+                ).reset_index().sort_values('Maidens', ascending=False).head(20)
+                st.dataframe(
+                    match_team_maiden[['Date', 'Team', 'Match', 'Maidens', 'Season']],
+                    width="stretch"
+                )
+
+
+# =========================================
+# OVER-WISE BATTING ANALYSIS UI
+# =========================================
+elif metric_choice == "Over-wise Batting Analysis":
+    st.subheader("Over-wise Batting Analysis")
+    st.write("Analyse any batter's scoring over-by-over for individual innings, compare two innings, or see career phase aggregates.")
+
+    owa_source = fdf.copy()
+    if owa_source.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # ── Controls row ──
+        oc1, oc2, oc3 = st.columns([2, 1, 1])
+        with oc1:
+            all_owa_batters = sorted(owa_source['batter'].dropna().astype(str).unique())
+            sel_owa_batter = st.selectbox("Select Batter", [""] + list(all_owa_batters), key="owa_batter")
+        with oc2:
+            owa_seasons = ["All Seasons"] + sorted(owa_source['year'].dropna().astype(str).unique(), reverse=True)
+            sel_owa_season = st.selectbox("Season", owa_seasons, key="owa_season")
+        with oc3:
+            owa_min_runs = st.number_input(
+                "Min Runs in Innings (run threshold)", min_value=0, max_value=200, value=0, step=10, key="owa_min_runs",
+                help="Show only innings where the batter scored at least this many runs. E.g. set 50 to see only 50+ innings."
+            )
+
+        if not sel_owa_batter:
+            st.info("Select a batter above to begin.")
+        else:
+            # Apply filters
+            owa_df = owa_source[owa_source['batter'].astype(str) == sel_owa_batter].copy()
+            if sel_owa_season != "All Seasons":
+                owa_df = owa_df[owa_df['year'].astype(str) == sel_owa_season]
+
+            if owa_df.empty:
+                st.warning(f"No data found for {sel_owa_batter} with selected filters.")
+            else:
+                # Build per-ball info with cumulative runs for each innings
+                for col in ['runs.batter', 'is_valid_delivery']:
+                    owa_df[col] = pd.to_numeric(owa_df[col], errors='coerce').fillna(0)
+
+                # Over-by-over aggregation per innings
+                owa_over = owa_df.groupby(
+                    ['match_id', 'innings', 'over', 'year', 'date', 'teams', 'team'], observed=True
+                ).agg(
+                    Runs=('runs.batter', 'sum'),
+                    Balls=('is_valid_delivery', 'sum'),
+                    Fours=('runs.batter', lambda x: (x == 4).sum()),
+                    Sixes=('runs.batter', lambda x: (x == 6).sum()),
+                    Dots=('runs.batter', lambda x: ((x == 0) & (owa_df.loc[x.index, 'is_valid_delivery'] == 1)).sum())
+                ).reset_index()
+                owa_over['Over_No']  = owa_over['over'] + 1
+                owa_over['SR_Over']  = (owa_over['Runs'] / owa_over['Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                owa_over['Date']     = pd.to_datetime(owa_over['date']).dt.date
+                owa_over['Season']   = owa_over['year'].astype(str)
+                owa_over['Match']    = owa_over['teams'].astype(str)
+                owa_over['Team']     = owa_over['team'].astype(str)
+
+                # Innings totals (for the run threshold filter)
+                inn_totals = owa_over.groupby(['match_id', 'innings'], observed=True)['Runs'].sum().reset_index(name='Total_Runs')
+                owa_over = owa_over.merge(inn_totals, on=['match_id', 'innings'], how='left')
+
+                # Cumulative runs within each innings for the profile chart
+                owa_over = owa_over.sort_values(['match_id', 'innings', 'Over_No'])
+                owa_over['Cumulative_Runs'] = owa_over.groupby(['match_id', 'innings'], observed=True)['Runs'].cumsum()
+
+                # Apply run threshold
+                if int(owa_min_runs) > 0:
+                    valid_innings = inn_totals[inn_totals['Total_Runs'] >= int(owa_min_runs)][['match_id', 'innings']]
+                    owa_over = owa_over.merge(valid_innings, on=['match_id', 'innings'], how='inner')
+
+                # Build unique innings label  e.g. "2024-04-12 vs MI (Inn1)"
+                owa_over['Inn_Label'] = (
+                    owa_over['Date'].astype(str) + ' vs ' +
+                    owa_over['Match'].str.replace(sel_owa_batter, '', regex=False).str.strip(' /')
+                    + ' (Inn' + owa_over['innings'].astype(str) + ')'
+                )
+
+                if owa_over.empty:
+                    st.info(f"No innings found for {sel_owa_batter} with runs >= {owa_min_runs}.")
+                else:
+                    tab_profile, tab_compare, tab_agg = st.tabs([
+                        "Innings Profile",
+                        "Compare Two Innings",
+                        "Career Phase Aggregate"
+                    ])
+
+                    # ===========================
+                    # TAB 1: INNINGS PROFILE
+                    # ===========================
+                    with tab_profile:
+                        st.markdown(f"### {sel_owa_batter} — Runs Scored Per Over (Innings-by-Innings)")
+
+                        all_inn_labels = sorted(owa_over['Inn_Label'].unique())
+                        sel_inn_profile = st.selectbox(
+                            "Select Innings to view", [""] + list(all_inn_labels), key="owa_profile_inn"
+                        )
+
+                        if sel_inn_profile:
+                            p_df = owa_over[owa_over['Inn_Label'] == sel_inn_profile].sort_values('Over_No')
+                            total_score = int(p_df['Total_Runs'].iloc[0]) if not p_df.empty else 0
+                            balls_total = int(p_df['Balls'].sum())
+                            sr_total = round(total_score / balls_total * 100, 1) if balls_total > 0 else 0
+                            fours_total = int(p_df['Fours'].sum())
+                            sixes_total = int(p_df['Sixes'].sum())
+
+                            pk1, pk2, pk3, pk4, pk5 = st.columns(5)
+                            pk1.metric("Runs", total_score)
+                            pk2.metric("Balls", balls_total)
+                            pk3.metric("Strike Rate", sr_total)
+                            pk4.metric("Fours", fours_total)
+                            pk5.metric("Sixes", sixes_total)
+
+                            # Over-by-over bar chart (runs per over)
+                            fig_p = px.bar(
+                                p_df, x='Over_No', y='Runs',
+                                color='SR_Over',
+                                color_continuous_scale='RdYlGn',
+                                text='Runs',
+                                title=f"{sel_owa_batter} — {sel_inn_profile}",
+                                labels={'Over_No': 'Over', 'SR_Over': 'SR in Over'},
+                                hover_data=['Balls', 'Fours', 'Sixes', 'Dots', 'SR_Over', 'Cumulative_Runs']
+                            )
+                            fig_p.update_xaxes(dtick=1, title='Over Number')
+                            fig_p.update_traces(textposition='outside')
+                            st.plotly_chart(fig_p, width="stretch")
+
+                            # Cumulative runs line
+                            fig_cum = px.line(
+                                p_df, x='Over_No', y='Cumulative_Runs',
+                                markers=True,
+                                title=f"{sel_owa_batter} — Cumulative Runs Progression",
+                                labels={'Over_No': 'Over', 'Cumulative_Runs': 'Cumulative Runs'}
+                            )
+                            fig_cum.update_xaxes(dtick=1)
+                            st.plotly_chart(fig_cum, width="stretch")
+
+                            # Per-over table
+                            st.dataframe(
+                                p_df[['Over_No', 'Runs', 'Balls', 'Fours', 'Sixes', 'Dots', 'SR_Over', 'Cumulative_Runs']].rename(
+                                    columns={'Over_No': 'Over', 'SR_Over': 'SR (Over)', 'Cumulative_Runs': 'Cumul. Runs'}
+                                ).reset_index(drop=True),
+                                width="stretch"
+                            )
+                        else:
+                            # Show all innings summary table when nothing selected
+                            st.caption("Select an innings above to drill into over-by-over detail. Table below shows all innings summary.")
+                            inn_summary = owa_over.groupby(['Inn_Label', 'Date', 'Match', 'Team', 'Season', 'innings'], observed=True).agg(
+                                Total_Runs=('Runs', 'sum'),
+                                Balls=('Balls', 'sum'),
+                                Fours=('Fours', 'sum'),
+                                Sixes=('Sixes', 'sum')
+                            ).reset_index()
+                            inn_summary['SR'] = (inn_summary['Total_Runs'] / inn_summary['Balls'].replace(0, np.nan) * 100).round(1)
+                            inn_summary = inn_summary.sort_values('Total_Runs', ascending=False)
+                            st.dataframe(
+                                inn_summary[['Date', 'Match', 'Team', 'innings', 'Total_Runs', 'Balls', 'SR', 'Fours', 'Sixes', 'Season']].rename(
+                                    columns={'innings': 'Inning', 'Total_Runs': 'Runs'}
+                                ),
+                                width="stretch"
+                            )
+
+                    # ===========================
+                    # TAB 2: COMPARE TWO INNINGS
+                    # ===========================
+                    with tab_compare:
+                        st.markdown(f"### Compare Two Innings — {sel_owa_batter}")
+                        st.caption("Pick any two innings (e.g. two different centuries) and see their over-by-over scoring side by side.")
+
+                        all_inn_labels = sorted(owa_over['Inn_Label'].unique())
+                        cmp_c1, cmp_c2 = st.columns(2)
+                        with cmp_c1:
+                            sel_inn_a = st.selectbox("Innings A", [""] + list(all_inn_labels), key="owa_cmp_a")
+                        with cmp_c2:
+                            sel_inn_b = st.selectbox("Innings B", [""] + list(all_inn_labels), key="owa_cmp_b")
+
+                        if sel_inn_a and sel_inn_b and sel_inn_a != sel_inn_b:
+                            df_a = owa_over[owa_over['Inn_Label'] == sel_inn_a].sort_values('Over_No').copy()
+                            df_b = owa_over[owa_over['Inn_Label'] == sel_inn_b].sort_values('Over_No').copy()
+                            df_a['Innings'] = 'A: ' + sel_inn_a
+                            df_b['Innings'] = 'B: ' + sel_inn_b
+
+                            # KPI comparison
+                            def inn_kpis(df):
+                                return {
+                                    'Runs':  int(df['Runs'].sum()),
+                                    'Balls': int(df['Balls'].sum()),
+                                    'SR':    round(df['Runs'].sum() / df['Balls'].sum() * 100, 1) if df['Balls'].sum() > 0 else 0,
+                                    'Fours': int(df['Fours'].sum()),
+                                    'Sixes': int(df['Sixes'].sum()),
+                                }
+
+                            kpi_a, kpi_b = inn_kpis(df_a), inn_kpis(df_b)
+                            st.markdown("#### Head-to-Head KPIs")
+                            hk1, hk2, hk3, hk4, hk5 = st.columns(5)
+                            hk1.metric("Runs",   kpi_a['Runs'],   delta=kpi_a['Runs'] - kpi_b['Runs'],   delta_color="normal")
+                            hk2.metric("Balls",  kpi_a['Balls'],  delta=kpi_a['Balls'] - kpi_b['Balls'],  delta_color="inverse")
+                            hk3.metric("SR",     kpi_a['SR'],     delta=round(kpi_a['SR'] - kpi_b['SR'], 1))
+                            hk4.metric("Fours",  kpi_a['Fours'],  delta=kpi_a['Fours'] - kpi_b['Fours'])
+                            hk5.metric("Sixes",  kpi_a['Sixes'],  delta=kpi_a['Sixes'] - kpi_b['Sixes'])
+                            st.caption(f"Deltas = A vs B. A = {sel_inn_a}")
+
+                            # Grouped bar: runs per over side by side
+                            combined = pd.concat([df_a, df_b], ignore_index=True)
+                            fig_cmp = px.bar(
+                                combined, x='Over_No', y='Runs',
+                                color='Innings', barmode='group',
+                                text='Runs',
+                                title=f"{sel_owa_batter} — Over-by-Over Comparison",
+                                labels={'Over_No': 'Over'},
+                                hover_data=['Balls', 'Fours', 'Sixes', 'SR_Over', 'Cumulative_Runs']
+                            )
+                            fig_cmp.update_xaxes(dtick=1)
+                            fig_cmp.update_traces(textposition='outside')
+                            st.plotly_chart(fig_cmp, width="stretch")
+
+                            # Cumulative runs line comparison
+                            fig_cum_cmp = px.line(
+                                combined, x='Over_No', y='Cumulative_Runs',
+                                color='Innings', markers=True,
+                                title=f"{sel_owa_batter} — Cumulative Runs Comparison",
+                                labels={'Over_No': 'Over', 'Cumulative_Runs': 'Cumulative Runs'}
+                            )
+                            fig_cum_cmp.update_xaxes(dtick=1)
+                            st.plotly_chart(fig_cum_cmp, width="stretch")
+
+                            # Side-by-side tables
+                            col_a, col_b = st.columns(2)
+                            disp_cols = ['Over_No', 'Runs', 'Balls', 'Fours', 'Sixes', 'SR_Over', 'Cumulative_Runs']
+                            col_rename = {'Over_No': 'Over', 'SR_Over': 'SR', 'Cumulative_Runs': 'Cumul.'}
+                            with col_a:
+                                st.markdown(f"**A: {sel_inn_a}**")
+                                st.dataframe(df_a[disp_cols].rename(columns=col_rename).reset_index(drop=True), width="stretch")
+                            with col_b:
+                                st.markdown(f"**B: {sel_inn_b}**")
+                                st.dataframe(df_b[disp_cols].rename(columns=col_rename).reset_index(drop=True), width="stretch")
+
+                        elif sel_inn_a == sel_inn_b and sel_inn_a:
+                            st.warning("Please select two different innings to compare.")
+                        else:
+                            st.info("Select Innings A and Innings B above to compare.")
+
+                    # ===========================
+                    # TAB 3: CAREER PHASE AGGREGATE
+                    # ===========================
+                    with tab_agg:
+                        st.markdown(f"### {sel_owa_batter} — Career Over-Phase Aggregate")
+                        st.caption("Average and total runs scored in each 2-over phase across all innings matching your filters.")
+
+                        phase_order = ['1-2','3-4','5-6','7-8','9-10','11-12','13-14','15-16','17-18','19-20']
+                        def over_to_phase(o):
+                            if o <= 2:  return '1-2'
+                            elif o <= 4:  return '3-4'
+                            elif o <= 6:  return '5-6'
+                            elif o <= 8:  return '7-8'
+                            elif o <= 10: return '9-10'
+                            elif o <= 12: return '11-12'
+                            elif o <= 14: return '13-14'
+                            elif o <= 16: return '15-16'
+                            elif o <= 18: return '17-18'
+                            else:         return '19-20'
+
+                        owa_over['Phase'] = owa_over['Over_No'].apply(over_to_phase)
+
+                        phase_agg = owa_over.groupby('Phase', observed=True).agg(
+                            Total_Runs=('Runs', 'sum'),
+                            Total_Balls=('Balls', 'sum'),
+                            Total_Fours=('Fours', 'sum'),
+                            Total_Sixes=('Sixes', 'sum'),
+                            Innings_Count=('match_id', 'nunique')
+                        ).reset_index()
+                        phase_agg['SR'] = (phase_agg['Total_Runs'] / phase_agg['Total_Balls'].replace(0, np.nan) * 100).round(1)
+                        phase_agg['Avg_Runs_Per_Inn'] = (phase_agg['Total_Runs'] / phase_agg['Innings_Count'].replace(0, np.nan)).round(1)
+                        phase_agg['phase_order'] = phase_agg['Phase'].apply(lambda x: phase_order.index(x) if x in phase_order else 99)
+                        phase_agg = phase_agg.sort_values('phase_order').drop('phase_order', axis=1)
+
+                        st.dataframe(
+                            phase_agg[['Phase', 'Total_Runs', 'Total_Balls', 'SR', 'Avg_Runs_Per_Inn', 'Total_Fours', 'Total_Sixes', 'Innings_Count']].rename(
+                                columns={'Total_Runs': 'Runs', 'Total_Balls': 'Balls', 'Total_Fours': 'Fours',
+                                         'Total_Sixes': 'Sixes', 'Innings_Count': 'Innings', 'Avg_Runs_Per_Inn': 'Avg/Inn'}
+                            ),
+                            width="stretch"
+                        )
+
+                        # Bar: total runs per phase
+                        fig_phase = px.bar(
+                            phase_agg, x='Phase', y='Total_Runs',
+                            color='SR',
+                            color_continuous_scale='RdYlGn',
+                            text='Total_Runs',
+                            title=f"{sel_owa_batter} — Total Runs by Over Phase",
+                            hover_data=['SR', 'Avg_Runs_Per_Inn', 'Total_Fours', 'Total_Sixes', 'Innings_Count']
+                        )
+                        fig_phase.update_traces(textposition='outside')
+                        st.plotly_chart(fig_phase, width="stretch")
+
+                        # Line: SR progression across phases
+                        fig_sr = px.line(
+                            phase_agg, x='Phase', y='SR',
+                            markers=True,
+                            title=f"{sel_owa_batter} — Strike Rate by Over Phase",
+                            labels={'SR': 'Strike Rate'}
+                        )
+                        fig_sr.add_hline(y=100, line_dash='dash', line_color='gray', annotation_text='SR = 100')
+                        fig_sr.add_hline(y=150, line_dash='dash', line_color='orange', annotation_text='SR = 150')
+                        st.plotly_chart(fig_sr, width="stretch")
+
+                        # Season-wise phase breakdown
+                        if sel_owa_season == "All Seasons" and owa_over['Season'].nunique() > 1:
+                            st.markdown("#### Phase Runs by Season")
+                            phase_season = owa_over.groupby(['Phase', 'Season'], observed=True).agg(
+                                Total_Runs=('Runs', 'sum'),
+                                Total_Balls=('Balls', 'sum')
+                            ).reset_index()
+                            phase_season['SR'] = (phase_season['Total_Runs'] / phase_season['Total_Balls'].replace(0, np.nan) * 100).round(1)
+                            phase_season['phase_order'] = phase_season['Phase'].apply(lambda x: phase_order.index(x) if x in phase_order else 99)
+                            phase_season = phase_season.sort_values(['phase_order', 'Season'])
+                            fig_ps = px.bar(
+                                phase_season, x='Phase', y='Total_Runs',
+                                color='Season', barmode='group',
+                                title=f"{sel_owa_batter} — Runs by Phase per Season",
+                                hover_data=['SR']
+                            )
+                            st.plotly_chart(fig_ps, width="stretch")
+
 
 st.markdown("---")
 st.markdown("*Data extracted from Cricsheet JSON files.*")
