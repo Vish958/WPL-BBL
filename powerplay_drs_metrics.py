@@ -12,10 +12,11 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 14 May 2026")
+st.markdown("Last updated: 15 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
-JSON_DIR = "data" # Directory containing JSON files
+JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
+JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
 
 # Cache version parameters handle invalidation — do NOT use st.cache_data.clear()
 # as it forces re-read of the parquet file on every single widget interaction.
@@ -28,7 +29,8 @@ def load_venue_data():
     import json
     
     venue_map = {}
-    files = glob(os.path.join(JSON_DIR, "*.json"))
+    # Scan both the main data directory and the WT20I sub-directory
+    files = glob(os.path.join(JSON_DIR, "*.json")) + glob(os.path.join(JSON_DIR_WT20I, "*.json"))
     
     for file in files:
         try:
@@ -44,7 +46,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=7): # Version 7: Performance optimizations
+def load_data(path=DATA_SOURCE, _cache_version=8): # Version 8: Added WT20I data
     try:
         df = pd.read_parquet(path)
         
@@ -78,7 +80,9 @@ def load_data(path=DATA_SOURCE, _cache_version=7): # Version 7: Performance opti
             from glob import glob
             import json
             venue_s, city_s = {}, {}
-            files = glob(os.path.join(JSON_DIR, "*.json"))
+            # Scan both main data dir and WT20I sub-directory for venue resolution
+            files = (glob(os.path.join(JSON_DIR, "*.json")) +
+                     glob(os.path.join(JSON_DIR_WT20I, "*.json")))
             for file in files:
                 try:
                     with open(file, 'r', encoding='utf-8') as f:
@@ -329,7 +333,7 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=7) # Version 7: Performance optimizations
+df = load_data(_cache_version=8) # Version 8: Added WT20I data
 if df.empty:
     st.stop()
 
@@ -7507,10 +7511,11 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
     if tdb_df.empty:
         st.warning("No data for selected filters.")
     else:
-        # A dot ball = legal delivery (is_valid_delivery == 1) with runs.total == 0
+        # A dot ball = legal delivery (is_valid_delivery == 1) with runs.batter == 0
+        # Byes and Leg-byes count as dot balls faced for the batter (as per ESPNcricinfo)
         tdb_df['is_valid_delivery'] = pd.to_numeric(tdb_df['is_valid_delivery'], errors='coerce').fillna(0)
-        tdb_df['runs.total'] = pd.to_numeric(tdb_df['runs.total'], errors='coerce').fillna(0)
-        tdb_df['is_dot'] = ((tdb_df['is_valid_delivery'] == 1) & (tdb_df['runs.total'] == 0)).astype(int)
+        tdb_df['runs.batter'] = pd.to_numeric(tdb_df['runs.batter'], errors='coerce').fillna(0)
+        tdb_df['is_dot'] = ((tdb_df['is_valid_delivery'] == 1) & (tdb_df['runs.batter'] == 0)).astype(int)
 
         # ---- Innings-level dot ball counts ----
         @st.cache_data(show_spinner=False)
@@ -7533,11 +7538,12 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
             grp['League'] = grp['league'].astype(str)
             return grp.sort_values('Dot_Balls', ascending=False).reset_index(drop=True)
 
-        # ---- Match-level dot ball counts (summed across both innings for a team) ----
+        # ---- Match-level dot ball counts (summed across BOTH innings of a full match) ----
         @st.cache_data(show_spinner=False)
         def team_dots_match(df_):
+            # Group by match only (not team) so both teams' innings are combined
             grp = df_.groupby(
-                ['match_id', 'team', 'date', 'teams', 'year', 'league'],
+                ['match_id', 'date', 'teams', 'year', 'league'],
                 observed=True
             ).agg(
                 Dot_Balls=('is_dot', 'sum'),
@@ -7546,7 +7552,6 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
             ).reset_index()
             grp['Dot%'] = (grp['Dot_Balls'] / grp['Total_Legal_Balls'].replace(0, np.nan) * 100).round(1)
             grp['Date'] = pd.to_datetime(grp['date']).dt.date
-            grp['Batting Team'] = grp['team'].astype(str)
             grp['Match'] = grp['teams'].astype(str)
             grp['Season'] = grp['year']
             grp['League'] = grp['league'].astype(str)
@@ -7578,7 +7583,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
             disp_match = match_dots.head(int(top_n_tdb)).reset_index(drop=True)
             disp_match.index += 1
             st.dataframe(
-                disp_match[['Batting Team', 'Match', 'Date', 'Season', 'League',
+                disp_match[['Match', 'Date', 'Season', 'League',
                              'Dot_Balls', 'Total_Legal_Balls', 'Total_Runs', 'Dot%']]
                 .rename(columns={'Dot_Balls': 'Dot Balls', 'Total_Legal_Balls': 'Legal Balls', 'Total_Runs': 'Runs'}),
                 width="stretch"
@@ -7624,7 +7629,7 @@ elif metric_choice == "Team Dot Balls (Innings & Match)":
                 st.markdown("#### Top Matches (Most Dot Balls)")
                 chart_match = match_dots.head(15).copy()
                 fig_match = px.bar(
-                    chart_match, x='Batting Team', y='Dot_Balls', color='Season',
+                    chart_match, x='Match', y='Dot_Balls', color='Season',
                     text='Dot_Balls',
                     title="Top 15 Matches — Most Dot Balls Faced (Full Match)",
                     labels={'Dot_Balls': 'Dot Balls'}

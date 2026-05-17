@@ -12,18 +12,21 @@ from typing import Optional, Tuple, List
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
-JSON_DIR = "/Users/vishwesh/Documents/WPL&BBL/data"
+JSON_DIR = "/Users/vishwesh/Documents/WPL&BBL/data"          # Main data directory
+JSON_DIR_WT20I = "/Users/vishwesh/Documents/WPL&BBL/data/t20i_female_json"  # Women's T20I data
 DATA_DEST = "t20_data_with_drs.parquet"  # New file with DRS data
 
 LEAGUE_START_DATES = {
     'WBBL': '2020-10-25', 'MBBL': '2020-12-10',
     'WPL': '2023-03-04', 'SA20': '2023-01-10', 'IPL': '2008-04-18',
-    'MLC': '2023-07-13'
+    'MLC': '2023-07-13',
+    'WT20I': '2000-01-01',  # Women's T20 Internationals — include all dates
 }
 
 LEAGUE_PP_DEFAULT = {
     'WBBL': (0.0, 3 + 5/6), 'MBBL': (0.0, 3 + 5/6),
     'WPL': (0.0, 5 + 5/6), 'SA20': (0.0, 5 + 5/6),
+    'WT20I': (0.0, 5 + 5/6),  # Women's T20I: standard 6-over powerplay
 }
 
 def notation_to_ball_float(notation) -> float:
@@ -49,6 +52,8 @@ def detect_league(event_name, gender):
     if 'sa20' in e: return 'SA20'
     if 'ipl' in e or 'indian premier league' in e: return 'IPL'
     if 'major league cricket' in e: return 'MLC'
+    # Women's T20 Internationals: any female T20 that isn't a known franchise league
+    if gender == 'female': return 'WT20I'
     return 'OTHER'
 
 BBL_LEAGUES = {'WBBL', 'MBBL'}
@@ -148,8 +153,12 @@ def extract_review_data(delivery):
 
 
 def process_data_with_drs(inference_power_surge=True):
-    """Process all JSON files and extract DRS data."""
+    """Process all JSON files and extract DRS data from both main and WT20I directories."""
     files = glob(os.path.join(JSON_DIR, "*.json"))
+    # Also include Women's T20I files from the dedicated sub-directory
+    wt20i_files = glob(os.path.join(JSON_DIR_WT20I, "*.json"))
+    files = files + wt20i_files
+    logger.info(f"Processing {len(files)} JSON files ({len(glob(os.path.join(JSON_DIR, '*.json')))} main + {len(wt20i_files)} WT20I)")
     rows = []
     drs_count = 0
 
