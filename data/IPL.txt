@@ -1,5 +1,6 @@
+
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 1233 Indian Premier League matches.
+archive contains 1235 Indian Premier League matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -9,7 +10,7 @@ https://cricsheet.org/format/json/
 
 You can find the available downloads at https://cricsheet.org/downloads/, and
 you can find the most up-to-date version of this zip file at
-https://cricsheet.org/downloads/ipl_json.zip
+https://cricsheet.org/downloads/ipl_male_json.zip
 
 
 The matches contained in this zip archive are listed below. The first field is
@@ -22,6 +23,8 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 teams involved in the match.
 
 
+2026-05-21 - club - IPL - male - 1529309 - Gujarat Titans vs Chennai Super Kings
+2026-05-20 - club - IPL - male - 1529308 - Mumbai Indians vs Kolkata Knight Riders
 2026-05-19 - club - IPL - male - 1529307 - Lucknow Super Giants vs Rajasthan Royals
 2026-05-18 - club - IPL - male - 1529306 - Chennai Super Kings vs Sunrisers Hyderabad
 2026-05-17 - club - IPL - male - 1529305 - Rajasthan Royals vs Delhi Capitals
