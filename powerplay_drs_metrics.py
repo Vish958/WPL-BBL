@@ -46,7 +46,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=8): # Version 8: Added WT20I data
+def load_data(path=DATA_SOURCE, _cache_version=10): # Version 10: Player name normalization (V Sooryavanshi→V Suryavanshi)
     try:
         df = pd.read_parquet(path)
         
@@ -101,7 +101,20 @@ def load_data(path=DATA_SOURCE, _cache_version=8): # Version 8: Added WT20I data
                 df['city'] = df['city'].astype('category')
         except Exception:
             pass  # venue mapping is optional, don't break data loading
-        
+
+        # Normalize known player name spelling variants so they aggregate correctly.
+        # Key = wrong/alternate spelling in JSON → Value = canonical name.
+        _NAME_FIX = {
+            'V Sooryavanshi': 'V Suryavanshi',
+            'Prabhsimran Singh': 'P Simran Singh'
+        }
+        for col in ['batter', 'bowler', 'player_dismissed']:
+            if col in df.columns:
+                df[col] = df[col].astype(str).replace(_NAME_FIX)
+                # Re-apply category dtype if applicable
+                if df[col].nunique() < len(df) * 0.5:
+                    df[col] = df[col].astype('category')
+
         return df
     except Exception as e:
         st.error(f"Data not found or failed to load: {e}")
@@ -333,7 +346,7 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=8) # Version 8: Added WT20I data
+df = load_data(_cache_version=10) # Version 10: Player name normalization
 if df.empty:
     st.stop()
 
@@ -1622,7 +1635,7 @@ def boundary_runs_pct(df_):
         return pd.DataFrame()
 
     grp = work.groupby(['league', 'year'], observed=True).agg(
-        Total_Runs=('runs.total', 'sum'),
+        Total_Runs=('runs.batter', 'sum'),
         Fours=('runs.batter', lambda x: (x == 4).sum()),
         Sixes=('runs.batter', lambda x: (x == 6).sum())
     ).reset_index()
@@ -1630,6 +1643,7 @@ def boundary_runs_pct(df_):
     grp['Boundary_Runs'] = grp['Fours'] * 4 + grp['Sixes'] * 6
     grp['Pct'] = (grp['Boundary_Runs'] / grp['Total_Runs'].replace(0, np.nan) * 100).round(1)
     grp = grp.rename(columns={'league': 'League', 'year': 'Year'})
+    grp = grp[['League', 'Year', 'Total_Runs', 'Fours', 'Sixes', 'Boundary_Runs', 'Pct']]
     grp = grp.sort_values(['League', 'Year']).reset_index(drop=True)
     return grp
 
@@ -1710,13 +1724,14 @@ def boundary_runs_pct_team(df_):
     if work.empty:
         return pd.DataFrame()
     grp = work.groupby(['league', 'year', 'team'], observed=True).agg(
-        Total_Runs=('runs.total', 'sum'),
+        Total_Runs=('runs.batter', 'sum'),
         Fours=('runs.batter', lambda x: (x == 4).sum()),
         Sixes=('runs.batter', lambda x: (x == 6).sum())
     ).reset_index()
     grp['Boundary_Runs'] = grp['Fours'] * 4 + grp['Sixes'] * 6
     grp['Pct'] = (grp['Boundary_Runs'] / grp['Total_Runs'].replace(0, np.nan) * 100).round(1)
     grp = grp.rename(columns={'league': 'League', 'year': 'Year', 'team': 'Team'})
+    grp = grp[['League', 'Year', 'Team', 'Total_Runs', 'Fours', 'Sixes', 'Boundary_Runs', 'Pct']]
     return grp.sort_values(['League', 'Year', 'Team']).reset_index(drop=True)
 
 
@@ -4648,17 +4663,27 @@ elif metric_choice == "Batting Order Performance (Team-wise)":
         
         stats = stats.merge(inn_count, on=grouping, how='left')
         
-        # Dismissals
-        dis_df = merged[merged['player_dismissed'].notna()]
-        if not dis_df.empty:
-            dismissals = dis_df.groupby(grouping, observed=True).size().reset_index(name='Dismissals')
-            stats = stats.merge(dismissals, on=grouping, how='left')
-        else:
-            stats['Dismissals'] = 0
-        
+        # Dismissals — vectorized per-innings approach (avoids pandas groupby.apply issues)
+        # Step 1: flag each delivery as "this batter was dismissed on this ball"
+        merged['_is_dis'] = (
+            (merged['player_dismissed'].astype(str).str.strip() == merged['batter'].astype(str).str.strip()) &
+            merged['player_dismissed'].notna()
+        ).astype(int)
+        # Step 2: per (grouping + match + innings), take max → 1 if dismissed that innings, 0 if not out
+        inn_dis = merged.groupby(grouping + ['match_id', 'innings'], observed=True)['_is_dis'].max().reset_index()
+        # Step 3: sum across innings → total dismissals per (league, year, team, position)
+        dismissals = inn_dis.groupby(grouping, observed=True)['_is_dis'].sum().reset_index(name='Dismissals')
+        stats = stats.merge(dismissals, on=grouping, how='left')
         stats['Dismissals'] = stats['Dismissals'].fillna(0).astype(int)
+        merged.drop(columns=['_is_dis'], inplace=True, errors='ignore')
+
         stats['SR'] = (stats['Runs'] / stats['Balls'].replace(0, np.nan) * 100).fillna(0).round(2)
-        stats['Avg'] = np.where(stats['Dismissals'] > 0, (stats['Runs'] / stats['Dismissals']).round(2), stats['Runs']).astype(float)
+        # Avg = Runs / Dismissals (cricket average — not-out innings excluded from denominator)
+        stats['Avg'] = np.where(
+            stats['Dismissals'] > 0,
+            (stats['Runs'] / stats['Dismissals']).round(2),
+            (stats['Runs'] / stats['Innings'].replace(0, np.nan)).round(2)
+        ).astype(float)
         
         # Milestones
         milestones = balls_faced.groupby(grouping + ['match_id', 'innings']).agg(position_runs=('runs.batter', 'sum')).reset_index()
@@ -6780,12 +6805,19 @@ elif metric_choice == "Longest Wicketless Streaks":
             m = series.dropna()
             return str(m.mode().iloc[0]) if len(m.mode()) > 0 else ''
 
-        def _flush_match(bowler, grp, streak_start, streak_len, records):
+        def _flush_match(bowler, grp, streak_start, streak_len, records, wicket_match_date=None):
             if streak_len == 0:
                 return
             window = grp.iloc[streak_start: streak_start + streak_len]
             if window.empty:
                 return
+            # Streak End = the wicket-taking match date (if streak was closed by a wicket match),
+            # or the last wicketless match date (if it's an open/ongoing streak at end of data).
+            streak_end_date = (
+                pd.to_datetime(wicket_match_date).strftime('%d %b %Y')
+                if wicket_match_date is not None
+                else pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y')
+            )
             records.append({
                 'Bowler': str(bowler),
                 'Team': _safe_mode(window['team']) if ('team' in window.columns and not window.empty) else '',
@@ -6793,7 +6825,7 @@ elif metric_choice == "Longest Wicketless Streaks":
                 'Season': _safe_mode(window['year']) if ('year' in window.columns and not window.empty) else '',
                 'Streak (Matches)': streak_len,
                 'Streak Start': pd.to_datetime(window['date'].iloc[0]).strftime('%d %b %Y'),
-                'Streak End': pd.to_datetime(window['date'].iloc[-1]).strftime('%d %b %Y'),
+                'Streak End': streak_end_date,
             })
 
         records = []
@@ -6806,11 +6838,13 @@ elif metric_choice == "Longest Wicketless Streaks":
                 if row['wickets_in_match'] == 0:
                     streak += 1
                 else:
-                    _flush_match(bowler, grp, streak_start, streak, records)
+                    # Pass the wicket-taking match's date as the streak end
+                    _flush_match(bowler, grp, streak_start, streak, records, wicket_match_date=row['date'])
                     streak = 0
                     streak_start = idx + 1
 
-            _flush_match(bowler, grp, streak_start, streak, records)
+            # Open streak at end of data — no wicket-taking match, so streak end = last wicketless match
+            _flush_match(bowler, grp, streak_start, streak, records, wicket_match_date=None)
 
         if not records:
             return pd.DataFrame()
