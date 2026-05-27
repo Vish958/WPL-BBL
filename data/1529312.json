@@ -1,7 +1,7 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-05-25",
+    "created": "2026-05-27",
     "revision": 1
   },
   "info": {
@@ -1389,7 +1389,8 @@
                   {
                     "in": "RA Jadeja",
                     "out": "SB Dubey",
-                    "team": "Rajasthan Royals"
+                    "team": "Rajasthan Royals",
+                    "reason": "impact_player"
                   }
                 ]
               },
@@ -1468,7 +1469,7 @@
                 "umpire": "T Ematty",
                 "batter": "RA Jadeja",
                 "decision": "upheld",
-                "type": "wicket"
+                "type": "wide"
               },
               "runs": {
                 "batter": 0,
@@ -1603,7 +1604,8 @@
                   {
                     "in": "RG Sharma",
                     "out": "RG Sharma",
-                    "team": "Mumbai Indians"
+                    "team": "Mumbai Indians",
+                    "reason": "impact_player"
                   }
                 ]
               },

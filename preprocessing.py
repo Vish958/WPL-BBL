@@ -115,15 +115,85 @@ def has_wide(extras: dict) -> bool:
     if not extras: return False
     return extras.get('wides', 0) > 0 or extras.get('wide', 0) > 0
 
+def _resolve_name(raw_name: str, delivery_names: set) -> str:
+    """
+    Resolve an impact-player name from the 'replacements' block to the exact
+    name used in deliveries, handling common abbreviation mismatches.
+
+    Matching priority:
+      1. Exact match
+      2. Same surname + replacement initials are a prefix of the delivery initials
+         (e.g. 'Rahul Tewatia' -> 'R Tewatia', 'Ravindra Jadeja' -> 'RA Jadeja')
+      3. Surname-only fallback (last word matches)
+
+    Returns the matched delivery name, or the original raw_name if nothing fits.
+    """
+    if raw_name in delivery_names:
+        return raw_name
+
+    raw_parts  = raw_name.split()
+    raw_surname = raw_parts[-1].lower()
+    # Build initials string for the raw name (e.g. 'Ravindra Ashwin' -> 'RA')
+    raw_initials = ''.join(p[0].upper() for p in raw_parts[:-1])
+
+    surname_matches = []
+    for dname in delivery_names:
+        d_parts = dname.split()
+        if not d_parts:
+            continue
+        d_surname = d_parts[-1].lower()
+        if d_surname != raw_surname:
+            continue
+        surname_matches.append(dname)
+        # Build initials for the delivery name
+        d_initials = ''.join(p[0].upper() for p in d_parts[:-1])
+        # Accept if one initials string is a prefix of the other
+        # (covers 'R' vs 'RA', 'RA' vs 'R', 'Rahul' vs 'R', etc.)
+        if raw_initials.startswith(d_initials) or d_initials.startswith(raw_initials):
+            logger.info(
+                f"Impact-player name resolved: '{raw_name}' -> '{dname}'"
+            )
+            return dname
+
+    # Surname-only fallback: if exactly one candidate shares the surname, use it
+    if len(surname_matches) == 1:
+        logger.info(
+            f"Impact-player name resolved (surname fallback): '{raw_name}' -> '{surname_matches[0]}'"
+        )
+        return surname_matches[0]
+
+    logger.warning(
+        f"Impact-player name '{raw_name}' could not be resolved to a delivery name. "
+        f"Candidates: {surname_matches}. Using raw name (player may not have batted/bowled)."
+    )
+    return raw_name
+
+
 def get_impact_players_from_match(json_data):
-    impact_names = set()
+    """
+    Extract the set of impact-player names (as they appear in deliveries)
+    from a match JSON. Automatically resolves abbreviation mismatches between
+    the 'replacements' block and the actual batter/bowler names in deliveries.
+    """
+    # Step 1: collect every name that actually appears in deliveries
+    delivery_names: set = set()
+    for inning in json_data.get('innings', []):
+        for over in inning.get('overs', []):
+            for delivery in over.get('deliveries', []):
+                if delivery.get('batter'):      delivery_names.add(delivery['batter'])
+                if delivery.get('bowler'):      delivery_names.add(delivery['bowler'])
+                if delivery.get('non_striker'): delivery_names.add(delivery['non_striker'])
+
+    # Step 2: collect replacement names and resolve each one
+    impact_names: set = set()
     for inning in json_data.get('innings', []):
         for over in inning.get('overs', []):
             for delivery in over.get('deliveries', []):
                 if 'replacements' in delivery and 'match' in delivery['replacements']:
                     for rep in delivery['replacements']['match']:
                         if rep.get('reason', '').lower() == 'impact_player':
-                            impact_names.add(rep['in'])
+                            resolved = _resolve_name(rep['in'], delivery_names)
+                            impact_names.add(resolved)
     return impact_names
 
 def process_data(inference_power_surge=True):

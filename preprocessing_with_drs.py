@@ -177,6 +177,11 @@ def process_data_with_drs(inference_power_surge=True):
             event_stage = ''
             if isinstance(info.get('event'), dict):
                 event_stage = info.get('event', {}).get('stage', '')
+                # Fallback: if stage is missing, check match_number for non-numeric playoff labels
+                if not event_stage:
+                    mn = info.get('event', {}).get('match_number', '')
+                    if isinstance(mn, str) and not mn.isdigit():
+                        event_stage = mn  # e.g. 'Qualifier 1', 'Final', 'Eliminator'
             gender = info.get('gender', 'female')
             league = detect_league(event, gender)
 

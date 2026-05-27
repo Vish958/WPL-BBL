@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 25 May 2026")
+st.markdown("Last updated: 26 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
@@ -46,7 +46,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=10): # Version 10: Player name normalization (V Sooryavanshi→V Suryavanshi)
+def load_data(path=DATA_SOURCE, _cache_version=11): # Version 11: Rebuild with event_stage fix for playoff matches
     try:
         df = pd.read_parquet(path)
         
@@ -106,7 +106,9 @@ def load_data(path=DATA_SOURCE, _cache_version=10): # Version 10: Player name no
         # Key = wrong/alternate spelling in JSON → Value = canonical name.
         _NAME_FIX = {
             'V Sooryavanshi': 'V Suryavanshi',
-            'Prabhsimran Singh': 'P Simran Singh'
+            'Prabhsimran Singh': 'P Simran Singh',
+            'CPL Connolly': 'C Connolly',
+            'Rahul Tewatia': 'R Tewatia'
         }
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:
@@ -346,7 +348,7 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=10) # Version 10: Player name normalization
+df = load_data(_cache_version=11) # Version 11: event_stage fix
 if df.empty:
     st.stop()
 

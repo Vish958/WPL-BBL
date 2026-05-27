@@ -1,7 +1,7 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-05-25",
+    "created": "2026-05-27",
     "revision": 1
   },
   "info": {
@@ -1190,7 +1190,8 @@
                   {
                     "in": "FH Allen",
                     "out": "SP Narine",
-                    "team": "Kolkata Knight Riders"
+                    "team": "Kolkata Knight Riders",
+                    "reason": "impact_player"
                   }
                 ]
               },
@@ -1446,7 +1447,7 @@
                 "umpire": "K Swaroopanand",
                 "batter": "DA Miller",
                 "decision": "struck down",
-                "type": "wicket"
+                "type": "noball"
               },
               "runs": {
                 "batter": 1,
@@ -1463,7 +1464,7 @@
                 "umpire": "K Swaroopanand",
                 "batter": "Ashutosh Sharma",
                 "decision": "upheld",
-                "type": "wicket"
+                "type": "wide"
               },
               "runs": {
                 "batter": 0,
@@ -1493,7 +1494,7 @@
                 "umpire": "K Swaroopanand",
                 "batter": "Ashutosh Sharma",
                 "decision": "struck down",
-                "type": "wicket"
+                "type": "noball"
               },
               "runs": {
                 "batter": 0,
@@ -1601,7 +1602,8 @@
                   {
                     "in": "Kuldeep Yadav",
                     "out": "KL Rahul",
-                    "team": "Delhi Capitals"
+                    "team": "Delhi Capitals",
+                    "reason": "impact_player"
                   }
                 ]
               },

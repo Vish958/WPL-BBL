@@ -1,7 +1,7 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-05-25",
+    "created": "2026-05-27",
     "revision": 1
   },
   "info": {
@@ -1196,7 +1196,8 @@
                   {
                     "in": "MP Stoinis",
                     "out": "YS Chahal",
-                    "team": "Punjab Kings"
+                    "team": "Punjab Kings",
+                    "reason": "impact_player"
                   }
                 ]
               },
@@ -1500,7 +1501,7 @@
                 "umpire": "KM Gandhi",
                 "batter": "Arjun Tendulkar",
                 "decision": "struck down",
-                "type": "wicket"
+                "type": "wide"
               },
               "runs": {
                 "batter": 0,
@@ -1575,7 +1576,8 @@
                   {
                     "in": "DS Rathi",
                     "out": "JP Inglis",
-                    "team": "Lucknow Super Giants"
+                    "team": "Lucknow Super Giants",
+                    "reason": "impact_player"
                   }
                 ]
               },
