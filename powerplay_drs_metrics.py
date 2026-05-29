@@ -468,7 +468,11 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
     filter_teams: list of teams to filter (applies to batting team in batting mode,
                   bowling team in bowling mode)
     """
-    pp = df_[df_['phase'] == 'Powerplay'].copy()
+    is_bbl = df_['league'].astype(str).str.contains('BBL|Big Bash', case=False, na=False)
+    pp = df_[
+        (df_['phase'] == 'Powerplay') & 
+        ((is_bbl & (df_['over'] < 4)) | (~is_bbl & (df_['over'] < 6)))
+    ].copy()
     if pp.empty:
         return pd.DataFrame(), pd.DataFrame()
     
@@ -1929,13 +1933,22 @@ if metric_choice == "Powerplay Score Tracker":
                     match_agg = match_agg[match_agg['Team'].isin([team1, team2])]
         
         # Tabs
-        tab1, tab2, tab3, tab4, tab5_agg = st.tabs(["Match-by-Match", "Season Summary", "Venue-wise", "Playoff Matches", "Aggregate Analysis"])
+        tab1, tab2, tab3, tab4, tab5_agg, tab6_playoff_players, tab7_50s, tab8_season_pp = st.tabs([
+            "Match-by-Match", 
+            "Season Summary", 
+            "Venue-wise", 
+            "Playoff Matches", 
+            "Aggregate Analysis",
+            "Playoff Player Runs",
+            "Most 50+ Scores",
+            "Season PP Leaderboard"
+        ])
         
         with tab1:
             if mode_val == 'batting':
-                display_cols = ['Team', 'Opponent', 'Date', 'Season', 'Innings', 'PP_Runs', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Dot%', 'PP_Wickets']
+                display_cols = ['Team', 'Opponent', 'Date', 'Season', 'Innings', 'PP_Runs', 'PP_Balls', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Dot%', 'PP_Wickets']
             else:
-                display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'PP_Runs_Conceded', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types']
+                display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'PP_Runs_Conceded', 'PP_Balls_Bowled', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types']
             
             st.dataframe(match_stats[[c for c in display_cols if c in match_stats.columns]], width="stretch")
             
@@ -2073,8 +2086,15 @@ if metric_choice == "Powerplay Score Tracker":
                 if selected_stage != "All Playoffs":
                     playoff_data = playoff_data[playoff_data['event_stage'] == selected_stage]
                 
-                # Calculate powerplay stats for playoff matches
-                playoff_pp = playoff_data[playoff_data['over'] < 6].copy()
+                # Calculate powerplay stats for playoff matches (respecting BBL/WBBL 4-over PP rule)
+                # Exclude super overs (innings 3, 4) which can appear as Powerplay (over 0)
+                is_bbl_playoff = playoff_data['league'].astype(str).str.contains('BBL|Big Bash', case=False, na=False)
+                playoff_pp = playoff_data[
+                    (playoff_data['phase'] == 'Powerplay') &
+                    (playoff_data['innings'].isin([1, 2])) &
+                    (((is_bbl_playoff) & (playoff_data['over'] < 4)) |
+                    ((~is_bbl_playoff) & (playoff_data['over'] < 6)))
+                ].copy()
                 
                 if playoff_pp.empty:
                     st.info("No powerplay data available for playoff matches.")
@@ -2092,7 +2112,7 @@ if metric_choice == "Powerplay Score Tracker":
                         playoff_stats['PP_Boundaries'] = playoff_stats['PP_4s'] + playoff_stats['PP_6s']
                         playoff_stats = playoff_stats.rename(columns={'team': 'Team', 'bowling_team': 'Opponent', 'event_stage': 'Stage'})
                         
-                        display_cols = ['Team', 'Opponent', 'Stage', 'date', 'PP_Runs', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Wickets']
+                        display_cols = ['Team', 'Opponent', 'Stage', 'Date', 'PP_Runs', 'PP_Balls', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Wickets']
                     else:
                         # Bowling mode - group by bowling team 
                         playoff_stats = playoff_pp.groupby(['match_id', 'bowling_team', 'team', 'date', 'event_stage'], observed=True).agg(
@@ -2105,9 +2125,10 @@ if metric_choice == "Powerplay Score Tracker":
                         playoff_stats['PP_Dot%'] = ((playoff_stats['PP_Dots'] / playoff_stats['PP_Balls']) * 100).round(1)
                         playoff_stats = playoff_stats.rename(columns={'bowling_team': 'Team', 'team': 'Against', 'event_stage': 'Stage'})
                         
-                        display_cols = ['Team', 'Against', 'Stage', 'date', 'PP_Runs_Conceded', 'PP_Econ', 'PP_Dot%', 'PP_Wickets_Taken']
+                        display_cols = ['Team', 'Against', 'Stage', 'Date', 'PP_Runs_Conceded', 'PP_Balls', 'PP_Econ', 'PP_Dot%', 'PP_Wickets_Taken']
                     
                     playoff_stats = playoff_stats.sort_values('date', ascending=False)
+                    playoff_stats['date'] = pd.to_datetime(playoff_stats['date']).dt.date
                     playoff_stats = playoff_stats.rename(columns={'date': 'Date'})
                     
                     # Show summary metrics
@@ -2250,6 +2271,389 @@ if metric_choice == "Powerplay Score Tracker":
                         )
                         fig_comp.update_xaxes(tickangle=45)
                         st.plotly_chart(fig_comp, width="stretch")
+
+        with tab6_playoff_players:
+            st.markdown("#### Playoff Player Runs Leaderboard")
+            st.caption("Aggregated runs scored by players in playoff/knockout matches (Eliminator, Qualifiers, Final, etc.)")
+            
+            # Filter playoff data using sidebar filters (league & year)
+            playoff_df_filtered = df[df['event_stage'].fillna('').astype(str).str.strip() != ''].copy()
+            if selected_leagues:
+                playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['league'].isin(selected_leagues)]
+            if selected_years:
+                playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['year'].isin(selected_years)]
+            if selected_teams:
+                # filter to matches where selected team was playing (either team A or team B)
+                playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['team'].isin(selected_teams)]
+                
+            if playoff_df_filtered.empty:
+                st.info("No playoff matches found for the selected filters.")
+            else:
+                # In-section player filter (multiselect)
+                playoff_batters = sorted(playoff_df_filtered['batter'].dropna().unique())
+                sel_playoff_players = st.multiselect("Filter by Player(s)", playoff_batters, key="pp_playoff_player_filter")
+                
+                runs_type = st.radio(
+                    "Select Runs Metric", 
+                    ["Total Runs in Playoff Matches", "Powerplay Runs only in Playoff Matches"], 
+                    horizontal=True,
+                    key="playoff_runs_metric_toggle"
+                )
+                
+                # Prepare data
+                playoff_batting = playoff_df_filtered[playoff_df_filtered['batter'].notna() & (playoff_df_filtered['batter'].astype(str) != '')].copy()
+                
+                if runs_type == "Powerplay Runs only in Playoff Matches":
+                    # MBBL / WBBL has 4-over PP, others 6-over PP
+                    is_bbl = playoff_batting['league'].astype(str).str.contains('BBL|Big Bash', case=False, na=False)
+                    playoff_batting = playoff_batting[
+                        (playoff_batting['phase'] == 'Powerplay') &
+                        (playoff_batting['innings'].isin([1, 2])) &
+                        ((is_bbl & (playoff_batting['over'] < 4)) |
+                        (~is_bbl & (playoff_batting['over'] < 6)))
+                    ]
+                else:
+                    # Exclude super overs from total runs too
+                    playoff_batting = playoff_batting[playoff_batting['innings'].isin([1, 2])]
+                
+                if playoff_batting.empty:
+                    st.info("No playoff batting records found for the selected options.")
+                else:
+                    # Apply player filter if selected
+                    if sel_playoff_players:
+                        playoff_batting = playoff_batting[playoff_batting['batter'].isin(sel_playoff_players)]
+                        
+                    if playoff_batting.empty:
+                        st.info("No records found for the selected player filters.")
+                    else:
+                        # Ball faced definition: count rows where extras_type != 'wides'
+                        playoff_batting['is_ball_faced'] = (playoff_batting['extras_type'].astype(str).fillna('') != 'wides').astype(int)
+                        
+                        # Get unique playoff stages in the filtered data
+                        unique_stages = sorted([s for s in playoff_batting['event_stage'].unique() if str(s).strip() != ''])
+                        
+                        # Overall stats per player
+                        player_stats = playoff_batting.groupby('batter', observed=True).agg(
+                            Total_Runs=('runs.batter', 'sum'),
+                            Total_Balls=('is_ball_faced', 'sum'),
+                            Matches=('match_id', 'nunique'),
+                            Teams=('team', lambda x: ', '.join(sorted(x.unique())))
+                        ).reset_index()
+                        
+                        player_stats['SR'] = (player_stats['Total_Runs'] / player_stats['Total_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                        
+                        # Inning wise stats: 1st innings vs 2nd innings
+                        inns_runs = playoff_batting.groupby(['batter', 'innings'], observed=True)['runs.batter'].sum().unstack(fill_value=0).reset_index()
+                        inns_runs = inns_runs.rename(columns={1: '1st Inns Runs', 2: '2nd Inns Runs'})
+                        
+                        if '1st Inns Runs' not in inns_runs.columns:
+                            inns_runs['1st Inns Runs'] = 0
+                        if '2nd Inns Runs' not in inns_runs.columns:
+                            inns_runs['2nd Inns Runs'] = 0
+                            
+                        player_stats = player_stats.merge(inns_runs[['batter', '1st Inns Runs', '2nd Inns Runs']], on='batter', how='left')
+                        
+                        # Stage wise stats
+                        stage_runs = playoff_batting.groupby(['batter', 'event_stage'], observed=True)['runs.batter'].sum().unstack(fill_value=0).reset_index()
+                        for stage in unique_stages:
+                            if stage in stage_runs.columns:
+                                player_stats = player_stats.merge(stage_runs[['batter', stage]], on='batter', how='left')
+                                player_stats[stage] = player_stats[stage].fillna(0).astype(int)
+                        
+                        player_stats = player_stats.sort_values('Total_Runs', ascending=False).reset_index(drop=True)
+                        player_stats.index += 1
+                        
+                        rename_cols = {
+                            'batter': 'Player',
+                            'Teams': 'Team(s)',
+                            'Matches': 'Mat',
+                            'Total_Runs': 'Runs',
+                            'Total_Balls': 'Balls',
+                        }
+                        player_stats = player_stats.rename(columns=rename_cols)
+                        
+                        display_columns = ['Player', 'Team(s)', 'Mat', 'Runs', 'Balls', 'SR', '1st Inns Runs', '2nd Inns Runs'] + unique_stages
+                        display_columns = [c for c in display_columns if c in player_stats.columns]
+                        
+                        st.dataframe(player_stats[display_columns], width="stretch")
+
+        with tab7_50s:
+            st.markdown("#### Most 50+ Scores inside Powerplay & Playoffs")
+            
+            sub_tab1, sub_tab2 = st.tabs(["50+ Scores inside Powerplay", "50+ Scores in Playoffs/Knockouts"])
+            
+            with sub_tab1:
+                st.markdown("##### Powerplay 50+ Scores")
+                st.caption("Players who scored 50 or more runs within the Powerplay phase of an innings (overs 1-6, or 1-4 for MBBL/WBBL).")
+                
+                # We need all matches matching the league/year/team filters
+                df_filtered_50s = df
+                if selected_leagues:
+                    df_filtered_50s = df_filtered_50s[df_filtered_50s['league'].isin(selected_leagues)]
+                if selected_years:
+                    df_filtered_50s = df_filtered_50s[df_filtered_50s['year'].isin(selected_years)]
+                if selected_teams:
+                    df_filtered_50s = df_filtered_50s[df_filtered_50s['team'].isin(selected_teams)]
+                
+                if df_filtered_50s.empty:
+                    st.info("No data matching the selected filters.")
+                else:
+                    is_bbl = df_filtered_50s['league'].astype(str).str.contains('BBL|Big Bash', case=False, na=False)
+                    pp_df_50s = df_filtered_50s[
+                        (df_filtered_50s['phase'] == 'Powerplay') &
+                        (((is_bbl) & (df_filtered_50s['over'] < 4)) |
+                        ((~is_bbl) & (df_filtered_50s['over'] < 6)))
+                    ].copy()
+                    
+                    if pp_df_50s.empty:
+                        st.info("No powerplay deliveries found.")
+                    else:
+                        pp_df_50s['is_ball_faced'] = (pp_df_50s['extras_type'].astype(str).fillna('') != 'wides').astype(int)
+                        
+                        # Group by batter per match
+                        pp_batter_match = pp_df_50s.groupby(['match_id', 'innings', 'batter', 'team', 'date', 'teams'], observed=True).agg(
+                            PP_Runs=('runs.batter', 'sum'),
+                            PP_Balls=('is_ball_faced', 'sum')
+                        ).reset_index()
+                        
+                        pp_50s_all = pp_batter_match[pp_batter_match['PP_Runs'] >= 50].copy()
+                        
+                        if pp_50s_all.empty:
+                            st.info("No 50+ scores inside the powerplay found for the selected filters.")
+                        else:
+                            leaderboard_pp = pp_50s_all.groupby('batter', observed=True).agg(
+                                Count=('PP_Runs', 'count'),
+                                Highest_Runs=('PP_Runs', 'max'),
+                                Total_Runs=('PP_Runs', 'sum'),
+                                Total_Balls=('PP_Balls', 'sum'),
+                                Teams=('team', lambda x: ', '.join(sorted(x.unique())))
+                            ).reset_index()
+                            
+                            leaderboard_pp['SR'] = (leaderboard_pp['Total_Runs'] / leaderboard_pp['Total_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                            leaderboard_pp = leaderboard_pp.sort_values(by=['Count', 'Total_Runs'], ascending=[False, False]).reset_index(drop=True)
+                            leaderboard_pp.index += 1
+                            leaderboard_pp = leaderboard_pp.rename(columns={'batter': 'Player', 'Teams': 'Team(s)', 'Count': '50+ Scores'})
+                            
+                            st.markdown("**Powerplay 50+ Scores Leaderboard**")
+                            st.dataframe(leaderboard_pp[['Player', 'Team(s)', '50+ Scores', 'Highest_Runs', 'Total_Runs', 'Total_Balls', 'SR']], width="stretch")
+                            
+                            # Detailed table
+                            st.markdown("**Detailed Innings List**")
+                            pp_50s_details = pp_50s_all.sort_values(by=['PP_Runs', 'date'], ascending=[False, False]).reset_index(drop=True)
+                            pp_50s_details.index += 1
+                            pp_50s_details['Date'] = pd.to_datetime(pp_50s_details['date']).dt.date
+                            st.dataframe(pp_50s_details[['batter', 'team', 'teams', 'Date', 'PP_Runs', 'PP_Balls']].rename(
+                                columns={'batter': 'Player', 'team': 'Team', 'teams': 'Match', 'PP_Runs': 'Powerplay Runs', 'PP_Balls': 'Powerplay Balls'}
+                            ), width="stretch")
+                            
+            with sub_tab2:
+                st.markdown("##### Playoff/Knockout 50+ Scores")
+                st.caption("Players who scored 50 or more runs overall in a playoff/knockout match.")
+                
+                playoff_all_50s = df[df['event_stage'].fillna('').astype(str).str.strip() != ''].copy()
+                
+                if selected_leagues:
+                    playoff_all_50s = playoff_all_50s[playoff_all_50s['league'].isin(selected_leagues)]
+                if selected_years:
+                    playoff_all_50s = playoff_all_50s[playoff_all_50s['year'].isin(selected_years)]
+                if selected_teams:
+                    playoff_all_50s = playoff_all_50s[playoff_all_50s['team'].isin(selected_teams)]
+                    
+                if playoff_all_50s.empty:
+                    st.info("No playoff matches found for the selected filters.")
+                else:
+                    playoff_all_50s['is_ball_faced'] = (playoff_all_50s['extras_type'].astype(str).fillna('') != 'wides').astype(int)
+                    # Exclude super overs
+                    playoff_all_50s = playoff_all_50s[playoff_all_50s['innings'].isin([1, 2])]
+                    
+                    # Group by match and batter
+                    playoff_batter_match = playoff_all_50s.groupby(['match_id', 'innings', 'batter', 'team', 'date', 'teams', 'event_stage'], observed=True).agg(
+                        Runs=('runs.batter', 'sum'),
+                        Balls=('is_ball_faced', 'sum')
+                    ).reset_index()
+                    
+                    playoff_50s_all = playoff_batter_match[playoff_batter_match['Runs'] >= 50].copy()
+                    
+                    if playoff_50s_all.empty:
+                        st.info("No 50+ scores in playoff/knockout matches found for the selected filters.")
+                    else:
+                        leaderboard_playoff = playoff_50s_all.groupby('batter', observed=True).agg(
+                            Count=('Runs', 'count'),
+                            Highest_Runs=('Runs', 'max'),
+                            Total_Runs=('Runs', 'sum'),
+                            Total_Balls=('Balls', 'sum'),
+                            Teams=('team', lambda x: ', '.join(sorted(x.unique())))
+                        ).reset_index()
+                        
+                        leaderboard_playoff['SR'] = (leaderboard_playoff['Total_Runs'] / leaderboard_playoff['Total_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                        leaderboard_playoff = leaderboard_playoff.sort_values(by=['Count', 'Total_Runs'], ascending=[False, False]).reset_index(drop=True)
+                        leaderboard_playoff.index += 1
+                        leaderboard_playoff = leaderboard_playoff.rename(columns={'batter': 'Player', 'Teams': 'Team(s)', 'Count': '50+ Scores'})
+                        
+                        st.markdown("**Playoff 50+ Scores Leaderboard**")
+                        st.dataframe(leaderboard_playoff[['Player', 'Team(s)', '50+ Scores', 'Highest_Runs', 'Total_Runs', 'Total_Balls', 'SR']], width="stretch")
+                        
+                        # Detailed table
+                        st.markdown("**Detailed Innings List**")
+                        playoff_50s_details = playoff_50s_all.sort_values(by=['Runs', 'date'], ascending=[False, False]).reset_index(drop=True)
+                        playoff_50s_details.index += 1
+                        playoff_50s_details['Date'] = pd.to_datetime(playoff_50s_details['date']).dt.date
+                        st.dataframe(playoff_50s_details[['batter', 'team', 'teams', 'event_stage', 'Date', 'Runs', 'Balls']].rename(
+                            columns={'batter': 'Player', 'team': 'Team', 'teams': 'Match', 'event_stage': 'Stage', 'Runs': 'Runs', 'Balls': 'Balls'}
+                        ), width="stretch")
+
+        with tab8_season_pp:
+            st.markdown("#### Most Powerplay Runs in each Season (League-wise)")
+            st.caption("Powerplay defined as overs 1-4 for MBBL/WBBL, and overs 1-6 for all other leagues.")
+            
+            if mode_val == 'bowling':
+                # bowling_df is always defined when mode_val == 'bowling' (set above)
+                df_season_pp = bowling_df.copy()
+                if selected_teams:
+                    # bowling_team column is available directly from the parquet
+                    df_season_pp = df_season_pp[df_season_pp['bowling_team'].isin(selected_teams)]
+            else:
+                df_season_pp = fdf.copy()
+                if exclude_playoffs:
+                    df_season_pp = df_season_pp[df_season_pp['event_stage'].fillna('').astype(str).str.strip() == '']
+                
+            if df_season_pp.empty:
+                st.info("No data available for the selected filters.")
+            else:
+                is_bbl = df_season_pp['league'].astype(str).str.contains('BBL|Big Bash', case=False, na=False)
+                pp_season_df = df_season_pp[
+                    (df_season_pp['phase'] == 'Powerplay') &
+                    (((is_bbl) & (df_season_pp['over'] < 4)) |
+                    ((~is_bbl) & (df_season_pp['over'] < 6)))
+                ].copy()
+                
+                # Exclude super overs
+                pp_season_df = pp_season_df[pp_season_df['innings'].isin([1, 2])]
+                
+                if pp_season_df.empty:
+                    st.info("No powerplay deliveries found.")
+                else:
+                    pp_season_df['is_ball_faced'] = (pp_season_df['extras_type'].astype(str).fillna('') != 'wides').astype(int)
+                    
+                    # 1. Player PP stats
+                    player_pp = pp_season_df.groupby(['league', 'year', 'batter', 'team'], observed=True).agg(
+                        PP_Runs=('runs.batter', 'sum'),
+                        PP_Balls=('is_ball_faced', 'sum'),
+                        PP_Innings=('match_id', 'nunique')
+                    ).reset_index()
+                    
+                    player_pp = player_pp[player_pp['PP_Runs'] > 0]
+                    player_pp['PP_SR'] = (player_pp['PP_Runs'] / player_pp['PP_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                    
+                    # 2. Team PP stats
+                    if mode_val == 'bowling':
+                        if 'bowling_team' not in pp_season_df.columns:
+                            _teams_split = pp_season_df['teams'].astype(str).str.replace(' vs ', ' v ', regex=False).str.split(' v ', n=1)
+                            _team_a = _teams_split.str[0].str.strip()
+                            _team_b = _teams_split.str[1].str.strip()
+                            _my_team = pp_season_df['team'].astype(str)
+                            pp_season_df['bowling_team'] = np.where(_team_a == _my_team, _team_b, _team_a)
+                        
+                        team_match_pp = pp_season_df.groupby(['league', 'year', 'match_id', 'bowling_team'], observed=True).agg(
+                            PP_Runs=('runs.total', 'sum')
+                        ).reset_index()
+                        team_match_pp = team_match_pp.rename(columns={'bowling_team': 'team'})
+                    else:
+                        team_match_pp = pp_season_df.groupby(['league', 'year', 'match_id', 'team'], observed=True).agg(
+                            PP_Runs=('runs.total', 'sum')
+                        ).reset_index()
+                    
+                    team_pp = team_match_pp.groupby(['league', 'year', 'team'], observed=True).agg(
+                        Matches=('match_id', 'nunique'),
+                        Total_PP_Runs=('PP_Runs', 'sum'),
+                        Avg_PP_Runs=('PP_Runs', 'mean'),
+                        Highest_PP_Score=('PP_Runs', 'max')
+                    ).reset_index()
+                    team_pp['Avg_PP_Runs'] = team_pp['Avg_PP_Runs'].round(1)
+                    
+                    leaderboard_choice = st.radio(
+                        "Leaderboard View",
+                        ["Seasonal Champions (Top Player & Team per Season)", "Full Player Leaderboard by Season", "Full Team Leaderboard by Season"],
+                        horizontal=True,
+                        key="pp_season_leaderboard_view_toggle"
+                    )
+                    
+                    if leaderboard_choice == "Seasonal Champions (Top Player & Team per Season)":
+                        st.markdown("##### Season-wise Top Powerplay Performers")
+                        
+                        col_p, col_t = st.columns(2)
+                        
+                        with col_p:
+                            st.markdown("**Top Batter in PP per League/Season**")
+                            if not player_pp.empty:
+                                idx_max_p = player_pp.groupby(['league', 'year'], observed=True)['PP_Runs'].idxmax()
+                                top_players = player_pp.loc[idx_max_p].copy()
+                                top_players = top_players.sort_values(['league', 'year'], ascending=[True, False]).reset_index(drop=True)
+                                top_players.index += 1
+                                st.dataframe(
+                                    top_players[['league', 'year', 'batter', 'team', 'PP_Innings', 'PP_Runs', 'PP_SR']].rename(
+                                        columns={'league': 'League', 'year': 'Season', 'batter': 'Player', 'team': 'Team', 'PP_Innings': 'Inns', 'PP_Runs': 'PP Runs', 'PP_SR': 'PP SR'}
+                                    ),
+                                    width="stretch"
+                                )
+                            else:
+                                st.info("No player data.")
+                                
+                        with col_t:
+                            st.markdown("**Top Team in PP (by Average runs) per League/Season**")
+                            if not team_pp.empty:
+                                idx_max_t = team_pp.groupby(['league', 'year'], observed=True)['Avg_PP_Runs'].idxmax()
+                                top_teams = team_pp.loc[idx_max_t].copy()
+                                top_teams = top_teams.sort_values(['league', 'year'], ascending=[True, False]).reset_index(drop=True)
+                                top_teams.index += 1
+                                st.dataframe(
+                                    top_teams[['league', 'year', 'team', 'Matches', 'Total_PP_Runs', 'Avg_PP_Runs', 'Highest_PP_Score']].rename(
+                                        columns={'league': 'League', 'year': 'Season', 'team': 'Team', 'Matches': 'Mat', 'Total_PP_Runs': 'Total Runs', 'Avg_PP_Runs': 'Avg Runs', 'Highest_PP_Score': 'Highest PP'}
+                                    ),
+                                    width="stretch"
+                                )
+                            else:
+                                st.info("No team data.")
+                                
+                    elif leaderboard_choice == "Full Player Leaderboard by Season":
+                        st.markdown("##### Player PP Leaderboard (Interactive)")
+                        
+                        avail_leagues = sorted(player_pp['league'].unique())
+                        sel_l = st.selectbox("Select League", avail_leagues, key="pp_season_player_league_sel")
+                        
+                        avail_seasons = sorted(player_pp[player_pp['league'] == sel_l]['year'].unique(), reverse=True)
+                        sel_s = st.selectbox("Select Season", avail_seasons, key="pp_season_player_season_sel")
+                        
+                        filtered_player_pp = player_pp[(player_pp['league'] == sel_l) & (player_pp['year'] == sel_s)].copy()
+                        filtered_player_pp = filtered_player_pp.sort_values('PP_Runs', ascending=False).reset_index(drop=True)
+                        filtered_player_pp.index += 1
+                        
+                        st.dataframe(
+                            filtered_player_pp[['batter', 'team', 'PP_Innings', 'PP_Runs', 'PP_Balls', 'PP_SR']].rename(
+                                columns={'batter': 'Player', 'team': 'Team', 'PP_Innings': 'Innings', 'PP_Runs': 'PP Runs', 'PP_Balls': 'PP Balls', 'PP_SR': 'PP SR'}
+                            ),
+                            width="stretch"
+                        )
+                        
+                    else:
+                        st.markdown("##### Team PP Leaderboard (Interactive)")
+                        
+                        avail_leagues = sorted(team_pp['league'].unique())
+                        sel_l = st.selectbox("Select League", avail_leagues, key="pp_season_team_league_sel")
+                        
+                        avail_seasons = sorted(team_pp[team_pp['league'] == sel_l]['year'].unique(), reverse=True)
+                        sel_s = st.selectbox("Select Season", avail_seasons, key="pp_season_team_season_sel")
+                        
+                        filtered_team_pp = team_pp[(team_pp['league'] == sel_l) & (team_pp['year'] == sel_s)].copy()
+                        filtered_team_pp = filtered_team_pp.sort_values('Avg_PP_Runs', ascending=False).reset_index(drop=True)
+                        filtered_team_pp.index += 1
+                        
+                        st.dataframe(
+                            filtered_team_pp[['team', 'Matches', 'Total_PP_Runs', 'Avg_PP_Runs', 'Highest_PP_Score']].rename(
+                                columns={'team': 'Team', 'Matches': 'Matches', 'Total_PP_Runs': 'Total PP Runs', 'Avg_PP_Runs': 'Avg PP Runs', 'Highest_PP_Score': 'Highest PP Score'}
+                            ),
+                            width="stretch"
+                        )
 
 
 elif metric_choice == "DRS Analysis":
@@ -5238,7 +5642,18 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
             if sel_players:
                 milestones_df = milestones_df[milestones_df['Batter'].isin(sel_players)]
 
-            tab_50, tab_100 = st.tabs([" Fastest 50s", " Fastest 100s"])
+            # Map event_stage to match_id to filter for playoff milestones
+            match_stage_map = df[['match_id', 'event_stage']].drop_duplicates()
+            match_stage_map['match_id'] = match_stage_map['match_id'].astype(str)
+            stage_dict = match_stage_map.set_index('match_id')['event_stage'].to_dict()
+            milestones_df['Stage'] = milestones_df['Match ID'].astype(str).map(stage_dict).fillna('')
+
+            tab_50, tab_100, tab_playoff_50, tab_playoff_100 = st.tabs([
+                " Fastest 50s", 
+                " Fastest 100s", 
+                " Playoff Fastest 50s", 
+                " Playoff Fastest 100s"
+            ])
 
             with tab_50:
                 st.markdown("### Fastest 50s — sorted by balls faced (ascending)")
@@ -5284,6 +5699,60 @@ elif metric_choice == "Fastest 50s & 100s (Player)":
                         fig.update_layout(xaxis_tickangle=45)
                         st.plotly_chart(fig, width="stretch")
 
+            with tab_playoff_50:
+                st.markdown("### Playoff Fastest 50s — sorted by balls faced (ascending)")
+                playoff_milestones_50 = milestones_df[
+                    (milestones_df['Stage'].astype(str).str.strip() != '') &
+                    (milestones_df['Balls to 50'].notna())
+                ].sort_values('Balls to 50').copy()
+                
+                if playoff_milestones_50.empty:
+                    st.info("No playoff 50s found matching the selected filters.")
+                else:
+                    playoff_milestones_50['Balls to 50'] = playoff_milestones_50['Balls to 50'].astype(int)
+                    display_p50 = playoff_milestones_50[['Date', 'Season', 'Match', 'Stage', 'Inning', 'Batting Team',
+                                                        'Batter', 'Balls to 50', 'Total Runs', 'Total Balls', 'SR', 'Not Out']].copy()
+                    display_p50 = display_p50.reset_index(drop=True)
+                    display_p50.index += 1
+                    st.dataframe(display_p50.head(200), width="stretch")
+
+                    if len(playoff_milestones_50) >= 5:
+                        fig = px.bar(
+                            playoff_milestones_50.head(20),
+                            x='Batter', y='Balls to 50', color='Stage',
+                            title='Top 20 Playoff Fastest 50s — Balls Faced',
+                            text='Balls to 50'
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, width="stretch")
+
+            with tab_playoff_100:
+                st.markdown("### Playoff Fastest 100s — sorted by balls faced (ascending)")
+                playoff_milestones_100 = milestones_df[
+                    (milestones_df['Stage'].astype(str).str.strip() != '') &
+                    (milestones_df['Balls to 100'].notna())
+                ].sort_values('Balls to 100').copy()
+                
+                if playoff_milestones_100.empty:
+                    st.info("No playoff 100s found matching the selected filters.")
+                else:
+                    playoff_milestones_100['Balls to 100'] = playoff_milestones_100['Balls to 100'].astype(int)
+                    display_p100 = playoff_milestones_100[['Date', 'Season', 'Match', 'Stage', 'Inning', 'Batting Team',
+                                                          'Batter', 'Balls to 100', 'Total Runs', 'Total Balls', 'SR', 'Not Out']].copy()
+                    display_p100 = display_p100.reset_index(drop=True)
+                    display_p100.index += 1
+                    st.dataframe(display_p100.head(200), width="stretch")
+
+                    if len(playoff_milestones_100) >= 5:
+                        fig = px.bar(
+                            playoff_milestones_100.head(20),
+                            x='Batter', y='Balls to 100', color='Stage',
+                            title='Top 20 Playoff Fastest 100s — Balls Faced',
+                            text='Balls to 100'
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, width="stretch")
+
 
 # =========================================
 # FASTEST TEAM 50 & 100
@@ -5308,7 +5777,18 @@ elif metric_choice == "Fastest Team 50 & 100":
             if sel_teams_m2:
                 team_miles_df = team_miles_df[team_miles_df['Batting Team'].isin(sel_teams_m2)]
 
-            tab_t50, tab_t100 = st.tabs([" Fastest Team 50s", " Fastest Team 100s"])
+            # Map event_stage to match_id to filter for playoff milestones
+            match_stage_map = df[['match_id', 'event_stage']].drop_duplicates()
+            match_stage_map['match_id'] = match_stage_map['match_id'].astype(str)
+            stage_dict = match_stage_map.set_index('match_id')['event_stage'].to_dict()
+            team_miles_df['Stage'] = team_miles_df['Match ID'].astype(str).map(stage_dict).fillna('')
+
+            tab_t50, tab_t100, tab_pt50, tab_pt100 = st.tabs([
+                " Fastest Team 50s", 
+                " Fastest Team 100s", 
+                " Playoff Fastest Team 50s", 
+                " Playoff Fastest Team 100s"
+            ])
 
             with tab_t50:
                 st.markdown("### Fastest Team 50s — sorted by balls faced (ascending)")
@@ -5355,6 +5835,68 @@ elif metric_choice == "Fastest Team 50 & 100":
                             df_t100.head(20),
                             x='Batting Team', y='Balls to 100', color='Season',
                             title='Top 20 Fastest Team 100s — Balls Faced',
+                            text='Balls to 100',
+                            hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, width="stretch")
+
+            with tab_pt50:
+                st.markdown("### Playoff Fastest Team 50s — sorted by balls faced (ascending)")
+                df_pt50 = team_miles_df[
+                    (team_miles_df['Stage'].astype(str).str.strip() != '') &
+                    (team_miles_df['Balls to 50'].notna())
+                ].sort_values('Balls to 50').copy()
+                
+                if df_pt50.empty:
+                    st.info("No playoff team 50s found matching the selected filters.")
+                else:
+                    df_pt50['Balls to 50'] = df_pt50['Balls to 50'].astype(int)
+                    display_pt50 = df_pt50[['Date', 'Season', 'Team 1', 'Team 2', 'Stage', 'Inning No',
+                                          'Batting Team', 'Balls to 50', 'Total Runs', 'Total Balls']].copy()
+                    display_pt50 = display_pt50.reset_index(drop=True)
+                    display_pt50.index += 1
+                    st.dataframe(display_pt50.head(300), width="stretch")
+
+                    st.markdown("#### Top 10 Playoff Fastest Team 50s")
+                    st.dataframe(display_pt50.head(10), width="stretch")
+
+                    if len(df_pt50) >= 5:
+                        fig = px.bar(
+                            df_pt50.head(20),
+                            x='Batting Team', y='Balls to 50', color='Stage',
+                            title='Top 20 Playoff Fastest Team 50s — Balls Faced',
+                            text='Balls to 50',
+                            hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
+                        )
+                        fig.update_layout(xaxis_tickangle=45)
+                        st.plotly_chart(fig, width="stretch")
+
+            with tab_pt100:
+                st.markdown("### Playoff Fastest Team 100s — sorted by balls faced (ascending)")
+                df_pt100 = team_miles_df[
+                    (team_miles_df['Stage'].astype(str).str.strip() != '') &
+                    (team_miles_df['Balls to 100'].notna())
+                ].sort_values('Balls to 100').copy()
+                
+                if df_pt100.empty:
+                    st.info("No playoff team 100s found matching the selected filters.")
+                else:
+                    df_pt100['Balls to 100'] = df_pt100['Balls to 100'].astype(int)
+                    display_pt100 = df_pt100[['Date', 'Season', 'Team 1', 'Team 2', 'Stage', 'Inning No',
+                                            'Batting Team', 'Balls to 100', 'Total Runs', 'Total Balls']].copy()
+                    display_pt100 = display_pt100.reset_index(drop=True)
+                    display_pt100.index += 1
+                    st.dataframe(display_pt100.head(300), width="stretch")
+
+                    st.markdown("#### Top 10 Playoff Fastest Team 100s")
+                    st.dataframe(display_pt100.head(10), width="stretch")
+
+                    if len(df_pt100) >= 5:
+                        fig = px.bar(
+                            df_pt100.head(20),
+                            x='Batting Team', y='Balls to 100', color='Stage',
+                            title='Top 20 Playoff Fastest Team 100s — Balls Faced',
                             text='Balls to 100',
                             hover_data=['Date', 'Team 1', 'Team 2', 'Total Runs']
                         )
