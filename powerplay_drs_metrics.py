@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 28 May 2026")
+st.markdown("Last updated: 30 May 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
@@ -7529,7 +7529,7 @@ elif metric_choice == "Balls Bowled Per Match":
             return pd.DataFrame()
 
         d = df_.copy()
-        for c in ['is_valid_delivery', 'wides', 'no_balls']:
+        for c in ['is_valid_delivery', 'wides', 'no_balls', 'byes', 'leg_byes']:
             if c in d.columns:
                 d[c] = pd.to_numeric(d[c], errors='coerce').fillna(0)
             else:
@@ -7549,6 +7549,8 @@ elif metric_choice == "Balls Bowled Per Match":
             'Legal Balls': ('is_valid_delivery', 'sum'),
             'Wides': ('wides', 'sum'),
             'No Balls': ('no_balls', 'sum'),
+            'Byes': ('byes', 'sum'),
+            'Leg Byes': ('leg_byes', 'sum'),
             'date': ('date', 'first'),
         }
         if team_col in d.columns:
@@ -7580,6 +7582,8 @@ elif metric_choice == "Balls Bowled Per Match":
         match_agg = {'Total_Balls': ('Legal Balls', 'sum'),
                      'Total_Wides': ('Wides', 'sum'),
                      'Total_NoBalls': ('No Balls', 'sum'),
+                     'Total_Byes': ('Byes', 'sum'),
+                     'Total_LegByes': ('Leg Byes', 'sum'),
                      'Total_Deliveries': ('Total Deliveries', 'sum'),
                      'Date': ('Date', 'first')}
         for col in ['Match', 'League', 'Season', 'Venue']:
@@ -7597,6 +7601,8 @@ elif metric_choice == "Balls Bowled Per Match":
             'Total_Balls': 'Total Legal Balls',
             'Total_Wides': 'Total Wides',
             'Total_NoBalls': 'Total No Balls',
+            'Total_Byes': 'Total Byes',
+            'Total_LegByes': 'Total Leg Byes',
             'Total_Deliveries': 'Total Deliveries',
         })
 
@@ -7647,7 +7653,9 @@ elif metric_choice == "Balls Bowled Per Match":
                             stats = (
                                 f"Balls: {int(r['Legal Balls'])} | "
                                 f"Wd: {int(r['Wides'])} | "
-                                f"Nb: {int(r['No Balls'])}"
+                                f"Nb: {int(r['No Balls'])} | "
+                                f"By: {int(r.get('Byes', 0))} | "
+                                f"LB: {int(r.get('Leg Byes', 0))}"
                             )
                             row[f'{label} Team'] = team
                             row[f'{label} Stats'] = stats
@@ -7667,7 +7675,7 @@ elif metric_choice == "Balls Bowled Per Match":
                     disp.index += 1
                     col_order = [c for c in ['Match', 'Innings', 'Batting Team', 'League',
                                               'Season', 'Date', 'Legal Balls', 'Overs Bowled',
-                                              'Wides', 'No Balls', 'Total Deliveries']
+                                              'Wides', 'No Balls', 'Byes', 'Leg Byes', 'Total Deliveries']
                                  if c in disp.columns]
                     st.dataframe(disp[col_order], width="stretch")
 
@@ -7682,6 +7690,7 @@ elif metric_choice == "Balls Bowled Per Match":
                         color=color_col,
                         text='Total Overs',
                         hover_data=[c for c in ['Total Legal Balls', 'Total Wides', 'Total No Balls',
+                                                 'Total Byes', 'Total Leg Byes',
                                                  'League', 'Season', 'Date', 'Venue']
                                     if c in chart_data.columns],
                         title=f"Top {int(bbpm_top_n)} Matches by Total Deliveries (incl. Wides & No Balls)"
@@ -9692,18 +9701,20 @@ elif metric_choice == "Over-wise Batting Analysis":
                 st.warning(f"No data found for {sel_owa_batter} with selected filters.")
             else:
                 # Build per-ball info with cumulative runs for each innings
-                for col in ['runs.batter', 'is_valid_delivery']:
+                for col in ['runs.batter', 'is_valid_delivery', 'no_balls', 'wides']:
                     owa_df[col] = pd.to_numeric(owa_df[col], errors='coerce').fillna(0)
+                # Balls faced = legal deliveries + no-balls (batter faces no-balls; wides are NOT faced)
+                owa_df['balls_faced'] = ((owa_df['is_valid_delivery'] == 1) | (owa_df['no_balls'] == 1)).astype(int)
 
                 # Over-by-over aggregation per innings
                 owa_over = owa_df.groupby(
                     ['match_id', 'innings', 'over', 'year', 'date', 'teams', 'team'], observed=True
                 ).agg(
                     Runs=('runs.batter', 'sum'),
-                    Balls=('is_valid_delivery', 'sum'),
+                    Balls=('balls_faced', 'sum'),
                     Fours=('runs.batter', lambda x: (x == 4).sum()),
                     Sixes=('runs.batter', lambda x: (x == 6).sum()),
-                    Dots=('runs.batter', lambda x: ((x == 0) & (owa_df.loc[x.index, 'is_valid_delivery'] == 1)).sum())
+                    Dots=('runs.batter', lambda x: ((x == 0) & (owa_df.loc[x.index, 'balls_faced'] == 1)).sum())
                 ).reset_index()
                 owa_over['Over_No']  = owa_over['over'] + 1
                 owa_over['SR_Over']  = (owa_over['Runs'] / owa_over['Balls'].replace(0, np.nan) * 100).fillna(0).round(1)

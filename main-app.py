@@ -30,7 +30,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 28 May 2026")
+st.markdown("📅 Last updated: 30 May 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -172,6 +172,24 @@ def load_data(path=DATA_SOURCE):
         # Ensure is_impact columns exist
         if 'is_impact_batter' not in df.columns: df['is_impact_batter'] = 0
         if 'is_impact_bowler' not in df.columns: df['is_impact_bowler'] = 0
+
+        # ── Player name normalization ──────────────────────────────────────────
+        # Normalize known spelling variants so all metrics aggregate correctly.
+        # Key = alternate/wrong spelling found in Cricsheet JSON
+        # Value = canonical display name you want everywhere in the app
+        # To add a new fix: just add another line below in the same format.
+        _NAME_FIX = {
+            'V Sooryavanshi': 'V Suryavanshi',
+            'Prabhsimran Singh': 'P Simran Singh',
+            'CPL Connolly': 'C Connolly',
+            'Rahul Tewatia': 'R Tewatia',
+        }
+        for col in ['batter', 'bowler', 'player_dismissed', 'non_striker']:
+            if col in df.columns:
+                df[col] = df[col].astype(str).replace(_NAME_FIX)
+                if df[col].nunique() < len(df) * 0.5:
+                    df[col] = df[col].astype('category')
+        # ───────────────────────────────────────────────────────────────────────
 
         return df
     except Exception as e:
