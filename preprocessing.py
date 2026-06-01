@@ -231,9 +231,19 @@ def process_data(inference_power_surge=True):
             win_by_wickets = win_by.get('wickets', 0) if win_by else 0
             win_by_runs = win_by.get('runs', 0) if win_by else 0
 
+            # ── Extract event stage (Qualifier 1/2, Final, Eliminator, etc.) ──
+            event_stage = ''
+            if isinstance(info.get('event'), dict):
+                event_stage = info.get('event', {}).get('stage', '')
+                # Fallback: if stage is missing, check match_number for non-numeric playoff labels
+                if not event_stage:
+                    mn = info.get('event', {}).get('match_number', '')
+                    if isinstance(mn, str) and not mn.isdigit():
+                        event_stage = mn  # e.g. 'Qualifier 1', 'Final', 'Eliminator'
+            if not event_stage:
+                event_stage = 'group'  # default for regular league matches
             # ── Extract Playing XI ──
             players_dict = info.get('players', {})
-            event_stage = info.get('event', {}).get('stage', 'group') if isinstance(info.get('event'), dict) else 'group'
             for team_name, player_list in players_dict.items():
                 for player_name in player_list:
                     xi_rows.append({
@@ -344,7 +354,8 @@ def process_data(inference_power_surge=True):
                             'wicket_kind': next((w.get('kind') for w in (d.get('wickets') or []) if w.get('kind')), None),
                             'winner': winner,
                             'win_by_wickets': win_by_wickets,
-                            'win_by_runs': win_by_runs
+                            'win_by_runs': win_by_runs,
+                            'event_stage': event_stage
                         })
 
                         if is_valid:

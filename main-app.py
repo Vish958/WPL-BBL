@@ -30,7 +30,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 30 May 2026")
+st.markdown("📅 Last updated: 31 May 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -289,6 +289,52 @@ with st.sidebar.expander("ℹ️ Phase Definitions", expanded=False):
     - **Death**: Overs 17-20
     """)
 
+# --- 2b. Match Type / Playoff Stage Filter ---
+st.sidebar.markdown("---")
+st.sidebar.markdown("##### Match Type")
+
+# Check if event_stage column is available in the loaded data
+_has_event_stage = 'event_stage' in df.columns
+
+if _has_event_stage:
+    _match_type = st.sidebar.radio(
+        "Match Type",
+        ["All Matches", "League Matches Only", "Playoff / Knockouts Only"],
+        key="match_type_filter",
+        on_change=clear_submitted,
+        help="League Matches Only: regular round-robin games.\nPlayoff/Knockouts Only: Qualifier, Eliminator, Semi Final, Final etc."
+    )
+
+    # Build available playoff stages from current pre-filtered data (p_df)
+    _playoff_stages_all = sorted(
+        p_df[p_df['event_stage'].astype(str).str.lower() != 'group']['event_stage']
+        .dropna().astype(str).unique()
+    ) if _has_event_stage and 'event_stage' in p_df.columns else []
+
+    sel_playoff_stages = []
+    if _match_type == "Playoff / Knockouts Only" and _playoff_stages_all:
+        st.sidebar.caption("Filter by specific playoff round (optional):")
+        sel_playoff_stages = st.sidebar.multiselect(
+            "Playoff Stage",
+            _playoff_stages_all,
+            key="playoff_stages",
+            on_change=clear_submitted,
+            help="Leave blank to include ALL playoff rounds. Select specific rounds to narrow down."
+        )
+else:
+    _match_type = "All Matches"
+    sel_playoff_stages = []
+    st.sidebar.info("⚠️ Playoff filter unavailable — please re-run preprocessing.py to regenerate data.")
+
+# Apply match type to p_df (for downstream match/batter/bowler dropdowns)
+if _has_event_stage and 'event_stage' in p_df.columns:
+    if _match_type == "League Matches Only":
+        p_df = p_df[p_df['event_stage'].astype(str) == 'group']
+    elif _match_type == "Playoff / Knockouts Only":
+        p_df = p_df[p_df['event_stage'].astype(str) != 'group']
+        if sel_playoff_stages:
+            p_df = p_df[p_df['event_stage'].astype(str).isin(sel_playoff_stages)]
+
 # --- 3. View Mode ---
 st.sidebar.markdown("---")
 view_mode = st.sidebar.radio(
@@ -391,6 +437,15 @@ if st.session_state.get('date_to'): fdf = fdf[fdf['date'].dt.date <= st.session_
 if st.session_state.get('phases'):
     phases_norm = [p.title().replace('Power Play','Powerplay') for p in st.session_state['phases']]
     fdf = fdf[fdf['phase'].isin(phases_norm)]
+
+# C. Playoff / Match Type Filter
+if _has_event_stage and 'event_stage' in fdf.columns:
+    if _match_type == "League Matches Only":
+        fdf = fdf[fdf['event_stage'].astype(str) == 'group']
+    elif _match_type == "Playoff / Knockouts Only":
+        fdf = fdf[fdf['event_stage'].astype(str) != 'group']
+        if sel_playoff_stages:
+            fdf = fdf[fdf['event_stage'].astype(str).isin(sel_playoff_stages)]
 
 # B. Specific Filters
 if view_mode == "Specific Matches":
