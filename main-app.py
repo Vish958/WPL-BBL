@@ -107,7 +107,8 @@ LEAGUE_START_DATES = {
     'WPL':  '2023-03-04',
     'SA20': '2023-01-10',
     'IPL':  '2008-04-18',
-    'MLC':  '2023-07-13'
+    'MLC':  '2023-07-13',
+    'WT20I': '2000-01-01',  # Women's T20 Internationals
 }
 
 st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in LEAGUE_START_DATES.items()]))
