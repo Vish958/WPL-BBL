@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 1960 female T20 matches.
+archive contains 1975 female T20 matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -21,7 +21,21 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
-
+2026-06-02 - international - T20 - female - 1535594 - Bangladesh vs Scotland
+2026-06-02 - international - T20 - female - 1496550 - India vs England
+2026-06-01 - international - T20 - female - 1528541 - West Indies vs Ireland
+2026-05-31 - international - T20 - female - 1538635 - Myanmar vs Kuwait
+2026-05-31 - international - T20 - female - 1536408 - Malaysia vs Thailand
+2026-05-31 - international - T20 - female - 1536407 - Nepal vs China
+2026-05-31 - international - T20 - female - 1535593 - Netherlands vs Bangladesh
+2026-05-31 - international - T20 - female - 1528540 - Pakistan vs Ireland
+2026-05-30 - international - T20 - female - 1538637 - Oman vs Bahrain
+2026-05-30 - international - T20 - female - 1538634 - Myanmar vs Kuwait
+2026-05-30 - international - T20 - female - 1536406 - Nepal vs Malaysia
+2026-05-30 - international - T20 - female - 1536405 - Thailand vs China
+2026-05-30 - international - T20 - female - 1535592 - Bangladesh vs Scotland
+2026-05-30 - international - T20 - female - 1496549 - England vs India
+2026-05-29 - international - T20 - female - 1528539 - West Indies vs Pakistan
 2026-05-29 - international - T20 - female - 1538636 - Bahrain vs Oman
 2026-05-28 - international - T20 - female - 1536404 - Indonesia vs Nepal
 2026-05-28 - international - T20 - female - 1536403 - Malaysia vs Hong Kong

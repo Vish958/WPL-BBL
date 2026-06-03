@@ -30,7 +30,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 31 May 2026")
+st.markdown("📅 Last updated: 02 June 2026")
 st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -289,8 +289,31 @@ with st.sidebar.expander("ℹ️ Phase Definitions", expanded=False):
     - **Middle**: Overs 5-16 (excl. Surge)
     - **Death**: Overs 17-20
     """)
+# --- 2c. Team Filter ---
+st.sidebar.markdown("---")
+_team_col = 'team' if 'team' in p_df.columns else None
+_bowling_col = 'bowling_team' if 'bowling_team' in p_df.columns else None
+if _team_col:
+    # Build unique team list: union of batting + bowling teams in filtered data
+    _teams_bat = p_df[_team_col].dropna().astype(str).unique().tolist()
+    _teams_bowl = p_df[_bowling_col].dropna().astype(str).unique().tolist() if _bowling_col else []
+    _all_teams = sorted(set(_teams_bat + _teams_bowl) - {'nan', 'None', ''})
+    sel_teams = st.sidebar.multiselect(
+        "Team",
+        _all_teams,
+        key="teams_filter",
+        on_change=clear_submitted,
+        help="Filter matches where the selected team(s) appeared (batting OR bowling)."
+    )
+    if sel_teams:
+        _team_match_ids = p_df[
+            p_df[_team_col].astype(str).isin(sel_teams) |
+            (p_df[_bowling_col].astype(str).isin(sel_teams) if _bowling_col else False)
+        ]['match_id'].unique()
+        p_df = p_df[p_df['match_id'].isin(_team_match_ids)]
+else:
+    sel_teams = []
 
-# --- 2b. Match Type / Playoff Stage Filter ---
 st.sidebar.markdown("---")
 st.sidebar.markdown("##### Match Type")
 
@@ -409,6 +432,15 @@ st.sidebar.markdown("---")
 st.sidebar.markdown("**Coach / Analyst Metrics:** Acceleration Rate, Spell Efficiency, Collapse Detector, Player Absence Impact")
 st.sidebar.multiselect("Metrics", metrics, key="metrics", on_change=clear_submitted)
 
+# --- Charts toggle ---
+st.sidebar.markdown("---")
+show_charts_global = st.sidebar.checkbox(
+    "📊 Show Charts",
+    value=True,
+    key="show_charts_global",
+    help="Uncheck to hide bar charts for all metrics — useful when viewing multiple metrics at once."
+)
+
 st.sidebar.markdown("### Run Rate options")
 rr_mode = st.sidebar.radio("Run Rate View", ['Per-over (combined)', 'Per match', 'Per-match multi-run'], index=0)
 rr_run_source = st.sidebar.radio("Run Source for RR", ['Total runs (incl extras)','Batter runs only'], index=0)
@@ -447,6 +479,13 @@ if _has_event_stage and 'event_stage' in fdf.columns:
         fdf = fdf[fdf['event_stage'].astype(str) != 'group']
         if sel_playoff_stages:
             fdf = fdf[fdf['event_stage'].astype(str).isin(sel_playoff_stages)]
+
+# D. Team Filter
+# Filter delivery rows directly: batting rows where team is in selection.
+# This ensures Key Batting shows only that team's batters, and all bowling/run-rate
+# metrics are scoped to deliveries faced by the selected team.
+if sel_teams and 'team' in fdf.columns:
+    fdf = fdf[fdf['team'].astype(str).isin(sel_teams)]
 
 # B. Specific Filters
 if view_mode == "Specific Matches":
@@ -509,9 +548,15 @@ def show_table(df_, title=None):
     if not has_meaningful_numbers(df_):
         st.info("No meaningful data.")
         return
-    st.dataframe(df_, width='stretch', height=st.session_state.compact_height)
+    # Use the user-configured height for inline view.
+    # Passing height=None lets Streamlit auto-size (needed for fullscreen to work).
+    _h = st.session_state.compact_height
+    st.dataframe(df_, width='stretch', height=_h if _h and _h > 0 else None)
 
 def show_bar(df_, x, y, title, color=None, top_n=None):
+    # Respect the global Show Charts toggle — if unchecked, skip all bar charts
+    if not st.session_state.get('show_charts_global', True):
+        return
     if df_ is None or df_.empty:
         st.info("No data.")
         return
@@ -527,7 +572,14 @@ def show_bar(df_, x, y, title, color=None, top_n=None):
         xaxis_tickangle=-45,
         bargap=0.15
     )
-    st.plotly_chart(fig, use_container_width=True)
+    show_plotly_chart(fig)
+
+def show_plotly_chart(fig, **kwargs):
+    """Wrapper around st.plotly_chart that respects the global Show Charts toggle."""
+    if not st.session_state.get('show_charts_global', True):
+        return
+    kw = {k: v for k, v in kwargs.items() if k not in ('width', 'use_container_width')}
+    st.plotly_chart(fig, width="stretch", **kw)
 
 def render_with_season_tabs(fdf, metric_func, metric_name, x_col, y_col, chart_title, color, 
                             top_n=50, show_chart=True, metric_func_kwargs=None):
@@ -535,6 +587,8 @@ def render_with_season_tabs(fdf, metric_func, metric_name, x_col, y_col, chart_t
     Helper function to render a metric with season comparison tabs.
     """
     season_view_mode = st.session_state.get('season_view_mode', 'Normal (Per Season)')
+    # Respect the global 'Show Charts' toggle
+    show_chart = show_chart and st.session_state.get('show_charts_global', True)
     
     # Get available seasons for comparison tabs
     available_seasons = sorted(fdf['year'].dropna().unique()) if 'year' in fdf.columns else []
@@ -857,13 +911,14 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
 
     # Exclude no-result matches (abandoned/rain) — ESPN/ICC convention: these innings don't
     # count towards averages or innings-played totals.
-    # For no-result matches (winner=None), only exclude innings that were truncated
-    # (max over index < 19). Completed innings in no-result matches DO count.
+    # Only exclude innings with < 5 overs completed (truly abandoned/walkover).
+    # A match where a batter faced 16+ overs should count regardless of result.
     if 'winner' in valid.columns:
         no_result_mask = valid['winner'].isna()
         if no_result_mask.any():
             max_over_per_inn = valid.groupby(['match_id', 'innings'], observed=True)['over'].transform('max')
-            truncated = no_result_mask & (max_over_per_inn < 19)
+            # < 5 means fewer than 5 overs completed — truly abandoned before any meaningful play
+            truncated = no_result_mask & (max_over_per_inn < 5)
             valid = valid[~truncated]
     if valid.empty:
         return pd.DataFrame(columns=['Innings','batter','Team','Runs','BF','SR','Avg','4s','6s','Dots','Dot%'])
@@ -2215,7 +2270,7 @@ def player_absence_impact(df_, xi_df=None):
             'Win% Δ': '{:+.1f}%', 'Impact Score': '{:+.1f}'
         }).background_gradient(subset=['Impact Score'], cmap='RdYlGn', vmin=-20, vmax=20)
         
-        st.dataframe(s_style, use_container_width=True, height=500)
+        st.dataframe(s_style, width="stretch", height=500)
         
     with tab_bat:
         st.caption("Impact on Team Totals and Scoring Rate")
@@ -2226,7 +2281,7 @@ def player_absence_impact(df_, xi_df=None):
             'RR With': '{:.2f}', 'RR WO': '{:.2f}', 'RR Δ': '{:+.2f}'
         }).background_gradient(subset=['RR Δ'], cmap='RdYlGn', vmin=-1.0, vmax=1.0)
         
-        st.dataframe(b_style, use_container_width=True, height=500)
+        st.dataframe(b_style, width="stretch", height=500)
         
     with tab_bowl:
         st.caption("Impact on restricting Opponents (Lower Economy/Opp Score is better)")
@@ -2244,7 +2299,7 @@ def player_absence_impact(df_, xi_df=None):
             'Econ With': '{:.2f}', 'Econ WO': '{:.2f}', 'Econ Δ': '{:+.2f}'
         }).background_gradient(subset=['Econ Δ'], cmap='RdYlGn_r', vmin=-1.0, vmax=1.0) # Red to Green reversed
         
-        st.dataframe(bo_style, use_container_width=True, height=500)
+        st.dataframe(bo_style, width="stretch", height=500)
         
     with tab_log:
         st.caption("Details of matches the team played WITHOUT the selected player")
@@ -2255,7 +2310,7 @@ def player_absence_impact(df_, xi_df=None):
         
         if sel_player:
             p_missed = missed_df[missed_df['Player'] == sel_player].sort_values('Date', ascending=False)
-            st.dataframe(p_missed[['Date', 'Season', 'Team', 'Opponent', 'Result', 'Team Score', 'Team RR']], use_container_width=True)
+            st.dataframe(p_missed[['Date', 'Season', 'Team', 'Opponent', 'Result', 'Team Score', 'Team RR']], width="stretch")
             
     return summary_df, missed_df
 
@@ -2286,7 +2341,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                             show_table(res_bat)
                             fig = px.bar(res_bat.head(10), x='batter', y='Runs',
                                         title="Top Impact Batsmen (Overall)", color='Strike Rate')
-                            st.plotly_chart(fig, use_container_width=True)
+                            show_plotly_chart(fig)
 
                         with sub2:
                             if not res_bat_match.empty and 'Innings' in res_bat_match.columns:
@@ -2300,7 +2355,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                             fig = px.bar(inn_data.head(10), x='Batter', y='Runs',
                                                         title=f"Top Impact Batsmen — {inn_label}",
                                                         color='SR')
-                                            st.plotly_chart(fig, use_container_width=True)
+                                            show_plotly_chart(fig)
                             else:
                                 st.info("No innings-wise match data available.")
 
@@ -2323,7 +2378,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                     fig = px.bar(agg_no_filter.head(10), x='Batter', y='Total_Runs',
                                                 title="Impact Batsmen — All Appearances (No Team Filter)",
                                                 color='SR')
-                                    st.plotly_chart(fig, use_container_width=True)
+                                    show_plotly_chart(fig)
                             else:
                                 st.info("No match data available.")
                     else:
@@ -2337,7 +2392,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                             show_table(res_bowl)
                             fig = px.bar(res_bowl.head(10), x='bowler', y='Wickets',
                                         title="Top Impact Bowlers (Overall)", color='Economy')
-                            st.plotly_chart(fig, use_container_width=True)
+                            show_plotly_chart(fig)
 
                         with sub5:
                             if not res_bowl_match.empty and 'Innings' in res_bowl_match.columns:
@@ -2351,7 +2406,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                             fig = px.bar(inn_data_b.head(10), x='Bowler', y='Wickets',
                                                         title=f"Top Impact Bowlers — {inn_label_b}",
                                                         color='Economy')
-                                            st.plotly_chart(fig, use_container_width=True)
+                                            show_plotly_chart(fig)
                             else:
                                 st.info("No innings-wise match data available.")
 
@@ -2382,7 +2437,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                     fig = px.bar(agg_b_no_filter.head(10), x='Bowler', y='Total_Wickets',
                                                 title="Impact Bowlers — All Appearances (No Team Filter)",
                                                 color='Economy')
-                                    st.plotly_chart(fig, use_container_width=True)
+                                    show_plotly_chart(fig)
                             else:
                                 st.info("No match data available.")
                     else:
@@ -2414,7 +2469,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     trend_data = fdf[fdf['batter'].isin(st.session_state['batters'])].groupby(['date', 'batter'], observed=True)['runs.batter'].sum().reset_index()
                     fig = px.line(trend_data, x='date', y='runs.batter', color='batter', markers=True, title="Innings-by-Innings Form Trend")
                     fig.update_layout(yaxis_title='Runs', xaxis_title='Date')
-                    st.plotly_chart(fig, use_container_width=True)
+                    show_plotly_chart(fig)
 
         elif metric == "Run Rate Progression":
             st.subheader("Run Rate Progression")
@@ -2659,7 +2714,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     
                     fig = px.bar(agg, x='over_phase', y='Total_Runs', color='SR',
                                 color_continuous_scale='RdYlGn', title="Total Runs by Over Phase (incl. extras)")
-                    st.plotly_chart(fig, use_container_width=True)
+                    show_plotly_chart(fig)
             
         
         elif metric == "Death Over Bowling Analysis":
@@ -2679,7 +2734,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                         fig = px.bar(filtered.head(30), x='Bowler', y='Economy', color='Over',
                                     title="Death Over Economy by Bowler", barmode='group')
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                 else:
                     st.info("No death over data available.")
             
@@ -2705,7 +2760,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                     title="Top 15 Best Death Bowlers by Economy",
                                     color_continuous_scale='RdYlGn_r')
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
         
         elif metric == "Match by Match Analysis":
             st.subheader("Match by Match Analysis")
@@ -2724,7 +2779,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     top_batters = batting_df.groupby('Batter', observed=True)['Runs'].sum().reset_index().sort_values('Runs', ascending=False).head(10)
                     if not top_batters.empty:
                         fig = px.bar(top_batters, x='Batter', y='Runs', title="Top 10 Run Scorers", color='Runs', color_continuous_scale='Blues')
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                 else:
                     st.info("No batting data available.")
             
@@ -2738,7 +2793,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     top_bowlers = bowling_df.groupby('Bowler', observed=True)['Wickets'].sum().reset_index().sort_values('Wickets', ascending=False).head(10)
                     if not top_bowlers.empty:
                         fig = px.bar(top_bowlers, x='Bowler', y='Wickets', title="Top 10 Wicket Takers", color='Wickets', color_continuous_scale='Reds')
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                 else:
                     st.info("No bowling data available.")
         
@@ -2809,7 +2864,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                         color_continuous_scale='RdYlGn',
                                         title=f"{sb} vs {sw} — Runs by Year", text='Runs')
                             fig.update_layout(xaxis_type='category')
-                            st.plotly_chart(fig, use_container_width=True)
+                            show_plotly_chart(fig)
                         st.markdown("---")
             else:
                 # Leaderboard mode — show tabs
@@ -2833,7 +2888,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                             fig = px.bar(batter_dom.head(15), x='Matchup', y='Runs', color='SR',
                                         color_continuous_scale='RdYlGn', title="Top Batter-Dominant Matchups")
                             fig.update_xaxes(tickangle=45)
-                            st.plotly_chart(fig, use_container_width=True)
+                            show_plotly_chart(fig)
                     else:
                         st.info("No matchup data for current filters.")
                 
@@ -2852,7 +2907,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                             fig = px.bar(bowler_dom.head(15), x='Matchup', y='Dismissals', color='Avg',
                                         color_continuous_scale='RdYlGn_r', title="Top Bowler-Dominant Matchups")
                             fig.update_xaxes(tickangle=45)
-                            st.plotly_chart(fig, use_container_width=True)
+                            show_plotly_chart(fig)
                     else:
                         st.info("No matchup data for current filters.")
                 
@@ -2924,7 +2979,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                             title=f"{search_batter} vs {search_bowler} — Runs by Year",
                                             text='Runs')
                                 fig.update_layout(xaxis_type='category')
-                                st.plotly_chart(fig, use_container_width=True)
+                                show_plotly_chart(fig)
                     
                     elif search_batter or search_bowler:
                         search_data = batter_vs_bowler_matchup(p_df, min_balls=0)
@@ -3015,7 +3070,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     simp['Innings Pace'] = simp['Acceleration'].apply(_pace_bar)
                     
                     display = simp[['Batter', 'Innings_Count', 'Strategy', 'Innings Pace', 'Best Phase', 'Max SR']].reset_index(drop=True)
-                    st.dataframe(display, use_container_width=True, hide_index=True,
+                    st.dataframe(display, width="stretch", hide_index=True,
                                 height=min(len(display) * 38 + 40, st.session_state.compact_height))
                     
                     # Highlight the highest Max SR player
@@ -3039,7 +3094,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                         fig = px.bar(acc, x='Batter', y='Acceleration', color='Acceleration',
                                     color_continuous_scale='Greens', title="Top Accelerators (Death SR > Powerplay SR)")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                     show_table(dfm[dfm['Acceleration'] > 0], metric)
                 
                 with tab4:
@@ -3048,7 +3103,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                         fig = px.bar(dec, x='Batter', y='Acceleration', color='Acceleration',
                                     color_continuous_scale='Reds_r', title="Decelerators (Death SR < Powerplay SR)")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                     show_table(dfm[dfm['Acceleration'] < 0].sort_values('Acceleration'), metric)
                 
                 with tab5:
@@ -3060,7 +3115,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     fig = px.bar(melted, x='Batter', y='SR', color='Phase', barmode='group',
                                 title="Strike Rate by Phase (Top 30 by Acceleration)")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    show_plotly_chart(fig)
             else:
                 st.info(
                     "No BAR data for current filters. Possible reasons:\n"
@@ -3097,7 +3152,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                         fig = px.bar(best, x='Bowler', y='Economy', color='Wickets',
                                     color_continuous_scale='Greens_r', title="Most Economical Spells")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                 
                 with tab2:
                     median_econ = dfm['Economy'].median()
@@ -3107,7 +3162,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                         fig = px.bar(worst, x='Bowler', y='Economy', color='Wickets',
                                     color_continuous_scale='Reds', title="Most Expensive Spells")
                         fig.update_xaxes(tickangle=45)
-                        st.plotly_chart(fig, use_container_width=True)
+                        show_plotly_chart(fig)
                 
                 with tab3:
                     # Summarize per bowler: avg economy, total spells, total wickets
@@ -3154,7 +3209,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                     fig = px.bar(teams_prone, x='Team', y='Collapses', color='Avg_Runs_Lost',
                                 color_continuous_scale='Reds', title="Teams Most Prone to Collapses")
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    show_plotly_chart(fig)
                 else:
                     st.info("No collapse team data.")
             
@@ -3165,7 +3220,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                                 title="Top Collapse-Triggering Bowlers", color='Collapses_Triggered',
                                 color_continuous_scale='YlOrRd')
                     fig.update_xaxes(tickangle=45)
-                    st.plotly_chart(fig, use_container_width=True)
+                    show_plotly_chart(fig)
                 else:
                     st.info("No bowler trigger data.")
 
