@@ -8,6 +8,28 @@ from datetime import date
 
 st.set_page_config(page_title="T20 Stats", layout="wide")
 
+# --- WOMEN'S T20 WORLD CUP CONSTANTS ---
+_WT20WC_TEAMS = {
+    'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
+    'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies'
+}
+_WT20WC_DATE_RANGES = [
+    (pd.Timestamp('2016-03-15'), pd.Timestamp('2016-04-03')),
+    (pd.Timestamp('2018-11-09'), pd.Timestamp('2018-11-25')),
+    (pd.Timestamp('2020-02-21'), pd.Timestamp('2020-03-08')),
+    (pd.Timestamp('2023-02-10'), pd.Timestamp('2023-02-26')),
+    (pd.Timestamp('2024-10-03'), pd.Timestamp('2024-10-20')),
+]
+def _is_wt20wc_match(date_series):
+    try:
+        dates = pd.to_datetime(date_series).dt.tz_localize(None)
+    except TypeError:
+        dates = pd.to_datetime(date_series).dt.tz_convert(None)
+    mask = pd.Series(False, index=date_series.index)
+    for s, e in _WT20WC_DATE_RANGES:
+        mask |= (dates >= s) & (dates <= e)
+    return mask
+
 # --- PREMIUM GRAPH TEMPLATE ---
 import plotly.io as pio
 PREMIUM_TEMPLATE = dict(
@@ -30,10 +52,10 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("📅 Last updated: 02 June 2026")
-st.markdown("⏰ Fresh Matches Will Appear as per Data Availability from Cricsheet")
-st.markdown("🚀 New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
-st.markdown("🧑‍🏫 **Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
+st.markdown("Last updated: 10 June 2026")
+st.markdown("Fresh Matches Will Appear as per Data Availability from Cricsheet")
+st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
+st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
 
 st.markdown("""
 <style>
@@ -243,6 +265,21 @@ st.sidebar.multiselect("League", leagues, key="leagues", on_change=clear_submitt
 years = sorted(df['year'].dropna().unique())
 st.sidebar.multiselect("Year", years, key="years", on_change=clear_submitted)
 
+# World Cup filter — only when WT20I explicitly selected
+_wt20i_leagues = st.session_state.get('leagues', [])
+_wt20wc_active = bool(_wt20i_leagues and 'WT20I' in _wt20i_leagues)
+if _wt20wc_active:
+    st.sidebar.markdown("---")
+    st.sidebar.checkbox(
+        "World Cup Only (WT20WC)",
+        value=False,
+        key="wt20wc_only",
+        help="Show only Women's T20 World Cup matches (2016, 2018, 2020, 2023, 2024). Data complete from 2016 onwards."
+    )
+    st.sidebar.markdown("---")
+else:
+    st.session_state['wt20wc_only'] = False
+
 # --- Season Aggregation Options ---
 st.sidebar.markdown("##### Season View Options")
 season_view_mode = st.sidebar.selectbox(
@@ -267,6 +304,11 @@ if st.session_state.get('years'): p_df = p_df[p_df['year'].isin(st.session_state
 # Fix: Apply date filter to dropdowns
 if st.session_state.get('date_from'): p_df = p_df[p_df['date'].dt.date >= st.session_state['date_from']]
 if st.session_state.get('date_to'): p_df = p_df[p_df['date'].dt.date <= st.session_state['date_to']]
+# Apply WC filter to dropdowns so only WC teams/matches appear
+if st.session_state.get('wt20wc_only') and 'date' in p_df.columns:
+    p_df = p_df[_is_wt20wc_match(p_df['date'])]
+    if 'team' in p_df.columns:
+        p_df = p_df[p_df['team'].astype(str).isin(_WT20WC_TEAMS)]
 
 available_phases = sorted(p_df['phase'].dropna().unique())
 if any(l in st.session_state.get('leagues', []) for l in ['WBBL', 'MBBL']):
@@ -467,6 +509,12 @@ if st.session_state.get('leagues'): fdf = fdf[fdf['league'].isin(st.session_stat
 if st.session_state.get('years'): fdf = fdf[fdf['year'].isin(st.session_state['years'])]
 if st.session_state.get('date_from'): fdf = fdf[fdf['date'].dt.date >= st.session_state['date_from']]
 if st.session_state.get('date_to'): fdf = fdf[fdf['date'].dt.date <= st.session_state['date_to']]
+
+# World Cup filter
+if st.session_state.get('wt20wc_only') and 'date' in fdf.columns:
+    fdf = fdf[_is_wt20wc_match(fdf['date'])]
+    if 'team' in fdf.columns:
+        fdf = fdf[fdf['team'].astype(str).isin(_WT20WC_TEAMS)]
 if st.session_state.get('phases'):
     phases_norm = [p.title().replace('Power Play','Powerplay') for p in st.session_state['phases']]
     fdf = fdf[fdf['phase'].isin(phases_norm)]
@@ -506,6 +554,9 @@ else:
 if fdf.empty:
     st.warning("No data for selected filters.")
     st.stop()
+
+if st.session_state.get('wt20wc_only'):
+    st.info("**World Cup Filter Active** — Showing Women's T20 World Cup matches (2016, 2018, 2020, 2023, 2024). Data complete from 2016 onwards. Uncheck 'World Cup Only' in sidebar to see all WT20I matches.")
 
 gc.collect()
 
@@ -985,7 +1036,12 @@ def key_batting(df_, no_team_filter=False, aggregate_seasons=False, season_filte
     
     if 'is_batter_out' in stats_df.columns:
         # 1. Count times dismissed as batter (facing the ball)
-        batter_outs = stats_df.groupby(grp_cols, observed=True)['is_batter_out'].sum()
+        # Exclude 'retired out' — ICC convention: retired (not out) is NOT a dismissal
+        _outs_df = stats_df.copy()
+        if 'wicket_kind' in _outs_df.columns:
+            _retired = {'retired out', 'retired not out', 'retired hurt', 'retired - not out'}
+            _outs_df = _outs_df[~_outs_df['wicket_kind'].astype(str).str.lower().str.strip().isin(_retired)]
+        batter_outs = _outs_df.groupby(grp_cols, observed=True)['is_batter_out'].sum()
         
         # 2. Count times dismissed as non-striker (run out while not facing)
         if 'is_non_striker_out' in stats_df.columns and 'non_striker' in stats_df.columns:

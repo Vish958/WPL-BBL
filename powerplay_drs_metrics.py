@@ -12,11 +12,46 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 02 June 2026")
+st.markdown("Last updated: 10 June 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
 JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
+
+# =========================================
+# WOMEN'S T20 WORLD CUP CONSTANTS
+# =========================================
+# Official tournament date windows (inclusive) — used for the "World Cup Only" filter.
+# Teams that have appeared in the WT20WC since 2010 (when our data starts).
+# Actual team names as stored in the parquet (full names from Cricsheet)
+WT20WC_TEAMS = {
+    'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
+    'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies'
+}
+
+# (start_date, end_date) for each edition we have data for (2016 onwards — complete data)
+# Note: 2009/2010/2012/2014 editions have incomplete JSON data, so only 2016 onwards is shown.
+WT20WC_DATE_RANGES = [
+    (pd.Timestamp('2016-03-15'), pd.Timestamp('2016-04-03')),
+    (pd.Timestamp('2018-11-09'), pd.Timestamp('2018-11-25')),
+    (pd.Timestamp('2020-02-21'), pd.Timestamp('2020-03-08')),
+    (pd.Timestamp('2023-02-10'), pd.Timestamp('2023-02-26')),
+    (pd.Timestamp('2024-10-03'), pd.Timestamp('2024-10-20')),
+]
+
+def is_wt20wc_match(date_series):
+    """Return boolean mask: True for rows whose date falls within any WT20WC window.
+    Handles both tz-aware and tz-naive datetime columns.
+    """
+    # Normalize to tz-naive so comparison with Timestamp works regardless of data tz
+    try:
+        dates = pd.to_datetime(date_series).dt.tz_localize(None)
+    except TypeError:
+        dates = pd.to_datetime(date_series).dt.tz_convert(None)
+    mask = pd.Series(False, index=date_series.index)
+    for start, end in WT20WC_DATE_RANGES:
+        mask |= (dates >= start) & (dates <= end)
+    return mask
 
 # Cache version parameters handle invalidation — do NOT use st.cache_data.clear()
 # as it forces re-read of the parquet file on every single widget interaction.
@@ -370,6 +405,19 @@ selected_leagues = st.sidebar.multiselect("League", leagues)
 years = sorted(df['year'].dropna().unique())
 selected_years = st.sidebar.multiselect("Year", years)
 
+# World Cup filter — only visible when WT20I is EXPLICITLY selected in the League filter
+_wt20i_active = bool(selected_leagues and 'WT20I' in selected_leagues)
+wt20wc_only = False
+if _wt20i_active:
+    st.sidebar.markdown("---")
+    wt20wc_only = st.sidebar.checkbox(
+        "World Cup Only (WT20WC)",
+        value=False,
+        help="Filter to show only Women's T20 World Cup matches (2016, 2018, 2020, 2023, 2024). "
+             "Data is complete from 2016 onwards. Uncheck to see all WT20I matches."
+    )
+    st.sidebar.markdown("---")
+
 # Apply filters — use views (no .copy()) for read-only boolean filtering.
 # Only .copy() when we need to add columns (match_number).
 fdf = df
@@ -377,6 +425,12 @@ if selected_leagues:
     fdf = fdf[fdf['league'].isin(selected_leagues)]
 if selected_years:
     fdf = fdf[fdf['year'].isin(selected_years)]
+
+# Apply World Cup date-window filter (date windows are WC-specific)
+if wt20wc_only and 'date' in fdf.columns:
+    fdf = fdf[is_wt20wc_match(fdf['date'])]
+    if 'team' in fdf.columns:
+        fdf = fdf[fdf['team'].astype(str).isin(WT20WC_TEAMS)]
 
 # Add Match Number — requires .copy() because we add a new column.
 # IMPORTANT: sort by date first so match_number=1 = chronologically first match.
@@ -456,6 +510,15 @@ metric_choice = st.sidebar.radio("Select Metric", [
 if fdf.empty:
     st.warning("No data for selected filters.")
     st.stop()
+
+# Show active World Cup filter banner
+if wt20wc_only:
+    st.info(
+        "**World Cup Filter Active** — Showing Women's T20 World Cup matches "
+        "(2016, 2018, 2020, 2023, 2024). "
+        "Data is complete from 2016 onwards. "
+        "Uncheck \"World Cup Only\" in the sidebar to see all WT20I matches."
+    )
 
 # =========================================
 # POWERPLAY SCORE TRACKER
@@ -744,6 +807,12 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     innings_counts = innings_counts.groupby(grouping, observed=True).size().reset_index(name='Innings')
     stats = stats.merge(innings_counts, on=grouping, how='left')
 
+    # RETIRED NOT OUT / RETIRED HURT are NOT dismissals per ICC convention.
+    # These must be excluded from the dismissal count so average is correct.
+    # ICC: Average = Runs / Times_Out, where retired not out is NOT "out".
+    # Cricsheet uses 'retired out' for retired not out — NOT a dismissal per ICC convention
+    _NOT_OUT_KINDS = {'retired out', 'retired not out', 'retired hurt', 'retired - not out'}
+
     # Dismissals — use player_dismissed or player_out (synonyms across parquet versions).
     dismissed_col = None
     if 'player_dismissed' in work_df.columns:
@@ -753,6 +822,9 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
 
     if dismissed_col is not None:
         dis_df = work_df[work_df[dismissed_col].notna() & (work_df[dismissed_col].astype(str).str.strip() != '')].copy()
+        # Exclude retired not out deliveries using wicket_kind column if available
+        if not dis_df.empty and 'wicket_kind' in dis_df.columns:
+            dis_df = dis_df[~dis_df['wicket_kind'].astype(str).str.lower().str.strip().isin(_NOT_OUT_KINDS)]
         if not dis_df.empty:
             dis_df = dis_df.drop(columns=['batter'], errors='ignore')
             dis_df = dis_df.rename(columns={dismissed_col: 'batter'})
@@ -1899,6 +1971,11 @@ if metric_choice == "Powerplay Score Tracker":
             bowling_df = bowling_df[bowling_df['league'].isin(selected_leagues)]
         if selected_years:
             bowling_df = bowling_df[bowling_df['year'].isin(selected_years)]
+        # Apply World Cup filter if active
+        if wt20wc_only and 'date' in bowling_df.columns:
+            bowling_df = bowling_df[is_wt20wc_match(bowling_df['date'])]
+            if 'team' in bowling_df.columns:
+                bowling_df = bowling_df[bowling_df['team'].astype(str).isin(WT20WC_TEAMS)]
         # Exclude playoff matches if checkbox is selected
         if exclude_playoffs:
             bowling_df = bowling_df[bowling_df['event_stage'] == '']
@@ -2282,6 +2359,11 @@ if metric_choice == "Powerplay Score Tracker":
                 playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['league'].isin(selected_leagues)]
             if selected_years:
                 playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['year'].isin(selected_years)]
+            # Apply World Cup filter if active
+            if wt20wc_only and 'date' in playoff_df_filtered.columns:
+                playoff_df_filtered = playoff_df_filtered[is_wt20wc_match(playoff_df_filtered['date'])]
+                if 'team' in playoff_df_filtered.columns:
+                    playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['team'].astype(str).isin(WT20WC_TEAMS)]
             if selected_teams:
                 # filter to matches where selected team was playing (either team A or team B)
                 playoff_df_filtered = playoff_df_filtered[playoff_df_filtered['team'].isin(selected_teams)]
@@ -2392,6 +2474,10 @@ if metric_choice == "Powerplay Score Tracker":
                     df_filtered_50s = df_filtered_50s[df_filtered_50s['league'].isin(selected_leagues)]
                 if selected_years:
                     df_filtered_50s = df_filtered_50s[df_filtered_50s['year'].isin(selected_years)]
+                if wt20wc_only and 'date' in df_filtered_50s.columns:
+                    df_filtered_50s = df_filtered_50s[is_wt20wc_match(df_filtered_50s['date'])]
+                    if 'team' in df_filtered_50s.columns:
+                        df_filtered_50s = df_filtered_50s[df_filtered_50s['team'].astype(str).isin(WT20WC_TEAMS)]
                 if selected_teams:
                     df_filtered_50s = df_filtered_50s[df_filtered_50s['team'].isin(selected_teams)]
                 
@@ -2456,6 +2542,11 @@ if metric_choice == "Powerplay Score Tracker":
                     playoff_all_50s = playoff_all_50s[playoff_all_50s['league'].isin(selected_leagues)]
                 if selected_years:
                     playoff_all_50s = playoff_all_50s[playoff_all_50s['year'].isin(selected_years)]
+                if wt20wc_only and 'date' in playoff_all_50s.columns:
+                    playoff_all_50s = playoff_all_50s[is_wt20wc_match(playoff_all_50s['date'])]
+                    if 'team' in playoff_all_50s.columns:
+                        playoff_all_50s = playoff_all_50s[playoff_all_50s['team'].astype(str).isin(WT20WC_TEAMS)]
+
                 if selected_teams:
                     playoff_all_50s = playoff_all_50s[playoff_all_50s['team'].isin(selected_teams)]
                     

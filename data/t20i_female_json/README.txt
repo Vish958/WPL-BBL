@@ -1,5 +1,5 @@
 This zip archive contains data files from Cricsheet in JSON format. This
-archive contains 1975 female T20 matches.
+archive contains 2010 female T20 matches.
 
 
 The JSON data files contained in this zip file are version 1.0.0, and 1.1.0
@@ -21,6 +21,42 @@ as IPL). The 4th field is the gender of the players involved in the match. The
 5th field is the id of the match, and the remainder of the line shows the
 teams involved in the match.
 
+
+2026-06-09 - international - T20 - female - 1536643 - Saudi Arabia vs China
+2026-06-09 - international - T20 - female - 1536642 - United Arab Emirates vs Philippines
+2026-06-09 - international - T20 - female - 1536641 - Myanmar vs Mongolia
+2026-06-09 - international - T20 - female - 1536640 - Thailand vs Japan
+2026-06-07 - international - T20 - female - 1536639 - Oman vs Philippines
+2026-06-07 - international - T20 - female - 1536638 - Japan vs Bahrain
+2026-06-07 - international - T20 - female - 1536637 - United Arab Emirates vs China
+2026-06-07 - international - T20 - female - 1536636 - Myanmar vs Thailand
+2026-06-06 - international - T20 - female - 1536635 - Hong Kong vs Nepal
+2026-06-06 - international - T20 - female - 1536634 - Singapore vs Kuwait
+2026-06-06 - international - T20 - female - 1536633 - Saudi Arabia vs Oman
+2026-06-06 - international - T20 - female - 1536632 - Bahrain vs Mongolia
+2026-06-06 - international - T20 - female - 1536631 - Qatar vs Bhutan
+2026-06-06 - international - T20 - female - 1536630 - Japan vs Myanmar
+2026-06-06 - international - T20 - female - 1536629 - Philippines vs China
+2026-06-06 - international - T20 - female - 1536628 - Malaysia vs Indonesia
+2026-06-04 - international - T20 - female - 1536627 - Hong Kong vs Qatar
+2026-06-04 - international - T20 - female - 1536626 - Kuwait vs Indonesia
+2026-06-04 - international - T20 - female - 1536625 - Philippines vs Saudi Arabia
+2026-06-04 - international - T20 - female - 1536624 - Japan vs Mongolia
+2026-06-04 - international - T20 - female - 1536623 - Nepal vs Bhutan
+2026-06-04 - international - T20 - female - 1536622 - Oman vs United Arab Emirates
+2026-06-04 - international - T20 - female - 1536621 - Bahrain vs Thailand
+2026-06-04 - international - T20 - female - 1536620 - Malaysia vs Singapore
+2026-06-04 - international - T20 - female - 1535596 - Bangladesh vs Netherlands
+2026-06-03 - international - T20 - female - 1536619 - Hong Kong vs Bhutan
+2026-06-03 - international - T20 - female - 1536618 - Singapore vs Indonesia
+2026-06-03 - international - T20 - female - 1536617 - Oman vs China
+2026-06-03 - international - T20 - female - 1536616 - Bahrain vs Myanmar
+2026-06-03 - international - T20 - female - 1536615 - Qatar vs Nepal
+2026-06-03 - international - T20 - female - 1536614 - Mongolia vs Thailand
+2026-06-03 - international - T20 - female - 1536613 - Saudi Arabia vs United Arab Emirates
+2026-06-03 - international - T20 - female - 1536612 - Malaysia vs Kuwait
+2026-06-03 - international - T20 - female - 1535595 - Scotland vs Netherlands
+2026-06-03 - international - T20 - female - 1528542 - Pakistan vs West Indies
 2026-06-02 - international - T20 - female - 1535594 - Bangladesh vs Scotland
 2026-06-02 - international - T20 - female - 1496550 - India vs England
 2026-06-01 - international - T20 - female - 1528541 - West Indies vs Ireland
