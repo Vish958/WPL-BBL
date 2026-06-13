@@ -11,7 +11,7 @@ st.set_page_config(page_title="T20 Stats", layout="wide")
 # --- WOMEN'S T20 WORLD CUP CONSTANTS ---
 _WT20WC_TEAMS = {
     'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
-    'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies'
+    'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies',
 }
 _WT20WC_DATE_RANGES = [
     (pd.Timestamp('2016-03-15'), pd.Timestamp('2016-04-03')),
@@ -19,6 +19,7 @@ _WT20WC_DATE_RANGES = [
     (pd.Timestamp('2020-02-21'), pd.Timestamp('2020-03-08')),
     (pd.Timestamp('2023-02-10'), pd.Timestamp('2023-02-26')),
     (pd.Timestamp('2024-10-03'), pd.Timestamp('2024-10-20')),
+    (pd.Timestamp('2026-06-12'), pd.Timestamp('2026-07-05')),
 ]
 def _is_wt20wc_match(date_series):
     try:
@@ -52,7 +53,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 10 June 2026")
+st.markdown("Last updated: 12 June 2026")
 st.markdown("Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -139,7 +140,7 @@ st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in
 DEFAULT_COMPACT_HEIGHT = 250
 
 @st.cache_data
-def load_data(path=DATA_SOURCE):
+def load_data(path=DATA_SOURCE, _v=2):  # v2: normalize 'X Women' team names for 2026 data
     try:
         # Load data
         df = pd.read_parquet(path)
@@ -173,6 +174,12 @@ def load_data(path=DATA_SOURCE):
                 y_bbl = pd.to_numeric(df.loc[mask_bbl_all, 'year'])
                 df.loc[mask_bbl_all, 'year'] = y_bbl.astype(str) + "/" + (y_bbl + 1).astype(str).str[-2:]
         
+        # --- Team Name Normalization: 'England Women' -> 'England' etc ---
+        # 2026 Cricsheet JSONs use 'X Women' suffix; older data doesn't — merge them.
+        for _col in ['team', 'teams']:
+            if _col in df.columns:
+                df[_col] = df[_col].astype(str).str.replace(r' Women$', '', regex=True)
+
         # --- Memory Optimization ---
         if 'phase' in df.columns:
             df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
@@ -556,7 +563,7 @@ if fdf.empty:
     st.stop()
 
 if st.session_state.get('wt20wc_only'):
-    st.info("**World Cup Filter Active** — Showing Women's T20 World Cup matches (2016, 2018, 2020, 2023, 2024). Data complete from 2016 onwards. Uncheck 'World Cup Only' in sidebar to see all WT20I matches.")
+    st.info("**World Cup Filter Active** — Showing Women's T20 World Cup matches (2016, 2018, 2020, 2023, 2024, 2026). Data complete from 2016 onwards. Uncheck 'World Cup Only' in sidebar to see all WT20I matches.")
 
 gc.collect()
 

@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 10 June 2026")
+st.markdown("Last updated: 12 June 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
@@ -26,8 +26,9 @@ JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
 # Actual team names as stored in the parquet (full names from Cricsheet)
 WT20WC_TEAMS = {
     'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
-    'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies'
+    'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies',
 }
+
 
 # (start_date, end_date) for each edition we have data for (2016 onwards — complete data)
 # Note: 2009/2010/2012/2014 editions have incomplete JSON data, so only 2016 onwards is shown.
@@ -37,6 +38,7 @@ WT20WC_DATE_RANGES = [
     (pd.Timestamp('2020-02-21'), pd.Timestamp('2020-03-08')),
     (pd.Timestamp('2023-02-10'), pd.Timestamp('2023-02-26')),
     (pd.Timestamp('2024-10-03'), pd.Timestamp('2024-10-20')),
+    (pd.Timestamp('2026-06-12'), pd.Timestamp('2026-07-05')),
 ]
 
 def is_wt20wc_match(date_series):
@@ -81,7 +83,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=11): # Version 11: Rebuild with event_stage fix for playoff matches
+def load_data(path=DATA_SOURCE, _cache_version=13): # Version 13: Normalize 'X Women' team names to 'X' for consistent stats
     try:
         df = pd.read_parquet(path)
         
@@ -98,6 +100,13 @@ def load_data(path=DATA_SOURCE, _cache_version=11): # Version 11: Rebuild with e
             df['phase'] = (df['phase'].astype(str).str.strip()
                            .str.title()
                            .str.replace('Power Play', 'Powerplay', regex=False))
+        
+        # Normalize team names: 'England Women' -> 'England', etc.
+        # 2026 Cricsheet JSONs use 'X Women' suffix; older data doesn't — merge them.
+        if 'team' in df.columns:
+            df['team'] = df['team'].astype(str).str.replace(r' Women$', '', regex=True)
+        if 'teams' in df.columns:
+            df['teams'] = df['teams'].astype(str).str.replace(r' Women$', '', regex=True)
         
         # Convert low-cardinality columns to category dtype
         cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
@@ -139,11 +148,15 @@ def load_data(path=DATA_SOURCE, _cache_version=11): # Version 11: Rebuild with e
 
         # Normalize known player name spelling variants so they aggregate correctly.
         # Key = wrong/alternate spelling in JSON → Value = canonical name.
+        # Right side name are those which are formally used by Cricsheet
         _NAME_FIX = {
             'V Sooryavanshi': 'V Suryavanshi',
             'Prabhsimran Singh': 'P Simran Singh',
             'CPL Connolly': 'C Connolly',
-            'Rahul Tewatia': 'R Tewatia'
+            'Rahul Tewatia': 'R Tewatia',
+            'NR Sciver': 'NR Sciver-Brunt',
+            'Natalie Ruth Sciver-Brunt': 'NR Sciver-Brunt',
+            'Nat Sciver-Brunt': 'NR Sciver-Brunt',
         }
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:
@@ -515,7 +528,7 @@ if fdf.empty:
 if wt20wc_only:
     st.info(
         "**World Cup Filter Active** — Showing Women's T20 World Cup matches "
-        "(2016, 2018, 2020, 2023, 2024). "
+        "(2016, 2018, 2020, 2023, 2024, 2026). "
         "Data is complete from 2016 onwards. "
         "Uncheck \"World Cup Only\" in the sidebar to see all WT20I matches."
     )
@@ -6946,6 +6959,11 @@ elif metric_choice == "Debutant Bowler Wickets":
                 # Load full ball-by-ball (all years) for bowling stats on debut
                 full_d = load_data()
                 full_d = full_d[full_d['league'].astype(str).isin(leagues_in)].copy()
+                # Apply WC filter on full_d so non-WC teams don't appear in debut results
+                if wt20wc_only and 'date' in full_d.columns:
+                    full_d = full_d[is_wt20wc_match(full_d['date'])]
+                    if 'team' in full_d.columns:
+                        full_d = full_d[full_d['team'].isin(WT20WC_TEAMS)]
                 for c in ['wicket_count', 'is_valid_delivery']:
                     if c in full_d.columns:
                         full_d[c] = pd.to_numeric(full_d[c], errors='coerce').fillna(0)
