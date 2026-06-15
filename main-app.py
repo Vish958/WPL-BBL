@@ -10,7 +10,7 @@ st.set_page_config(page_title="T20 Stats", layout="wide")
 
 # --- WOMEN'S T20 WORLD CUP CONSTANTS ---
 _WT20WC_TEAMS = {
-    'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
+    'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'Netherlands', 'New Zealand',
     'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies',
 }
 _WT20WC_DATE_RANGES = [
@@ -53,7 +53,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 14 June 2026")
+st.markdown("Last updated: 15 June 2026")
 st.markdown("Fresh Matches Will Appear as per Data Availability from Cricsheet")
 st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -140,7 +140,7 @@ st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in
 DEFAULT_COMPACT_HEIGHT = 250
 
 @st.cache_data
-def load_data(path=DATA_SOURCE, _v=2):  # v2: normalize 'X Women' team names for 2026 data
+def load_data(path=DATA_SOURCE, _v=3):  # v3: fix teams col normalization + add Netherlands
     try:
         # Load data
         df = pd.read_parquet(path)
@@ -175,10 +175,10 @@ def load_data(path=DATA_SOURCE, _v=2):  # v2: normalize 'X Women' team names for
                 df.loc[mask_bbl_all, 'year'] = y_bbl.astype(str) + "/" + (y_bbl + 1).astype(str).str[-2:]
         
         # --- Team Name Normalization: 'England Women' -> 'England' etc ---
-        # 2026 Cricsheet JSONs use 'X Women' suffix; older data doesn't — merge them.
+        # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
         for _col in ['team', 'teams']:
             if _col in df.columns:
-                df[_col] = df[_col].astype(str).str.replace(r' Women$', '', regex=True)
+                df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
 
         # --- Memory Optimization ---
         if 'phase' in df.columns:

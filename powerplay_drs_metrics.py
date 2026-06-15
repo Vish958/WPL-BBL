@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 14 June 2026")
+st.markdown("Last updated: 15 June 2026")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
@@ -25,7 +25,7 @@ JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
 # Teams that have appeared in the WT20WC since 2010 (when our data starts).
 # Actual team names as stored in the parquet (full names from Cricsheet)
 WT20WC_TEAMS = {
-    'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'New Zealand',
+    'Australia', 'Bangladesh', 'England', 'India', 'Ireland', 'Netherlands', 'New Zealand',
     'Pakistan', 'Scotland', 'South Africa', 'Sri Lanka', 'Thailand', 'West Indies',
 }
 
@@ -83,7 +83,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=13): # Version 13: Normalize 'X Women' team names to 'X' for consistent stats
+def load_data(path=DATA_SOURCE, _cache_version=14): # Version 14: Fix teams col normalization + add Netherlands
     try:
         df = pd.read_parquet(path)
         
@@ -102,11 +102,11 @@ def load_data(path=DATA_SOURCE, _cache_version=13): # Version 13: Normalize 'X W
                            .str.replace('Power Play', 'Powerplay', regex=False))
         
         # Normalize team names: 'England Women' -> 'England', etc.
-        # 2026 Cricsheet JSONs use 'X Women' suffix; older data doesn't — merge them.
+        # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
         if 'team' in df.columns:
-            df['team'] = df['team'].astype(str).str.replace(r' Women$', '', regex=True)
+            df['team'] = df['team'].astype(str).str.replace(' Women', '', regex=False)
         if 'teams' in df.columns:
-            df['teams'] = df['teams'].astype(str).str.replace(r' Women$', '', regex=True)
+            df['teams'] = df['teams'].astype(str).str.replace(' Women', '', regex=False)
         
         # Convert low-cardinality columns to category dtype
         cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
