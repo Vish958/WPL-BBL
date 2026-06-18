@@ -1,0 +1,2242 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2026-06-18",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Leeds",
+    "dates": [
+      "2026-06-17"
+    ],
+    "event": {
+      "name": "ICC Women's T20 World Cup",
+      "match_number": 9
+    },
+    "gender": "female",
+    "match_type": "T20",
+    "officials": {
+      "match_referees": [
+        "SA Fritz"
+      ],
+      "reserve_umpires": [
+        "S Redfern"
+      ],
+      "tv_umpires": [
+        "RA Kettleborough"
+      ],
+      "umpires": [
+        "C La Borde",
+        "N Perera"
+      ]
+    },
+    "outcome": {
+      "winner": "Australia Women",
+      "by": {
+        "wickets": 9
+      }
+    },
+    "overs": 20,
+    "player_of_match": [
+      "EA Perry"
+    ],
+    "players": {
+      "Bangladesh Women": [
+        "Juairiya Ferdous",
+        "Dilara Akter",
+        "Sharmin Akhter",
+        "Nigar Sultana",
+        "S Mostary",
+        "Shorna Akter",
+        "Ritu Moni",
+        "Nahida Akter",
+        "Rabeya Khan",
+        "Sultana Khatun",
+        "Marufa Akter"
+      ],
+      "Australia Women": [
+        "G Voll",
+        "BL Mooney",
+        "EA Perry",
+        "GM Harris",
+        "G Wareham",
+        "A Sutherland",
+        "NJ Carey",
+        "S Molineux",
+        "AM King",
+        "KJ Garth",
+        "M Schutt"
+      ]
+    },
+    "registry": {
+      "people": {
+        "Juairiya Ferdous": "unknown",
+        "Dilara Akter": "unknown",
+        "Sharmin Akhter": "unknown",
+        "Nigar Sultana": "unknown",
+        "S Mostary": "unknown",
+        "Shorna Akter": "unknown",
+        "Ritu Moni": "unknown",
+        "Nahida Akter": "unknown",
+        "Rabeya Khan": "unknown",
+        "Sultana Khatun": "unknown",
+        "Marufa Akter": "unknown",
+        "ML Schutt": "unknown",
+        "KJ Garth": "unknown",
+        "S Molineux": "unknown",
+        "EA Perry": "unknown",
+        "A Sutherland": "unknown",
+        "G Wareham": "unknown",
+        "A King": "unknown",
+        "G Voll": "unknown",
+        "BL Mooney": "unknown",
+        "GM Harris": "unknown",
+        "NJ Carey": "unknown",
+        "SA Fritz": "d15e60c8",
+        "S Redfern": "5b038989",
+        "RA Kettleborough": "4017868f",
+        "C La Borde": "32157f67",
+        "N Perera": "129709f9"
+      }
+    },
+    "season": "2026",
+    "team_type": "international",
+    "teams": [
+      "Bangladesh Women",
+      "Australia Women"
+    ],
+    "toss": {
+      "decision": "field",
+      "winner": "Australia Women"
+    },
+    "venue": "Headingley, Leeds"
+  },
+  "innings": [
+    {
+      "team": "Bangladesh Women",
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ],
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "ML Schutt",
+              "non_striker": "Dilara Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "ML Schutt",
+              "non_striker": "Dilara Akter",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "ML Schutt",
+              "non_striker": "Dilara Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "ML Schutt",
+              "non_striker": "Dilara Akter",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Dilara Akter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Dilara Akter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "KJ Garth",
+              "non_striker": "Dilara Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "KJ Garth",
+              "non_striker": "Dilara Akter",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Dilara Akter",
+              "bowler": "KJ Garth",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Dilara Akter",
+                  "kind": "bowled"
+                }
+              ]
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "KJ Garth",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "KJ Garth",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "KJ Garth",
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "ML Schutt",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "ML Schutt",
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "KJ Garth",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "KJ Garth",
+              "non_striker": "Juairiya Ferdous",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Juairiya Ferdous",
+              "bowler": "KJ Garth",
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Juairiya Ferdous",
+                  "kind": "lbw"
+                }
+              ]
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Sharmin Akhter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "review": {
+                "by": "Bangladesh Women",
+                "umpire": "N Perera",
+                "batter": "Sharmin Akhter",
+                "decision": "upheld",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "S Molineux",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Sharmin Akhter",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Sharmin Akhter",
+                  "kind": "lbw"
+                }
+              ]
+            },
+            {
+              "batter": "S Mostary",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "S Mostary",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "S Mostary",
+              "bowler": "KJ Garth",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "S Mostary",
+              "bowler": "KJ Garth",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "S Mostary",
+              "bowler": "KJ Garth",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "S Mostary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "S Mostary",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "S Mostary",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "S Mostary",
+                  "fielders": [
+                    {
+                      "name": "S Molineux"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Shorna Akter",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shorna Akter",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Shorna Akter",
+              "bowler": "EA Perry",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Nigar Sultana",
+              "review": {
+                "by": "Bangladesh Women",
+                "umpire": "C La Borde",
+                "batter": "Shorna Akter",
+                "decision": "struck down",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Shorna Akter",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Shorna Akter",
+                  "kind": "lbw"
+                }
+              ]
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A Sutherland",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A Sutherland",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "EA Perry",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "EA Perry",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "G Wareham",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "G Wareham",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "G Wareham",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "G Wareham",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A Sutherland",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A Sutherland",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A Sutherland",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A King",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A King",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A King",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "S Molineux",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A King",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "A King",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "A King",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "EA Perry",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "EA Perry",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "EA Perry",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "EA Perry",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "EA Perry",
+              "non_striker": "Ritu Moni",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "Ritu Moni",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Ritu Moni",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Ritu Moni",
+                  "fielders": [
+                    {
+                      "name": "G Voll"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "Nahida Akter",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nahida Akter",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nahida Akter",
+              "bowler": "G Wareham",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nahida Akter",
+              "bowler": "KJ Garth",
+              "non_striker": "Nigar Sultana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "KJ Garth",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Nigar Sultana",
+              "bowler": "S Molineux",
+              "non_striker": "Nahida Akter",
+              "review": {
+                "by": "Bangladesh Women",
+                "umpire": "N Perera",
+                "batter": "Nigar Sultana",
+                "decision": "struck down",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Nigar Sultana",
+                  "kind": "lbw"
+                }
+              ]
+            },
+            {
+              "batter": "Rabeya Khan",
+              "bowler": "S Molineux",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Rabeya Khan",
+              "bowler": "S Molineux",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "Rabeya Khan",
+              "bowler": "A Sutherland",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Nahida Akter",
+              "bowler": "A Sutherland",
+              "non_striker": "Rabeya Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Rabeya Khan",
+              "bowler": "A Sutherland",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Rabeya Khan",
+              "bowler": "A Sutherland",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Rabeya Khan",
+              "bowler": "A Sutherland",
+              "non_striker": "Nahida Akter",
+              "review": {
+                "by": "Bangladesh Women",
+                "umpire": "C La Borde",
+                "batter": "Rabeya Khan",
+                "decision": "struck down",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "Rabeya Khan",
+                  "kind": "lbw"
+                }
+              ]
+            },
+            {
+              "batter": "Sultana Khatun",
+              "bowler": "A Sutherland",
+              "non_striker": "Nahida Akter",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "team": "Australia Women",
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ],
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Sultana Khatun",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "Sultana Khatun",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Sultana Khatun",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Sultana Khatun",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Sultana Khatun",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Sultana Khatun",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "BL Mooney",
+                  "fielders": [
+                    {
+                      "name": "Ritu Moni"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "Nahida Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Nahida Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Nahida Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Nahida Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Nahida Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Nahida Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Marufa Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Marufa Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "Ritu Moni",
+              "extras": {
+                "byes": 4
+              },
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Ritu Moni",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Ritu Moni",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Ritu Moni",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Ritu Moni",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Ritu Moni",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "EA Perry",
+              "bowler": "Rabeya Khan",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Rabeya Khan",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Rabeya Khan",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Rabeya Khan",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Rabeya Khan",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Rabeya Khan",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "EA Perry",
+              "bowler": "Nahida Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "Nahida Akter",
+              "non_striker": "EA Perry",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "Nahida Akter",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
