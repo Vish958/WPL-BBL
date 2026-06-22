@@ -1,0 +1,2945 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2026-06-22",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Southampton",
+    "dates": [
+      "2026-06-20"
+    ],
+    "event": {
+      "name": "ICC Women's T20 World Cup",
+      "match_number": 14
+    },
+    "gender": "female",
+    "match_type": "T20",
+    "officials": {
+      "match_referees": [
+        "JM Pereira"
+      ],
+      "reserve_umpires": [
+        "Gayathri V"
+      ],
+      "tv_umpires": [
+        "JM Williams"
+      ],
+      "umpires": [
+        "AY Harris",
+        "Kim Diane Cotton"
+      ]
+    },
+    "outcome": {
+      "winner": "Australia Women",
+      "by": {
+        "runs": 98
+      }
+    },
+    "overs": 20,
+    "player_of_match": [
+      "BL Mooney"
+    ],
+    "players": {
+      "Australia Women": [
+        "BL Mooney",
+        "G Voll",
+        "EA Perry",
+        "A Gardner",
+        "G Wareham",
+        "NJ Carey",
+        "A Sutherland",
+        "S Molineux",
+        "AM King",
+        "KJ Garth",
+        "LK Hamilton"
+      ],
+      "Netherlands Women": [
+        "HDJ Siegers",
+        "P Molkenboer",
+        "B de Leede",
+        "SL Kalis",
+        "R Rijke",
+        "F Overdijk",
+        "IJR Zwilling",
+        "MIW van den Raad",
+        "C de Lange",
+        "SNL Siegers",
+        "I van der Woning"
+      ]
+    },
+    "registry": {
+      "people": {
+        "BL Mooney": "unknown",
+        "G Voll": "unknown",
+        "EA Perry": "unknown",
+        "A Gardner": "unknown",
+        "G Wareham": "unknown",
+        "NJ Carey": "unknown",
+        "A Sutherland": "unknown",
+        "S Molineux": "unknown",
+        "A King": "unknown",
+        "KJ Garth": "unknown",
+        "LK Hamilton": "unknown",
+        "IJR Zwilling": "unknown",
+        "HDJ Siegers": "unknown",
+        "I van der Woning": "unknown",
+        "MIW van den Raad": "unknown",
+        "S Siegers": "unknown",
+        "C de Lange": "unknown",
+        "F Overdijk": "unknown",
+        "P Molkenboer": "unknown",
+        "B de Leede": "unknown",
+        "SL Kalis": "unknown",
+        "R Rijke": "unknown",
+        "JM Pereira": "f9a4a039",
+        "Gayathri V": "unknown",
+        "JM Williams": "b61d9d70",
+        "AY Harris": "90d95b82",
+        "Kim Diane Cotton": "unknown"
+      }
+    },
+    "season": "2026",
+    "team_type": "international",
+    "teams": [
+      "Australia Women",
+      "Netherlands Women"
+    ],
+    "toss": {
+      "decision": "field",
+      "winner": "Netherlands Women"
+    },
+    "venue": "The Rose Bowl, Southampton"
+  },
+  "innings": [
+    {
+      "team": "Australia Women",
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ],
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "I van der Woning",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "I van der Woning",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "I van der Woning",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "I van der Woning",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "I van der Woning",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "I van der Woning",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "G Voll",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "MIW van den Raad",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "MIW van den Raad",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "MIW van den Raad",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "G Voll",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Voll",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "G Voll",
+                  "fielders": [
+                    {
+                      "name": "P Molkenboer"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "EA Perry",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "EA Perry",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "EA Perry",
+                  "fielders": [
+                    {
+                      "name": "SL Kalis"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "C de Lange",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "A Gardner",
+              "bowler": "F Overdijk",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "F Overdijk",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "F Overdijk",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "F Overdijk",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "F Overdijk",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "F Overdijk",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "C de Lange",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "C de Lange",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "C de Lange",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "C de Lange",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "C de Lange",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "A Gardner",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "S Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "BL Mooney",
+              "bowler": "MIW van den Raad",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "MIW van den Raad",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "MIW van den Raad",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "HDJ Siegers",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "A Gardner",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "BL Mooney",
+              "bowler": "IJR Zwilling",
+              "non_striker": "A Gardner",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "A Gardner",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "A Gardner",
+                  "fielders": [
+                    {
+                      "name": "SL Kalis"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "NJ Carey",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "G Wareham",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "NJ Carey",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "S Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "G Wareham",
+              "bowler": "I van der Woning",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "I van der Woning",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "I van der Woning",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "I van der Woning",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "NJ Carey",
+              "bowler": "I van der Woning",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "NJ Carey",
+              "bowler": "I van der Woning",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              }
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "NJ Carey",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "NJ Carey",
+                  "fielders": [
+                    {
+                      "name": "R Rijke"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "A Sutherland",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "C de Lange",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "G Wareham",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "G Wareham",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "G Wareham",
+                  "fielders": [
+                    {
+                      "name": "HDJ Siegers"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "S Molineux",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "S Molineux",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              }
+            },
+            {
+              "batter": "A Sutherland",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "S Molineux",
+              "bowler": "IJR Zwilling",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "S Molineux",
+                  "kind": "bowled"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "A Sutherland",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A King",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "A King",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "A Sutherland",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "A Sutherland",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "A Sutherland",
+              "bowler": "HDJ Siegers",
+              "non_striker": "BL Mooney",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "team": "Netherlands Women",
+      "powerplays": [
+        {
+          "from": 0.1,
+          "to": 5.6,
+          "type": "mandatory"
+        }
+      ],
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "LK Hamilton",
+              "non_striker": "P Molkenboer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "LK Hamilton",
+              "non_striker": "P Molkenboer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "LK Hamilton",
+              "extras": {
+                "noballs": 1
+              },
+              "non_striker": "P Molkenboer",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "LK Hamilton",
+              "non_striker": "P Molkenboer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "P Molkenboer",
+              "bowler": "LK Hamilton",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "P Molkenboer",
+              "bowler": "LK Hamilton",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "P Molkenboer",
+              "bowler": "LK Hamilton",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "non_striker": "P Molkenboer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "P Molkenboer",
+              "bowler": "KJ Garth",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "P Molkenboer",
+                  "fielders": [
+                    {
+                      "name": "G Voll"
+                    }
+                  ],
+                  "kind": "caught"
+                }
+              ]
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "S Molineux",
+              "non_striker": "B de Leede",
+              "review": {
+                "by": "Australia Women",
+                "umpire": "KD Cotton",
+                "batter": "HDJ Siegers",
+                "decision": "struck down",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "S Molineux",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "S Molineux",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "S Molineux",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "HDJ Siegers",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "HDJ Siegers",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "review": {
+                "by": "Netherlands Women",
+                "umpire": "AY Harris",
+                "batter": "HDJ Siegers",
+                "decision": "struck down",
+                "type": "wicket"
+              },
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "HDJ Siegers",
+                  "kind": "lbw"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "G Wareham",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "G Wareham",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "G Wareham",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "A King",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A King",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A King",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A King",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A King",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A King",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "A Gardner",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Gardner",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Gardner",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "G Wareham",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "G Wareham",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "NJ Carey",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "NJ Carey",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "NJ Carey",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "NJ Carey",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "NJ Carey",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "NJ Carey",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "A Gardner",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Gardner",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Gardner",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "S Molineux",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "S Molineux",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "S Molineux",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "S Molineux",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "deliveries": [
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "KJ Garth",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "KJ Garth",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "extras": {
+                "wides": 1
+              },
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "LK Hamilton",
+              "non_striker": "SL Kalis",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "SL Kalis",
+              "bowler": "LK Hamilton",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "deliveries": [
+            {
+              "batter": "SL Kalis",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "player_out": "SL Kalis",
+                  "kind": "bowled"
+                }
+              ]
+            },
+            {
+              "batter": "R Rijke",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "R Rijke",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "non_striker": "R Rijke",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "R Rijke",
+              "bowler": "A Sutherland",
+              "non_striker": "B de Leede",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "B de Leede",
+              "bowler": "A Sutherland",
+              "extras": {
+                "legbyes": 1
+              },
+              "non_striker": "R Rijke",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
