@@ -16,6 +16,11 @@ st.markdown("Last updated: 26 June 2026")
 st.markdown("*Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
+
+import os
+st.write(f"Diagnostic - CWD: {os.getcwd()}")
+st.write(f"Diagnostic - Files: {os.listdir('.')}")
+st.write(f"Diagnostic - File exists: {os.path.exists(DATA_SOURCE)}")
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
 JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
 JSON_DIR_AFG_ODI = "Male_ODI_Data/odis_male_json/Afghanistan Games" # Afghanistan ODI JSON files
