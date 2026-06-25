@@ -3,7 +3,7 @@ data/
 Male_ODI_Data/
 
 # Ignore large generated data files
-*.parquet
+# *.parquet
 *.xlsx
 *.db
 
