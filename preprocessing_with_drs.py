@@ -8,26 +8,34 @@ import os
 from glob import glob
 import logging
 from typing import Optional, Tuple, List
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
 
 JSON_DIR = "/Users/vishwesh/Documents/WPL&BBL/data"          # Main data directory
 JSON_DIR_WT20I = "/Users/vishwesh/Documents/WPL&BBL/data/t20i_female_json"  # Women's T20I data
-DATA_DEST = "t20_data_with_drs.parquet"  # New file with DRS data
+JSON_DIR_AFG_ODI = "/Users/vishwesh/Documents/WPL&BBL/Male_ODI_Data/odis_male_json/Afghanistan Games"  # Afghanistan ODI data
+JSON_DIR_MENS_ODI = "/Users/vishwesh/Documents/WPL&BBL/Male_ODI_Data/odis_male_json"  # All Men's ODI data
+DATA_DEST = "t20_data_with_drs.parquet"  # Output file (T20 + AFG ODI with DRS data)
 
 LEAGUE_START_DATES = {
     'WBBL': '2020-10-25', 'MBBL': '2020-12-10',
     'WPL': '2023-03-04', 'SA20': '2023-01-10', 'IPL': '2008-04-18',
     'MLC': '2023-07-13',
     'WT20I': '2000-01-01',  # Women's T20 Internationals — include all dates
+    'MENS_ODI': '2002-01-01',  # All Men's ODI matches
 }
 
 LEAGUE_PP_DEFAULT = {
     'WBBL': (0.0, 3 + 5/6), 'MBBL': (0.0, 3 + 5/6),
     'WPL': (0.0, 5 + 5/6), 'SA20': (0.0, 5 + 5/6),
     'WT20I': (0.0, 5 + 5/6),  # Women's T20I: standard 6-over powerplay
+    'MENS_ODI': (0.0, 9 + 5/6),  # ODI: mandatory 10-over powerplay
 }
+
+# Leagues that use ODI (50-over) format — death starts at over 40
+ODI_LEAGUES = {'MENS_ODI'}
 
 def notation_to_ball_float(notation) -> float:
     try:
@@ -45,13 +53,15 @@ def notation_to_ball_float(notation) -> float:
     except Exception:
         return 0.0
 
-def detect_league(event_name, gender):
+def detect_league(event_name, gender, match_type='T20', teams=None):
     e = (event_name or '').lower()
     if 'wpl' in e or "women's premier league" in e: return 'WPL'
     if 'big bash' in e: return 'WBBL' if gender == 'female' else 'MBBL'
     if 'sa20' in e: return 'SA20'
     if 'ipl' in e or 'indian premier league' in e: return 'IPL'
     if 'major league cricket' in e: return 'MLC'
+    # Men's ODI matches (including Afghanistan Games)
+    if match_type == 'ODI' and gender == 'male': return 'MENS_ODI'
     # Women's T20 Internationals: any female T20 that isn't a known franchise league
     if gender == 'female': return 'WT20I'
     return 'OTHER'
@@ -67,8 +77,12 @@ def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, i
         if from_n is None or to_n is None: continue
         f = notation_to_ball_float(from_n)
         tt = notation_to_ball_float(to_n)
-        if t == 'mandatory': pp_mand = (f, tt)
-        elif t == 'batting' and league in BBL_LEAGUES: 
+        if t == 'mandatory':
+            # ODI JSONs have 3 mandatory blocks (PP / Middle / Death).
+            # Only take the FIRST (lowest from_n) — that's the actual powerplay.
+            if pp_mand is None or f < pp_mand[0]:
+                pp_mand = (f, tt)
+        elif t == 'batting' and league in BBL_LEAGUES:
             pp_surge = (f, tt)
 
     if not pp_mand: pp_mand = LEAGUE_PP_DEFAULT.get(league)
@@ -97,7 +111,9 @@ def assign_phase(ball_float, pp_mand, pp_surge, league):
     if league in BBL_LEAGUES and pp_surge and pp_surge[0] is not None and pp_surge[1] is not None and pp_surge[0] <= ball_float <= pp_surge[1]: 
         return 'Power Surge'
     
-    if ball_float >= 16.0: 
+    # ODI: Death overs are 41-50 (ball_float >= 40.0); T20: Death overs are 17-20 (ball_float >= 16.0)
+    death_threshold = 40.0 if league in ODI_LEAGUES else 16.0
+    if ball_float >= death_threshold: 
         return 'Death'
     
     return 'Middle'
@@ -152,179 +168,205 @@ def extract_review_data(delivery):
     }
 
 
-def process_data_with_drs(inference_power_surge=True):
-    """Process all JSON files and extract DRS data from both main and WT20I directories."""
-    files = glob(os.path.join(JSON_DIR, "*.json"))
-    # Also include Women's T20I files from the dedicated sub-directory
-    wt20i_files = glob(os.path.join(JSON_DIR_WT20I, "*.json"))
-    files = files + wt20i_files
-    logger.info(f"Processing {len(files)} JSON files ({len(glob(os.path.join(JSON_DIR, '*.json')))} main + {len(wt20i_files)} WT20I)")
+def _process_single_file_drs(args):
+    """Process one JSON file. Returns (rows, drs_count). Thread-safe — no shared state."""
+    file, inference_power_surge = args
     rows = []
     drs_count = 0
+    match_id = os.path.basename(file).split('.')[0].replace('_espn', '')
+    try:
+        with open(file, 'r', encoding='utf-8') as f:
+            data = json.load(f)
 
-    for file in files:
-        try:
-            with open(file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
+        match_type = data.get('info', {}).get('match_type', '')
+        if match_type not in ('T20', 'ODI'):
+            return rows, drs_count
 
-            if data.get('info', {}).get('match_type') != 'T20': continue
+        info = data.get('info', {})
+        date = pd.to_datetime(info.get('dates', [None])[0]).date()
+        year = pd.to_datetime(date).year
+        event = info.get('event', {}).get('name', '') if info.get('event') else info.get('event', '')
+        event_stage = ''
+        if isinstance(info.get('event'), dict):
+            event_stage = info.get('event', {}).get('stage', '')
+            if not event_stage:
+                mn = info.get('event', {}).get('match_number', '')
+                if isinstance(mn, str) and not mn.isdigit():
+                    event_stage = mn
+        gender = info.get('gender', 'male')
+        teams = info.get('teams', [])
+        league = detect_league(event, gender, match_type=match_type, teams=teams)
 
-            info = data.get('info', {})
-            date = pd.to_datetime(info.get('dates', [None])[0]).date()
-            year = pd.to_datetime(date).year
-            event = info.get('event', {}).get('name', '') if info.get('event') else info.get('event', '')
-            # Extract event stage (Eliminator, Qualifier 1/2, Final, etc.)
-            event_stage = ''
-            if isinstance(info.get('event'), dict):
-                event_stage = info.get('event', {}).get('stage', '')
-                # Fallback: if stage is missing, check match_number for non-numeric playoff labels
-                if not event_stage:
-                    mn = info.get('event', {}).get('match_number', '')
-                    if isinstance(mn, str) and not mn.isdigit():
-                        event_stage = mn  # e.g. 'Qualifier 1', 'Final', 'Eliminator'
-            gender = info.get('gender', 'female')
-            league = detect_league(event, gender)
+        if league in LEAGUE_START_DATES and date < pd.to_datetime(LEAGUE_START_DATES[league]).date():
+            return rows, drs_count
+        if league not in LEAGUE_START_DATES and year < 2020:
+            return rows, drs_count
 
-            if league in LEAGUE_START_DATES and date < pd.to_datetime(LEAGUE_START_DATES[league]).date(): continue
-            if league not in LEAGUE_START_DATES and year < 2020: continue
+        match_impact_players = get_impact_players_from_match(data)
+        outcome = info.get('outcome', {})
+        winner = outcome.get('winner') or outcome.get('eliminator')
+        win_by = outcome.get('by', {})
+        win_by_wickets = win_by.get('wickets', 0) if win_by else 0
+        win_by_runs = win_by.get('runs', 0) if win_by else 0
 
-            teams = info.get('teams', [])
-            match_id = os.path.basename(file).split('.')[0]
-            match_impact_players = get_impact_players_from_match(data)
-            
-            outcome = info.get('outcome', {})
-            # Use 'winner' for normal wins; fall back to 'eliminator' for tied matches
-            # resolved by super over. Leave as None only for true no-result matches.
-            winner = outcome.get('winner') or outcome.get('eliminator')
-            win_by = outcome.get('by', {})
-            win_by_wickets = win_by.get('wickets', 0) if win_by else 0
-            win_by_runs = win_by.get('runs', 0) if win_by else 0
+        for inning_idx, inning in enumerate(data.get('innings', []), start=1):
+            team = inning.get('team')
+            bowling_team = [t for t in teams if t != team][0] if len(teams) == 2 else team
+            innings_num = inning_idx
+            inning_deliveries = []
+            inning_rows = []
+            declared_pp = inning.get('powerplays') or info.get('powerplays') or []
+            pp_mand, pp_surge = get_powerplay_phases(declared_pp, league)
 
-            for inning_idx, inning in enumerate(data.get('innings', []), start=1):
-                team = inning.get('team')
-                bowling_team = [t for t in teams if t != team][0] if len(teams) == 2 else team
-                innings_num = inning_idx
-                inning_deliveries = []
-                declared_pp = inning.get('powerplays') or info.get('powerplays') or []
-                pp_mand, pp_surge = get_powerplay_phases(declared_pp, league)
+            for over in inning.get('overs', []):
+                over_num = over.get('over', 0)
+                legal_balls_in_over = 0
+                for d in over.get('deliveries', []):
+                    extras = d.get('extras', {}) or {}
+                    wides_flag = has_wide(extras)
+                    noball_flag = has_any_noball_marker(extras)
+                    is_valid = not (wides_flag or noball_flag)
+                    ball_float = over_num + (legal_balls_in_over / 6.0)
 
-                for over in inning.get('overs', []):
-                    over_num = over.get('over', 0)
-                    legal_balls_in_over = 0
-                    
-                    for d in over.get('deliveries', []):
-                        extras = d.get('extras', {}) or {}
-                        wides_flag = has_wide(extras)
-                        noball_flag = has_any_noball_marker(extras)
-                        is_valid = not (wides_flag or noball_flag)
-                        ball_float = over_num + (legal_balls_in_over / 6.0)
+                    inning_deliveries.append({
+                        'over': over_num, 'ball_float': ball_float,
+                        'runs.total': d.get('runs', {}).get('total', 0),
+                        'is_valid_delivery': 1 if is_valid else 0,
+                        'batter': d.get('batter'), 'bowler': d.get('bowler'),
+                        'wides': extras.get('wides', 0),
+                        'no_balls': extras.get('noballs', extras.get('no_ball', extras.get('noball', 0))),
+                        'byes': extras.get('byes', 0), 'legbyes': extras.get('legbyes', 0),
+                        'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
+                            'caught', 'bowled', 'lbw', 'stumped', 'hit wicket', 'caught and bowled', 'handled the ball'
+                        ])
+                    })
 
-                        inning_deliveries.append({
-                            'over': over_num,
-                            'ball_float': ball_float,
-                            'runs.total': d.get('runs', {}).get('total', 0),
-                            'is_valid_delivery': 1 if is_valid else 0,
-                            'batter': d.get('batter'),
-                            'bowler': d.get('bowler'),
-                            'wides': extras.get('wides', 0),
-                            'no_balls': extras.get('noballs', extras.get('no_ball', extras.get('noball', 0))),
-                            'byes': extras.get('byes', 0),
-                            'legbyes': extras.get('legbyes', 0),
-                            'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
-                                'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
-                                'caught and bowled', 'handled the ball'  # Excludes run outs - not bowler's wickets
-                            ])
-                        })
-                        
-                        batter_name = d.get('batter')
-                        bowler_name = d.get('bowler')
-                        is_impact_batter = 1 if batter_name in match_impact_players else 0
-                        is_impact_bowler = 1 if bowler_name in match_impact_players else 0
+                    batter_name = d.get('batter')
+                    bowler_name = d.get('bowler')
+                    is_impact_batter = 1 if batter_name in match_impact_players else 0
+                    is_impact_bowler = 1 if bowler_name in match_impact_players else 0
+                    review_data = extract_review_data(d)
+                    if review_data['has_review']:
+                        drs_count += 1
 
-                        # Extract DRS data
-                        review_data = extract_review_data(d)
-                        if review_data['has_review']:
-                            drs_count += 1
+                    inning_rows.append({
+                        'match_id': match_id,
+                        'created': pd.to_datetime(date),
+                        'date': pd.to_datetime(date),
+                        'year': year,
+                        'teams': ' vs '.join(sorted(teams)),
+                        'innings': innings_num,
+                        'team': team,
+                        'bowling_team': bowling_team,
+                        'over': over_num,
+                        'batter': batter_name,
+                        'bowler': bowler_name,
+                        'runs.batter': d.get('runs', {}).get('batter', 0),
+                        'runs.extras': d.get('runs', {}).get('extras', 0),
+                        'runs.total': d.get('runs', {}).get('total', 0),
+                        'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
+                            'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
+                            'caught and bowled', 'handled the ball'
+                        ]),
+                        'team_wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') not in [
+                            'retired hurt', 'retired not out'
+                        ]),
+                        'wicket_kind': next((w.get('kind') for w in (d.get('wickets') or [])
+                                             if w.get('kind') not in ('retired hurt', 'retired not out')), None),
+                        'player_dismissed': next(
+                            (w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')), None
+                        ),
+                        'extras_type': ','.join([k for k in ['wides','noballs','byes','legbyes'] if k in extras]) or None,
+                        'is_valid_delivery': 1 if is_valid else 0,
+                        'no_balls': 1 if noball_flag else 0,
+                        'wides': extras.get('wides', 0),
+                        'byes': extras.get('byes', 0),
+                        'leg_byes': extras.get('legbyes', 0),
+                        'phase': None,
+                        'league': league,
+                        'event_stage': event_stage,
+                        'ball_float': ball_float,
+                        'is_impact_batter': is_impact_batter,
+                        'is_impact_bowler': is_impact_bowler,
+                        'winner': winner,
+                        'win_by_wickets': win_by_wickets,
+                        'win_by_runs': win_by_runs,
+                        **review_data
+                    })
 
-                        row = {
-                            'match_id': match_id,
-                            'created': pd.to_datetime(date),
-                            'date': pd.to_datetime(date),
-                            'year': year,
-                            'teams': ' vs '.join(sorted(teams)),
-                            'innings': innings_num,
-                            'team': team,
-                            'bowling_team': bowling_team,
-                            'over': over_num,
-                            'batter': batter_name,
-                            'bowler': bowler_name,
-                            'runs.batter': d.get('runs', {}).get('batter', 0),
-                            'runs.extras': d.get('runs', {}).get('extras', 0),
-                            'runs.total': d.get('runs', {}).get('total', 0),
-                            'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
-                                'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
-                                'caught and bowled', 'handled the ball'  # Excludes 'run out' and 'obstructing the field' - not bowler's wickets
-                            ]),
-                            # Actual dismissals only — excludes 'retired hurt' / 'retired not out' which are NOT dismissals
-                            'team_wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') not in [
-                                'retired hurt', 'retired not out'
-                            ]),
-                            'wicket_kind': next((w.get('kind') for w in (d.get('wickets') or [])
-                                                 if w.get('kind') not in ('retired hurt', 'retired not out')), None),  # First actual dismissal kind
-                            # player_dismissed: the player who was OUT on this delivery (any kind incl. run outs).
-                            # Captures non-striker run-outs correctly — player_out may differ from batter.
-                            'player_dismissed': next(
-                                (w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')),
-                                None
-                            ),
-                            'extras_type': ','.join([k for k in ['wides','noballs','byes','legbyes'] if k in extras]) or None,
-                            'is_valid_delivery': 1 if is_valid else 0,
-                            'no_balls': 1 if noball_flag else 0,
-                            'wides': extras.get('wides', 0),
-                            'byes': extras.get('byes', 0),
-                            'leg_byes': extras.get('legbyes', 0),
-                            'phase': None,
-                            'league': league,
-                            'event_stage': event_stage,  # Playoff stage (Eliminator, Qualifier, Final, etc.)
-                            'ball_float': ball_float,
-                            'is_impact_batter': is_impact_batter,
-                            'is_impact_bowler': is_impact_bowler,
-                            'winner': winner,
-                            'win_by_wickets': win_by_wickets,
-                            'win_by_runs': win_by_runs,
-                            # DRS fields
-                            **review_data
-                        }
-                        rows.append(row)
+                    if is_valid:
+                        legal_balls_in_over += 1
 
-                        if is_valid:
-                            legal_balls_in_over += 1
+            # Infer power surge if needed (local to this inning — no shared state)
+            if not pp_surge and inference_power_surge:
+                pp_mand_inf, pp_surge_inf = get_powerplay_phases(
+                    [], league, inference=True, innings_deliveries=inning_deliveries
+                )
+                if not pp_mand:
+                    pp_mand = pp_mand_inf
+                if pp_surge_inf:
+                    pp_surge = pp_surge_inf
 
-                if not pp_surge and inference_power_surge:
-                    pp_mand_inf, pp_surge_inf = get_powerplay_phases([], league, inference=True, innings_deliveries=inning_deliveries)
-                    if not pp_mand: pp_mand = pp_mand_inf
-                    if pp_surge_inf: pp_surge = pp_surge_inf
+            # Assign phase (done inside thread — fully local)
+            for r in inning_rows:
+                r['phase'] = assign_phase(r['ball_float'], pp_mand, pp_surge, league)
 
-                n = len(inning_deliveries)
-                if n > 0:
-                    for r in rows[-n:]:
-                        r['phase'] = assign_phase(r['ball_float'], pp_mand, pp_surge, league)
+            rows.extend(inning_rows)
 
-        except Exception as e:
-            logger.error(f"Error {file}: {e}")
+    except Exception as e:
+        logger.error(f"Error {file}: {e}")
 
-    if rows:
-        df = pd.DataFrame(rows)
+    return rows, drs_count
+
+
+def process_data_with_drs(inference_power_surge=True):
+    """Process all JSON files and extract DRS data from main, WT20I, and Afghanistan ODI directories."""
+    main_files = glob(os.path.join(JSON_DIR, "*.json"))
+    wt20i_files = glob(os.path.join(JSON_DIR_WT20I, "*.json"))
+    # Afghanistan ODI files have _espn.json suffix
+    afg_files = glob(os.path.join(JSON_DIR_AFG_ODI, "*.json"))
+    # All Men's ODI files (main ODI folder)
+    mens_odi_files = glob(os.path.join(JSON_DIR_MENS_ODI, "*.json"))
+    files = main_files + wt20i_files + afg_files + mens_odi_files
+    
+    # Sort files to prioritize *_espn.json (they contain DRS data) so we process them first
+
+    # Sort to prioritize *_espn.json (DRS data), then deduplicate by match_id
+    files = sorted(files, key=lambda x: (not x.endswith('_espn.json'), x))
+    seen_ids = set()
+    unique_files = []
+    for f in files:
+        mid = os.path.basename(f).split('.')[0].replace('_espn', '')
+        if mid not in seen_ids:
+            seen_ids.add(mid)
+            unique_files.append(f)
+
+    logger.info(
+        f"Processing {len(unique_files)} JSON files: "
+        f"{len(main_files)} main T20 + {len(wt20i_files)} WT20I + "
+        f"{len(afg_files)} Afghanistan ODI + {len(mens_odi_files)} Men's ODI"
+    )
+
+    all_rows = []
+    total_drs = 0
+    n_workers = min(8, (os.cpu_count() or 4))
+    args = [(f, inference_power_surge) for f in unique_files]
+
+    with ThreadPoolExecutor(max_workers=n_workers) as executor:
+        for rows, drs_count in executor.map(_process_single_file_drs, args):
+            all_rows.extend(rows)
+            total_drs += drs_count
+
+    if all_rows:
+        df = pd.DataFrame(all_rows)
         df['created'] = pd.to_datetime(df['created'])
-        
-        # Ensure numeric columns
-        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls','is_valid_delivery','wicket_count', 'is_impact_batter', 'is_impact_bowler', 'has_review']:
+        for c in ['runs.total','runs.batter','wides','byes','leg_byes','no_balls',
+                  'is_valid_delivery','wicket_count','is_impact_batter','is_impact_bowler','has_review']:
             if c not in df.columns:
                 df[c] = 0
-        
         df.to_parquet(DATA_DEST, index=False)
         logger.info(f"Saved: {DATA_DEST} ({len(df):,} rows)")
-        logger.info(f"Total DRS reviews extracted: {drs_count}")
+        logger.info(f"Total DRS reviews extracted: {total_drs}")
     else:
         logger.info("No rows processed.")
 

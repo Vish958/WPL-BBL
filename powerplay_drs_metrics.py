@@ -12,11 +12,17 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 22 June 2026")
+st.markdown("Last updated: 26 June 2026")
+st.markdown("*Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
 JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
+JSON_DIR_AFG_ODI = "Male_ODI_Data/odis_male_json/Afghanistan Games" # Afghanistan ODI JSON files
+JSON_DIR_MENS_ODI = "Male_ODI_Data/odis_male_json" # All Men's ODI JSON files
+
+# ODI leagues: powerplay is 10 overs; death starts at over 40
+ODI_LEAGUES_APP = {'MENS_ODI'}
 
 # =========================================
 # WOMEN'S T20 WORLD CUP CONSTANTS
@@ -67,7 +73,7 @@ def load_venue_data():
     
     venue_map = {}
     # Scan both the main data directory and the WT20I sub-directory
-    files = glob(os.path.join(JSON_DIR, "*.json")) + glob(os.path.join(JSON_DIR_WT20I, "*.json"))
+    files = glob(os.path.join(JSON_DIR, "*.json")) + glob(os.path.join(JSON_DIR_WT20I, "*.json")) + glob(os.path.join(JSON_DIR_AFG_ODI, "*.json")) + glob(os.path.join(JSON_DIR_MENS_ODI, "*.json"))
     
     for file in files:
         try:
@@ -83,7 +89,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=14): # Version 14: Fix teams col normalization + add Netherlands
+def load_data(path=DATA_SOURCE, _cache_version=18): # Version 18: remove redundant JSON venue scan; vectorized phase normalization
     try:
         df = pd.read_parquet(path)
         
@@ -118,33 +124,8 @@ def load_data(path=DATA_SOURCE, _cache_version=14): # Version 14: Fix teams col 
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
         
-        # Pre-compute venue mapping inside cache (avoids 1M lambda calls per rerun)
-        try:
-            import os
-            from glob import glob
-            import json
-            venue_s, city_s = {}, {}
-            # Scan both main data dir and WT20I sub-directory for venue resolution
-            files = (glob(os.path.join(JSON_DIR, "*.json")) +
-                     glob(os.path.join(JSON_DIR_WT20I, "*.json")))
-            for file in files:
-                try:
-                    with open(file, 'r', encoding='utf-8') as f:
-                        data = json.load(f)
-                    mid = os.path.basename(file).split('.')[0]
-                    venue_s[mid] = data.get('info', {}).get('venue', 'Unknown')
-                    city_s[mid] = data.get('info', {}).get('city', 'Unknown')
-                except Exception:
-                    continue
-            if venue_s:
-                match_ids_str = df['match_id'].astype(str)
-                df['venue'] = match_ids_str.map(venue_s).fillna('Unknown')
-                df['city'] = match_ids_str.map(city_s).fillna('Unknown')
-                # Re-categorize these new columns
-                df['venue'] = df['venue'].astype('category')
-                df['city'] = df['city'].astype('category')
-        except Exception:
-            pass  # venue mapping is optional, don't break data loading
+        # venue/city columns are populated by load_venue_data() called at startup.
+        # Removing the per-file JSON scan here cuts cold-start time significantly.
 
         # Normalize known player name spelling variants so they aggregate correctly.
         # Key = wrong/alternate spelling in JSON → Value = canonical name.
@@ -396,7 +377,7 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=11) # Version 11: event_stage fix
+df = load_data(_cache_version=18) # Version 18: fast load (no JSON re-scan)
 if df.empty:
     st.stop()
 
@@ -408,6 +389,16 @@ venue_map = load_venue_data()
 player_data_cache = load_player_data(_cache_version=9)
 if player_data_cache:
     st.sidebar.caption(f" Player mappings: {len(player_data_cache)} entries loaded")
+
+with st.sidebar.expander("ℹ️ Data Coverage & Match Counts", expanded=False):
+    st.markdown("""
+    **Data Source:** Cricsheet open data.
+    
+    **Match Coverage Note:**
+    Although all participating teams (including Associate nations) are represented in the app, some individual historical or minor matches may be missing. 
+    
+    This is because Cricsheet generates dataset files from **detailed ball-by-ball commentary logs**. Gaps exist for matches (especially older or less-covered fixtures) where full live commentary was not recorded or digitized.
+    """)
 
 # Sidebar Filters
 st.sidebar.header("Filters")
@@ -545,9 +536,10 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
                   bowling team in bowling mode)
     """
     is_bbl = df_['league'].astype(str).str.contains('BBL|Big Bash', case=False, na=False)
+    is_odi = df_['league'].astype(str).isin(ODI_LEAGUES_APP)
     pp = df_[
         (df_['phase'] == 'Powerplay') & 
-        ((is_bbl & (df_['over'] < 4)) | (~is_bbl & (df_['over'] < 6)))
+        ((is_bbl & (df_['over'] < 4)) | (is_odi & (df_['over'] < 10)) | (~is_bbl & ~is_odi & (df_['over'] < 6)))
     ].copy()
     if pp.empty:
         return pd.DataFrame(), pd.DataFrame()
@@ -716,8 +708,8 @@ def drs_success_rate(df_):
     # Calculate success rate by team
     stats = reviews.groupby(['review_by_team', 'year'], observed=True).agg(
         Total_Reviews=('has_review', 'count'),
-        Successful=('review_decision', lambda x: (x == 'struck down').sum()),
-        Failed=('review_decision', lambda x: (x == 'upheld').sum()),
+        Successful=('review_decision', lambda x: (x == 'upheld').sum()),
+        Failed=('review_decision', lambda x: (x == 'struck down').sum()),
         Umpires_Call=('umpires_call', lambda x: (x == True).sum() if 'umpires_call' in reviews.columns else 0)
     ).reset_index()
     
@@ -740,7 +732,7 @@ def drs_reviews_lost(df_):
         return pd.DataFrame()
     
     # Only count failed reviews
-    failed = reviews[reviews['review_decision'] == 'upheld']
+    failed = reviews[reviews['review_decision'] == 'struck down']
     
     stats = failed.groupby(['review_by_team', 'year', 'match_id', 'teams'], observed=True).size().reset_index(name='Reviews_Lost')
     stats = stats.rename(columns={'review_by_team': 'Team', 'year': 'Season', 'teams': 'Match'})
@@ -2273,8 +2265,8 @@ if metric_choice == "Powerplay Score Tracker":
 
                 # Attach date from match_stats for context
                 date_map = match_stats[['match_id', 'Date']].drop_duplicates().set_index('match_id')['Date']
-                opp_map = match_stats.groupby('match_id')['Opponent'].first()
-                team_map = match_stats.groupby('match_id')['Team'].first()
+                opp_map = match_stats.groupby('match_id', observed=True)['Opponent'].first()
+                team_map = match_stats.groupby('match_id', observed=True)['Team'].first()
                 match_agg_unique['Date'] = match_agg_unique['match_id'].map(date_map)
                 match_agg_unique['Team_A'] = match_agg_unique['match_id'].map(team_map)
                 match_agg_unique['Team_B'] = match_agg_unique['match_id'].map(opp_map)
@@ -2822,8 +2814,8 @@ elif metric_choice == "DRS Analysis":
                 else:
                     stats = filtered_reviews.groupby(['review_by_team', 'year'], observed=True).agg(
                         Total_Reviews=('has_review', 'count'),
-                        Successful=('review_decision', lambda x: (x == 'struck down').sum()),
-                        Failed=('review_decision', lambda x: (x == 'upheld').sum()),
+                        Successful=('review_decision', lambda x: (x == 'upheld').sum()),
+                        Failed=('review_decision', lambda x: (x == 'struck down').sum()),
                         Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                     ).reset_index()
                     
@@ -2846,8 +2838,8 @@ elif metric_choice == "DRS Analysis":
                 # Overall summary
                 role_summary = reviews.groupby(['review_type_role', 'year'], observed=True).agg(
                     Total_Reviews=('has_review', 'count'),
-                    Successful=('review_decision', lambda x: (x == 'struck down').sum()),
-                    Failed=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Successful=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Failed=('review_decision', lambda x: (x == 'struck down').sum()),
                     Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                 ).reset_index()
                 role_summary['Success_Rate'] = (role_summary['Successful'] / role_summary['Total_Reviews'] * 100).round(1)
@@ -2870,7 +2862,7 @@ elif metric_choice == "DRS Analysis":
                 # Aggregate across seasons for pie chart
                 role_agg = reviews.groupby('review_type_role').agg(
                     Total=('has_review', 'count'),
-                    Successful=('review_decision', lambda x: (x == 'struck down').sum())
+                    Successful=('review_decision', lambda x: (x == 'upheld').sum())
                 ).reset_index()
                 role_agg['Success_Rate'] = (role_agg['Successful'] / role_agg['Total'] * 100).round(1)
                 
@@ -2896,7 +2888,7 @@ elif metric_choice == "DRS Analysis":
                 
                 team_role = reviews.groupby(['review_by_team', 'review_type_role'], observed=True).agg(
                     Reviews=('has_review', 'count'),
-                    Successful=('review_decision', lambda x: (x == 'struck down').sum()),
+                    Successful=('review_decision', lambda x: (x == 'upheld').sum()),
                     Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                 ).reset_index()
                 team_role['Success_Rate'] = (team_role['Successful'] / team_role['Reviews'] * 100).round(1)
@@ -2945,8 +2937,8 @@ elif metric_choice == "DRS Analysis":
                 # Group by match and reviewing team
                 match_team_stats = reviews.groupby(['match_id', 'teams', 'Date', 'review_by_team'], observed=True).agg(
                     Total_Reviews=('has_review', 'count'),
-                    Successful=('review_decision', lambda x: (x == 'struck down').sum()),
-                    Unsuccessful=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Successful=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Unsuccessful=('review_decision', lambda x: (x == 'struck down').sum()),
                     Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                 ).reset_index()
                 
@@ -2984,8 +2976,8 @@ elif metric_choice == "DRS Analysis":
                 venue_stats = reviews_with_venue.groupby('Venue', observed=True).agg(
                     Total_Reviews=('has_review', 'count'),
                     Matches_With_Reviews=('match_id', 'nunique'),
-                    Overturned=('review_decision', lambda x: (x == 'struck down').sum()),
-                    Upheld=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Overturned=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Upheld=('review_decision', lambda x: (x == 'struck down').sum()),
                     Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                 ).reset_index()
                 
@@ -3014,8 +3006,8 @@ elif metric_choice == "DRS Analysis":
                 
                 venue_team_stats = reviews_with_venue.groupby(['Venue', 'review_by_team'], observed=True).agg(
                     Reviews=('has_review', 'count'),
-                    Successful=('review_decision', lambda x: (x == 'struck down').sum()),
-                    Failed=('review_decision', lambda x: (x == 'upheld').sum())
+                    Successful=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Failed=('review_decision', lambda x: (x == 'struck down').sum())
                 ).reset_index()
                 venue_team_stats['Success_Rate'] = (venue_team_stats['Successful'] / venue_team_stats['Reviews'] * 100).round(1)
                 venue_team_stats = venue_team_stats.rename(columns={'review_by_team': 'Team'})
@@ -3038,8 +3030,8 @@ elif metric_choice == "DRS Analysis":
                 else:
                     umpire_stats = reviews.groupby('review_umpire', observed=True).agg(
                         Total_Reviews=('has_review', 'count'),
-                        Overturned=('review_decision', lambda x: (x == 'struck down').sum()),
-                        Upheld=('review_decision', lambda x: (x == 'upheld').sum()),
+                        Overturned=('review_decision', lambda x: (x == 'upheld').sum()),
+                        Upheld=('review_decision', lambda x: (x == 'struck down').sum()),
                         Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                     ).reset_index()
                     
@@ -3070,8 +3062,8 @@ elif metric_choice == "DRS Analysis":
                 # Reviews are typically taken by bowling team, so we can analyze by bowler
                 player_stats = reviews.groupby(['bowler', 'review_by_team'], observed=True).agg(
                     Total_Reviews=('has_review', 'count'),
-                    Successful=('review_decision', lambda x: (x == 'struck down').sum()),
-                    Failed=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Successful=('review_decision', lambda x: (x == 'upheld').sum()),
+                    Failed=('review_decision', lambda x: (x == 'struck down').sum()),
                     Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum())
                 ).reset_index()
                 
@@ -3097,8 +3089,8 @@ elif metric_choice == "DRS Analysis":
                 else:
                     batter_stats = reviews.groupby('review_batter', observed=True).agg(
                         Total_Reviews=('has_review', 'count'),
-                        Overturned=('review_decision', lambda x: (x == 'struck down').sum()),
-                        Upheld=('review_decision', lambda x: (x == 'upheld').sum()),
+                        Overturned=('review_decision', lambda x: (x == 'upheld').sum()),
+                        Upheld=('review_decision', lambda x: (x == 'struck down').sum()),
                         Umpires_Call=('umpires_call', lambda x: x.sum() if pd.api.types.is_bool_dtype(x) else (x == True).sum()),
                         Review_Types=('review_type', lambda x: ', '.join(x.dropna().unique()))
                     ).reset_index()
@@ -5546,7 +5538,17 @@ elif metric_choice == "SR Comparison (Year-wise)":
         sr_show_runs = st.checkbox("Show Runs", value=True, key="sr_show_runs",
                                    help="Include player Runs column in the table and chart hover.")
 
-    sr_source_df = fdf_no_team.copy() if aggregate_across_teams else fdf.copy()
+    # SR Comparison: when aggregating across teams, use fdf (which already has league/year filters)
+    # but strip the batting-team filter so bowled-to data is included. Only filter by
+    # selected_teams if the user explicitly deselected "Aggregate across teams".
+    if aggregate_across_teams:
+        # Drop team filter but keep league/year/match-range scope by using fdf without team filter
+        sr_source_df = fdf_no_team.copy()
+        # If teams are selected, still filter to only matches involving those teams
+        if selected_teams:
+            sr_source_df = sr_source_df[sr_source_df['team'].isin(selected_teams)]
+    else:
+        sr_source_df = fdf.copy()
     sr_table = yearwise_batter_sr_comparison(
         sr_source_df,
         aggregate_across_teams=aggregate_across_teams,

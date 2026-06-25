@@ -53,8 +53,8 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 22 June 2026")
-st.markdown("Fresh Matches Will Appear as per Data Availability from Cricsheet")
+st.markdown("Last updated: 26 June 2026")
+st.markdown("Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).")
 st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
 
@@ -132,7 +132,11 @@ LEAGUE_START_DATES = {
     'IPL':  '2008-04-18',
     'MLC':  '2023-07-13',
     'WT20I': '2000-01-01',  # Women's T20 Internationals
+    'MENS_ODI': '2002-01-01',  # All Men's ODI matches
 }
+
+# ODI leagues — powerplay is 10 overs; death starts at over 40
+ODI_LEAGUES_APP = {'MENS_ODI'}
 
 st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in LEAGUE_START_DATES.items()]))
 
@@ -140,7 +144,7 @@ st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in
 DEFAULT_COMPACT_HEIGHT = 250
 
 @st.cache_data
-def load_data(path=DATA_SOURCE, _v=3):  # v3: fix teams col normalization + add Netherlands
+def load_data(path=DATA_SOURCE, _v=8):  # v8: fix Categorical+int year crash
     try:
         # Load data
         df = pd.read_parquet(path)
@@ -150,6 +154,8 @@ def load_data(path=DATA_SOURCE, _v=3):  # v3: fix teams col normalization + add 
             df['date'] = pd.to_datetime(df['date'])
         
         if 'league' in df.columns and 'date' in df.columns and 'year' in df.columns:
+            # Defensive: force year to int before arithmetic (parquet may store it as Categorical)
+            df['year'] = pd.to_numeric(df['year'], errors='coerce').fillna(0).astype(int)
             # SA20: If Month >= 10, shift to next year (e.g. Dec 2025 -> 2026)
             mask_sa20 = (df['league'] == 'SA20') & (df['date'].dt.month >= 10)
             df.loc[mask_sa20, 'year'] = df.loc[mask_sa20, 'year'] + 1
@@ -182,8 +188,12 @@ def load_data(path=DATA_SOURCE, _v=3):  # v3: fix teams col normalization + add 
 
         # --- Memory Optimization ---
         if 'phase' in df.columns:
-            df['phase'] = df['phase'].astype(str).str.strip().apply(lambda x: x.title().replace('Power Play','Powerplay'))
-            df['phase'] = df['phase'].replace({'Powersurge':'Power Surge','Power Surge':'Power Surge','Powerplay':'Powerplay'})
+            df['phase'] = (
+                df['phase'].astype(str).str.strip()
+                .str.title()
+                .str.replace('Power Play', 'Powerplay', regex=False)
+                .replace({'Powersurge': 'Power Surge'})
+            )
         
         cat_cols = ['league', 'year', 'phase', 'team', 'batter', 'bowler', 'non_striker', 'teams', 'venue', 'outcome', 'match_result', 'winner', 'match_id']
         for col in df.columns:
@@ -236,9 +246,10 @@ def load_playing_xi(path=PLAYING_XI_SOURCE):
     """Load playing XI lookup table and normalize team names."""
     try:
         xi = pd.read_parquet(path)
-        xi['team'] = xi['team'].replace(TEAM_ALIASES)
+        # Cast to str before replace to avoid FutureWarning on CategoricalDtype columns
+        xi['team'] = xi['team'].astype(str).replace(TEAM_ALIASES)
         if 'winner' in xi.columns:
-            xi['winner'] = xi['winner'].replace(TEAM_ALIASES)
+            xi['winner'] = xi['winner'].astype(str).replace(TEAM_ALIASES)
         return xi
     except Exception as e:
         print(f"!!! Error loading playing_xi: {e}")
@@ -338,6 +349,17 @@ with st.sidebar.expander("ℹ️ Phase Definitions", expanded=False):
     - **Middle**: Overs 5-16 (excl. Surge)
     - **Death**: Overs 17-20
     """)
+
+with st.sidebar.expander("ℹ️ Data Coverage & Match Counts", expanded=False):
+    st.markdown("""
+    **Data Source:** Cricsheet open data.
+    
+    **Match Coverage Note:**
+    Although all participating teams (including Associate nations) are represented in the app, some individual historical or minor matches may be missing. 
+    
+    This is because Cricsheet generates dataset files from **detailed ball-by-ball commentary logs**. Gaps exist for matches (especially older or less-covered fixtures) where full live commentary was not recorded or digitized.
+    """)
+
 # --- 2c. Team Filter ---
 st.sidebar.markdown("---")
 _team_col = 'team' if 'team' in p_df.columns else None
