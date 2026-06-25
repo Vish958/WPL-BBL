@@ -114,11 +114,6 @@ st.markdown("""
 DATA_SOURCE = "t20_data.parquet"
 PLAYING_XI_SOURCE = "playing_xi.parquet"
 
-import os
-st.write(f"Diagnostic - CWD: {os.getcwd()}")
-st.write(f"Diagnostic - Files: {os.listdir('.')}")
-st.write(f"Diagnostic - File exists: {os.path.exists(DATA_SOURCE)}")
-
 # Franchise aliases — normalize renamed teams to a single name
 TEAM_ALIASES = {
     'Royal Challengers Bengaluru': 'Royal Challengers Bangalore',
