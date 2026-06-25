@@ -1,0 +1,13 @@
+# Ignore raw data folders
+data/
+Male_ODI_Data/
+
+# Ignore large generated data files
+*.parquet
+*.xlsx
+*.db
+
+# Ignore Python / OS cache and envs
+.venv/
+__pycache__/
+.DS_Store
