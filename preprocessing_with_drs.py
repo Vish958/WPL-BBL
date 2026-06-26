@@ -364,6 +364,11 @@ def process_data_with_drs(inference_power_surge=True):
                   'is_valid_delivery','wicket_count','is_impact_batter','is_impact_bowler','has_review']:
             if c not in df.columns:
                 df[c] = 0
+        # Optimize types to save ~90% memory at runtime
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].astype('category')
+        for col in df.select_dtypes(include=['int64']).columns:
+            df[col] = pd.to_numeric(df[col], downcast='integer')
         df.to_parquet(DATA_DEST, index=False)
         logger.info(f"Saved: {DATA_DEST} ({len(df):,} rows)")
         logger.info(f"Total DRS reviews extracted: {total_drs}")

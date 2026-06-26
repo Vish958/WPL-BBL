@@ -422,6 +422,11 @@ def process_data(inference_power_surge=True):
                   'is_batter_out','is_non_striker_out','is_super_over']:
             if c not in df.columns:
                 df[c] = 0
+        # Optimize types to save ~90% memory at runtime
+        for col in df.select_dtypes(include=['object']).columns:
+            df[col] = df[col].astype('category')
+        for col in df.select_dtypes(include=['int64']).columns:
+            df[col] = pd.to_numeric(df[col], downcast='integer')
         df.to_parquet(DATA_DEST, index=False)
         logger.info(f"Saved: {DATA_DEST} ({len(df):,} rows)")
     else:
@@ -431,6 +436,11 @@ def process_data(inference_power_surge=True):
         xi_df = pd.DataFrame(all_xi_rows)
         xi_df['date'] = pd.to_datetime(xi_df['date'])
         xi_dest = os.path.join(os.path.dirname(DATA_DEST), 'playing_xi.parquet')
+        # Optimize types to save ~90% memory at runtime
+        for col in xi_df.select_dtypes(include=['object']).columns:
+            xi_df[col] = xi_df[col].astype('category')
+        for col in xi_df.select_dtypes(include=['int64']).columns:
+            xi_df[col] = pd.to_numeric(xi_df[col], downcast='integer')
         xi_df.to_parquet(xi_dest, index=False)
         logger.info(f"Saved: {xi_dest} ({len(xi_df):,} rows, {xi_df['match_id'].nunique():,} matches)")
 
