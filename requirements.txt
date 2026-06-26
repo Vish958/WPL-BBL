@@ -5,3 +5,4 @@ numpy
 python-dateutil
 psutil
 matplotlib
+openpyxl
