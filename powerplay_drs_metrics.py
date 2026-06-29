@@ -12,7 +12,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 27 June 2026")
+st.markdown("Last updated: 29 June 2026")
 st.markdown("*Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
