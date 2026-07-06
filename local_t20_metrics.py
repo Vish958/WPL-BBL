@@ -6,19 +6,24 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import plotly.express as px
+import os
 from datetime import date
 
 st.set_page_config(page_title="Local T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# Local T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 03 July 2026")
-st.markdown("*Matches will appear as per data availability from local scraper JSON files (UPT20: 2023-2025, DPL: 2024-2025).*")
+st.markdown("Last updated: 06 July 2026")
+st.markdown("*Matches will appear as per data availability from local scraper JSON files (UPT20: 2023-2025, DPL: 2024-2025, MPL: 2026, JPL: 2026, Maharaja T20: 2026, TG20: 2026).*")
 
 DATA_SOURCE = "local_t20_data_with_drs.parquet"
 JSON_DIR = "/Users/vishwesh/Downloads/CricketInsights-main/CricketInsights-1/upt20_scraper/data/cricsheet"
 JSON_DIR_WT20I = "/Users/vishwesh/Downloads/CricketInsights-main/CricketInsights-1/upt20_cricbuzz_scraper/data/cricsheet"
 JSON_DIR_DPL = "/Users/vishwesh/Downloads/CricketInsights-main/CricketInsights-1/dpl_scraper/data/cricsheet"
+JSON_DIR_MPL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/MPL 2026 ")
+JSON_DIR_JPL = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/JPL 2026")
+JSON_DIR_MAHARAJA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/Maharaja T20 2026")
+JSON_DIR_TG20 = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data/TG20 2026")
 
 # No ODI leagues or custom international/franchise leagues
 ODI_LEAGUES_APP = set()
@@ -75,7 +80,11 @@ def load_venue_data():
     files = (
         glob(os.path.join(JSON_DIR, "**/*.json"), recursive=True) +
         glob(os.path.join(JSON_DIR_WT20I, "**/*.json"), recursive=True) +
-        glob(os.path.join(JSON_DIR_DPL, "**/*.json"), recursive=True)
+        glob(os.path.join(JSON_DIR_DPL, "**/*.json"), recursive=True) +
+        glob(os.path.join(JSON_DIR_MPL, "**/*.json"), recursive=True) +
+        glob(os.path.join(JSON_DIR_JPL, "**/*.json"), recursive=True) +
+        glob(os.path.join(JSON_DIR_MAHARAJA, "**/*.json"), recursive=True) +
+        glob(os.path.join(JSON_DIR_TG20, "**/*.json"), recursive=True)
     )
 
     for file in files:
@@ -93,7 +102,7 @@ def load_venue_data():
 
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: fix venue_data file size guard; regenerate parquet with clean match_id/date handling
+def load_data(path=DATA_SOURCE, _cache_version=22): # Version 22: add JPL, Maharaja, and TG20 2026 data
     try:
         df = pd.read_parquet(path)
         
@@ -142,6 +151,7 @@ def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: fix venue_data
             'NR Sciver': 'NR Sciver-Brunt',
             'Natalie Ruth Sciver-Brunt': 'NR Sciver-Brunt',
             'Nat Sciver-Brunt': 'NR Sciver-Brunt',
+            'Pandal': 'P Mandal'
         }
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:

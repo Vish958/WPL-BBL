@@ -19,11 +19,19 @@ DATA_DEST = "local_t20_data_with_drs.parquet"
 LEAGUE_START_DATES = {
     'UPT20': '2023-01-01',
     'DPL': '2024-01-01',
+    'MPL': '2026-01-01',
+    'JPL': '2026-01-01',
+    'Maharaja T20': '2026-01-01',
+    'TG20': '2026-01-01',
 }
 
 LEAGUE_PP_DEFAULT = {
     'UPT20': (0.0, 5 + 5/6),
     'DPL': (0.0, 5 + 5/6),
+    'MPL': (0.0, 5 + 5/6),
+    'JPL': (0.0, 5 + 5/6),
+    'Maharaja T20': (0.0, 5 + 5/6),
+    'TG20': (0.0, 5 + 5/6),
 }
 
 # No ODI format or BBL power surge in local leagues
@@ -53,6 +61,14 @@ def detect_league(event_name, filepath):
         return 'DPL'
     if 'uttar pradesh' in e or 'upt20' in e or 'upt20_scraper' in fp or 'upt20_cricbuzz_scraper' in fp:
         return 'UPT20'
+    if 'madhya pradesh' in e or 'mpl' in e or 'mpl 2026' in fp or 'mpl_scraper' in fp:
+        return 'MPL'
+    if 'jharkhand premier' in e or 'jpl' in e or 'jpl 2026' in fp:
+        return 'JPL'
+    if 'maharaja' in e or 'maharaja t20' in e or 'maharaja t20 2026' in fp:
+        return 'Maharaja T20'
+    if 'tg20' in e or 'tg20 2026' in fp:
+        return 'TG20'
     return 'OTHER'
 
 def get_powerplay_phases(powerplays: List[dict], league: str, inference=False, innings_deliveries=None):
@@ -313,7 +329,7 @@ def _process_single_file_drs(args):
     return rows, drs_count
 
 def process_local_t20():
-    """Process all JSON files for UPT20 and DPL."""
+    """Process all JSON files for UPT20, DPL, MPL, JPL, Maharaja T20, and TG20."""
     upt20_2023_files = glob(os.path.join(SCRAPER_BASE_DIR, "upt20_scraper/data/cricsheet/2023/*.json"))
     upt20_2024_files = glob(os.path.join(SCRAPER_BASE_DIR, "upt20_scraper/data/cricsheet/2024/*.json"))
     upt20_2025_files = glob(os.path.join(SCRAPER_BASE_DIR, "upt20_cricbuzz_scraper/data/cricsheet/2025/*.json"))
@@ -321,7 +337,17 @@ def process_local_t20():
     dpl_2024_files = glob(os.path.join(SCRAPER_BASE_DIR, "dpl_scraper/data/cricsheet/2024/*.json"))
     dpl_2025_files = glob(os.path.join(SCRAPER_BASE_DIR, "dpl_scraper/data/cricsheet/2025/*.json"))
     
-    files = upt20_2023_files + upt20_2024_files + upt20_2025_files + dpl_2024_files + dpl_2025_files
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    mpl_2026_files = glob(os.path.join(current_dir, "data", "MPL 2026 ", "*.json"))
+    jpl_2026_files = glob(os.path.join(current_dir, "data", "JPL 2026", "*.json"))
+    maharaja_2026_files = glob(os.path.join(current_dir, "data", "Maharaja T20 2026", "*.json"))
+    tg20_2026_files = glob(os.path.join(current_dir, "data", "TG20 2026", "*.json"))
+    
+    files = (
+        upt20_2023_files + upt20_2024_files + upt20_2025_files +
+        dpl_2024_files + dpl_2025_files +
+        mpl_2026_files + jpl_2026_files + maharaja_2026_files + tg20_2026_files
+    )
     
     logger.info(f"Total files found in scraper directories: {len(files)}")
     
