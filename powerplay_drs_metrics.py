@@ -485,6 +485,8 @@ fdf_no_team = fdf
 
 # Team filter (after league/year filtering)
 teams_available = sorted(fdf['team'].dropna().unique())
+if full_members_only:
+    teams_available = [t for t in teams_available if t in FULL_MEMBERS]
 selected_teams = st.sidebar.multiselect("Team", teams_available)
 if selected_teams:
     fdf = fdf[fdf['team'].isin(selected_teams)]

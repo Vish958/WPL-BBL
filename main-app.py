@@ -387,6 +387,13 @@ if _team_col:
     _teams_bat = p_df[_team_col].dropna().astype(str).unique().tolist()
     _teams_bowl = p_df[_bowling_col].dropna().astype(str).unique().tolist() if _bowling_col else []
     _all_teams = sorted(set(_teams_bat + _teams_bowl) - {'nan', 'None', ''})
+    if st.session_state.get('full_members_only'):
+        _FM = {
+            'India', 'England', 'Australia', 'New Zealand', 'South Africa',
+            'Pakistan', 'West Indies', 'Bangladesh', 'Sri Lanka', 'Afghanistan',
+            'Ireland', 'Zimbabwe'
+        }
+        _all_teams = [t for t in _all_teams if t in _FM]
     sel_teams = st.sidebar.multiselect(
         "Team",
         _all_teams,
