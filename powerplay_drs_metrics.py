@@ -147,7 +147,7 @@ def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: MENS_T20I data
 
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:
-                df[col] = df[col].astype(str).replace(_NAME_FIX)
+                df[col] = df[col].astype(str).map(lambda x: _NAME_FIX.get(x, x))
                 # Re-apply category dtype if applicable
                 if df[col].nunique() < len(df) * 0.5:
                     df[col] = df[col].astype('category')
