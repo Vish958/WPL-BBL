@@ -13,7 +13,19 @@ JSON_DIR = "/Users/vishwesh/Documents/WPL&BBL/data"  # Change if needed
 JSON_DIR_WT20I = "/Users/vishwesh/Documents/WPL&BBL/data/t20i_female_json"  # Women's T20I JSON files
 JSON_DIR_AFG_ODI = "/Users/vishwesh/Documents/WPL&BBL/Male_ODI_Data/odis_male_json/Afghanistan Games"  # Afghanistan ODI files
 JSON_DIR_MENS_ODI = "/Users/vishwesh/Documents/WPL&BBL/Male_ODI_Data/odis_male_json"  # All Men's ODI files
+JSON_DIR_MENS_T20I = "/Users/vishwesh/Documents/WPL&BBL/Male T20I "  # All Men's T20I files
 DATA_DEST = "t20_data.parquet"
+
+# Load player name mapping dictionary
+NAME_MAP = {}
+mapping_path = "/Users/vishwesh/Documents/WPL&BBL/player_name_map.json"
+if os.path.exists(mapping_path):
+    try:
+        with open(mapping_path, 'r', encoding='utf-8') as f:
+            NAME_MAP = json.load(f)
+        logger.info(f"Loaded {len(NAME_MAP)} player name mappings from {mapping_path}")
+    except Exception as e:
+        logger.error(f"Error loading player_name_map.json: {e}")
 
 LEAGUE_START_DATES = {
     'WBBL': '2020-10-25', 'MBBL': '2020-12-10',
@@ -21,6 +33,7 @@ LEAGUE_START_DATES = {
     'MLC': '2023-07-13',
     'WT20I': '2000-01-01',  # Women's T20 Internationals — include all dates
     'MENS_ODI': '2002-01-01',  # All Men's ODI matches
+    'MENS_T20I': '2020-01-01',  # Men's T20 Internationals from Jan 1 2020
 }
 
 LEAGUE_PP_DEFAULT = {
@@ -28,6 +41,7 @@ LEAGUE_PP_DEFAULT = {
     'WPL': (0.0, 5 + 5/6), 'SA20': (0.0, 5 + 5/6),
     'WT20I': (0.0, 5 + 5/6),  # Women's T20I: standard 6-over powerplay
     'MENS_ODI': (0.0, 9 + 5/6),  # ODI: mandatory 10-over powerplay
+    'MENS_T20I': (0.0, 5 + 5/6),  # Men's T20I: standard 6-over powerplay
 }
 
 # Leagues that use ODI (50-over) format — death starts at over 40
@@ -60,6 +74,8 @@ def detect_league(event_name, gender, match_type='T20', teams=None):
     if match_type == 'ODI' and gender == 'male': return 'MENS_ODI'
     # Women's T20 Internationals: any female T20 that isn't a known franchise league
     if gender == 'female': return 'WT20I'
+    # Men's T20 Internationals: any male T20 that isn't a known franchise league
+    if match_type == 'T20' and gender == 'male': return 'MENS_T20I'
     return 'OTHER'
 
 # Leagues that have Power Surge (BBL only)
@@ -201,9 +217,9 @@ def get_impact_players_from_match(json_data):
     for inning in json_data.get('innings', []):
         for over in inning.get('overs', []):
             for delivery in over.get('deliveries', []):
-                if delivery.get('batter'):      delivery_names.add(delivery['batter'])
-                if delivery.get('bowler'):      delivery_names.add(delivery['bowler'])
-                if delivery.get('non_striker'): delivery_names.add(delivery['non_striker'])
+                if delivery.get('batter'):      delivery_names.add(NAME_MAP.get(delivery['batter'], delivery['batter']))
+                if delivery.get('bowler'):      delivery_names.add(NAME_MAP.get(delivery['bowler'], delivery['bowler']))
+                if delivery.get('non_striker'): delivery_names.add(NAME_MAP.get(delivery['non_striker'], delivery['non_striker']))
 
     # Step 2: collect replacement names and resolve each one
     impact_names: set = set()
@@ -229,7 +245,13 @@ def _process_single_file(args):
 
         match_type = data.get('info', {}).get('match_type', '')
         if match_type not in ('T20', 'ODI'):
-            return rows, xi_rows
+            return rows, xi_rows, {
+                'match_id': match_id,
+                'file': os.path.basename(file),
+                'league': 'N/A',
+                'date': 'N/A',
+                'reason': f"Skip: Unsupported match type ({match_type})"
+            }
 
         info = data.get('info', {})
         date = pd.to_datetime(info.get('dates', [None])[0]).date()
@@ -240,9 +262,21 @@ def _process_single_file(args):
         league = detect_league(event, gender, match_type=match_type, teams=teams)
 
         if league in LEAGUE_START_DATES and date < pd.to_datetime(LEAGUE_START_DATES[league]).date():
-            return rows, xi_rows
+            return rows, xi_rows, {
+                'match_id': match_id,
+                'file': os.path.basename(file),
+                'league': league,
+                'date': str(date),
+                'reason': f"Skip: Before League Start Date ({LEAGUE_START_DATES[league]})"
+            }
         if league not in LEAGUE_START_DATES and year < 2020:
-            return rows, xi_rows
+            return rows, xi_rows, {
+                'match_id': match_id,
+                'file': os.path.basename(file),
+                'league': league,
+                'date': str(date),
+                'reason': "Skip: Before 2020 (other leagues)"
+            }
 
         match_impact_players = get_impact_players_from_match(data)
         outcome = info.get('outcome', {})
@@ -265,8 +299,9 @@ def _process_single_file(args):
         players_dict = info.get('players', {})
         for team_name, player_list in players_dict.items():
             for player_name in player_list:
+                mapped_player = NAME_MAP.get(player_name, player_name)
                 xi_rows.append({
-                    'match_id': match_id, 'player': player_name, 'team': team_name,
+                    'match_id': match_id, 'player': mapped_player, 'team': team_name,
                     'league': league, 'year': year, 'date': pd.to_datetime(date),
                     'winner': winner, 'event_stage': event_stage,
                     'teams': ' vs '.join(sorted(teams)),
@@ -296,11 +331,22 @@ def _process_single_file(args):
                     is_valid = not (wides_flag or noball_flag)
                     ball_float = over_num + (legal_balls_in_over / 6.0)
 
+                    raw_batter = d.get('batter')
+                    raw_bowler = d.get('bowler')
+                    raw_non_striker = d.get('non_striker')
+
+                    batter_name = NAME_MAP.get(raw_batter, raw_batter)
+                    bowler_name = NAME_MAP.get(raw_bowler, raw_bowler)
+                    non_striker_name = NAME_MAP.get(raw_non_striker, raw_non_striker)
+
+                    raw_player_out = next((w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')), None)
+                    player_out_name = NAME_MAP.get(raw_player_out, raw_player_out) if raw_player_out else None
+
                     inning_deliveries.append({
                         'over': over_num, 'ball_float': ball_float,
                         'runs.total': d.get('runs', {}).get('total', 0),
                         'is_valid_delivery': 1 if is_valid else 0,
-                        'batter': d.get('batter'), 'bowler': d.get('bowler'),
+                        'batter': batter_name, 'bowler': bowler_name,
                         'wides': extras.get('wides', 0),
                         'no_balls': extras.get('noballs', extras.get('no_ball', extras.get('noball', 0))),
                         'byes': extras.get('byes', 0), 'legbyes': extras.get('legbyes', 0),
@@ -309,8 +355,6 @@ def _process_single_file(args):
                         ])
                     })
 
-                    batter_name = d.get('batter')
-                    bowler_name = d.get('bowler')
                     is_impact_batter = 1 if batter_name in match_impact_players else 0
                     is_impact_bowler = 1 if bowler_name in match_impact_players else 0
 
@@ -327,7 +371,7 @@ def _process_single_file(args):
                         'bowling_team': bowling_team,
                         'over': over_num,
                         'batter': batter_name,
-                        'non_striker': d.get('non_striker'),
+                        'non_striker': non_striker_name,
                         'bowler': bowler_name,
                         'runs.batter': d.get('runs', {}).get('batter', 0),
                         'runs.extras': d.get('runs', {}).get('extras', 0),
@@ -346,9 +390,9 @@ def _process_single_file(args):
                         'ball_float': ball_float,
                         'is_impact_batter': is_impact_batter,
                         'is_impact_bowler': is_impact_bowler,
-                        'is_batter_out': 1 if any(w.get('player_out') == batter_name for w in (d.get('wickets') or [])) else 0,
-                        'is_non_striker_out': 1 if any(w.get('player_out') == d.get('non_striker') for w in (d.get('wickets') or [])) else 0,
-                        'player_out': next((w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')), None),
+                        'is_batter_out': 1 if player_out_name == batter_name else 0,
+                        'is_non_striker_out': 1 if player_out_name == non_striker_name else 0,
+                        'player_out': player_out_name,
                         'wicket_kind': next((w.get('kind') for w in (d.get('wickets') or []) if w.get('kind')), None),
                         'winner': winner,
                         'win_by_wickets': win_by_wickets,
@@ -376,8 +420,55 @@ def _process_single_file(args):
 
     except Exception as e:
         logger.error(f"Error {file}: {e}")
+        return [], [], {
+            'match_id': match_id,
+            'file': os.path.basename(file),
+            'league': 'Error',
+            'date': 'N/A',
+            'reason': f"Error: {str(e)}"
+        }
 
-    return rows, xi_rows
+    return rows, xi_rows, None
+def generate_excel_summary(df, exclusions, league_file_counts, report_name="match_ingestion_summary.xlsx"):
+    summary_rows = []
+    if not df.empty:
+        # Group by league and find count, min, max
+        grp = df.groupby('league', observed=False).agg(
+            total_matches=('match_id', 'nunique'),
+            first_match=('date', 'min'),
+            last_match=('date', 'max')
+        )
+        for league, row in grp.iterrows():
+            summary_rows.append({
+                'League': league,
+                'JSON Files Scanned': int(league_file_counts.get(league, row['total_matches'])),
+                'Successfully Imported': int(row['total_matches']),
+                'Earliest Match Date': str(row['first_match'].date()) if hasattr(row['first_match'], 'date') else str(row['first_match']),
+                'Latest Match Date': str(row['last_match'].date()) if hasattr(row['last_match'], 'date') else str(row['last_match'])
+            })
+    
+    summary_df = pd.DataFrame(summary_rows)
+    excluded_df = pd.DataFrame(exclusions)
+    if excluded_df.empty:
+        excluded_df = pd.DataFrame(columns=['Match ID', 'File', 'League', 'Date', 'Reason for Exclusion'])
+    else:
+        excluded_df = excluded_df.rename(columns={
+            'match_id': 'Match ID',
+            'file': 'File',
+            'league': 'League',
+            'date': 'Date',
+            'reason': 'Reason for Exclusion'
+        })
+        col_order = ['Match ID', 'File', 'League', 'Date', 'Reason for Exclusion']
+        excluded_df = excluded_df[[c for c in col_order if c in excluded_df.columns]]
+
+    try:
+        with pd.ExcelWriter(report_name, engine='openpyxl') as writer:
+            summary_df.to_excel(writer, sheet_name='League Summary', index=False)
+            excluded_df.to_excel(writer, sheet_name='Excluded Matches', index=False)
+        logger.info(f"Excel summary report written to: {report_name}")
+    except Exception as e:
+        logger.error(f"Failed to generate Excel report {report_name}: {e}")
 
 
 def process_data(inference_power_surge=True):
@@ -386,7 +477,8 @@ def process_data(inference_power_surge=True):
     wt20i_files = glob(os.path.join(JSON_DIR_WT20I, "*.json"))
     afg_files = glob(os.path.join(JSON_DIR_AFG_ODI, "*.json"))
     mens_odi_files = glob(os.path.join(JSON_DIR_MENS_ODI, "*.json"))
-    files = main_files + wt20i_files + afg_files + mens_odi_files
+    mens_t20i_files = glob(os.path.join(JSON_DIR_MENS_T20I, "*.json"))
+    files = main_files + wt20i_files + afg_files + mens_odi_files + mens_t20i_files
 
     # Sort to prioritize *_espn.json (DRS data), then deduplicate by match_id
     files = sorted(files, key=lambda x: (not x.endswith('_espn.json'), x))
@@ -401,18 +493,30 @@ def process_data(inference_power_surge=True):
     logger.info(
         f"Processing {len(unique_files)} JSON files: "
         f"{len(main_files)} main T20 + {len(wt20i_files)} WT20I + "
-        f"{len(afg_files)} Afghanistan ODI + {len(mens_odi_files)} Men's ODI"
+        f"{len(afg_files)} Afghanistan ODI + {len(mens_odi_files)} Men's ODI + "
+        f"{len(mens_t20i_files)} Men's T20I"
     )
 
     all_rows = []
     all_xi_rows = []
+    all_exclusions = []
+    file_leagues = []
     n_workers = min(8, (os.cpu_count() or 4))
     args = [(f, inference_power_surge) for f in unique_files]
 
     with ThreadPoolExecutor(max_workers=n_workers) as executor:
-        for rows, xi_rows in executor.map(_process_single_file, args):
-            all_rows.extend(rows)
-            all_xi_rows.extend(xi_rows)
+        for rows, xi_rows, exclusion in executor.map(_process_single_file, args):
+            if exclusion:
+                all_exclusions.append(exclusion)
+                file_leagues.append(exclusion['league'])
+            else:
+                all_rows.extend(rows)
+                all_xi_rows.extend(xi_rows)
+                if rows:
+                    file_leagues.append(rows[0]['league'])
+
+    from collections import Counter
+    league_file_counts = dict(Counter(file_leagues))
 
     if all_rows:
         df = pd.DataFrame(all_rows)
@@ -429,6 +533,8 @@ def process_data(inference_power_surge=True):
             df[col] = pd.to_numeric(df[col], downcast='integer')
         df.to_parquet(DATA_DEST, index=False)
         logger.info(f"Saved: {DATA_DEST} ({len(df):,} rows)")
+        
+        generate_excel_summary(df, all_exclusions, league_file_counts, "match_ingestion_summary.xlsx")
     else:
         logger.info("No rows processed.")
 

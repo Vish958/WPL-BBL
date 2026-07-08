@@ -53,7 +53,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 06 July 2026")
+st.markdown("Last updated: 08 July 2026")
 st.markdown("ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).")
 st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -111,6 +111,8 @@ st.markdown("""
 <h1 style='background: linear-gradient(90deg, #6C63FF, #FF6584); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800; font-size: 2.2rem;'>🏏 Global T20 Dashboard: IPL, MBBL, WBBL, SA20, WPL & MLC Insights</h1>
 """, unsafe_allow_html=True)
 
+st.warning("⚠️ **Notice:** Men's T20I (MENS_T20I) data is only included from 01 Jan 2020 onwards.")
+
 DATA_SOURCE = "t20_data.parquet"
 PLAYING_XI_SOURCE = "playing_xi.parquet"
 
@@ -133,6 +135,7 @@ LEAGUE_START_DATES = {
     'MLC':  '2023-07-13',
     'WT20I': '2000-01-01',  # Women's T20 Internationals
     'MENS_ODI': '2002-01-01',  # All Men's ODI matches
+    'MENS_T20I': '2020-01-01', # Men's T20 Internationals
 }
 
 # ODI leagues — powerplay is 10 overs; death starts at over 40
@@ -144,7 +147,7 @@ st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in
 DEFAULT_COMPACT_HEIGHT = 250
 
 @st.cache_data
-def load_data(path=DATA_SOURCE, _v=8):  # v8: fix Categorical+int year crash
+def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team normalization
     try:
         # Load data
         df = pd.read_parquet(path)
@@ -182,7 +185,7 @@ def load_data(path=DATA_SOURCE, _v=8):  # v8: fix Categorical+int year crash
         
         # --- Team Name Normalization: 'England Women' -> 'England' etc ---
         # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
-        for _col in ['team', 'teams']:
+        for _col in ['team', 'teams', 'bowling_team']:
             if _col in df.columns:
                 df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
 
@@ -214,16 +217,17 @@ def load_data(path=DATA_SOURCE, _v=8):  # v8: fix Categorical+int year crash
         if 'is_impact_bowler' not in df.columns: df['is_impact_bowler'] = 0
 
         # ── Player name normalization ──────────────────────────────────────────
-        # Normalize known spelling variants so all metrics aggregate correctly.
-        # Key = alternate/wrong spelling found in Cricsheet JSON
-        # Value = canonical display name you want everywhere in the app
-        # To add a new fix: just add another line below in the same format.
-        _NAME_FIX = {
-            'V Sooryavanshi': 'V Suryavanshi',
-            'Prabhsimran Singh': 'P Simran Singh',
-            'CPL Connolly': 'C Connolly',
-            'Rahul Tewatia': 'R Tewatia',
-        }
+        import json
+        import os
+        _NAME_FIX = {}
+        mapping_file = 'player_name_map.json'
+        if os.path.exists(mapping_file):
+            try:
+                with open(mapping_file, 'r', encoding='utf-8') as f:
+                    _NAME_FIX = json.load(f)
+            except Exception as e:
+                print(f"Error loading name mapping file: {e}")
+        
         for col in ['batter', 'bowler', 'player_dismissed', 'non_striker']:
             if col in df.columns:
                 df[col] = df[col].astype(str).replace(_NAME_FIX)
@@ -297,6 +301,20 @@ if _wt20wc_active:
     st.sidebar.markdown("---")
 else:
     st.session_state['wt20wc_only'] = False
+
+# Full-Member Stats Only filter — shown when WT20I, MENS_ODI, or MENS_T20I is active
+_intl_active = not _wt20i_leagues or any(lg in _wt20i_leagues for lg in ['WT20I', 'MENS_ODI', 'MENS_T20I'])
+if _intl_active:
+    st.sidebar.markdown("---")
+    st.sidebar.checkbox(
+        "Full-Member Stats Only",
+        value=False,
+        key="full_members_only",
+        help="Filter international matches (ODI/T20I) to include only matches played between Full Member nations."
+    )
+    st.sidebar.markdown("---")
+else:
+    st.session_state['full_members_only'] = False
 
 # --- Season Aggregation Options ---
 st.sidebar.markdown("##### Season View Options")
@@ -538,6 +556,22 @@ if st.session_state.get('leagues'): fdf = fdf[fdf['league'].isin(st.session_stat
 if st.session_state.get('years'): fdf = fdf[fdf['year'].isin(st.session_state['years'])]
 if st.session_state.get('date_from'): fdf = fdf[fdf['date'].dt.date >= st.session_state['date_from']]
 if st.session_state.get('date_to'): fdf = fdf[fdf['date'].dt.date <= st.session_state['date_to']]
+
+# Full-Member Stats Only
+if st.session_state.get('full_members_only'):
+    intl_leagues = {'WT20I', 'MENS_ODI', 'MENS_T20I'}
+    FULL_MEMBERS = {
+        'India', 'England', 'Australia', 'New Zealand', 'South Africa', 
+        'Pakistan', 'West Indies', 'Bangladesh', 'Sri Lanka', 'Afghanistan', 
+        'Ireland', 'Zimbabwe'
+    }
+    if 'teams' in fdf.columns:
+        teams_series = fdf['teams'].astype(str)
+        split_teams = teams_series.str.split(' vs ')
+        # Keep match if AT LEAST ONE team is a Full Member (so Full-Member players'
+        # stats vs associate opponents are preserved; only pure associate-vs-associate excluded)
+        is_fm = split_teams.apply(lambda x: len(x) == 2 and (x[0] in FULL_MEMBERS or x[1] in FULL_MEMBERS))
+        fdf = fdf[~fdf['league'].isin(intl_leagues) | is_fm]
 
 # World Cup filter
 if st.session_state.get('wt20wc_only') and 'date' in fdf.columns:

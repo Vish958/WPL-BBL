@@ -141,18 +141,18 @@ def load_data(path=DATA_SOURCE, _cache_version=22): # Version 22: add JPL, Mahar
         # Removing the per-file JSON scan here cuts cold-start time significantly.
 
         # Normalize known player name spelling variants so they aggregate correctly.
-        # Key = wrong/alternate spelling in JSON → Value = canonical name.
-        # Right side name are those which are formally used by Cricsheet
-        _NAME_FIX = {
-            'V Sooryavanshi': 'V Suryavanshi',
-            'Prabhsimran Singh': 'P Simran Singh',
-            'CPL Connolly': 'C Connolly',
-            'Rahul Tewatia': 'R Tewatia',
-            'NR Sciver': 'NR Sciver-Brunt',
-            'Natalie Ruth Sciver-Brunt': 'NR Sciver-Brunt',
-            'Nat Sciver-Brunt': 'NR Sciver-Brunt',
-            'Pandal': 'P Mandal'
-        }
+        # Load from dynamic mapping file if it exists
+        import json
+        import os
+        _NAME_FIX = {}
+        mapping_file = 'player_name_map.json'
+        if os.path.exists(mapping_file):
+            try:
+                with open(mapping_file, 'r', encoding='utf-8') as f:
+                    _NAME_FIX = json.load(f)
+            except Exception as e:
+                print(f"Error loading name mapping: {e}")
+
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:
                 df[col] = df[col].astype(str).replace(_NAME_FIX)

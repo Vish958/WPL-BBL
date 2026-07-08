@@ -1,6 +1,8 @@
 # Ignore raw data folders
 data/
 Male_ODI_Data/
+Male\ T20I\ /
+
 
 # Ignore Python / OS cache and envs
 .venv/

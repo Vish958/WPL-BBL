@@ -12,14 +12,16 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 06 July 2026")
+st.markdown("Last updated: 08 July 2026")
 st.markdown("*ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
+st.warning("⚠️ **Notice:** Men's T20I (MENS_T20I) data is only included from 01 Jan 2020 onwards.")
 
 DATA_SOURCE = "t20_data_with_drs.parquet" # Updated to include DRS data
 JSON_DIR = "data" # Main directory containing IPL/WPL/WBBL JSON files
 JSON_DIR_WT20I = "data/t20i_female_json" # Women's T20I JSON files
 JSON_DIR_AFG_ODI = "Male_ODI_Data/odis_male_json/Afghanistan Games" # Afghanistan ODI JSON files
 JSON_DIR_MENS_ODI = "Male_ODI_Data/odis_male_json" # All Men's ODI JSON files
+JSON_DIR_MENS_T20I = "Male T20I " # All Men's T20I JSON files
 
 # ODI leagues: powerplay is 10 overs; death starts at over 40
 ODI_LEAGUES_APP = {'MENS_ODI'}
@@ -73,7 +75,11 @@ def load_venue_data():
     
     venue_map = {}
     # Scan both the main data directory and the WT20I sub-directory
-    files = glob(os.path.join(JSON_DIR, "*.json")) + glob(os.path.join(JSON_DIR_WT20I, "*.json")) + glob(os.path.join(JSON_DIR_AFG_ODI, "*.json")) + glob(os.path.join(JSON_DIR_MENS_ODI, "*.json"))
+    files = (glob(os.path.join(JSON_DIR, "*.json")) + 
+             glob(os.path.join(JSON_DIR_WT20I, "*.json")) + 
+             glob(os.path.join(JSON_DIR_AFG_ODI, "*.json")) + 
+             glob(os.path.join(JSON_DIR_MENS_ODI, "*.json")) + 
+             glob(os.path.join(JSON_DIR_MENS_T20I, "*.json")))
     
     for file in files:
         try:
@@ -89,7 +95,7 @@ def load_venue_data():
     return venue_map
 
 @st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=18): # Version 18: remove redundant JSON venue scan; vectorized phase normalization
+def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: MENS_T20I data + bowling_team normalization
     try:
         df = pd.read_parquet(path)
         
@@ -109,10 +115,9 @@ def load_data(path=DATA_SOURCE, _cache_version=18): # Version 18: remove redunda
         
         # Normalize team names: 'England Women' -> 'England', etc.
         # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
-        if 'team' in df.columns:
-            df['team'] = df['team'].astype(str).str.replace(' Women', '', regex=False)
-        if 'teams' in df.columns:
-            df['teams'] = df['teams'].astype(str).str.replace(' Women', '', regex=False)
+        for _col in ['team', 'teams', 'bowling_team']:
+            if _col in df.columns:
+                df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
         
         # Convert low-cardinality columns to category dtype
         cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
@@ -128,17 +133,18 @@ def load_data(path=DATA_SOURCE, _cache_version=18): # Version 18: remove redunda
         # Removing the per-file JSON scan here cuts cold-start time significantly.
 
         # Normalize known player name spelling variants so they aggregate correctly.
-        # Key = wrong/alternate spelling in JSON → Value = canonical name.
-        # Right side name are those which are formally used by Cricsheet
-        _NAME_FIX = {
-            'V Sooryavanshi': 'V Suryavanshi',
-            'Prabhsimran Singh': 'P Simran Singh',
-            'CPL Connolly': 'C Connolly',
-            'Rahul Tewatia': 'R Tewatia',
-            'NR Sciver': 'NR Sciver-Brunt',
-            'Natalie Ruth Sciver-Brunt': 'NR Sciver-Brunt',
-            'Nat Sciver-Brunt': 'NR Sciver-Brunt',
-        }
+        # Load from dynamic mapping file if it exists
+        import json
+        import os
+        _NAME_FIX = {}
+        mapping_file = 'player_name_map.json'
+        if os.path.exists(mapping_file):
+            try:
+                with open(mapping_file, 'r', encoding='utf-8') as f:
+                    _NAME_FIX = json.load(f)
+            except Exception as e:
+                print(f"Error loading name mapping: {e}")
+
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:
                 df[col] = df[col].astype(str).replace(_NAME_FIX)
@@ -377,7 +383,7 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
-df = load_data(_cache_version=18) # Version 18: fast load (no JSON re-scan)
+df = load_data(_cache_version=19) # Version 19: MENS_T20I data
 if df.empty:
     st.stop()
 
@@ -422,6 +428,18 @@ if _wt20i_active:
     )
     st.sidebar.markdown("---")
 
+# Full-Member Stats Only filter — shown when WT20I, MENS_ODI, or MENS_T20I is active
+_intl_active = not selected_leagues or any(lg in selected_leagues for lg in ['WT20I', 'MENS_ODI', 'MENS_T20I'])
+full_members_only = False
+if _intl_active:
+    st.sidebar.markdown("---")
+    full_members_only = st.sidebar.checkbox(
+        "Full-Member Stats Only",
+        value=False,
+        help="Filter international matches (ODI/T20I) to include only matches played between Full Member nations."
+    )
+    st.sidebar.markdown("---")
+
 # Apply filters — use views (no .copy()) for read-only boolean filtering.
 # Only .copy() when we need to add columns (match_number).
 fdf = df
@@ -429,6 +447,22 @@ if selected_leagues:
     fdf = fdf[fdf['league'].isin(selected_leagues)]
 if selected_years:
     fdf = fdf[fdf['year'].isin(selected_years)]
+
+# Full-Member Stats Only
+if full_members_only:
+    intl_leagues = {'WT20I', 'MENS_ODI', 'MENS_T20I'}
+    FULL_MEMBERS = {
+        'India', 'England', 'Australia', 'New Zealand', 'South Africa', 
+        'Pakistan', 'West Indies', 'Bangladesh', 'Sri Lanka', 'Afghanistan', 
+        'Ireland', 'Zimbabwe'
+    }
+    if 'teams' in fdf.columns:
+        teams_series = fdf['teams'].astype(str)
+        split_teams = teams_series.str.split(' vs ')
+        # Keep match if AT LEAST ONE team is a Full Member (so Full-Member players'
+        # stats vs associate opponents are preserved; only pure associate-vs-associate excluded)
+        is_fm = split_teams.apply(lambda x: len(x) == 2 and (x[0] in FULL_MEMBERS or x[1] in FULL_MEMBERS))
+        fdf = fdf[~fdf['league'].isin(intl_leagues) | is_fm]
 
 # Apply World Cup date-window filter (date windows are WC-specific)
 if wt20wc_only and 'date' in fdf.columns:
@@ -1867,11 +1901,20 @@ def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, i
     if work.empty:
         return pd.DataFrame()
 
-    # Exclude no-result incomplete innings (same logic as batter SR function)
-    if 'winner' in work.columns:
-        no_result_ids = work[work['winner'].isna()].groupby('match_id', observed=True)['over'].max()
-        no_result_incomplete = no_result_ids[no_result_ids < 19].index
-        work = work[~work['match_id'].isin(no_result_incomplete)]
+    # Exclude truly abandoned/no-result matches (not rain-shortened D/L games that have a winner)
+    # Only drop matches with NO winner AND fewer than minimum overs (i.e. genuinely incomplete).
+    # T20: min over index = 17 (18 overs bowled = over 0-17). ODI: min over index = 39.
+    if 'winner' in work.columns and 'league' in work.columns:
+        no_winner = work[work['winner'].isna()]
+        if not no_winner.empty:
+            match_max_over = no_winner.groupby('match_id', observed=True)['over'].max()
+            match_league = no_winner.drop_duplicates('match_id').set_index('match_id')['league'].astype(str)
+            # reindex to same order as match_max_over to avoid index mismatch ValueError
+            min_over = match_league.reindex(match_max_over.index).map(
+                lambda lg: 39 if str(lg) in ('MENS_ODI',) else 17
+            )
+            no_result_incomplete = match_max_over[match_max_over < min_over].index
+            work = work[~work['match_id'].isin(no_result_incomplete)]
     if work.empty:
         return pd.DataFrame()
 
