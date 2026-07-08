@@ -68,31 +68,7 @@ def is_wt20wc_match(date_series):
 
 @st.cache_data
 def load_venue_data():
-    """Load venue data from JSON files and create a match_id -> venue mapping."""
-    import os
-    from glob import glob
-    import json
-    
-    venue_map = {}
-    # Scan both the main data directory and the WT20I sub-directory
-    files = (glob(os.path.join(JSON_DIR, "*.json")) + 
-             glob(os.path.join(JSON_DIR_WT20I, "*.json")) + 
-             glob(os.path.join(JSON_DIR_AFG_ODI, "*.json")) + 
-             glob(os.path.join(JSON_DIR_MENS_ODI, "*.json")) + 
-             glob(os.path.join(JSON_DIR_MENS_T20I, "*.json")))
-    
-    for file in files:
-        try:
-            with open(file, 'r', encoding='utf-8') as f:
-                data = json.load(f)
-            match_id = os.path.basename(file).split('.')[0]
-            venue = data.get('info', {}).get('venue', 'Unknown')
-            city = data.get('info', {}).get('city', 'Unknown')
-            venue_map[match_id] = {'venue': venue, 'city': city}
-        except Exception:
-            continue
-    
-    return venue_map
+    return pd.read_parquet('venues.parquet').drop_duplicates('match_id').set_index('match_id').to_dict('index')
 
 @st.cache_data(ttl=3600) # 1 hour TTL
 def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: MENS_T20I data + bowling_team normalization
