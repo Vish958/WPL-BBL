@@ -6398,7 +6398,7 @@ elif metric_choice == "Boundary-less Ball Streak":
                     fig_hist = px.histogram(
                         dist_data,
                         x='Balls Without Boundary',
-                        nbins=max(1, (dist_data['Balls Without Boundary'].max() - min_balls + 1)),
+                        nbins=int(max(1, (dist_data['Balls Without Boundary'].max() - min_balls + 1))),
                         color='Batting Team' if dist_data['Batting Team'].nunique() <= 12 else None,
                         title=f"Frequency of Boundary-less Streaks ({min_balls}+ balls)",
                         labels={'Balls Without Boundary': 'Consecutive Balls Without Boundary', 'count': 'Frequency'},
