@@ -3,6 +3,7 @@
 # By Vishwesh Gaur
 
 import streamlit as st
+st.set_option('client.showErrorDetails', True)
 import pandas as pd
 import numpy as np
 import plotly.express as px
