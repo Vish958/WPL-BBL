@@ -1,8 +1,9 @@
 streamlit>=1.59.1
-pandas==3.0.3
-plotly
-numpy
+pandas==2.2.3
+numpy==1.26.4
+plotly==5.24.1
 python-dateutil
 psutil
 matplotlib
 openpyxl
+pyarrow
