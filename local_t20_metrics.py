@@ -13,7 +13,7 @@ st.set_page_config(page_title="Local T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# Local T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 06 July 2026")
+st.markdown("Last updated: 13 July 2026")
 st.markdown("*Matches will appear as per data availability from local scraper JSON files (UPT20: 2023-2025, DPL: 2024-2025, MPL: 2026, JPL: 2026, Maharaja T20: 2026, TG20: 2026).*")
 
 DATA_SOURCE = "local_t20_data_with_drs.parquet"
