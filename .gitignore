@@ -9,3 +9,6 @@ Male\ T20I\ /
 __pycache__/
 .DS_Store
 create_venues_parquet.py
+
+# Ignore xlsx files
+match_ingestion_summary.xlsx
