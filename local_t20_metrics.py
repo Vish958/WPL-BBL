@@ -486,6 +486,18 @@ fdf_no_team = fdf_no_team[(fdf_no_team['match_number'] >= match_range[0]) & (fdf
 # Metric selection
 st.sidebar.markdown("---")
 metric_choice = st.sidebar.radio("Select Metric", [
+    # ── NEW ADVANCED MODULES ──────────────────────────────────────────────────
+    "Opposition / Match Preparation",
+    "Tactical Flags Engine",
+    "Batter Phase Vulnerability",
+    "Bowler Phase Role & Threat",
+    "Over Transition Analysis",
+    "Partnership Disruption Analysis",
+    "Dot-Ball Pressure Conversion",
+    # ── EXISTING METRICS ──────────────────────────────────────────────────────
+    "Runs Between Dismissals",
+    "Custom Over Phase Analytics",
+    "Batting Order Performance (Player-wise)",
     "Powerplay Score Tracker", 
     "DRS Analysis",
     "Over-by-Over Analysis",
@@ -524,6 +536,7 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Maiden Over Analysis",
     "Over-wise Batting Analysis",
 ])
+
 
 if fdf.empty:
     st.warning("No data for selected filters.")
@@ -10118,6 +10131,1979 @@ elif metric_choice == "Over-wise Batting Analysis":
                                 hover_data=['SR']
                             )
                             st.plotly_chart(fig_ps, width="stretch")
+
+
+
+# =========================================
+# RUNS BETWEEN DISMISSALS
+# =========================================
+if metric_choice == "Runs Between Dismissals":
+    st.subheader("Runs Between Dismissals")
+    st.write("Track the highest cumulative runs scored by batters between consecutive outs/dismissals.")
+
+    col1, col2 = st.columns(2)
+    with col1:
+        calc_base = st.radio("Calculation Base", ["Overall", "Team-Specific"],
+                             help="Overall calculates streaks across career/matches in dataset. Team-Specific only considers matches played for the selected team.")
+    with col2:
+        min_streak_runs = st.number_input("Minimum Streak Runs", min_value=1, value=50, step=10)
+
+    work_df = fdf if calc_base == "Team-Specific" else fdf_no_team
+
+    if work_df.empty:
+        st.warning("No data for selected filters.")
+    else:
+        with st.spinner("Calculating runs between dismissals..."):
+            work_df = work_df[work_df['innings'].isin([1, 2])].copy()
+
+            _NOT_OUT_KINDS = {'retired out', 'retired not out', 'retired hurt', 'retired - not out'}
+            dismissed_col = 'player_dismissed' if 'player_dismissed' in work_df.columns else (
+                'player_out' if 'player_out' in work_df.columns else None)
+
+            if dismissed_col:
+                is_dismissal = work_df[dismissed_col].notna() & (
+                    work_df[dismissed_col].astype(str).str.strip() != '')
+                if 'wicket_kind' in work_df.columns:
+                    is_dismissal &= ~work_df['wicket_kind'].astype(str).str.lower().str.strip().isin(_NOT_OUT_KINDS)
+                work_df['is_dismissed'] = is_dismissal & (
+                    work_df[dismissed_col].astype(str) == work_df['batter'].astype(str))
+            else:
+                work_df['is_dismissed'] = False
+
+            innings_grp = work_df.groupby(
+                ['batter', 'match_id', 'date', 'innings', 'team'], observed=True
+            ).agg(
+                runs=('runs.batter', 'sum'),
+                dismissed=('is_dismissed', 'any')
+            ).reset_index()
+
+            innings_grp = innings_grp.sort_values(['batter', 'date', 'match_id', 'innings'])
+            innings_grp['dismissed_shifted'] = innings_grp.groupby('batter', observed=True)['dismissed'].shift(1).fillna(False)
+            innings_grp['streak_id'] = innings_grp.groupby('batter', observed=True)['dismissed_shifted'].cumsum()
+
+            streaks = innings_grp.groupby(['batter', 'streak_id'], observed=True).agg(
+                Streak_Runs=('runs', 'sum'),
+                Innings_Count=('runs', 'count'),
+                Start_Date=('date', 'min'),
+                End_Date=('date', 'max'),
+                Dismissed=('dismissed', 'last'),
+                Scores=('runs', lambda x: ', '.join(x.astype(str))),
+                Teams=('team', lambda x: ', '.join(x.unique().astype(str)))
+            ).reset_index()
+
+            streaks = streaks[streaks['Streak_Runs'] >= min_streak_runs]
+            streaks = streaks.sort_values('Streak_Runs', ascending=False).reset_index(drop=True)
+
+            if streaks.empty:
+                st.info(f"No streaks found with at least {min_streak_runs} runs.")
+            else:
+                streaks['Status'] = np.where(streaks['Dismissed'], "Ended", "Ongoing *")
+                streaks['Start_Date'] = pd.to_datetime(streaks['Start_Date']).dt.date
+                streaks['End_Date'] = pd.to_datetime(streaks['End_Date']).dt.date
+
+                display_df = streaks[['batter', 'Teams', 'Streak_Runs', 'Innings_Count', 'Scores', 'Status', 'Start_Date', 'End_Date']].copy()
+                display_df.columns = ['Batter', 'Team(s)', 'Runs Scored', 'Innings Played', 'Scores Sequence', 'Status', 'Start Date', 'End Date']
+                display_df.index += 1
+
+                st.dataframe(display_df.head(200), use_container_width=True)
+
+                st.markdown("### Top 15 Streaks by Runs")
+                fig_df = display_df.head(15).copy()
+                fig_df['Display_Label'] = fig_df['Batter'].astype(str) + " (" + fig_df['Runs Scored'].astype(str) + " runs)"
+                fig = px.bar(
+                    fig_df,
+                    x='Runs Scored',
+                    y='Display_Label',
+                    orientation='h',
+                    color='Runs Scored',
+                    color_continuous_scale='Viridis',
+                    labels={'Runs Scored': 'Runs Scored', 'Display_Label': 'Batter'},
+                    title="Highest Runs Scored Between Dismissals"
+                )
+                fig.update_layout(yaxis={'categoryorder': 'total ascending'})
+                st.plotly_chart(fig, use_container_width=True)
+
+
+# =========================================
+# CUSTOM OVER PHASE ANALYTICS
+# =========================================
+elif metric_choice == "Custom Over Phase Analytics":
+    st.subheader("Custom Over Phase Analytics")
+    st.write("Analyze runs and wickets by teams, batters, and bowlers in standard or custom over ranges.")
+
+    phase_format = st.selectbox("Select Format & Phase", [
+        "T20 - Powerplay Phase (Overs 0.1 - 6.0)",
+        "T20 - Normal Phase / Death Overs (Overs 6.1 - 20.0)",
+        "Custom Over Range"
+    ])
+
+    if phase_format == "Custom Over Range":
+        col1, col2 = st.columns(2)
+        with col1:
+            start_over = st.number_input("Start Over (1-indexed, e.g. 1 for first over)", min_value=1, max_value=20, value=1)
+        with col2:
+            end_over = st.number_input("End Over (1-indexed, e.g. 20 for 20th over)", min_value=1, max_value=20, value=6)
+    else:
+        if "T20 - Powerplay Phase" in phase_format:
+            start_over, end_over = 1, 6
+        elif "T20 - Normal Phase" in phase_format:
+            start_over, end_over = 7, 20
+
+    st.info(f"Analyzing phase: **Overs {start_over}.1 to {end_over}.0**")
+
+    phase_df = fdf[fdf['innings'].isin([1, 2])].copy()
+    phase_df = phase_df[(phase_df['over'] >= start_over - 1) & (phase_df['over'] < end_over)]
+
+    if phase_df.empty:
+        st.warning("No data found in the selected over range for the filtered matches.")
+    else:
+        tab_bat, tab_bowl = st.tabs(["Batting (Runs & SR)", "Bowling (Wickets & Econ)"])
+
+        with tab_bat:
+            st.markdown("### Batting Performance in Selected Phase")
+            sub_tab_bat_p, sub_tab_bat_t = st.tabs(["Players (Batsmen)", "Teams (Batting)"])
+
+            with sub_tab_bat_p:
+                st.markdown("#### Top Batsmen")
+                display_mode = st.tabs(["Career Summary", "Match-wise Performances"])
+
+                dismissed_col_phase = 'player_dismissed' if 'player_dismissed' in phase_df.columns else (
+                    'player_out' if 'player_out' in phase_df.columns else None)
+
+                def get_bat_stats_phase(df_to_agg):
+                    if df_to_agg.empty:
+                        return pd.DataFrame()
+                    df_to_agg = df_to_agg.copy()
+                    if dismissed_col_phase:
+                        df_to_agg['is_out'] = (
+                            df_to_agg[dismissed_col_phase].notna() &
+                            (df_to_agg[dismissed_col_phase].astype(str).str.strip() != '') &
+                            (df_to_agg[dismissed_col_phase].astype(str) == df_to_agg['batter'].astype(str))
+                        )
+                        _NOT_OUT_KINDS = {'retired out', 'retired not out', 'retired hurt', 'retired - not out'}
+                        if 'wicket_kind' in df_to_agg.columns:
+                            df_to_agg['is_out'] &= ~df_to_agg['wicket_kind'].astype(str).str.lower().str.strip().isin(_NOT_OUT_KINDS)
+                    else:
+                        df_to_agg['is_out'] = False
+
+                    bat_stats = df_to_agg.groupby(['batter', 'team'], observed=True).agg(
+                        Runs=('runs.batter', 'sum'),
+                        Balls_Faced=('is_valid_delivery', 'sum'),
+                        Outs=('is_out', 'sum'),
+                        Innings=('match_id', 'nunique')
+                    ).reset_index()
+                    bat_stats = bat_stats[bat_stats['Balls_Faced'] > 0]
+                    if bat_stats.empty:
+                        return pd.DataFrame()
+                    bat_stats['Strike_Rate'] = (bat_stats['Runs'] / bat_stats['Balls_Faced'] * 100).round(2)
+                    bat_stats['Average'] = np.where(
+                        bat_stats['Outs'] > 0,
+                        (bat_stats['Runs'] / bat_stats['Outs']).round(2),
+                        bat_stats['Runs']
+                    )
+                    bat_stats = bat_stats.sort_values('Runs', ascending=False).reset_index(drop=True)
+                    bat_stats.columns = ['Batter', 'Team', 'Runs', 'Balls Faced', 'Outs', 'Innings', 'Strike Rate', 'Average']
+                    bat_stats.index += 1
+                    return bat_stats
+
+                def get_bat_match_stats_phase(df_to_agg):
+                    if df_to_agg.empty:
+                        return pd.DataFrame()
+                    _grp_cols = [c for c in ['match_id', 'batter', 'team', 'bowling_team', 'date', 'innings'] if c in df_to_agg.columns]
+                    stats = df_to_agg.groupby(_grp_cols, observed=True).agg(
+                        Runs=('runs.batter', 'sum'),
+                        Balls_Faced=('is_valid_delivery', 'sum')
+                    ).reset_index()
+                    stats = stats[stats['Balls_Faced'] > 0]
+                    if stats.empty:
+                        return pd.DataFrame()
+                    stats['date'] = pd.to_datetime(stats['date']).dt.date
+                    _col_map = {'batter': 'Batter', 'team': 'Team', 'bowling_team': 'Opponent',
+                                'date': 'Date', 'innings': 'Innings', 'Balls_Faced': 'Balls Faced'}
+                    stats = stats.rename(columns={k: v for k, v in _col_map.items() if k in stats.columns})
+                    stats = stats.sort_values('Runs', ascending=False).reset_index(drop=True)
+                    stats.index += 1
+                    _out_cols = [c for c in ['Batter', 'Team', 'Opponent', 'Date', 'Innings', 'Runs', 'Balls Faced'] if c in stats.columns]
+                    return stats[_out_cols]
+
+                with display_mode[0]:
+                    inn_overall, inn_1st, inn_2nd = st.tabs(["Overall", "1st Innings", "2nd Innings"])
+                    with inn_overall:
+                        df_res = get_bat_stats_phase(phase_df)
+                        if df_res.empty:
+                            st.info("No batting data overall.")
+                        else:
+                            st.dataframe(df_res.head(100), use_container_width=True)
+                    with inn_1st:
+                        df_res = get_bat_stats_phase(phase_df[phase_df['innings'] == 1])
+                        if df_res.empty:
+                            st.info("No batting data for 1st Innings.")
+                        else:
+                            st.dataframe(df_res.head(100), use_container_width=True)
+                    with inn_2nd:
+                        df_res = get_bat_stats_phase(phase_df[phase_df['innings'] == 2])
+                        if df_res.empty:
+                            st.info("No batting data for 2nd Innings.")
+                        else:
+                            st.dataframe(df_res.head(100), use_container_width=True)
+
+                with display_mode[1]:
+                    df_res = get_bat_match_stats_phase(phase_df)
+                    if df_res.empty:
+                        st.info("No match-wise batting data.")
+                    else:
+                        st.dataframe(df_res.head(100), use_container_width=True)
+
+            with sub_tab_bat_t:
+                st.markdown("#### Team Batting Stats")
+                display_mode_t = st.tabs(["Overall Summary", "Match-wise Performances"])
+
+                def get_team_bat_stats_phase(df_to_agg):
+                    if df_to_agg.empty:
+                        return pd.DataFrame()
+                    team_bat = df_to_agg.groupby(['team'], observed=True).agg(
+                        Runs=('runs.total', 'sum'),
+                        Balls_Faced=('is_valid_delivery', 'sum'),
+                        Innings=('match_id', 'nunique')
+                    ).reset_index()
+                    team_bat = team_bat[team_bat['Balls_Faced'] > 0]
+                    if team_bat.empty:
+                        return pd.DataFrame()
+                    team_bat['Overs_Faced'] = (team_bat['Balls_Faced'] / 6).round(1)
+                    team_bat['Run_Rate'] = (team_bat['Runs'] / (team_bat['Balls_Faced'] / 6)).round(2)
+                    team_bat = team_bat.sort_values('Runs', ascending=False).reset_index(drop=True)
+                    team_bat.columns = ['Team', 'Runs', 'Balls Faced', 'Innings', 'Overs Faced', 'Run Rate']
+                    team_bat.index += 1
+                    return team_bat
+
+                with display_mode_t[0]:
+                    inn_overall, inn_1st, inn_2nd = st.tabs(["Overall", "1st Innings", "2nd Innings"])
+                    with inn_overall:
+                        df_res = get_team_bat_stats_phase(phase_df)
+                        st.dataframe(df_res, use_container_width=True) if not df_res.empty else st.info("No data.")
+                    with inn_1st:
+                        df_res = get_team_bat_stats_phase(phase_df[phase_df['innings'] == 1])
+                        st.dataframe(df_res, use_container_width=True) if not df_res.empty else st.info("No data.")
+                    with inn_2nd:
+                        df_res = get_team_bat_stats_phase(phase_df[phase_df['innings'] == 2])
+                        st.dataframe(df_res, use_container_width=True) if not df_res.empty else st.info("No data.")
+
+                with display_mode_t[1]:
+                    _grp_cols_t = [c for c in ['match_id', 'team', 'bowling_team', 'date', 'innings'] if c in phase_df.columns]
+                    _stats_t = phase_df.groupby(_grp_cols_t, observed=True).agg(
+                        Runs=('runs.total', 'sum'),
+                        Balls=('is_valid_delivery', 'sum')
+                    ).reset_index()
+                    _stats_t = _stats_t[_stats_t['Balls'] > 0]
+                    if not _stats_t.empty:
+                        _stats_t['date'] = pd.to_datetime(_stats_t['date']).dt.date
+                        _stats_t = _stats_t.rename(columns={'team': 'Team', 'bowling_team': 'Opponent', 'date': 'Date', 'innings': 'Innings'})
+                        _stats_t = _stats_t.sort_values('Runs', ascending=False).reset_index(drop=True)
+                        _stats_t.index += 1
+                        st.dataframe(_stats_t[['Team', 'Opponent', 'Date', 'Innings', 'Runs']].head(100), use_container_width=True)
+                    else:
+                        st.info("No data.")
+
+        with tab_bowl:
+            st.markdown("### Bowling Performance in Selected Phase")
+            sub_tab_bowl_p, sub_tab_bowl_t = st.tabs(["Players (Bowlers)", "Teams (Bowling)"])
+
+            with sub_tab_bowl_p:
+                st.markdown("#### Top Bowlers")
+                display_mode_b = st.tabs(["Career Summary", "Match-wise Performances"])
+
+                def get_bowl_stats_phase(df_to_agg):
+                    if df_to_agg.empty:
+                        return pd.DataFrame()
+                    _bowl_grp = [c for c in ['bowler', 'bowling_team'] if c in df_to_agg.columns]
+                    bowl_stats = df_to_agg.groupby(_bowl_grp, observed=True).agg(
+                        Wickets=('wicket_count', 'sum'),
+                        Runs_Conceded=('runs.total', 'sum'),
+                        Balls_Bowled=('is_valid_delivery', 'sum'),
+                        Innings=('match_id', 'nunique')
+                    ).reset_index()
+                    bowl_stats = bowl_stats[bowl_stats['Balls_Bowled'] > 0]
+                    if bowl_stats.empty:
+                        return pd.DataFrame()
+                    bowl_stats['Economy'] = (bowl_stats['Runs_Conceded'] / (bowl_stats['Balls_Bowled'] / 6)).round(2)
+                    bowl_stats['Strike_Rate'] = np.where(
+                        bowl_stats['Wickets'] > 0,
+                        (bowl_stats['Balls_Bowled'] / bowl_stats['Wickets']).round(2),
+                        np.nan
+                    )
+                    bowl_stats = bowl_stats.sort_values('Wickets', ascending=False).reset_index(drop=True)
+                    bowl_stats.index += 1
+                    return bowl_stats
+
+                with display_mode_b[0]:
+                    inn_overall, inn_1st, inn_2nd = st.tabs(["Overall", "1st Innings", "2nd Innings"])
+                    with inn_overall:
+                        df_res = get_bowl_stats_phase(phase_df)
+                        st.dataframe(df_res.head(100), use_container_width=True) if not df_res.empty else st.info("No data.")
+                    with inn_1st:
+                        df_res = get_bowl_stats_phase(phase_df[phase_df['innings'] == 1])
+                        st.dataframe(df_res.head(100), use_container_width=True) if not df_res.empty else st.info("No data.")
+                    with inn_2nd:
+                        df_res = get_bowl_stats_phase(phase_df[phase_df['innings'] == 2])
+                        st.dataframe(df_res.head(100), use_container_width=True) if not df_res.empty else st.info("No data.")
+
+                with display_mode_b[1]:
+                    _grp_b = [c for c in ['match_id', 'bowler', 'bowling_team', 'team', 'date', 'innings'] if c in phase_df.columns]
+                    _stats_bm = phase_df.groupby(_grp_b, observed=True).agg(
+                        Wickets=('wicket_count', 'sum'),
+                        Runs_Conceded=('runs.total', 'sum'),
+                        Balls=('is_valid_delivery', 'sum')
+                    ).reset_index()
+                    _stats_bm = _stats_bm[_stats_bm['Balls'] > 0]
+                    if not _stats_bm.empty:
+                        _stats_bm['date'] = pd.to_datetime(_stats_bm['date']).dt.date
+                        _stats_bm = _stats_bm.rename(columns={'bowler': 'Bowler', 'bowling_team': 'Bowling Team',
+                                                                'team': 'Opponent', 'date': 'Date', 'innings': 'Innings'})
+                        _stats_bm = _stats_bm.sort_values(['Wickets', 'Runs_Conceded'], ascending=[False, True]).reset_index(drop=True)
+                        _stats_bm.index += 1
+                        _out_cols_b = [c for c in ['Bowler', 'Bowling Team', 'Opponent', 'Date', 'Innings', 'Wickets', 'Runs_Conceded'] if c in _stats_bm.columns]
+                        st.dataframe(_stats_bm[_out_cols_b].head(100), use_container_width=True)
+                    else:
+                        st.info("No data.")
+
+            with sub_tab_bowl_t:
+                st.markdown("#### Team Bowling Stats")
+                _wk_col_phase = 'team_wicket_count' if 'team_wicket_count' in phase_df.columns else 'wicket_count'
+                _bowl_t_grp = [c for c in ['bowling_team'] if c in phase_df.columns]
+                if _bowl_t_grp:
+                    team_bowl_stats = phase_df.groupby(_bowl_t_grp, observed=True).agg(
+                        Wickets_Taken=(_wk_col_phase, 'sum'),
+                        Runs_Conceded=('runs.total', 'sum'),
+                        Balls_Bowled=('is_valid_delivery', 'sum'),
+                        Innings=('match_id', 'nunique')
+                    ).reset_index()
+                    team_bowl_stats = team_bowl_stats[team_bowl_stats['Balls_Bowled'] > 0]
+                    if not team_bowl_stats.empty:
+                        team_bowl_stats['Economy'] = (team_bowl_stats['Runs_Conceded'] / (team_bowl_stats['Balls_Bowled'] / 6)).round(2)
+                        team_bowl_stats = team_bowl_stats.sort_values('Wickets_Taken', ascending=False).reset_index(drop=True)
+                        team_bowl_stats.index += 1
+                        st.dataframe(team_bowl_stats, use_container_width=True)
+                    else:
+                        st.info("No team bowling data.")
+                else:
+                    st.info("bowling_team column not available.")
+
+
+# =========================================
+# BATTING ORDER PERFORMANCE (PLAYER-WISE)
+# =========================================
+elif metric_choice == "Batting Order Performance (Player-wise)":
+    st.subheader("Batting Order Performance (Player-wise)")
+    st.write(
+        "For each player, see how their performance changes based on the batting position they played "
+        "in each season. E.g. Virat Kohli batted at No.3 in DPL S1 — compare with other positions in the same season."
+    )
+
+    _bop_work = fdf[fdf['innings'].isin([1, 2])].copy()
+
+    if _bop_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        with st.spinner("Computing batting order performance..."):
+            # ── Step 1: derive batting position per (match, innings, batter) ──────────
+            _pos_df = (
+                _bop_work.groupby(['match_id', 'innings', 'batter'], observed=True)['ball_float']
+                .min()
+                .reset_index()
+            ) if 'ball_float' in _bop_work.columns else (
+                _bop_work.groupby(['match_id', 'innings', 'batter'], observed=True)['over']
+                .min()
+                .reset_index()
+                .rename(columns={'over': 'ball_float'})
+            )
+
+            _pos_df = _pos_df.sort_values(['match_id', 'innings', 'ball_float'])
+            _pos_df['bat_position'] = _pos_df.groupby(['match_id', 'innings'], observed=True).cumcount() + 1
+
+            # Merge position back onto deliveries
+            _bop_work = _bop_work.merge(
+                _pos_df[['match_id', 'innings', 'batter', 'bat_position']],
+                on=['match_id', 'innings', 'batter'],
+                how='left'
+            )
+
+            # ── Step 2: dismissal flag ────────────────────────────────────────────────
+            _dismissed_col = 'player_dismissed' if 'player_dismissed' in _bop_work.columns else (
+                'player_out' if 'player_out' in _bop_work.columns else None)
+
+            if _dismissed_col:
+                _NOT_OUT = {'retired out', 'retired not out', 'retired hurt', 'retired - not out'}
+                _is_dis = (
+                    _bop_work[_dismissed_col].notna() &
+                    (_bop_work[_dismissed_col].astype(str).str.strip() != '') &
+                    (_bop_work[_dismissed_col].astype(str) == _bop_work['batter'].astype(str))
+                )
+                if 'wicket_kind' in _bop_work.columns:
+                    _is_dis &= ~_bop_work['wicket_kind'].astype(str).str.lower().str.strip().isin(_NOT_OUT)
+                _bop_work['is_dismissed'] = _is_dis
+            else:
+                _bop_work['is_dismissed'] = False
+
+            # ── Step 3: aggregate per (batter, season, team, bat_position) ───────────
+            _season_col = 'season' if 'season' in _bop_work.columns else 'year'
+            _grp_cols_bop = ['batter', _season_col, 'team', 'bat_position']
+
+            _bop_agg = _bop_work.groupby(_grp_cols_bop, observed=True).agg(
+                Innings=('match_id', 'nunique'),
+                Runs=('runs.batter', 'sum'),
+                Balls=('is_valid_delivery', 'sum'),
+                Outs=('is_dismissed', 'sum'),
+                Fours=('runs.batter', lambda x: (x == 4).sum()),
+                Sixes=('runs.batter', lambda x: (x == 6).sum()),
+            ).reset_index()
+
+            _bop_agg = _bop_agg[_bop_agg['Balls'] > 0].copy()
+            _bop_agg['Strike_Rate'] = (_bop_agg['Runs'] / _bop_agg['Balls'] * 100).round(2)
+            _bop_agg['Average'] = np.where(
+                _bop_agg['Outs'] > 0,
+                (_bop_agg['Runs'] / _bop_agg['Outs']).round(2),
+                _bop_agg['Runs'].astype(float)
+            )
+
+            _bop_agg = _bop_agg.rename(columns={
+                'batter': 'Batter',
+                _season_col: 'Season',
+                'team': 'Team',
+                'bat_position': 'Position'
+            })
+
+        # ── Filters ──────────────────────────────────────────────────────────────────
+        _all_batters_bop = sorted(_bop_agg['Batter'].dropna().unique())
+        _all_seasons_bop = sorted(_bop_agg['Season'].dropna().unique())
+
+        col_f1, col_f2, col_f3 = st.columns(3)
+        with col_f1:
+            _sel_batter = st.selectbox("Select Player", _all_batters_bop, key="bop_player_sel")
+        with col_f2:
+            _sel_season_bop = st.selectbox("Season", ["All Seasons"] + [str(s) for s in _all_seasons_bop], key="bop_season_sel")
+        with col_f3:
+            _sel_team_bop = st.selectbox("Team", ["All Teams"] + sorted(_bop_agg['Team'].dropna().unique().tolist()), key="bop_team_sel")
+
+        _bop_filtered = _bop_agg[_bop_agg['Batter'] == _sel_batter].copy()
+        if _sel_season_bop != "All Seasons":
+            _bop_filtered = _bop_filtered[_bop_filtered['Season'].astype(str) == _sel_season_bop]
+        if _sel_team_bop != "All Teams":
+            _bop_filtered = _bop_filtered[_bop_filtered['Team'] == _sel_team_bop]
+
+        if _bop_filtered.empty:
+            st.info(f"No data found for **{_sel_batter}** with the selected filters.")
+        else:
+            # ── Summary table ─────────────────────────────────────────────────────────
+            st.markdown(f"### {_sel_batter} — Batting by Position")
+            _show_cols = ['Season', 'Team', 'Position', 'Innings', 'Runs', 'Balls', 'Outs',
+                          'Fours', 'Sixes', 'Strike_Rate', 'Average']
+            _display_bop = _bop_filtered[_show_cols].sort_values(['Season', 'Position']).reset_index(drop=True)
+            _display_bop.index += 1
+            _display_bop = _display_bop.rename(columns={'Strike_Rate': 'SR', 'Average': 'Avg'})
+            st.dataframe(_display_bop, use_container_width=True)
+
+            # ── Bar chart: Runs by Position ───────────────────────────────────────────
+            if _bop_filtered['Position'].nunique() > 0:
+                st.markdown("#### Runs by Batting Position")
+                _pos_sum = _bop_filtered.groupby(['Position', 'Season'], observed=True).agg(
+                    Runs=('Runs', 'sum'),
+                    Innings=('Innings', 'sum'),
+                    SR=('Strike_Rate', 'mean')
+                ).reset_index()
+                _pos_sum['SR'] = _pos_sum['SR'].round(2)
+                _pos_sum['Season'] = _pos_sum['Season'].astype(str)
+                _pos_sum = _pos_sum.sort_values('Position')
+
+                _fig_bop = px.bar(
+                    _pos_sum,
+                    x='Position',
+                    y='Runs',
+                    color='Season',
+                    barmode='group',
+                    text='Runs',
+                    title=f"{_sel_batter} — Runs by Batting Position (Season-wise)",
+                    hover_data=['Innings', 'SR'],
+                    labels={'Position': 'Batting Position', 'Runs': 'Total Runs'}
+                )
+                _fig_bop.update_traces(textposition='outside')
+                _fig_bop.update_xaxes(type='category')
+                st.plotly_chart(_fig_bop, use_container_width=True)
+
+            # ── Strike Rate by Position ───────────────────────────────────────────────
+            if len(_bop_filtered) > 1:
+                st.markdown("#### Strike Rate by Batting Position")
+                _pos_sr = _bop_filtered.groupby(['Position', 'Season'], observed=True).agg(
+                    SR=('Strike_Rate', 'mean'),
+                    Innings=('Innings', 'sum')
+                ).reset_index()
+                _pos_sr['SR'] = _pos_sr['SR'].round(2)
+                _pos_sr['Season'] = _pos_sr['Season'].astype(str)
+                _pos_sr = _pos_sr.sort_values('Position')
+
+                _fig_sr_bop = px.line(
+                    _pos_sr,
+                    x='Position',
+                    y='SR',
+                    color='Season',
+                    markers=True,
+                    title=f"{_sel_batter} — Strike Rate by Batting Position",
+                    labels={'Position': 'Batting Position', 'SR': 'Strike Rate'}
+                )
+                _fig_sr_bop.add_hline(y=100, line_dash='dash', line_color='gray', annotation_text='SR=100')
+                _fig_sr_bop.add_hline(y=150, line_dash='dash', line_color='orange', annotation_text='SR=150')
+                _fig_sr_bop.update_xaxes(type='category')
+                st.plotly_chart(_fig_sr_bop, use_container_width=True)
+
+            # ── Match-level detail ────────────────────────────────────────────────────
+            with st.expander("📋 Match-level Detail"):
+                _bop_match = _bop_work[_bop_work['batter'] == _sel_batter].copy()
+                if _sel_season_bop != "All Seasons":
+                    _bop_match = _bop_match[_bop_match[_season_col].astype(str) == _sel_season_bop]
+                if _sel_team_bop != "All Teams":
+                    _bop_match = _bop_match[_bop_match['team'] == _sel_team_bop]
+
+                _grp_match = [c for c in ['match_id', 'innings', 'batter', 'team', 'bat_position', _season_col, 'date'] if c in _bop_match.columns]
+                _dis_col_m = _dismissed_col if _dismissed_col else None
+                _agg_dict_m = {
+                    'Runs': ('runs.batter', 'sum'),
+                    'Balls': ('is_valid_delivery', 'sum'),
+                }
+                if _dis_col_m:
+                    _agg_dict_m['Dismissed'] = ('is_dismissed', 'any')
+
+                _match_detail = _bop_match.groupby(_grp_match, observed=True).agg(**_agg_dict_m).reset_index()
+                _match_detail = _match_detail[_match_detail['Balls'] > 0]
+                if not _match_detail.empty:
+                    _match_detail['SR'] = (_match_detail['Runs'] / _match_detail['Balls'] * 100).round(2)
+                    if 'date' in _match_detail.columns:
+                        _match_detail['date'] = pd.to_datetime(_match_detail['date']).dt.date
+                    _match_detail = _match_detail.sort_values(['date', 'bat_position'] if 'date' in _match_detail.columns else ['bat_position']).reset_index(drop=True)
+                    _match_detail.index += 1
+                    st.dataframe(_match_detail, use_container_width=True)
+                else:
+                    st.info("No match-level data.")
+
+
+
+
+# =============================================================================
+# SHARED HELPER CONSTANTS & FUNCTIONS FOR NEW ADVANCED MODULES
+# =============================================================================
+
+# Bowler-credited dismissal kinds (consistent with preprocessing)
+_BOWLER_WKTS = {'caught', 'bowled', 'lbw', 'stumped', 'hit wicket', 'caught and bowled', 'handled the ball'}
+# Not-out retirement kinds (not dismissals)
+_NOT_OUT_KINDS = {'retired out', 'retired not out', 'retired hurt', 'retired - not out'}
+# Phase display order
+_PHASE_ORDER = ['Powerplay', 'Middle', 'Death']
+# Over period labels and 0-indexed over ranges
+_OVER_PERIODS = [
+    ('Overs 1–6',   (0, 5)),
+    ('Overs 7–10',  (6, 9)),
+    ('Overs 11–15', (10, 14)),
+    ('Overs 16–20', (15, 19)),
+]
+
+def _get_dismissed_col(df_):
+    """Return the name of the dismissal column, or None."""
+    if 'player_dismissed' in df_.columns:
+        return 'player_dismissed'
+    if 'player_out' in df_.columns:
+        return 'player_out'
+    return None
+
+def _make_dismissal_mask(df_, dismissed_col):
+    """Return boolean Series: True where batter was genuinely dismissed."""
+    if dismissed_col is None:
+        return pd.Series(False, index=df_.index)
+    mask = (
+        df_[dismissed_col].notna() &
+        (df_[dismissed_col].astype(str).str.strip() != '') &
+        (df_[dismissed_col].astype(str) == df_['batter'].astype(str))
+    )
+    if 'wicket_kind' in df_.columns:
+        mask = mask & ~df_['wicket_kind'].astype(str).str.lower().str.strip().isin(_NOT_OUT_KINDS)
+    return mask
+
+def _bowler_runs(df_):
+    """Runs attributable to bowler = total - byes - leg_byes."""
+    r = df_['runs.total'].astype(float)
+    if 'byes' in df_.columns:
+        r = r - df_['byes'].astype(float).fillna(0)
+    if 'leg_byes' in df_.columns:
+        r = r - df_['leg_byes'].astype(float).fillna(0)
+    return r.clip(lower=0)
+
+def _dot_mask(df_):
+    """True for legal deliveries where batter scored 0 and no byes/legbyes."""
+    legal = df_['is_valid_delivery'] == 1
+    batter_zero = df_['runs.batter'] == 0
+    no_byes = True
+    if 'byes' in df_.columns:
+        no_byes = no_byes & (df_['byes'].fillna(0) == 0)
+    if 'leg_byes' in df_.columns:
+        no_byes = no_byes & (df_['leg_byes'].fillna(0) == 0)
+    return legal & batter_zero & no_byes
+
+def _safe_divide(num, den, fill=0.0):
+    """Division safe against zero/NaN denominators."""
+    with np.errstate(divide='ignore', invalid='ignore'):
+        result = np.where(den > 0, num / den, fill)
+    return result
+
+def _prep_innings(df_):
+    """Filter to normal innings (1 & 2 only) and return sorted copy."""
+    return df_[df_['innings'].isin([1, 2])].copy()
+
+
+# =============================================================================
+# MODULE 1: BATTER PHASE VULNERABILITY
+# =============================================================================
+
+def calc_batter_phase_vulnerability(df_):
+    """
+    Per-batter, per-phase batting breakdown.
+    Returns DataFrame with columns:
+    Batter, Team, Phase, Innings, Runs, Balls, SR, Dismissals, Avg, Dot%, Boundary%, BPD
+    """
+    work = _prep_innings(df_)
+    if work.empty:
+        return pd.DataFrame()
+
+    # Balls faced = legal + no-balls (excludes wides); wides don't reach batter
+    balls_faced_mask = work['is_valid_delivery'] == 1
+    if 'no_balls' in work.columns:
+        balls_faced_mask = balls_faced_mask | (work['no_balls'] > 0)
+
+    dismissed_col = _get_dismissed_col(work)
+    work['is_dismissed'] = _make_dismissal_mask(work, dismissed_col)
+    work['is_dot'] = _dot_mask(work)
+    work['is_boundary'] = work['runs.batter'].isin([4, 6])
+    work['is_bf'] = balls_faced_mask  # True = ball faced by batter
+
+    grp = work.groupby(['batter', 'team', 'phase'], observed=True)
+    stats = grp.agg(
+        Innings=('match_id', 'nunique'),
+        Runs=('runs.batter', 'sum'),
+        Balls=('is_bf', 'sum'),
+        Dismissals=('is_dismissed', 'sum'),
+        Dots=('is_dot', 'sum'),
+        Boundaries=('is_boundary', 'sum'),
+        Legal_Balls=('is_valid_delivery', 'sum'),
+    ).reset_index()
+
+    stats = stats[stats['Balls'] > 0].copy()
+    stats['SR'] = (_safe_divide(stats['Runs'], stats['Balls']) * 100).round(2)
+    stats['Avg'] = np.where(
+        stats['Dismissals'] > 0,
+        (stats['Runs'] / stats['Dismissals']).round(2),
+        stats['Runs'].astype(float)
+    )
+    stats['Dot%'] = (_safe_divide(stats['Dots'], stats['Legal_Balls']) * 100).round(1)
+    stats['Boundary%'] = (_safe_divide(stats['Boundaries'], stats['Legal_Balls']) * 100).round(1)
+    stats['BPD'] = np.where(
+        stats['Dismissals'] > 0,
+        (stats['Balls'] / stats['Dismissals']).round(1),
+        np.nan
+    )
+    stats = stats.rename(columns={'batter': 'Batter', 'team': 'Team', 'phase': 'Phase'})
+    return stats[['Batter', 'Team', 'Phase', 'Innings', 'Runs', 'Balls', 'SR',
+                  'Dismissals', 'Avg', 'Dot%', 'Boundary%', 'BPD']].reset_index(drop=True)
+
+
+# =============================================================================
+# MODULE 2: BOWLER PHASE ROLE & THREAT
+# =============================================================================
+
+def calc_bowler_phase_threat(df_):
+    """
+    Per-bowler, per-phase bowling breakdown with role classification.
+    Returns DataFrame with phase stats + Role column.
+    """
+    work = _prep_innings(df_)
+    if work.empty:
+        return pd.DataFrame()
+
+    work['bowler_runs'] = _bowler_runs(work)
+    work['is_dot'] = _dot_mask(work)
+    work['is_boundary'] = work['runs.batter'].isin([4, 6])
+
+    bowling_col = 'bowling_team' if 'bowling_team' in work.columns else None
+
+    grp_cols = ['bowler', 'phase']
+    if bowling_col:
+        grp_cols = ['bowler', bowling_col, 'phase']
+
+    grp = work.groupby(grp_cols, observed=True)
+    stats = grp.agg(
+        Legal_Balls=('is_valid_delivery', 'sum'),
+        Runs_Conceded=('bowler_runs', 'sum'),
+        Wickets=('wicket_count', 'sum'),   # bowler-credited only
+        Dots=('is_dot', 'sum'),
+        Boundaries=('is_boundary', 'sum'),
+    ).reset_index()
+
+    stats = stats[stats['Legal_Balls'] >= 6].copy()  # at least 1 over
+    stats['Overs'] = (stats['Legal_Balls'] / 6).round(2)
+    stats['Economy'] = (_safe_divide(stats['Runs_Conceded'], stats['Overs'])).round(2)
+    stats['SR'] = np.where(stats['Wickets'] > 0,
+                           (stats['Legal_Balls'] / stats['Wickets']).round(1), np.nan)
+    stats['Dot%'] = (_safe_divide(stats['Dots'], stats['Legal_Balls']) * 100).round(1)
+    stats['Boundary%'] = (_safe_divide(stats['Boundaries'], stats['Legal_Balls']) * 100).round(1)
+    stats['BPB'] = np.where(stats['Boundaries'] > 0,
+                            (stats['Legal_Balls'] / stats['Boundaries']).round(1), np.nan)
+
+    # ── Role classification (relative thresholds) ──────────────────────────
+    # Compute per-phase competition averages
+    comp_avg = stats.groupby('phase', observed=True).agg(
+        avg_econ=('Economy', 'mean'),
+        avg_sr=('SR', 'mean'),
+        avg_dot=('Dot%', 'mean'),
+        avg_bpct=('Boundary%', 'mean'),
+    ).reset_index()
+    stats = stats.merge(comp_avg, on='phase', how='left')
+
+    def _classify_role(row):
+        phase = row['phase']
+        econ = row['Economy']
+        sr = row['SR']
+        dot_pct = row['Dot%']
+        bpct = row['Boundary%']
+        avg_e = row['avg_econ']
+        avg_s = row['avg_sr']
+        avg_d = row['avg_dot']
+        avg_b = row['avg_bpct']
+        min_balls = row['Legal_Balls']
+
+        reasons = []
+        role = 'General'
+
+        if min_balls < 12:
+            return 'Insufficient Sample', 'Fewer than 12 legal balls'
+
+        is_wkt_taker = pd.notna(avg_s) and pd.notna(sr) and sr < avg_s * 0.85
+        is_controller = econ < avg_e * 0.85
+        is_high_risk = bpct > avg_b * 1.25 if pd.notna(avg_b) else False
+        is_dot_specialist = dot_pct > avg_d * 1.10 if pd.notna(avg_d) else False
+        is_expensive = econ > avg_e * 1.20
+
+        if phase == 'Powerplay':
+            if is_wkt_taker and is_controller:
+                role = 'New-ball Strike Bowler'
+                reasons.append(f"SR {sr:.1f} vs avg {avg_s:.1f}; Econ {econ:.2f} vs avg {avg_e:.2f}")
+            elif is_wkt_taker:
+                role = 'New-ball Strike Bowler'
+                reasons.append(f"SR {sr:.1f} vs competition avg {avg_s:.1f}")
+            elif is_controller:
+                role = 'Powerplay Controller'
+                reasons.append(f"Econ {econ:.2f} vs avg {avg_e:.2f}")
+            elif is_high_risk:
+                role = 'Death Vulnerability' if phase == 'Death' else 'High-Risk (PP)'
+                reasons.append(f"Boundary% {bpct:.1f}% vs avg {avg_b:.1f}%")
+
+        elif phase == 'Middle':
+            if is_wkt_taker:
+                role = 'Middle-Overs Wicket-Taker'
+                reasons.append(f"SR {sr:.1f} vs avg {avg_s:.1f}")
+            elif is_controller:
+                role = 'Middle-Overs Controller'
+                reasons.append(f"Econ {econ:.2f} vs avg {avg_e:.2f}")
+            elif is_expensive:
+                role = 'High-Risk Wicket-Taker' if is_wkt_taker else 'Middle-Overs (Expensive)'
+                reasons.append(f"Econ {econ:.2f} vs avg {avg_e:.2f}")
+
+        elif phase == 'Death':
+            if is_wkt_taker and not is_expensive:
+                role = 'Death Specialist'
+                reasons.append(f"SR {sr:.1f} vs avg {avg_s:.1f}; Econ {econ:.2f}")
+            elif is_controller:
+                role = 'Death Specialist'
+                reasons.append(f"Econ {econ:.2f} below avg {avg_e:.2f}")
+            elif is_expensive:
+                role = 'Death Vulnerability'
+                reasons.append(f"Econ {econ:.2f} vs avg {avg_e:.2f}")
+            elif is_high_risk:
+                role = 'Death Vulnerability'
+                reasons.append(f"Boundary% {bpct:.1f}% vs avg {avg_b:.1f}%")
+
+        return role, '; '.join(reasons) if reasons else 'Within average range'
+
+    role_results = stats.apply(_classify_role, axis=1)
+    stats['Role'] = [r[0] for r in role_results]
+    stats['Role Reason'] = [r[1] for r in role_results]
+
+    # Drop helper columns
+    stats = stats.drop(columns=['avg_econ', 'avg_sr', 'avg_dot', 'avg_bpct'], errors='ignore')
+
+    out_cols = ['bowler', 'phase', 'Overs', 'Legal_Balls', 'Runs_Conceded',
+                'Wickets', 'Economy', 'SR', 'Dot%', 'Boundary%', 'BPB', 'Role', 'Role Reason']
+    if bowling_col:
+        out_cols = ['bowler', bowling_col, 'phase'] + out_cols[2:]
+    stats = stats.rename(columns={'bowler': 'Bowler', 'phase': 'Phase',
+                                  bowling_col: 'Team'} if bowling_col else {'bowler': 'Bowler', 'phase': 'Phase'})
+    return stats.reset_index(drop=True)
+
+
+# =============================================================================
+# MODULE 3: OVER TRANSITION ANALYSIS
+# =============================================================================
+
+def calc_over_transition(df_):
+    """
+    Batting performance across over periods and transition deltas between them.
+    Returns: (period_df, transition_df)
+    """
+    work = _prep_innings(df_)
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame()
+
+    work['bowler_runs'] = _bowler_runs(work)
+    work['is_dot'] = _dot_mask(work)
+    work['is_boundary'] = work['runs.batter'].isin([4, 6])
+
+    records = []
+    for label, (ov_start, ov_end) in _OVER_PERIODS:
+        period_data = work[(work['over'] >= ov_start) & (work['over'] <= ov_end)]
+        if period_data.empty:
+            continue
+        grp = period_data.groupby(['team', 'year', 'match_id', 'innings'], observed=True)
+        agg = grp.agg(
+            Runs=('runs.total', 'sum'),
+            Legal_Balls=('is_valid_delivery', 'sum'),
+            Wickets=('team_wicket_count', 'sum') if 'team_wicket_count' in period_data.columns else ('wicket_count', 'sum'),
+            Dots=('is_dot', 'sum'),
+            Boundaries=('is_boundary', 'sum'),
+        ).reset_index()
+        agg['Period'] = label
+        records.append(agg)
+
+    if not records:
+        return pd.DataFrame(), pd.DataFrame()
+
+    all_periods = pd.concat(records, ignore_index=True)
+    all_periods = all_periods[all_periods['Legal_Balls'] > 0]
+
+    # Per-team-season summary (avg per innings)
+    period_summary = all_periods.groupby(['team', 'year', 'Period'], observed=True).agg(
+        Innings=('match_id', 'nunique'),
+        Total_Runs=('Runs', 'sum'),
+        Total_Balls=('Legal_Balls', 'sum'),
+        Total_Wickets=('Wickets', 'sum'),
+        Total_Dots=('Dots', 'sum'),
+        Total_Boundaries=('Boundaries', 'sum'),
+    ).reset_index()
+
+    period_summary['RR'] = (_safe_divide(period_summary['Total_Runs'],
+                                          period_summary['Total_Balls']) * 6).round(2)
+    period_summary['Dot%'] = (_safe_divide(period_summary['Total_Dots'],
+                                            period_summary['Total_Balls']) * 100).round(1)
+    period_summary['BPB'] = np.where(
+        period_summary['Total_Boundaries'] > 0,
+        (period_summary['Total_Balls'] / period_summary['Total_Boundaries']).round(1),
+        np.nan
+    )
+
+    # Period ordering for display
+    period_order = {lbl: i for i, (lbl, _) in enumerate(_OVER_PERIODS)}
+    period_summary['_order'] = period_summary['Period'].map(period_order)
+    period_summary = period_summary.sort_values(['team', 'year', '_order']).drop('_order', axis=1)
+    period_summary = period_summary.rename(columns={'team': 'Team', 'year': 'Season'})
+
+    # ── Transition deltas ──────────────────────────────────────────────────
+    transitions = []
+    period_pairs = [
+        ('Powerplay → Overs 7–10',    'Overs 1–6',   'Overs 7–10'),
+        ('Overs 7–10 → Overs 11–15',  'Overs 7–10',  'Overs 11–15'),
+        ('Overs 11–15 → Death',       'Overs 11–15', 'Overs 16–20'),
+    ]
+    for trans_label, from_p, to_p in period_pairs:
+        from_data = period_summary[period_summary['Period'] == from_p][['Team', 'Season', 'RR', 'Dot%']].copy()
+        to_data   = period_summary[period_summary['Period'] == to_p][['Team', 'Season', 'RR', 'Dot%']].copy()
+        merged = from_data.merge(to_data, on=['Team', 'Season'], suffixes=('_from', '_to'))
+        merged['Transition'] = trans_label
+        merged['RR_Change'] = (merged['RR_to'] - merged['RR_from']).round(2)
+        merged['RR_Change%'] = (_safe_divide(merged['RR_Change'], merged['RR_from']) * 100).round(1)
+        merged['Dot%_Change'] = (merged['Dot%_to'] - merged['Dot%_from']).round(1)
+        transitions.append(merged[['Team', 'Season', 'Transition', 'RR_from', 'RR_to',
+                                    'RR_Change', 'RR_Change%', 'Dot%_from', 'Dot%_to', 'Dot%_Change']])
+
+    trans_df = pd.concat(transitions, ignore_index=True) if transitions else pd.DataFrame()
+    return period_summary, trans_df
+
+
+# =============================================================================
+# MODULE 4: PARTNERSHIP DISRUPTION ANALYSIS
+# =============================================================================
+
+def calc_partnerships(df_):
+    """
+    Build partnerships from ball-by-ball data per (match_id, innings).
+    Returns: (partnership_df, team_summary_df, bowler_disruption_df)
+    """
+    work = _prep_innings(df_)
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+    required = {'match_id', 'innings', 'batter', 'bowler', 'over', 'ball_float',
+                'runs.batter', 'runs.total', 'is_valid_delivery', 'wicket_count', 'wicket_kind'}
+    if not required.issubset(work.columns):
+        missing = required - set(work.columns)
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+    dismissed_col = _get_dismissed_col(work)
+    work_sorted = work.sort_values(['match_id', 'innings', 'ball_float']).reset_index(drop=True)
+
+    partnerships = []
+
+    for (match_id, innings), inn_df in work_sorted.groupby(['match_id', 'innings'], observed=True):
+        inn_df = inn_df.reset_index(drop=True)
+        if inn_df.empty:
+            continue
+
+        # Metadata
+        team = inn_df['team'].iloc[0] if 'team' in inn_df.columns else 'Unknown'
+        season = inn_df['year'].iloc[0] if 'year' in inn_df.columns else None
+        bowling_team = inn_df['bowling_team'].iloc[0] if 'bowling_team' in inn_df.columns else 'Unknown'
+
+        # Track current partnership
+        # batters at wicket: infer from unique batters appearing in order
+        batters_seen = []
+        batter_first_ball = {}
+        for _, row in inn_df.iterrows():
+            b = row['batter']
+            if b not in batter_first_ball:
+                batter_first_ball[b] = row['ball_float']
+                batters_seen.append(b)
+
+        # Build partnership segments: between consecutive wickets
+        # Segment = all balls between wicket k and wicket k+1
+        # Initial pair: first 2 batters
+        wicket_rows = inn_df[
+            (inn_df['wicket_count'] > 0) |
+            (inn_df['team_wicket_count'] > 0 if 'team_wicket_count' in inn_df.columns else False)
+        ].copy() if 'wicket_kind' in inn_df.columns else inn_df[inn_df['wicket_count'] > 0].copy()
+
+        # Build segment boundaries: list of (start_ball_idx, end_ball_idx)
+        segment_starts = [0]
+        segment_ends = []
+
+        for idx, wk_row in inn_df.iterrows():
+            is_wkt = False
+            if 'team_wicket_count' in inn_df.columns:
+                is_wkt = wk_row['team_wicket_count'] > 0
+            else:
+                is_wkt = wk_row['wicket_count'] > 0
+            if is_wkt:
+                segment_ends.append(idx)
+                segment_starts.append(idx + 1)
+
+        segment_ends.append(len(inn_df))  # end of innings
+
+        batter_idx = 0  # index into batters_seen
+        for seg_i, (seg_start, seg_end) in enumerate(zip(segment_starts, segment_ends)):
+            if seg_start >= seg_end:
+                continue
+            seg = inn_df.iloc[seg_start:seg_end]
+            if seg.empty:
+                continue
+
+            # Identify the two batters in this partnership
+            # Batter 1: current (survived previous wicket or opener)
+            # Batter 2: the other batter in this segment
+            seg_batters = list(dict.fromkeys(seg['batter'].tolist()))  # ordered unique
+            if len(seg_batters) == 0:
+                continue
+            b1 = seg_batters[0]
+            b2 = seg_batters[1] if len(seg_batters) > 1 else '?'
+
+            p_runs = int(seg['runs.total'].sum())
+            p_balls = int(seg['is_valid_delivery'].sum())
+            p_batter_runs = int(seg['runs.batter'].sum())
+            p_4s = int((seg['runs.batter'] == 4).sum())
+            p_6s = int((seg['runs.batter'] == 6).sum())
+            p_boundaries = p_4s + p_6s
+            start_over = int(seg['over'].min()) + 1
+            end_over = int(seg['over'].max()) + 1
+            p_rr = round(p_runs / (p_balls / 6), 2) if p_balls > 0 else 0.0
+
+            # Phase at end of partnership
+            phase_end = seg['phase'].iloc[-1] if 'phase' in seg.columns else 'Unknown'
+
+            # How partnership ended
+            if seg_i < len(segment_ends) - 1:
+                # There's a next segment — wicket fell
+                # Find the wicket delivery (last ball that has wicket)
+                wk_delivery_idx = segment_ends[seg_i]  # the wicket ball index
+                if wk_delivery_idx < len(inn_df):
+                    wk_del = inn_df.iloc[wk_delivery_idx]
+                    end_reason = str(wk_del['wicket_kind']) if 'wicket_kind' in inn_df.columns else 'wicket'
+                    # Player dismissed
+                    dismissed_name = None
+                    if dismissed_col and dismissed_col in inn_df.columns:
+                        dismissed_name = str(wk_del[dismissed_col])
+                    # Bowler credit: only if bowler-credited dismissal
+                    wk_kind = str(wk_del['wicket_kind']).lower().strip() if 'wicket_kind' in inn_df.columns else ''
+                    credited_bowler = str(wk_del['bowler']) if wk_kind in _BOWLER_WKTS else None
+                    breaking_bowler = credited_bowler
+                else:
+                    end_reason = 'End of Innings'
+                    breaking_bowler = None
+                    dismissed_name = None
+            else:
+                end_reason = 'Not Out / End of Innings'
+                breaking_bowler = None
+                dismissed_name = None
+
+            partnerships.append({
+                'match_id': match_id,
+                'Season': season,
+                'Team': team,
+                'vs': bowling_team,
+                'Innings': innings,
+                'Partnership_No': seg_i + 1,
+                'Batter_1': b1,
+                'Batter_2': b2,
+                'Runs': p_runs,
+                'Balls': p_balls,
+                'RR': p_rr,
+                'Fours': p_4s,
+                'Sixes': p_6s,
+                'Boundaries': p_boundaries,
+                'Start_Over': start_over,
+                'End_Over': end_over,
+                'Phase_End': phase_end,
+                'End_Reason': end_reason,
+                'Breaking_Bowler': breaking_bowler,
+            })
+
+    if not partnerships:
+        return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
+
+    part_df = pd.DataFrame(partnerships)
+
+    # ── Team summary ─────────────────────────────────────────────────────────
+    team_summary = part_df.groupby(['Team', 'Season'], observed=True).agg(
+        Partnerships=('Runs', 'count'),
+        Total_Runs=('Runs', 'sum'),
+        Avg_Partnership=('Runs', 'mean'),
+        Best_Partnership=('Runs', 'max'),
+        Total_Boundaries=('Boundaries', 'sum'),
+    ).reset_index()
+    team_summary['Avg_Partnership'] = team_summary['Avg_Partnership'].round(1)
+
+    # ── Bowler disruption ─────────────────────────────────────────────────────
+    bowler_disruption = (
+        part_df[part_df['Breaking_Bowler'].notna() & (part_df['Breaking_Bowler'] != 'None')]
+        .groupby(['Breaking_Bowler', 'Phase_End'], observed=True)
+        .agg(
+            Partnerships_Broken=('Runs', 'count'),
+            Avg_Runs_Before_Break=('Runs', 'mean'),
+        ).reset_index()
+        .rename(columns={'Breaking_Bowler': 'Bowler', 'Phase_End': 'Phase'})
+        .sort_values('Partnerships_Broken', ascending=False)
+    )
+    bowler_disruption['Avg_Runs_Before_Break'] = bowler_disruption['Avg_Runs_Before_Break'].round(1)
+
+    return part_df, team_summary, bowler_disruption
+
+
+# =============================================================================
+# MODULE 5: DOT-BALL PRESSURE CONVERSION
+# =============================================================================
+
+def calc_dotball_pressure(df_, min_streak=3):
+    """
+    Identify pressure sequences (≥ min_streak consecutive legal dot balls)
+    and analyse what happens in the next 3 legal deliveries.
+
+    Dot definition: legal delivery (is_valid_delivery=1) where runs.batter==0
+    and no byes or leg_byes.
+    Wides & no-balls are SKIPPED (not legal), but they do NOT reset the streak
+    because a bowler can still maintain pressure with an illegal delivery.
+    However, if the wide/no-ball concedes batter runs it resets the streak.
+
+    Returns: (bowler_df, team_df)
+    """
+    work = _prep_innings(df_)
+    if work.empty:
+        return pd.DataFrame(), pd.DataFrame()
+
+    work = work.sort_values(['match_id', 'innings', 'ball_float']).reset_index(drop=True)
+    dismissed_col = _get_dismissed_col(work)
+
+    bowler_records = []
+    team_records = []
+
+    for (match_id, innings), inn_df in work.groupby(['match_id', 'innings'], observed=True):
+        inn_df = inn_df.reset_index(drop=True)
+        n = len(inn_df)
+        if n == 0:
+            continue
+
+        team = inn_df['team'].iloc[0] if 'team' in inn_df.columns else 'Unknown'
+        season = inn_df['year'].iloc[0] if 'year' in inn_df.columns else None
+
+        # Build list of (index, is_legal, is_dot, is_boundary, is_wkt_bowler, is_wkt_team, bowler)
+        legal_balls = []  # indices of legal deliveries in order
+        for i, row in inn_df.iterrows():
+            legal_balls.append({
+                'idx': i,
+                'is_legal': row['is_valid_delivery'] == 1,
+                'is_dot': (
+                    row['is_valid_delivery'] == 1 and
+                    row['runs.batter'] == 0 and
+                    row.get('byes', 0) == 0 and
+                    row.get('leg_byes', 0) == 0
+                ),
+                'is_boundary': row['runs.batter'] in [4, 6],
+                'is_wkt_bowler': row['wicket_count'] > 0,
+                'is_wkt_team': row.get('team_wicket_count', row['wicket_count']) > 0,
+                'bowler': row['bowler'],
+                'runs_batter': row['runs.batter'],
+            })
+
+        # Filter to legal only for streak analysis
+        legal_only = [b for b in legal_balls if b['is_legal']]
+        m = len(legal_only)
+        if m < min_streak + 3:
+            continue
+
+        i = 0
+        while i < m:
+            # Check if streak of ≥ min_streak dots starts here
+            if not legal_only[i]['is_dot']:
+                i += 1
+                continue
+
+            # Count streak length
+            streak_len = 0
+            j = i
+            while j < m and legal_only[j]['is_dot']:
+                streak_len += 1
+                j += 1
+
+            if streak_len >= min_streak:
+                # Pressure event: streak from i to j-1 inclusive
+                # Bowler(s) in this streak
+                streak_balls = legal_only[i:j]
+                # Primary bowler = most frequent in streak
+                bowlers_in_streak = [b['bowler'] for b in streak_balls]
+                from collections import Counter as _Counter
+                primary_bowler = _Counter(bowlers_in_streak).most_common(1)[0][0]
+
+                # Analyse next 3 legal balls
+                next_balls = legal_only[j:j + 3]
+                nb_count = len(next_balls)
+                if nb_count == 0:
+                    # End of innings right after pressure — still record the event
+                    bowler_records.append({
+                        'match_id': match_id, 'Season': season, 'Team': team,
+                        'Innings': innings, 'Bowler': primary_bowler,
+                        'Streak_Length': streak_len,
+                        'Wickets_Next3': 0, 'Boundaries_Next3': 0,
+                        'Dots_Next3': 0, 'Runs_Next3': 0, 'Balls_Next3': 0,
+                    })
+                    team_records.append({
+                        'match_id': match_id, 'Season': season, 'Team': team,
+                        'Innings': innings, 'Streak_Length': streak_len,
+                        'Wickets_Next3': 0, 'Boundaries_Next3': 0,
+                        'Dots_Next3': 0, 'Runs_Next3': 0, 'Balls_Next3': nb_count,
+                    })
+                    i = j  # advance past streak
+                    continue
+
+                w3_bowler = sum(1 for b in next_balls if b['is_wkt_bowler'])
+                w3_team = sum(1 for b in next_balls if b['is_wkt_team'])
+                bd3 = sum(1 for b in next_balls if b['is_boundary'])
+                dot3 = sum(1 for b in next_balls if b['is_dot'])
+                r3 = sum(b['runs_batter'] for b in next_balls)
+
+                bowler_records.append({
+                    'match_id': match_id, 'Season': season, 'Team': team,
+                    'Innings': innings, 'Bowler': primary_bowler,
+                    'Streak_Length': streak_len,
+                    'Wickets_Next3': w3_bowler,
+                    'Boundaries_Next3': bd3,
+                    'Dots_Next3': dot3,
+                    'Runs_Next3': r3,
+                    'Balls_Next3': nb_count,
+                })
+                team_records.append({
+                    'match_id': match_id, 'Season': season, 'Team': team,
+                    'Innings': innings, 'Streak_Length': streak_len,
+                    'Wickets_Next3': w3_team,
+                    'Boundaries_Next3': bd3,
+                    'Dots_Next3': dot3,
+                    'Runs_Next3': r3,
+                    'Balls_Next3': nb_count,
+                })
+
+                # Advance past the full streak (anti-double-count)
+                i = j
+            else:
+                i += 1  # no pressure streak here
+
+    def _summarize(records, grp_col):
+        if not records:
+            return pd.DataFrame()
+        rdf = pd.DataFrame(records)
+        if grp_col not in rdf.columns:
+            return rdf
+        summary = rdf.groupby([grp_col, 'Season'], observed=True).agg(
+            Pressure_Sequences=('Streak_Length', 'count'),
+            Avg_Streak=('Streak_Length', 'mean'),
+            Total_Wickets=('Wickets_Next3', 'sum'),
+            Total_Boundaries=('Boundaries_Next3', 'sum'),
+            Total_Dots_After=('Dots_Next3', 'sum'),
+            Total_Balls_Analysed=('Balls_Next3', 'sum'),
+            Total_Runs_After=('Runs_Next3', 'sum'),
+        ).reset_index()
+        summary['Conversion%'] = (_safe_divide(summary['Total_Wickets'],
+                                               summary['Pressure_Sequences']) * 100).round(1)
+        summary['Boundary_Release%'] = (_safe_divide(summary['Total_Boundaries'],
+                                                      summary['Total_Balls_Analysed']) * 100).round(1)
+        summary['Continued_Dot%'] = (_safe_divide(summary['Total_Dots_After'],
+                                                   summary['Total_Balls_Analysed']) * 100).round(1)
+        summary['Runs_Per_Ball_After'] = (_safe_divide(summary['Total_Runs_After'],
+                                                        summary['Total_Balls_Analysed'])).round(3)
+        summary['Avg_Streak'] = summary['Avg_Streak'].round(1)
+        return summary[summary['Pressure_Sequences'] >= 3]  # min sample
+
+    bowler_df = _summarize(bowler_records, 'Bowler')
+    team_df = _summarize(team_records, 'Team')
+
+    return bowler_df, team_df
+
+
+# =============================================================================
+# MODULE 6: TACTICAL FLAGS ENGINE
+# =============================================================================
+
+def generate_tactical_flags(fdf_, selected_team=None, selected_opp=None, top_n=10):
+    """
+    Deterministic rule-based tactical insight generator.
+    Scans results from all 5 analytical modules.
+    Returns list of dicts: {category, icon, observation, evidence, implication, strength}
+    """
+    flags = []
+    MIN_BALLS_BAT = 18   # minimum balls for batting flag
+    MIN_BALLS_BOWL = 12  # minimum balls for bowling flag
+    MIN_SEQUENCES = 4    # minimum pressure sequences
+
+    work = _prep_innings(fdf_)
+    if work.empty:
+        return []
+
+    # Filter to selected team/opp if provided
+    if selected_team:
+        bat_work = work[work['team'] == selected_team]
+    else:
+        bat_work = work
+
+    if selected_opp and 'bowling_team' in work.columns:
+        opp_bat = work[work['team'] == selected_opp]
+        opp_bowl = work[work['bowling_team'] == selected_opp] if 'bowling_team' in work.columns else work
+    else:
+        opp_bat = work
+        opp_bowl = work
+
+    # ── A. Batter Phase Vulnerability flags ────────────────────────────────
+    bpv = calc_batter_phase_vulnerability(opp_bat if selected_opp else bat_work)
+    if not bpv.empty:
+        # Dot% vulnerability: batter with high dot% in a phase
+        comp_dot = bpv.groupby('Phase')['Dot%'].mean().to_dict()
+        for _, row in bpv.iterrows():
+            if row['Balls'] < MIN_BALLS_BAT:
+                continue
+            phase_avg = comp_dot.get(row['Phase'], 0)
+            if row['Dot%'] > phase_avg * 1.20 and row['Dot%'] > 35:
+                strength = row['Dot%'] - phase_avg
+                flags.append({
+                    'icon': '🔴', 'category': 'Vulnerability',
+                    'observation': f"{row['Batter']} — high dot-ball rate in {row['Phase']}",
+                    'evidence': f"Dot% {row['Dot%']}% vs phase avg {phase_avg:.1f}% ({row['Balls']} balls)",
+                    'implication': f"Sustained pressure in {row['Phase']} may yield wicket.",
+                    'strength': strength,
+                })
+            # Boundary threat: batter scores boundary frequently in a phase
+            comp_bd = bpv.groupby('Phase')['Boundary%'].mean().to_dict()
+            phase_avg_bd = comp_bd.get(row['Phase'], 0)
+            if row['Boundary%'] > phase_avg_bd * 1.25 and row['Balls'] >= MIN_BALLS_BAT:
+                strength_bd = row['Boundary%'] - phase_avg_bd
+                flags.append({
+                    'icon': '⚠️', 'category': 'Threat',
+                    'observation': f"{row['Batter']} — boundary threat in {row['Phase']}",
+                    'evidence': f"Boundary% {row['Boundary%']}% vs phase avg {phase_avg_bd:.1f}% ({row['Balls']} balls)",
+                    'implication': f"Contains boundary-hitting threat in {row['Phase']}.",
+                    'strength': strength_bd,
+                })
+
+    # ── B. Over Transition Analysis flags ──────────────────────────────────
+    if selected_team or selected_opp:
+        ota_target = opp_bat if selected_opp else bat_work
+        _, trans_df = calc_over_transition(ota_target)
+        if not trans_df.empty:
+            for _, row in trans_df.iterrows():
+                if row['RR_Change'] < -1.0:
+                    flags.append({
+                        'icon': '🟢', 'category': 'Opportunity',
+                        'observation': f"Scoring rate drops at transition: {row['Transition']}",
+                        'evidence': f"RR {row['RR_from']:.2f} → {row['RR_to']:.2f} (Δ {row['RR_Change']:+.2f})",
+                        'implication': "Attack with pressure bowling immediately after transition.",
+                        'strength': abs(row['RR_Change']),
+                    })
+                if row['Dot%_Change'] > 5:
+                    flags.append({
+                        'icon': '🟢', 'category': 'Opportunity',
+                        'observation': f"Dot% rises sharply at transition: {row['Transition']}",
+                        'evidence': f"Dot% {row['Dot%_from']:.1f}% → {row['Dot%_to']:.1f}% (Δ +{row['Dot%_Change']:.1f}%)",
+                        'implication': "Batter struggles for fluency in this period — maintain pressure.",
+                        'strength': row['Dot%_Change'],
+                    })
+
+    # ── C. Bowler Phase Role & Threat flags ────────────────────────────────
+    bowl_target = opp_bowl if selected_opp else work
+    bpt = calc_bowler_phase_threat(bowl_target)
+    if not bpt.empty:
+        death_spec = bpt[(bpt['Phase'] == 'Death') & (bpt['Role'] == 'Death Specialist') & (bpt['Legal_Balls'] >= MIN_BALLS_BOWL)]
+        for _, row in death_spec.iterrows():
+            flags.append({
+                'icon': '⚠️', 'category': 'Threat',
+                'observation': f"{row['Bowler']} — Death Specialist",
+                'evidence': f"Econ {row['Economy']:.2f}, SR {row['SR']:.1f} in Death ({row['Legal_Balls']} balls). {row['Role Reason']}",
+                'implication': "Plan aggressive batting strategy before death phase starts.",
+                'strength': 2.0,
+            })
+        vulnerable = bpt[(bpt['Phase'] == 'Death') & (bpt['Role'] == 'Death Vulnerability') & (bpt['Legal_Balls'] >= MIN_BALLS_BOWL)]
+        for _, row in vulnerable.iterrows():
+            flags.append({
+                'icon': '🎯', 'category': 'Match-up / Tactical Target',
+                'observation': f"{row['Bowler']} — vulnerable in Death",
+                'evidence': f"Econ {row['Economy']:.2f}. {row['Role Reason']} ({row['Legal_Balls']} balls)",
+                'implication': "Target this bowler aggressively in overs 16–20.",
+                'strength': 1.5,
+            })
+
+    # ── D. Partnership Disruption flags ────────────────────────────────────
+    part_target = opp_bat if selected_opp else bat_work
+    part_df, _, _ = calc_partnerships(part_target)
+    if not part_df.empty and 'Phase_End' in part_df.columns:
+        phase_avg_part = part_df.groupby('Phase_End')['Runs'].mean().to_dict()
+        big_parts = part_df[part_df['Runs'] > 40]
+        for phase, avg in phase_avg_part.items():
+            phase_big = big_parts[big_parts['Phase_End'] == phase]
+            if len(phase_big) >= 2:
+                flags.append({
+                    'icon': '💡', 'category': 'Tactical Note',
+                    'observation': f"High-impact partnerships often built during {phase}",
+                    'evidence': f"{len(phase_big)} partnerships of 40+ runs in {phase} phase.",
+                    'implication': "Take early wickets in this phase to disrupt momentum.",
+                    'strength': len(phase_big) * 0.5,
+                })
+
+    # ── E. Dot-Ball Pressure Conversion flags ──────────────────────────────
+    dpc_bowl, dpc_team = calc_dotball_pressure(bowl_target)
+    if not dpc_bowl.empty:
+        high_conv = dpc_bowl[
+            (dpc_bowl['Conversion%'] > 25) &
+            (dpc_bowl['Pressure_Sequences'] >= MIN_SEQUENCES)
+        ]
+        for _, row in high_conv.iterrows():
+            flags.append({
+                'icon': '⚠️', 'category': 'Threat',
+                'observation': f"{row['Bowler']} — high pressure-to-wicket conversion",
+                'evidence': f"Conversion {row['Conversion%']}% from {row['Pressure_Sequences']} pressure sequences",
+                'implication': "This bowler consistently converts dot-ball runs into wickets.",
+                'strength': row['Conversion%'] / 10,
+            })
+
+    # ── Deduplicate, sort by strength, return top N ─────────────────────────
+    seen_obs = set()
+    unique_flags = []
+    for f in sorted(flags, key=lambda x: x['strength'], reverse=True):
+        key = f['observation'][:60]
+        if key not in seen_obs:
+            seen_obs.add(key)
+            unique_flags.append(f)
+
+    return unique_flags[:top_n]
+
+
+# =============================================================================
+# MODULE 1 UI: BATTER PHASE VULNERABILITY
+# =============================================================================
+if metric_choice == "Batter Phase Vulnerability":
+    st.subheader("🏏 Batter Phase Vulnerability")
+    st.caption("Performance breakdown by phase — Powerplay / Middle / Death. Identify where a batter dominates or struggles.")
+
+    _bpv_work = fdf[fdf['innings'].isin([1, 2])].copy()
+    if _bpv_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        _bpv_full = calc_batter_phase_vulnerability(_bpv_work)
+
+        if _bpv_full.empty:
+            st.info("No batting data after calculation.")
+        else:
+            _c1, _c2 = st.columns(2)
+            with _c1:
+                _bpv_batters = sorted(_bpv_full['Batter'].dropna().unique())
+                _sel_bpv_bat = st.selectbox("Select Batter", _bpv_batters, key="bpv_bat_sel")
+            with _c2:
+                _bpv_seasons = ["All Seasons"] + sorted(_bpv_work['year'].dropna().astype(str).unique())
+                _sel_bpv_season = st.selectbox("Season", _bpv_seasons, key="bpv_season_sel")
+
+            _bpv_filtered = _bpv_full[_bpv_full['Batter'] == _sel_bpv_bat].copy()
+            if _sel_bpv_season != "All Seasons":
+                # re-calc filtered to season
+                _bpv_season_work = _bpv_work[_bpv_work['year'].astype(str) == _sel_bpv_season]
+                _bpv_filtered = calc_batter_phase_vulnerability(_bpv_season_work)
+                _bpv_filtered = _bpv_filtered[_bpv_filtered['Batter'] == _sel_bpv_bat].copy()
+
+            # Order phases — cast to float first to avoid Categorical fillna TypeError
+            _bpv_filtered['_phase_order'] = pd.to_numeric(
+                _bpv_filtered['Phase'].astype(str).map(
+                    {p: i for i, p in enumerate(_PHASE_ORDER)}
+                ), errors='coerce'
+            ).fillna(99)
+            _bpv_filtered = _bpv_filtered.sort_values('_phase_order').drop('_phase_order', axis=1)
+
+
+            if _bpv_filtered.empty:
+                st.info(f"No data for {_sel_bpv_bat}.")
+            else:
+                st.markdown(f"### {_sel_bpv_bat} — Phase Breakdown")
+
+                # Highlight strongest/most vulnerable phase (min 12 balls)
+                _adequate = _bpv_filtered[_bpv_filtered['Balls'] >= 12]
+                if len(_adequate) >= 2:
+                    _best_phase = _adequate.loc[_adequate['SR'].idxmax(), 'Phase']
+                    _vuln_phase = _adequate.loc[_adequate['Dot%'].idxmax(), 'Phase']
+                    _ccol1, _ccol2 = st.columns(2)
+                    _ccol1.success(f"💪 Strongest Phase: **{_best_phase}** (SR {_adequate.loc[_adequate['SR'].idxmax(), 'SR']})")
+                    _ccol2.warning(f"⚠️ Most Vulnerable Phase: **{_vuln_phase}** (Dot% {_adequate.loc[_adequate['Dot%'].idxmax(), 'Dot%']}%)")
+
+                _disp_cols = ['Phase', 'Innings', 'Runs', 'Balls', 'SR', 'Dismissals', 'Avg', 'Dot%', 'Boundary%', 'BPD']
+                _show_df = _bpv_filtered[[c for c in _disp_cols if c in _bpv_filtered.columns]].reset_index(drop=True)
+                _show_df.index += 1
+                st.dataframe(_show_df, use_container_width=True)
+
+                # Bar chart SR by phase
+                if not _bpv_filtered.empty:
+                    _fig_bpv = px.bar(
+                        _bpv_filtered,
+                        x='Phase', y='SR',
+                        color='Dot%',
+                        color_continuous_scale='RdYlGn_r',
+                        text='SR',
+                        title=f"{_sel_bpv_bat} — Strike Rate by Phase (colour = Dot%)",
+                        labels={'SR': 'Strike Rate', 'Dot%': 'Dot Ball %'},
+                        category_orders={'Phase': _PHASE_ORDER},
+                    )
+                    _fig_bpv.update_traces(textposition='outside')
+                    _fig_bpv.add_hline(y=100, line_dash='dash', line_color='gray', annotation_text='SR=100')
+                    st.plotly_chart(_fig_bpv, use_container_width=True)
+
+                st.info("ℹ️ Highlights shown only when batter has faced ≥12 balls in at least 2 phases. Avoid drawing strong conclusions from small samples.")
+
+
+# =============================================================================
+# MODULE 2 UI: BOWLER PHASE ROLE & THREAT
+# =============================================================================
+elif metric_choice == "Bowler Phase Role & Threat":
+    st.subheader("🎳 Bowler Phase Role & Threat")
+    st.caption("Per-phase bowling breakdown with role classification based on relative economy, strike rate, and dot-ball benchmarks.")
+
+    _bpt_work = fdf[fdf['innings'].isin([1, 2])].copy()
+    if _bpt_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        with st.spinner("Calculating bowler phase stats..."):
+            _bpt_full = calc_bowler_phase_threat(_bpt_work)
+
+        if _bpt_full.empty:
+            st.info("No bowling data after calculation.")
+        else:
+            # Filters
+            _c1, _c2, _c3 = st.columns(3)
+            with _c1:
+                _bpt_phases = ["All Phases"] + _PHASE_ORDER
+                _sel_bpt_phase = st.selectbox("Phase", _bpt_phases, key="bpt_phase_sel")
+            with _c2:
+                _bpt_roles = ["All Roles"] + sorted(_bpt_full['Role'].dropna().unique().tolist())
+                _sel_bpt_role = st.selectbox("Role", _bpt_roles, key="bpt_role_sel")
+            with _c3:
+                _bpt_min_balls = st.number_input("Min Legal Balls", min_value=6, value=12, step=6, key="bpt_min_balls")
+
+            _bpt_display = _bpt_full[_bpt_full['Legal_Balls'] >= _bpt_min_balls].copy()
+            if _sel_bpt_phase != "All Phases":
+                _bpt_display = _bpt_display[_bpt_display['Phase'] == _sel_bpt_phase]
+            if _sel_bpt_role != "All Roles":
+                _bpt_display = _bpt_display[_bpt_display['Role'] == _sel_bpt_role]
+
+            if _bpt_display.empty:
+                st.info("No data matching the selected filters.")
+            else:
+                _bpt_display = _bpt_display.sort_values(['Phase', 'Economy']).reset_index(drop=True)
+                _bpt_display.index += 1
+                st.dataframe(_bpt_display, use_container_width=True)
+
+                # Role distribution bar
+                _role_cnt = _bpt_display.groupby('Role').size().reset_index(name='Count').sort_values('Count', ascending=False)
+                if len(_role_cnt) > 1:
+                    _fig_role = px.bar(
+                        _role_cnt, x='Role', y='Count',
+                        title="Bowler Role Distribution",
+                        color='Count', color_continuous_scale='Blues',
+                    )
+                    _fig_role.update_xaxes(tickangle=-30)
+                    st.plotly_chart(_fig_role, use_container_width=True)
+
+            # Phase tabs for compact view
+            st.markdown("---")
+            st.markdown("#### Phase Comparison")
+            _ph_tabs = st.tabs(_PHASE_ORDER)
+            for _ph_i, _ph in enumerate(_PHASE_ORDER):
+                with _ph_tabs[_ph_i]:
+                    _ph_df = _bpt_full[(_bpt_full['Phase'] == _ph) & (_bpt_full['Legal_Balls'] >= _bpt_min_balls)].copy()
+                    if _ph_df.empty:
+                        st.info(f"No data for {_ph}.")
+                    else:
+                        _ph_df = _ph_df.sort_values('Economy').reset_index(drop=True)
+                        _ph_df.index += 1
+                        st.dataframe(_ph_df, use_container_width=True)
+
+
+# =============================================================================
+# MODULE 3 UI: OVER TRANSITION ANALYSIS
+# =============================================================================
+elif metric_choice == "Over Transition Analysis":
+    st.subheader("📈 Over Transition Analysis")
+    st.caption("How team batting performance shifts between over periods. Identify where run rate accelerates/drops and dot-ball pressure increases.")
+
+    _ota_work = fdf[fdf['innings'].isin([1, 2])].copy()
+    if _ota_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        with st.spinner("Calculating over transitions..."):
+            _period_df, _trans_df = calc_over_transition(_ota_work)
+
+        if _period_df.empty:
+            st.info("Insufficient data for over transition analysis.")
+        else:
+            _innings_filter = st.radio("Innings", ["Both", "1st Innings Only", "2nd Innings Only"],
+                                       horizontal=True, key="ota_innings_filter")
+
+            # Re-apply innings filter
+            if _innings_filter == "1st Innings Only":
+                _ota_work_f = _ota_work[_ota_work['innings'] == 1]
+            elif _innings_filter == "2nd Innings Only":
+                _ota_work_f = _ota_work[_ota_work['innings'] == 2]
+            else:
+                _ota_work_f = _ota_work
+
+            _period_df_f, _trans_df_f = calc_over_transition(_ota_work_f)
+
+            tab_period, tab_trans, tab_chart = st.tabs(["Period Summary", "Transition Deltas", "Chart"])
+
+            with tab_period:
+                if not _period_df_f.empty:
+                    st.dataframe(_period_df_f.sort_values(['Team', 'Season', 'Period']).reset_index(drop=True),
+                                 use_container_width=True)
+                else:
+                    st.info("No period data.")
+
+            with tab_trans:
+                if not _trans_df_f.empty:
+                    # Highlight big drops
+                    st.dataframe(_trans_df_f.reset_index(drop=True), use_container_width=True)
+                    # Colour-coded summary
+                    _drops = _trans_df_f[_trans_df_f['RR_Change'] < -0.5]
+                    if not _drops.empty:
+                        st.markdown("**Notable scoring-rate drops:**")
+                        for _, _d in _drops.iterrows():
+                            st.warning(f"📉 **{_d['Team']}** ({_d['Season']}): {_d['Transition']} → RR {_d['RR_from']:.2f} → {_d['RR_to']:.2f} (Δ {_d['RR_Change']:+.2f})")
+                else:
+                    st.info("No transition data (need data in at least 2 consecutive periods).")
+
+            with tab_chart:
+                if not _period_df_f.empty:
+                    _teams_ota = sorted(_period_df_f['Team'].dropna().unique())
+                    _sel_ota_team = st.selectbox("Team for chart", _teams_ota, key="ota_chart_team")
+                    _sel_ota_season = st.selectbox(
+                        "Season for chart",
+                        sorted(_period_df_f['Season'].dropna().astype(str).unique()),
+                        key="ota_chart_season"
+                    )
+                    _chart_data = _period_df_f[
+                        (_period_df_f['Team'] == _sel_ota_team) &
+                        (_period_df_f['Season'].astype(str) == _sel_ota_season)
+                    ].copy()
+                    if not _chart_data.empty:
+                        _period_ord = {lbl: i for i, (lbl, _) in enumerate(_OVER_PERIODS)}
+                        _chart_data['_ord'] = _chart_data['Period'].map(_period_ord)
+                        _chart_data = _chart_data.sort_values('_ord')
+
+                        _fig_rr = px.line(
+                            _chart_data, x='Period', y='RR',
+                            markers=True, title=f"{_sel_ota_team} ({_sel_ota_season}) — Run Rate by Period",
+                            labels={'RR': 'Run Rate (per 6 balls)', 'Period': 'Over Period'}
+                        )
+                        _fig_rr.add_hline(y=7.5, line_dash='dash', line_color='gray', annotation_text='7.5 RR')
+                        st.plotly_chart(_fig_rr, use_container_width=True)
+
+                        _fig_dot = px.bar(
+                            _chart_data, x='Period', y='Dot%',
+                            title=f"{_sel_ota_team} ({_sel_ota_season}) — Dot Ball % by Period",
+                            color='Dot%', color_continuous_scale='RdYlGn_r',
+                        )
+                        st.plotly_chart(_fig_dot, use_container_width=True)
+
+
+# =============================================================================
+# MODULE 4 UI: PARTNERSHIP DISRUPTION ANALYSIS
+# =============================================================================
+elif metric_choice == "Partnership Disruption Analysis":
+    st.subheader("🤝 Partnership Disruption Analysis")
+    st.caption("Build partnerships from ball-by-ball data. Identify key partnerships, phase patterns, and which bowlers break them.")
+
+    _pda_work = fdf[fdf['innings'].isin([1, 2])].copy()
+    if _pda_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        _pda_min_runs = st.number_input("Minimum Partnership Runs to list", min_value=0, value=10, step=5, key="pda_min_runs")
+        _pda_min_rr_balls = st.number_input("Min Balls for RR ranking", min_value=3, value=6, step=3, key="pda_min_rr_balls")
+
+        with st.spinner("Building partnerships (ball-by-ball)..."):
+            _part_df, _team_sum, _bowl_dis = calc_partnerships(_pda_work)
+
+        if _part_df.empty:
+            st.info("No partnership data found.")
+        else:
+            _tab_all, _tab_team, _tab_bowl, _tab_top = st.tabs([
+                "All Partnerships", "Team Summary", "Bowler Disruption", "Top Partnerships"])
+
+            with _tab_all:
+                _part_show = _part_df[_part_df['Runs'] >= _pda_min_runs].copy()
+                _part_show = _part_show.sort_values('Runs', ascending=False).reset_index(drop=True)
+                _part_show.index += 1
+                st.dataframe(_part_show, use_container_width=True)
+
+            with _tab_team:
+                if not _team_sum.empty:
+                    st.dataframe(_team_sum.sort_values('Avg_Partnership', ascending=False).reset_index(drop=True),
+                                 use_container_width=True)
+                else:
+                    st.info("No team summary data.")
+
+            with _tab_bowl:
+                if not _bowl_dis.empty:
+                    st.dataframe(_bowl_dis, use_container_width=True)
+                    _fig_bd = px.bar(
+                        _bowl_dis.head(15), x='Bowler', y='Partnerships_Broken',
+                        color='Avg_Runs_Before_Break', color_continuous_scale='Reds_r',
+                        title="Top Bowlers — Partnerships Broken",
+                        text='Partnerships_Broken',
+                    )
+                    _fig_bd.update_xaxes(tickangle=-35)
+                    _fig_bd.update_traces(textposition='outside')
+                    st.plotly_chart(_fig_bd, use_container_width=True)
+                else:
+                    st.info("No bowler disruption data.")
+
+            with _tab_top:
+                st.markdown("#### Highest Partnerships (min balls filter applied)")
+                _top_rr = _part_df[_part_df['Balls'] >= _pda_min_rr_balls].copy()
+                _col_hr, _col_top_rr = st.columns(2)
+                with _col_hr:
+                    st.markdown("**By Runs**")
+                    _top_runs = _top_rr.nlargest(15, 'Runs')[['Team', 'Batter_1', 'Batter_2', 'Runs', 'Balls', 'RR', 'Phase_End']].reset_index(drop=True)
+                    _top_runs.index += 1
+                    st.dataframe(_top_runs, use_container_width=True)
+                with _col_top_rr:
+                    st.markdown("**By Run Rate**")
+                    _top_rrdf = _top_rr.nlargest(15, 'RR')[['Team', 'Batter_1', 'Batter_2', 'Runs', 'Balls', 'RR', 'Phase_End']].reset_index(drop=True)
+                    _top_rrdf.index += 1
+                    st.dataframe(_top_rrdf, use_container_width=True)
+
+                # Phase-wise heatmap
+                if 'Phase_End' in _part_df.columns:
+                    _phase_part = _part_df.groupby(['Team', 'Phase_End'], observed=True).agg(
+                        Avg_Runs=('Runs', 'mean'),
+                        Count=('Runs', 'count'),
+                    ).reset_index()
+                    _phase_part['Avg_Runs'] = _phase_part['Avg_Runs'].round(1)
+                    _fig_pp = px.bar(
+                        _phase_part, x='Phase_End', y='Avg_Runs', color='Team',
+                        barmode='group', title="Avg Partnership Runs by Phase",
+                        text='Count',
+                        category_orders={'Phase_End': _PHASE_ORDER},
+                    )
+                    _fig_pp.update_traces(textposition='outside')
+                    st.plotly_chart(_fig_pp, use_container_width=True)
+
+
+# =============================================================================
+# MODULE 5 UI: DOT-BALL PRESSURE CONVERSION
+# =============================================================================
+elif metric_choice == "Dot-Ball Pressure Conversion":
+    st.subheader("⚡ Dot-Ball Pressure Conversion")
+    st.caption("Measure how sustained dot-ball pressure converts into wickets. Tracks sequences of ≥3 consecutive legal dots and analyses the next 3 legal deliveries.")
+
+    _dpc_work = fdf[fdf['innings'].isin([1, 2])].copy()
+    if _dpc_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        _dpc_min_streak = st.slider("Minimum consecutive dot balls to qualify as pressure", 2, 6, 3, key="dpc_min_streak")
+
+        with st.spinner("Scanning pressure sequences..."):
+            _dpc_bowl_df, _dpc_team_df = calc_dotball_pressure(_dpc_work, min_streak=_dpc_min_streak)
+
+        _tab_bowl_dpc, _tab_team_dpc = st.tabs(["Bowler Analysis", "Team Analysis"])
+
+        with _tab_bowl_dpc:
+            if _dpc_bowl_df.empty:
+                st.info("No pressure sequence data for bowlers. Try reducing the minimum streak length or broadening filters.")
+            else:
+                _dpc_min_seq = st.number_input("Min sequences to display", min_value=1, value=3, key="dpc_min_seq_bowl")
+                _dpc_b_show = _dpc_bowl_df[_dpc_bowl_df['Pressure_Sequences'] >= _dpc_min_seq].sort_values('Conversion%', ascending=False).reset_index(drop=True)
+                _dpc_b_show.index += 1
+                st.dataframe(_dpc_b_show, use_container_width=True)
+
+                if not _dpc_b_show.empty:
+                    _fig_dpc = px.scatter(
+                        _dpc_b_show,
+                        x='Pressure_Sequences', y='Conversion%',
+                        size='Avg_Streak', color='Boundary_Release%',
+                        hover_name='Bowler',
+                        color_continuous_scale='RdYlGn_r',
+                        title="Pressure Conversion% vs Sequences (size=Avg Streak, colour=Boundary Release%)",
+                        labels={'Pressure_Sequences': 'Pressure Sequences', 'Conversion%': 'Wicket Conversion %'},
+                    )
+                    st.plotly_chart(_fig_dpc, use_container_width=True)
+
+        with _tab_team_dpc:
+            if _dpc_team_df.empty:
+                st.info("No team pressure data.")
+            else:
+                _dpc_t_show = _dpc_team_df.sort_values('Conversion%', ascending=False).reset_index(drop=True)
+                _dpc_t_show.index += 1
+                st.dataframe(_dpc_t_show, use_container_width=True)
+
+                if not _dpc_t_show.empty:
+                    _fig_dpc_t = px.bar(
+                        _dpc_t_show, x='Team', y='Conversion%',
+                        color='Boundary_Release%',
+                        color_continuous_scale='RdYlGn_r',
+                        title="Team — Pressure Sequence Wicket Conversion%",
+                        text='Pressure_Sequences',
+                    )
+                    _fig_dpc_t.update_traces(textposition='outside')
+                    st.plotly_chart(_fig_dpc_t, use_container_width=True)
+
+
+# =============================================================================
+# MODULE 6 UI: TACTICAL FLAGS ENGINE
+# =============================================================================
+elif metric_choice == "Tactical Flags Engine":
+    st.subheader("🚩 Tactical Flags Engine")
+    st.caption("Deterministic rule-based insights derived from all analytical modules. Every flag is backed by calculated data with minimum sample guards.")
+
+    _tf_work = fdf[fdf['innings'].isin([1, 2])].copy()
+    if _tf_work.empty:
+        st.warning("No data for selected filters.")
+    else:
+        _tf_c1, _tf_c2 = st.columns(2)
+        with _tf_c1:
+            _tf_teams = ["All Teams"] + sorted(_tf_work['team'].dropna().unique().tolist())
+            _sel_tf_team = st.selectbox("Focus Team (batting)", _tf_teams, key="tf_team_sel")
+        with _tf_c2:
+            _tf_opps = ["All Teams"] + sorted(_tf_work['team'].dropna().unique().tolist())
+            _sel_tf_opp = st.selectbox("Focus Opposition", _tf_opps, key="tf_opp_sel")
+
+        _tf_top_n = st.slider("Top N flags to show", 3, 15, 8, key="tf_top_n")
+
+        with st.spinner("Generating tactical flags..."):
+            _flags = generate_tactical_flags(
+                _tf_work,
+                selected_team=None if _sel_tf_team == "All Teams" else _sel_tf_team,
+                selected_opp=None if _sel_tf_opp == "All Teams" else _sel_tf_opp,
+                top_n=_tf_top_n,
+            )
+
+        if not _flags:
+            st.info("No significant tactical flags found with current filters. Try broader League/Year selection or lower team specificity.")
+        else:
+            for _f in _flags:
+                _icon = _f['icon']
+                _cat = _f['category']
+                _obs = _f['observation']
+                _ev = _f['evidence']
+                _impl = _f['implication']
+
+                if _icon == '🔴':
+                    st.error(f"**{_icon} {_cat}**\n\n📌 {_obs}\n\n📊 _{_ev}_\n\n➡️ {_impl}")
+                elif _icon == '🟢':
+                    st.success(f"**{_icon} {_cat}**\n\n📌 {_obs}\n\n📊 _{_ev}_\n\n➡️ {_impl}")
+                elif _icon == '⚠️':
+                    st.warning(f"**{_icon} {_cat}**\n\n📌 {_obs}\n\n📊 _{_ev}_\n\n➡️ {_impl}")
+                elif _icon == '🎯':
+                    st.info(f"**{_icon} {_cat}**\n\n📌 {_obs}\n\n📊 _{_ev}_\n\n➡️ {_impl}")
+                else:
+                    st.info(f"**{_icon} {_cat}**\n\n📌 {_obs}\n\n📊 _{_ev}_\n\n➡️ {_impl}")
+
+
+# =============================================================================
+# MODULE 7 UI: OPPOSITION / MATCH PREPARATION
+# =============================================================================
+elif metric_choice == "Opposition / Match Preparation":
+    st.subheader("📋 Opposition / Match Preparation")
+    st.caption("Consolidated opposition scouting view. Select a season and opposition to generate a structured match preparation report.")
+
+    _opp_c1, _opp_c2 = st.columns(2)
+    with _opp_c1:
+        _opp_seasons = sorted(fdf_no_team['year'].dropna().astype(str).unique(), reverse=True)
+        _sel_opp_season = st.multiselect("Season(s)", _opp_seasons, default=[_opp_seasons[0]] if _opp_seasons else [], key="opp_season_sel")
+    with _opp_c2:
+        _opp_teams_avail = sorted(fdf_no_team['team'].dropna().unique().tolist())
+        _sel_opp_team = st.selectbox("Opposition Team", _opp_teams_avail, key="opp_team_sel")
+
+    st.markdown("---")
+
+    if not _sel_opp_season:
+        st.info("Select at least one season.")
+    else:
+        # Filter to selected opposition team as batting team
+        _opp_mask = fdf_no_team['team'] == _sel_opp_team
+        if _sel_opp_season:
+            _opp_mask = _opp_mask & (fdf_no_team['year'].astype(str).isin(_sel_opp_season))
+        _opp_bat_data = fdf_no_team[_opp_mask & fdf_no_team['innings'].isin([1, 2])].copy()
+
+        # Opposition bowling data: they're bowling when OTHER team is batting
+        if 'bowling_team' in fdf_no_team.columns:
+            _opp_bowl_mask = fdf_no_team['bowling_team'] == _sel_opp_team
+            if _sel_opp_season:
+                _opp_bowl_mask = _opp_bowl_mask & (fdf_no_team['year'].astype(str).isin(_sel_opp_season))
+            _opp_bowl_data = fdf_no_team[_opp_bowl_mask & fdf_no_team['innings'].isin([1, 2])].copy()
+        else:
+            _opp_bowl_data = pd.DataFrame()
+
+        if _opp_bat_data.empty:
+            st.warning(f"No data for {_sel_opp_team} in selected season(s).")
+        else:
+            # ── 1. Opposition Snapshot ──────────────────────────────────────
+            st.markdown(f"## 1. {_sel_opp_team} — Snapshot")
+            _snap_matches = _opp_bat_data['match_id'].nunique()
+            _snap_innings = _opp_bat_data['innings'].unique()
+            _snap_runs = _opp_bat_data['runs.total'].sum()
+            _snap_balls = _opp_bat_data['is_valid_delivery'].sum()
+            _snap_wkts = _opp_bat_data['team_wicket_count'].sum() if 'team_wicket_count' in _opp_bat_data.columns else _opp_bat_data['wicket_count'].sum()
+
+            _sc1, _sc2, _sc3, _sc4 = st.columns(4)
+            _sc1.metric("Matches", _snap_matches)
+            _sc2.metric("Total Runs (batting)", int(_snap_runs))
+            _sc3.metric("Team Wickets Lost", int(_snap_wkts))
+            _sc4.metric("Run Rate", f"{(_snap_runs / (_snap_balls / 6)):.2f}" if _snap_balls > 0 else "N/A")
+
+            # ── 2. Batting Threats & Vulnerabilities ───────────────────────
+            st.markdown("---")
+            st.markdown("## 2. Batting Threats & Vulnerabilities")
+            _opp_bpv = calc_batter_phase_vulnerability(_opp_bat_data)
+            if not _opp_bpv.empty:
+                _opp_bpv_disp = _opp_bpv[_opp_bpv['Balls'] >= 12].sort_values(['Batter', 'Phase']).reset_index(drop=True)
+                _opp_bpv_disp.index += 1
+                st.dataframe(_opp_bpv_disp, use_container_width=True)
+
+                # Top threat batters per phase
+                _top_bat_threats = _opp_bpv[_opp_bpv['Balls'] >= 15].groupby('Phase').apply(
+                    lambda x: x.nlargest(3, 'SR')[['Batter', 'SR', 'Dot%', 'Boundary%']]).reset_index()
+                if not _top_bat_threats.empty:
+                    st.markdown("**Top batters by SR per phase:**")
+                    st.dataframe(_top_bat_threats, use_container_width=True)
+            else:
+                st.info("No batter phase data.")
+
+            # ── 3. Bowling Threats ──────────────────────────────────────────
+            st.markdown("---")
+            st.markdown("## 3. Bowling Threats")
+            if not _opp_bowl_data.empty:
+                _opp_bpt = calc_bowler_phase_threat(_opp_bowl_data)
+                if not _opp_bpt.empty:
+                    _opp_bpt_show = _opp_bpt[_opp_bpt['Legal_Balls'] >= 12].sort_values(['Phase', 'Economy']).reset_index(drop=True)
+                    _opp_bpt_show.index += 1
+                    st.dataframe(_opp_bpt_show, use_container_width=True)
+            else:
+                st.info("No bowling data for opposition.")
+
+            # ── 4. Phase & Transition Trends ───────────────────────────────
+            st.markdown("---")
+            st.markdown("## 4. Phase & Transition Trends (Batting)")
+            _opp_period_df, _opp_trans_df = calc_over_transition(_opp_bat_data)
+            if not _opp_period_df.empty:
+                st.dataframe(_opp_period_df.sort_values('Period').reset_index(drop=True), use_container_width=True)
+                if not _opp_trans_df.empty:
+                    st.markdown("**Transition Deltas:**")
+                    st.dataframe(_opp_trans_df.reset_index(drop=True), use_container_width=True)
+            else:
+                st.info("No over transition data.")
+
+            # ── 5. Partnership Patterns ─────────────────────────────────────
+            st.markdown("---")
+            st.markdown("## 5. Partnership Patterns")
+            with st.spinner("Building partnerships..."):
+                _opp_part_df, _opp_team_sum, _opp_bowl_dis = calc_partnerships(_opp_bat_data)
+            if not _opp_part_df.empty:
+                _opp_big_parts = _opp_part_df[_opp_part_df['Runs'] >= 20].sort_values('Runs', ascending=False).head(20)
+                st.dataframe(_opp_big_parts.reset_index(drop=True), use_container_width=True)
+                if not _opp_team_sum.empty:
+                    st.markdown(f"**Avg Partnership:** {_opp_team_sum['Avg_Partnership'].mean():.1f} | **Best:** {_opp_team_sum['Best_Partnership'].max()}")
+            else:
+                st.info("No partnership data.")
+
+            # ── 6. Pressure Patterns ────────────────────────────────────────
+            st.markdown("---")
+            st.markdown("## 6. Dot-Ball Pressure Patterns")
+            if not _opp_bowl_data.empty:
+                with st.spinner("Scanning pressure sequences..."):
+                    _opp_dpc_b, _opp_dpc_t = calc_dotball_pressure(_opp_bowl_data)
+                if not _opp_dpc_b.empty:
+                    _opp_dpc_b_show = _opp_dpc_b[_opp_dpc_b['Pressure_Sequences'] >= 2].sort_values('Conversion%', ascending=False).head(10)
+                    st.dataframe(_opp_dpc_b_show.reset_index(drop=True), use_container_width=True)
+                else:
+                    st.info("No pressure sequence data for opposition bowlers.")
+            else:
+                st.info("No bowling data for opposition to assess pressure patterns.")
+
+            # ── 7. Key Match-ups placeholder ────────────────────────────────
+            st.markdown("---")
+            st.markdown("## 7. Key Match-ups")
+            st.info("💡 Use the existing **Batter vs Bowler Matchup** metric with the opposition team filter for head-to-head data.")
+
+            # ── 8. Tactical Flags ────────────────────────────────────────────
+            st.markdown("---")
+            st.markdown("## 8. Tactical Flags")
+            with st.spinner("Generating tactical flags for opposition..."):
+                _opp_flags = generate_tactical_flags(
+                    fdf_no_team[fdf_no_team['year'].astype(str).isin(_sel_opp_season)],
+                    selected_opp=_sel_opp_team,
+                    top_n=8,
+                )
+
+            if not _opp_flags:
+                st.info("No significant flags generated. Broaden the season selection or check data coverage.")
+            else:
+                for _f in _opp_flags:
+                    _icon = _f['icon']
+                    _cat = _f['category']
+                    _msg = f"**{_icon} {_cat}** — {_f['observation']}\n\n📊 *{_f['evidence']}*\n\n➡️ {_f['implication']}"
+                    if _icon == '🔴':
+                        st.error(_msg)
+                    elif _icon == '🟢':
+                        st.success(_msg)
+                    elif _icon in ('⚠️',):
+                        st.warning(_msg)
+                    else:
+                        st.info(_msg)
 
 
 st.markdown("---")
