@@ -291,6 +291,29 @@ def load_player_data(_cache_version=9): # Version 9: Fixed batting_hand KeyError
             )
     except Exception as e:
         errors.append(f"IPL load error: {e}")
+
+    try:
+        # Load DPL 2026 teams.xlsx players
+        dpl_path = os.path.join(base_dir, 'DPL 2026 teams.xlsx')
+        if os.path.exists(dpl_path):
+            import re
+            xls = pd.ExcelFile(dpl_path)
+            for sheet in xls.sheet_names:
+                if 'Weak Zone' in sheet: continue
+                df_sheet = pd.read_excel(xls, sheet)
+                if 'Player Name' in df_sheet.columns:
+                    for _, row in df_sheet.iterrows():
+                        pname = str(row['Player Name']).strip()
+                        if pd.isna(row['Player Name']) or not pname or pname.lower() == 'nan': continue
+                        clean_name = re.sub(r'\s*\(.*?\)', '', pname).strip()
+                        add_player_entry(
+                            clean_name,
+                            row.get('Batting Style'),
+                            row.get('Bowling Style'),
+                            player_data
+                        )
+    except Exception as e:
+        errors.append(f"DPL 2026 teams load error: {e}")
     
     
     # Manual overrides for players with name variations between JSON and Excel
@@ -391,9 +414,13 @@ def get_player_batting_hand(player_name, player_data_cache):
     
     return 'Unknown'
 
+from squad_filter import filter_by_2026_squad, load_2026_squads
+
 df = load_data(_cache_version=18) # Version 18: fast load (no JSON re-scan)
 if df.empty:
     st.stop()
+df = filter_by_2026_squad(df)
+
 
 # Venue data is now pre-computed inside load_data() for caching.
 # Keep venue_map loaded separately for match_id -> venue lookups in UI code.
@@ -508,6 +535,7 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "20+ Runs in an Over",
     "Left-Right Hand Index",
     "Pace vs Spin Analysis",
+    "Pace & Spin vs LHB/RHB Matchups",
     "Super Over Analysis",
     "Innings Progression",
     "Franchise Debut Tracker",
@@ -1481,6 +1509,107 @@ def bowler_over_impact(df_, bowler_name, over_num):
 
     return output
 
+
+def pace_spin_vs_lhb_rhb_matchups(df_, view_type='Summary'):
+    if df_.empty:
+        return pd.DataFrame()
+        
+    g = df_.copy()
+    cache_profiles = load_player_data()
+    
+    def get_hand(row):
+        name = row.get('_orig_batter') if pd.notna(row.get('_orig_batter')) and str(row.get('_orig_batter')).strip() not in ['None', 'nan', ''] else row.get('batter')
+        if not name or pd.isna(name) or str(name).strip() in ['None', 'nan', '']:
+            return 'RHB'
+        n_lower = str(name).lower().strip()
+        import re
+        clean_n = re.sub(r'\s*\(.*?\)', '', n_lower).strip()
+        for k in [clean_n, n_lower]:
+            if k in cache_profiles and cache_profiles[k].get('batting_hand') in ['LHB', 'RHB']:
+                return cache_profiles[k]['batting_hand']
+            if k in cache_profiles and 'left' in str(cache_profiles[k].get('batting_hand', '')).lower():
+                return 'LHB'
+            if k in cache_profiles and 'right' in str(cache_profiles[k].get('batting_hand', '')).lower():
+                return 'RHB'
+        return 'RHB'
+
+    def get_bowl_type(row):
+        name = row.get('_orig_bowler') if pd.notna(row.get('_orig_bowler')) and str(row.get('_orig_bowler')).strip() not in ['None', 'nan', ''] else row.get('bowler')
+        if not name or pd.isna(name) or str(name).strip() in ['None', 'nan', '']:
+            return 'Pace'
+        n_lower = str(name).lower().strip()
+        import re
+        clean_n = re.sub(r'\s*\(.*?\)', '', n_lower).strip()
+        for k in [clean_n, n_lower]:
+            if k in cache_profiles and cache_profiles[k].get('bowling_type') in ['Pace', 'Spin']:
+                return cache_profiles[k]['bowling_type']
+        return 'Pace'
+
+    g['batter_hand'] = g.apply(get_hand, axis=1)
+    g['bowler_type'] = g.apply(get_bowl_type, axis=1)
+    g['matchup'] = g['bowler_type'] + ' vs ' + g['batter_hand']
+    
+    valid_matchups = ['Pace vs LHB', 'Pace vs RHB', 'Spin vs LHB', 'Spin vs RHB']
+    
+    if view_type == 'Summary':
+        sub = g[g['matchup'].isin(valid_matchups)].copy()
+        if sub.empty: return pd.DataFrame()
+        
+        agg = sub.groupby('matchup', observed=True).agg(
+            Balls=('is_valid_delivery', 'sum'),
+            Runs=('runs.total', 'sum'),
+            Wickets=('wicket_count', 'sum'),
+            Dots=('runs.batter', lambda r: (r == 0).sum()),
+            Boundaries=('runs.batter', lambda r: r.isin([4, 6]).sum())
+        ).reset_index()
+        
+        agg['Run Rate'] = (agg['Runs'] / (agg['Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
+        agg['Avg / Wicket'] = (agg['Runs'] / agg['Wickets']).replace([np.inf, np.nan], 0).round(2)
+        agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Boundary %'] = (agg['Boundaries'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'matchup': 'Matchup Category'})
+        return agg[['Matchup Category', 'Run Rate', 'Avg / Wicket', 'Dot %', 'Boundary %', 'Wickets', 'Runs', 'Balls', 'Dots', 'Boundaries']]
+
+    elif view_type == 'Batting':
+        sub = g[g['batter'].notna() & g['bowler_type'].isin(['Pace', 'Spin']) & g['batter_hand'].isin(['LHB', 'RHB'])].copy()
+        if sub.empty: return pd.DataFrame()
+        
+        agg = sub.groupby(['batter', 'batter_hand', 'bowler_type'], observed=True).agg(
+            Runs=('runs.batter', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Dismissals=('wicket_count', 'sum'),
+            Dots=('runs.batter', lambda r: (r == 0).sum()),
+            Boundaries=('runs.batter', lambda r: r.isin([4, 6]).sum())
+        ).reset_index()
+        
+        agg['SR'] = (agg['Runs'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Avg'] = np.where(agg['Dismissals'] > 0, (agg['Runs'] / agg['Dismissals']).round(2), agg['Runs'])
+        agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Boundary %'] = (agg['Boundaries'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'batter': 'Batter', 'batter_hand': 'Hand', 'bowler_type': 'vs Bowler Type'})
+        return agg[['Batter', 'Hand', 'vs Bowler Type', 'Runs', 'Balls', 'Dismissals', 'SR', 'Avg', 'Dot %', 'Boundary %']].sort_values('Runs', ascending=False)
+
+    elif view_type == 'Bowling':
+        sub = g[g['bowler'].notna() & g['bowler_type'].isin(['Pace', 'Spin']) & g['batter_hand'].isin(['LHB', 'RHB'])].copy()
+        if sub.empty: return pd.DataFrame()
+        
+        agg = sub.groupby(['bowler', 'bowler_type', 'batter_hand'], observed=True).agg(
+            Wickets=('wicket_count', 'sum'),
+            Runs=('runs.total', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Dots=('runs.batter', lambda r: (r == 0).sum())
+        ).reset_index()
+        
+        agg['Economy'] = (agg['Runs'] / (agg['Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
+        agg['Avg'] = np.where(agg['Wickets'] > 0, (agg['Runs'] / agg['Wickets']).round(2), agg['Runs'])
+        agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'bowler': 'Bowler', 'bowler_type': 'Type', 'batter_hand': 'vs Batter Hand'})
+        return agg[['Bowler', 'Type', 'vs Batter Hand', 'Wickets', 'Runs', 'Balls', 'Economy', 'Avg', 'Dot %']].sort_values('Wickets', ascending=False)
+
+    return pd.DataFrame()
 
 # =========================================
 # BOUNDARY-LESS BALL STREAK
@@ -4620,12 +4749,76 @@ elif metric_choice == "Pace vs Spin Analysis":
                             color='Bowling Type',
                             color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
                 st.plotly_chart(fig, width="stretch")
-            with col2:
                 fig = px.bar(type_overall[type_overall['Bowling Type'] != 'Unknown'],
                             x='Bowling Type', y='ER', color='Bowling Type',
                             title="Economy Rate Comparison",
                             color_discrete_map={'Pace': '#e74c3c', 'Spin': '#9b59b6'})
                 st.plotly_chart(fig, width="stretch")
+
+elif metric_choice == "Pace & Spin vs LHB/RHB Matchups":
+    st.header("⚡ Pace vs LHB & 🌀 Spin vs RHB Matchup Analysis")
+    st.markdown("""
+    **What it shows:** Comprehensive matchup breakdown of Left-Handed (LHB) and Right-Handed (RHB) batters against Pace and Spin bowling styles across the squad dataset.
+    """)
+    
+    t_summary, t_bat, t_bowl = st.tabs([
+        "📊 Overall Summary Matrix",
+        "🏏 Batting Performance (vs Pace & Spin)",
+        "🎯 Bowling Performance (vs LHB & RHB)"
+    ])
+    
+    with t_summary:
+        st.subheader("Overall Matchup Category Performance")
+        df_sum = pace_spin_vs_lhb_rhb_matchups(fdf, view_type='Summary')
+        if not df_sum.empty:
+            st.dataframe(df_sum, width="stretch")
+            fig = px.bar(
+                df_sum,
+                x='Matchup Category',
+                y=['Run Rate', 'Avg / Wicket', 'Dot %', 'Boundary %'],
+                barmode='group',
+                title="Pace vs LHB / Spin vs RHB Key Metrics Comparison"
+            )
+            fig.update_layout(xaxis_title="Matchup Category", yaxis_title="Metric Value")
+            st.plotly_chart(fig, width="stretch")
+        else:
+            st.info("No data available for selected filters.")
+
+    with t_bat:
+        st.subheader("Batter Performance against Pace & Spin")
+        df_bat = pace_spin_vs_lhb_rhb_matchups(fdf, view_type='Batting')
+        if not df_bat.empty:
+            st.dataframe(df_bat, width="stretch")
+            fig_bat = px.bar(
+                df_bat.head(30),
+                x='Batter',
+                y='Runs',
+                color='vs Bowler Type',
+                barmode='group',
+                title="Top Batting Runs by Bowler Type (Pace vs Spin)"
+            )
+            fig_bat.update_layout(xaxis_title="Batter", yaxis_title="Runs")
+            st.plotly_chart(fig_bat, width="stretch")
+        else:
+            st.info("No data available for selected filters.")
+
+    with t_bowl:
+        st.subheader("Bowler Performance against LHB & RHB")
+        df_bowl = pace_spin_vs_lhb_rhb_matchups(fdf, view_type='Bowling')
+        if not df_bowl.empty:
+            st.dataframe(df_bowl, width="stretch")
+            fig_bowl = px.bar(
+                df_bowl.head(30),
+                x='Bowler',
+                y='Wickets',
+                color='vs Batter Hand',
+                barmode='group',
+                title="Top Bowler Wickets by Batter Hand (vs LHB / RHB)"
+            )
+            fig_bowl.update_layout(xaxis_title="Bowler", yaxis_title="Wickets")
+            st.plotly_chart(fig_bowl, width="stretch")
+        else:
+            st.info("No data available for selected filters.")
 
 # =========================================
 # SUPER OVER ANALYSIS
@@ -6989,8 +7182,16 @@ elif metric_choice == "Debutant Bowler Wickets":
                     .rename(columns={'player': 'bowler'})
                 )
 
-                # Load full ball-by-ball (all years) for bowling stats on debut
                 full_d = load_data()
+                if st.session_state.get('enable_2026_squad_filter', True) and 'selected_2026_franchise' in st.session_state:
+                    _sqs = load_2026_squads()
+                    _sq_players = set(_sqs.get(st.session_state.selected_2026_franchise, []))
+                    if _sq_players:
+                        _m_yr = pd.to_numeric(full_d['year'], errors='coerce').isin([2024, 2025]) if 'year' in full_d.columns else True
+                        _m_pl = full_d['batter'].isin(_sq_players) | full_d['bowler'].isin(_sq_players)
+                        full_d = full_d[_m_yr & _m_pl].copy()
+
+
                 full_d = full_d[full_d['league'].astype(str).isin(leagues_in)].copy()
                 # Apply WC filter on full_d so non-WC teams don't appear in debut results
                 if wt20wc_only and 'date' in full_d.columns:
@@ -12010,12 +12211,14 @@ elif metric_choice == "Opposition / Match Preparation":
             st.markdown("## 2. Batting Threats & Vulnerabilities")
             _opp_bpv = calc_batter_phase_vulnerability(_opp_bat_data)
             if not _opp_bpv.empty:
-                _opp_bpv_disp = _opp_bpv[_opp_bpv['Balls'] >= 12].sort_values(['Batter', 'Phase']).reset_index(drop=True)
+                _min_b = 1 if st.session_state.get("enable_2026_squad_filter", True) else 12
+                _opp_bpv_disp = _opp_bpv[_opp_bpv['Balls'] >= _min_b].sort_values(['Batter', 'Phase']).reset_index(drop=True)
                 _opp_bpv_disp.index += 1
                 st.dataframe(_opp_bpv_disp, use_container_width=True)
 
                 # Top threat batters per phase
-                _top_bat_threats = _opp_bpv[_opp_bpv['Balls'] >= 15].groupby('Phase').apply(
+                _min_b_top = 1 if st.session_state.get("enable_2026_squad_filter", True) else 15
+                _top_bat_threats = _opp_bpv[_opp_bpv['Balls'] >= _min_b_top].groupby('Phase').apply(
                     lambda x: x.nlargest(3, 'SR')[['Batter', 'SR', 'Dot%', 'Boundary%']]).reset_index()
                 if not _top_bat_threats.empty:
                     st.markdown("**Top batters by SR per phase:**")
@@ -12029,7 +12232,8 @@ elif metric_choice == "Opposition / Match Preparation":
             if not _opp_bowl_data.empty:
                 _opp_bpt = calc_bowler_phase_threat(_opp_bowl_data)
                 if not _opp_bpt.empty:
-                    _opp_bpt_show = _opp_bpt[_opp_bpt['Legal_Balls'] >= 12].sort_values(['Phase', 'Economy']).reset_index(drop=True)
+                    _min_b_bowl = 1 if st.session_state.get("enable_2026_squad_filter", True) else 12
+                    _opp_bpt_show = _opp_bpt[_opp_bpt['Legal_Balls'] >= _min_b_bowl].sort_values(['Phase', 'Economy']).reset_index(drop=True)
                     _opp_bpt_show.index += 1
                     st.dataframe(_opp_bpt_show, use_container_width=True)
             else:

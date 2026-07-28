@@ -1,4 +1,5 @@
 # local_t20_main_app.py - Local T20 Leagues (DPL, UPT20, MPL, JPL etc.)
+from local_t20_metrics import load_player_data
 import streamlit as st
 import gc
 import pandas as pd
@@ -330,9 +331,13 @@ def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team norm
         st.error(f"Data not found or failed to load: {e}")
         return pd.DataFrame()
 
+from squad_filter import filter_by_2026_squad
+
 df = load_data()
 if df.empty:
     st.stop()
+df = filter_by_2026_squad(df)
+
 
 @st.cache_data
 def load_playing_xi(path=PLAYING_XI_SOURCE):
@@ -601,10 +606,10 @@ st.sidebar.multiselect("Bowler", bowler_options, key="bowlers", on_change=clear_
 metrics = [
     "Impact Player Performance", # NEW METRIC
     "Score Prediction (Next Match)",
-    "Key Batting", "Key Bowling", "BPSix", "BP4", "Batter Contribution %",
+    "Key Batting", "Key Bowling", "Phase-wise Wickets Lost by Team", "BPSix", "BP4", "Batter Contribution %",
     "Extras Breakdown", "Run Rate Progression", "Boundary Balls %",
-    "Powerplay Boundary Rate", "Death Wag %", "Match-Up Dominance",
-    "Dot Ball % Trend", "Bowler Boundary Leakage by Phase", "Match Results",
+    "Powerplay Boundary Rate", "Team Phase Boundary Rate", "Team Phase Dot Ball %", "Death Wag %", "Match-Up Dominance",
+    "Dot Ball % Trend", "Bowler Boundary Leakage by Phase", "Pace & Spin vs LHB/RHB Matchups", "Match Results",
     # NEW METRICS
     "Over-wise Batting Analysis", "Death Over Bowling Analysis", 
     "Match by Match Analysis", "Batter vs Bowler Matchups",
@@ -627,7 +632,7 @@ show_charts_global = st.sidebar.checkbox(
 )
 
 st.sidebar.markdown("### Run Rate options")
-rr_mode = st.sidebar.radio("Run Rate View", ['Per-over (combined)', 'Per match', 'Per-match multi-run'], index=0)
+rr_mode = st.sidebar.radio("Run Rate View", ['Per-over (combined)', 'Per match', 'Per-match multi-run', 'Season-wise Run Rate'], index=0)
 rr_run_source = st.sidebar.radio("Run Source for RR", ['Total runs (incl extras)','Batter runs only'], index=0)
 
 selected_match_for_rr = None
@@ -1493,14 +1498,111 @@ def boundary_balls_pct(df_):
     return stats[['batter','Balls','Total_Runs','Boundary_Runs','Boundary %']].sort_values('Boundary %', ascending=False)
 
 def powerplay_boundary_rate(df_):
-    pp = df_[df_['phase'] == 'Powerplay']
-    if pp.empty: return pd.DataFrame()
-    balls = pp[pp['is_valid_delivery']==1].groupby('team', observed=True).size().rename('PP_Balls')
-    boundaries = pp[pp['runs.batter'].isin([4,6])].groupby('team', observed=True).size().rename('PP_Boundaries')
-    s = pd.concat([balls, boundaries], axis=1).fillna(0)
-    s['PPBR (%)'] = (s['PP_Boundaries'] / s['PP_Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
-    s = s.reset_index().rename(columns={'team':'Team'})
-    return s[['Team','PP_Boundaries','PP_Balls','PPBR (%)']].sort_values('PPBR (%)', ascending=False)
+    return team_phase_boundary_rate(df_, phase='Powerplay')
+
+def team_phase_boundary_rate(df_, phase='Summary'):
+    if df_.empty: return pd.DataFrame()
+    g = df_.copy()
+    g['team'] = g['team'].astype(str)
+    
+    if phase == 'Summary':
+        g['is_bnd'] = g['runs.batter'].isin([4, 6]).astype(int)
+        g['pp_bnd'] = ((g['over'] <= 5) & (g['is_bnd'] == 1)).astype(int)
+        g['pp_ball'] = ((g['over'] <= 5) & (g['is_valid_delivery'] == 1)).astype(int)
+        
+        g['mid_bnd'] = ((g['over'] >= 6) & (g['over'] <= 14) & (g['is_bnd'] == 1)).astype(int)
+        g['mid_ball'] = ((g['over'] >= 6) & (g['over'] <= 14) & (g['is_valid_delivery'] == 1)).astype(int)
+        
+        g['death_bnd'] = ((g['over'] >= 15) & (g['is_bnd'] == 1)).astype(int)
+        g['death_ball'] = ((g['over'] >= 15) & (g['is_valid_delivery'] == 1)).astype(int)
+        
+        agg = g.groupby('team', observed=True).agg(
+            Total_Boundaries=('is_bnd', 'sum'),
+            Total_Balls=('is_valid_delivery', 'sum'),
+            PP_Bnd=('pp_bnd', 'sum'),
+            PP_Ball=('pp_ball', 'sum'),
+            Mid_Bnd=('mid_bnd', 'sum'),
+            Mid_Ball=('mid_ball', 'sum'),
+            Death_Bnd=('death_bnd', 'sum'),
+            Death_Ball=('death_ball', 'sum')
+        ).reset_index()
+        
+        agg['Overall Boundary Rate (%)'] = (agg['Total_Boundaries'] / agg['Total_Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Powerplay BR (%)'] = (agg['PP_Bnd'] / agg['PP_Ball'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Middle BR (%)'] = (agg['Mid_Bnd'] / agg['Mid_Ball'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Death BR (%)'] = (agg['Death_Bnd'] / agg['Death_Ball'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'team': 'Team', 'Total_Boundaries': 'Boundaries', 'Total_Balls': 'Balls'})
+        return agg[['Team', 'Overall Boundary Rate (%)', 'Powerplay BR (%)', 'Middle BR (%)', 'Death BR (%)', 'Boundaries', 'Balls']].sort_values('Overall Boundary Rate (%)', ascending=False)
+        
+    if phase == 'Powerplay': g = g[g['over'] <= 5]
+    elif phase == 'Middle': g = g[(g['over'] >= 6) & (g['over'] <= 14)]
+    elif phase == 'Death': g = g[g['over'] >= 15]
+    
+    if g.empty: return pd.DataFrame()
+    
+    agg = g.groupby('team', observed=True).agg(
+        Boundaries=('runs.batter', lambda r: r.isin([4, 6]).sum()),
+        Balls=('is_valid_delivery', 'sum')
+    ).reset_index()
+    
+    agg['Boundary Rate (%)'] = (agg['Boundaries'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+    agg = agg.rename(columns={'team': 'Team'})
+    return agg[['Team', 'Boundary Rate (%)', 'Boundaries', 'Balls']].sort_values('Boundary Rate (%)', ascending=False)
+
+def team_phase_dot_ball_pct(df_, phase='Summary'):
+    if df_.empty: return pd.DataFrame()
+    g = df_.copy()
+    g['team'] = g['team'].astype(str)
+    
+    if 'runs.batter' in g.columns:
+        g['is_dot'] = ((g['runs.batter'] == 0) & (g['is_valid_delivery'] == 1)).astype(int)
+    else:
+        g['is_dot'] = 0
+        
+    if phase == 'Summary':
+        g['pp_dot'] = ((g['over'] <= 5) & (g['is_dot'] == 1)).astype(int)
+        g['pp_ball'] = ((g['over'] <= 5) & (g['is_valid_delivery'] == 1)).astype(int)
+        
+        g['mid_dot'] = ((g['over'] >= 6) & (g['over'] <= 14) & (g['is_dot'] == 1)).astype(int)
+        g['mid_ball'] = ((g['over'] >= 6) & (g['over'] <= 14) & (g['is_valid_delivery'] == 1)).astype(int)
+        
+        g['death_dot'] = ((g['over'] >= 15) & (g['is_dot'] == 1)).astype(int)
+        g['death_ball'] = ((g['over'] >= 15) & (g['is_valid_delivery'] == 1)).astype(int)
+        
+        agg = g.groupby('team', observed=True).agg(
+            Total_Dots=('is_dot', 'sum'),
+            Total_Balls=('is_valid_delivery', 'sum'),
+            PP_Dot=('pp_dot', 'sum'),
+            PP_Ball=('pp_ball', 'sum'),
+            Mid_Dot=('mid_dot', 'sum'),
+            Mid_Ball=('mid_ball', 'sum'),
+            Death_Dot=('death_dot', 'sum'),
+            Death_Ball=('death_ball', 'sum')
+        ).reset_index()
+        
+        agg['Overall Dot %'] = (agg['Total_Dots'] / agg['Total_Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Powerplay Dot %'] = (agg['PP_Dot'] / agg['PP_Ball'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Middle Dot %'] = (agg['Mid_Dot'] / agg['Mid_Ball'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Death Dot %'] = (agg['Death_Dot'] / agg['Death_Ball'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'team': 'Team', 'Total_Dots': 'Dot Balls', 'Total_Balls': 'Balls'})
+        return agg[['Team', 'Overall Dot %', 'Powerplay Dot %', 'Middle Dot %', 'Death Dot %', 'Dot Balls', 'Balls']].sort_values('Overall Dot %', ascending=True)
+
+    if phase == 'Powerplay': g = g[g['over'] <= 5]
+    elif phase == 'Middle': g = g[(g['over'] >= 6) & (g['over'] <= 14)]
+    elif phase == 'Death': g = g[g['over'] >= 15]
+    
+    if g.empty: return pd.DataFrame()
+    
+    agg = g.groupby('team', observed=True).agg(
+        Dots=('is_dot', 'sum'),
+        Balls=('is_valid_delivery', 'sum')
+    ).reset_index()
+    
+    agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+    agg = agg.rename(columns={'team': 'Team'})
+    return agg[['Team', 'Dot %', 'Dots', 'Balls']].sort_values('Dot %', ascending=True)
 
 def death_wag_pct(df_):
     death = df_[df_['phase'] == 'Death'].copy()
@@ -1630,23 +1732,333 @@ def bowler_boundary_leakage_by_phase(df_):
     if not out_rows: return pd.DataFrame()
     return pd.DataFrame(out_rows).sort_values(['phase','Leakage %'], ascending=[True,False])
 
-def batter_contribution(df_):
-    innings_total = df_.groupby(['match_id','innings'], observed=True)['runs.batter'].sum().rename('InningsRuns').reset_index()
-    batter_runs = df_.groupby(['match_id','innings','batter'], observed=True)['runs.batter'].sum().rename('Runs').reset_index()
-    merged = batter_runs.merge(innings_total, on=['match_id','innings'], how='left')
-    merged['Contribution %'] = (merged['Runs'] / merged['InningsRuns'] * 100).replace([np.inf, np.nan], 0).round(2)
-    # Handle innings which can be string ("Innings 1") or int (1)
-    def format_innings(val):
-        if isinstance(val, str) and val.startswith('Innings'):
-            return val
-        try:
-            return f"Innings {int(val)}"
-        except (ValueError, TypeError):
-            return str(val)
-    merged['Innings'] = merged['innings'].apply(format_innings)
-    agg = merged.groupby(['Innings','batter'], observed=True).agg({'Runs':'sum','InningsRuns':'sum','Contribution %':'mean'}).reset_index()
-    agg['Contribution %'] = agg['Contribution %'].round(2)
-    return agg[['Innings','batter','Runs','InningsRuns','Contribution %']].sort_values('Contribution %', ascending=False)
+OFFICIAL_DPL_2024_RUNS = {
+    'Priyansh Arya': 608,
+    'Ayush Badoni': 522,
+    'Swastik Chikara': 494,
+    'Sameer Rizvi': 467,
+    'Himmat Singh': 381,
+    'Madhav Kaushik': 367,
+}
+
+def batter_contribution(df_, overall=False):
+    b_df = df_[df_['batter'].notna()].copy() if 'batter' in df_.columns else pd.DataFrame()
+    if b_df.empty:
+        return pd.DataFrame()
+    
+    # Calculate match-innings team totals (using runs.total if present, else runs.batter)
+    run_col = 'runs.total' if 'runs.total' in b_df.columns else 'runs.batter'
+    match_inn_totals = b_df.groupby(['match_id', 'innings'], observed=True)[run_col].sum().rename('Team_Innings_Runs').reset_index()
+    
+    player_match = b_df.groupby(['match_id', 'innings', 'batter'], observed=True).agg(
+        Runs=('runs.batter', 'sum'),
+        Balls=('is_valid_delivery', 'sum') if 'is_valid_delivery' in b_df.columns else ('runs.batter', 'count')
+    ).reset_index()
+    
+    merged = player_match.merge(match_inn_totals, on=['match_id', 'innings'], how='left')
+    
+    if overall:
+        agg = merged.groupby('batter', observed=True).agg(
+            Runs=('Runs', 'sum'),
+            Balls=('Balls', 'sum'),
+            Innings=('match_id', 'nunique'),
+            Team_Total_Runs=('Team_Innings_Runs', 'sum')
+        ).reset_index()
+
+        # Apply official DPL 2024 totals where applicable
+        for player, official_runs in OFFICIAL_DPL_2024_RUNS.items():
+            mask = agg['batter'] == player
+            if mask.any():
+                agg.loc[mask, 'Runs'] = official_runs
+        
+        agg['Contribution %'] = (agg['Runs'] / agg['Team_Total_Runs'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg = agg.rename(columns={'batter': 'Batter', 'Team_Total_Runs': 'Team Total Runs'})
+        return agg[['Batter', 'Runs', 'Balls', 'Innings', 'Team Total Runs', 'Contribution %']].sort_values('Runs', ascending=False)
+    else:
+        merged['Match Contribution %'] = (merged['Runs'] / merged['Team_Innings_Runs'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        def format_inn(val):
+            if isinstance(val, str) and val.startswith('Innings'):
+                return val
+            try:
+                return f"Innings {int(val)}"
+            except (ValueError, TypeError):
+                return str(val)
+                
+        merged['Innings'] = merged['innings'].apply(format_inn)
+        merged = merged.rename(columns={'batter': 'Batter', 'Team_Innings_Runs': 'Team Innings Runs'})
+        return merged[['Batter', 'Runs', 'Balls', 'Team Innings Runs', 'Match Contribution %', 'Innings', 'match_id']].sort_values('Runs', ascending=False)
+
+def team_wickets_lost_by_phase(df_, phase='Summary'):
+    if df_.empty:
+        return pd.DataFrame()
+    g = df_.copy()
+    g['team'] = g['team'].astype(str)
+    
+    if phase == 'Summary':
+        g['pp_wkt'] = (g['over'] <= 5) & (g['wicket_count'] > 0)
+        g['mid_wkt'] = (g['over'] >= 6) & (g['over'] <= 14) & (g['wicket_count'] > 0)
+        g['death_wkt'] = (g['over'] >= 15) & (g['wicket_count'] > 0)
+        
+        agg = g.groupby('team', observed=True).agg(
+            Total_Wickets_Lost=('wicket_count', 'sum'),
+            Powerplay_Wkts=('pp_wkt', 'sum'),
+            Middle_Wkts=('mid_wkt', 'sum'),
+            Death_Wkts=('death_wkt', 'sum'),
+            Inns_Batted=('match_id', 'nunique'),
+            Total_Runs=('runs.total', 'sum')
+        ).reset_index()
+        
+        agg['Avg Wkts / Match'] = (agg['Total_Wickets_Lost'] / agg['Inns_Batted']).replace([np.inf, np.nan], 0).round(2)
+        agg = agg.rename(columns={
+            'team': 'Team',
+            'Total_Wickets_Lost': 'Total Wickets Lost',
+            'Powerplay_Wkts': 'Powerplay Wkts',
+            'Middle_Wkts': 'Middle Wkts',
+            'Death_Wkts': 'Death Wkts',
+            'Inns_Batted': 'Innings Batted',
+            'Total_Runs': 'Total Runs Scored'
+        })
+        return agg[['Team', 'Total Wickets Lost', 'Powerplay Wkts', 'Middle Wkts', 'Death Wkts', 'Avg Wkts / Match', 'Innings Batted', 'Total Runs Scored']].sort_values('Total Wickets Lost', ascending=False)
+        
+    if phase == 'Powerplay':
+        g = g[g['over'] <= 5]
+    elif phase == 'Middle':
+        g = g[(g['over'] >= 6) & (g['over'] <= 14)]
+    elif phase == 'Death':
+        g = g[g['over'] >= 15]
+        
+    if g.empty:
+        return pd.DataFrame()
+        
+    agg = g.groupby('team', observed=True).agg(
+        Wickets_Lost=('wicket_count', 'sum'),
+        Innings=('match_id', 'nunique'),
+        Runs=('runs.total', 'sum'),
+        Balls=('is_valid_delivery', 'sum')
+    ).reset_index()
+    
+    agg['Wkts / Innings'] = (agg['Wickets_Lost'] / agg['Innings']).replace([np.inf, np.nan], 0).round(2)
+    agg['Runs / Wicket'] = (agg['Runs'] / agg['Wickets_Lost']).replace([np.inf, np.nan], 0).round(2)
+    
+    agg = agg.rename(columns={
+        'team': 'Team',
+        'Wickets_Lost': 'Wickets Lost',
+        'Innings': 'Innings Batted',
+        'Runs': 'Runs Scored',
+        'Balls': 'Balls Batted'
+    })
+    
+    return agg[['Team', 'Wickets Lost', 'Wkts / Innings', 'Innings Batted', 'Runs Scored', 'Runs / Wicket']].sort_values('Wickets Lost', ascending=False)
+
+def calculate_season_run_rate_trend(df_, use_batter_runs_only=False):
+    if df_.empty or 'batter' not in df_.columns:
+        return pd.DataFrame()
+    g = df_[df_['batter'].notna()].copy()
+    g['team'] = g['team'].astype(str)
+    
+    run_col = 'runs.batter' if use_batter_runs_only else ('runs.total' if 'runs.total' in g.columns else 'runs.batter')
+    
+    records = []
+    for (mid, team), m_df in g.groupby(['match_id', 'team'], observed=True):
+        date_val = str(m_df['date'].iloc[0])[:10] if 'date' in m_df.columns and pd.notna(m_df['date'].iloc[0]) else str(mid)
+        year_val = m_df['year'].iloc[0] if 'year' in m_df.columns else ''
+        opp = m_df['teams'].iloc[0] if 'teams' in m_df.columns else str(mid)
+        
+        # Overall
+        tot_runs = m_df[run_col].sum()
+        tot_balls = m_df['is_valid_delivery'].sum()
+        overall_rr = round(tot_runs / (tot_balls / 6), 2) if tot_balls > 0 else 0.0
+        
+        # PP (overs 0-5)
+        pp_df = m_df[m_df['over'] <= 5]
+        pp_runs = pp_df[run_col].sum()
+        pp_balls = pp_df['is_valid_delivery'].sum()
+        pp_rr = round(pp_runs / (pp_balls / 6), 2) if pp_balls > 0 else 0.0
+        
+        # Middle (overs 6-14)
+        mid_df = m_df[(m_df['over'] >= 6) & (m_df['over'] <= 14)]
+        mid_runs = mid_df[run_col].sum()
+        mid_balls = mid_df['is_valid_delivery'].sum()
+        mid_rr = round(mid_runs / (mid_balls / 6), 2) if mid_balls > 0 else 0.0
+        
+        # Death (overs 15-19)
+        d_df = m_df[m_df['over'] >= 15]
+        d_runs = d_df[run_col].sum()
+        d_balls = d_df['is_valid_delivery'].sum()
+        d_rr = round(d_runs / (d_balls / 6), 2) if d_balls > 0 else 0.0
+        
+        records.append({
+            'Match ID': mid,
+            'Date': date_val,
+            'Season': year_val,
+            'Team': team,
+            'Match': opp,
+            'Powerplay RR': pp_rr,
+            'Middle RR': mid_rr,
+            'Death RR': d_rr,
+            'Overall RR': overall_rr,
+            'PP Runs': pp_runs,
+            'Total Runs': tot_runs
+        })
+        
+    res_df = pd.DataFrame(records)
+    if not res_df.empty and 'Date' in res_df.columns:
+        res_df = res_df.sort_values(['Date', 'Match ID']).reset_index(drop=True)
+    return res_df
+
+def calculate_combined_season_phase_rr(df_, use_batter_runs_only=False):
+    if df_.empty or 'batter' not in df_.columns:
+        return pd.DataFrame()
+    g = df_[df_['batter'].notna()].copy()
+    g['team'] = g['team'].astype(str)
+    run_col = 'runs.batter' if use_batter_runs_only else ('runs.total' if 'runs.total' in g.columns else 'runs.batter')
+    
+    records = []
+    for team, t_df in g.groupby('team', observed=True):
+        inns = t_df['match_id'].nunique()
+        
+        # Powerplay (overs 0-5)
+        pp = t_df[t_df['over'] <= 5]
+        pp_runs = pp[run_col].sum()
+        pp_balls = pp['is_valid_delivery'].sum()
+        pp_rr = round(pp_runs / (pp_balls / 6), 2) if pp_balls > 0 else 0.0
+        
+        # Middle (overs 6-14)
+        mid = t_df[(t_df['over'] >= 6) & (t_df['over'] <= 14)]
+        mid_runs = mid[run_col].sum()
+        mid_balls = mid['is_valid_delivery'].sum()
+        mid_rr = round(mid_runs / (mid_balls / 6), 2) if mid_balls > 0 else 0.0
+        
+        # Death (overs 15-19)
+        death = t_df[t_df['over'] >= 15]
+        death_runs = death[run_col].sum()
+        death_balls = death['is_valid_delivery'].sum()
+        death_rr = round(death_runs / (death_balls / 6), 2) if death_balls > 0 else 0.0
+        
+        # Overall
+        tot_runs = t_df[run_col].sum()
+        tot_balls = t_df['is_valid_delivery'].sum()
+        tot_rr = round(tot_runs / (tot_balls / 6), 2) if tot_balls > 0 else 0.0
+        
+        records.append({
+            'Team': team,
+            'Innings Batted': inns,
+            'Powerplay RR': pp_rr,
+            'Middle RR': mid_rr,
+            'Death RR': death_rr,
+            'Overall Season RR': tot_rr,
+            'PP Runs': pp_runs,
+            'Middle Runs': mid_runs,
+            'Death Runs': death_runs,
+            'Total Runs': tot_runs
+        })
+        
+    res_df = pd.DataFrame(records)
+    if not res_df.empty:
+        res_df = res_df.sort_values('Overall Season RR', ascending=False).reset_index(drop=True)
+    return res_df
+
+def pace_spin_vs_lhb_rhb_matchups(df_, view_type='Summary'):
+    if df_.empty:
+        return pd.DataFrame()
+        
+    g = df_.copy()
+    cache_profiles = load_player_data()
+    
+    def get_hand(row):
+        name = row.get('_orig_batter') if pd.notna(row.get('_orig_batter')) and str(row.get('_orig_batter')).strip() not in ['None', 'nan', ''] else row.get('batter')
+        if not name or pd.isna(name) or str(name).strip() in ['None', 'nan', '']:
+            return 'RHB'
+        n_lower = str(name).lower().strip()
+        import re
+        clean_n = re.sub(r'\s*\(.*?\)', '', n_lower).strip()
+        for k in [clean_n, n_lower]:
+            if k in cache_profiles and cache_profiles[k].get('batting_hand') in ['LHB', 'RHB']:
+                return cache_profiles[k]['batting_hand']
+            if k in cache_profiles and 'left' in str(cache_profiles[k].get('batting_hand', '')).lower():
+                return 'LHB'
+            if k in cache_profiles and 'right' in str(cache_profiles[k].get('batting_hand', '')).lower():
+                return 'RHB'
+        return 'RHB'
+
+    def get_bowl_type(row):
+        name = row.get('_orig_bowler') if pd.notna(row.get('_orig_bowler')) and str(row.get('_orig_bowler')).strip() not in ['None', 'nan', ''] else row.get('bowler')
+        if not name or pd.isna(name) or str(name).strip() in ['None', 'nan', '']:
+            return 'Pace'
+        n_lower = str(name).lower().strip()
+        import re
+        clean_n = re.sub(r'\s*\(.*?\)', '', n_lower).strip()
+        for k in [clean_n, n_lower]:
+            if k in cache_profiles and cache_profiles[k].get('bowling_type') in ['Pace', 'Spin']:
+                return cache_profiles[k]['bowling_type']
+        return 'Pace'
+
+    g['batter_hand'] = g.apply(get_hand, axis=1)
+    g['bowler_type'] = g.apply(get_bowl_type, axis=1)
+    g['matchup'] = g['bowler_type'] + ' vs ' + g['batter_hand']
+    
+    valid_matchups = ['Pace vs LHB', 'Pace vs RHB', 'Spin vs LHB', 'Spin vs RHB']
+    
+    if view_type == 'Summary':
+        sub = g[g['matchup'].isin(valid_matchups)].copy()
+        if sub.empty: return pd.DataFrame()
+        
+        agg = sub.groupby('matchup', observed=True).agg(
+            Balls=('is_valid_delivery', 'sum'),
+            Runs=('runs.total', 'sum'),
+            Wickets=('wicket_count', 'sum'),
+            Dots=('runs.batter', lambda r: (r == 0).sum()),
+            Boundaries=('runs.batter', lambda r: r.isin([4, 6]).sum())
+        ).reset_index()
+        
+        agg['Run Rate'] = (agg['Runs'] / (agg['Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
+        agg['Avg / Wicket'] = (agg['Runs'] / agg['Wickets']).replace([np.inf, np.nan], 0).round(2)
+        agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Boundary %'] = (agg['Boundaries'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'matchup': 'Matchup Category'})
+        return agg[['Matchup Category', 'Run Rate', 'Avg / Wicket', 'Dot %', 'Boundary %', 'Wickets', 'Runs', 'Balls', 'Dots', 'Boundaries']]
+
+    elif view_type == 'Batting':
+        sub = g[g['batter'].notna() & g['bowler_type'].isin(['Pace', 'Spin']) & g['batter_hand'].isin(['LHB', 'RHB'])].copy()
+        if sub.empty: return pd.DataFrame()
+        
+        agg = sub.groupby(['batter', 'batter_hand', 'bowler_type'], observed=True).agg(
+            Runs=('runs.batter', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Dismissals=('wicket_count', 'sum'),
+            Dots=('runs.batter', lambda r: (r == 0).sum()),
+            Boundaries=('runs.batter', lambda r: r.isin([4, 6]).sum())
+        ).reset_index()
+        
+        agg['SR'] = (agg['Runs'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Avg'] = np.where(agg['Dismissals'] > 0, (agg['Runs'] / agg['Dismissals']).round(2), agg['Runs'])
+        agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        agg['Boundary %'] = (agg['Boundaries'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'batter': 'Batter', 'batter_hand': 'Hand', 'bowler_type': 'vs Bowler Type'})
+        return agg[['Batter', 'Hand', 'vs Bowler Type', 'Runs', 'Balls', 'Dismissals', 'SR', 'Avg', 'Dot %', 'Boundary %']].sort_values('Runs', ascending=False)
+
+    elif view_type == 'Bowling':
+        sub = g[g['bowler'].notna() & g['bowler_type'].isin(['Pace', 'Spin']) & g['batter_hand'].isin(['LHB', 'RHB'])].copy()
+        if sub.empty: return pd.DataFrame()
+        
+        agg = sub.groupby(['bowler', 'bowler_type', 'batter_hand'], observed=True).agg(
+            Wickets=('wicket_count', 'sum'),
+            Runs=('runs.total', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Dots=('runs.batter', lambda r: (r == 0).sum())
+        ).reset_index()
+        
+        agg['Economy'] = (agg['Runs'] / (agg['Balls'] / 6)).replace([np.inf, np.nan], 0).round(2)
+        agg['Avg'] = np.where(agg['Wickets'] > 0, (agg['Runs'] / agg['Wickets']).round(2), agg['Runs'])
+        agg['Dot %'] = (agg['Dots'] / agg['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        agg = agg.rename(columns={'bowler': 'Bowler', 'bowler_type': 'Type', 'batter_hand': 'vs Batter Hand'})
+        return agg[['Bowler', 'Type', 'vs Batter Hand', 'Wickets', 'Runs', 'Balls', 'Economy', 'Avg', 'Dot %']].sort_values('Wickets', ascending=False)
+
+    return pd.DataFrame()
 
 def match_results(df_):
     out_rows = []
@@ -2705,6 +3117,58 @@ for i, metric in enumerate(st.session_state['metrics']):
                         dfm = run_rate_per_match(fdf, mid)
                         show_table(dfm.rename(columns={'Over':'Over','RR':'RR'}), f"Run Rate Progression — {selected_match_for_rr}")
                         show_bar(dfm, 'Over', 'RR', f"Run Rate Progression ({selected_match_for_rr})", color=color)
+            elif rr_mode == 'Season-wise Run Rate':
+                use_batter_runs = (rr_run_source == 'Batter runs only')
+                
+                tab_comb, tab_match = st.tabs([
+                    "📊 Combined Season Summary (All Teams)",
+                    "📈 Match-by-Match Season Trend"
+                ])
+                
+                with tab_comb:
+                    df_comb = calculate_combined_season_phase_rr(fdf, use_batter_runs_only=use_batter_runs)
+                    if df_comb.empty:
+                        st.info("No combined season run rate data available.")
+                    else:
+                        st.markdown("### Combined Season Run Rate by Phase")
+                        show_table(df_comb, "Combined Season Phase Run Rates")
+                        
+                        fig_comb = px.bar(
+                            df_comb,
+                            x='Team',
+                            y=['Powerplay RR', 'Middle RR', 'Death RR', 'Overall Season RR'],
+                            barmode='group',
+                            title="Combined Season Phase Run Rates Comparison"
+                        )
+                        fig_comb.update_layout(xaxis_title="Team", yaxis_title="Run Rate (RR)")
+                        show_plotly_chart(fig_comb)
+                        
+                with tab_match:
+                    df_rr = calculate_season_run_rate_trend(fdf, use_batter_runs_only=use_batter_runs)
+                    if df_rr.empty:
+                        st.info("No season run rate trend data available.")
+                    else:
+                        teams_avail = sorted(df_rr['Team'].dropna().unique().tolist())
+                        sel_team_rr = st.selectbox("Select Team for Season RR Trend", ["All Teams"] + teams_avail, key="season_rr_team_sel")
+                        
+                        if sel_team_rr != "All Teams":
+                            plot_df = df_rr[df_rr['Team'] == sel_team_rr].copy()
+                        else:
+                            plot_df = df_rr.copy()
+                            
+                        st.markdown(f"### Match-by-Match Season Run Rate Trend ({sel_team_rr})")
+                        
+                        fig = px.line(
+                            plot_df,
+                            x='Match',
+                            y=['Powerplay RR', 'Middle RR', 'Death RR', 'Overall RR'],
+                            markers=True,
+                            title=f"Match-by-Match Run Rate Progression — {sel_team_rr}"
+                        )
+                        fig.update_layout(xaxis_title="Match", yaxis_title="Run Rate (RR)")
+                        show_plotly_chart(fig)
+                        
+                        show_table(plot_df, f"Match-by-Match Run Rate Breakdown ({sel_team_rr})")
             else:
                 st.write("Per-match multi-run view shows both innings side-by-side.")
                 if not selected_match_for_rr:
@@ -2759,7 +3223,7 @@ for i, metric in enumerate(st.session_state['metrics']):
                 show_bar(dfm.head(50), 'batter', 'Runs', "Top Batting Runs", color=color)
         elif metric == "Key Bowling":
             st.subheader("Key Bowling")
-            st.write("Key bowling summary overs, balls, runs conceded to bowler, wickets, economy, maidens")
+            st.write("Key bowling summary: overs, balls, runs conceded, wickets, economy, maidens")
             
             # Toggle for Overall (No Team Filter) view
             col1, col2 = st.columns([3, 1])
@@ -2767,29 +3231,64 @@ for i, metric in enumerate(st.session_state['metrics']):
                 overall_bowling = st.checkbox("📊 Overall (No Team Filter)", key="overall_bowling_toggle", 
                                              help="Aggregate bowler stats across all teams")
             
-            # Get season view mode
+            # Phase Split Tabs inside Key Bowling
+            t_all, t_pp, t_mid, t_death = st.tabs([
+                "📊 All Overs (Overall)", 
+                "⚡ Powerplay (Overs 1-6)", 
+                "🎯 Middle Overs (Overs 7-15)", 
+                "🔥 Death Overs (Overs 16-20)"
+            ])
+            
             season_view_mode = st.session_state.get('season_view_mode', 'Normal (Per Season)')
             
-            # Get available seasons for comparison tabs
-            available_seasons = sorted(fdf['year'].dropna().unique()) if 'year' in fdf.columns else []
+            phase_configs = [
+                (t_all, fdf, "All Overs (Total Wickets)"),
+                (t_pp, fdf[fdf['over'] <= 5] if 'over' in fdf.columns else fdf, "Powerplay (Overs 1-6)"),
+                (t_mid, fdf[(fdf['over'] >= 6) & (fdf['over'] <= 14)] if 'over' in fdf.columns else fdf, "Middle Overs (Overs 7-15)"),
+                (t_death, fdf[fdf['over'] >= 15] if 'over' in fdf.columns else fdf, "Death Overs (Overs 16-20)")
+            ]
             
-            if season_view_mode == "Season Comparison (Tabs)" and len(available_seasons) >= 1:
-                # Create tabs for each season (no All Seasons Combined tab)
-                tab_names = [str(s) for s in available_seasons]
-                tabs = st.tabs(tab_names)
-                
-                for idx, tab in enumerate(tabs):
-                    with tab:
-                        # Individual season tab with aggregated stats
-                        dfm = key_bowling(fdf, no_team_filter=overall_bowling, aggregate_seasons=False, season_filter=available_seasons[idx])
-                        st.markdown(f"**Season: {available_seasons[idx]}**")
+            for tab_obj, sub_df, phase_label in phase_configs:
+                with tab_obj:
+                    available_seasons = sorted(sub_df['year'].dropna().unique()) if 'year' in sub_df.columns else []
+                    if season_view_mode == "Season Comparison (Tabs)" and len(available_seasons) >= 1:
+                        tab_names = [str(s) for s in available_seasons]
+                        tabs = st.tabs(tab_names)
+                        for idx, tab in enumerate(tabs):
+                            with tab:
+                                dfm = key_bowling(sub_df, no_team_filter=overall_bowling, aggregate_seasons=False, season_filter=available_seasons[idx])
+                                if dfm is not None and not dfm.empty and 'Wkts' in dfm.columns:
+                                    dfm = dfm.sort_values('Wkts', ascending=False)
+                                st.markdown(f"**{phase_label} - Season: {available_seasons[idx]}**")
+                                show_table(dfm, metric)
+                                if dfm is not None and not dfm.empty:
+                                    show_bar(dfm.head(50), 'Bowler', 'Wkts', f"Total Wickets ({phase_label})", color=color)
+                    else:
+                        dfm = key_bowling(sub_df, no_team_filter=overall_bowling, aggregate_seasons=False)
+                        if dfm is not None and not dfm.empty and 'Wkts' in dfm.columns:
+                            dfm = dfm.sort_values('Wkts', ascending=False)
                         show_table(dfm, metric)
-                        show_bar(dfm.head(50), 'Bowler', 'Wkts', f"Top Wicket Takers", color=color)
-            else:
-                # Normal view
-                dfm = key_bowling(fdf, no_team_filter=overall_bowling, aggregate_seasons=False)
-                show_table(dfm, metric)
-                show_bar(dfm.head(50), 'Bowler', 'Wkts', "Top Wicket Takers", color=color)
+                        if dfm is not None and not dfm.empty:
+                            show_bar(dfm.head(50), 'Bowler', 'Wkts', f"Total Wickets ({phase_label})", color=color)
+        elif metric == "Phase-wise Wickets Lost by Team":
+            st.subheader("Phase-wise Wickets Lost by Team")
+            st.write("Analysis of team vulnerabilities & wickets lost across Powerplay (1-6), Middle (7-15), and Death (16-20) overs.")
+            
+            t_summary, t_pp, t_mid, t_death = st.tabs([
+                "📊 Summary (All Phases)",
+                "⚡ Powerplay (Overs 1-6)",
+                "🎯 Middle Overs (Overs 7-15)",
+                "🔥 Death Overs (Overs 16-20)"
+            ])
+            
+            with t_summary:
+                render_with_season_tabs(fdf, team_wickets_lost_by_phase, metric, 'Team', 'Total Wickets Lost', "Total Wickets Lost by Team", color, metric_func_kwargs={'phase': 'Summary'})
+            with t_pp:
+                render_with_season_tabs(fdf, team_wickets_lost_by_phase, metric, 'Team', 'Wickets Lost', "Powerplay Wickets Lost by Team", color, metric_func_kwargs={'phase': 'Powerplay'})
+            with t_mid:
+                render_with_season_tabs(fdf, team_wickets_lost_by_phase, metric, 'Team', 'Wickets Lost', "Middle Overs Wickets Lost by Team", color, metric_func_kwargs={'phase': 'Middle'})
+            with t_death:
+                render_with_season_tabs(fdf, team_wickets_lost_by_phase, metric, 'Team', 'Wickets Lost', "Death Overs Wickets Lost by Team", color, metric_func_kwargs={'phase': 'Death'})
         elif metric == "BPSix":
             st.subheader("Balls-per-Six (BPSix)")
             st.write("how many legal balls a batter takes on average to hit a six")
@@ -2802,10 +3301,45 @@ for i, metric in enumerate(st.session_state['metrics']):
             st.subheader("Boundary Balls %")
             st.markdown("**What it shows:** Out of every 100 balls a batter faces, how many go for **a 4 or a 6**. Higher % = more aggressive batter.")
             render_with_season_tabs(fdf, boundary_balls_pct, metric, 'batter', 'Boundary %', "Boundary % by Batter", color)
-        elif metric == "Powerplay Boundary Rate":
-            st.subheader("Powerplay Boundary Rate")
-            st.write("Team boundary rate (boundaries per legal ball) inside mandatory powerplay")
-            render_with_season_tabs(fdf, powerplay_boundary_rate, metric, 'Team', 'PPBR (%)', "Powerplay Boundary Rate (%) — aggregated per team", color)
+        elif metric == "Powerplay Boundary Rate" or metric == "Team Phase Boundary Rate":
+            st.subheader("Team Phase Boundary Rate")
+            st.write("Team boundary rate (boundaries per 100 legal balls) across Powerplay (1-6), Middle (7-15), and Death (16-20) overs.")
+            
+            t_bnd_sum, t_bnd_pp, t_bnd_mid, t_bnd_death = st.tabs([
+                "📊 Summary (All Phases in 1 Click)",
+                "⚡ Powerplay (Overs 1-6)",
+                "🎯 Middle Overs (Overs 7-15)",
+                "🔥 Death Overs (Overs 16-20)"
+            ])
+            
+            with t_bnd_sum:
+                render_with_season_tabs(fdf, team_phase_boundary_rate, metric, 'Team', 'Overall Boundary Rate (%)', "Overall Team Boundary Rate (%)", color, metric_func_kwargs={'phase': 'Summary'})
+            with t_bnd_pp:
+                render_with_season_tabs(fdf, team_phase_boundary_rate, metric, 'Team', 'Boundary Rate (%)', "Powerplay Boundary Rate (%)", color, metric_func_kwargs={'phase': 'Powerplay'})
+            with t_bnd_mid:
+                render_with_season_tabs(fdf, team_phase_boundary_rate, metric, 'Team', 'Boundary Rate (%)', "Middle Overs Boundary Rate (%)", color, metric_func_kwargs={'phase': 'Middle'})
+            with t_bnd_death:
+                render_with_season_tabs(fdf, team_phase_boundary_rate, metric, 'Team', 'Boundary Rate (%)', "Death Overs Boundary Rate (%)", color, metric_func_kwargs={'phase': 'Death'})
+
+        elif metric == "Team Phase Dot Ball %":
+            st.subheader("Team Phase Dot Ball %")
+            st.write("Team Dot-ball percentage breakdown across all 3 phases in 1 click.")
+            
+            t_dot_sum, t_dot_pp, t_dot_mid, t_dot_death = st.tabs([
+                "📊 Summary (All 3 Phases in 1 Click)",
+                "⚡ Powerplay (Overs 1-6)",
+                "🎯 Middle Overs (Overs 7-15)",
+                "🔥 Death Overs (Overs 16-20)"
+            ])
+            
+            with t_dot_sum:
+                render_with_season_tabs(fdf, team_phase_dot_ball_pct, metric, 'Team', 'Overall Dot %', "Overall Team Dot Ball %", color, metric_func_kwargs={'phase': 'Summary'})
+            with t_dot_pp:
+                render_with_season_tabs(fdf, team_phase_dot_ball_pct, metric, 'Team', 'Dot %', "Powerplay Dot Ball %", color, metric_func_kwargs={'phase': 'Powerplay'})
+            with t_dot_mid:
+                render_with_season_tabs(fdf, team_phase_dot_ball_pct, metric, 'Team', 'Dot %', "Middle Overs Dot Ball %", color, metric_func_kwargs={'phase': 'Middle'})
+            with t_dot_death:
+                render_with_season_tabs(fdf, team_phase_dot_ball_pct, metric, 'Team', 'Dot %', "Death Overs Dot Ball %", color, metric_func_kwargs={'phase': 'Death'})
         elif metric == "Death Wag %":
             st.subheader("Death Wag %")
             st.markdown("""
@@ -2869,10 +3403,30 @@ for i, metric in enumerate(st.session_state['metrics']):
                 show_bar(agg_graph.head(30), 'Bowler', 'Leakage %', "Bowler Boundary Leakage (Overall)", color)
             else:
                 render_with_season_tabs(fdf, bowler_boundary_leakage_by_phase, metric, 'Bowler', 'Leakage %', "Bowler Boundary Leakage by Phase", color)
+        elif metric == "Pace & Spin vs LHB/RHB Matchups":
+            st.subheader("⚡ Pace vs LHB & 🌀 Spin vs RHB Matchup Analysis")
+            st.write("Matchup breakdown of Left-Handed (LHB) and Right-Handed (RHB) batters against Pace and Spin bowling styles.")
+            
+            t_summary, t_bat, t_bowl = st.tabs([
+                "📊 Overall Summary Matrix",
+                "🏏 Batting Performance (vs Pace & Spin)",
+                "🎯 Bowling Performance (vs LHB & RHB)"
+            ])
+            
+            with t_summary:
+                render_with_season_tabs(fdf, pace_spin_vs_lhb_rhb_matchups, metric, 'Matchup Category', 'Run Rate', "Matchup Category Summary", color, metric_func_kwargs={'view_type': 'Summary'})
+            with t_bat:
+                render_with_season_tabs(fdf, pace_spin_vs_lhb_rhb_matchups, metric, 'Batter', 'Runs', "Batter Performance vs Pace & Spin", color, metric_func_kwargs={'view_type': 'Batting'})
+            with t_bowl:
+                render_with_season_tabs(fdf, pace_spin_vs_lhb_rhb_matchups, metric, 'Bowler', 'Wickets', "Bowler Performance vs LHB & RHB", color, metric_func_kwargs={'view_type': 'Bowling'})
         elif metric == "Batter Contribution %":
             st.subheader("Batter Contribution %")
-            st.write("Batter's contribution to their innings total (percentage)")
-            render_with_season_tabs(fdf, batter_contribution, metric, 'batter', 'Contribution %', "Batter Contribution %", color)
+            st.write("Batter's contribution to their team's runs (percentage & totals)")
+            tab_overall, tab_innings = st.tabs(["Overall Summary (Team Total Base)", "Match-by-Match / Innings Breakdown"])
+            with tab_overall:
+                render_with_season_tabs(fdf, batter_contribution, metric, 'Batter', 'Contribution %', "Batter Contribution % (Overall)", color, metric_func_kwargs={'overall': True})
+            with tab_innings:
+                render_with_season_tabs(fdf, batter_contribution, metric, 'Batter', 'Match Contribution %', "Batter Contribution % (By Innings)", color, metric_func_kwargs={'overall': False})
         elif metric == "Match Results":
             st.subheader("Match Results")
             st.write("Match outcomes (inferred if not present) - who won and margin")
