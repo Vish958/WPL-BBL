@@ -416,7 +416,7 @@ def get_player_batting_hand(player_name, player_data_cache):
 
 from squad_filter import filter_by_2026_squad, load_2026_squads
 
-df = load_data(_cache_version=18) # Version 18: fast load (no JSON re-scan)
+df = load_data(_cache_version=23) # Version 23: reload fresh parquet containing DPL 2026 data
 if df.empty:
     st.stop()
 df = filter_by_2026_squad(df)
@@ -525,6 +525,9 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Runs Between Dismissals",
     "Custom Over Phase Analytics",
     "Batting Order Performance (Player-wise)",
+    "2026 Squad Roster by Role",
+    "DPL 2026 Powerplay Segment Analysis",
+    "DPL 2026 Match Dot Balls",
     "Powerplay Score Tracker", 
     "DRS Analysis",
     "Over-by-Over Analysis",
@@ -10336,6 +10339,74 @@ elif metric_choice == "Over-wise Batting Analysis":
 
 
 # =========================================
+# 2026 SQUAD ROSTER BY ROLE HELPER
+# =========================================
+def squad_roster_by_role(df_, team_name='Central Delhi Kings', role_filter='All Roles'):
+    dpl_path = os.path.join(os.path.dirname(__file__), 'DPL 2026 teams.xlsx')
+    if not os.path.exists(dpl_path):
+        return pd.DataFrame()
+        
+    try:
+        xls = pd.ExcelFile(dpl_path)
+        if team_name not in xls.sheet_names:
+            return pd.DataFrame()
+        df_sheet = pd.read_excel(xls, team_name)
+    except Exception:
+        return pd.DataFrame()
+        
+    if 'Player Name' not in df_sheet.columns:
+        return pd.DataFrame()
+        
+    import re
+    df_sheet['Player Name'] = df_sheet['Player Name'].dropna().astype(str).str.replace(r'\s*\(.*?\)', '', regex=True).str.strip()
+    
+    def norm_role(r_str):
+        if pd.isna(r_str) or not str(r_str).strip() or str(r_str).strip().lower() == 'unknown':
+            return 'Unknown / Unassigned'
+        s = str(r_str).strip().lower()
+        if 'wicket' in s or 'keeper' in s: return 'Wicket Keeper'
+        if 'all' in s or 'round' in s: return 'All-Rounder'
+        if 'bowl' in s: return 'Bowler'
+        if 'bat' in s: return 'Batter'
+        return 'Unknown / Unassigned'
+
+    df_sheet['Role'] = df_sheet['Role'].apply(norm_role) if 'Role' in df_sheet.columns else 'Unknown / Unassigned'
+    
+    if not df_.empty:
+        df_hist = df_[pd.to_numeric(df_['year'], errors='coerce').isin([2024, 2025])].copy()
+        
+        bat_s = df_hist.groupby('batter', observed=True).agg(
+            Runs=('runs.batter', 'sum'),
+            Balls=('is_valid_delivery', 'sum'),
+            Dismissals=('wicket_count', 'sum')
+        ).reset_index()
+        bat_s['SR'] = (bat_s['Runs'] / bat_s['Balls'] * 100).replace([np.inf, np.nan], 0).round(2)
+        
+        bowl_s = df_hist.groupby('bowler', observed=True).agg(
+            Wickets=('wicket_count', 'sum'),
+            Runs_Conceded=('runs.total', 'sum'),
+            Balls_Bowled=('is_valid_delivery', 'sum')
+        ).reset_index()
+        bowl_s['Economy'] = (bowl_s['Runs_Conceded'] / (bowl_s['Balls_Bowled'] / 6)).replace([np.inf, np.nan], 0).round(2)
+        
+        m1 = df_sheet.merge(bat_s, left_on='Player Name', right_on='batter', how='left')
+        m2 = m1.merge(bowl_s, left_on='Player Name', right_on='bowler', how='left')
+        
+        m2['Runs'] = m2['Runs'].fillna(0).astype(int)
+        m2['SR'] = m2['SR'].fillna(0)
+        m2['Wickets'] = m2['Wickets'].fillna(0).astype(int)
+        m2['Economy'] = m2['Economy'].fillna(0)
+        
+        res = m2[['Player Name', 'Role', 'Batting Style', 'Bowling Style', 'Batting Position', 'Runs', 'SR', 'Wickets', 'Economy']].copy()
+    else:
+        res = df_sheet[['Player Name', 'Role', 'Batting Style', 'Bowling Style', 'Batting Position']].copy()
+        
+    if role_filter != 'All Roles':
+        res = res[res['Role'] == role_filter]
+        
+    return res
+
+# =========================================
 # RUNS BETWEEN DISMISSALS
 # =========================================
 if metric_choice == "Runs Between Dismissals":
@@ -10779,51 +10850,55 @@ elif metric_choice == "Batting Order Performance (Player-wise)":
 
         col_f1, col_f2, col_f3 = st.columns(3)
         with col_f1:
-            _sel_batter = st.selectbox("Select Player", _all_batters_bop, key="bop_player_sel")
+            _sel_batters = st.multiselect("Select Player(s)", _all_batters_bop, default=[_all_batters_bop[0]] if _all_batters_bop else [], key="bop_player_sel")
         with col_f2:
             _sel_season_bop = st.selectbox("Season", ["All Seasons"] + [str(s) for s in _all_seasons_bop], key="bop_season_sel")
         with col_f3:
             _sel_team_bop = st.selectbox("Team", ["All Teams"] + sorted(_bop_agg['Team'].dropna().unique().tolist()), key="bop_team_sel")
 
-        _bop_filtered = _bop_agg[_bop_agg['Batter'] == _sel_batter].copy()
+        if _sel_batters:
+            _bop_filtered = _bop_agg[_bop_agg['Batter'].isin(_sel_batters)].copy()
+        else:
+            _bop_filtered = _bop_agg.copy()
+
         if _sel_season_bop != "All Seasons":
             _bop_filtered = _bop_filtered[_bop_filtered['Season'].astype(str) == _sel_season_bop]
         if _sel_team_bop != "All Teams":
             _bop_filtered = _bop_filtered[_bop_filtered['Team'] == _sel_team_bop]
 
         if _bop_filtered.empty:
-            st.info(f"No data found for **{_sel_batter}** with the selected filters.")
+            st.info("No data found for selected filters.")
         else:
             # ── Summary table ─────────────────────────────────────────────────────────
-            st.markdown(f"### {_sel_batter} — Batting by Position")
-            _show_cols = ['Season', 'Team', 'Position', 'Innings', 'Runs', 'Balls', 'Outs',
+            st.markdown("### Multi-Player Batting Order Performance (Year-wise Comparison)")
+            _show_cols = ['Batter', 'Season', 'Team', 'Position', 'Innings', 'Runs', 'Balls', 'Outs',
                           'Fours', 'Sixes', 'Strike_Rate', 'Average']
-            _display_bop = _bop_filtered[_show_cols].sort_values(['Season', 'Position']).reset_index(drop=True)
+            _display_bop = _bop_filtered[_show_cols].sort_values(['Batter', 'Season', 'Position']).reset_index(drop=True)
             _display_bop.index += 1
             _display_bop = _display_bop.rename(columns={'Strike_Rate': 'SR', 'Average': 'Avg'})
             st.dataframe(_display_bop, use_container_width=True)
 
             # ── Bar chart: Runs by Position ───────────────────────────────────────────
             if _bop_filtered['Position'].nunique() > 0:
-                st.markdown("#### Runs by Batting Position")
-                _pos_sum = _bop_filtered.groupby(['Position', 'Season'], observed=True).agg(
+                st.markdown("#### Runs by Batting Position (Year-wise Comparison)")
+                _pos_sum = _bop_filtered.groupby(['Batter', 'Position', 'Season'], observed=True).agg(
                     Runs=('Runs', 'sum'),
                     Innings=('Innings', 'sum'),
                     SR=('Strike_Rate', 'mean')
                 ).reset_index()
                 _pos_sum['SR'] = _pos_sum['SR'].round(2)
                 _pos_sum['Season'] = _pos_sum['Season'].astype(str)
-                _pos_sum = _pos_sum.sort_values('Position')
+                _pos_sum = _pos_sum.sort_values(['Batter', 'Position'])
 
                 _fig_bop = px.bar(
                     _pos_sum,
                     x='Position',
                     y='Runs',
-                    color='Season',
+                    color='Batter' if len(_sel_batters) > 1 else 'Season',
                     barmode='group',
                     text='Runs',
-                    title=f"{_sel_batter} — Runs by Batting Position (Season-wise)",
-                    hover_data=['Innings', 'SR'],
+                    title="Batting Order Runs Comparison (Player & Season-wise)",
+                    hover_data=['Season', 'Innings', 'SR'],
                     labels={'Position': 'Batting Position', 'Runs': 'Total Runs'}
                 )
                 _fig_bop.update_traces(textposition='outside')
@@ -10841,13 +10916,14 @@ elif metric_choice == "Batting Order Performance (Player-wise)":
                 _pos_sr['Season'] = _pos_sr['Season'].astype(str)
                 _pos_sr = _pos_sr.sort_values('Position')
 
+                _player_title = ", ".join(_sel_batters) if _sel_batters else "All Players"
                 _fig_sr_bop = px.line(
                     _pos_sr,
                     x='Position',
                     y='SR',
                     color='Season',
                     markers=True,
-                    title=f"{_sel_batter} — Strike Rate by Batting Position",
+                    title=f"{_player_title} — Strike Rate by Batting Position",
                     labels={'Position': 'Batting Position', 'SR': 'Strike Rate'}
                 )
                 _fig_sr_bop.add_hline(y=100, line_dash='dash', line_color='gray', annotation_text='SR=100')
@@ -10857,7 +10933,7 @@ elif metric_choice == "Batting Order Performance (Player-wise)":
 
             # ── Match-level detail ────────────────────────────────────────────────────
             with st.expander("📋 Match-level Detail"):
-                _bop_match = _bop_work[_bop_work['batter'] == _sel_batter].copy()
+                _bop_match = _bop_work[_bop_work['batter'].isin(_sel_batters)].copy() if _sel_batters else _bop_work.copy()
                 if _sel_season_bop != "All Seasons":
                     _bop_match = _bop_match[_bop_match[_season_col].astype(str) == _sel_season_bop]
                 if _sel_team_bop != "All Teams":
@@ -10883,6 +10959,451 @@ elif metric_choice == "Batting Order Performance (Player-wise)":
                     st.dataframe(_match_detail, use_container_width=True)
                 else:
                     st.info("No match-level data.")
+
+elif metric_choice == "2026 Squad Roster by Role":
+    st.header("📋 2026 Squad Roster & Role Explorer")
+    st.markdown("""
+    **What it shows:** Live roster breakdown of 2026 franchise squads loaded directly from `DPL 2026 teams.xlsx`.
+    Select your franchise and tap any role (**Batter**, **Bowler**, **All-Rounder**, **Wicket Keeper**, or **Unknown / Unassigned**) to see the squad list.
+    *Note: Unknown/Unassigned players will update live as soon as DPL 2026 teams.xlsx is updated.*
+    """)
+    
+    dpl_path = os.path.join(os.path.dirname(__file__), 'DPL 2026 teams.xlsx')
+    if not os.path.exists(dpl_path):
+        st.error("DPL 2026 teams.xlsx file not found.")
+    else:
+        xls = pd.ExcelFile(dpl_path)
+        all_franchises = [s for s in xls.sheet_names if 'Weak Zone' not in s]
+        
+        col_t1, col_t2 = st.columns([2, 3])
+        with col_t1:
+            sel_squad_team = st.selectbox("Select 2026 Franchise", all_franchises, index=0, key="roster_team_sel")
+        with col_t2:
+            sel_role = st.radio(
+                "Select Role Filter",
+                ["All Roles", "Batter", "Bowler", "All-Rounder", "Wicket Keeper", "Unknown / Unassigned"],
+                horizontal=True,
+                key="roster_role_sel"
+            )
+            
+        df_roster = squad_roster_by_role(fdf, team_name=sel_squad_team, role_filter=sel_role)
+        df_all_roster = squad_roster_by_role(fdf, team_name=sel_squad_team, role_filter='All Roles')
+        
+        if not df_all_roster.empty:
+            m_total = len(df_all_roster)
+            m_bat = (df_all_roster['Role'] == 'Batter').sum()
+            m_bowl = (df_all_roster['Role'] == 'Bowler').sum()
+            m_ar = (df_all_roster['Role'] == 'All-Rounder').sum()
+            m_wk = (df_all_roster['Role'] == 'Wicket Keeper').sum()
+            m_unk = (df_all_roster['Role'] == 'Unknown / Unassigned').sum()
+            
+            c1, c2, c3, c4, c5, c6 = st.columns(6)
+            c1.metric("Total Squad", m_total)
+            c2.metric("🏏 Batters", m_bat)
+            c3.metric("🎯 Bowlers", m_bowl)
+            c4.metric("⚡ All-Rounders", m_ar)
+            c5.metric("🧤 Keepers", m_wk)
+            c6.metric("❓ To Be Updated", m_unk)
+            
+            st.markdown("---")
+            st.markdown(f"### {sel_squad_team} — Roster ({sel_role})")
+            if not df_roster.empty:
+                st.dataframe(df_roster.reset_index(drop=True), use_container_width=True)
+                
+                if sel_role == 'All Roles':
+                    st.markdown("#### Role Breakdown Chart")
+                    role_counts = df_all_roster['Role'].value_counts().reset_index()
+                    role_counts.columns = ['Role', 'Count']
+                    fig_r = px.pie(role_counts, values='Count', names='Role', title=f"Role Composition — {sel_squad_team}")
+                    st.plotly_chart(fig_r, use_container_width=True)
+            else:
+                st.info(f"No players found with role **{sel_role}** in {sel_squad_team}.")
+
+elif metric_choice == "DPL 2026 Powerplay Segment Analysis":
+    st.header("DPL 2026 Powerplay & Phase Segment Analysis")
+    st.markdown("""
+    **What it shows:** Runs, Extras, Boundaries, Singles, and Dot Balls for **Our Team** vs **Opposition** across three key match segments:
+    - **Overs 1-6** (Powerplay/First 6 overs)
+    - **Overs 7-15** (Middle overs)
+    - **Overs 16-20** (Death overs)
+    
+    *Runs = batter runs only. Extras shown separately. Phase Runs + Phase Extras = phase total.*
+    """)
+    
+    # Allow filtering by team
+    teams_list = sorted(list(fdf['team'].dropna().unique()))
+    if not teams_list:
+        st.warning("No teams available in the filtered dataset.")
+    else:
+        sel_team = st.selectbox("Select Team", ["All Teams"] + teams_list, key="dpl_seg_team_sel")
+        
+        # Get appropriate matches
+        if sel_team == "All Teams":
+            team_df = fdf.copy()
+        else:
+            matches_with_team = fdf[(fdf['team'] == sel_team) | (fdf['bowling_team'] == sel_team)]['match_id'].unique()
+            team_df = fdf[fdf['match_id'].isin(matches_with_team)].copy()
+        
+        if team_df.empty:
+            st.info("No match data found.")
+        else:
+            # Classify Segment
+            def get_segment(over):
+                if over < 6:
+                    return 'Overs 1-6'
+                elif over < 15:
+                    return 'Overs 7-15'
+                else:
+                    return 'Overs 16-20'
+            team_df['Segment'] = team_df['over'].apply(get_segment)
+            
+            # Numeric conversion
+            team_df['runs.total'] = pd.to_numeric(team_df['runs.total'], errors='coerce').fillna(0)
+            team_df['runs.batter'] = pd.to_numeric(team_df['runs.batter'], errors='coerce').fillna(0)
+            team_df['is_valid_delivery'] = pd.to_numeric(team_df['is_valid_delivery'], errors='coerce').fillna(0)
+            
+            # Metrics
+            team_df['is_boundary'] = team_df['runs.batter'].isin([4, 6]).astype(int)
+            team_df['is_single'] = (team_df['runs.batter'] == 1).astype(int)
+            team_df['is_dot'] = ((team_df['is_valid_delivery'] == 1) & (team_df['runs.batter'] == 0)).astype(int)
+            
+            # Extract Innings 1 and Innings 2 team names dynamically for each match
+            inn1_df = team_df[team_df['innings'] == 1][['match_id', 'team']].drop_duplicates().rename(columns={'team': 'Team1'})
+            inn2_df = team_df[team_df['innings'] == 2][['match_id', 'team']].drop_duplicates().rename(columns={'team': 'Team2'})
+            
+            inn1_df['Team1'] = inn1_df['Team1'].astype(str)
+            inn2_df['Team2'] = inn2_df['Team2'].astype(str)
+            
+            match_teams = pd.merge(inn1_df, inn2_df, on='match_id', how='outer')
+            
+            # Group by match, batting team, and Segment
+            grp = team_df.groupby(['match_id', 'date', 'teams', 'team', 'Segment'], observed=True).agg(
+                Runs=('runs.batter', 'sum'),
+                Extras=('runs.extras', 'sum'),
+                Boundaries=('is_boundary', 'sum'),
+                Singles=('is_single', 'sum'),
+                Dots=('is_dot', 'sum')
+            ).reset_index()
+            grp['Total'] = grp['Runs'] + grp['Extras']
+            
+            grp['team'] = grp['team'].astype(str)
+            grp = pd.merge(grp, match_teams, on='match_id', how='left')
+            
+            # Re-fill missing Team1 / Team2 names from 'teams' string fallback if necessary
+            def fill_fallback(row):
+                t1, t2 = row['Team1'], row['Team2']
+                if pd.isna(t1) or pd.isna(t2) or t1 == '0' or t2 == '0' or t1 == 'nan' or t2 == 'nan':
+                    parts = [p.strip() for p in str(row['teams']).replace(' vs ', ' v ').split(' v ')]
+                    if len(parts) >= 1 and (pd.isna(t1) or t1 == '0' or t1 == 'nan'):
+                        t1 = parts[0]
+                    if len(parts) >= 2 and (pd.isna(t2) or t2 == '0' or t2 == 'nan'):
+                        t2 = parts[1]
+                return pd.Series([t1, t2])
+                
+            if not grp.empty:
+                grp[['Team1', 'Team2']] = grp.apply(fill_fallback, axis=1)
+            
+            # Separate into Innings 1 and Innings 2 batting stats
+            grp_t1 = grp[grp['team'] == grp['Team1']].copy()
+            grp_t2 = grp[grp['team'] == grp['Team2']].copy()
+            
+            # Merge side-by-side
+            merged_stats = pd.merge(
+                grp_t1.drop(columns=['team']),
+                grp_t2.drop(columns=['team']),
+                on=['match_id', 'date', 'teams', 'Segment', 'Team1', 'Team2'],
+                suffixes=('_T1', '_T2'),
+                how='outer'
+            )
+            
+            # Fill NA only on the aggregated numeric columns to avoid Categorical type errors
+            fill_cols = [
+                'Runs_T1', 'Runs_T2',
+                'Extras_T1', 'Extras_T2',
+                'Total_T1', 'Total_T2',
+                'Boundaries_T1', 'Boundaries_T2', 
+                'Singles_T1', 'Singles_T2', 
+                'Dots_T1', 'Dots_T2'
+            ]
+            for col in fill_cols:
+                if col in merged_stats.columns:
+                    merged_stats[col] = merged_stats[col].fillna(0)
+            
+            # Format display columns
+            merged_stats['Date'] = pd.to_datetime(merged_stats['date']).dt.date
+            merged_stats['Match'] = merged_stats['teams'].astype(str)
+            
+            # Reorder segments for clean sorting
+            seg_order = {'Overs 1-6': 0, 'Overs 7-15': 1, 'Overs 16-20': 2}
+            merged_stats['seg_idx'] = merged_stats['Segment'].map(seg_order)
+            merged_stats = merged_stats.sort_values(by=['Date', 'seg_idx'], ascending=[False, True]).reset_index(drop=True)
+            
+            # 1. Summary averages
+            st.markdown("### Overall Phase Averages by Team Segment")
+            summary_grp = grp.groupby(['Segment', 'team'], observed=True).agg(
+                Avg_Runs=('Runs', 'mean'),
+                Avg_Extras=('Extras', 'mean'),
+                Avg_Boundaries=('Boundaries', 'mean'),
+                Avg_Singles=('Singles', 'mean'),
+                Avg_Dots=('Dots', 'mean')
+            ).reset_index()
+            
+            # Sort segment order
+            summary_grp['Segment'] = pd.Categorical(summary_grp['Segment'], categories=['Overs 1-6', 'Overs 7-15', 'Overs 16-20'], ordered=True)
+            summary_grp = summary_grp.sort_values(['Segment', 'Avg_Runs'], ascending=[True, False]).rename(columns={
+                'team': 'Team',
+                'Avg_Runs': 'Avg Batter Runs',
+                'Avg_Extras': 'Avg Extras',
+                'Avg_Boundaries': 'Avg Boundaries',
+                'Avg_Singles': 'Avg Singles',
+                'Avg_Dots': 'Avg Dot Balls'
+            }).reset_index(drop=True)
+            summary_grp.index += 1
+            st.dataframe(summary_grp, use_container_width=True)
+            
+            # 2. Detailed Match breakdown
+            st.markdown("### Match-by-Match Segment Comparison (Both Teams)")
+            display_cols = [
+                'Date', 'Match', 'Segment', 
+                'Team1', 'Runs_T1', 'Extras_T1', 'Total_T1', 'Boundaries_T1', 'Singles_T1', 'Dots_T1',
+                'Team2', 'Runs_T2', 'Extras_T2', 'Total_T2', 'Boundaries_T2', 'Singles_T2', 'Dots_T2'
+            ]
+            # only keep cols that actually exist (in case no data for one side)
+            display_cols = [c for c in display_cols if c in merged_stats.columns]
+            display_df = merged_stats[display_cols].rename(columns={
+                'Team1': 'Team 1 (Batting 1st)',
+                'Runs_T1': 'Batter Runs (T1)',
+                'Extras_T1': 'Extras (T1)',
+                'Total_T1': 'Total (T1)',
+                'Boundaries_T1': 'Boundaries (T1)',
+                'Singles_T1': 'Singles (T1)',
+                'Dots_T1': 'Dot Balls (T1)',
+                'Team2': 'Team 2 (Batting 2nd)',
+                'Runs_T2': 'Batter Runs (T2)',
+                'Extras_T2': 'Extras (T2)',
+                'Total_T2': 'Total (T2)',
+                'Boundaries_T2': 'Boundaries (T2)',
+                'Singles_T2': 'Singles (T2)',
+                'Dots_T2': 'Dot Balls (T2)'
+            })
+            display_df.index += 1
+            st.dataframe(display_df, use_container_width=True)
+            
+            # 3. Charts
+            st.markdown("### Visual Comparison")
+            chart_metric = st.selectbox(
+                "Select Metric to Visualize", 
+                ["Runs", "Extras", "Boundaries", "Singles", "Dots"], 
+                key="dpl_chart_metric_sel"
+            )
+            
+            if sel_team == "All Teams":
+                fig_data = grp.groupby(['Segment', 'team'], observed=True)[chart_metric].mean().reset_index()
+                fig_data['Segment'] = pd.Categorical(fig_data['Segment'], categories=['Overs 1-6', 'Overs 7-15', 'Overs 16-20'], ordered=True)
+                fig_data = fig_data.sort_values('Segment')
+                
+                fig = px.bar(
+                    fig_data, 
+                    x="Segment", 
+                    y=chart_metric, 
+                    color="team",
+                    barmode="group",
+                    title=f"Average {chart_metric} Comparison by Segment (All Teams)",
+                    labels={"team": "Team"}
+                )
+            else:
+                # Compare Selected vs Opposition
+                fig_data = grp[grp['team'].isin([sel_team]) | (grp['Team1'] == sel_team) | (grp['Team2'] == sel_team)].copy()
+                fig_data['Side'] = np.where(fig_data['team'] == sel_team, 'Our Team', 'Opposition')
+                fig_data = fig_data.groupby(['Segment', 'Side'], observed=True)[chart_metric].mean().reset_index()
+                fig_data['Segment'] = pd.Categorical(fig_data['Segment'], categories=['Overs 1-6', 'Overs 7-15', 'Overs 16-20'], ordered=True)
+                fig_data = fig_data.sort_values('Segment')
+                
+                fig = px.bar(
+                    fig_data, 
+                    x="Segment", 
+                    y=chart_metric, 
+                    color="Side",
+                    barmode="group",
+                    title=f"Average {chart_metric} Comparison by Segment ({sel_team})",
+                    labels={"Side": "Side"},
+                    color_discrete_map={"Our Team": "#2E8B57", "Opposition": "#FF6347"}
+                )
+            st.plotly_chart(fig, use_container_width=True)
+
+elif metric_choice == "DPL 2026 Match Dot Balls":
+    st.header("🎯 DPL 2026 Match Dot Balls Analysis")
+    st.markdown("""
+    **What it shows:** Comparison of dot balls **played (faced while batting)** vs **bowled (delivered while bowling)** per match.
+    """)
+    
+    # Allow filtering by team
+    teams_list = sorted(list(fdf['team'].dropna().unique()))
+    if not teams_list:
+        st.warning("No teams available in the filtered dataset.")
+    else:
+        sel_team = st.selectbox("Select Team", ["All Teams"] + teams_list, key="dpl_dots_team_sel")
+        
+        if sel_team == "All Teams":
+            work_df = fdf.copy()
+        else:
+            matches_with_team = fdf[(fdf['team'] == sel_team) | (fdf['bowling_team'] == sel_team)]['match_id'].unique()
+            work_df = fdf[fdf['match_id'].isin(matches_with_team)].copy()
+            
+        if work_df.empty:
+            st.info("No data found.")
+        else:
+            # Ensure columns are numeric
+            work_df['runs.batter'] = pd.to_numeric(work_df['runs.batter'], errors='coerce').fillna(0)
+            work_df['is_valid_delivery'] = pd.to_numeric(work_df['is_valid_delivery'], errors='coerce').fillna(0)
+            work_df['is_dot'] = ((work_df['is_valid_delivery'] == 1) & (work_df['runs.batter'] == 0)).astype(int)
+            
+            # Extract Innings 1 and Innings 2 team names dynamically for each match
+            inn1_names = work_df[work_df['innings'] == 1][['match_id', 'team']].drop_duplicates().rename(columns={'team': 'Team1'})
+            inn2_names = work_df[work_df['innings'] == 2][['match_id', 'team']].drop_duplicates().rename(columns={'team': 'Team2'})
+            
+            inn1_names['Team1'] = inn1_names['Team1'].astype(str)
+            inn2_names['Team2'] = inn2_names['Team2'].astype(str)
+            
+            match_teams = pd.merge(inn1_names, inn2_names, on='match_id', how='outer')
+            
+            # Group by match and batting team
+            grp_dots = work_df.groupby(['match_id', 'date', 'teams', 'team'], observed=True).agg(
+                Dots=('is_dot', 'sum'),
+                Balls=('is_valid_delivery', 'sum')
+            ).reset_index()
+            
+            grp_dots['team'] = grp_dots['team'].astype(str)
+            grp_dots = pd.merge(grp_dots, match_teams, on='match_id', how='left')
+            
+            # Re-fill missing Team1 / Team2 names from 'teams' fallback if necessary
+            def fill_fallback(row):
+                t1, t2 = row['Team1'], row['Team2']
+                if pd.isna(t1) or pd.isna(t2) or t1 == '0' or t2 == '0' or t1 == 'nan' or t2 == 'nan':
+                    parts = [p.strip() for p in str(row['teams']).replace(' vs ', ' v ').split(' v ')]
+                    if len(parts) >= 1 and (pd.isna(t1) or t1 == '0' or t1 == 'nan'):
+                        t1 = parts[0]
+                    if len(parts) >= 2 and (pd.isna(t2) or t2 == '0' or t2 == 'nan'):
+                        t2 = parts[1]
+                return pd.Series([t1, t2])
+                
+            if not grp_dots.empty:
+                grp_dots[['Team1', 'Team2']] = grp_dots.apply(fill_fallback, axis=1)
+                
+            # Separate into Innings 1 and Innings 2 batting dot ball stats
+            grp_t1 = grp_dots[grp_dots['team'] == grp_dots['Team1']].copy()
+            grp_t2 = grp_dots[grp_dots['team'] == grp_dots['Team2']].copy()
+            
+            # Merge side-by-side
+            merged_dots = pd.merge(
+                grp_t1.drop(columns=['team']),
+                grp_t2.drop(columns=['team']),
+                on=['match_id', 'date', 'teams', 'Team1', 'Team2'],
+                suffixes=('_T1', '_T2'),
+                how='outer'
+            )
+            
+            # Fill NA only on the aggregated numeric columns to avoid Categorical type errors
+            fill_cols = ['Dots_T1', 'Balls_T1', 'Dots_T2', 'Balls_T2']
+            for col in fill_cols:
+                if col in merged_dots.columns:
+                    merged_dots[col] = merged_dots[col].fillna(0)
+                    
+            merged_dots['Date'] = pd.to_datetime(merged_dots['date']).dt.date
+            merged_dots['Match'] = merged_dots['teams'].astype(str)
+            
+            # Calculate percentages and differences
+            merged_dots['Dot% T1'] = (merged_dots['Dots_T1'] / merged_dots['Balls_T1'].replace(0, np.nan) * 100).fillna(0).round(1)
+            merged_dots['Dot% T2'] = (merged_dots['Dots_T2'] / merged_dots['Balls_T2'].replace(0, np.nan) * 100).fillna(0).round(1)
+            merged_dots['Dots Difference (T1 - T2)'] = (merged_dots['Dots_T1'] - merged_dots['Dots_T2']).astype(int)
+            
+            # Sort by Date
+            merged_dots = merged_dots.sort_values(by='Date', ascending=False).reset_index(drop=True)
+            
+            if sel_team == "All Teams":
+                # General Summary cards
+                total_t1 = int(merged_dots['Dots_T1'].sum())
+                total_t2 = int(merged_dots['Dots_T2'].sum())
+                avg_t1 = round(merged_dots['Dots_T1'].mean(), 1) if not merged_dots.empty else 0.0
+                avg_t2 = round(merged_dots['Dots_T2'].mean(), 1) if not merged_dots.empty else 0.0
+                
+                c1, c2, c3, c4 = st.columns(4)
+                c1.metric("Total Innings 1 Dots", total_t1)
+                c2.metric("Total Innings 2 Dots", total_t2)
+                c3.metric("Avg Innings 1 Dots / Match", avg_t1)
+                c4.metric("Avg Innings 2 Dots / Match", avg_t2)
+                
+                st.markdown("---")
+                st.markdown("### 📋 Match-by-Match Dot Ball Analysis (All Teams)")
+                display_cols = [
+                    'Date', 'Match', 
+                    'Team1', 'Dots_T1', 'Dot% T1',
+                    'Team2', 'Dots_T2', 'Dot% T2',
+                    'Dots Difference (T1 - T2)'
+                ]
+                display_df = merged_dots[display_cols].rename(columns={
+                    'Team1': 'Team 1 (Batting 1st)',
+                    'Dots_T1': 'Dot Balls (Team 1)',
+                    'Dot% T1': 'Dot % (Team 1)',
+                    'Team2': 'Team 2 (Batting 2nd)',
+                    'Dots_T2': 'Dot Balls (Team 2)',
+                    'Dot% T2': 'Dot % (Team 2)',
+                    'Dots Difference (T1 - T2)': 'Dots Diff (T1 - T2)'
+                })
+                display_df.index += 1
+                st.dataframe(display_df, use_container_width=True)
+            else:
+                # Specific Team Selected: show Played vs Bowled
+                # Played = selected team's batting dot balls
+                # Bowled = selected team's bowling dot balls (which is the opponent's batting dot balls)
+                merged_dots['Played_Dots'] = np.where(merged_dots['Team1'] == sel_team, merged_dots['Dots_T1'], merged_dots['Dots_T2'])
+                merged_dots['Played_Balls'] = np.where(merged_dots['Team1'] == sel_team, merged_dots['Balls_T1'], merged_dots['Balls_T2'])
+                merged_dots['Bowled_Dots'] = np.where(merged_dots['Team1'] == sel_team, merged_dots['Dots_T2'], merged_dots['Dots_T1'])
+                merged_dots['Bowled_Balls'] = np.where(merged_dots['Team1'] == sel_team, merged_dots['Balls_T2'], merged_dots['Balls_T1'])
+                
+                merged_dots['Dot% Played'] = (merged_dots['Played_Dots'] / merged_dots['Played_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                merged_dots['Dot% Bowled'] = (merged_dots['Bowled_Dots'] / merged_dots['Bowled_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                merged_dots['Dots Difference (Played - Bowled)'] = (merged_dots['Played_Dots'] - merged_dots['Bowled_Dots']).astype(int)
+                
+                total_played = int(merged_dots['Played_Dots'].sum())
+                total_bowled = int(merged_dots['Bowled_Dots'].sum())
+                avg_played = round(merged_dots['Played_Dots'].mean(), 1) if not merged_dots.empty else 0.0
+                avg_bowled = round(merged_dots['Bowled_Dots'].mean(), 1) if not merged_dots.empty else 0.0
+                
+                c1, c2, c3, c4 = st.columns(4)
+                c1.metric(f"Total Dot Balls Played ({sel_team})", total_played)
+                c2.metric(f"Total Dot Balls Bowled ({sel_team})", total_bowled)
+                c3.metric("Avg Dot Balls Faced / Match", avg_played)
+                c4.metric("Avg Dot Balls Bowled / Match", avg_bowled)
+                
+                st.markdown("---")
+                st.markdown(f"### 📋 Match-by-Match Dot Ball Analysis ({sel_team})")
+                display_cols = [
+                    'Date', 'Match', 
+                    'Played_Dots', 'Bowled_Dots', 
+                    'Dots Difference (Played - Bowled)',
+                    'Dot% Played', 'Dot% Bowled'
+                ]
+                display_df = merged_dots[display_cols].rename(columns={
+                    'Played_Dots': 'Dot Balls Faced (Played)',
+                    'Bowled_Dots': 'Dot Balls Bowled'
+                })
+                display_df.index += 1
+                st.dataframe(display_df, use_container_width=True)
+                
+                # Trend chart
+                st.markdown("### 📈 Dot Balls Trend")
+                fig = px.line(
+                    merged_dots,
+                    x='Date',
+                    y=['Played_Dots', 'Bowled_Dots'],
+                    markers=True,
+                    title=f"Dot Balls Played vs Bowled Trend — {sel_team}",
+                    labels={'value': 'Dot Balls Count', 'variable': 'Category'},
+                    color_discrete_map={'Played_Dots': '#1f77b4', 'Bowled_Dots': '#ff7f0e'}
+                )
+                fig.for_each_trace(lambda t: t.update(name='Faced (Played)' if t.name == 'Played_Dots' else 'Bowled'))
+                st.plotly_chart(fig, use_container_width=True)
 
 
 
@@ -12308,7 +12829,6 @@ elif metric_choice == "Opposition / Match Preparation":
                         st.warning(_msg)
                     else:
                         st.info(_msg)
-
 
 st.markdown("---")
 st.markdown("*Data extracted from Cricsheet JSON files.*")

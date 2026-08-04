@@ -285,12 +285,19 @@ def _process_single_file_drs(args):
                     batter_name = NAME_MAP.get(raw_batter, raw_batter)
                     bowler_name = NAME_MAP.get(raw_bowler, raw_bowler)
 
+                    # Always compute per-ball total from batter+extras.
+                    # Some JSON formats (e.g. DPL 2026) store runs.total as cumulative
+                    # match score, not per-delivery runs. Using batter+extras is always correct.
+                    _batter_runs = d.get('runs', {}).get('batter', 0)
+                    _extras_runs = d.get('runs', {}).get('extras', 0)
+                    _per_ball_total = _batter_runs + _extras_runs
+
                     raw_player_dismissed = next((w.get('player_out') for w in (d.get('wickets') or []) if w.get('player_out')), None)
                     player_dismissed_name = NAME_MAP.get(raw_player_dismissed, raw_player_dismissed) if raw_player_dismissed else None
 
                     inning_deliveries.append({
                         'over': over_num, 'ball_float': ball_float,
-                        'runs.total': d.get('runs', {}).get('total', 0),
+                        'runs.total': _per_ball_total,
                         'is_valid_delivery': 1 if is_valid else 0,
                         'batter': batter_name, 'bowler': bowler_name,
                         'wides': extras.get('wides', 0),
@@ -319,9 +326,9 @@ def _process_single_file_drs(args):
                         'over': over_num,
                         'batter': batter_name,
                         'bowler': bowler_name,
-                        'runs.batter': d.get('runs', {}).get('batter', 0),
-                        'runs.extras': d.get('runs', {}).get('extras', 0),
-                        'runs.total': d.get('runs', {}).get('total', 0),
+                        'runs.batter': _batter_runs,
+                        'runs.extras': _extras_runs,
+                        'runs.total': _per_ball_total,
                         'wicket_count': sum(1 for w in (d.get('wickets') or []) if w.get('kind') in [
                             'caught', 'bowled', 'lbw', 'stumped', 'hit wicket',
                             'caught and bowled', 'handled the ball'
@@ -416,14 +423,20 @@ def generate_excel_summary(df, exclusions, league_file_counts, report_name="loca
 
 def process_local_t20():
     """Process all JSON files for UPT20, DPL, MPL, JPL, Maharaja T20, and TG20."""
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    
     upt20_2023_files = glob(os.path.join(SCRAPER_BASE_DIR, "upt20_scraper/data/cricsheet/2023/*.json"))
     upt20_2024_files = glob(os.path.join(SCRAPER_BASE_DIR, "upt20_scraper/data/cricsheet/2024/*.json"))
     upt20_2025_files = glob(os.path.join(SCRAPER_BASE_DIR, "upt20_cricbuzz_scraper/data/cricsheet/2025/*.json"))
     
-    dpl_2024_files = glob(os.path.join(SCRAPER_BASE_DIR, "dpl_scraper/data/cricsheet/2024/*.json"))
-    dpl_2025_files = glob(os.path.join(SCRAPER_BASE_DIR, "dpl_scraper/data/cricsheet/2025/*.json"))
+    # Scan workspace recursively for all DPL matches (2024, 2025, 2026)
+    dpl_files = glob(os.path.join(current_dir, "data", "dpl_scraper", "data", "cricsheet", "**", "*.json"), recursive=True)
+    if not dpl_files:
+        dpl_files = (
+            glob(os.path.join(SCRAPER_BASE_DIR, "dpl_scraper/data/cricsheet/2024/*.json")) +
+            glob(os.path.join(SCRAPER_BASE_DIR, "dpl_scraper/data/cricsheet/2025/*.json"))
+        )
     
-    current_dir = os.path.dirname(os.path.abspath(__file__))
     mpl_2026_files = glob(os.path.join(current_dir, "data", "MPL 2026 ", "*.json"))
     jpl_2026_files = glob(os.path.join(current_dir, "data", "JPL 2026", "*.json"))
     maharaja_2026_files = glob(os.path.join(current_dir, "data", "Maharaja T20 2026", "*.json"))
@@ -431,7 +444,7 @@ def process_local_t20():
     
     files = (
         upt20_2023_files + upt20_2024_files + upt20_2025_files +
-        dpl_2024_files + dpl_2025_files +
+        dpl_files +
         mpl_2026_files + jpl_2026_files + maharaja_2026_files + tg20_2026_files
     )
     

@@ -1,5 +1,6 @@
 # local_t20_main_app.py - Local T20 Leagues (DPL, UPT20, MPL, JPL etc.)
 from local_t20_metrics import load_player_data
+import os
 import streamlit as st
 import gc
 import pandas as pd
@@ -333,7 +334,7 @@ def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team norm
 
 from squad_filter import filter_by_2026_squad
 
-df = load_data()
+df = load_data(_v=10)
 if df.empty:
     st.stop()
 df = filter_by_2026_squad(df)
@@ -609,7 +610,7 @@ metrics = [
     "Key Batting", "Key Bowling", "Phase-wise Wickets Lost by Team", "BPSix", "BP4", "Batter Contribution %",
     "Extras Breakdown", "Run Rate Progression", "Boundary Balls %",
     "Powerplay Boundary Rate", "Team Phase Boundary Rate", "Team Phase Dot Ball %", "Death Wag %", "Match-Up Dominance",
-    "Dot Ball % Trend", "Bowler Boundary Leakage by Phase", "Pace & Spin vs LHB/RHB Matchups", "Match Results",
+    "Dot Ball % Trend", "Bowler Boundary Leakage by Phase", "Pace & Spin vs LHB/RHB Matchups", "2026 Squad Roster by Role", "Match Results",
     # NEW METRICS
     "Over-wise Batting Analysis", "Death Over Bowling Analysis", 
     "Match by Match Analysis", "Batter vs Bowler Matchups",
@@ -2952,11 +2953,11 @@ for i, metric in enumerate(st.session_state['metrics']):
         
         if metric == "Impact Player Performance":
             st.subheader("Impact Player Performance")
-            if 'IPL' not in st.session_state.get('leagues', []) and 'IPL' not in fdf['league'].unique():
-                st.info("Impact Players are primarily an IPL feature. Select IPL league to view.")
-            else:
-                res_bat, res_bowl, res_bat_match, res_bowl_match = calculate_impact_player_stats(fdf)
+            res_bat, res_bowl, res_bat_match, res_bowl_match = calculate_impact_player_stats(fdf)
 
+            if res_bat.empty and res_bowl.empty:
+                st.info("No impact player substitutions logged for the selected filters/league.")
+            else:
                 # Tabbed view: Batting vs Bowling
                 tab1, tab2 = st.tabs(["Batting Impact", "Bowling Impact"])
 
@@ -3419,6 +3420,62 @@ for i, metric in enumerate(st.session_state['metrics']):
                 render_with_season_tabs(fdf, pace_spin_vs_lhb_rhb_matchups, metric, 'Batter', 'Runs', "Batter Performance vs Pace & Spin", color, metric_func_kwargs={'view_type': 'Batting'})
             with t_bowl:
                 render_with_season_tabs(fdf, pace_spin_vs_lhb_rhb_matchups, metric, 'Bowler', 'Wickets', "Bowler Performance vs LHB & RHB", color, metric_func_kwargs={'view_type': 'Bowling'})
+        elif metric == "2026 Squad Roster by Role":
+            st.subheader("📋 2026 Squad Roster & Role Explorer")
+            st.write("Live roster breakdown of 2026 franchise squads loaded directly from DPL 2026 teams.xlsx.")
+            
+            dpl_path = os.path.join(os.path.dirname(__file__), 'DPL 2026 teams.xlsx')
+            if not os.path.exists(dpl_path):
+                st.error("DPL 2026 teams.xlsx file not found.")
+            else:
+                xls = pd.ExcelFile(dpl_path)
+                all_franchises = [s for s in xls.sheet_names if 'Weak Zone' not in s]
+                
+                col_t1, col_t2 = st.columns([2, 3])
+                with col_t1:
+                    sel_squad_team = st.selectbox("Select 2026 Franchise", all_franchises, index=0, key="main_roster_team_sel")
+                with col_t2:
+                    sel_role = st.radio(
+                        "Select Role Filter",
+                        ["All Roles", "Batter", "Bowler", "All-Rounder", "Wicket Keeper", "Unknown / Unassigned"],
+                        horizontal=True,
+                        key="main_roster_role_sel"
+                    )
+                    
+                df_roster = pace_spin_vs_lhb_rhb_matchups(fdf, view_type='Summary') # reuse load or helper
+                from local_t20_metrics import squad_roster_by_role
+                df_roster = squad_roster_by_role(fdf, team_name=sel_squad_team, role_filter=sel_role)
+                df_all_roster = squad_roster_by_role(fdf, team_name=sel_squad_team, role_filter='All Roles')
+                
+                if not df_all_roster.empty:
+                    m_total = len(df_all_roster)
+                    m_bat = (df_all_roster['Role'] == 'Batter').sum()
+                    m_bowl = (df_all_roster['Role'] == 'Bowler').sum()
+                    m_ar = (df_all_roster['Role'] == 'All-Rounder').sum()
+                    m_wk = (df_all_roster['Role'] == 'Wicket Keeper').sum()
+                    m_unk = (df_all_roster['Role'] == 'Unknown / Unassigned').sum()
+                    
+                    c1, c2, c3, c4, c5, c6 = st.columns(6)
+                    c1.metric("Total Squad", m_total)
+                    c2.metric("🏏 Batters", m_bat)
+                    c3.metric("🎯 Bowlers", m_bowl)
+                    c4.metric("⚡ All-Rounders", m_ar)
+                    c5.metric("🧤 Keepers", m_wk)
+                    c6.metric("❓ To Be Updated", m_unk)
+                    
+                    st.markdown("---")
+                    st.markdown(f"### {sel_squad_team} — Roster ({sel_role})")
+                    if not df_roster.empty:
+                        show_table(df_roster.reset_index(drop=True), metric)
+                        
+                        if sel_role == 'All Roles':
+                            st.markdown("#### Role Breakdown Chart")
+                            role_counts = df_all_roster['Role'].value_counts().reset_index()
+                            role_counts.columns = ['Role', 'Count']
+                            fig_r = px.pie(role_counts, values='Count', names='Role', title=f"Role Composition — {sel_squad_team}")
+                            show_plotly_chart(fig_r)
+                    else:
+                        st.info(f"No players found with role **{sel_role}** in {sel_squad_team}.")
         elif metric == "Batter Contribution %":
             st.subheader("Batter Contribution %")
             st.write("Batter's contribution to their team's runs (percentage & totals)")

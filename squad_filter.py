@@ -34,7 +34,7 @@ def load_2026_squads(file_path=SQUAD_FILE):
         print(f"Error loading 2026 squads: {e}")
         return {}
 
-def filter_by_2026_squad(df):
+def filter_by_2026_squad(df, key_prefix="sf"):
     """
     Renders 2026 Franchise selector in sidebar with a Toggle (Enable/Disable).
     Filters df for 2024 & 2025 data matching players in the selected 2026 squad when enabled.
@@ -47,11 +47,15 @@ def filter_by_2026_squad(df):
     st.sidebar.markdown("---")
     st.sidebar.subheader("🏆 2026 Squad Base Filter")
     
+    enable_filter_key = f"{key_prefix}_enable_2026_squad_filter"
+    selected_team_key = f"{key_prefix}_selected_2026_franchise"
+
     enable_filter = st.sidebar.toggle(
         "Enable 2026 Squad Base Filter",
         value=True,
-        key="enable_2026_squad_filter"
+        key=enable_filter_key
     )
+    st.session_state['enable_2026_squad_filter'] = enable_filter
     
     if not enable_filter:
         st.sidebar.caption("🌐 Showing **Overall / Unfiltered Dataset**")
@@ -63,8 +67,9 @@ def filter_by_2026_squad(df):
         "Select 2026 Franchise",
         team_list,
         index=0,
-        key="selected_2026_franchise"
+        key=selected_team_key
     )
+    st.session_state['selected_2026_franchise'] = selected_team
     
     squad_players = set(squads.get(selected_team, []))
     
@@ -85,7 +90,9 @@ def filter_by_2026_squad(df):
         (df['player_dismissed'].isin(squad_players) if 'player_dismissed' in df.columns else False)
     )
     
-    filtered_df = df[mask_year & mask_player].copy()
+    # 2024+2025: filter by squad players; 2026: always include (it IS the current season)
+    mask_2026 = year_series.isin([2026]) if 'year' in df.columns else pd.Series(False, index=df.index)
+    filtered_df = df[(mask_year & mask_player) | mask_2026].copy()
 
     # Cast string columns to prevent categorical dtype issues
     for c in ['batter', 'bowler', 'non_striker', 'player_dismissed', 'team', 'bowling_team']:
