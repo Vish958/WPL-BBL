@@ -13,7 +13,7 @@ st.set_page_config(page_title="Local T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# Local T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 13 July 2026")
+st.markdown("Last updated: 21 Aug 2026")
 st.markdown("*Matches will appear as per data availability from local scraper JSON files (UPT20: 2023-2025, DPL: 2024-2025, MPL: 2026, JPL: 2026, Maharaja T20: 2026, TG20: 2026).*")
 
 DATA_SOURCE = "local_t20_data_with_drs.parquet"
@@ -122,13 +122,16 @@ def load_data(path=DATA_SOURCE, _cache_version=22): # Version 22: add JPL, Mahar
         
         # Normalize team names: 'England Women' -> 'England', etc.
         # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
-        if 'team' in df.columns:
-            df['team'] = df['team'].astype(str).str.replace(' Women', '', regex=False)
-        if 'teams' in df.columns:
-            df['teams'] = df['teams'].astype(str).str.replace(' Women', '', regex=False)
+        for _col in ['team', 'teams', 'bowling_team']:
+            if _col in df.columns:
+                df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
+                df[_col] = (df[_col]
+                            .str.replace('Purani Delhi 6', 'Purani Dilli 6', regex=False)
+                            .str.replace('Purani Delhi-6', 'Purani Dilli 6', regex=False)
+                            .str.replace('Purani Dilli-6', 'Purani Dilli 6', regex=False))
         
         # Convert low-cardinality columns to category dtype
-        cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
+        cat_cols = ['league', 'season', 'phase', 'team', 'bowling_team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
         for col in df.columns:
             if col in cat_cols or df[col].dtype == 'object':
                 if df[col].nunique() < (len(df) * 0.5):

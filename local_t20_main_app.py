@@ -55,7 +55,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 20 July 2026")
+st.markdown("Last updated: 21 Aug 2026")
 st.markdown("*Matches will appear as per data availability from local scraper JSON files (UPT20: 2023-2025, DPL: 2024-2025, MPL: 2026, JPL: 2026, Maharaja T20: 2026, TG20: 2026).*")
 st.markdown("**Metrics Added:** Batting Order Performance (Player-wise), Custom Over Phase Analytics, Runs Between Dismissals, and more.")
 
@@ -279,6 +279,10 @@ def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team norm
         for _col in ['team', 'teams', 'bowling_team']:
             if _col in df.columns:
                 df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
+                df[_col] = (df[_col]
+                            .str.replace('Purani Delhi 6', 'Purani Dilli 6', regex=False)
+                            .str.replace('Purani Delhi-6', 'Purani Dilli 6', regex=False)
+                            .str.replace('Purani Dilli-6', 'Purani Dilli 6', regex=False))
 
         # --- Memory Optimization ---
         if 'phase' in df.columns:

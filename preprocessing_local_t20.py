@@ -65,6 +65,14 @@ def notation_to_ball_float(notation) -> float:
     except Exception:
         return 0.0
 
+def clean_team_name(name: str) -> str:
+    if not name:
+        return name
+    name_str = str(name).strip()
+    if name_str in ['Purani Delhi 6', 'Purani Delhi-6', 'Purani Dilli-6', 'Purani Dilli 6']:
+        return 'Purani Dilli 6'
+    return name_str
+
 def detect_league(event_name, filepath):
     e = (event_name or '').lower()
     fp = filepath.lower()
@@ -234,7 +242,7 @@ def _process_single_file_drs(args):
                 if isinstance(mn, str) and not mn.isdigit():
                     event_stage = mn
         gender = info.get('gender', 'male')
-        teams = info.get('teams', [])
+        teams = [clean_team_name(t) for t in info.get('teams', [])]
         league = detect_league(event, file)
 
         if league in LEAGUE_START_DATES and date < pd.to_datetime(LEAGUE_START_DATES[league]).date():
@@ -256,13 +264,13 @@ def _process_single_file_drs(args):
 
         match_impact_players = get_impact_players_from_match(data)
         outcome = info.get('outcome', {})
-        winner = outcome.get('winner') or outcome.get('eliminator')
+        winner = clean_team_name(outcome.get('winner') or outcome.get('eliminator'))
         win_by = outcome.get('by', {})
         win_by_wickets = win_by.get('wickets', 0) if win_by else 0
         win_by_runs = win_by.get('runs', 0) if win_by else 0
 
         for inning_idx, inning in enumerate(data.get('innings', []), start=1):
-            team = inning.get('team')
+            team = clean_team_name(inning.get('team'))
             bowling_team = [t for t in teams if t != team][0] if len(teams) == 2 else team
             innings_num = inning_idx
             inning_deliveries = []
