@@ -13,7 +13,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 23 Sept 2026")
+st.markdown("Last updated: 28 Sept 2026")
 st.markdown("*ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
 st.warning("⚠️ **Notice:** Men's T20I (MENS_T20I) data is only included from 01 Jan 2020 onwards.")
 

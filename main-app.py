@@ -53,7 +53,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 23 Sept 2026")
+st.markdown("Last updated: 28 Sept 2026")
 st.markdown("ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).")
 st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
