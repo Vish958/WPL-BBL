@@ -53,7 +53,7 @@ st.markdown("""
 **By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh) | [LinkedIn: vishwesh-gaur-56760b112](https://www.linkedin.com/in/vishwesh-gaur-56760b112)  
 """)
 
-st.markdown("Last updated: 28 Sept 2026")
+st.markdown("Last updated: 05 Oct 2026")
 st.markdown("ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).")
 st.markdown("New: 'Impact Player' (Batting & Bowling for IPL) & 'Score Prediction'!")
 st.markdown("**Coach/Analyst Metrics Added:** Batting Acceleration Rate, Bowling Spell Efficiency, Collapse Detector, Player Absence Impact")
@@ -136,6 +136,7 @@ LEAGUE_START_DATES = {
     'WT20I': '2000-01-01',  # Women's T20 Internationals
     'MENS_ODI': '2002-01-01',  # All Men's ODI matches
     'MENS_T20I': '2020-01-01', # Men's T20 Internationals
+    'NPL': '2024-11-30',
 }
 
 # ODI leagues — powerplay is 10 overs; death starts at over 40
@@ -146,28 +147,45 @@ st.markdown("**Data included from:** " + " | ".join([f"{lg}: {dt}" for lg, dt in
 # default compact height; slider in sidebar allows user to change
 DEFAULT_COMPACT_HEIGHT = 250
 
-@st.cache_data
-def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team normalization
+def _remap_cat(series, mapping_fn_or_dict):
+    if not hasattr(series, 'cat'):
+        return series
+    cats = series.cat.categories
+    if callable(mapping_fn_or_dict):
+        mapped = [mapping_fn_or_dict(c) for c in cats]
+    else:
+        mapped = [mapping_fn_or_dict.get(c, c) for c in cats]
+    new_cats, inv = np.unique(mapped, return_inverse=True)
+    codes = series.cat.codes.values
+    new_codes = np.where(codes >= 0, inv[codes], -1)
+    return pd.Series(pd.Categorical.from_codes(new_codes, categories=new_cats), index=series.index)
+
+@st.cache_resource
+def load_data(path=DATA_SOURCE, _v=10):  # v10: cache_resource + memory optimization
     try:
+        import gc
         # Load data
         df = pd.read_parquet(path)
         
+        if 'created' in df.columns:
+            df = df.drop(columns=['created'])
+        if 'ball_float' in df.columns:
+            df['ball_float'] = df['ball_float'].astype('float32')
+
         # --- FIX: Season Adjustment immediately after load (before optimization) ---
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
         
         if 'league' in df.columns and 'date' in df.columns and 'year' in df.columns:
-            # Defensive: force year to int before arithmetic (parquet may store it as Categorical)
             df['year'] = pd.to_numeric(df['year'], errors='coerce').fillna(0).astype(int)
-            # SA20: If Month >= 10, shift to next year (e.g. Dec 2025 -> 2026)
+            # SA20: If Month >= 10, shift to next year
             mask_sa20 = (df['league'] == 'SA20') & (df['date'].dt.month >= 10)
             df.loc[mask_sa20, 'year'] = df.loc[mask_sa20, 'year'] + 1
             
-            # BBL (MBBL/WBBL): If Month <= 4, shift to prev year (e.g. Jan 2021 -> 2020)
+            # BBL (MBBL/WBBL): If Month <= 4, shift to prev year
             mask_bbl = (df['league'].isin(['MBBL', 'WBBL'])) & (df['date'].dt.month <= 4)
             df.loc[mask_bbl, 'year'] = df.loc[mask_bbl, 'year'] - 1
             
-            # --- FIX: Format Season Display (YYYY/YY) ---
             # Convert year to string to support "2025/26" format
             df['year'] = df['year'].astype(str)
             
@@ -182,41 +200,33 @@ def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team norm
             if mask_bbl_all.any():
                 y_bbl = pd.to_numeric(df.loc[mask_bbl_all, 'year'])
                 df.loc[mask_bbl_all, 'year'] = y_bbl.astype(str) + "/" + (y_bbl + 1).astype(str).str[-2:]
-        
-        # --- Team Name Normalization: 'England Women' -> 'England' etc ---
-        # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
+            df['year'] = df['year'].astype('category')
+
+        # --- Team Name Normalization: Category-level remapping ---
         for _col in ['team', 'teams', 'bowling_team']:
             if _col in df.columns:
-                df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
+                df[_col] = _remap_cat(df[_col], lambda c: str(c).replace(' Women', ''))
 
-        # --- Memory Optimization ---
+        # --- Phase Normalization: Category-level remapping ---
         if 'phase' in df.columns:
-            df['phase'] = (
-                df['phase'].astype(str).str.strip()
-                .str.title()
-                .str.replace('Power Play', 'Powerplay', regex=False)
-                .replace({'Powersurge': 'Power Surge'})
+            df['phase'] = _remap_cat(
+                df['phase'],
+                lambda c: str(c).strip().title().replace('Power Play', 'Powerplay').replace('Powersurge', 'Power Surge')
             )
-        
-        cat_cols = ['league', 'year', 'phase', 'team', 'batter', 'bowler', 'non_striker', 'teams', 'venue', 'outcome', 'match_result', 'winner', 'match_id']
-        for col in df.columns:
-            if col in cat_cols or df[col].dtype == 'object':
-                if df[col].nunique() < (len(df) * 0.5):
-                    df[col] = df[col].astype('category')
 
-        f_cols = df.select_dtypes(include=['float']).columns
-        for c in f_cols:
-            df[c] = pd.to_numeric(df[c], downcast='float')
-        
-        i_cols = df.select_dtypes(include=['integer']).columns
-        for c in i_cols:
-            df[c] = pd.to_numeric(df[c], downcast='integer')
+        # Downcast int64 to int16/int8
+        for col in df.select_dtypes(include=['int64']).columns:
+            col_min, col_max = df[col].min(), df[col].max()
+            if col_min >= np.iinfo(np.int8).min and col_max <= np.iinfo(np.int8).max:
+                df[col] = df[col].astype(np.int8)
+            elif col_min >= np.iinfo(np.int16).min and col_max <= np.iinfo(np.int16).max:
+                df[col] = df[col].astype(np.int16)
 
         # Ensure is_impact columns exist
-        if 'is_impact_batter' not in df.columns: df['is_impact_batter'] = 0
-        if 'is_impact_bowler' not in df.columns: df['is_impact_bowler'] = 0
+        if 'is_impact_batter' not in df.columns: df['is_impact_batter'] = np.int8(0)
+        if 'is_impact_bowler' not in df.columns: df['is_impact_bowler'] = np.int8(0)
 
-        # ── Player name normalization ──────────────────────────────────────────
+        # ── Player name normalization (category-level) ──────────────────────────
         import json
         import os
         _NAME_FIX = {}
@@ -230,11 +240,10 @@ def load_data(path=DATA_SOURCE, _v=9):  # v9: MENS_T20I data + bowling_team norm
         
         for col in ['batter', 'bowler', 'player_dismissed', 'non_striker']:
             if col in df.columns:
-                df[col] = df[col].astype(str).replace(_NAME_FIX)
-                if df[col].nunique() < len(df) * 0.5:
-                    df[col] = df[col].astype('category')
+                df[col] = _remap_cat(df[col], _NAME_FIX)
         # ───────────────────────────────────────────────────────────────────────
 
+        gc.collect()
         return df
     except Exception as e:
         print(f"!!! Error in load_data: {e}")
@@ -245,7 +254,7 @@ df = load_data()
 if df.empty:
     st.stop()
 
-@st.cache_data
+@st.cache_resource
 def load_playing_xi(path=PLAYING_XI_SOURCE):
     """Load playing XI lookup table and normalize team names."""
     try:
@@ -337,9 +346,9 @@ with col2:
 p_df = df
 if st.session_state.get('leagues'): p_df = p_df[p_df['league'].isin(st.session_state['leagues'])]
 if st.session_state.get('years'): p_df = p_df[p_df['year'].isin(st.session_state['years'])]
-# Fix: Apply date filter to dropdowns
-if st.session_state.get('date_from'): p_df = p_df[p_df['date'].dt.date >= st.session_state['date_from']]
-if st.session_state.get('date_to'): p_df = p_df[p_df['date'].dt.date <= st.session_state['date_to']]
+# Fix: Apply date filter to dropdowns using fast Timestamp comparison
+if st.session_state.get('date_from'): p_df = p_df[p_df['date'] >= pd.Timestamp(st.session_state['date_from'])]
+if st.session_state.get('date_to'): p_df = p_df[p_df['date'] <= pd.Timestamp(st.session_state['date_to'])]
 # Apply WC filter to dropdowns so only WC teams/matches appear
 if st.session_state.get('wt20wc_only') and 'date' in p_df.columns:
     p_df = p_df[_is_wt20wc_match(p_df['date'])]

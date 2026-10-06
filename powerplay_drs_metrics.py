@@ -13,7 +13,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 28 Sept 2026")
+st.markdown("Last updated: 05 Oct 2026")
 st.markdown("*ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
 st.warning("⚠️ **Notice:** Men's T20I (MENS_T20I) data is only included from 01 Jan 2020 onwards.")
 
@@ -67,52 +67,81 @@ def is_wt20wc_match(date_series):
 # Cache version parameters handle invalidation — do NOT use st.cache_data.clear()
 # as it forces re-read of the parquet file on every single widget interaction.
 
-@st.cache_data
+def _remap_cat(series, mapping_fn_or_dict):
+    if not hasattr(series, 'cat'):
+        return series
+    cats = series.cat.categories
+    if callable(mapping_fn_or_dict):
+        mapped = [mapping_fn_or_dict(c) for c in cats]
+    else:
+        mapped = [mapping_fn_or_dict.get(c, c) for c in cats]
+    new_cats, inv = np.unique(mapped, return_inverse=True)
+    codes = series.cat.codes.values
+    new_codes = np.where(codes >= 0, inv[codes], -1)
+    return pd.Series(pd.Categorical.from_codes(new_codes, categories=new_cats), index=series.index)
+
+@st.cache_resource
 def load_venue_data():
     return pd.read_parquet('venues.parquet').drop_duplicates('match_id').set_index('match_id').to_dict('index')
 
-@st.cache_data(ttl=3600) # 1 hour TTL
-def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: MENS_T20I data + bowling_team normalization
+@st.cache_resource
+def load_data(path=DATA_SOURCE, _cache_version=20):
     try:
+        import os, gc
         df = pd.read_parquet(path)
         
-        # Memory optimization: downcast integers to int16 where possible (~50% RAM saving)
+        if 'created' in df.columns:
+            df = df.drop(columns=['created'])
+        if 'ball_float' in df.columns:
+            df['ball_float'] = df['ball_float'].astype('float32')
+
+        # Memory optimization: downcast integers to int16/int8
         for col in df.select_dtypes(include=['int64']).columns:
             col_min, col_max = df[col].min(), df[col].max()
-            if col_min >= np.iinfo(np.int16).min and col_max <= np.iinfo(np.int16).max:
+            if col_min >= np.iinfo(np.int8).min and col_max <= np.iinfo(np.int8).max:
+                df[col] = df[col].astype(np.int8)
+            elif col_min >= np.iinfo(np.int16).min and col_max <= np.iinfo(np.int16).max:
                 df[col] = df[col].astype(np.int16)
-            elif col_min >= np.iinfo(np.int32).min and col_max <= np.iinfo(np.int32).max:
-                df[col] = df[col].astype(np.int32)
-        
-        # Normalize phase column (vectorized — no apply/lambda)
+
+        # Normalize phase column (category-level — no 3M string copies)
         if 'phase' in df.columns:
-            df['phase'] = (df['phase'].astype(str).str.strip()
-                           .str.title()
-                           .str.replace('Power Play', 'Powerplay', regex=False))
-        
-        # Normalize team names: 'England Women' -> 'England', etc.
-        # Use plain replace (no $ anchor) so both sides of 'X Women vs Y Women' are fixed.
-        for _col in ['team', 'teams', 'bowling_team']:
+            df['phase'] = _remap_cat(
+                df['phase'],
+                lambda c: str(c).strip().title().replace('Power Play', 'Powerplay').replace('Powersurge', 'Power Surge')
+            )
+
+        # Map toss data from toss.parquet if not already in df
+        if os.path.exists('toss.parquet'):
+            try:
+                toss_df = pd.read_parquet('toss.parquet').drop_duplicates('match_id')
+                toss_winner_map = toss_df.set_index('match_id')['toss_winner'].to_dict()
+                toss_decision_map = toss_df.set_index('match_id')['toss_decision'].to_dict()
+                
+                match_id_str = df['match_id'].astype(str)
+                if 'toss_winner' not in df.columns or df['toss_winner'].isna().all():
+                    df['toss_winner'] = match_id_str.map(toss_winner_map).astype('category')
+                if 'toss_decision' not in df.columns or df['toss_decision'].isna().all():
+                    df['toss_decision'] = match_id_str.map(toss_decision_map).astype('category')
+            except Exception as e:
+                print(f"Error mapping toss data: {e}")
+
+        # Normalize team names (category-level — instant)
+        for _col in ['team', 'teams', 'bowling_team', 'toss_winner']:
             if _col in df.columns:
-                df[_col] = df[_col].astype(str).str.replace(' Women', '', regex=False)
-        
-        # Convert low-cardinality columns to category dtype
-        cat_cols = ['league', 'season', 'phase', 'team', 'batter', 'bowler', 'teams', 'venue', 'match_id']
-        for col in df.columns:
-            if col in cat_cols or df[col].dtype == 'object':
-                if df[col].nunique() < (len(df) * 0.5):
-                    df[col] = df[col].astype('category')
-        
+                df[_col] = _remap_cat(df[_col], lambda c: str(c).replace(' Women', ''))
+
         if 'date' in df.columns:
             df['date'] = pd.to_datetime(df['date'])
-        
-        # venue/city columns are populated by load_venue_data() called at startup.
-        # Removing the per-file JSON scan here cuts cold-start time significantly.
 
-        # Normalize known player name spelling variants so they aggregate correctly.
-        # Load from dynamic mapping file if it exists
+        # Precompute match_number once at startup so reruns take 0.01s without copying
+        if 'match_number' not in df.columns and 'league' in df.columns and 'year' in df.columns and 'team' in df.columns:
+            df = df.sort_values('date')
+            df['match_number'] = df.groupby(['league', 'year', 'team'], observed=True)['match_id'].transform(
+                lambda x: pd.factorize(x)[0] + 1
+            ).astype('int16')
+
+        # Normalize player names (category-level — instant)
         import json
-        import os
         _NAME_FIX = {}
         mapping_file = 'player_name_map.json'
         if os.path.exists(mapping_file):
@@ -124,13 +153,13 @@ def load_data(path=DATA_SOURCE, _cache_version=19): # Version 19: MENS_T20I data
 
         for col in ['batter', 'bowler', 'player_dismissed']:
             if col in df.columns:
-                df[col] = df[col].astype(str).map(lambda x: _NAME_FIX.get(x, x))
-                # Re-apply category dtype if applicable
-                if df[col].nunique() < len(df) * 0.5:
-                    df[col] = df[col].astype('category')
+                df[col] = _remap_cat(df[col], _NAME_FIX)
 
+        gc.collect()
         return df
     except Exception as e:
+        import traceback
+        traceback.print_exc()
         st.error(f"Data not found or failed to load: {e}")
         return pd.DataFrame()
 
@@ -155,8 +184,8 @@ def classify_bowling_type(style):
         return 'Pace'
     return 'Unknown'
 
-@st.cache_data(ttl=3600) # Cache for 1 hour, will refresh on restart
-def load_player_data(_cache_version=9): # Version 9: Fixed batting_hand KeyError in manual overrides
+@st.cache_resource
+def load_player_data(_cache_version=9):
     """
     Load player data from WPL and IPL Excel files for mapping bowling type and batting hand.
     Creates multiple index keys to handle name format differences:
@@ -433,12 +462,10 @@ if full_members_only:
         'Pakistan', 'West Indies', 'Bangladesh', 'Sri Lanka', 'Afghanistan', 
         'Ireland', 'Zimbabwe'
     }
-    if 'teams' in fdf.columns:
-        teams_series = fdf['teams'].astype(str)
-        split_teams = teams_series.str.split(' vs ')
-        # Keep match if AT LEAST ONE team is a Full Member (so Full-Member players'
-        # stats vs associate opponents are preserved; only pure associate-vs-associate excluded)
-        is_fm = split_teams.apply(lambda x: len(x) == 2 and (x[0] in FULL_MEMBERS or x[1] in FULL_MEMBERS))
+    if 'teams' in fdf.columns and hasattr(fdf['teams'], 'cat'):
+        cats = fdf['teams'].cat.categories
+        fm_cats = [c for c in cats if (len(str(c).split(' vs ')) == 2 and (str(c).split(' vs ')[0] in FULL_MEMBERS or str(c).split(' vs ')[1] in FULL_MEMBERS))]
+        is_fm = fdf['teams'].isin(fm_cats)
         fdf = fdf[~fdf['league'].isin(intl_leagues) | is_fm]
 
 # Apply World Cup date-window filter (date windows are WC-specific)
@@ -446,16 +473,6 @@ if wt20wc_only and 'date' in fdf.columns:
     fdf = fdf[is_wt20wc_match(fdf['date'])]
     if 'team' in fdf.columns:
         fdf = fdf[fdf['team'].astype(str).isin(WT20WC_TEAMS)]
-
-# Add Match Number — requires .copy() because we add a new column.
-# IMPORTANT: sort by date first so match_number=1 = chronologically first match.
-fdf = fdf.copy()
-if 'match_number' not in fdf.columns:
-    fdf = fdf.sort_values('date')  # sort so factorize gives chronological order
-    fdf['match_number'] = fdf.groupby(['league', 'year', 'team'], observed=True)['match_id'].transform(
-        lambda x: pd.factorize(x)[0] + 1
-    )
-    fdf = fdf.sort_index()  # restore original row order
 
 # Reference before team filter (no .copy() needed — fdf_no_team is read-only)
 fdf_no_team = fdf
@@ -524,6 +541,14 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Over-wise Batting Analysis",
 ])
 
+toss_filter = "All"
+order_filter = "All"
+if metric_choice == "Powerplay Score Tracker":
+    st.sidebar.markdown("---")
+    st.sidebar.markdown("### 🪙 Toss & Innings Filters")
+    toss_filter = st.sidebar.selectbox("Toss Result Filter", ["All", "Won Toss", "Lost Toss"], key="sidebar_toss_filter")
+    order_filter = st.sidebar.selectbox("Innings Order Filter", ["All", "1st Innings (Batting/Bowling 1st)", "2nd Innings (Chasing/Defending)"], key="sidebar_order_filter")
+
 if fdf.empty:
     st.warning("No data for selected filters.")
     st.stop()
@@ -584,8 +609,12 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         pp['wicket_kind'] = pp[_wk_col].apply(lambda v: 'Wicket' if v > 0 else 'nan')
         pp['is_wicket'] = pp[_wk_col] > 0
 
+    # Build dynamic groupby columns including toss and match outcome if present
+    grp_cols_base = ['match_id', 'innings', 'date', 'year', 'teams']
+    extra_cols = [c for c in ['toss_winner', 'toss_decision', 'winner'] if c in pp.columns]
+
     if mode == 'batting':
-        grp = pp.groupby(['match_id', 'team', 'innings', 'date', 'year', 'teams'], observed=True)
+        grp = pp.groupby(grp_cols_base + ['team'] + extra_cols, observed=True)
         
         stats = grp.agg(
             PP_Runs=('runs.total', 'sum'),
@@ -608,9 +637,30 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         stats['Opponent'] = np.where(_s_a == _s_team, _s_b, _s_a)
         stats['Date'] = pd.to_datetime(stats['date']).dt.date
         stats['Innings'] = stats['innings'].map({1: '1st', 2: '2nd'})
-        
-        match_stats = stats[['team', 'Opponent', 'Date', 'year', 'Innings', 'PP_Runs', 'PP_Balls', 
-                             'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Dot%', 'PP_Wickets', 'match_id']].copy()
+        stats['Innings_Order'] = np.where(stats['innings'] == 1, 'Batting 1st', 'Batting 2nd (Chasing)')
+
+        if 'toss_winner' in stats.columns:
+            _tw = stats['toss_winner'].astype(str).str.strip()
+            stats['Toss_Result'] = np.where(_tw == _s_team, 'Won Toss', np.where(_tw.isin(['', 'nan', 'None', '<NA>']), 'N/A', 'Lost Toss'))
+            _td = stats['toss_decision'].astype(str).str.title() if 'toss_decision' in stats.columns else pd.Series('', index=stats.index)
+            stats['Toss_Decision'] = _td
+            stats['Toss_Combo'] = np.where(stats['Toss_Result'] == 'Won Toss', 'Won Toss & ' + _td,
+                                  np.where(stats['Toss_Result'] == 'Lost Toss', 'Lost Toss & ' + _td, 'N/A'))
+        else:
+            stats['Toss_Result'] = 'N/A'
+            stats['Toss_Decision'] = 'N/A'
+            stats['Toss_Combo'] = 'N/A'
+
+        if 'winner' in stats.columns:
+            _w = stats['winner'].astype(str).str.strip()
+            stats['Match_Result'] = np.where(_w == _s_team, 'Won Match', np.where(_w.isin(['', 'nan', 'None', '<NA>']), 'N/A', 'Lost Match'))
+        else:
+            stats['Match_Result'] = 'N/A'
+
+        match_cols = ['team', 'Opponent', 'Date', 'year', 'Innings', 'Innings_Order', 'Toss_Result', 'Toss_Decision', 
+                      'Toss_Combo', 'Match_Result', 'PP_Runs', 'PP_Balls', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 
+                      'PP_Dot%', 'PP_Wickets', 'match_id']
+        match_stats = stats[[c for c in match_cols if c in stats.columns]].copy()
         match_stats = match_stats.rename(columns={'team': 'Team', 'year': 'Season'})
         match_stats = match_stats.sort_values('Date', ascending=False)
         
@@ -619,10 +669,10 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         if filter_teams:
             pp = pp[pp['bowling_team'].isin(filter_teams)]
             if pp.empty:
-                return pd.DataFrame(), pd.DataFrame()
+                return pd.DataFrame(), pd.DataFrame(), pd.DataFrame()
         
         # Group by BOWLING TEAM to show runs they conceded
-        grp = pp.groupby(['match_id', 'bowling_team', 'team', 'innings', 'date', 'year', 'teams'], observed=True)
+        grp = pp.groupby(grp_cols_base + ['bowling_team', 'team'] + extra_cols, observed=True)
         
         stats = grp.agg(
             PP_Runs_Conceded=('runs.total', 'sum'),
@@ -644,10 +694,31 @@ def powerplay_score_tracker(df_, mode='batting', filter_teams=None):
         stats['Against'] = stats['team']
         stats['Date'] = pd.to_datetime(stats['date']).dt.date
         stats['Innings'] = stats['innings'].map({1: '1st Inns', 2: '2nd Inns'})
-        
-        match_stats = stats[['bowling_team', 'Against', 'Date', 'year', 'Innings', 'PP_Runs_Conceded', 
-                             'PP_Balls_Bowled', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 
-                             'PP_Wickets_Taken', 'PP_Wicket_Types', 'match_id']].copy()
+        stats['Innings_Order'] = np.where(stats['innings'] == 1, 'Bowling 1st', 'Bowling 2nd (Defending)')
+
+        _bw_team = stats['bowling_team'].astype(str)
+        if 'toss_winner' in stats.columns:
+            _tw = stats['toss_winner'].astype(str).str.strip()
+            stats['Toss_Result'] = np.where(_tw == _bw_team, 'Won Toss', np.where(_tw.isin(['', 'nan', 'None', '<NA>']), 'N/A', 'Lost Toss'))
+            _td = stats['toss_decision'].astype(str).str.title() if 'toss_decision' in stats.columns else pd.Series('', index=stats.index)
+            stats['Toss_Decision'] = _td
+            stats['Toss_Combo'] = np.where(stats['Toss_Result'] == 'Won Toss', 'Won Toss & ' + _td,
+                                  np.where(stats['Toss_Result'] == 'Lost Toss', 'Lost Toss & ' + _td, 'N/A'))
+        else:
+            stats['Toss_Result'] = 'N/A'
+            stats['Toss_Decision'] = 'N/A'
+            stats['Toss_Combo'] = 'N/A'
+
+        if 'winner' in stats.columns:
+            _w = stats['winner'].astype(str).str.strip()
+            stats['Match_Result'] = np.where(_w == _bw_team, 'Won Match', np.where(_w.isin(['', 'nan', 'None', '<NA>']), 'N/A', 'Lost Match'))
+        else:
+            stats['Match_Result'] = 'N/A'
+
+        match_cols = ['bowling_team', 'Against', 'Date', 'Season', 'Innings', 'Innings_Order', 'Toss_Result', 
+                      'Toss_Decision', 'Toss_Combo', 'Match_Result', 'PP_Runs_Conceded', 'PP_Balls_Bowled', 
+                      'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types', 'match_id']
+        match_stats = stats[[c for c in match_cols if c in stats.columns]].copy()
         match_stats = match_stats.rename(columns={'bowling_team': 'Team', 'year': 'Season'})
         match_stats = match_stats.sort_values('Date', ascending=False)
     
@@ -1975,45 +2046,50 @@ def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, i
 
 if metric_choice == "Powerplay Score Tracker":
     st.subheader("Powerplay Score Tracker")
-    st.write("Track powerplay performance (overs 1-6) by team across matches")
+    st.write("Track powerplay performance (overs 1-6) by team across matches including Toss & Batting/Bowling Order splits")
     
-    col1, col2, col3 = st.columns([2, 2, 2])
+    col1, col2, col3, col4 = st.columns([2, 2, 2, 2])
     with col1:
         pp_mode = st.radio("Mode", ["Batting", "Bowling"], horizontal=True)
     with col2:
         compare_teams = st.checkbox(" Compare Teams")
     with col3:
         show_trend = st.checkbox(" Show Trend Chart", value=True)
-    
-    # Playoff filter
-    exclude_playoffs = st.checkbox(" Exclude Playoff Matches (Eliminator, Qualifiers, Final)", value=False, 
-                                   help="Filter out playoff matches to analyze only league/group stage performance")
+    with col4:
+        exclude_playoffs = st.checkbox(" Exclude Playoff Matches", value=False, 
+                                       help="Filter out playoff matches to analyze only league/group stage performance")
     
     mode_val = 'batting' if pp_mode == "Batting" else 'bowling'
     # For bowling mode, pass full df (without team filter) and let function filter by bowling_team
     if mode_val == 'bowling':
-        # Get data before team filtering for bowling mode — use views (no .copy())
         bowling_df = df
         if selected_leagues:
             bowling_df = bowling_df[bowling_df['league'].isin(selected_leagues)]
         if selected_years:
             bowling_df = bowling_df[bowling_df['year'].isin(selected_years)]
-        # Apply World Cup filter if active
         if wt20wc_only and 'date' in bowling_df.columns:
             bowling_df = bowling_df[is_wt20wc_match(bowling_df['date'])]
             if 'team' in bowling_df.columns:
                 bowling_df = bowling_df[bowling_df['team'].astype(str).isin(WT20WC_TEAMS)]
-        # Exclude playoff matches if checkbox is selected
         if exclude_playoffs:
             bowling_df = bowling_df[bowling_df['event_stage'] == '']
         match_stats, season_summary, match_agg = powerplay_score_tracker(bowling_df, mode=mode_val, filter_teams=selected_teams if selected_teams else None)
     else:
-        # Apply playoff filter to fdf if needed — no .copy() needed, just filter view
         filtered_fdf = fdf
         if exclude_playoffs:
             filtered_fdf = filtered_fdf[filtered_fdf['event_stage'] == '']
         match_stats, season_summary, match_agg = powerplay_score_tracker(filtered_fdf, mode=mode_val)
-    
+
+    if not match_stats.empty:
+        # Apply interactive Toss & Innings Order filters
+        if toss_filter != "All" and 'Toss_Result' in match_stats.columns:
+            match_stats = match_stats[match_stats['Toss_Result'] == toss_filter]
+        if order_filter != "All" and 'Innings_Order' in match_stats.columns:
+            if "1st Innings" in order_filter:
+                match_stats = match_stats[match_stats['Innings_Order'].str.contains('1st')]
+            elif "2nd Innings" in order_filter:
+                match_stats = match_stats[match_stats['Innings_Order'].str.contains('2nd')]
+
     if match_stats.empty:
         st.info("No powerplay data available for selected filters.")
     else:
@@ -2037,8 +2113,9 @@ if metric_choice == "Powerplay Score Tracker":
                     match_agg = match_agg[match_agg['Team'].isin([team1, team2])]
         
         # Tabs
-        tab1, tab2, tab3, tab4, tab5_agg, tab6_playoff_players, tab7_50s, tab8_season_pp = st.tabs([
+        tab1, tab_toss, tab2, tab3, tab4, tab5_agg, tab6_playoff_players, tab7_50s, tab8_season_pp = st.tabs([
             "Match-by-Match", 
+            "Toss & Innings Split",
             "Season Summary", 
             "Venue-wise", 
             "Playoff Matches", 
@@ -2050,9 +2127,9 @@ if metric_choice == "Powerplay Score Tracker":
         
         with tab1:
             if mode_val == 'batting':
-                display_cols = ['Team', 'Opponent', 'Date', 'Season', 'Innings', 'PP_Runs', 'PP_Balls', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Dot%', 'PP_Wickets']
+                display_cols = ['Team', 'Opponent', 'Date', 'Season', 'Innings', 'Innings_Order', 'Toss_Result', 'Toss_Decision', 'Toss_Combo', 'Match_Result', 'PP_Runs', 'PP_Balls', 'PP_RR', 'PP_Boundaries', 'PP_4s', 'PP_6s', 'PP_Dot%', 'PP_Wickets']
             else:
-                display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'PP_Runs_Conceded', 'PP_Balls_Bowled', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types']
+                display_cols = ['Team', 'Against', 'Date', 'Season', 'Innings', 'Innings_Order', 'Toss_Result', 'Toss_Decision', 'Toss_Combo', 'Match_Result', 'PP_Runs_Conceded', 'PP_Balls_Bowled', 'PP_Econ', 'PP_Boundaries_Conceded', 'PP_Dot%', 'PP_Wickets_Taken', 'PP_Wicket_Types']
             
             st.dataframe(match_stats[[c for c in display_cols if c in match_stats.columns]], width="stretch")
             
@@ -2071,6 +2148,144 @@ if metric_choice == "Powerplay Score Tracker":
                 
                 fig = px.line(trend_df, x='Date', y=y_col, color='Team', markers=True, title=title)
                 st.plotly_chart(fig, width="stretch")
+
+        with tab_toss:
+            st.markdown("#### 🪙 Toss & Innings Order Powerplay Split")
+            st.caption("Detailed breakdown of powerplay scoring and conceded performance by Toss Win/Loss, Decision, and Batting/Bowling First.")
+            
+            if match_stats.empty:
+                st.info("No match stats available for split analysis.")
+            else:
+                col_t1, col_t2 = st.columns(2)
+                
+                # 1. Innings Order Split (1st vs 2nd Innings)
+                with col_t1:
+                    st.markdown("##### 🏏 1st Innings vs 2nd Innings")
+                    if mode_val == 'batting':
+                        inn_split = match_stats.groupby('Innings_Order', observed=True).agg(
+                            Matches=('match_id', 'nunique'),
+                            Avg_PP_Runs=('PP_Runs', 'mean'),
+                            Avg_PP_RR=('PP_RR', 'mean'),
+                            Avg_Wickets_Lost=('PP_Wickets', 'mean'),
+                            Total_Boundaries=('PP_Boundaries', 'sum'),
+                            Avg_Dot_Pct=('PP_Dot%', 'mean')
+                        ).reset_index()
+                        inn_split['Avg_PP_Runs'] = inn_split['Avg_PP_Runs'].round(1)
+                        inn_split['Avg_PP_RR'] = inn_split['Avg_PP_RR'].round(2)
+                        inn_split['Avg_Wickets_Lost'] = inn_split['Avg_Wickets_Lost'].round(2)
+                        inn_split['Avg_Dot_Pct'] = inn_split['Avg_Dot_Pct'].round(1)
+                        st.dataframe(inn_split, width="stretch")
+                        
+                        fig_inn = px.bar(inn_split, x='Innings_Order', y='Avg_PP_Runs', text='Avg_PP_Runs',
+                                         color='Innings_Order', title="Avg PP Runs: Batting 1st vs Batting 2nd")
+                        fig_inn.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+                        st.plotly_chart(fig_inn, width="stretch")
+                    else:
+                        inn_split = match_stats.groupby('Innings_Order', observed=True).agg(
+                            Matches=('match_id', 'nunique'),
+                            Avg_Runs_Conceded=('PP_Runs_Conceded', 'mean'),
+                            Avg_PP_Econ=('PP_Econ', 'mean'),
+                            Avg_Wickets_Taken=('PP_Wickets_Taken', 'mean'),
+                            Total_Boundaries=('PP_Boundaries_Conceded', 'sum'),
+                            Avg_Dot_Pct=('PP_Dot%', 'mean')
+                        ).reset_index()
+                        inn_split['Avg_Runs_Conceded'] = inn_split['Avg_Runs_Conceded'].round(1)
+                        inn_split['Avg_PP_Econ'] = inn_split['Avg_PP_Econ'].round(2)
+                        inn_split['Avg_Wickets_Taken'] = inn_split['Avg_Wickets_Taken'].round(2)
+                        inn_split['Avg_Dot_Pct'] = inn_split['Avg_Dot_Pct'].round(1)
+                        st.dataframe(inn_split, width="stretch")
+                        
+                        fig_inn = px.bar(inn_split, x='Innings_Order', y='Avg_Runs_Conceded', text='Avg_Runs_Conceded',
+                                         color='Innings_Order', title="Avg PP Runs Conceded: Bowling 1st vs Bowling 2nd")
+                        fig_inn.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+                        st.plotly_chart(fig_inn, width="stretch")
+                
+                # 2. Toss Result Split (Won Toss vs Lost Toss)
+                with col_t2:
+                    st.markdown("##### 🪙 Toss Won vs Toss Lost")
+                    if 'Toss_Result' in match_stats.columns and (match_stats['Toss_Result'] != 'N/A').any():
+                        toss_valid = match_stats[match_stats['Toss_Result'].isin(['Won Toss', 'Lost Toss'])]
+                        if mode_val == 'batting':
+                            toss_split = toss_valid.groupby('Toss_Result', observed=True).agg(
+                                Matches=('match_id', 'nunique'),
+                                Avg_PP_Runs=('PP_Runs', 'mean'),
+                                Avg_PP_RR=('PP_RR', 'mean'),
+                                Avg_Wickets_Lost=('PP_Wickets', 'mean'),
+                                Total_Boundaries=('PP_Boundaries', 'sum'),
+                                Avg_Dot_Pct=('PP_Dot%', 'mean')
+                            ).reset_index()
+                            toss_split['Avg_PP_Runs'] = toss_split['Avg_PP_Runs'].round(1)
+                            toss_split['Avg_PP_RR'] = toss_split['Avg_PP_RR'].round(2)
+                            toss_split['Avg_Wickets_Lost'] = toss_split['Avg_Wickets_Lost'].round(2)
+                            toss_split['Avg_Dot_Pct'] = toss_split['Avg_Dot_Pct'].round(1)
+                            st.dataframe(toss_split, width="stretch")
+                            
+                            fig_toss = px.bar(toss_split, x='Toss_Result', y='Avg_PP_Runs', text='Avg_PP_Runs',
+                                              color='Toss_Result', color_discrete_map={'Won Toss': '#2ECC71', 'Lost Toss': '#E74C3C'},
+                                              title="Avg PP Runs: Toss Won vs Toss Lost")
+                            fig_toss.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+                            st.plotly_chart(fig_toss, width="stretch")
+                        else:
+                            toss_split = toss_valid.groupby('Toss_Result', observed=True).agg(
+                                Matches=('match_id', 'nunique'),
+                                Avg_Runs_Conceded=('PP_Runs_Conceded', 'mean'),
+                                Avg_PP_Econ=('PP_Econ', 'mean'),
+                                Avg_Wickets_Taken=('PP_Wickets_Taken', 'mean'),
+                                Total_Boundaries=('PP_Boundaries_Conceded', 'sum'),
+                                Avg_Dot_Pct=('PP_Dot%', 'mean')
+                            ).reset_index()
+                            toss_split['Avg_Runs_Conceded'] = toss_split['Avg_Runs_Conceded'].round(1)
+                            toss_split['Avg_PP_Econ'] = toss_split['Avg_PP_Econ'].round(2)
+                            toss_split['Avg_Wickets_Taken'] = toss_split['Avg_Wickets_Taken'].round(2)
+                            toss_split['Avg_Dot_Pct'] = toss_split['Avg_Dot_Pct'].round(1)
+                            st.dataframe(toss_split, width="stretch")
+                            
+                            fig_toss = px.bar(toss_split, x='Toss_Result', y='Avg_Runs_Conceded', text='Avg_Runs_Conceded',
+                                              color='Toss_Result', color_discrete_map={'Won Toss': '#2ECC71', 'Lost Toss': '#E74C3C'},
+                                              title="Avg PP Runs Conceded: Toss Won vs Toss Lost")
+                            fig_toss.update_traces(texttemplate='%{text:.1f}', textposition='outside')
+                            st.plotly_chart(fig_toss, width="stretch")
+                    else:
+                        st.info("Toss data not available for current selection or dataset. Note: Re-run preprocessing script to regenerate parquet with toss fields.")
+
+                # 3. Combo Breakdown (Toss & Decision / Innings Order Combined)
+                st.markdown("##### 🎯 Toss Decision & Innings Combination Split")
+                if 'Toss_Combo' in match_stats.columns and (match_stats['Toss_Combo'] != 'N/A').any():
+                    combo_valid = match_stats[match_stats['Toss_Combo'] != 'N/A']
+                    if mode_val == 'batting':
+                        combo_split = combo_valid.groupby(['Toss_Combo', 'Innings_Order'], observed=True).agg(
+                            Matches=('match_id', 'nunique'),
+                            Avg_PP_Runs=('PP_Runs', 'mean'),
+                            Avg_PP_RR=('PP_RR', 'mean'),
+                            Avg_Wickets_Lost=('PP_Wickets', 'mean'),
+                            Avg_Dot_Pct=('PP_Dot%', 'mean')
+                        ).reset_index()
+                        combo_split['Avg_PP_Runs'] = combo_split['Avg_PP_Runs'].round(1)
+                        combo_split['Avg_PP_RR'] = combo_split['Avg_PP_RR'].round(2)
+                        combo_split['Avg_Wickets_Lost'] = combo_split['Avg_Wickets_Lost'].round(2)
+                        combo_split['Avg_Dot_Pct'] = combo_split['Avg_Dot_Pct'].round(1)
+                        st.dataframe(combo_split, width="stretch")
+                        
+                        fig_combo = px.bar(combo_split, x='Toss_Combo', y='Avg_PP_Runs', color='Innings_Order',
+                                           barmode='group', title="Avg Powerplay Runs by Toss Decision & Innings Order")
+                        st.plotly_chart(fig_combo, width="stretch")
+                    else:
+                        combo_split = combo_valid.groupby(['Toss_Combo', 'Innings_Order'], observed=True).agg(
+                            Matches=('match_id', 'nunique'),
+                            Avg_Runs_Conceded=('PP_Runs_Conceded', 'mean'),
+                            Avg_PP_Econ=('PP_Econ', 'mean'),
+                            Avg_Wickets_Taken=('PP_Wickets_Taken', 'mean'),
+                            Avg_Dot_Pct=('PP_Dot%', 'mean')
+                        ).reset_index()
+                        combo_split['Avg_Runs_Conceded'] = combo_split['Avg_Runs_Conceded'].round(1)
+                        combo_split['Avg_PP_Econ'] = combo_split['Avg_PP_Econ'].round(2)
+                        combo_split['Avg_Wickets_Taken'] = combo_split['Avg_Wickets_Taken'].round(2)
+                        combo_split['Avg_Dot_Pct'] = combo_split['Avg_Dot_Pct'].round(1)
+                        st.dataframe(combo_split, width="stretch")
+                        
+                        fig_combo = px.bar(combo_split, x='Toss_Combo', y='Avg_Runs_Conceded', color='Innings_Order',
+                                           barmode='group', title="Avg PP Runs Conceded by Toss Decision & Innings Order")
+                        st.plotly_chart(fig_combo, width="stretch")
         
         with tab2:
             if not season_summary.empty:

@@ -14,6 +14,7 @@ JSON_DIR_WT20I = "/Users/vishwesh/Documents/WPL&BBL/data/t20i_female_json"  # Wo
 JSON_DIR_AFG_ODI = "/Users/vishwesh/Documents/WPL&BBL/Male_ODI_Data/odis_male_json/Afghanistan Games"  # Afghanistan ODI files
 JSON_DIR_MENS_ODI = "/Users/vishwesh/Documents/WPL&BBL/Male_ODI_Data/odis_male_json"  # All Men's ODI files
 JSON_DIR_MENS_T20I = "/Users/vishwesh/Documents/WPL&BBL/Male T20I "  # All Men's T20I files
+JSON_DIR_NPL = "/Users/vishwesh/Documents/WPL&BBL/data/npl_json" # All Nepal Premier League files
 DATA_DEST = "t20_data.parquet"
 
 # Load player name mapping dictionary
@@ -34,6 +35,7 @@ LEAGUE_START_DATES = {
     'WT20I': '2000-01-01',  # Women's T20 Internationals — include all dates
     'MENS_ODI': '2002-01-01',  # All Men's ODI matches
     'MENS_T20I': '2020-01-01',  # Men's T20 Internationals from Jan 1 2020
+    'NPL': '2024-11-30',
 }
 
 LEAGUE_PP_DEFAULT = {
@@ -42,6 +44,7 @@ LEAGUE_PP_DEFAULT = {
     'WT20I': (0.0, 5 + 5/6),  # Women's T20I: standard 6-over powerplay
     'MENS_ODI': (0.0, 9 + 5/6),  # ODI: mandatory 10-over powerplay
     'MENS_T20I': (0.0, 5 + 5/6),  # Men's T20I: standard 6-over powerplay
+    'NPL': (0.0, 5 + 5/6),
 }
 
 # Leagues that use ODI (50-over) format — death starts at over 40
@@ -65,6 +68,7 @@ def notation_to_ball_float(notation) -> float:
 
 def detect_league(event_name, gender, match_type='T20', teams=None):
     e = (event_name or '').lower()
+    if 'nepal premier league' in e or 'npl' in e: return 'NPL'
     if 'wpl' in e or "women's premier league" in e: return 'WPL'
     if 'big bash' in e: return 'WBBL' if gender == 'female' else 'MBBL'
     if 'sa20' in e: return 'SA20'
@@ -478,7 +482,8 @@ def process_data(inference_power_surge=True):
     afg_files = glob(os.path.join(JSON_DIR_AFG_ODI, "*.json"))
     mens_odi_files = glob(os.path.join(JSON_DIR_MENS_ODI, "*.json"))
     mens_t20i_files = glob(os.path.join(JSON_DIR_MENS_T20I, "*.json"))
-    files = main_files + wt20i_files + afg_files + mens_odi_files + mens_t20i_files
+    npl_files = glob(os.path.join(JSON_DIR_NPL, "*.json"))
+    files = main_files + wt20i_files + afg_files + mens_odi_files + mens_t20i_files + npl_files
 
     # Sort to prioritize *_espn.json (DRS data), then deduplicate by match_id
     files = sorted(files, key=lambda x: (not x.endswith('_espn.json'), x))
