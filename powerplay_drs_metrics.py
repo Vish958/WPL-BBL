@@ -13,7 +13,7 @@ st.set_page_config(page_title="T20 Analytics Dashboard", layout="wide")
 
 st.markdown("# T20 Analytics Dashboard")
 st.markdown("**By Vishwesh Gaur** [Twitter: @iumvishwesh](https://twitter.com/iumvishwesh)")
-st.markdown("Last updated: 05 Oct 2026")
+st.markdown("Last updated: 10 Oct 2026")
 st.markdown("*ODI Fresh Matches Will Appear as per Data Availability from Cricsheet (Note: The dataset only contains matches with detailed ball-by-ball commentary logs; some historical or minor matches may be missing if source commentary was not digitized/recorded).*")
 st.warning("⚠️ **Notice:** Men's T20I (MENS_T20I) data is only included from 01 Jan 2020 onwards.")
 
@@ -539,6 +539,7 @@ metric_choice = st.sidebar.radio("Select Metric", [
     "Most Sixes in First 10 Balls",
     "Maiden Over Analysis",
     "Over-wise Batting Analysis",
+    "Post-Entry Impact",
 ])
 
 toss_filter = "All"
@@ -929,7 +930,8 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     else:
         stats['Dismissals'] = 0
 
-    stats['Dismissals'] = stats['Dismissals'].fillna(0)
+    stats['Dismissals'] = stats['Dismissals'].fillna(0).astype(int)
+    stats['Innings'] = stats['Innings'].fillna(0).astype(int)
     stats['Average'] = np.where(stats['Dismissals'] > 0, stats['Runs'] / stats['Dismissals'], stats['Runs'])
     stats['Strike Rate'] = (stats['Runs'] / stats['Balls'].replace(0, np.nan) * 100).fillna(0)
     stats['Balls/Inn'] = (stats['Balls'] / stats['Innings'].replace(0, np.nan)).fillna(0)
@@ -971,6 +973,8 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
 
     # Format output
     output = stats[stats['Balls'] >= min_balls].copy()
+    output['Innings'] = output['Innings'].fillna(0).astype(int)
+    output['Dismissals'] = output['Dismissals'].fillna(0).astype(int)
     rename_map = {'league': 'League', 'batter': 'Name', 'team': 'Team'}
     if include_year:
         rename_map['year'] = 'Season'
@@ -982,7 +986,7 @@ def yearwise_batter_sr_comparison(df_, aggregate_across_teams=True, min_balls=20
     out_cols.append('Name')
     if not aggregate_across_teams:
         out_cols.append('Team')
-    out_cols += ['Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR', 'Runs', 'Balls']
+    out_cols += ['Innings', 'Dismissals', 'Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR', 'Runs', 'Balls']
 
     for col in ['Average', 'Strike Rate', 'Balls/Inn', '1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']:
         output[col] = output[col].round(2)
@@ -2042,6 +2046,127 @@ def yearwise_bowler_comparison(df_, aggregate_across_teams=True, min_balls=12, i
     sort_cols = ['League', 'Economy'] if not include_year else ['League', 'Season', 'Economy']
     sort_asc = [True, True] if not include_year else [True, False, True]
     return stats[[c for c in out_cols if c in stats.columns]].sort_values(sort_cols, ascending=sort_asc)
+
+
+# =========================================
+# POST-ENTRY IMPACT
+# =========================================
+def calculate_post_entry_impact(match_data, batter=None, window_overs=5):
+    """
+    Measures batter impact in a dynamic window of overs starting from the exact over they entered.
+    Parameters:
+        match_data: ball-by-ball DataFrame
+        batter: batter name (str) or None for all batters
+        window_overs: int, flexible analysis window in overs (e.g. 1-20)
+    Returns:
+        Structured DataFrame with runs, balls, strike rate, boundaries, dots, entry over, and window info.
+    """
+    if match_data.empty or window_overs < 1:
+        return pd.DataFrame()
+
+    work = match_data[match_data['innings'].isin([1, 2])].copy()
+    if work.empty:
+        return pd.DataFrame()
+
+    if batter and str(batter).strip() and str(batter).strip() != "All":
+        work = work[work['batter'].astype(str) == str(batter).strip()]
+        if work.empty:
+            return pd.DataFrame()
+
+    for col in ['runs.batter', 'is_valid_delivery', 'wides', 'no_balls']:
+        if col in work.columns:
+            work[col] = pd.to_numeric(work[col], errors='coerce').fillna(0)
+
+    if 'extras_type' in work.columns:
+        is_wide = (work['extras_type'].astype(str).str.lower() == 'wides') | (work.get('wides', 0) > 0)
+    else:
+        is_wide = work.get('wides', 0) > 0
+
+    # Deliveries faced by batter: excludes wides; includes legal deliveries and no-balls (ICC/ESPN standard)
+    work['is_ball_faced'] = ((~is_wide) & ((work['is_valid_delivery'] == 1) | (work.get('no_balls', 0) > 0))).astype(int)
+    work['is_four'] = ((work['runs.batter'] == 4) & (work['is_ball_faced'] == 1)).astype(int)
+    work['is_six'] = ((work['runs.batter'] == 6) & (work['is_ball_faced'] == 1)).astype(int)
+    work['is_dot'] = ((work['runs.batter'] == 0) & (work['is_ball_faced'] == 1)).astype(int)
+
+    work = work.sort_values(['match_id', 'innings', 'over', 'ball_float'])
+
+    # Find the exact entry point: first over where batter appeared
+    entry_df = work.groupby(['match_id', 'innings', 'batter'], observed=True)['over'].min().reset_index()
+    entry_df.rename(columns={'over': 'entry_over_0'}, inplace=True)
+    entry_df['entry_over'] = (entry_df['entry_over_0'] + 1).astype(int)
+
+    is_odi = work['league'].astype(str).str.upper().str.contains('ODI').any() if 'league' in work.columns else False
+    max_innings_overs = 50 if is_odi else 20
+
+    # Determine analysis window & available overs without penalizing late entrants
+    entry_df['window_end_over'] = np.minimum(max_innings_overs, entry_df['entry_over'] + window_overs - 1).astype(int)
+    entry_df['window_end_0'] = (entry_df['window_end_over'] - 1).astype(int)
+    entry_df['available_overs'] = (entry_df['window_end_over'] - entry_df['entry_over'] + 1).astype(int)
+    entry_df['available_balls'] = entry_df['available_overs'] * 6
+
+    work = work.merge(
+        entry_df[['match_id', 'innings', 'batter', 'entry_over_0', 'entry_over', 'window_end_0', 'window_end_over', 'available_overs', 'available_balls']],
+        on=['match_id', 'innings', 'batter'],
+        how='inner'
+    )
+
+    # Filter deliveries strictly within the analysis window for each batter
+    in_window = (work['over'] >= work['entry_over_0']) & (work['over'] <= work['window_end_0'])
+    win_work = work[in_window]
+
+    agg = win_work.groupby(
+        ['match_id', 'innings', 'batter'], observed=True
+    ).agg(
+        Runs=('runs.batter', 'sum'),
+        Balls=('is_ball_faced', 'sum'),
+        Fours=('is_four', 'sum'),
+        Sixes=('is_six', 'sum'),
+        Dots=('is_dot', 'sum')
+    ).reset_index()
+
+    res = entry_df.merge(agg, on=['match_id', 'innings', 'batter'], how='left')
+    res['Runs'] = res['Runs'].fillna(0).astype(int)
+    res['Balls'] = res['Balls'].fillna(0).astype(int)
+    res['Fours'] = res['Fours'].fillna(0).astype(int)
+    res['Sixes'] = res['Sixes'].fillna(0).astype(int)
+    res['Dots'] = res['Dots'].fillna(0).astype(int)
+    res['Boundaries'] = res['Fours'] + res['Sixes']
+
+    # Safe metric calculations — handle edge cases (0 balls -> 0.0, no NaN / Infinity)
+    res['Strike Rate'] = np.where(res['Balls'] > 0, (res['Runs'] / res['Balls'] * 100).round(2), 0.0)
+    res['Boundary %'] = np.where(res['Balls'] > 0, (res['Boundaries'] / res['Balls'] * 100).round(2), 0.0)
+    res['Boundary Ball %'] = res['Boundary %']
+    res['Dot %'] = np.where(res['Balls'] > 0, (res['Dots'] / res['Balls'] * 100).round(2), 0.0)
+    res['Dot Ball %'] = res['Dot %']
+
+    res['Entry'] = 'Over ' + res['entry_over'].astype(str)
+    res['Window'] = np.where(
+        res['entry_over'] == res['window_end_over'],
+        'Over ' + res['entry_over'].astype(str),
+        'Overs ' + res['entry_over'].astype(str) + '–' + res['window_end_over'].astype(str)
+    )
+
+    meta_cols = ['match_id', 'innings', 'batter']
+    for c in ['team', 'bowling_team', 'year', 'date', 'teams', 'league']:
+        if c in work.columns:
+            meta_cols.append(c)
+    meta = work[meta_cols].drop_duplicates(['match_id', 'innings', 'batter'])
+    res = res.merge(meta, on=['match_id', 'innings', 'batter'], how='left')
+
+    rename_map = {
+        'batter': 'Batter', 'entry_over': 'Entry Over', 'available_overs': 'Available Overs',
+        'available_balls': 'Available Balls', 'Fours': '4s', 'Sixes': '6s',
+        'year': 'Season', 'teams': 'Match', 'team': 'Team', 'bowling_team': 'Opponent',
+        'Strike Rate': 'SR'
+    }
+    res = res.rename(columns=rename_map)
+    if 'date' in res.columns:
+        res['Date'] = pd.to_datetime(res['date']).dt.date
+
+    # Reorder columns with key requested columns upfront
+    ordered_front = ['Batter', 'Entry', 'Window', 'Runs', 'Balls', 'SR', '4s', '6s', 'Boundary %', 'Dot %', 'Boundary Ball %', 'Dot Ball %', 'Entry Over', 'Available Overs', 'Available Balls']
+    res_cols = [c for c in ordered_front if c in res.columns] + [c for c in res.columns if c not in ordered_front]
+    return res[res_cols]
 
 
 if metric_choice == "Powerplay Score Tracker":
@@ -5807,8 +5932,8 @@ elif metric_choice == "SR Comparison (Year-wise)":
         _bucket_cols = ['1-10 SR', '11-20 SR', '21-30 SR', '31-40 SR', '41-50 SR', '51-60 SR']
         # Conditionally include Runs column
         _runs_cols = ['Runs'] if sr_show_runs else []
-        _base_cols = ['Name', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
-        _chart_hover = ['Balls/Inn'] + _runs_cols + _bucket_cols
+        _base_cols = ['Name', 'Innings', 'Dismissals', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
+        _chart_hover = ['Innings', 'Dismissals', 'Balls/Inn'] + _runs_cols + _bucket_cols
 
         leagues_in_sr = sorted(sr_table['League'].dropna().unique())
         league_tabs = st.tabs([str(lg) for lg in leagues_in_sr])
@@ -5832,7 +5957,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                     def _make_display_cols(include_season=False):
                         cols = list(_base_cols)
                         if not aggregate_across_teams and 'Team' in lg_df.columns:
-                            cols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
+                            cols = ['Name', 'Team', 'Innings', 'Dismissals', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
                         if include_season:
                             cols = ['Season'] + cols
                         return cols
@@ -5946,7 +6071,7 @@ elif metric_choice == "SR Comparison (Year-wise)":
                     view_df = lg_df.copy()
                     dcols = list(_base_cols)
                     if not aggregate_across_teams and 'Team' in view_df.columns:
-                        dcols = ['Name', 'Team', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
+                        dcols = ['Name', 'Team', 'Innings', 'Dismissals', 'Average', 'Strike Rate', 'Balls/Inn'] + _runs_cols + _bucket_cols
                     st.dataframe(
                         view_df[[c for c in dcols if c in view_df.columns]].sort_values('Strike Rate', ascending=False),
                         width="stretch"
@@ -10337,6 +10462,174 @@ elif metric_choice == "Over-wise Batting Analysis":
                                 hover_data=['SR']
                             )
                             st.plotly_chart(fig_ps, width="stretch")
+
+
+# =========================================
+# POST-ENTRY IMPACT UI
+# =========================================
+elif metric_choice == "Post-Entry Impact":
+    st.subheader("Post-Entry Impact")
+    st.write("Measures batter scoring impact in a dynamic analysis window of overs starting from the exact over they entered the crease.")
+
+    pei_source = fdf.copy()
+    if pei_source.empty:
+        st.warning("No data for selected filters.")
+    else:
+        # Dynamic slider & filters above the table
+        slider_col, batter_col, min_balls_col = st.columns([2, 1.5, 1])
+        with slider_col:
+            pei_window = st.slider(
+                "Analysis Window: overs after entry",
+                min_value=1,
+                max_value=20,
+                value=5,
+                step=1,
+                key="pei_window_slider",
+                help="Flexible analysis window in overs after batter entry point (1–20 overs). All metrics recalculate automatically."
+            )
+        with batter_col:
+            all_pei_batters = sorted(pei_source['batter'].dropna().astype(str).unique())
+            pei_sel_batters = st.multiselect(
+                "Filter by Batter(s) — leave empty for all",
+                all_pei_batters,
+                key="pei_sel_batters"
+            )
+        with min_balls_col:
+            pei_min_balls = st.number_input(
+                "Min Balls (in window)",
+                min_value=0,
+                max_value=120,
+                value=0,
+                step=5,
+                key="pei_min_balls",
+                help="Filter out innings where batter faced fewer balls in the window."
+            )
+
+        # Clear display of selected analysis window
+        sample_entry = 6
+        sample_end = min(20, sample_entry + pei_window - 1)
+        sample_win_str = f"Over {sample_entry}" if sample_entry == sample_end else f"Overs {sample_entry}–{sample_end}"
+        st.info(
+            f"**Selected Window: {pei_window} overs** &nbsp;|&nbsp; "
+            f"**Entry: Over 6 → Analysis Window: {sample_win_str}** &nbsp;|&nbsp; "
+            f"*(Entry: Over 1 → Overs 1–{min(20, 1 + pei_window - 1)} &nbsp;•&nbsp; "
+            f"Entry: Over 11 → Overs 11–{min(20, 11 + pei_window - 1)} &nbsp;•&nbsp; "
+            f"Entry: Over 17 → Overs 17–{min(20, 17 + pei_window - 1)})*"
+        )
+
+        with st.spinner(f"Computing Post-Entry Impact for {pei_window}-over window..."):
+            pei_df = calculate_post_entry_impact(pei_source, batter=None, window_overs=int(pei_window))
+
+        if pei_df.empty:
+            st.info("No data available for the selected filters.")
+        else:
+            # Apply player filter if selected
+            if pei_sel_batters:
+                pei_df = pei_df[pei_df['Batter'].isin(pei_sel_batters)]
+
+            # Apply min balls filter
+            if pei_min_balls > 0:
+                pei_df = pei_df[pei_df['Balls'] >= pei_min_balls]
+
+            if pei_df.empty:
+                st.info("No innings match the selected player and minimum balls criteria.")
+            else:
+                # Top KPI metrics
+                total_inn = len(pei_df)
+                avg_runs = round(pei_df['Runs'].mean(), 1)
+                total_runs_all = int(pei_df['Runs'].sum())
+                total_balls_all = int(pei_df['Balls'].sum())
+                overall_sr = round(total_runs_all / total_balls_all * 100, 2) if total_balls_all > 0 else 0.0
+                total_bnd_all = int(pei_df['4s'].sum() + pei_df['6s'].sum())
+                overall_bnd_pct = round(total_bnd_all / total_balls_all * 100, 2) if total_balls_all > 0 else 0.0
+                total_dots_all = int(pei_df['Dots'].sum()) if 'Dots' in pei_df.columns else 0
+                overall_dot_pct = round(total_dots_all / total_balls_all * 100, 2) if total_balls_all > 0 else 0.0
+
+                kc1, kc2, kc3, kc4, kc5 = st.columns(5)
+                with kc1:
+                    st.metric("Innings Analyzed", f"{total_inn:,}")
+                with kc2:
+                    st.metric("Avg Runs in Window", f"{avg_runs}")
+                with kc3:
+                    st.metric("Window Strike Rate", f"{overall_sr:.1f}")
+                with kc4:
+                    st.metric("Boundary Ball %", f"{overall_bnd_pct:.1f}%")
+                with kc5:
+                    st.metric("Dot Ball %", f"{overall_dot_pct:.1f}%")
+
+                tab_inn, tab_agg, tab_chart = st.tabs([
+                    "Per-Innings Impact",
+                    "Batter Aggregates",
+                    "Entry Over Visuals"
+                ])
+
+                table_cols = ['Batter', 'Entry', 'Window', 'Runs', 'Balls', 'SR', 'Boundary %', 'Dot %', '4s', '6s', 'Available Overs']
+                meta_cols = ['Team', 'Match', 'Season', 'Date']
+                display_cols = [c for c in table_cols if c in pei_df.columns] + [c for c in meta_cols if c in pei_df.columns]
+
+                with tab_inn:
+                    st.markdown(f"#### Post-Entry Impact ({pei_window}-Over Window)")
+                    sort_col1, sort_col2 = st.columns([2, 1])
+                    with sort_col1:
+                        sort_by = st.selectbox("Sort Table By", ["Runs", "SR", "Balls", "Boundary %", "Dot %", "Entry Over"], index=0, key="pei_sort_by")
+                    with sort_col2:
+                        sort_order = st.radio("Order", ["Descending", "Ascending"], index=0, horizontal=True, key="pei_sort_order")
+                    
+                    asc = (sort_order == "Ascending")
+                    sorted_inn = pei_df.sort_values(sort_by, ascending=asc).reset_index(drop=True)
+                    sorted_inn.index += 1
+                    st.dataframe(sorted_inn[display_cols], width="stretch")
+
+                with tab_agg:
+                    st.markdown(f"#### Aggregate Performance Across Innings ({pei_window}-Over Window)")
+                    agg_df = pei_df.groupby('Batter', observed=True).agg(
+                        Innings=('Runs', 'count'),
+                        Avg_Entry=('Entry Over', 'mean'),
+                        Runs=('Runs', 'sum'),
+                        Balls=('Balls', 'sum'),
+                        Fours=('4s', 'sum'),
+                        Sixes=('6s', 'sum'),
+                        Dots=('Dots', 'sum') if 'Dots' in pei_df.columns else ('Runs', lambda x: 0)
+                    ).reset_index()
+
+                    agg_df['Avg Entry'] = agg_df['Avg_Entry'].round(1)
+                    agg_df['SR'] = (agg_df['Runs'] / agg_df['Balls'].replace(0, np.nan) * 100).fillna(0).round(2)
+                    agg_df['Boundaries'] = agg_df['Fours'] + agg_df['Sixes']
+                    agg_df['Boundary %'] = (agg_df['Boundaries'] / agg_df['Balls'].replace(0, np.nan) * 100).fillna(0).round(2)
+                    agg_df['Dot %'] = (agg_df['Dots'] / agg_df['Balls'].replace(0, np.nan) * 100).fillna(0).round(2)
+                    agg_df['Window'] = f"{pei_window} overs"
+
+                    agg_df = agg_df.rename(columns={'Fours': '4s', 'Sixes': '6s'})
+                    agg_disp_cols = ['Batter', 'Innings', 'Avg Entry', 'Window', 'Runs', 'Balls', 'SR', 'Boundary %', 'Dot %', '4s', '6s']
+                    sorted_agg = agg_df.sort_values('Runs', ascending=False).reset_index(drop=True)
+                    sorted_agg.index += 1
+                    st.dataframe(sorted_agg[[c for c in agg_disp_cols if c in sorted_agg.columns]], width="stretch")
+
+                with tab_chart:
+                    st.markdown(f"#### Strike Rate by Batter Entry Over ({pei_window}-Over Window)")
+                    entry_summary = pei_df.groupby('Entry Over', observed=True).agg(
+                        Innings=('Runs', 'count'),
+                        Avg_Runs=('Runs', 'mean'),
+                        Total_Runs=('Runs', 'sum'),
+                        Total_Balls=('Balls', 'sum')
+                    ).reset_index()
+                    entry_summary['SR'] = (entry_summary['Total_Runs'] / entry_summary['Total_Balls'].replace(0, np.nan) * 100).fillna(0).round(1)
+                    entry_summary['Avg_Runs'] = entry_summary['Avg_Runs'].round(1)
+
+                    fig_entry = px.bar(
+                        entry_summary,
+                        x='Entry Over',
+                        y='SR',
+                        color='Avg_Runs',
+                        color_continuous_scale='Viridis',
+                        text='SR',
+                        title=f"Post-Entry Strike Rate ({pei_window}-Over Window) by Entry Over",
+                        labels={'SR': 'Strike Rate', 'Entry Over': 'Entry Over', 'Avg_Runs': 'Avg Runs'},
+                        hover_data=['Innings', 'Avg_Runs', 'Total_Runs']
+                    )
+                    fig_entry.update_xaxes(dtick=1)
+                    fig_entry.update_traces(textposition='outside')
+                    st.plotly_chart(fig_entry, width="stretch")
 
 
 st.markdown("---")
