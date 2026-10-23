@@ -6,6 +6,7 @@ import os
 import glob
 import json
 import time
+import re
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -144,14 +145,54 @@ def compute_overs_float(legal_balls):
     """Convert legal ball count to overs float for RR calculation."""
     return legal_balls // 6 + (legal_balls % 6) / 6.0
 
+def resolve_player_name(raw_name, priority_pool=None, fallback_pool=None):
+    """Normalize and resolve commentary snippets or abbreviated names to full official player names."""
+    if not raw_name or not isinstance(raw_name, str):
+        return raw_name
+    token = raw_name.split(",")[0].strip()
+    token = re.sub(r"[!*()]+", "", token).strip()
+    if not token:
+        return raw_name
+    pools = []
+    if priority_pool:
+        pools.append(priority_pool)
+    if fallback_pool:
+        pools.append(fallback_pool)
+    for pool in pools:
+        for p in pool:
+            if p.lower() == token.lower():
+                return p
+        for p in pool:
+            if p.split()[-1].lower() == token.lower():
+                return p
+        for p in pool:
+            if p.split()[0].lower() == token.lower():
+                return p
+        for p in pool:
+            if token.lower() in [w.lower() for w in p.split()]:
+                return p
+    return token
+
 def parse_match_data(json_data, filter_day=None):
     """Parse complete JSON for first-class multi-day match, with optional day filter."""
     info = json_data.get("info", {})
     innings_raw = json_data.get("innings", [])
+    teams = info.get("teams", [])
+
+    players_by_team = info.get("players", {})
+    all_players = []
+    for t_name, plist in players_by_team.items():
+        all_players.extend(plist)
+    for p in info.get("registry", {}).get("people", {}).keys():
+        if p not in all_players:
+            all_players.append(p)
     
     parsed_innings = []
     for inn_idx, inn in enumerate(innings_raw):
         team = inn.get("team", f"Innings {inn_idx+1}")
+        fielding_team = [t for t in teams if t != team][0] if teams and len(teams) > 1 else None
+        bat_pool = players_by_team.get(team, [])
+        bowl_pool = players_by_team.get(fielding_team, [])
         overs_list = inn.get("overs", [])
         
         # Filter overs/deliveries by day if specified
@@ -190,14 +231,15 @@ def parse_match_data(json_data, filter_day=None):
             ov_sixes = 0
             ov_wkts_list = []
             ov_bowler = ov_deliveries[0].get("bowler", "Unknown") if ov_deliveries else "Unknown"
+            ov_bowler = resolve_player_name(ov_bowler, bowl_pool, all_players)
             if ov_bowler == "Ayush Doseja" and ("Delhi" in team or "Delhi" in info.get("teams", [])):
                 ov_bowler = "Ayush Badoni"
             ov_legal_balls = 0
             
             for b_idx, d in enumerate(ov_deliveries):
-                b = d.get("batter", "Unknown")
-                ns = d.get("non_striker", "Unknown")
-                bw = d.get("bowler", "Unknown")
+                b = resolve_player_name(d.get("batter", "Unknown"), bat_pool, all_players)
+                ns = resolve_player_name(d.get("non_striker", "Unknown"), bat_pool, all_players)
+                bw = resolve_player_name(d.get("bowler", "Unknown"), bowl_pool, all_players)
                 if bw == "Ayush Doseja" and ("Delhi" in team or "Delhi" in info.get("teams", [])):
                     bw = "Ayush Badoni"
                 r_dict = d.get("runs", {})
@@ -261,6 +303,13 @@ def parse_match_data(json_data, filter_day=None):
                     bowlers[bw]["dots"] += 1
                     ov_dots += 1
                 
+                clean_wickets = []
+                for w in d.get("wickets", []):
+                    w_c = dict(w)
+                    if "player_out" in w_c:
+                        w_c["player_out"] = resolve_player_name(w_c["player_out"], bat_pool, all_players)
+                    clean_wickets.append(w_c)
+
                 # Store ball-by-ball for partnership
                 ball_entry = {
                     "over": ov_num,
@@ -272,18 +321,18 @@ def parse_match_data(json_data, filter_day=None):
                     "extras_runs": r_e,
                     "total_runs": r_t,
                     "is_wide": is_wide,
-                    "wickets": d.get("wickets", [])
+                    "wickets": clean_wickets
                 }
                 ball_by_ball.append(ball_entry)
                 
                 # Wickets
                 if "wickets" in d:
-                    for w in d["wickets"]:
+                    for w in clean_wickets:
                         tot_wkts += 1
                         ov_wkts += 1
-                        p_out = w.get("player_out", b)
+                        p_out = resolve_player_name(w.get("player_out", b), bat_pool, all_players)
                         kind = w.get("kind", "dismissed")
-                        fldrs = [f.get("name") for f in w.get("fielders", []) if f.get("name")]
+                        fldrs = [resolve_player_name(f.get("name"), bowl_pool, all_players) for f in w.get("fielders", []) if f.get("name")]
                         
                         f_str = f"c {fldrs[0]} " if fldrs else "c " if kind == "caught" else ""
                         if kind == "bowled": dis_str = f"b {bw}"
