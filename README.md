@@ -117,11 +117,21 @@ The app has been configured to automatically detect both environments:
 * **Streamlit Cloud:** Reads `./data/BCCI Domestic/International/` relative to the repository root.
 No paths need to be manually edited before pushing.
 
-### **Step 4: Keeping Matches Updated Online**
-Streamlit Cloud only runs the frontend app, not background daemons.
-* Whenever new matches are played, let your local daemon sync them (or run the manual command above).
-* Simply run:
-  ```bash
-  git add "data/BCCI Domestic/International/" && git commit -m "Sync new matches" && git push
-  ```
-* Streamlit Cloud will automatically detect the new files and update live within seconds.
+### **Step 4: 100% Automatic Live Sync on Streamlit Cloud (No Manual Work Needed!)**
+The app now has **built-in cloud live polling**:
+* **During Live Matches:** When anyone opens an in-progress match online, the dashboard automatically polls the BCCI & Ellipse Data APIs every 30 seconds and renders new overs/balls in real time!
+* **Manual Refresh Button:** A sidebar button (`🔄 Refresh Live Match Telemetry`) allows any user to instantly pull the latest balls on demand.
+* **No Background Terminal Required:** You do not need to keep any scripts running on your computer.
+
+---
+
+## 🤖 6. GitHub Actions Automated Cloud Sync (Zero-Maintenance)
+
+A dedicated GitHub Action workflow (`.github/workflows/sync_ranji_matches.yml`) runs every 3 hours:
+1. Automatically scans BCCI fixtures for live and newly completed Ranji matches.
+2. Scrapes the official scorecard & genuine Ellipse Data commentary.
+3. Commits any new match JSON files directly to `data/BCCI Domestic/International/`.
+4. Streamlit Cloud automatically picks up the new matches without touching your local machine.
+
+*You can also trigger it manually anytime:*
+* Go to your repository on GitHub -> **Actions** -> **Auto-Sync Ranji Trophy Matches** -> **Run workflow**.

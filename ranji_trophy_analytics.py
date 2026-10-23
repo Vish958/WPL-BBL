@@ -14,6 +14,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import streamlit as st
+try:
+    from utils.live_sync_helper import is_match_live, sync_single_match
+except Exception:
+    def is_match_live(d): return False
+    def sync_single_match(m, d=None): return None
 
 # ----------------------------------------------------
 # OFFICIAL DATA ALIGNMENT REGISTRY
@@ -1266,6 +1271,23 @@ with st.sidebar:
 
     st.markdown("---")
     
+    st.markdown("---")
+    st.markdown("### ⚡ Live Match Sync")
+    if st.button("🔄 Refresh Live Match Telemetry", use_container_width=True):
+        with st.status("Polling BCCI & Ellipse Data...", expanded=True) as sync_box:
+            try:
+                m_id = int(Path(selected_file).stem)
+                fresh = sync_single_match(m_id, DEFAULT_DIR)
+                if fresh:
+                    st.session_state[f"live_data_{selected_file}"] = fresh
+                    sync_box.update(label="✓ Updated to latest ball telemetry!", state="complete")
+                    time.sleep(0.5)
+                    st.rerun()
+                else:
+                    sync_box.update(label="Match data is already up to date.", state="complete")
+            except Exception as ex:
+                sync_box.update(label=f"Sync notice: {ex}", state="complete")
+
     hourly_block_size = st.slider(
         "Hourly Over Block (Overs/Hr)",
         min_value=10,
@@ -1287,18 +1309,30 @@ if selected_match_meta is None:
 
 @st.fragment(run_every=30)
 def render_match_dashboard(match_path, hourly_block_size, selected_file):
-    selected_json_data = None
-    for _ in range(3):
-        try:
-            with open(match_path, "r", encoding="utf-8") as f:
-                selected_json_data = json.load(f)
-            break
-        except Exception:
-            time.sleep(0.05)
+    selected_json_data = st.session_state.get(f"live_data_{selected_file}")
+    if selected_json_data is None:
+        for _ in range(3):
+            try:
+                with open(match_path, "r", encoding="utf-8") as f:
+                    selected_json_data = json.load(f)
+                break
+            except Exception:
+                time.sleep(0.05)
 
     if selected_json_data is None:
         st.warning("Match data is synchronizing in the background... Retrying automatically.")
         return
+
+    # Direct Cloud Live Sync: auto-fetch new overs if match is in progress
+    if is_match_live(selected_json_data):
+        try:
+            m_id = int(Path(selected_file).stem)
+            fresh_balls = sync_single_match(m_id, DEFAULT_DIR)
+            if fresh_balls:
+                selected_json_data = fresh_balls
+                st.session_state[f"live_data_{selected_file}"] = fresh_balls
+        except Exception:
+            pass
 
     # ----------------------------------------------------
     # RANJI TROPHY ENGINE - BLUE LOADING ANIMATION
@@ -1367,10 +1401,16 @@ def render_match_dashboard(match_path, hourly_block_size, selected_file):
     # HEADER SECTION & MATCH OVERVIEW
     # ----------------------------------------------------
     st.title(f"{teams[0]} vs {teams[1]}")
-    st.markdown(
-        '<span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.3);">🟢 Live Auto-Sync: Active (Auto-updating every 30s without page reload)</span>',
-        unsafe_allow_html=True
-    )
+    if is_match_live(selected_json_data):
+        st.markdown(
+            '<span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.3);">🟢 Cloud Live Auto-Sync: Active (Auto-polling BCCI API every 30s)</span>',
+            unsafe_allow_html=True
+        )
+    else:
+        st.markdown(
+            '<span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(59, 130, 246, 0.3);">🔵 Official Telemetry Verified (Complete Match)</span>',
+            unsafe_allow_html=True
+        )
     event_name_cleaned = str(info.get('event', {}).get('name', 'Ranji Trophy Elite')).replace("BCCI", "").replace("  ", " ").strip()
     st.caption(f"{venue} | {date_str} | {event_name_cleaned} (Match {info.get('event', {}).get('match_number', '')})")
 
