@@ -1,5 +1,7 @@
 # Ignore raw data folders
-data/
+data/*
+!data/BCCI Domestic/
+!data/BCCI Domestic/**
 Male_ODI_Data/
 Male\ T20I\ /
 
@@ -12,3 +14,6 @@ create_venues_parquet.py
 
 # Ignore xlsx files
 match_ingestion_summary.xlsx
+*.lock
+.live_ranji_daemon.lock
+*.bak
