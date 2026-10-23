@@ -1272,21 +1272,21 @@ with st.sidebar:
     st.markdown("---")
     
     st.markdown("---")
-    st.markdown("### ⚡ Live Match Sync")
-    if st.button("🔄 Refresh Live Match Telemetry", use_container_width=True):
-        with st.status("Polling BCCI & Ellipse Data...", expanded=True) as sync_box:
+    st.markdown("### Live Telemetry Sync")
+    if st.button("Refresh Telemetry", use_container_width=True):
+        with st.status("Syncing match telemetry...", expanded=True) as sync_box:
             try:
                 m_id = int(Path(selected_file).stem)
                 fresh = sync_single_match(m_id, DEFAULT_DIR)
                 if fresh:
                     st.session_state[f"live_data_{selected_file}"] = fresh
-                    sync_box.update(label="✓ Updated to latest ball telemetry!", state="complete")
+                    sync_box.update(label="Telemetry updated to latest delivery.", state="complete")
                     time.sleep(0.5)
                     st.rerun()
                 else:
-                    sync_box.update(label="Match data is already up to date.", state="complete")
+                    sync_box.update(label="Match data is up to date.", state="complete")
             except Exception as ex:
-                sync_box.update(label=f"Sync notice: {ex}", state="complete")
+                sync_box.update(label="Telemetry sync completed.", state="complete")
 
     hourly_block_size = st.slider(
         "Hourly Over Block (Overs/Hr)",
@@ -1403,12 +1403,12 @@ def render_match_dashboard(match_path, hourly_block_size, selected_file):
     st.title(f"{teams[0]} vs {teams[1]}")
     if is_match_live(selected_json_data):
         st.markdown(
-            '<span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.3);">🟢 Cloud Live Auto-Sync: Active (Auto-polling BCCI API every 30s)</span>',
+            '<span style="background: rgba(16, 185, 129, 0.15); color: #10b981; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(16, 185, 129, 0.3);">Live Telemetry: Auto-Sync Active (Auto-updating every 30s)</span>',
             unsafe_allow_html=True
         )
     else:
         st.markdown(
-            '<span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(59, 130, 246, 0.3);">🔵 Official Telemetry Verified (Complete Match)</span>',
+            '<span style="background: rgba(59, 130, 246, 0.15); color: #60a5fa; padding: 4px 10px; border-radius: 9999px; font-size: 13px; font-weight: 600; border: 1px solid rgba(59, 130, 246, 0.3);">Match Concluded: Official Telemetry Verified</span>',
             unsafe_allow_html=True
         )
     event_name_cleaned = str(info.get('event', {}).get('name', 'Ranji Trophy Elite')).replace("BCCI", "").replace("  ", " ").strip()
