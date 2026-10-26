@@ -3116,8 +3116,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, 1 run",
+              "bowler": "Kashyap",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
@@ -3137,7 +3137,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Singh",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3147,9 +3147,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Dubey, no run",
+              "batter": "Dubey, 4 runs",
+              "bowler": "Singh",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3159,9 +3159,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Dubey, no run",
+              "batter": "Dubey, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3173,7 +3173,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Singh",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3183,8 +3183,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, 1 run",
+              "bowler": "Singh",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
@@ -3195,9 +3195,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Purohit, 3 runs",
+              "bowler": "Singh",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 3,
                 "extras": 0,
@@ -3214,21 +3214,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 3 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3240,7 +3228,19 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 3 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 3 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3274,8 +3274,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, no run",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -3293,9 +3293,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3307,7 +3307,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3432,8 +3432,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, 4 runs",
+              "bowler": "Kashyap",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 4,
@@ -3453,7 +3453,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Singh",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3463,8 +3463,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, no run",
+              "bowler": "Singh",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -3487,8 +3487,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, 1 run",
+              "bowler": "Singh",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
@@ -3499,9 +3499,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3511,9 +3511,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, 2 runs",
+              "bowler": "Singh",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3530,9 +3530,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3544,7 +3544,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3566,9 +3566,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Dubey, no run",
+              "batter": "Dubey, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3580,7 +3580,7 @@
             {
               "batter": "Dubey, 3 runs",
               "bowler": "Kashyap",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 3,
                 "extras": 0,
@@ -3590,8 +3590,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
               "non_striker": "Dubey, 3 runs",
               "runs": {
                 "batter": 0,
@@ -3609,9 +3609,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, no run",
+              "bowler": "Singh",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3623,7 +3623,7 @@
             {
               "batter": "Dubey, 2 runs",
               "bowler": "Singh",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3633,8 +3633,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, no run",
+              "bowler": "Singh",
               "non_striker": "Dubey, 2 runs",
               "runs": {
                 "batter": 0,
@@ -3645,8 +3645,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, no run",
+              "bowler": "Singh",
               "non_striker": "Dubey, 2 runs",
               "runs": {
                 "batter": 0,
@@ -3657,8 +3657,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, no run",
+              "bowler": "Singh",
               "non_striker": "Dubey, 2 runs",
               "runs": {
                 "batter": 0,
@@ -3669,8 +3669,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, 4 runs",
+              "bowler": "Singh",
               "non_striker": "Dubey, 2 runs",
               "runs": {
                 "batter": 4,
@@ -3688,9 +3688,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Dubey, 2 runs",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3702,7 +3702,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3712,8 +3712,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, 2 runs",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 2,
@@ -3724,33 +3724,33 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 2 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Purohit, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dubey, 1 run",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 1 run",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Yash Dubey",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Saksham Purohit",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3769,7 +3769,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3781,7 +3781,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3793,7 +3793,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3827,8 +3827,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Himanshu Singh",
+              "batter": "Dubey, no run",
+              "bowler": "Singh",
               "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 0,
@@ -3846,9 +3846,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3860,7 +3860,7 @@
             {
               "batter": "Dubey, 2 runs",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3882,8 +3882,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
+              "batter": "Dubey, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 0,
@@ -3894,9 +3894,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Dubey, 4 runs",
+              "batter": "Dubey, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3906,9 +3906,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3925,9 +3925,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Naman Gaurav",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Gaurav",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3937,9 +3937,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Naman Gaurav",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Gaurav",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3951,7 +3951,7 @@
             {
               "batter": "Purohit, 2 runs",
               "bowler": "Gaurav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3973,8 +3973,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Naman Gaurav",
+              "batter": "Dubey, no run",
+              "bowler": "Gaurav",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -3987,7 +3987,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Gaurav",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4004,8 +4004,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
@@ -4016,9 +4016,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, no run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4028,9 +4028,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, no run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4042,7 +4042,7 @@
             {
               "batter": "Dubey, 1 run",
               "bowler": "Raj",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4052,8 +4052,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
@@ -4064,8 +4064,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
@@ -4083,9 +4083,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Yash Dubey",
-              "bowler": "Naman Gaurav",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, no run",
+              "bowler": "Gaurav",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4095,9 +4095,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Naman Gaurav",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, no run",
+              "bowler": "Gaurav",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4109,7 +4109,7 @@
             {
               "batter": "Dubey, 1 run",
               "bowler": "Gaurav",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4165,9 +4165,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Dubey, 1 run",
+              "batter": "Dubey, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4177,9 +4177,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4189,9 +4189,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4201,9 +4201,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4213,9 +4213,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4225,9 +4225,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4246,7 +4246,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Gaurav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4268,8 +4268,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Naman Gaurav",
+              "batter": "Dubey, no run",
+              "bowler": "Gaurav",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -4280,9 +4280,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Naman Gaurav",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Dubey, 1 run",
+              "bowler": "Gaurav",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4292,9 +4292,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Naman Gaurav",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Gaurav",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4306,7 +4306,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Gaurav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4323,8 +4323,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 0,
@@ -4335,8 +4335,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 0,
@@ -4347,8 +4347,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 0,
@@ -4359,8 +4359,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 0,
@@ -4493,8 +4493,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
+              "batter": "Dubey, no run",
+              "bowler": "Raj",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -4507,7 +4507,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Raj",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4519,7 +4519,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Raj",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4531,7 +4531,7 @@
             {
               "batter": "Dubey, 1 run",
               "bowler": "Raj",
-              "non_striker": "Dubey, no run",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4572,8 +4572,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, 1 run",
+              "bowler": "Kashyap",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
@@ -4584,9 +4584,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4598,7 +4598,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4610,7 +4610,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4620,8 +4620,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
+              "batter": "Dubey, 1 run",
+              "bowler": "Kashyap",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
@@ -4639,9 +4639,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Dubey, no run",
+              "batter": "Dubey, no run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4651,9 +4651,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Dubey, no run",
+              "batter": "Dubey, 4 runs",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4665,7 +4665,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Raj",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4675,8 +4675,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
+              "batter": "Dubey, 1 run",
+              "bowler": "Raj",
               "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 1,
@@ -4687,9 +4687,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 2 runs",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4699,9 +4699,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 4 runs",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4718,9 +4718,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Saksham Purohit",
+              "batter": "Dubey, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4730,9 +4730,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4744,7 +4744,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4754,9 +4754,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4766,9 +4766,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4778,8 +4778,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
+              "batter": "Purohit, 2 runs",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 2,
@@ -4797,9 +4797,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
-              "non_striker": "Purohit, no run",
+              "batter": "Dubey, 4 runs",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4811,7 +4811,7 @@
             {
               "batter": "Dubey, no run",
               "bowler": "Raj",
-              "non_striker": "Yash Dubey",
+              "non_striker": "Dubey, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4833,8 +4833,8 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Aditya Raj",
+              "batter": "Dubey, 1 run",
+              "bowler": "Raj",
               "non_striker": "Dubey, 2 runs",
               "runs": {
                 "batter": 0,
@@ -4848,9 +4848,9 @@
               }
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Dubey, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4860,9 +4860,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Yash Dubey",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4881,7 +4881,7 @@
             {
               "batter": "Purohit, 4 runs",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4903,9 +4903,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Dubey, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4915,9 +4915,9 @@
               "session": 2
             },
             {
-              "batter": "Yash Dubey",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Dubey, out!",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4938,9 +4938,9 @@
               ]
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Rathore, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4950,9 +4950,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Rathore, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Dubey, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4971,7 +4971,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Raj",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4981,8 +4981,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
@@ -4995,7 +4995,7 @@
             {
               "batter": "Rathore, 1 run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5019,7 +5019,7 @@
             {
               "batter": "Rathore, 4 runs",
               "bowler": "Raj",
-              "non_striker": "Purohit, 1 run",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 4,
@@ -5063,8 +5063,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
+              "batter": "Purohit, 4 runs",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 4,
@@ -5075,9 +5075,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, 2 runs",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 4 runs",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5089,7 +5089,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5101,7 +5101,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5111,9 +5111,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5130,9 +5130,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Aditya Raj",
-              "non_striker": "Saksham Purohit",
+              "batter": "Rathore, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5144,7 +5144,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Raj",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5154,9 +5154,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5168,7 +5168,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5180,7 +5180,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5190,9 +5190,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Aditya Raj",
-              "non_striker": "Rathore, no run",
+              "batter": "Rathore, no run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5209,21 +5209,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Chanchal Rathore",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5235,7 +5223,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5245,9 +5233,21 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Rathore, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5288,8 +5288,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
               "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
@@ -5300,9 +5300,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Saksham Purohit",
+              "batter": "Rathore, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5312,9 +5312,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5326,7 +5326,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5336,8 +5336,8 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
@@ -5348,9 +5348,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Saksham Purohit",
+              "batter": "Rathore, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5369,7 +5369,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Kashyap",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5381,7 +5381,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Kashyap",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5403,9 +5403,9 @@
               "session": 2
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Rathore, 1 run",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5417,7 +5417,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5427,8 +5427,8 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
+              "batter": "Rathore, 4 runs",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 4,
@@ -5448,7 +5448,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5460,7 +5460,7 @@
             {
               "batter": "Rathore, 1 run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5482,8 +5482,8 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
+              "batter": "Rathore, no run",
+              "bowler": "Singh",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -5496,7 +5496,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5506,9 +5506,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Rathore, no run",
+              "batter": "Rathore, no run",
+              "bowler": "Singh",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5525,8 +5525,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Sakibul Gani",
+              "batter": "Purohit, 1 run",
+              "bowler": "Gani",
               "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
@@ -5537,9 +5537,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Sakibul Gani",
-              "non_striker": "Saksham Purohit",
+              "batter": "Rathore, 2 runs",
+              "bowler": "Gani",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5549,9 +5549,9 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Sakibul Gani",
-              "non_striker": "Saksham Purohit",
+              "batter": "Rathore, 1 run",
+              "bowler": "Gani",
+              "non_striker": "Rathore, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5563,7 +5563,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Gani",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5573,8 +5573,8 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Sakibul Gani",
+              "batter": "Rathore, no run",
+              "bowler": "Gani",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -5585,8 +5585,8 @@
               "session": 2
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Sakibul Gani",
+              "batter": "Rathore, no run",
+              "bowler": "Gani",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -5604,9 +5604,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5616,9 +5616,9 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Saksham Purohit",
+              "batter": "Rathore, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5630,7 +5630,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5642,7 +5642,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5654,7 +5654,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5664,8 +5664,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
@@ -5685,7 +5685,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5697,7 +5697,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5707,8 +5707,8 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
+              "batter": "Rathore, no run",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -5719,8 +5719,8 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
+              "batter": "Rathore, no run",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -5731,9 +5731,9 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Rathore, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5743,9 +5743,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5764,7 +5764,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5774,8 +5774,8 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
+              "batter": "Rathore, 1 run",
+              "bowler": "Singh",
               "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
@@ -5788,7 +5788,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5800,19 +5800,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Chanchal Rathore",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, no run",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5824,7 +5812,19 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Rathore, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5843,7 +5843,7 @@
             {
               "batter": "Rathore, 1 run",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5853,9 +5853,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Rathore, 1 run",
+              "batter": "Purohit, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5865,9 +5865,9 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Rathore, 1 run",
+              "batter": "Rathore, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5879,7 +5879,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Kashyap",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5889,8 +5889,8 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Suraj Kashyap",
+              "batter": "Rathore, 2 runs",
+              "bowler": "Kashyap",
               "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 2,
@@ -5903,7 +5903,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Kashyap",
-              "non_striker": "Chanchal Rathore",
+              "non_striker": "Rathore, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5922,7 +5922,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Singh",
-              "non_striker": "Rathore, no run",
+              "non_striker": "Rathore, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5944,8 +5944,8 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
+              "batter": "Rathore, no run",
+              "bowler": "Singh",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -5956,9 +5956,9 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, 1 run",
+              "batter": "Rathore, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5968,9 +5968,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Rathore, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5982,7 +5982,7 @@
             {
               "batter": "Rathore, 1 run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5999,9 +5999,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Aditya Raj",
-              "non_striker": "Rathore, 1 run",
+              "batter": "Rathore, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6011,9 +6011,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, 2 runs",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -6023,9 +6023,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6035,9 +6035,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6047,9 +6047,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Chanchal Rathore",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6061,7 +6061,7 @@
             {
               "batter": "Rathore, 4 runs",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -6078,8 +6078,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
               "non_striker": "Rathore, 4 runs",
               "runs": {
                 "batter": 0,
@@ -6090,8 +6090,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
               "non_striker": "Rathore, 4 runs",
               "runs": {
                 "batter": 0,
@@ -6102,8 +6102,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
               "non_striker": "Rathore, 4 runs",
               "runs": {
                 "batter": 0,
@@ -6114,9 +6114,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Rathore, 4 runs",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6128,7 +6128,7 @@
             {
               "batter": "Rathore, no run",
               "bowler": "Singh",
-              "non_striker": "Rathore, 4 runs",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6193,8 +6193,8 @@
               "session": 3
             },
             {
-              "batter": "Chanchal Rathore",
-              "bowler": "Amod Yadav",
+              "batter": "Rathore, out!",
+              "bowler": "Yadav",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -6218,7 +6218,7 @@
             {
               "batter": "Sharma, no run",
               "bowler": "Yadav",
-              "non_striker": "Purohit, 1 run",
+              "non_striker": "Rathore, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6270,9 +6270,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
+              "non_striker": "Sharma, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6282,9 +6282,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
+              "non_striker": "Sharma, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6294,9 +6294,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
+              "non_striker": "Sharma, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6306,8 +6306,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
@@ -6320,7 +6320,7 @@
             {
               "batter": "Patidar, 1 run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6337,44 +6337,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
-              "non_striker": "Patidar, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
-              "non_striker": "Patidar, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
-              "non_striker": "Patidar, 1 run",
-              "runs": {
-                "batter": 2,
-                "extras": 0,
-                "total": 2
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
+              "batter": "Patidar, no run",
+              "bowler": "Yadav",
               "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
@@ -6387,7 +6351,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Yadav",
-              "non_striker": "Rajat Patidar",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6397,9 +6361,45 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
+              "batter": "Patidar, 2 runs",
+              "bowler": "Yadav",
               "non_striker": "Patidar, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patidar, no run",
+              "bowler": "Yadav",
+              "non_striker": "Patidar, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patidar, no run",
+              "bowler": "Yadav",
+              "non_striker": "Patidar, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patidar, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Patidar, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6416,9 +6416,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Patidar, no run",
+              "batter": "Patidar, no run",
+              "bowler": "Singh",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6428,9 +6428,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Patidar, no run",
+              "batter": "Patidar, no run",
+              "bowler": "Singh",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6452,9 +6452,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Patidar, 1 run",
+              "batter": "Purohit, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Patidar, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6464,9 +6464,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Himanshu Singh",
-              "non_striker": "Saksham Purohit",
+              "batter": "Patidar, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6478,7 +6478,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Singh",
-              "non_striker": "Rajat Patidar",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6497,7 +6497,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Yadav",
-              "non_striker": "Purohit, 1 run",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6507,9 +6507,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Yadav",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6521,7 +6521,7 @@
             {
               "batter": "Purohit, 2 runs",
               "bowler": "Yadav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -6531,8 +6531,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
+              "batter": "Purohit, no run",
+              "bowler": "Yadav",
               "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
@@ -6543,8 +6543,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
+              "batter": "Purohit, 4 runs",
+              "bowler": "Yadav",
               "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 4,
@@ -6555,9 +6555,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
-              "non_striker": "Purohit, 2 runs",
+              "batter": "Purohit, no run",
+              "bowler": "Yadav",
+              "non_striker": "Purohit, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6574,9 +6574,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 2 runs",
+              "batter": "Patidar, no run",
+              "bowler": "Kashyap",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6586,9 +6586,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Purohit, 2 runs",
+              "batter": "Patidar, 1 run",
+              "bowler": "Kashyap",
+              "non_striker": "Patidar, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6598,9 +6598,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
-              "non_striker": "Rajat Patidar",
+              "batter": "Purohit, 4 runs",
+              "bowler": "Kashyap",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -6612,7 +6612,7 @@
             {
               "batter": "Purohit, 4 runs",
               "bowler": "Kashyap",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -6622,8 +6622,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Suraj Kashyap",
+              "batter": "Purohit, no run",
+              "bowler": "Kashyap",
               "non_striker": "Purohit, 4 runs",
               "runs": {
                 "batter": 0,
@@ -6653,8 +6653,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
+              "batter": "Patidar, 1 run",
+              "bowler": "Yadav",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
@@ -6667,7 +6667,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Yadav",
-              "non_striker": "Rajat Patidar",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6679,7 +6679,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Yadav",
-              "non_striker": "Rajat Patidar",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6689,9 +6689,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
-              "non_striker": "Rajat Patidar",
+              "batter": "Purohit, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6703,7 +6703,7 @@
             {
               "batter": "Patidar, 1 run",
               "bowler": "Yadav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6713,8 +6713,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
+              "batter": "Purohit, 1 run",
+              "bowler": "Yadav",
               "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 1,
@@ -6734,7 +6734,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Raj",
-              "non_striker": "Patidar, 1 run",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6744,8 +6744,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
@@ -6758,7 +6758,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6770,7 +6770,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6811,8 +6811,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
+              "batter": "Purohit, no run",
+              "bowler": "Yadav",
               "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
@@ -6825,7 +6825,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Yadav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6835,9 +6835,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
-              "non_striker": "Saksham Purohit",
+              "batter": "Patidar, no run",
+              "bowler": "Yadav",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6847,9 +6847,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Amod Yadav",
-              "non_striker": "Saksham Purohit",
+              "batter": "Patidar, no run",
+              "bowler": "Yadav",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6861,7 +6861,7 @@
             {
               "batter": "Patidar, 1 run",
               "bowler": "Yadav",
-              "non_striker": "Rajat Patidar",
+              "non_striker": "Patidar, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6871,8 +6871,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
+              "batter": "Purohit, no run",
+              "bowler": "Yadav",
               "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
@@ -6892,7 +6892,7 @@
             {
               "batter": "Patidar, 1 run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6902,8 +6902,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
+              "batter": "Purohit, no run",
+              "bowler": "Raj",
               "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
@@ -6914,9 +6914,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Aditya Raj",
-              "non_striker": "Patidar, 1 run",
+              "batter": "Purohit, 1 run",
+              "bowler": "Raj",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6928,7 +6928,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6940,7 +6940,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6952,7 +6952,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Raj",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7017,8 +7017,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Amod Yadav",
+              "batter": "Purohit, 1 run",
+              "bowler": "Yadav",
               "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 1,
@@ -7031,7 +7031,7 @@
             {
               "batter": "Patidar, 1 run",
               "bowler": "Yadav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -7050,7 +7050,7 @@
             {
               "batter": "Patidar, 4 runs",
               "bowler": "Gaurav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 4,
@@ -7087,8 +7087,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Naman Gaurav",
+              "batter": "Purohit, 1 run",
+              "bowler": "Gaurav",
               "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 1,
@@ -7101,7 +7101,7 @@
             {
               "batter": "Patidar, 1 run",
               "bowler": "Gaurav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -7113,7 +7113,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Gaurav",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -7142,9 +7142,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Raghuvendra Singh",
-              "non_striker": "Purohit, no run",
+              "batter": "Purohit, no run",
+              "bowler": "Singh",
+              "non_striker": "Purohit, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7154,8 +7154,8 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Raghuvendra Singh",
+              "batter": "Purohit, 2 runs",
+              "bowler": "Singh",
               "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 2,
@@ -7168,7 +7168,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7180,7 +7180,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7192,7 +7192,7 @@
             {
               "batter": "Purohit, no run",
               "bowler": "Singh",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7211,7 +7211,7 @@
             {
               "batter": "Patidar, no run",
               "bowler": "Gani",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7221,9 +7221,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Sakibul Gani",
-              "non_striker": "Patidar, no run",
+              "batter": "Patidar, no run",
+              "bowler": "Gani",
+              "non_striker": "Purohit, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7233,8 +7233,8 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Sakibul Gani",
+              "batter": "Patidar, 4 runs",
+              "bowler": "Gani",
               "non_striker": "Patidar, no run",
               "runs": {
                 "batter": 4,
@@ -7245,9 +7245,9 @@
               "session": 3
             },
             {
-              "batter": "Rajat Patidar",
-              "bowler": "Sakibul Gani",
-              "non_striker": "Patidar, no run",
+              "batter": "Patidar, 1 run",
+              "bowler": "Gani",
+              "non_striker": "Patidar, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -7257,9 +7257,9 @@
               "session": 3
             },
             {
-              "batter": "Saksham Purohit",
-              "bowler": "Sakibul Gani",
-              "non_striker": "Rajat Patidar",
+              "batter": "Purohit, no run",
+              "bowler": "Gani",
+              "non_striker": "Patidar, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -7271,7 +7271,7 @@
             {
               "batter": "Purohit, 1 run",
               "bowler": "Gani",
-              "non_striker": "Saksham Purohit",
+              "non_striker": "Purohit, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
