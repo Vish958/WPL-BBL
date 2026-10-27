@@ -25,9 +25,9 @@
       },
       {
         "day": 2,
-        "status": "in play",
-        "score": "Chhattisgarh trail Andhra by 86 runs with 5 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "216/8 in 95.0 ov",
+        "time": "2026-10-27 11:29:06.75"
       }
     ],
     "event": {
@@ -38,15 +38,15 @@
     "match_timing": {
       "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 63.2,
-      "overs_remaining_today": 26.4,
-      "balls_remaining_today": 160,
+      "overs_bowled": 95.0,
+      "overs_remaining_today": 0.0,
+      "balls_remaining_today": 0,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 0.0,
+        "max_overs_with_1hr_extension": 15.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Chhattisgarh trail Andhra by 86 runs with 5 wickets remaining"
+      "summary": "Chhattisgarh trail Andhra by 15 runs with 2 wickets remaining"
     },
     "players": {
       "Chhattisgarh": [
@@ -11165,50 +11165,2641 @@
               },
               "day": 2,
               "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Hemanth Reddy",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 1,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "SV Rahul",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "SV Rahul",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "SV Rahul",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "SV Rahul",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "SV Rahul",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "SV Rahul",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Ajay Mandal",
+                  "fielders": [
+                    {
+                      "name": "Revanth Reddy"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": null,
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Jayant Yadav",
+                  "fielders": [
+                    {
+                      "name": "Revanth Reddy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Lalith Mohan",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 92,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 93,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Dharmendrasinh Jadeja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dharmendrasinh Jadeja",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Dharmendrasinh Jadeja",
+                  "fielders": [
+                    {
+                      "name": "SV Rahul"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Dev Aditya Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Aditya Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Aditya Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 94,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dev Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dev Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Aditya Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dev Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Amandeep Khare",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Dev Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Aditya Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Amandeep Khare",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
             }
           ]
         }
       ],
       "official_bowlers": {
         "Saurabh Kumar": {
-          "overs": "27.0",
-          "maidens": 6,
-          "runs": 55,
+          "overs": "39.0",
+          "maidens": 9,
+          "runs": 74,
           "wickets": 2,
-          "dots": 132,
-          "fours": 6,
+          "dots": 191,
+          "fours": 8,
           "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Tripurana Vijay": {
-          "overs": "22.0",
+          "overs": "26.0",
           "maidens": 5,
-          "runs": 61,
-          "wickets": 2,
-          "dots": 97,
-          "fours": 8,
+          "runs": 73,
+          "wickets": 3,
+          "dots": 112,
+          "fours": 9,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Lalith Mohan": {
-          "overs": "14.0",
-          "maidens": 3,
-          "runs": 20,
+          "overs": "24.0",
+          "maidens": 5,
+          "runs": 36,
+          "wickets": 1,
+          "dots": 117,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 2
+        },
+        "Hemanth Reddy": {
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 7,
           "wickets": 0,
-          "dots": 67,
+          "dots": 8,
           "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
-        "Hemanth Reddy": {
-          "overs": "0.2",
+        "Venkat Sasikanth": {
+          "overs": "3.0",
+          "maidens": 1,
+          "runs": 7,
+          "wickets": 1,
+          "dots": 14,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "SV Rahul": {
+          "overs": "1.0",
           "maidens": 0,
-          "runs": 1,
+          "runs": 2,
           "wickets": 0,
-          "dots": 1,
+          "dots": 4,
           "fours": 0,
           "sixes": 0,
           "wides": 0,

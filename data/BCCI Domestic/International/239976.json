@@ -25,9 +25,9 @@
       },
       {
         "day": 2,
-        "status": "in play",
-        "score": "Hyderabad trail Punjab by 373 runs with 9 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "193/2 in 54.0 ov",
+        "time": "2026-10-27 11:35:05.84"
       }
     ],
     "event": {
@@ -38,9 +38,9 @@
     "match_timing": {
       "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 17.0,
-      "overs_remaining_today": 73.0,
-      "balls_remaining_today": 438,
+      "overs_bowled": 54.0,
+      "overs_remaining_today": 36.0,
+      "balls_remaining_today": 216,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -63,15 +63,15 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Hyderabad trail Punjab by 373 runs with 9 wickets remaining"
+      "summary": "Hyderabad trail Punjab by 238 runs with 8 wickets remaining"
     },
     "players": {
       "Hyderabad": [
         "Tanmay Agarwal",
         "Abhirath Reddy",
         "Rahul Radesh",
-        "Pragnay Reddy",
         "Kodimela Himateja",
+        "Pragnay Reddy",
         "Varun Goud",
         "Chama Milind",
         "Tanay Thyagarajan",
@@ -98,8 +98,8 @@
         "Tanmay Agarwal": "31270",
         "Abhirath Reddy": "76125",
         "Rahul Radesh": "79782",
-        "Pragnay Reddy": "73929",
         "Kodimela Himateja": "87532",
+        "Pragnay Reddy": "73929",
         "Varun Goud": "83765",
         "Chama Milind": "29433",
         "Tanay Thyagarajan": "67638",
@@ -11559,49 +11559,3003 @@
               "session": 2
             }
           ]
+        },
+        {
+          "over": 17,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Abhirath Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Abhirath Reddy",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Abhirath Reddy",
+                  "fielders": [
+                    {
+                      "name": "Salil Arora"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": null,
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harjas Tandon",
+              "non_striker": null,
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harjas Tandon",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "byes": 1
+              }
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Umesh Yadav",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Uday Saharan",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Uday Saharan",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Uday Saharan",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Kodimela Himateja",
+              "bowler": "Uday Saharan",
+              "non_striker": "Rahul Radesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Uday Saharan",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Rahul Radesh",
+              "bowler": "Uday Saharan",
+              "non_striker": "Kodimela Himateja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Umesh Yadav": {
-          "overs": "6.0",
-          "maidens": 2,
-          "runs": 11,
-          "wickets": 0,
-          "dots": 32,
-          "fours": 2,
+          "overs": "12.0",
+          "maidens": 3,
+          "runs": 29,
+          "wickets": 1,
+          "dots": 59,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Harpreet Brar": {
-          "overs": "6.0",
-          "maidens": 1,
-          "runs": 21,
+          "overs": "18.0",
+          "maidens": 2,
+          "runs": 59,
           "wickets": 1,
-          "dots": 25,
-          "fours": 3,
-          "sixes": 0,
+          "dots": 75,
+          "fours": 6,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Emanjot Singh Chahal": {
-          "overs": "3.0",
+          "overs": "15.0",
           "maidens": 0,
-          "runs": 11,
+          "runs": 53,
           "wickets": 0,
-          "dots": 11,
-          "fours": 1,
+          "dots": 59,
+          "fours": 7,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Harjas Tandon": {
-          "overs": "2.0",
-          "maidens": 0,
-          "runs": 7,
+          "overs": "8.0",
+          "maidens": 1,
+          "runs": 36,
           "wickets": 0,
-          "dots": 8,
-          "fours": 1,
+          "dots": 29,
+          "fours": 5,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Uday Saharan": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 2,
+          "wickets": 0,
+          "dots": 4,
+          "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
