@@ -7,13 +7,14 @@
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "67/4 in 37.0 ov",
         "time": "2026-10-26 12:00:33.34"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Uttar Pradesh are 219 for 7",
+        "time": ""
       }
     ],
     "event": {
@@ -29,17 +36,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 37.0,
-      "overs_remaining_today": 53.0,
-      "balls_remaining_today": 318,
+      "overs_bowled": 87.0,
+      "overs_remaining_today": 3.0,
+      "balls_remaining_today": 18,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 3.0,
+        "max_overs_with_1hr_extension": 18.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -56,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Uttar Pradesh are 67 for 4"
+      "summary": "Uttar Pradesh are 219 for 7"
     },
     "players": {
       "Pondicherry": [
@@ -146,20 +153,8 @@
               "session": 1
             },
             {
-              "batter": "Goswami, no run",
-              "bowler": "Yadav",
-              "non_striker": "Madhav Kaushik",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Goswami, no run",
-              "bowler": "Yadav",
+              "batter": "Abhishek Goswami",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
@@ -172,7 +167,19 @@
             {
               "batter": "Abhishek Goswami",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Goswami, no run",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Abhishek Goswami",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -184,7 +191,7 @@
             {
               "batter": "Abhishek Goswami",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Goswami, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -202,7 +209,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Goswami, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -219,20 +226,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kaushik, no run",
-              "bowler": "Udeshi",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
               "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
@@ -245,7 +240,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -257,7 +252,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -267,9 +262,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -279,9 +274,21 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -298,8 +305,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Yadav",
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
@@ -312,19 +319,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Juyal, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Yadav",
-              "non_striker": "Aryan Juyal",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -336,19 +331,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Juyal, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Yadav",
-              "non_striker": "Aryan Juyal",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -360,7 +343,31 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -375,7 +382,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -394,7 +401,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -406,43 +413,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -454,7 +425,43 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -471,8 +478,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kaushik, 4 runs",
-              "bowler": "Yadav",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 4,
@@ -485,7 +492,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Kaushik, 4 runs",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -495,8 +502,32 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, 1 run",
-              "bowler": "Yadav",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 1,
@@ -507,33 +538,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Yadav",
-              "non_striker": "Kaushik, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, 1 run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, no run",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kaushik, 4 runs",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -550,45 +557,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Kaushik, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Kaushik, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Kaushik, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Kaushik, 4 runs",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -600,7 +571,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -610,9 +581,45 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -629,8 +636,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Yadav",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
@@ -643,7 +650,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Kaushik, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -653,9 +660,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Yadav",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -665,9 +672,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Yadav",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -677,9 +684,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, 1 run",
-              "bowler": "Yadav",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -691,7 +698,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Kaushik, 1 run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -732,9 +739,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -746,19 +753,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kaushik, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Madhav Kaushik",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -770,7 +765,19 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, no run",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -789,7 +796,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Kaushik, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -799,8 +806,8 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Yadav",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
@@ -811,8 +818,8 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Yadav",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
               "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
@@ -847,9 +854,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Yadav",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -868,7 +875,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -880,19 +887,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -904,7 +899,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -916,7 +911,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -928,7 +923,19 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -947,7 +954,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -957,9 +964,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -969,9 +976,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -981,9 +988,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -993,9 +1000,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, 4 runs",
-              "bowler": "Trivedi",
-              "non_striker": "Kaushik, no run",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1007,7 +1014,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Kaushik, 4 runs",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1024,8 +1031,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
               "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
@@ -1036,9 +1043,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 2 runs",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1050,7 +1057,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, 2 runs",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1062,7 +1069,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Juyal, 2 runs",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1072,9 +1079,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1084,9 +1091,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aryan Juyal",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1105,7 +1112,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1117,7 +1124,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1129,7 +1136,7 @@
             {
               "batter": "Madhav Kaushik",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1139,8 +1146,8 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 2 runs",
-              "bowler": "Trivedi",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
               "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 2,
@@ -1153,7 +1160,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Juyal, 2 runs",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1165,7 +1172,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Sagar Trivedi",
-              "non_striker": "Juyal, 2 runs",
+              "non_striker": "Madhav Kaushik",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1206,9 +1213,9 @@
               "session": 1
             },
             {
-              "batter": "Kaushik, out!",
-              "bowler": "Udeshi",
-              "non_striker": "Madhav Kaushik",
+              "batter": "Madhav Kaushik",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1231,7 +1238,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, out!",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1243,7 +1250,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Kaushik, out!",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1253,9 +1260,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1272,9 +1279,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1284,9 +1291,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1296,9 +1303,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1308,9 +1315,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1320,9 +1327,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1332,9 +1339,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Trivedi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1351,9 +1358,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1363,9 +1370,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1375,9 +1382,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1387,9 +1394,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1399,9 +1406,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1411,9 +1418,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1430,9 +1437,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Yadav",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1442,9 +1449,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 1 run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1454,9 +1461,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1466,9 +1473,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1478,9 +1485,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1490,9 +1497,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1509,9 +1516,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1521,9 +1528,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1533,9 +1540,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1545,9 +1552,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1557,9 +1564,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1569,9 +1576,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 2 runs",
-              "bowler": "Udeshi",
-              "non_striker": "Juyal, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1588,57 +1595,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 2 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 2 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 2 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 2 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Yadav",
-              "non_striker": "Juyal, 2 runs",
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1650,7 +1609,55 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Gaurav Yadav",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1667,8 +1674,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Kannan",
+              "batter": "Aryan Juyal",
+              "bowler": "Karan Kannan",
               "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
@@ -1681,7 +1688,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1693,7 +1700,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1705,19 +1712,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Kannan",
-              "non_striker": "Aryan Juyal",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1729,7 +1724,19 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1758,21 +1765,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1784,19 +1779,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1808,7 +1791,31 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1825,9 +1832,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Kannan",
-              "non_striker": "Sharma, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1839,7 +1846,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1861,21 +1868,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Kannan",
-              "non_striker": "Karan Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Kannan",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1887,7 +1882,19 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Karan Kannan",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1906,7 +1913,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1918,7 +1925,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1930,7 +1937,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1942,7 +1949,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1954,7 +1961,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1966,7 +1973,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2007,8 +2014,8 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 1 run",
-              "bowler": "Kannan",
+              "batter": "Aryan Juyal",
+              "bowler": "Karan Kannan",
               "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
@@ -2019,9 +2026,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Kannan",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2031,9 +2038,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Kannan",
-              "non_striker": "Sharma, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -2048,7 +2055,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2089,9 +2096,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2103,7 +2110,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2113,9 +2120,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2125,9 +2132,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2146,7 +2153,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2223,9 +2230,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2237,7 +2244,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2249,7 +2256,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2259,21 +2266,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Sharma",
-              "non_striker": "Sharma, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Juyal, no run",
-              "bowler": "Sharma",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2285,7 +2280,19 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2304,7 +2311,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2316,7 +2323,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2328,7 +2335,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2338,9 +2345,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 2 runs",
-              "bowler": "Kannan",
-              "non_striker": "Aryan Juyal",
+              "batter": "Aryan Juyal",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2352,7 +2359,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Karan Kannan",
-              "non_striker": "Juyal, 2 runs",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2362,9 +2369,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Kannan",
-              "non_striker": "Juyal, 2 runs",
+              "batter": "Aryan Juyal",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2381,21 +2388,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Juyal, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Juyal, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2407,7 +2402,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2417,9 +2412,21 @@
               "session": 1
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2431,7 +2438,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2443,7 +2450,7 @@
             {
               "batter": "Aryan Juyal",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2484,9 +2491,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2498,7 +2505,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2508,9 +2515,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2520,9 +2527,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2539,9 +2546,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Juyal, no run",
-              "bowler": "Sharma",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2551,9 +2558,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, no run",
-              "bowler": "Sharma",
-              "non_striker": "Sharma, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2563,9 +2570,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Juyal, no run",
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2575,9 +2582,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Juyal, 1 run",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2589,7 +2596,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2601,7 +2608,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Ankit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2618,33 +2625,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2656,7 +2639,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2668,7 +2651,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2680,7 +2663,31 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aryan Juyal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2709,9 +2716,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, 2 runs",
-              "bowler": "Sharma",
-              "non_striker": "Aryan Juyal",
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2721,9 +2728,9 @@
               "session": 1
             },
             {
-              "batter": "Juyal, out!",
-              "bowler": "Sharma",
-              "non_striker": "Juyal, 2 runs",
+              "batter": "Aryan Juyal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2741,7 +2748,7 @@
             {
               "batter": "Rinku Singh",
               "bowler": "Ankit Sharma",
-              "non_striker": "Juyal, out!",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2751,9 +2758,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, out!",
-              "bowler": "Sharma",
-              "non_striker": "Rinku Singh",
+              "batter": "Rinku Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2774,9 +2781,9 @@
               ]
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Singh, out!",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2795,7 +2802,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Yadav, no run",
+              "non_striker": "Aaradhya Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2807,7 +2814,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Yadav, no run",
+              "non_striker": "Aaradhya Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2819,7 +2826,7 @@
             {
               "batter": "Karan Sharma",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Yadav, no run",
+              "non_striker": "Aaradhya Yadav",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2829,9 +2836,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Karan Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2841,9 +2848,9 @@
               "session": 1
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Udeshi",
-              "non_striker": "Sharma, no run",
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2855,7 +2862,7 @@
             {
               "batter": "Aaradhya Yadav",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2872,8 +2879,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Sharma",
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
               "non_striker": "Aaradhya Yadav",
               "runs": {
                 "batter": 1,
@@ -2884,45 +2891,9 @@
               "session": 1
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2934,7 +2905,43 @@
             {
               "batter": "Aaradhya Yadav",
               "bowler": "Ankit Sharma",
-              "non_striker": "Yadav, no run",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2951,21 +2958,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Yadav, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aaradhya Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Yadav, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2977,7 +2972,7 @@
             {
               "batter": "Aaradhya Yadav",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Yadav, no run",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2989,19 +2984,7 @@
             {
               "batter": "Aaradhya Yadav",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Yadav, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Yadav, no run",
-              "bowler": "Udeshi",
-              "non_striker": "Aaradhya Yadav",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3013,7 +2996,31 @@
             {
               "batter": "Aaradhya Yadav",
               "bowler": "Sagar Udeshi",
-              "non_striker": "Yadav, no run",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3030,9 +3037,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3042,9 +3049,9 @@
               "session": 1
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3054,9 +3061,9 @@
               "session": 1
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3066,9 +3073,9 @@
               "session": 1
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3078,9 +3085,9 @@
               "session": 1
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3090,9 +3097,9 @@
               "session": 1
             },
             {
-              "batter": "Yadav, no run",
-              "bowler": "Sharma",
-              "non_striker": "Aaradhya Yadav",
+              "batter": "Aaradhya Yadav",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3102,60 +3109,4111 @@
               "session": 1
             }
           ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Aaradhya Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aaradhya Yadav",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Aaradhya Yadav"
+                }
+              ]
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Aman Khan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Aman Khan",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Aman Khan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Aman Khan",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Aman Khan",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Aman Khan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "byes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Zeeshan Ansari"
+                }
+              ]
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Karan Kannan",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Shivam Mavi"
+                }
+              ]
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Karan Kannan",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Gaurav Yadav": {
-          "overs": "7.0",
+          "overs": "17.0",
           "maidens": 1,
-          "runs": 21,
+          "runs": 58,
           "wickets": 1,
-          "dots": 32,
-          "fours": 3,
-          "sixes": 0,
+          "dots": 74,
+          "fours": 6,
+          "sixes": 1,
           "wides": 1,
           "noballs": 0
         },
         "Sagar Udeshi": {
-          "overs": "13.0",
-          "maidens": 9,
-          "runs": 8,
-          "wickets": 1,
-          "dots": 73,
-          "fours": 0,
-          "sixes": 0,
+          "overs": "29.0",
+          "maidens": 14,
+          "runs": 35,
+          "wickets": 2,
+          "dots": 154,
+          "fours": 2,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Sagar Trivedi": {
-          "overs": "3.0",
-          "maidens": 1,
-          "runs": 11,
+          "overs": "8.0",
+          "maidens": 2,
+          "runs": 25,
           "wickets": 0,
-          "dots": 14,
-          "fours": 2,
+          "dots": 38,
+          "fours": 3,
           "sixes": 0,
-          "wides": 0,
+          "wides": 4,
           "noballs": 0
         },
         "Karan Kannan": {
-          "overs": "5.0",
+          "overs": "12.0",
           "maidens": 1,
-          "runs": 12,
-          "wickets": 0,
-          "dots": 21,
-          "fours": 0,
+          "runs": 42,
+          "wickets": 1,
+          "dots": 46,
+          "fours": 3,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Ankit Sharma": {
-          "overs": "9.0",
-          "maidens": 2,
-          "runs": 14,
-          "wickets": 2,
-          "dots": 44,
-          "fours": 1,
+          "overs": "20.0",
+          "maidens": 4,
+          "runs": 48,
+          "wickets": 3,
+          "dots": 89,
+          "fours": 2,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Aman Khan": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 6,
+          "wickets": 0,
+          "dots": 2,
+          "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

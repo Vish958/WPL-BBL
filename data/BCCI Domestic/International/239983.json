@@ -7,13 +7,14 @@
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "13/0 in 5.0 ov",
         "time": "2026-10-26 10:57:19.92"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Services trail Odisha by 181 runs with 10 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -29,7 +36,7 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
       "overs_bowled": 5.0,
       "overs_remaining_today": 85.0,

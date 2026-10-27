@@ -7,13 +7,14 @@
   "info": {
     "balls_per_over": 6,
     "city": "Dehradun",
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "18/0 in 5.0 ov",
         "time": "2026-10-26 11:32:53.84"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Uttarakhand trail Rajasthan by 104 runs with 3 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -29,11 +36,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 5.0,
-      "overs_remaining_today": 85.0,
-      "balls_remaining_today": 510,
+      "overs_bowled": 59.3,
+      "overs_remaining_today": 30.3,
+      "balls_remaining_today": 183,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -56,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Uttarakhand trail Rajasthan by 254 runs with 10 wickets remaining"
+      "summary": "Uttarakhand trail Rajasthan by 104 runs with 3 wickets remaining"
     },
     "players": {
       "Uttarakhand": [
@@ -64,10 +71,10 @@
         "Dega Nischal",
         "Kunal Chandela",
         "Lakshya Raichandani",
-        "Saurabh Rawat",
         "Avneesh Sudha",
-        "Yuvraj Chaudhary",
         "Jagadeesha Suchith",
+        "Yuvraj Chaudhary",
+        "Saurabh Rawat",
         "Mayank Mishra",
         "Deepak Dhapola",
         "Devendra Bora"
@@ -92,10 +99,10 @@
         "Dega Nischal": "67123",
         "Kunal Chandela": "67365",
         "Lakshya Raichandani": "93583",
-        "Saurabh Rawat": "44975",
         "Avneesh Sudha": "70042",
-        "Yuvraj Chaudhary": "75775",
         "Jagadeesha Suchith": "26241",
+        "Yuvraj Chaudhary": "75775",
+        "Saurabh Rawat": "44975",
         "Mayank Mishra": "68670",
         "Deepak Dhapola": "68996",
         "Devendra Bora": "84458",
@@ -7171,60 +7178,4387 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 5,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nischal, no run",
+              "bowler": "Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, no run",
+              "bowler": "Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, no run",
+              "bowler": "Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, 1 run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, 1 run",
+              "bowler": "Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Nischal, 1 run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, 4 runs",
+              "bowler": "Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, 2 runs",
+              "bowler": "Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Nischal, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Nischal, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Nischal, no run",
+              "bowler": "Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Dega Nischal"
+                }
+              ]
+            },
+            {
+              "batter": "Kunal Chandela",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Kunal Chandela",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Nischal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jaiswal, 4 runs",
+              "bowler": "Bhambhu",
+              "non_striker": "Kunal Chandela",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jaiswal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Kunal Chandela",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Kunal Chandela",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Kunal Chandela"
+                }
+              ]
+            },
+            {
+              "batter": "Raichandani, no run",
+              "bowler": "Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, no run",
+              "bowler": "Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 2 runs",
+              "bowler": "Singh",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jaiswal, 1 run",
+              "bowler": "Bhambhu",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 1 run",
+              "bowler": "Bhambhu",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Bhambhu",
+              "non_striker": "Raichandani, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Bhambhu",
+              "non_striker": "Raichandani, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Bhambhu",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, no run",
+              "bowler": "Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 4 runs",
+              "bowler": "Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Harsh",
+              "non_striker": "Raichandani, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Raichandani, no run",
+              "bowler": "Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 1 run",
+              "bowler": "Harsh",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Raichandani, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 1 run",
+              "bowler": "Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Raichandani, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, 1 run",
+              "bowler": "Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Raichandani, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, no run",
+              "bowler": "Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Raichandani, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Lakshya Raichandani",
+              "bowler": "Mohit Changra",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Raichandani, out!",
+              "bowler": "Changra",
+              "non_striker": "Lakshya Raichandani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Lakshya Raichandani"
+                }
+              ]
+            },
+            {
+              "batter": "Sudha, no run",
+              "bowler": "Changra",
+              "non_striker": "Raichandani, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Avneesh Sudha",
+              "bowler": "Mohit Changra",
+              "non_striker": "Sudha, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, 1 run",
+              "bowler": "Changra",
+              "non_striker": "Avneesh Sudha",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sudha, 1 run",
+              "bowler": "Changra",
+              "non_striker": "Jaiswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sudha, no run",
+              "bowler": "Singh",
+              "non_striker": "Sudha, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Avneesh Sudha",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Sudha, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Avneesh Sudha",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Sudha, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Avneesh Sudha",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Sudha, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Avneesh Sudha",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Sudha, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Avneesh Sudha"
+                }
+              ]
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Singh",
+              "non_striker": "Sudha, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Mohit Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, 1 run",
+              "bowler": "Changra",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Singh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Singh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Singh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jaiswal, no run",
+              "bowler": "Singh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jaiswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Mohit Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Mohit Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Tejasvi Jaiswal",
+                  "fielders": [
+                    {
+                      "name": "Karan Lamba"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mohit Changra",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Chaudhary, no run",
+              "bowler": "Changra",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mohit Changra",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mohit Changra",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mohit Changra",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mohit Changra",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mohit Changra",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Singh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suchith, 4 runs",
+              "bowler": "Choudhary",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 4 runs",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chaudhary, no run",
+              "bowler": "Lomror",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chaudhary, no run",
+              "bowler": "Lomror",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Suchith, 1 run",
+              "bowler": "Choudhary",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Suchith, 1 run",
+              "bowler": "Choudhary",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Chaudhary, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Chaudhary, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Chaudhary, no run",
+              "bowler": "Harsh",
+              "non_striker": "Yuvraj Chaudhary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Chaudhary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Suchith, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Yuvraj Chaudhary",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Yuvraj Chaudhary"
+                }
+              ]
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Harsh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Harsh",
+              "non_striker": "Suchith, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Jagadeesha Suchith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Jagadeesha Suchith",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Jagadeesha Suchith"
+                }
+              ]
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, 1 run",
+              "bowler": "Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Harsh",
+              "non_striker": "Rawat, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Harsh",
+              "non_striker": "Rawat, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Choudhary",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, 4 runs",
+              "bowler": "Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mishra, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Singh",
+              "non_striker": "Mishra, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, 1 run",
+              "bowler": "Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Harsh",
+              "non_striker": "Rawat, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Harsh",
+              "non_striker": "Rawat, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Harsh",
+              "non_striker": "Rawat, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Harsh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, no run",
+              "bowler": "Singh",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mishra, 1 run",
+              "bowler": "Singh",
+              "non_striker": "Mishra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, 1 run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Mishra",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mishra, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Saurabh Rawat",
+              "bowler": "Mohit Changra",
+              "non_striker": "Mayank Mishra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Changra",
+              "non_striker": "Saurabh Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Aniket Choudhary": {
-          "overs": "1.0",
+          "overs": "11.0",
           "maidens": 0,
-          "runs": 4,
-          "wickets": 0,
-          "dots": 5,
-          "fours": 1,
+          "runs": 42,
+          "wickets": 1,
+          "dots": 47,
+          "fours": 7,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Danish Bhambhu": {
-          "overs": "1.0",
+          "overs": "4.0",
           "maidens": 0,
-          "runs": 8,
+          "runs": 21,
           "wickets": 0,
-          "dots": 4,
-          "fours": 2,
+          "dots": 15,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Mohit Changra": {
-          "overs": "1.0",
-          "maidens": 1,
-          "runs": 0,
-          "wickets": 0,
-          "dots": 6,
+          "overs": "8.0",
+          "maidens": 2,
+          "runs": 13,
+          "wickets": 2,
+          "dots": 37,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Kookna Ajay Singh": {
+          "overs": "23.3",
+          "maidens": 6,
+          "runs": 57,
+          "wickets": 3,
+          "dots": 106,
+          "fours": 6,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Vishal Harsh": {
+          "overs": "12.0",
+          "maidens": 0,
+          "runs": 29,
+          "wickets": 1,
+          "dots": 49,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Mahipal Lomror": {
           "overs": "1.0",
           "maidens": 0,
           "runs": 2,
           "wickets": 0,
           "dots": 4,
           "fours": 0,
-          "sixes": 0,
-          "wides": 0,
-          "noballs": 0
-        },
-        "Vishal Harsh": {
-          "overs": "1.0",
-          "maidens": 0,
-          "runs": 4,
-          "wickets": 0,
-          "dots": 5,
-          "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
