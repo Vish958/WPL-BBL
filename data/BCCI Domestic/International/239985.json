@@ -32,9 +32,9 @@
       },
       {
         "day": 3,
-        "status": "in play",
-        "score": "Rajasthan lead Uttarakhand by 117 runs with 9 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "38/0 in 9.0 ov",
+        "time": "2026-10-28 11:28:05.30"
       }
     ],
     "event": {
@@ -45,9 +45,9 @@
     "match_timing": {
       "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 24.0,
-      "overs_remaining_today": 66.0,
-      "balls_remaining_today": 396,
+      "overs_bowled": 9.0,
+      "overs_remaining_today": 81.0,
+      "balls_remaining_today": 486,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -70,7 +70,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Rajasthan lead Uttarakhand by 117 runs with 9 wickets remaining"
+      "summary": "Uttarakhand require 331 runs to win with 10 wickets remaining"
     },
     "players": {
       "Uttarakhand": [
@@ -14544,59 +14544,7032 @@
               "session": 1
             }
           ]
+        },
+        {
+          "over": 24,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Mahipal Lomror",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahipal Lomror",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Mahipal Lomror"
+                }
+              ]
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Sachin Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Sachin Yadav",
+                  "fielders": [
+                    {
+                      "name": "Dega Nischal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Kartik Sharma",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kartik Sharma",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kartik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kartik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kartik Sharma",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kartik Sharma",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Kartik Sharma"
+                }
+              ]
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Jagadeesha Suchith",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Lakshya Raichandani",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Lakshya Raichandani",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Lakshya Raichandani",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Lakshya Raichandani",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Lakshya Raichandani",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Lakshya Raichandani",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Deepak Dhapola",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Yuvraj Chaudhary",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 92,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 93,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 94,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Avneesh Sudha",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 95,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 96,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 97,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 98,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 99,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3,
+              "extras": {
+                "byes": 2
+              }
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kunal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kunal Rathore",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Kunal Rathore",
+                  "fielders": [
+                    {
+                      "name": "Kunal Chandela"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Kookna Ajay Singh",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kookna Ajay Singh",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 100,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kookna Ajay Singh",
+              "bowler": "Devendra Bora",
+              "non_striker": "Karan Lamba",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Devendra Bora",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 101,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Karan Lamba",
+              "bowler": "Mayank Mishra",
+              "non_striker": "Kookna Ajay Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Devendra Bora": {
-          "overs": "6.0",
-          "maidens": 2,
-          "runs": 10,
+          "overs": "18.0",
+          "maidens": 4,
+          "runs": 55,
           "wickets": 0,
-          "dots": 29,
-          "fours": 1,
+          "dots": 77,
+          "fours": 8,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Mayank Mishra": {
-          "overs": "9.0",
-          "maidens": 0,
-          "runs": 19,
-          "wickets": 1,
-          "dots": 38,
-          "fours": 1,
-          "sixes": 0,
+          "overs": "32.4",
+          "maidens": 2,
+          "runs": 115,
+          "wickets": 3,
+          "dots": 118,
+          "fours": 7,
+          "sixes": 2,
           "wides": 0,
           "noballs": 0
         },
         "Avneesh Sudha": {
-          "overs": "6.0",
-          "maidens": 3,
-          "runs": 5,
-          "wickets": 0,
-          "dots": 31,
-          "fours": 0,
+          "overs": "28.0",
+          "maidens": 7,
+          "runs": 50,
+          "wickets": 1,
+          "dots": 129,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Jagadeesha Suchith": {
-          "overs": "2.0",
+          "overs": "13.0",
           "maidens": 0,
-          "runs": 2,
-          "wickets": 0,
-          "dots": 10,
-          "fours": 0,
+          "runs": 31,
+          "wickets": 1,
+          "dots": 55,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Deepak Dhapola": {
+          "overs": "7.0",
+          "maidens": 1,
+          "runs": 20,
+          "wickets": 0,
+          "dots": 29,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Lakshya Raichandani": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 2,
+          "wickets": 0,
+          "dots": 4,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Yuvraj Chaudhary": {
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 9,
+          "wickets": 0,
+          "dots": 6,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    },
+    {
+      "team": "Uttarakhand",
+      "overs": [
+        {
+          "over": 0,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Kookna Ajay Singh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Vishal Harsh",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mahipal Lomror",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Tejasvi Jaiswal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Dega Nischal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Dega Nischal",
+              "bowler": "Mohit Changra",
+              "non_striker": "Tejasvi Jaiswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Aniket Choudhary": {
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 0,
+          "dots": 11,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Kookna Ajay Singh": {
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 0,
+          "dots": 12,
+          "fours": 1,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Vishal Harsh": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 7,
+          "wickets": 0,
+          "dots": 3,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Mahipal Lomror": {
           "overs": "1.0",
           "maidens": 0,
           "runs": 1,
           "wickets": 0,
           "dots": 5,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Mohit Changra": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 2,
+          "wickets": 0,
+          "dots": 4,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
