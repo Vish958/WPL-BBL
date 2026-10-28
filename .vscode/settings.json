@@ -1,0 +1,8 @@
+{
+  "python.analysis.extraPaths": [
+    "/Users/vishwesh/Downloads/CricketInsights-main/CricketInsights-1/cricketinsights"
+  ],
+  "python.autoComplete.extraPaths": [
+    "/Users/vishwesh/Downloads/CricketInsights-main/CricketInsights-1/cricketinsights"
+  ]
+}

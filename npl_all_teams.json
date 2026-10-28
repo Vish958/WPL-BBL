@@ -1,0 +1,597 @@
+{
+  "league": "Nepal Premier League 2026",
+  "teams": {
+    "Biratnagar Kings": [
+      {
+        "first_name": "Andre",
+        "last_name": "Russell"
+      },
+      {
+        "first_name": "Angelo",
+        "last_name": "Mathews"
+      },
+      {
+        "first_name": "Aprajit",
+        "last_name": "Poudel"
+      },
+      {
+        "first_name": "Ayush",
+        "last_name": "Neupane"
+      },
+      {
+        "first_name": "Basir",
+        "last_name": "Ahamad"
+      },
+      {
+        "first_name": "Dhananjaya",
+        "last_name": "Lakshan"
+      },
+      {
+        "first_name": "Dilsad",
+        "last_name": "Ali"
+      },
+      {
+        "first_name": "Imran",
+        "last_name": "Sheikh"
+      },
+      {
+        "first_name": "Lokesh",
+        "last_name": "Bam"
+      },
+      {
+        "first_name": "Narayan",
+        "last_name": "Joshi"
+      },
+      {
+        "first_name": "Naren",
+        "last_name": "Saud"
+      },
+      {
+        "first_name": "Pratik",
+        "last_name": "Shrestha"
+      },
+      {
+        "first_name": "Pratish",
+        "last_name": "Gc"
+      },
+      {
+        "first_name": "Ruben",
+        "last_name": "Trumpelmann"
+      },
+      {
+        "first_name": "Rupesh Kumar",
+        "last_name": "Singh"
+      },
+      {
+        "first_name": "Sahil",
+        "last_name": "Patel"
+      },
+      {
+        "first_name": "Sandeep",
+        "last_name": "Lamichhane"
+      },
+      {
+        "first_name": "Subash",
+        "last_name": "Bhandari"
+      },
+      {
+        "first_name": "Sujan",
+        "last_name": "Thapaliya"
+      },
+      {
+        "first_name": "Sunny",
+        "last_name": "BK"
+      },
+      {
+        "first_name": "Suryanshu",
+        "last_name": "Koirala"
+      }
+    ],
+    "Chitwan Rhinos": [
+      {
+        "first_name": "Arjun",
+        "last_name": "Saud"
+      },
+      {
+        "first_name": "Ashok",
+        "last_name": "Dhami"
+      },
+      {
+        "first_name": "Bibek Kumar",
+        "last_name": "Yadav"
+      },
+      {
+        "first_name": "Bipin",
+        "last_name": "Rawal"
+      },
+      {
+        "first_name": "Deepak",
+        "last_name": "Bohara"
+      },
+      {
+        "first_name": "Dev",
+        "last_name": "Khanal"
+      },
+      {
+        "first_name": "Gautam",
+        "last_name": "Kc"
+      },
+      {
+        "first_name": "Harmeet",
+        "last_name": "Singh"
+      },
+      {
+        "first_name": "Kalim",
+        "last_name": "Sana"
+      },
+      {
+        "first_name": "Kamal Singh",
+        "last_name": "Airee"
+      },
+      {
+        "first_name": "Kamil",
+        "last_name": "Mishara"
+      },
+      {
+        "first_name": "Kushal",
+        "last_name": "Malla"
+      },
+      {
+        "first_name": "Mousom",
+        "last_name": "Dhakal"
+      },
+      {
+        "first_name": "Ranjeet",
+        "last_name": "Kumar"
+      },
+      {
+        "first_name": "Ravi",
+        "last_name": "Bopara"
+      },
+      {
+        "first_name": "Rijan",
+        "last_name": "Dhakal"
+      },
+      {
+        "first_name": "Shakib Al",
+        "last_name": "Hasan"
+      },
+      {
+        "first_name": "Usama",
+        "last_name": "Mir"
+      }
+    ],
+    "Janakpur Bolts": [
+      {
+        "first_name": "Aaditya",
+        "last_name": "Mahata"
+      },
+      {
+        "first_name": "Abhishek",
+        "last_name": "Tiwari"
+      },
+      {
+        "first_name": "Amar Singh",
+        "last_name": "Rautela"
+      },
+      {
+        "first_name": "Anil",
+        "last_name": "Sah"
+      },
+      {
+        "first_name": "Ashutosh",
+        "last_name": "Pandey"
+      },
+      {
+        "first_name": "Bikash",
+        "last_name": "Aagri"
+      },
+      {
+        "first_name": "Bishal",
+        "last_name": "Patel"
+      },
+      {
+        "first_name": "Bishal",
+        "last_name": "Shusling"
+      },
+      {
+        "first_name": "Charith",
+        "last_name": "Asalanka"
+      },
+      {
+        "first_name": "Hunain",
+        "last_name": "Shah"
+      },
+      {
+        "first_name": "James",
+        "last_name": "Neesham"
+      },
+      {
+        "first_name": "Lalit",
+        "last_name": "Rajbanshi"
+      },
+      {
+        "first_name": "Mayan",
+        "last_name": "Yadav"
+      },
+      {
+        "first_name": "Moeen",
+        "last_name": "Ali"
+      },
+      {
+        "first_name": "Rit",
+        "last_name": "Gautam"
+      },
+      {
+        "first_name": "Santosh",
+        "last_name": "Karki"
+      },
+      {
+        "first_name": "Sikandar",
+        "last_name": "Raza"
+      },
+      {
+        "first_name": "Trit Raj",
+        "last_name": "Das"
+      }
+    ],
+    "Karnali Yaks": [
+      {
+        "first_name": "Akbar",
+        "last_name": "Ali"
+      },
+      {
+        "first_name": "Ariful",
+        "last_name": "Islam"
+      },
+      {
+        "first_name": "Bipin",
+        "last_name": "Sharma"
+      },
+      {
+        "first_name": "David",
+        "last_name": "Miller"
+      },
+      {
+        "first_name": "Deepak",
+        "last_name": "Dumre"
+      },
+      {
+        "first_name": "Dipendra",
+        "last_name": "Rawat"
+      },
+      {
+        "first_name": "Diwan",
+        "last_name": "Pun"
+      },
+      {
+        "first_name": "Gulshan",
+        "last_name": "Jha"
+      },
+      {
+        "first_name": "Hikmat Bahadur",
+        "last_name": "Shahi"
+      },
+      {
+        "first_name": "Hussain",
+        "last_name": "Talat"
+      },
+      {
+        "first_name": "Nandan",
+        "last_name": "Yadav"
+      },
+      {
+        "first_name": "Pawan",
+        "last_name": "Sarraf"
+      },
+      {
+        "first_name": "Sachin",
+        "last_name": "Sharma"
+      },
+      {
+        "first_name": "Sahibzada",
+        "last_name": "Farhan"
+      },
+      {
+        "first_name": "Shubh",
+        "last_name": "Kansakar"
+      },
+      {
+        "first_name": "Sompal",
+        "last_name": "Kami"
+      },
+      {
+        "first_name": "Surya",
+        "last_name": "Tamang"
+      },
+      {
+        "first_name": "Unish Bikram",
+        "last_name": "Singh"
+      },
+      {
+        "first_name": "Yuvraj",
+        "last_name": "Khatri"
+      }
+    ],
+    "Kathmandu Gurkhas": [
+      {
+        "first_name": "Bhim",
+        "last_name": "Sharki"
+      },
+      {
+        "first_name": "David",
+        "last_name": "Warner"
+      },
+      {
+        "first_name": "Dayanand",
+        "last_name": "Mandal"
+      },
+      {
+        "first_name": "Dev",
+        "last_name": "Shah"
+      },
+      {
+        "first_name": "Karan",
+        "last_name": "Kc"
+      },
+      {
+        "first_name": "Krishna",
+        "last_name": "Paudel"
+      },
+      {
+        "first_name": "Mohammad Aadil",
+        "last_name": "Alam"
+      },
+      {
+        "first_name": "Prasiddha",
+        "last_name": "Jaishi"
+      },
+      {
+        "first_name": "Rashid",
+        "last_name": "Khan"
+      },
+      {
+        "first_name": "Sahan",
+        "last_name": "Arachchige"
+      },
+      {
+        "first_name": "Sam",
+        "last_name": "Heazlett"
+      },
+      {
+        "first_name": "Santosh",
+        "last_name": "Yadav"
+      },
+      {
+        "first_name": "Shahab",
+        "last_name": "Alam"
+      },
+      {
+        "first_name": "Shubham",
+        "last_name": "Ranjane"
+      },
+      {
+        "first_name": "Sonu",
+        "last_name": "Devkota"
+      }
+    ],
+    "Lumbini Lions": [
+      {
+        "first_name": "Aakash",
+        "last_name": "Tripathi"
+      },
+      {
+        "first_name": "Aasif",
+        "last_name": "Sheikh"
+      },
+      {
+        "first_name": "Abhishesh",
+        "last_name": "Gautam"
+      },
+      {
+        "first_name": "Ajay",
+        "last_name": "Chauhan"
+      },
+      {
+        "first_name": "Arniko Prasad",
+        "last_name": "Yadav"
+      },
+      {
+        "first_name": "Dilip",
+        "last_name": "Nath"
+      },
+      {
+        "first_name": "Dinesh",
+        "last_name": "Adhikari"
+      },
+      {
+        "first_name": "Durgesh",
+        "last_name": "Gupta"
+      },
+      {
+        "first_name": "D\u2019Arcy",
+        "last_name": "Short"
+      },
+      {
+        "first_name": "Kishor",
+        "last_name": "Mahato"
+      },
+      {
+        "first_name": "Niroshan",
+        "last_name": "Dickwella"
+      },
+      {
+        "first_name": "Rohit",
+        "last_name": "Paudel"
+      },
+      {
+        "first_name": "Shamim",
+        "last_name": "Hossain"
+      },
+      {
+        "first_name": "Sher",
+        "last_name": "Malla"
+      },
+      {
+        "first_name": "Sundeep",
+        "last_name": "Jora"
+      },
+      {
+        "first_name": "Tilak",
+        "last_name": "Bhandari"
+      }
+    ],
+    "Pokhara Avengers": [
+      {
+        "first_name": "Aakash",
+        "last_name": "Chand"
+      },
+      {
+        "first_name": "Arjun",
+        "last_name": "Gharti"
+      },
+      {
+        "first_name": "Arjun",
+        "last_name": "Kumal"
+      },
+      {
+        "first_name": "Bibek Rana",
+        "last_name": "Magar"
+      },
+      {
+        "first_name": "Bipin",
+        "last_name": "Acharya"
+      },
+      {
+        "first_name": "Bipin",
+        "last_name": "Khatri"
+      },
+      {
+        "first_name": "Chamika",
+        "last_name": "Karunaratne"
+      },
+      {
+        "first_name": "Dinesh",
+        "last_name": "Kharel"
+      },
+      {
+        "first_name": "Iftikhar",
+        "last_name": "Ahmed"
+      },
+      {
+        "first_name": "KS",
+        "last_name": "Bharat"
+      },
+      {
+        "first_name": "Kiran",
+        "last_name": "Thagunna"
+      },
+      {
+        "first_name": "Kushal",
+        "last_name": "Bhurtel"
+      },
+      {
+        "first_name": "Mahedi",
+        "last_name": "Hasan"
+      },
+      {
+        "first_name": "Mark",
+        "last_name": "Watt"
+      },
+      {
+        "first_name": "Mohammad",
+        "last_name": "Saifuddin"
+      },
+      {
+        "first_name": "Pratik",
+        "last_name": "Pokharel"
+      },
+      {
+        "first_name": "Sagar",
+        "last_name": "Dhakal"
+      },
+      {
+        "first_name": "Salahuddin",
+        "last_name": "Khan"
+      },
+      {
+        "first_name": "Sudip",
+        "last_name": "Aryal"
+      }
+    ],
+    "Sudurpaschim Royals": [
+      {
+        "first_name": "Aarif",
+        "last_name": "Sheikh"
+      },
+      {
+        "first_name": "Abinash",
+        "last_name": "Bohara"
+      },
+      {
+        "first_name": "Ayub",
+        "last_name": "Chand"
+      },
+      {
+        "first_name": "Binod",
+        "last_name": "Bhandari"
+      },
+      {
+        "first_name": "Brandon",
+        "last_name": "Mcmullen"
+      },
+      {
+        "first_name": "Dipak",
+        "last_name": "Bohara"
+      },
+      {
+        "first_name": "Dipendra Singh",
+        "last_name": "Airee"
+      },
+      {
+        "first_name": "Fabian",
+        "last_name": "Allen"
+      },
+      {
+        "first_name": "Hemant",
+        "last_name": "Dhami"
+      },
+      {
+        "first_name": "Hikmat",
+        "last_name": "Mahara"
+      },
+      {
+        "first_name": "Ishan",
+        "last_name": "Pandey"
+      },
+      {
+        "first_name": "Milan",
+        "last_name": "Bohara"
+      },
+      {
+        "first_name": "Sachin",
+        "last_name": "Bhatt"
+      },
+      {
+        "first_name": "Scott",
+        "last_name": "Kuggeleijn"
+      },
+      {
+        "first_name": "Sherfane",
+        "last_name": "Rutherford"
+      },
+      {
+        "first_name": "Smit",
+        "last_name": "Patel"
+      },
+      {
+        "first_name": "Tek",
+        "last_name": "Rawat"
+      },
+      {
+        "first_name": "Tek Raj",
+        "last_name": "Thalal"
+      }
+    ]
+  }
+}
