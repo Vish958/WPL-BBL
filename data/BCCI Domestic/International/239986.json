@@ -1,20 +1,21 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-10-27",
+    "created": "2026-10-28",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": "Chennai",
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "107/9 in 51.0 ov",
         "time": "2026-10-27 11:11:58.75"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Railways lead Tamil Nadu by 126 runs with 1 wicket remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,11 +43,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 51.0,
-      "overs_remaining_today": 39.0,
-      "balls_remaining_today": 234,
+      "overs_bowled": 51.5,
+      "overs_remaining_today": 38.1,
+      "balls_remaining_today": 229,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -13839,15 +13846,82 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 51,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Sai Kishore",
+              "non_striker": "Pradhyumn Parikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Sai Kishore",
+              "non_striker": "Pradhyumn Parikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Sai Kishore",
+              "non_striker": "Pradhyumn Parikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Sai Kishore",
+              "non_striker": "Pradhyumn Parikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Sai Kishore",
+              "non_striker": "Pradhyumn Parikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Sai Kishore": {
-          "overs": "17.0",
+          "overs": "17.5",
           "maidens": 5,
           "runs": 38,
           "wickets": 4,
-          "dots": 79,
+          "dots": 84,
           "fours": 3,
           "sixes": 0,
           "wides": 0,

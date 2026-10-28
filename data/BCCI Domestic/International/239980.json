@@ -1,20 +1,21 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-10-27",
+    "created": "2026-10-28",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": "Ranchi",
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "131/4 in 47.0 ov",
         "time": "2026-10-27 11:03:12.94"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Jharkhand trail Delhi by 384 runs with 6 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,7 +43,7 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
       "overs_bowled": 47.0,
       "overs_remaining_today": 43.0,

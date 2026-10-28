@@ -1,20 +1,21 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-10-27",
+    "created": "2026-10-28",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "297/7 in 95.0 ov",
         "time": "2026-10-27 11:32:49.99"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Karnataka lead Tripura by 104 runs with 3 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,9 +43,9 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 95.0,
+      "overs_bowled": 95.1,
       "overs_remaining_today": 0.0,
       "balls_remaining_today": 0,
       "fixed_projection": {
@@ -63,7 +70,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Karnataka lead Tripura by 103 runs with 3 wickets remaining"
+      "summary": "Karnataka lead Tripura by 104 runs with 3 wickets remaining"
     },
     "players": {
       "Karnataka": [
@@ -14455,13 +14462,32 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 95,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Manvanth Kumar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Manisankar Murasingh": {
-          "overs": "14.0",
+          "overs": "14.1",
           "maidens": 5,
-          "runs": 38,
+          "runs": 39,
           "wickets": 0,
           "dots": 65,
           "fours": 6,

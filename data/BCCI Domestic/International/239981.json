@@ -1,20 +1,21 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-10-27",
+    "created": "2026-10-28",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": "Pune",
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "278/9 in 100.0 ov",
         "time": "2026-10-27 11:38:20.38"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Maharashtra lead Gujarat by 55 runs with 1 wicket remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,9 +43,9 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 100.0,
+      "overs_bowled": 100.2,
       "overs_remaining_today": 0.0,
       "balls_remaining_today": 0,
       "fixed_projection": {
@@ -14297,6 +14304,25 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 100,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -14334,11 +14360,11 @@
           "noballs": 0
         },
         "Siddharth Desai": {
-          "overs": "24.0",
+          "overs": "24.1",
           "maidens": 8,
           "runs": 40,
           "wickets": 3,
-          "dots": 117,
+          "dots": 118,
           "fours": 3,
           "sixes": 0,
           "wides": 0,

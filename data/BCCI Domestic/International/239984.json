@@ -1,20 +1,21 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-10-27",
+    "created": "2026-10-28",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "108/2 in 39.0 ov",
         "time": "2026-10-27 11:23:29.95"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Haryana trail Mumbai by 322 runs with 8 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,11 +43,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 39.0,
-      "overs_remaining_today": 51.0,
-      "balls_remaining_today": 306,
+      "overs_bowled": 39.1,
+      "overs_remaining_today": 50.5,
+      "balls_remaining_today": 305,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -13774,6 +13781,25 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 39,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nishant Sindhu",
+              "bowler": "Mohit Avasthi",
+              "non_striker": "Dheeru Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -13789,11 +13815,11 @@
           "noballs": 0
         },
         "Mohit Avasthi": {
-          "overs": "3.0",
+          "overs": "3.1",
           "maidens": 0,
           "runs": 13,
           "wickets": 0,
-          "dots": 12,
+          "dots": 13,
           "fours": 2,
           "sixes": 0,
           "wides": 0,
