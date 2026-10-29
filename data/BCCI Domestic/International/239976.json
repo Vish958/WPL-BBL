@@ -7,15 +7,16 @@
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 3,
+    "current_day": 4,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 3",
+    "day_status": "Match Drawn (Punjab win by 1st innings)",
     "days_played": [
       1,
       2,
-      3
+      3,
+      4
     ],
     "days_summary": [
       {
@@ -35,6 +36,12 @@
         "status": "stumps",
         "score": "57/0 in 24.0 ov",
         "time": "2026-10-28 11:09:00.31"
+      },
+      {
+        "day": 4,
+        "status": "end of match",
+        "score": "240/6 in 78.0 ov",
+        "time": "2026-10-29 09:09:04.27"
       }
     ],
     "event": {
@@ -43,17 +50,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 3,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 24.0,
-      "overs_remaining_today": 66.0,
-      "balls_remaining_today": 396,
+      "overs_bowled": 78.0,
+      "overs_remaining_today": 12.0,
+      "balls_remaining_today": 72,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 12.0,
+        "max_overs_with_1hr_extension": 27.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -69,8 +76,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Punjab lead Hyderabad by 108 runs with 10 wickets remaining"
+      "result": "draw",
+      "summary": "Match Drawn (Punjab win by 1st innings)"
     },
     "players": {
       "Hyderabad": [
@@ -21767,60 +21774,4444 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 24,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harnoor Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harnoor Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harnoor Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, 2 runs",
+              "bowler": "Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harnoor Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harnoor Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Readdi",
+              "non_striker": "Harnoor Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Harnoor Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Harnoor Singh",
+                  "fielders": [
+                    {
+                      "name": "Pragnay Reddy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1,
+              "extras": {
+                "legbyes": 2
+              }
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Yadav",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Yadav",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Yadav",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Yadav",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Yadav",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Singh, 4 runs",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, no run",
+              "bowler": "Readdi",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1,
+              "extras": {
+                "byes": 2
+              }
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Chama Milind",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Chama Milind",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Chama Milind",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, 6 runs",
+              "bowler": "Anikethreddy",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Singh, 6 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Singh, 1 run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, 6 runs",
+              "bowler": "Anikethreddy",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Malhotra, 6 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Malhotra, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Chama Milind",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Malhotra, out!",
+              "bowler": "Milind",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Vihaan Malhotra"
+                }
+              ]
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Chama Milind",
+              "non_striker": "Malhotra, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Chama Milind",
+              "non_striker": "Malhotra, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Singh, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Singh, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Singh, no run",
+              "bowler": "Milind",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Chama Milind",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Chama Milind",
+              "non_striker": "Singh, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Chama Milind",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Singh, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Singh, 1 run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Prabhsimran Singh",
+                  "fielders": [
+                    {
+                      "name": "Kodimela Himateja"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Sidhu, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Sidhu, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Jashanpreet Singh Sidhu"
+                }
+              ]
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Sidhu, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Arora, no run",
+              "bowler": "Readdi",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Arora, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Arora, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Arora, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Arora, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Arora, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Arora, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Arora, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Salil Arora",
+                  "fielders": [
+                    {
+                      "name": "Pragnay Reddy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Chahal, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Chahal, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Chahal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Chahal, 4 runs",
+              "bowler": "Anikethreddy",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Chahal, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Chahal, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, 1 run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Chahal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Chahal, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Varun Goud",
+              "non_striker": "Chahal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Chahal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Chahal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Varun Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Varun Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Varun Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Emanjot Singh Chahal",
+                  "fielders": [
+                    {
+                      "name": "Tanmay Agarwal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Goud",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 1,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Saharan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Tandon, no run",
+              "bowler": "Goud",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Varun Goud",
+              "non_striker": "Tandon, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Tandon, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Tandon, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Tandon, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Tandon, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Harjas Tandon",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Uday Saharan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Saharan, no run",
+              "bowler": "Yadav",
+              "non_striker": "Harjas Tandon",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Chama Milind": {
-          "overs": "3.0",
+          "overs": "7.0",
           "maidens": 1,
-          "runs": 9,
-          "wickets": 0,
-          "dots": 15,
-          "fours": 2,
+          "runs": 22,
+          "wickets": 1,
+          "dots": 31,
+          "fours": 3,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Mende Ruthik Yadav": {
-          "overs": "6.0",
+          "overs": "15.0",
           "maidens": 0,
-          "runs": 14,
+          "runs": 55,
           "wickets": 0,
-          "dots": 26,
-          "fours": 1,
-          "sixes": 0,
+          "dots": 62,
+          "fours": 4,
+          "sixes": 2,
           "wides": 0,
-          "noballs": 0
+          "noballs": 2
         },
         "Tanay Thyagarajan": {
-          "overs": "9.0",
-          "maidens": 0,
-          "runs": 21,
-          "wickets": 0,
-          "dots": 39,
-          "fours": 2,
+          "overs": "23.0",
+          "maidens": 3,
+          "runs": 51,
+          "wickets": 2,
+          "dots": 109,
+          "fours": 6,
           "sixes": 0,
-          "wides": 0,
+          "wides": 1,
           "noballs": 0
         },
         "Rakshan Readdi": {
-          "overs": "4.0",
-          "maidens": 1,
-          "runs": 7,
-          "wickets": 0,
-          "dots": 18,
+          "overs": "11.0",
+          "maidens": 3,
+          "runs": 16,
+          "wickets": 2,
+          "dots": 51,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Gangam Anikethreddy": {
-          "overs": "2.0",
-          "maidens": 0,
-          "runs": 2,
+          "overs": "16.0",
+          "maidens": 2,
+          "runs": 76,
+          "wickets": 1,
+          "dots": 66,
+          "fours": 8,
+          "sixes": 4,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Varun Goud": {
+          "overs": "6.0",
+          "maidens": 1,
+          "runs": 12,
           "wickets": 0,
-          "dots": 10,
-          "fours": 0,
+          "dots": 28,
+          "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

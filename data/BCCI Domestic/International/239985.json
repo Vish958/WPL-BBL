@@ -7,15 +7,16 @@
   "info": {
     "balls_per_over": 6,
     "city": "Dehradun",
-    "current_day": 3,
+    "current_day": 4,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 3",
+    "day_status": "Match Drawn (Rajasthan win by 1st innings)",
     "days_played": [
       1,
       2,
-      3
+      3,
+      4
     ],
     "days_summary": [
       {
@@ -35,6 +36,12 @@
         "status": "stumps",
         "score": "38/0 in 9.0 ov",
         "time": "2026-10-28 11:28:05.30"
+      },
+      {
+        "day": 4,
+        "status": "end of match",
+        "score": "38/0 in 9.0 ov",
+        "time": "2026-10-29 08:42:55.20"
       }
     ],
     "event": {
@@ -43,7 +50,7 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 3,
+      "day": 1,
       "scheduled_daily_overs": 90,
       "overs_bowled": 9.0,
       "overs_remaining_today": 81.0,
@@ -69,8 +76,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Uttarakhand require 331 runs to win with 10 wickets remaining"
+      "result": "draw",
+      "summary": "Match Drawn (Rajasthan win by 1st innings)"
     },
     "players": {
       "Uttarakhand": [

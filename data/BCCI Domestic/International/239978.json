@@ -7,15 +7,16 @@
   "info": {
     "balls_per_over": 6,
     "city": "Rajkot",
-    "current_day": 3,
+    "current_day": 4,
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 3",
+    "day_status": "Saurashtra win by an innings and 12 runs",
     "days_played": [
       1,
       2,
-      3
+      3,
+      4
     ],
     "days_summary": [
       {
@@ -35,6 +36,12 @@
         "status": "stumps",
         "score": "65/7 in 26.0 ov",
         "time": "2026-10-28 11:35:13.11"
+      },
+      {
+        "day": 4,
+        "status": "end of match",
+        "score": "94/10 in 44.0 ov",
+        "time": "2026-10-29 05:02:11.24"
       }
     ],
     "event": {
@@ -43,11 +50,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 3,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 26.0,
-      "overs_remaining_today": 64.0,
-      "balls_remaining_today": 384,
+      "overs_bowled": 44.0,
+      "overs_remaining_today": 46.0,
+      "balls_remaining_today": 276,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -69,8 +76,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Assam trail Saurashtra by 41 runs with 3 wickets remaining"
+      "result": "draw",
+      "summary": "Saurashtra win by an innings and 12 runs"
     },
     "players": {
       "Saurashtra": [
@@ -21921,6 +21928,1451 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 26,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Roy, out!",
+              "bowler": "Bhut",
+              "non_striker": "Hussain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Sibsankar Roy"
+                }
+              ]
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Roy, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Roy, out!",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hussain, 1 run",
+              "bowler": "Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Hussain, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Hussain, 1 run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Hussain, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Hussain, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, 1 run",
+              "bowler": "Jadeja",
+              "non_striker": "Hussain, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Bhut",
+              "non_striker": "Mukhtar Hussain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hussain, no run",
+              "bowler": "Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Hussain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Parth Bhut",
+              "non_striker": "Hussain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Mukhtar Hussain",
+                  "fielders": [
+                    {
+                      "name": "Arpit Vasavada"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Parth Bhut",
+              "non_striker": "Hussain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Deka, no run",
+              "bowler": "Bhut",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Parth Bhut",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Parth Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Deka, no run",
+              "bowler": "Bhut",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Parth Bhut",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Parth Bhut",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Deka, no run",
+              "bowler": "Bhut",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Deka, no run",
+              "bowler": "Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Deka, no run",
+              "bowler": "Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Deka, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Bhut",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Parth Bhut",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, no run",
+              "bowler": "Jadeja",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ravindra Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Thakur, out!",
+              "bowler": "Jadeja",
+              "non_striker": "Thakur, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Mohit Thakur"
+                }
+              ]
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -21936,23 +23388,23 @@
           "noballs": 0
         },
         "Ravindra Jadeja": {
-          "overs": "13.0",
-          "maidens": 2,
-          "runs": 39,
-          "wickets": 1,
-          "dots": 56,
-          "fours": 3,
+          "overs": "22.0",
+          "maidens": 4,
+          "runs": 58,
+          "wickets": 2,
+          "dots": 100,
+          "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Parth Bhut": {
-          "overs": "9.0",
-          "maidens": 5,
-          "runs": 7,
-          "wickets": 6,
-          "dots": 48,
-          "fours": 0,
+          "overs": "18.0",
+          "maidens": 10,
+          "runs": 17,
+          "wickets": 8,
+          "dots": 98,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
