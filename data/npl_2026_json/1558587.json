@@ -39,7 +39,7 @@
         "MRJ Watt",
         "Ariful Islam",
         "D Dumre",
-        "S Sharma",
+        "Hussain Talat",
         "P Sarraf",
         "Akbar Ali",
         "Gulsan Jha",
@@ -493,6 +493,270 @@
                 "batter": 1,
                 "extras": 0,
                 "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Y Khatri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Y Khatri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Y Khatri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Y Khatri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Y Khatri",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "deliveries": [
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Hussain Talat",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Hussain Talat",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "deliveries": [
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "UBS Thakuri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "UBS Thakuri",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "UBS Thakuri",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "UBS Thakuri",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "UBS Thakuri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "UBS Thakuri",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "wickets": [
+                {
+                  "kind": "4",
+                  "player_out": "GSNFG Jayasuriya"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "deliveries": [
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "Unknown",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "AD Mathews",
+              "bowler": "Hussain Talat",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "AD Mathews",
+              "bowler": "Hussain Talat",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "AD Mathews",
+              "bowler": "Hussain Talat",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "AD Mathews",
+              "bowler": "Hussain Talat",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "AD Mathews",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Hussain Talat",
+              "non_striker": "AD Mathews",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
               }
             }
           ]

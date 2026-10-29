@@ -645,9 +645,7 @@ def parse_deliveries_and_metrics(matches_list: List[Dict[str, Any]]):
         "bowling_team", "bowler", "runs", "sequence", "fours", "sixes", "wickets"
     ]
     bf_cols = [
-        "match_id", "match", "season", "innings", "team", "batter",
-        "runs_1_10", "balls_1_10", "runs_11_20", "balls_11_20", "runs_21_30", "balls_21_30",
-        "runs_31_40", "balls_31_40", "runs_41_50", "balls_41_50", "runs_51_60", "balls_51_60"
+        "match_id", "innings", "team", "batter", "runs_batter", "is_wicket"
     ]
 
     df_deliv = pd.DataFrame(deliv_records, columns=deliv_cols) if deliv_records else pd.DataFrame(columns=deliv_cols)
@@ -662,7 +660,7 @@ def parse_deliveries_and_metrics(matches_list: List[Dict[str, Any]]):
 # Batter SR Progression Table (Designed exactly like local_t20_metrics.py)
 # ---------------------------------------------------------------------------
 def compute_batter_sr_progression_table(df_bf: pd.DataFrame, min_balls: int = 1) -> pd.DataFrame:
-    if df_bf.empty:
+    if df_bf.empty or "runs_batter" not in df_bf.columns:
         return pd.DataFrame()
 
     df_work = df_bf.copy()
@@ -764,7 +762,7 @@ st.sidebar.subheader("Live Telemetry Status")
 auto_refresh = st.sidebar.checkbox("Auto-refresh live matches (every 30s)", value=True)
 
 col_sync1, col_sync2 = st.sidebar.columns(2)
-if col_sync1.button("Sync Now", use_container_width=True):
+if col_sync1.button("Sync Now", width="stretch"):
     now = time.time()
     if now - st.session_state.last_sync_time < 10:
         st.session_state.sync_feedback = "Cooldown active (wait 10s to prevent rate-limiting)."
@@ -775,7 +773,7 @@ if col_sync1.button("Sync Now", use_container_width=True):
         st.session_state.sync_feedback = f"Synced at {datetime.now().strftime('%H:%M:%S')} (updated {new_synced} matches)"
         st.rerun()
 
-if col_sync2.button("Reload Data", use_container_width=True):
+if col_sync2.button("Reload Data", width="stretch"):
     load_npl_2026_matches.clear()
     st.session_state.sync_feedback = "Cache cleared and data reloaded."
     st.rerun()
@@ -900,7 +898,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
         p_cols = st.columns(3)
 
         for i, ph in enumerate(phases):
-            df_p = df_deliv_view[df_deliv_view["phase"] == ph]
+            df_p = df_deliv_view[df_deliv_view["phase"] == ph] if (not df_deliv_view.empty and "phase" in df_deliv_view.columns) else pd.DataFrame()
             p_runs = int(df_p["runs_total"].sum()) if not df_p.empty else 0
             p_balls = int(df_p["is_legal"].sum()) if not df_p.empty else 0
             p_wkts = int(df_p["is_wicket"].sum()) if not df_p.empty else 0
@@ -965,7 +963,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                     "Team", "Opponent", "Date", "Innings", "PP Score", "PP Runs", "PP Balls",
                     "PP RR", "Boundaries", "4s", "6s", "Dots", "Dot %", "Wickets"
                 ]].sort_values("Date", ascending=False),
-                use_container_width=True,
+                width="stretch",
                 hide_index=True
             )
 
@@ -1002,7 +1000,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                     "Dot_%": "Dot %",
                     "Run_Rate": "Run Rate (RPO)"
                 }),
-                use_container_width=True,
+                width="stretch",
                 hide_index=True
             )
 
@@ -1034,7 +1032,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                 height=380,
                 margin=dict(l=20, r=20, t=30, b=20)
             )
-            st.plotly_chart(fig_phase, use_container_width=True)
+            st.plotly_chart(fig_phase, width="stretch")
 
     # -----------------------------------------------------------------------
     # TAB 2: STRIKE RATE COMPARISON BY BALL BUCKETS (local_t20_metrics style)
@@ -1055,7 +1053,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
 
             st.dataframe(
                 sr_table,
-                use_container_width=True,
+                width="stretch",
                 hide_index=True
             )
 
@@ -1090,7 +1088,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                     labels={"Window": "Balls Faced Window", "Strike Rate": "Strike Rate (SR)"}
                 )
                 fig_curve.update_layout(height=400, margin=dict(l=20, r=20, t=30, b=20))
-                st.plotly_chart(fig_curve, use_container_width=True)
+                st.plotly_chart(fig_curve, width="stretch")
         else:
             st.info("No batter data available matching the ball threshold.")
 
@@ -1126,7 +1124,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                     "Batting Team", "Bowling Team", "Bowler", "Runs Scored",
                     "Delivery Sequence", "4s", "6s", "Wickets"
                 ]],
-                use_container_width=True,
+                width="stretch",
                 hide_index=True
             )
 
@@ -1135,13 +1133,13 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                 bo_cnt = df_big_view["phase"].value_counts().reset_index()
                 bo_cnt.columns = ["Phase", "Count"]
                 fig_bo = px.bar(bo_cnt, x="Phase", y="Count", title="20+ Run Overs by Phase")
-                st.plotly_chart(fig_bo, use_container_width=True)
+                st.plotly_chart(fig_bo, width="stretch")
 
             with c_b2:
                 top_hit = df_big_view["batting_team"].value_counts().reset_index()
                 top_hit.columns = ["Team", "Count"]
                 fig_hit = px.bar(top_hit, x="Count", y="Team", orientation="h", title="20+ Run Overs by Batting Team")
-                st.plotly_chart(fig_hit, use_container_width=True)
+                st.plotly_chart(fig_hit, width="stretch")
 
     # -----------------------------------------------------------------------
     # TAB 4: MATCH-WISE PARTNERSHIPS
@@ -1184,7 +1182,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                         "4s", "6s", "Dots", "Batter 1", "Batter 1 Score",
                         "Batter 2", "Batter 2 Score", "Over Range", "Dismissal"
                     ]],
-                    use_container_width=True,
+                    width="stretch",
                     hide_index=True
                 )
 
@@ -1197,7 +1195,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                     labels={"wicket_label": "Wicket", "runs": "Partnership Runs"}
                 )
                 fig_p.update_layout(height=280, margin=dict(l=20, r=20, t=30, b=20))
-                st.plotly_chart(fig_p, use_container_width=True)
+                st.plotly_chart(fig_p, width="stretch")
 
     # -----------------------------------------------------------------------
     # TAB 5: OVER-BY-OVER BREAKDOWN & 3 BOUNDARY RULES
@@ -1271,7 +1269,7 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
                 "4s", "6s", "Dots", "Wickets",
                 "Start Boundary", "End Boundary Only", "Consecutive Start"
             ]],
-            use_container_width=True,
+            width="stretch",
             hide_index=True
         )
 
