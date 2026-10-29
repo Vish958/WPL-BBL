@@ -652,7 +652,7 @@ def compute_batter_sr_progression_table(df_bf: pd.DataFrame, min_balls: int = 1)
 # Sidebar UI: Controls & Filters (Season 2026 Only, No Emojis, No Uploader)
 # ---------------------------------------------------------------------------
 if "last_sync_time" not in st.session_state:
-    st.session_state.last_sync_time = time.time()
+    st.session_state.last_sync_time = 0
 if "sync_feedback" not in st.session_state:
     st.session_state.sync_feedback = ""
 
@@ -665,22 +665,29 @@ matches_2026 = load_npl_2026_matches(current_folder_hash)
 # Team Selector
 all_teams_set = set()
 for m in matches_2026:
-    for t in m["teams"]:
+    for t in m.get("teams", []):
         all_teams_set.add(t)
 available_teams = ["All Teams"] + sorted(list(all_teams_set))
 selected_team = st.sidebar.selectbox("Filter by Team:", available_teams, index=0)
 
 if selected_team != "All Teams":
-    team_filtered_matches = [m for m in matches_2026 if selected_team in m["teams"]]
+    team_filtered_matches = [m for m in matches_2026 if selected_team in m.get("teams", [])]
 else:
     team_filtered_matches = matches_2026
 
-# Match Fixture Selector
+# Match Fixture Selector (keyed by selected_team to prevent stale index errors)
 available_match_labels = ["All Matches Aggregated"] + [m["label"] for m in team_filtered_matches]
-selected_match_label = st.sidebar.selectbox("Select Match Fixture:", available_match_labels, index=0)
+selected_match_label = st.sidebar.selectbox(
+    "Select Match Fixture:",
+    available_match_labels,
+    index=0,
+    key=f"fixture_select_{selected_team}"
+)
 
 if selected_match_label != "All Matches Aggregated":
     final_matches = [m for m in team_filtered_matches if m["label"] == selected_match_label]
+    if not final_matches:
+        final_matches = team_filtered_matches
 else:
     final_matches = team_filtered_matches
 
@@ -689,7 +696,8 @@ st.sidebar.markdown("---")
 st.sidebar.subheader("Live Telemetry Status")
 auto_refresh = st.sidebar.checkbox("Auto-refresh live matches (every 30s)", value=True)
 
-if st.sidebar.button("Sync Now", use_container_width=True):
+col_sync1, col_sync2 = st.sidebar.columns(2)
+if col_sync1.button("Sync Now", use_container_width=True):
     now = time.time()
     if now - st.session_state.last_sync_time < 10:
         st.session_state.sync_feedback = "Cooldown active (wait 10s to prevent rate-limiting)."
@@ -698,6 +706,12 @@ if st.sidebar.button("Sync Now", use_container_width=True):
         new_synced = sync_espn_npl_2026()
         load_npl_2026_matches.clear()
         st.session_state.sync_feedback = f"Synced at {datetime.now().strftime('%H:%M:%S')} (updated {new_synced} matches)"
+        st.rerun()
+
+if col_sync2.button("Reload Data", use_container_width=True):
+    load_npl_2026_matches.clear()
+    st.session_state.sync_feedback = "Cache cleared and data reloaded."
+    st.rerun()
 
 if st.session_state.sync_feedback:
     st.sidebar.caption(st.session_state.sync_feedback)
@@ -714,12 +728,32 @@ st.sidebar.info(
 refresh_interval = 30 if auto_refresh else None
 
 @st.fragment(run_every=refresh_interval)
-def render_npl_dashboard(matches_to_render: List[Dict[str, Any]], current_team: str):
+def render_npl_dashboard(current_team: str, current_match_label: str):
+    # Dynamically query latest matches on fragment refresh
+    folder_hash = get_folder_hash(DATA_DIR_2026)
+    all_current_matches = load_npl_2026_matches(folder_hash)
+
+    if current_team != "All Teams":
+        filtered_matches = [m for m in all_current_matches if current_team in m.get("teams", [])]
+    else:
+        filtered_matches = all_current_matches
+
+    if current_match_label != "All Matches Aggregated":
+        matches_to_render = [m for m in filtered_matches if m.get("label") == current_match_label]
+        if not matches_to_render:
+            matches_to_render = filtered_matches
+    else:
+        matches_to_render = filtered_matches
+
     st.title("Nepal Premier League (NPL 2026) Ball-by-Ball Analytics")
     st.caption(f"Analyzing {len(matches_to_render)} Matches | Season: 2026 | Team: {current_team} | Auto-Syncing In-Place")
 
     if not matches_to_render:
         st.warning("No match data found matching the selected filters. Please wait for matches to sync or verify data/npl_2026_json directory.")
+        if st.button("Force Sync & Fetch ESPN Matches Now"):
+            load_npl_2026_matches.clear()
+            sync_espn_npl_2026()
+            st.rerun()
         return
 
     df_deliv, df_ov, df_part, df_big, df_bf = parse_deliveries_and_metrics(matches_to_render)
@@ -1153,4 +1187,4 @@ def render_npl_dashboard(matches_to_render: List[Dict[str, Any]], current_team: 
             hide_index=True
         )
 
-render_npl_dashboard(final_matches, selected_team)
+render_npl_dashboard(selected_team, selected_match_label)

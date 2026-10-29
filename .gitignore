@@ -2,6 +2,8 @@
 data/*
 !data/BCCI Domestic/
 !data/BCCI Domestic/**
+!data/npl_2026_json/
+!data/npl_2026_json/**
 Male_ODI_Data/
 Male\ T20I\ /
 
