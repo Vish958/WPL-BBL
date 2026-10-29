@@ -11,7 +11,7 @@
     "dates": [
       "2026-10-26"
     ],
-    "day_status": "Live Day 4",
+    "day_status": "Match Drawn (Maharashtra win by 1st innings)",
     "days_played": [
       1,
       2,
@@ -39,9 +39,9 @@
       },
       {
         "day": 4,
-        "status": "in play",
-        "score": "Maharashtra require 286 runs to win with 8 wickets remaining",
-        "time": ""
+        "status": "end of match",
+        "score": "141/4 in 47.0 ov",
+        "time": "2026-10-29 11:25:16.86"
       }
     ],
     "event": {
@@ -50,11 +50,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 4,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 19.0,
-      "overs_remaining_today": 71.0,
-      "balls_remaining_today": 426,
+      "overs_bowled": 47.0,
+      "overs_remaining_today": 43.0,
+      "balls_remaining_today": 258,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -76,8 +76,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Maharashtra require 286 runs to win with 8 wickets remaining"
+      "result": "draw",
+      "summary": "Match Drawn (Maharashtra win by 1st innings)"
     },
     "players": {
       "Maharashtra": [
@@ -24884,7 +24884,12 @@
               "wickets": [
                 {
                   "kind": "caught",
-                  "player_out": "Prithvi Shaw"
+                  "player_out": "Prithvi Shaw",
+                  "fielders": [
+                    {
+                      "name": "Manan Hingrajia"
+                    }
+                  ]
                 }
               ]
             },
@@ -25934,6 +25939,2240 @@
               "session": 2
             }
           ]
+        },
+        {
+          "over": 19,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Manan Hingrajia",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Manan Hingrajia",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Manan Hingrajia",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Manan Hingrajia",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Manan Hingrajia",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Manan Hingrajia",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Siddhesh Veer",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Siddhesh Veer",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Siddhesh Veer",
+                  "fielders": [
+                    {
+                      "name": "Aarya Desai"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Harshal Kate",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Harshal Kate",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Harshal Kate",
+                  "fielders": [
+                    {
+                      "name": "Urvil Patel"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": null,
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 5,
+                "extras": 0,
+                "total": 5
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Aarya Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Aarya Desai",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Aarya Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Aarya Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Aarya Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Bawne",
+              "bowler": "Aarya Desai",
+              "non_striker": "Digvijay Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Urvil Patel",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Urvil Patel",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Urvil Patel",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Urvil Patel",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Urvil Patel",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Digvijay Patil",
+              "bowler": "Urvil Patel",
+              "non_striker": "Ankit Bawne",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -25949,24 +28188,24 @@
           "noballs": 0
         },
         "Arzan Nagwaswalla": {
-          "overs": "5.0",
+          "overs": "7.0",
           "maidens": 2,
-          "runs": 14,
+          "runs": 20,
           "wickets": 1,
-          "dots": 26,
-          "fours": 3,
+          "dots": 35,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Siddharth Desai": {
-          "overs": "7.0",
-          "maidens": 1,
-          "runs": 12,
-          "wickets": 1,
-          "dots": 35,
-          "fours": 1,
-          "sixes": 0,
+          "overs": "19.0",
+          "maidens": 6,
+          "runs": 37,
+          "wickets": 2,
+          "dots": 99,
+          "fours": 5,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
@@ -25982,6 +28221,39 @@
           "noballs": 0
         },
         "Vishal Jayswal": {
+          "overs": "12.0",
+          "maidens": 1,
+          "runs": 49,
+          "wickets": 1,
+          "dots": 46,
+          "fours": 5,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Manan Hingrajia": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 1,
+          "wickets": 0,
+          "dots": 5,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Aarya Desai": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 1,
+          "wickets": 0,
+          "dots": 5,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Urvil Patel": {
           "overs": "1.0",
           "maidens": 0,
           "runs": 1,
