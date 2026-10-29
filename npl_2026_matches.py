@@ -60,16 +60,55 @@ def normalize_team_name(name: str) -> str:
 # ---------------------------------------------------------------------------
 # Telemetry Syncer: Checks ESPN Cricinfo Series 1558581 for Live/New Matches
 # ---------------------------------------------------------------------------
+from urllib.parse import urlsplit
+import requests
+try:
+    from akamai.edgeauth import EdgeAuth
+except ImportError:
+    EdgeAuth = None
+
+EDGE_AUTH_KEY = "9ced54a89687e1173e91c1f225fc02abf275a119fda8a41d731d2b04dac95ff5"
+
+def espn_request(method: str, url: str) -> requests.Response:
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    if EdgeAuth:
+        query = urlsplit(url)._replace(scheme="", netloc="").geturl()
+        et = EdgeAuth(key=EDGE_AUTH_KEY, window_seconds=1800, escape_early=True)
+        headers["X-Hsci-Auth-Token"] = et.generate_url_token(query)
+    return requests.request(method, url, headers=headers)
+
+def fetch_espn_innings_comments(series_id: int, match_id: int, inning_num: int) -> list:
+    base_url = (
+        f"https://hs-consumer-api.espncricinfo.com/v1/pages/match/comments"
+        f"?lang=en&seriesId={series_id}&matchId={match_id}"
+        f"&inningNumber={inning_num}&commentType=ALL&sortDirection=ASC"
+    )
+    all_comments = []
+    next_over = None
+    while True:
+        url = base_url + (f"&fromInningOver={next_over}" if next_over else "")
+        resp = espn_request("get", url)
+        if not resp or resp.status_code != 200:
+            break
+        try:
+            data = resp.json()
+        except Exception:
+            break
+        comments = data.get("comments", [])
+        if not comments:
+            break
+        all_comments.extend(comments)
+        next_over = data.get("nextInningOver")
+        if not next_over:
+            break
+    return all_comments
+
 def sync_espn_npl_2026():
     try:
-        # Import cilib utils from CricketInsights if available
-        import sys
-        sys.path.append("/Users/vishwesh/Downloads/CricketInsights-main/CricketInsights-1/cricketinsights")
-        from cilib.cricinfo.utils import request  # type: ignore
-        from pipeline.parsers.espn_commentary import fetch_innings_comments  # type: ignore
-
         sched_url = f"https://hs-consumer-api.espncricinfo.com/v1/pages/series/schedule?lang=en&seriesId={SERIES_ID_2026}"
-        sched_resp = request("get", sched_url)
+        sched_resp = espn_request("get", sched_url)
         if sched_resp.status_code != 200:
             return 0
 
@@ -89,7 +128,7 @@ def sync_espn_npl_2026():
                 continue
 
             sc_url = f"https://hs-consumer-api.espncricinfo.com/v1/pages/match/scorecard?lang=en&seriesId={SERIES_ID_2026}&matchId={mid}"
-            sc_resp = request("get", sc_url)
+            sc_resp = espn_request("get", sc_url)
             if sc_resp.status_code != 200:
                 continue
             sc_data = sc_resp.json()
@@ -111,7 +150,7 @@ def sync_espn_npl_2026():
 
             innings_list = []
             for inn_num in [1, 2]:
-                comments = fetch_innings_comments(SERIES_ID_2026, mid, inn_num)
+                comments = fetch_espn_innings_comments(SERIES_ID_2026, mid, inn_num)
                 if not comments:
                     continue
                 deliv_comments = [c for c in comments if c.get("oversActual") is not None]
