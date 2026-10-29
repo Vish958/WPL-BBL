@@ -763,13 +763,10 @@ auto_refresh = st.sidebar.checkbox("Auto-refresh live matches (every 30s)", valu
 
 col_sync1, col_sync2 = st.sidebar.columns(2)
 if col_sync1.button("Sync Now", width="stretch"):
-    now = time.time()
-    if now - st.session_state.last_sync_time < 10:
-        st.session_state.sync_feedback = "Cooldown active (wait 10s to prevent rate-limiting)."
-    else:
-        st.session_state.last_sync_time = now
+    with st.spinner("Syncing latest live data from ESPN Cricinfo..."):
         new_synced = sync_espn_npl_2026()
         load_npl_2026_matches.clear()
+        st.session_state.last_sync_time = time.time()
         st.session_state.sync_feedback = f"Synced at {datetime.now().strftime('%H:%M:%S')} (updated {new_synced} matches)"
         st.rerun()
 
@@ -788,12 +785,165 @@ st.sidebar.info(
 )
 
 # ---------------------------------------------------------------------------
+# ---------------------------------------------------------------------------
+# Scorecard Parser: Official Batting, Bowling & Extras
+# ---------------------------------------------------------------------------
+KIND_MAP = {
+    "1": "caught",
+    "2": "bowled",
+    "3": "lbw",
+    "4": "caught & bowled",
+    "5": "run out",
+    "6": "stumped",
+    "7": "hit wicket"
+}
+
+def parse_innings_scorecard(inn_obj: Dict[str, Any]) -> Dict[str, Any]:
+    team = inn_obj.get("team", "Unknown")
+    overs = inn_obj.get("overs", [])
+
+    batters = {}
+    bowlers = {}
+    extras = {"byes": 0, "legbyes": 0, "wides": 0, "noballs": 0, "total": 0}
+    fow = []
+    tot_runs, tot_wkts, legal_balls = 0, 0, 0
+
+    for o in overs:
+        for b in o.get("deliveries", []):
+            bat = b.get("batter", "Unknown")
+            bw = b.get("bowler", "Unknown")
+            ns = b.get("non_striker")
+            r_bat = b.get("runs", {}).get("batter", 0)
+            r_tot = b.get("runs", {}).get("total", 0)
+            r_ext = b.get("runs", {}).get("extras", 0)
+            ex = b.get("extras", {})
+            is_w = "wides" in ex
+            is_nb = "noballs" in ex
+            is_legal = not is_w and not is_nb
+            wkts = b.get("wickets", [])
+
+            tot_runs += r_tot
+            if is_legal: legal_balls += 1
+            if "byes" in ex: extras["byes"] += ex["byes"]
+            if "legbyes" in ex: extras["legbyes"] += ex["legbyes"]
+            if "wides" in ex: extras["wides"] += ex["wides"]
+            if "noballs" in ex: extras["noballs"] += ex["noballs"]
+            extras["total"] += r_ext
+
+            if bat not in batters:
+                batters[bat] = {"runs": 0, "balls": 0, "fours": 0, "sixes": 0, "dots": 0, "dismissal": "not out"}
+            if not is_w: batters[bat]["balls"] += 1
+            batters[bat]["runs"] += r_bat
+            if r_bat == 4: batters[bat]["fours"] += 1
+            if r_bat == 6: batters[bat]["sixes"] += 1
+            if r_bat == 0 and not is_w: batters[bat]["dots"] += 1
+
+            if ns and ns not in batters:
+                batters[ns] = {"runs": 0, "balls": 0, "fours": 0, "sixes": 0, "dots": 0, "dismissal": "not out"}
+
+            if bw not in bowlers:
+                bowlers[bw] = {"balls": 0, "runs": 0, "wickets": 0, "maidens": 0, "dots": 0, "fours": 0, "sixes": 0, "wides": 0, "noballs": 0}
+            if is_legal: bowlers[bw]["balls"] += 1
+            bowlers[bw]["runs"] += (r_tot - ex.get("byes", 0) - ex.get("legbyes", 0))
+            if r_bat == 4: bowlers[bw]["fours"] += 1
+            if r_bat == 6: bowlers[bw]["sixes"] += 1
+            if r_bat == 0 and not is_w and not is_nb: bowlers[bw]["dots"] += 1
+            if is_w: bowlers[bw]["wides"] += ex.get("wides", 1)
+            if is_nb: bowlers[bw]["noballs"] += ex.get("noballs", 1)
+
+            for w in wkts:
+                tot_wkts += 1
+                p_out = w.get("player_out", bat)
+                d_text = w.get("text") or w.get("kind", "out")
+                d_text = KIND_MAP.get(str(d_text), str(d_text))
+                if p_out in batters:
+                    batters[p_out]["dismissal"] = d_text
+                if str(w.get("kind")) not in ("run out", "5"):
+                    bowlers[bw]["wickets"] += 1
+                rem_b = legal_balls % 6
+                ov_str = str(legal_balls // 6) + "." + str(rem_b)
+                fow.append(str(tot_wkts) + "-" + str(tot_runs) + " (" + str(p_out) + ", " + ov_str + " ov)")
+
+    for o in overs:
+        delivs = o.get("deliveries", [])
+        if not delivs: continue
+        bw = delivs[0].get("bowler", "Unknown")
+        ov_legal = sum(1 for b in delivs if not any(k in b.get("extras", {}) for k in ["wides", "noballs"]))
+        ov_runs = sum(b.get("runs", {}).get("total", 0) - b.get("extras", {}).get("byes", 0) - b.get("extras", {}).get("legbyes", 0) for b in delivs)
+        if ov_legal == 6 and ov_runs == 0 and bw in bowlers:
+            bowlers[bw]["maidens"] += 1
+
+    rem_b = legal_balls % 6
+    ov_display = str(legal_balls // 6) + "." + str(rem_b)
+    rr = round(tot_runs / (legal_balls / 6.0), 2) if legal_balls > 0 else 0.0
+
+    bat_rows = []
+    for b_name, s in batters.items():
+        if s["balls"] == 0 and s["dismissal"] == "not out" and s["runs"] == 0:
+            continue
+        sr = round((s["runs"] / s["balls"]) * 100, 2) if s["balls"] > 0 else 0.0
+        dot_pct = round((s["dots"] / s["balls"]) * 100, 1) if s["balls"] > 0 else 0.0
+        bat_rows.append({
+            "Batter": b_name,
+            "Dismissal": s["dismissal"],
+            "Runs": s["runs"],
+            "Balls": s["balls"],
+            "4s": s["fours"],
+            "6s": s["sixes"],
+            "Strike Rate": sr,
+            "Dots": s["dots"],
+            "Dot %": dot_pct
+        })
+
+    bow_rows = []
+    for bw_name, s in bowlers.items():
+        b_cnt = s["balls"]
+        ov_str = str(b_cnt // 6) + "." + str(b_cnt % 6)
+        econ = round(s["runs"] / (b_cnt / 6.0), 2) if b_cnt > 0 else 0.0
+        dot_pct = round((s["dots"] / b_cnt) * 100, 1) if b_cnt > 0 else 0.0
+        bow_rows.append({
+            "Bowler": bw_name,
+            "Overs": ov_str,
+            "Maidens": s["maidens"],
+            "Runs": s["runs"],
+            "Wickets": s["wickets"],
+            "Economy": econ,
+            "Dots": s["dots"],
+            "Dot %": dot_pct,
+            "4s": s["fours"],
+            "6s": s["sixes"],
+            "Wides": s["wides"],
+            "No Balls": s["noballs"]
+        })
+
+    df_bat = pd.DataFrame(bat_rows) if bat_rows else pd.DataFrame(columns=["Batter", "Dismissal", "Runs", "Balls", "4s", "6s", "Strike Rate", "Dots", "Dot %"])
+    df_bow = pd.DataFrame(bow_rows) if bow_rows else pd.DataFrame(columns=["Bowler", "Overs", "Maidens", "Runs", "Wickets", "Economy", "Dots", "Dot %", "4s", "6s", "Wides", "No Balls"])
+
+    return {
+        "team": team,
+        "runs": tot_runs,
+        "wickets": tot_wkts,
+        "overs_display": ov_display,
+        "run_rate": rr,
+        "batters": df_bat,
+        "bowlers": df_bow,
+        "extras": extras,
+        "fow": fow
+    }
+
+
 # Main Dashboard Body (Wrapped in @st.fragment for zero page reload)
 # ---------------------------------------------------------------------------
 refresh_interval = 30 if auto_refresh else None
 
 @st.fragment(run_every=refresh_interval)
 def render_npl_dashboard(current_team: str, current_match_label: str):
+    # Auto-sync live commentary if active
+    if auto_refresh:
+        try:
+            sync_espn_npl_2026()
+        except Exception:
+            pass
     # Dynamically query latest matches on fragment refresh
     folder_hash = get_folder_hash(DATA_DIR_2026)
     all_current_matches = load_npl_2026_matches(folder_hash)
@@ -879,13 +1029,96 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
     st.divider()
 
     # Tab navigation (Clean, zero emoji)
-    tab_phases, tab_sr, tab_big_overs, tab_partnerships, tab_over_breakdown = st.tabs([
+    tab_scorecard, tab_phases, tab_sr, tab_big_overs, tab_partnerships, tab_over_breakdown = st.tabs([
+        "Match Scorecards & Innings Breakdown",
         "Phase Metrics (Powerplay / Middle / Death)",
         "Strike Rate Progression by Balls Faced",
         "20+ Runs in an Over Tracker",
         "Match-wise Partnerships",
         "Over-by-Over Detailed Breakdown"
     ])
+
+    # -----------------------------------------------------------------------
+    # TAB 1: OFFICIAL MATCH SCORECARDS (Batting, Bowling, Extras)
+    # -----------------------------------------------------------------------
+    with tab_scorecard:
+        st.subheader("Official Match Scorecards")
+        st.caption("Batting scorecard, bowling figures, extras breakdown, and fall of wickets for completed and in-progress innings.")
+
+        if len(matches_to_render) > 1:
+            match_opts = [m["label"] for m in matches_to_render]
+            active_sc_label = st.selectbox("Select Match to View Scoreboard:", match_opts, index=0, key="sc_fixture_choice")
+            selected_sc_match = next((m for m in matches_to_render if m["label"] == active_sc_label), matches_to_render[0])
+        else:
+            selected_sc_match = matches_to_render[0]
+
+        sc_data = selected_sc_match.get("data", {})
+        sc_innings = sc_data.get("innings", [])
+        sc_teams = selected_sc_match.get("teams", ["Team 1", "Team 2"])
+        sc_outcome = selected_sc_match.get("outcome", {}).get("result") or selected_sc_match.get("outcome", {}).get("winner") or "Match in progress"
+        sc_venue = selected_sc_match.get("venue", "Kirtipur")
+        sc_date = selected_sc_match.get("date", "")
+        toss_info = selected_sc_match.get("toss", {})
+        toss_str = f"Toss: {toss_info.get('winner', 'TBD')} elected to {toss_info.get('decision', 'bat/field')} first." if toss_info else ""
+
+        st.markdown(f"**{selected_sc_match.get('label', '')}**")
+        st.caption(f"Status: {sc_outcome} | Venue: {sc_venue} | Date: {sc_date} {f'| {toss_str}' if toss_str else ''}")
+        st.divider()
+
+        if not sc_innings:
+            st.info("No innings data recorded for this match yet.")
+        elif len(sc_innings) == 1:
+            # 1 Innings played or in progress
+            inn1 = parse_innings_scorecard(sc_innings[0])
+            st.markdown(f"### 1st Innings: {inn1['team']} - {inn1['runs']}/{inn1['wickets']} ({inn1['overs_display']} Overs, RR: {inn1['run_rate']})")
+
+            st.markdown(f"**Batting Scorecard - {inn1['team']}**")
+            st.dataframe(inn1["batters"], width="stretch", hide_index=True)
+
+            ex1 = inn1["extras"]
+            st.markdown(
+                f"**Extras:** {ex1['total']} (b {ex1['byes']}, lb {ex1['legbyes']}, w {ex1['wides']}, nb {ex1['noballs']})  |  "
+                f"**Total:** {inn1['runs']}/{inn1['wickets']} in {inn1['overs_display']} overs (RR: {inn1['run_rate']})"
+            )
+
+            if inn1["fow"]:
+                st.caption(f"**Fall of Wickets:** {' | '.join(inn1['fow'])}")
+
+            st.divider()
+
+            opp_team = sc_teams[1] if sc_teams[0] == inn1['team'] else sc_teams[0]
+            st.markdown(f"**Bowling Figures - {opp_team} vs {inn1['team']}**")
+            st.dataframe(inn1["bowlers"], width="stretch", hide_index=True)
+
+            st.info(f"{opp_team} 2nd innings has not commenced yet.")
+        else:
+            # Both innings played / Match completed
+            inn_subtabs = st.tabs([f"Innings {i+1}: {inn.get('team', f'Team {i+1}')}" for i, inn in enumerate(sc_innings)])
+
+            for idx, inn_obj in enumerate(sc_innings):
+                with inn_subtabs[idx]:
+                    parsed_inn = parse_innings_scorecard(inn_obj)
+                    bat_team = parsed_inn["team"]
+                    bowl_team = sc_teams[1] if sc_teams[0] == bat_team else sc_teams[0]
+
+                    st.markdown(f"### {bat_team} - {parsed_inn['runs']}/{parsed_inn['wickets']} ({parsed_inn['overs_display']} Overs, RR: {parsed_inn['run_rate']})")
+
+                    st.markdown(f"**Batting Scorecard - {bat_team}**")
+                    st.dataframe(parsed_inn["batters"], width="stretch", hide_index=True)
+
+                    ex = parsed_inn["extras"]
+                    st.markdown(
+                        f"**Extras:** {ex['total']} (b {ex['byes']}, lb {ex['legbyes']}, w {ex['wides']}, nb {ex['noballs']})  |  "
+                        f"**Total:** {parsed_inn['runs']}/{parsed_inn['wickets']} in {parsed_inn['overs_display']} overs (RR: {parsed_inn['run_rate']})"
+                    )
+
+                    if parsed_inn["fow"]:
+                        st.caption(f"**Fall of Wickets:** {' | '.join(parsed_inn['fow'])}")
+
+                    st.divider()
+
+                    st.markdown(f"**Bowling Figures - {bowl_team} vs {bat_team}**")
+                    st.dataframe(parsed_inn["bowlers"], width="stretch", hide_index=True)
 
     # -----------------------------------------------------------------------
     # TAB 1: PHASE BREAKDOWN
