@@ -622,11 +622,39 @@ def parse_deliveries_and_metrics(matches_list: List[Dict[str, Any]]):
                     "dismissed": "Not Out (Unbroken)"
                 })
 
-    df_deliv = pd.DataFrame(deliv_records)
-    df_ov = pd.DataFrame(over_records)
-    df_part = pd.DataFrame(partnership_records)
-    df_big = pd.DataFrame(big_overs)
-    df_bf = pd.DataFrame(balls_faced_records)
+    deliv_cols = [
+        "match_id", "match_label", "season", "date", "innings", "batting_team", "fielding_team",
+        "over", "over_display", "ball_in_over", "ball_str", "phase", "is_legal", "is_valid_delivery",
+        "batter", "bowler", "non_striker", "runs_batter", "runs_extras", "runs_total",
+        "is_four", "is_six", "is_boundary", "is_single", "is_double", "is_dot", "is_wicket",
+        "wicket_kind", "player_out"
+    ]
+    ov_cols = [
+        "match_id", "season", "date", "match", "innings", "over_number", "over_idx", "phase",
+        "batting_team", "fielding_team", "bowler", "runs", "extras", "wickets", "fours", "sixes",
+        "dots", "singles", "doubles", "sequence", "starts_with_boundary", "ends_with_boundary_only",
+        "ends_with_boundary_any", "consecutive_start_boundary"
+    ]
+    part_cols = [
+        "match_id", "match_label", "season", "date", "innings", "team", "wicket_label", "wicket_order",
+        "batters", "runs", "balls", "fours", "sixes", "dots", "strike_rate", "batter_1", "batter_1_score",
+        "batter_2", "batter_2_score", "over_span", "dismissed"
+    ]
+    big_cols = [
+        "match_id", "season", "date", "match", "innings", "over_number", "phase", "batting_team",
+        "bowling_team", "bowler", "runs", "sequence", "fours", "sixes", "wickets"
+    ]
+    bf_cols = [
+        "match_id", "match", "season", "innings", "team", "batter",
+        "runs_1_10", "balls_1_10", "runs_11_20", "balls_11_20", "runs_21_30", "balls_21_30",
+        "runs_31_40", "balls_31_40", "runs_41_50", "balls_41_50", "runs_51_60", "balls_51_60"
+    ]
+
+    df_deliv = pd.DataFrame(deliv_records, columns=deliv_cols) if deliv_records else pd.DataFrame(columns=deliv_cols)
+    df_ov = pd.DataFrame(over_records, columns=ov_cols) if over_records else pd.DataFrame(columns=ov_cols)
+    df_part = pd.DataFrame(partnership_records, columns=part_cols) if partnership_records else pd.DataFrame(columns=part_cols)
+    df_big = pd.DataFrame(big_overs, columns=big_cols) if big_overs else pd.DataFrame(columns=big_cols)
+    df_bf = pd.DataFrame(balls_faced_records, columns=bf_cols) if balls_faced_records else pd.DataFrame(columns=bf_cols)
 
     return df_deliv, df_ov, df_part, df_big, df_bf
 
@@ -797,12 +825,33 @@ def render_npl_dashboard(current_team: str, current_match_label: str):
 
     df_deliv, df_ov, df_part, df_big, df_bf = parse_deliveries_and_metrics(matches_to_render)
 
+    if df_deliv.empty:
+        st.info("Match is currently in progress or pre-match (waiting for first deliveries to be logged).")
+        for m in matches_to_render:
+            info = m.get("data", {}).get("info", {})
+            toss = info.get("toss", {})
+            st.subheader(m.get("label", "Live Match"))
+            if toss:
+                st.write(f"**Toss:** {toss.get('winner', 'TBD')} elected to {toss.get('decision', 'bat/field')} first.")
+            st.write(f"**Venue:** {info.get('venue', 'TU Ground, Kirtipur')}")
+            players = info.get("players", {})
+            if players:
+                pcols = st.columns(len(players))
+                for idx, (tname, plist) in enumerate(players.items()):
+                    with pcols[idx]:
+                        st.markdown(f"**{tname} Squad / Playing XI:**")
+                        for p in plist:
+                            st.write(f"- {p}")
+        return
+
     if current_team != "All Teams":
         df_deliv_view = df_deliv[df_deliv["batting_team"] == current_team]
         df_ov_view = df_ov[df_ov["batting_team"] == current_team]
         df_part_view = df_part[df_part["team"] == current_team]
         df_big_view = df_big[(df_big["batting_team"] == current_team) | (df_big["bowling_team"] == current_team)]
         df_bf_view = df_bf[df_bf["team"] == current_team]
+        if df_deliv_view.empty:
+            st.info(f"{current_team} has not batted yet in this match. Switch filter to 'All Teams' or the active batting team to view live ball-by-ball telemetry.")
     else:
         df_deliv_view = df_deliv
         df_ov_view = df_ov

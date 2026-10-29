@@ -18,49 +18,35 @@
     "match_type": "T20",
     "outcome": {
       "winner": "Unknown",
-      "result": ""
+      "result": "Karnali chose to field."
     },
     "overs": 20,
     "players": {
       "Biratnagar Kings": [
+        "Imran Sheikh",
+        "Lokesh Bam",
+        "KIC Asalanka",
+        "GSNFG Jayasuriya",
         "AD Mathews",
         "AD Russell",
-        "GSNFG Jayasuriya",
-        "SS Ranjane",
-        "KIC Asalanka",
-        "S Lamichhane",
-        "N Joshi",
-        "Lokesh Bam",
-        "Pratis GC",
-        "N Saud",
-        "S Thapaliya",
-        "P Shrestha",
         "Basir Ahamad",
-        "Subash Bhandari",
-        "Rupesh Singh",
-        "Imran Sheikh",
-        "A Poudel",
-        "Dilsad Ali"
+        "S Thapaliya",
+        "Pratis GC",
+        "S Lamichhane",
+        "N Saud"
       ],
       "Karnali Yaks": [
-        "Hussain Talat",
         "MRJ Watt",
-        "Sompal Kami",
-        "Akbar Ali",
-        "NK Yadav",
-        "P Sarraf",
-        "Diwan Pun",
-        "Surya Tamang",
-        "D Rawat",
-        "D Dumre",
-        "Gulsan Jha",
         "Ariful Islam",
-        "S Kansakar",
-        "Y Khatri",
+        "D Dumre",
         "S Sharma",
-        "BP Sharma",
-        "UBS Thakuri",
-        "H Shahi"
+        "P Sarraf",
+        "Akbar Ali",
+        "Gulsan Jha",
+        "Sompal Kami",
+        "NK Yadav",
+        "Y Khatri",
+        "UBS Thakuri"
       ]
     },
     "season": "2026/27",
@@ -74,5 +60,444 @@
     },
     "venue": "Tribhuvan University International Cricket Ground, Kirtipur"
   },
-  "innings": []
+  "innings": [
+    {
+      "team": "Biratnagar Kings",
+      "overs": [
+        {
+          "over": 0,
+          "deliveries": [
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Unknown",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Unknown",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Unknown",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Unknown",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "deliveries": [
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "Imran Sheikh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "deliveries": [
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Imran Sheikh",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "1",
+                  "player_out": "Imran Sheikh"
+                }
+              ]
+            },
+            {
+              "batter": "KIC Asalanka",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "KIC Asalanka",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "KIC Asalanka",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "deliveries": [
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "NK Yadav",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "NK Yadav",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "NK Yadav",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "NK Yadav",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "NK Yadav",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "NK Yadav",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "deliveries": [
+            {
+              "batter": "KIC Asalanka",
+              "bowler": "MRJ Watt",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "MRJ Watt",
+              "non_striker": "KIC Asalanka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "deliveries": [
+            {
+              "batter": "KIC Asalanka",
+              "bowler": "Sompal Kami",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              }
+            },
+            {
+              "batter": "KIC Asalanka",
+              "bowler": "Sompal Kami",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "wickets": [
+                {
+                  "kind": "1",
+                  "player_out": "KIC Asalanka"
+                }
+              ]
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Sompal Kami",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Sompal Kami",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Sompal Kami",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Sompal Kami",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            },
+            {
+              "batter": "Lokesh Bam",
+              "bowler": "Sompal Kami",
+              "non_striker": "GSNFG Jayasuriya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              }
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "deliveries": [
+            {
+              "batter": "GSNFG Jayasuriya",
+              "bowler": "Y Khatri",
+              "non_striker": "Lokesh Bam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
