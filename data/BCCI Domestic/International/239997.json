@@ -18,9 +18,9 @@
     "days_summary": [
       {
         "day": 1,
-        "status": "in play",
-        "score": "Gujarat are 239 for 5",
-        "time": ""
+        "status": "stumps",
+        "score": "300/5 in 83.0 ov",
+        "time": "2026-11-02 11:32:40.92"
       }
     ],
     "event": {
@@ -31,15 +31,15 @@
     "match_timing": {
       "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 70.3,
-      "overs_remaining_today": 19.3,
-      "balls_remaining_today": 117,
+      "overs_bowled": 83.0,
+      "overs_remaining_today": 7.0,
+      "balls_remaining_today": 42,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 7.0,
+        "max_overs_with_1hr_extension": 22.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -57,7 +57,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Gujarat are 239 for 5"
+      "summary": "Gujarat are 300 for 5"
     },
     "players": {
       "Gujarat": [
@@ -147,8 +147,8 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -161,7 +161,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -173,7 +173,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -183,9 +183,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -195,9 +195,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -226,9 +226,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -238,9 +238,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Basil",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -252,7 +252,19 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -264,19 +276,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -293,8 +293,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -305,9 +305,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 4 runs",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -317,9 +317,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -329,9 +329,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -343,7 +343,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -355,7 +355,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -372,8 +372,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -384,9 +384,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Basil",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -396,9 +396,21 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -410,7 +422,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -422,19 +434,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -451,9 +451,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -463,9 +463,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -475,9 +475,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 4 runs",
+              "bowler": "Saxena",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -487,9 +487,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -499,9 +499,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -511,9 +511,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -532,7 +532,19 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -544,7 +556,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -556,7 +568,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -568,7 +580,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -580,19 +592,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -611,7 +611,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -623,7 +623,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -633,8 +633,8 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, 4 runs",
+              "bowler": "Saxena",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 4,
@@ -645,9 +645,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -657,9 +657,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -671,7 +671,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -700,8 +700,8 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -714,7 +714,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -726,7 +726,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -738,7 +738,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -748,9 +748,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -803,9 +803,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -817,7 +817,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -829,7 +829,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -846,9 +846,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Basil",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -860,7 +860,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -872,7 +872,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -884,7 +884,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -894,9 +894,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -906,9 +906,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -925,8 +925,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -939,7 +939,31 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -951,31 +975,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -987,7 +987,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1004,9 +1004,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Basil",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1016,9 +1016,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 4 runs",
+              "bowler": "Basil",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1030,7 +1030,31 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1042,31 +1066,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1083,8 +1083,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -1095,9 +1095,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1109,7 +1109,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1121,7 +1121,19 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1133,19 +1145,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1162,9 +1162,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1174,9 +1174,21 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1188,7 +1200,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1200,7 +1212,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1212,19 +1224,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1241,8 +1241,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, 1 run",
+              "bowler": "Nidheesh",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 1,
@@ -1255,7 +1255,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1267,7 +1267,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1289,9 +1289,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1301,9 +1301,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1322,7 +1322,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1334,7 +1334,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1346,7 +1346,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1358,7 +1358,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1368,9 +1368,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1382,7 +1382,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1399,8 +1399,20 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -1413,7 +1425,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1425,7 +1437,19 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1437,31 +1461,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1514,8 +1514,20 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Aarya Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -1528,19 +1540,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1557,8 +1557,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -1581,9 +1581,21 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1595,7 +1607,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1607,19 +1619,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1638,7 +1638,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1650,7 +1650,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1662,7 +1662,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1672,9 +1672,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1686,7 +1686,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1696,8 +1696,8 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 1,
@@ -1763,9 +1763,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1775,9 +1775,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Basil",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1796,7 +1796,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1806,8 +1806,8 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -1854,8 +1854,8 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -1875,7 +1875,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1887,7 +1887,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1899,7 +1899,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1911,7 +1911,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1923,7 +1923,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1935,7 +1935,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1954,7 +1954,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2043,8 +2043,8 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
+              "batter": "Desai, 6 runs",
+              "bowler": "Sarvate",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 6,
@@ -2055,9 +2055,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Desai, 6 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2069,7 +2069,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2081,7 +2081,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2110,8 +2110,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 1,
@@ -2122,9 +2122,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2136,7 +2136,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2146,8 +2146,8 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 1,
@@ -2158,9 +2158,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2172,7 +2172,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2201,9 +2201,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 6 runs",
+              "bowler": "Sarvate",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 6,
                 "extras": 0,
@@ -2213,9 +2213,33 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Desai, 6 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, 6 runs",
+              "bowler": "Sarvate",
+              "non_striker": "Desai, no run",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Desai, 6 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2227,31 +2251,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 6,
-                "extras": 0,
-                "total": 6
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2270,7 +2270,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2280,44 +2280,8 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -2328,8 +2292,44 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
+              "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
+              "non_striker": "Desai, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Aarya Desai",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Desai, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Aarya Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -2347,9 +2347,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2361,7 +2361,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2373,7 +2373,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2385,7 +2385,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2395,9 +2395,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2407,9 +2407,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2426,8 +2426,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -2438,8 +2438,8 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -2450,9 +2450,9 @@
               "session": 1
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2464,7 +2464,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2476,7 +2476,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2488,7 +2488,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2507,7 +2507,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2519,7 +2519,43 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2531,43 +2567,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2584,9 +2584,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2596,9 +2596,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2610,7 +2610,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2622,7 +2622,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2634,7 +2634,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2644,9 +2644,9 @@
               "session": 1
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2665,7 +2665,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2699,8 +2699,8 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
+              "batter": "Desai, 2 runs",
+              "bowler": "Chandran",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 2,
@@ -2713,7 +2713,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2723,9 +2723,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 2 runs",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2766,8 +2766,8 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
@@ -2780,7 +2780,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2824,9 +2824,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, 4 runs",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2836,9 +2836,9 @@
               "session": 2
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Desai, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2850,7 +2850,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2862,7 +2862,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2884,9 +2884,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2905,7 +2905,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2917,7 +2917,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2927,9 +2927,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run (wide)",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -2944,7 +2944,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run (wide)",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2956,7 +2956,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run (wide)",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2968,7 +2968,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run (wide)",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2980,7 +2980,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, 1 run (wide)",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3033,9 +3033,9 @@
               "session": 2
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3047,7 +3047,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3059,7 +3059,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3078,7 +3078,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3088,20 +3088,8 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, 1 run",
+              "bowler": "Nidheesh",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 1,
@@ -3112,9 +3100,21 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Aarya Desai",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3126,7 +3126,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3138,7 +3138,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3157,7 +3157,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3167,9 +3167,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3181,7 +3181,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3193,7 +3193,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3205,7 +3205,7 @@
             {
               "batter": "Abhishek Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3215,9 +3215,9 @@
               "session": 2
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Abhishek Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3234,9 +3234,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Abhishek Desai",
+              "batter": "Desai, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3246,9 +3246,9 @@
               "session": 2
             },
             {
-              "batter": "Abhishek Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Desai, out!",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3269,9 +3269,9 @@
               ]
             },
             {
-              "batter": "Vedant Trivedi",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Trivedi, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3283,7 +3283,7 @@
             {
               "batter": "Vedant Trivedi",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Trivedi, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3327,9 +3327,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Vedant Trivedi",
+              "batter": "Desai, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3341,7 +3341,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3351,9 +3351,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Vedant Trivedi",
+              "batter": "Desai, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3363,9 +3363,9 @@
               "session": 2
             },
             {
-              "batter": "Vedant Trivedi",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Aarya Desai",
+              "batter": "Trivedi, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3377,7 +3377,7 @@
             {
               "batter": "Vedant Trivedi",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Trivedi, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3387,9 +3387,9 @@
               "session": 2
             },
             {
-              "batter": "Vedant Trivedi",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Aarya Desai",
+              "batter": "Trivedi, 4 runs",
+              "bowler": "Sarvate",
+              "non_striker": "Vedant Trivedi",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3406,9 +3406,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vedant Trivedi",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Trivedi, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3418,9 +3418,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vedant Trivedi",
+              "batter": "Desai, 2 runs",
+              "bowler": "Nidheesh",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3432,7 +3432,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Desai, 2 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3444,7 +3444,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Desai, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3456,7 +3456,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Desai, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3468,7 +3468,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Desai, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3487,7 +3487,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Desai, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3545,9 +3545,9 @@
               "session": 2
             },
             {
-              "batter": "Vedant Trivedi",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Aarya Desai",
+              "batter": "Trivedi, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Vedant Trivedi",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3566,7 +3566,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Trivedi, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3578,7 +3578,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Trivedi, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3590,7 +3590,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Vedant Trivedi",
+              "non_striker": "Trivedi, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3678,9 +3678,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": null,
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3692,7 +3692,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": null,
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3704,7 +3704,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": null,
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3716,7 +3716,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3733,8 +3733,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Nedumankuzhy Basil",
+              "batter": "Desai, 1 run",
+              "bowler": "Basil",
               "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 1,
@@ -3747,7 +3747,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3759,7 +3759,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3771,7 +3771,19 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Hingrajia, no run",
+              "bowler": "Basil",
+              "non_striker": "Desai, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3783,19 +3795,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Manan Hingrajia",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4006,9 +4006,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Manan Hingrajia",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4020,7 +4020,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Manan Hingrajia",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4032,7 +4032,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4049,8 +4049,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Aarya Desai",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Desai, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 0,
@@ -4073,8 +4073,8 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Hingrajia, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
@@ -4085,9 +4085,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, 2 runs",
+              "bowler": "Nidheesh",
+              "non_striker": "Hingrajia, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4099,7 +4099,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, 2 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4109,9 +4109,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4130,7 +4130,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4140,9 +4140,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, 4 runs",
+              "bowler": "Chandran",
+              "non_striker": "Hingrajia, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4152,9 +4152,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, no run",
+              "bowler": "Chandran",
+              "non_striker": "Hingrajia, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4166,7 +4166,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4178,7 +4178,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4188,9 +4188,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, no run",
+              "bowler": "Chandran",
+              "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4219,9 +4219,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Manan Hingrajia",
+              "batter": "Desai, no run",
+              "bowler": "Saxena",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4233,7 +4233,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Manan Hingrajia",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4245,7 +4245,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4257,7 +4257,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4267,9 +4267,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, no run",
+              "bowler": "Saxena",
+              "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4288,7 +4288,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Manan Hingrajia",
+              "non_striker": "Hingrajia, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4310,9 +4310,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, 2 runs",
+              "bowler": "Chandran",
+              "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4324,7 +4324,7 @@
             {
               "batter": "Manan Hingrajia",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4334,9 +4334,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, 1 run",
+              "bowler": "Chandran",
+              "non_striker": "Hingrajia, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4348,7 +4348,7 @@
             {
               "batter": "Aarya Desai",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Manan Hingrajia",
+              "non_striker": "Hingrajia, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4401,9 +4401,9 @@
               "session": 2
             },
             {
-              "batter": "Manan Hingrajia",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "batter": "Hingrajia, out!",
+              "bowler": "Saxena",
+              "non_striker": "Manan Hingrajia",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4426,7 +4426,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4438,7 +4438,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Aarya Desai",
+              "non_striker": "Hingrajia, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4491,9 +4491,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Jaymeet Patel",
+              "batter": "Desai, no run",
+              "bowler": "Chandran",
+              "non_striker": "Aarya Desai",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4503,9 +4503,9 @@
               "session": 2
             },
             {
-              "batter": "Aarya Desai",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Jaymeet Patel",
+              "batter": "Desai, out!",
+              "bowler": "Chandran",
+              "non_striker": "Desai, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4528,7 +4528,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Jaymeet Patel",
+              "non_striker": "Desai, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4557,9 +4557,9 @@
               "session": 2
             },
             {
-              "batter": "Jaymeet Patel",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "batter": "Patel, no run",
+              "bowler": "Saxena",
+              "non_striker": "Jaymeet Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4571,7 +4571,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4583,7 +4583,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4595,7 +4595,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4607,7 +4607,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4626,7 +4626,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Jaymeet Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4636,8 +4636,8 @@
               "session": 2
             },
             {
-              "batter": "Jaymeet Patel",
-              "bowler": "Dineshan Nidheesh",
+              "batter": "Patel, no run",
+              "bowler": "Nidheesh",
               "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 0,
@@ -4660,9 +4660,9 @@
               "session": 2
             },
             {
-              "batter": "Jaymeet Patel",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Urvil Patel",
+              "batter": "Patel, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Jaymeet Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4674,7 +4674,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4686,7 +4686,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4705,7 +4705,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Jaymeet Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4727,9 +4727,9 @@
               "session": 3
             },
             {
-              "batter": "Jaymeet Patel",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Jaymeet Patel",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4741,7 +4741,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Jaymeet Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4782,8 +4782,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Urvil Patel",
-              "bowler": "Aditya Sarvate",
+              "batter": "Patel, 2 runs",
+              "bowler": "Sarvate",
               "non_striker": "Jaymeet Patel",
               "runs": {
                 "batter": 2,
@@ -4794,9 +4794,9 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Jaymeet Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Patel, 2 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4808,7 +4808,19 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Jaymeet Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4820,7 +4832,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4832,19 +4844,7 @@
             {
               "batter": "Jaymeet Patel",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Jaymeet Patel",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4874,7 +4874,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4920,8 +4920,8 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Jalaj Saxena",
+              "batter": "Patel, no run",
+              "bowler": "Saxena",
               "non_striker": "Vishal Jayswal",
               "runs": {
                 "batter": 0,
@@ -4934,7 +4934,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4987,9 +4987,9 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "batter": "Jayswal, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Vishal Jayswal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4999,9 +4999,9 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5011,9 +5011,9 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5032,7 +5032,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5044,7 +5044,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5056,7 +5056,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5090,8 +5090,8 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Jalaj Saxena",
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
               "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 0,
@@ -5109,9 +5109,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Urvil Patel",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5123,7 +5123,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5135,7 +5135,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 6,
                 "extras": 0,
@@ -5147,7 +5147,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Aditya Sarvate",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5169,9 +5169,9 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Aditya Sarvate",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, 4 runs",
+              "bowler": "Sarvate",
+              "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5188,9 +5188,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "batter": "Jayswal, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5202,7 +5202,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5212,9 +5212,9 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5226,7 +5226,19 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5238,19 +5250,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Vishal Jayswal",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5269,7 +5269,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5279,9 +5279,21 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5293,19 +5305,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vishal Jayswal",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Urvil Patel",
-              "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5317,7 +5317,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5329,7 +5329,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5348,7 +5348,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5358,9 +5358,9 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "batter": "Jayswal, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5372,7 +5372,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5384,7 +5384,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5396,7 +5396,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5408,7 +5408,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5427,7 +5427,7 @@
             {
               "batter": "Urvil Patel",
               "bowler": "Dineshan Nidheesh",
-              "non_striker": "Vishal Jayswal",
+              "non_striker": "Jayswal, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5516,9 +5516,21 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5530,7 +5542,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5542,19 +5554,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Vishal Jayswal",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5564,9 +5564,9 @@
               "session": 3
             },
             {
-              "batter": "Urvil Patel",
-              "bowler": "Jalaj Saxena",
-              "non_striker": "Vishal Jayswal",
+              "batter": "Patel, no run",
+              "bowler": "Saxena",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5583,9 +5583,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Vaisakh Chandran",
-              "non_striker": "Urvil Patel",
+              "batter": "Jayswal, no run",
+              "bowler": "Chandran",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5597,7 +5597,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5609,7 +5609,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5621,7 +5621,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5633,7 +5633,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Vaisakh Chandran",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5674,8 +5674,8 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Nedumankuzhy Basil",
+              "batter": "Jayswal, no run",
+              "bowler": "Basil",
               "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 0,
@@ -5688,7 +5688,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5700,7 +5700,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5712,7 +5712,7 @@
             {
               "batter": "Vishal Jayswal",
               "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Urvil Patel",
+              "non_striker": "Jayswal, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5722,9 +5722,9 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Nedumankuzhy Basil",
-              "non_striker": "Urvil Patel",
+              "batter": "Jayswal, no run",
+              "bowler": "Basil",
+              "non_striker": "Vishal Jayswal",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5753,8 +5753,8 @@
               "session": 3
             },
             {
-              "batter": "Vishal Jayswal",
-              "bowler": "Vaisakh Chandran",
+              "batter": "Jayswal, 2 runs",
+              "bowler": "Chandran",
               "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 2,
@@ -5765,8 +5765,363 @@
               "session": 3
             },
             {
+              "batter": "Jayswal, no run",
+              "bowler": "Chandran",
+              "non_striker": "Jayswal, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, 2 runs",
+              "bowler": "Chandran",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Chandran",
+              "non_striker": "Jayswal, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
               "batter": "Vishal Jayswal",
               "bowler": "Vaisakh Chandran",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 4 runs",
+              "bowler": "Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "byes": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Vaisakh Chandran",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Chandran",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Vaisakh Chandran",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Vaisakh Chandran",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, 1 run",
+              "bowler": "Chandran",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Vaisakh Chandran",
+              "non_striker": "Jayswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Jayswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
               "non_striker": "Urvil Patel",
               "runs": {
                 "batter": 0,
@@ -5777,60 +6132,692 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 75,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Sarvate",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Aditya Sarvate",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Sarvate",
+              "non_striker": "Jayswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Saxena",
+              "non_striker": "Jayswal, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Jalaj Saxena",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Saxena",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 4 runs",
+              "bowler": "Basil",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 4 runs",
+              "bowler": "Basil",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Urvil Patel",
+              "bowler": "Nedumankuzhy Basil",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Dineshan Nidheesh",
+              "non_striker": "Urvil Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Dineshan Nidheesh",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Jayswal, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 2 runs",
+              "bowler": "Nidheesh",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Basil",
+              "non_striker": "Patel, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Nedumankuzhy Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Nedumankuzhy Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Nedumankuzhy Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Basil",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vishal Jayswal",
+              "bowler": "Nedumankuzhy Basil",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Vishal Jayswal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, no run",
+              "bowler": "Nidheesh",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayswal, 1 run",
+              "bowler": "Nidheesh",
+              "non_striker": "Jayswal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Dineshan Nidheesh": {
-          "overs": "18.0",
+          "overs": "20.0",
           "maidens": 3,
-          "runs": 54,
+          "runs": 59,
           "wickets": 1,
-          "dots": 76,
+          "dots": 84,
           "fours": 6,
           "sixes": 0,
           "wides": 1,
           "noballs": 0
         },
         "Nedumankuzhy Basil": {
-          "overs": "11.0",
-          "maidens": 2,
-          "runs": 38,
+          "overs": "13.0",
+          "maidens": 3,
+          "runs": 50,
           "wickets": 1,
-          "dots": 49,
-          "fours": 6,
+          "dots": 58,
+          "fours": 9,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Jalaj Saxena": {
-          "overs": "21.0",
+          "overs": "24.0",
           "maidens": 1,
-          "runs": 52,
+          "runs": 60,
           "wickets": 1,
-          "dots": 86,
+          "dots": 96,
           "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Aditya Sarvate": {
-          "overs": "7.0",
+          "overs": "11.0",
           "maidens": 0,
-          "runs": 48,
+          "runs": 68,
           "wickets": 1,
-          "dots": 26,
-          "fours": 2,
-          "sixes": 5,
+          "dots": 39,
+          "fours": 3,
+          "sixes": 6,
           "wides": 0,
           "noballs": 0
         },
         "Vaisakh Chandran": {
-          "overs": "13.3",
+          "overs": "15.0",
           "maidens": 2,
-          "runs": 45,
+          "runs": 57,
           "wickets": 1,
-          "dots": 57,
-          "fours": 5,
+          "dots": 61,
+          "fours": 7,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

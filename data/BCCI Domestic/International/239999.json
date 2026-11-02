@@ -18,9 +18,9 @@
     "days_summary": [
       {
         "day": 1,
-        "status": "in play",
-        "score": "Maharashtra trail Bengal by 122 runs with 8 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "21/2 in 8.0 ov",
+        "time": "2026-11-02 10:35:02.03"
       }
     ],
     "event": {
@@ -3314,7 +3314,7 @@
         {
           "over": 1,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Siddhesh Veer",
@@ -3326,7 +3326,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3338,7 +3338,7 @@
                 "total": 1
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3350,7 +3350,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3362,7 +3362,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3374,7 +3374,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3386,14 +3386,14 @@
                 "total": 4
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         },
         {
           "over": 2,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Siddhesh Veer",
@@ -3405,7 +3405,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3417,7 +3417,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3429,7 +3429,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3441,7 +3441,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3453,7 +3453,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3465,14 +3465,14 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         },
         {
           "over": 3,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Prithvi Shaw",
@@ -3484,7 +3484,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3496,7 +3496,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3508,7 +3508,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3520,7 +3520,7 @@
                 "total": 4
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3532,7 +3532,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3544,14 +3544,14 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         },
         {
           "over": 4,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Siddhesh Veer",
@@ -3563,7 +3563,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3575,7 +3575,7 @@
                 "total": 1
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3587,7 +3587,7 @@
                 "total": 1
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3599,7 +3599,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3611,7 +3611,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3623,14 +3623,14 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         },
         {
           "over": 5,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Prithvi Shaw",
@@ -3642,7 +3642,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3654,7 +3654,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Prithvi Shaw",
@@ -3666,7 +3666,7 @@
                 "total": 1
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3678,7 +3678,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3690,7 +3690,7 @@
                 "total": 4
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3702,14 +3702,14 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         },
         {
           "over": 6,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Prithvi Shaw",
@@ -3721,7 +3721,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2,
+              "session": 1,
               "wickets": [
                 {
                   "kind": "bowled",
@@ -3739,7 +3739,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2,
+              "session": 1,
               "wickets": [
                 {
                   "kind": "lbw",
@@ -3757,7 +3757,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Ankit Bawne",
@@ -3769,7 +3769,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Ankit Bawne",
@@ -3781,7 +3781,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Ankit Bawne",
@@ -3793,14 +3793,14 @@
                 "total": 2
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         },
         {
           "over": 7,
           "day": 1,
-          "session": 2,
+          "session": 1,
           "deliveries": [
             {
               "batter": "Siddhesh Veer",
@@ -3812,7 +3812,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3824,7 +3824,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3836,7 +3836,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Siddhesh Veer",
@@ -3848,7 +3848,7 @@
                 "total": 1
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Ankit Bawne",
@@ -3860,7 +3860,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             },
             {
               "batter": "Ankit Bawne",
@@ -3872,7 +3872,7 @@
                 "total": 0
               },
               "day": 1,
-              "session": 2
+              "session": 1
             }
           ]
         }

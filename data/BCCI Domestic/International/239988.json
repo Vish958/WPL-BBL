@@ -18,9 +18,9 @@
     "days_summary": [
       {
         "day": 1,
-        "status": "in play",
-        "score": "Baroda are 228 for 3",
-        "time": ""
+        "status": "stumps",
+        "score": "269/6 in 87.0 ov",
+        "time": "2026-11-02 11:27:36.44"
       }
     ],
     "event": {
@@ -31,15 +31,15 @@
     "match_timing": {
       "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 75.0,
-      "overs_remaining_today": 15.0,
-      "balls_remaining_today": 90,
+      "overs_bowled": 87.0,
+      "overs_remaining_today": 3.0,
+      "balls_remaining_today": 18,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 3.0,
+        "max_overs_with_1hr_extension": 18.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -56,7 +56,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Baroda are 228 for 3"
+      "summary": "Baroda are 269 for 6"
     },
     "players": {
       "Uttar Pradesh": [
@@ -78,10 +78,10 @@
         "Priyanshu Moliya",
         "Shashwat Rawat",
         "Mitesh Patel",
-        "Atit Sheth",
-        "Manan Solanki",
-        "Mahesh Pithiya",
         "Raj Limbani",
+        "Manan Solanki",
+        "Atit Sheth",
+        "Mahesh Pithiya",
         "Rasikh Dar",
         "Bhargav Bhatt"
       ]
@@ -104,10 +104,10 @@
         "Priyanshu Moliya": "79404",
         "Shashwat Rawat": "71722",
         "Mitesh Patel": "67129",
-        "Atit Sheth": "27089",
-        "Manan Solanki": "91184",
-        "Mahesh Pithiya": "78851",
         "Raj Limbani": "83643",
+        "Manan Solanki": "91184",
+        "Atit Sheth": "27089",
+        "Mahesh Pithiya": "78851",
         "Rasikh Dar": "68859",
         "Bhargav Bhatt": "13577"
       }
@@ -134,8 +134,20 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
               "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
@@ -148,7 +160,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -160,7 +172,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -172,31 +196,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -225,9 +225,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -237,9 +237,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -249,9 +249,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -261,9 +261,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, 4 runs",
+              "bowler": "Mavi",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -275,7 +275,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -316,9 +316,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, 4 runs",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -328,9 +328,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -340,9 +340,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -352,9 +352,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -373,7 +373,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -385,7 +385,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -397,7 +397,19 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -409,7 +421,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -421,19 +433,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -452,7 +452,43 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -464,7 +500,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -476,43 +512,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -531,7 +531,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -541,9 +541,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -555,7 +555,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -567,7 +567,19 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -579,19 +591,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -608,9 +608,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -622,7 +622,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -634,7 +634,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -644,9 +644,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -656,9 +656,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -668,9 +668,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -711,8 +711,8 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
+              "batter": "Patel, no run",
+              "bowler": "Mavi",
               "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
@@ -725,7 +725,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Mavi",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -737,19 +749,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -766,8 +766,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Yash Dayal",
+              "batter": "Sharma, no run",
+              "bowler": "Dayal",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -778,9 +778,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, 1 run",
+              "bowler": "Dayal",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -792,7 +792,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -804,7 +816,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -816,19 +828,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -845,9 +845,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -859,7 +859,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -869,9 +869,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -883,7 +883,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -893,9 +893,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -907,7 +907,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Sharma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -936,9 +936,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, 4 runs",
+              "bowler": "Dayal",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -948,9 +948,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Dayal",
+              "non_striker": "Sharma, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -962,7 +962,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -974,7 +974,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -986,7 +986,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1015,9 +1015,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1029,7 +1029,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1041,7 +1041,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1051,9 +1051,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1063,9 +1063,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Sharma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1082,9 +1082,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1096,7 +1096,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1108,7 +1108,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1120,7 +1120,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1132,7 +1132,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Sharma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1142,9 +1142,9 @@
               "session": 1
             },
             {
-              "batter": "Shivalik Sharma",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1161,8 +1161,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
               "non_striker": "Shivalik Sharma",
               "runs": {
                 "batter": 0,
@@ -1175,7 +1175,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1185,9 +1185,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1199,7 +1199,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1209,9 +1209,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1223,7 +1223,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1252,9 +1252,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Mavi",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1266,7 +1266,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": "Shivalik Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1276,9 +1276,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Shivalik Sharma",
+              "batter": "Patel, 1 run",
+              "bowler": "Mavi",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1290,7 +1290,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1302,7 +1302,7 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1321,6 +1321,54 @@
             {
               "batter": "Shivalik Sharma",
               "bowler": "Kartik Yadav",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Yadav",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 1,
@@ -1331,57 +1379,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shivalik Sharma",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Shivalik Sharma",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Sharma, out!",
+              "bowler": "Yadav",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1406,7 +1406,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": null,
+              "non_striker": "Sharma, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Mavi",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1418,7 +1430,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1430,7 +1442,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1442,7 +1454,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1454,19 +1466,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": null,
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1485,7 +1485,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1497,7 +1497,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1509,7 +1509,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1521,7 +1521,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": null,
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1533,7 +1533,7 @@
             {
               "batter": "Priyanshu Moliya",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1545,7 +1545,7 @@
             {
               "batter": "Priyanshu Moliya",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1562,8 +1562,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
+              "batter": "Patel, no run",
+              "bowler": "Mavi",
               "non_striker": "Priyanshu Moliya",
               "runs": {
                 "batter": 0,
@@ -1720,9 +1720,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Priyanshu Moliya",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1734,7 +1734,31 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1746,7 +1770,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1758,31 +1782,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Priyanshu Moliya",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Priyanshu Moliya",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1801,7 +1801,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1813,7 +1813,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1825,7 +1825,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1837,7 +1837,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1849,7 +1849,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Priyanshu Moliya",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1859,9 +1859,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Priyanshu Moliya",
+              "batter": "Patel, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1880,7 +1880,7 @@
             {
               "batter": "Priyanshu Moliya",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1892,7 +1892,7 @@
             {
               "batter": "Priyanshu Moliya",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1904,7 +1904,7 @@
             {
               "batter": "Priyanshu Moliya",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1916,7 +1916,7 @@
             {
               "batter": "Priyanshu Moliya",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1934,7 +1934,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1944,9 +1944,9 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1965,7 +1965,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1975,8 +1975,8 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Kartik Yadav",
+              "batter": "Rawat, 4 runs",
+              "bowler": "Yadav",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -1992,7 +1992,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2004,7 +2004,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2016,7 +2016,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2026,8 +2026,8 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
@@ -2047,7 +2047,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2059,7 +2059,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2071,7 +2071,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2083,7 +2083,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2095,7 +2095,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2105,9 +2105,9 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2126,7 +2126,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2148,9 +2148,9 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Yadav",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2162,7 +2162,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2174,7 +2174,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2186,7 +2186,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2203,9 +2203,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, 4 runs",
+              "bowler": "Dayal",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2217,7 +2217,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2251,8 +2251,8 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -2263,8 +2263,8 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -2282,9 +2282,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, 1 run",
+              "bowler": "Ansari",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2294,9 +2294,9 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Ansari",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2308,7 +2308,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2318,9 +2318,9 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Ansari",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2332,7 +2332,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2344,7 +2344,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2397,9 +2397,9 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2411,7 +2411,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2421,9 +2421,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2442,7 +2442,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2454,7 +2454,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2476,8 +2476,8 @@
               "session": 1
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Zeeshan Ansari",
+              "batter": "Rawat, no run",
+              "bowler": "Ansari",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -2490,7 +2490,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2531,9 +2531,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2545,7 +2545,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2555,9 +2555,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2567,9 +2567,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2581,7 +2581,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2658,9 +2658,9 @@
               "session": 1
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2677,9 +2677,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, 1 run",
+              "bowler": "Mavi",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2691,7 +2691,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Mavi",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2703,19 +2715,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Shivam Mavi",
-              "non_striker": "Shashwat Rawat",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2727,7 +2727,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2739,7 +2739,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2780,9 +2780,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2794,7 +2794,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2806,7 +2806,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2818,7 +2818,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2837,7 +2837,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2849,7 +2849,19 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2861,7 +2873,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2873,7 +2885,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2885,19 +2897,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2916,7 +2916,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2928,7 +2928,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2940,7 +2940,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2952,7 +2952,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2964,7 +2964,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2974,9 +2974,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2995,7 +2995,19 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3007,7 +3019,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3019,7 +3031,19 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Mavi",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3031,31 +3055,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Shivam Mavi",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3072,9 +3072,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, 1 run",
+              "bowler": "Ansari",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3084,9 +3084,9 @@
               "session": 2
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Ansari",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3098,7 +3098,19 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Ansari",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3110,7 +3122,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3122,19 +3134,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3151,9 +3151,33 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
+              "non_striker": "Shashwat Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
+              "non_striker": "Shashwat Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Dayal",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3165,31 +3189,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3201,7 +3201,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3213,7 +3213,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3254,8 +3254,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
@@ -3268,7 +3268,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3309,9 +3309,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, 1 run",
+              "bowler": "Dayal",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3323,7 +3323,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3357,8 +3357,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
@@ -3369,8 +3369,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
+              "batter": "Patel, no run",
+              "bowler": "Dayal",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
@@ -3390,7 +3390,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3402,7 +3402,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3414,7 +3414,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3515,8 +3515,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 1,
@@ -3527,9 +3527,9 @@
               "session": 2
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3548,7 +3548,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3560,7 +3572,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3572,19 +3584,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3596,7 +3596,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3608,7 +3608,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3627,7 +3627,31 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Sharma",
+              "non_striker": "Shashwat Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rawat, no run",
+              "bowler": "Sharma",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3639,7 +3663,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3651,7 +3675,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3663,31 +3687,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3706,7 +3706,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3718,7 +3718,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3730,7 +3730,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3742,7 +3742,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3783,8 +3783,20 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Shashwat Rawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
@@ -3797,7 +3809,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3809,7 +3821,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3821,7 +3833,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3833,19 +3845,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3910,8 +3910,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
+              "batter": "Patel, 4 runs",
+              "bowler": "Yadav",
               "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 4,
@@ -3924,7 +3924,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3965,9 +3965,9 @@
               "session": 2
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3979,7 +3979,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3991,7 +3991,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "non_striker": "Rawat, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4001,9 +4001,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4022,7 +4022,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4080,9 +4080,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Kartik Yadav",
-              "non_striker": "Shashwat Rawat",
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4099,9 +4099,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, no run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4113,7 +4113,7 @@
             {
               "batter": "Shashwat Rawat",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4123,9 +4123,9 @@
               "session": 2
             },
             {
-              "batter": "Shashwat Rawat",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Rawat, out!",
+              "bowler": "Sharma",
+              "non_striker": "Shashwat Rawat",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4148,7 +4148,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4160,7 +4160,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4172,7 +4172,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Rawat, out!",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4237,8 +4237,8 @@
               "session": 2
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Kartik Yadav",
+              "batter": "Patel, 4 runs",
+              "bowler": "Yadav",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 4,
@@ -4251,7 +4251,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Kartik Yadav",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4292,9 +4292,21 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4306,7 +4318,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4318,19 +4330,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4349,7 +4349,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4359,9 +4359,9 @@
               "session": 2
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4371,9 +4371,9 @@
               "session": 2
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 4 runs",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4385,7 +4385,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4397,7 +4397,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4409,7 +4409,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4428,7 +4428,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4438,9 +4438,9 @@
               "session": 2
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4450,9 +4450,9 @@
               "session": 2
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4464,7 +4464,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4553,8 +4553,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -4567,7 +4567,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4586,7 +4586,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4598,7 +4598,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4610,7 +4610,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4620,9 +4620,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 4 runs",
+              "bowler": "Ansari",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4634,7 +4634,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4644,9 +4644,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4665,7 +4665,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4677,7 +4677,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4687,8 +4687,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -4699,8 +4699,8 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -4742,9 +4742,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 4 runs",
+              "bowler": "Ansari",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4756,7 +4756,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4768,7 +4768,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4780,7 +4780,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4792,7 +4792,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4804,7 +4804,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4821,8 +4821,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -4835,7 +4835,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4847,7 +4847,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4859,7 +4859,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4871,7 +4871,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4881,9 +4881,9 @@
               "session": 2
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4900,8 +4900,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Zeeshan Ansari",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -4924,9 +4924,9 @@
               "session": 2
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Ansari",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4938,7 +4938,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4950,7 +4950,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4962,7 +4962,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Zeeshan Ansari",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4979,8 +4979,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -4991,8 +4991,8 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -5003,9 +5003,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Veer",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5015,9 +5015,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Veer",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5027,9 +5027,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5039,9 +5039,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5060,7 +5060,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5072,7 +5072,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5082,9 +5082,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Dayal",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5094,8 +5094,8 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Yash Dayal",
+              "batter": "Patel, 1 run",
+              "bowler": "Dayal",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 1,
@@ -5108,7 +5108,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5120,7 +5120,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5149,9 +5149,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 2 runs",
+              "bowler": "Veer",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5161,9 +5161,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Patel, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5173,9 +5173,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 4 runs",
+              "bowler": "Veer",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5187,7 +5187,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5199,7 +5199,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5218,7 +5218,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5230,7 +5230,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Yash Dayal",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5295,8 +5295,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -5309,7 +5309,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5321,7 +5321,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5343,9 +5343,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5355,9 +5355,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5376,7 +5376,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5388,7 +5400,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5400,7 +5412,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5412,7 +5424,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5422,21 +5434,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5453,8 +5453,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Rinku Singh",
+              "batter": "Patel, no run",
+              "bowler": "Singh",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -5465,8 +5465,8 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Rinku Singh",
+              "batter": "Patel, no run",
+              "bowler": "Singh",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
@@ -5532,9 +5532,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5544,9 +5544,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5556,9 +5556,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Veer",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5570,7 +5570,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5582,19 +5594,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5613,7 +5613,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5623,9 +5623,9 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5637,7 +5637,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5649,7 +5649,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5659,8 +5659,8 @@
               "session": 3
             },
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Karan Sharma",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 1,
@@ -5673,7 +5673,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5690,8 +5690,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, 1 run",
+              "bowler": "Veer",
               "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 1,
@@ -5704,7 +5704,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5716,7 +5716,19 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5728,7 +5740,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5740,19 +5752,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5771,7 +5771,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5783,7 +5783,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5793,9 +5793,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5807,7 +5807,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5829,9 +5829,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5848,9 +5848,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Veer",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5860,9 +5860,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5874,7 +5874,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5886,7 +5886,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5896,9 +5896,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 4 runs",
+              "bowler": "Veer",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5908,9 +5908,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Patel, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5927,9 +5927,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5941,7 +5941,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5951,9 +5951,9 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Karan Sharma",
-              "non_striker": "Mitesh Patel",
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6006,9 +6006,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Mitesh Patel",
-              "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
+              "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6020,7 +6020,7 @@
             {
               "batter": "Mitesh Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Dhruv N Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6030,8 +6030,8 @@
               "session": 3
             },
             {
-              "batter": "Dhruv N Patel",
-              "bowler": "Prashant Veer",
+              "batter": "Patel, no run",
+              "bowler": "Veer",
               "non_striker": "Mitesh Patel",
               "runs": {
                 "batter": 0,
@@ -6044,7 +6044,7 @@
             {
               "batter": "Dhruv N Patel",
               "bowler": "Prashant Veer",
-              "non_striker": "Mitesh Patel",
+              "non_striker": "Patel, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6078,6 +6078,982 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 75,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 2 runs",
+              "bowler": "Sharma",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Sharma",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 4 runs",
+              "bowler": "Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Patel, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, no run",
+              "bowler": "Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, 1 run",
+              "bowler": "Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Patel, out!",
+              "bowler": "Sharma",
+              "non_striker": "Patel, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Dhruv N Patel",
+                  "fielders": [
+                    {
+                      "name": "Aryan Juyal"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Patel, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Mitesh Patel",
+                  "fielders": [
+                    {
+                      "name": "Aryan Juyal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Yadav",
+              "non_striker": "Patel, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Raj Limbani",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Raj Limbani",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Limbani, out!",
+              "bowler": "Sharma",
+              "non_striker": "Raj Limbani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Raj Limbani"
+                }
+              ]
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Karan Sharma",
+              "non_striker": "Limbani, out!",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sheth, no run",
+              "bowler": "Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Sheth, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Sheth, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Sheth, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sheth, no run",
+              "bowler": "Ansari",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sheth, no run",
+              "bowler": "Ansari",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Yadav",
+              "non_striker": "Sheth, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Yadav",
+              "non_striker": "Sheth, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Solanki, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Solanki, no run",
+              "bowler": "Yadav",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -6104,45 +7080,45 @@
           "noballs": 0
         },
         "Kartik Yadav": {
-          "overs": "14.0",
-          "maidens": 0,
-          "runs": 56,
-          "wickets": 1,
-          "dots": 53,
-          "fours": 8,
+          "overs": "20.0",
+          "maidens": 2,
+          "runs": 73,
+          "wickets": 2,
+          "dots": 81,
+          "fours": 11,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Zeeshan Ansari": {
-          "overs": "11.0",
+          "overs": "12.0",
           "maidens": 2,
-          "runs": 43,
+          "runs": 45,
           "wickets": 0,
-          "dots": 43,
+          "dots": 47,
           "fours": 6,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Karan Sharma": {
-          "overs": "13.0",
+          "overs": "17.0",
           "maidens": 4,
-          "runs": 25,
-          "wickets": 1,
-          "dots": 60,
-          "fours": 2,
+          "runs": 39,
+          "wickets": 3,
+          "dots": 75,
+          "fours": 3,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Prashant Veer": {
-          "overs": "11.0",
+          "overs": "12.0",
           "maidens": 1,
-          "runs": 45,
+          "runs": 53,
           "wickets": 0,
-          "dots": 43,
-          "fours": 7,
+          "dots": 47,
+          "fours": 9,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

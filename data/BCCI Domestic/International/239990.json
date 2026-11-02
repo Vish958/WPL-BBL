@@ -18,9 +18,9 @@
     "days_summary": [
       {
         "day": 1,
-        "status": "in play",
-        "score": "Vidarbha trail Madhya Pradesh by 174 runs with 6 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "56/4 in 23.0 ov",
+        "time": "2026-11-02 11:15:13.16"
       }
     ],
     "event": {
@@ -31,9 +31,9 @@
     "match_timing": {
       "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 12.4,
-      "overs_remaining_today": 77.2,
-      "balls_remaining_today": 464,
+      "overs_bowled": 23.0,
+      "overs_remaining_today": 67.0,
+      "balls_remaining_today": 402,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -56,7 +56,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Vidarbha trail Madhya Pradesh by 174 runs with 6 wickets remaining"
+      "summary": "Vidarbha trail Madhya Pradesh by 153 runs with 6 wickets remaining"
     },
     "players": {
       "Vidarbha": [
@@ -6568,42 +6568,882 @@
                   "player_out": "Danish Malewar"
                 }
               ]
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Saransh Jain",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Saransh Jain",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Saransh Jain",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Saransh Jain",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Saransh Jain",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Saransh Jain",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Avesh Khan",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Avesh Khan",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Kumar Kartikeya",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Ravi Kiran",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Saransh Jain",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv Shorey",
+              "bowler": "Saransh Jain",
+              "non_striker": "Akshay Wadkar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Saransh Jain",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Saransh Jain",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Saransh Jain",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Akshay Wadkar",
+              "bowler": "Saransh Jain",
+              "non_striker": "Dhruv Shorey",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
             }
           ]
         }
       ],
       "official_bowlers": {
         "Kumar Kartikeya": {
-          "overs": "6.4",
-          "maidens": 0,
-          "runs": 19,
+          "overs": "10.0",
+          "maidens": 2,
+          "runs": 23,
           "wickets": 3,
-          "dots": 27,
-          "fours": 1,
+          "dots": 46,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Avesh Khan": {
-          "overs": "3.0",
+          "overs": "6.0",
           "maidens": 1,
-          "runs": 3,
+          "runs": 11,
           "wickets": 1,
-          "dots": 15,
+          "dots": 27,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Saransh Jain": {
-          "overs": "3.0",
+          "overs": "5.0",
           "maidens": 0,
-          "runs": 13,
+          "runs": 15,
           "wickets": 0,
-          "dots": 9,
+          "dots": 19,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
+          "noballs": 0
+        },
+        "Ravi Kiran": {
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 7,
+          "wickets": 0,
+          "dots": 9,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 1,
           "noballs": 0
         }
       }

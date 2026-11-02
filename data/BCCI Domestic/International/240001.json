@@ -18,9 +18,9 @@
     "days_summary": [
       {
         "day": 1,
-        "status": "in play",
-        "score": "Himachal Pradesh lead Rajasthan by 49 runs with 4 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "8/0 in 1.0 ov",
+        "time": "2026-11-02 11:33:37.60"
       }
     ],
     "event": {
@@ -31,9 +31,9 @@
     "match_timing": {
       "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 32.0,
-      "overs_remaining_today": 58.0,
-      "balls_remaining_today": 348,
+      "overs_bowled": 1.0,
+      "overs_remaining_today": 89.0,
+      "balls_remaining_today": 534,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -56,7 +56,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Himachal Pradesh lead Rajasthan by 49 runs with 4 wickets remaining"
+      "summary": "Rajasthan trail Himachal Pradesh by 67 runs with 10 wickets remaining"
     },
     "players": {
       "Himachal Pradesh": [
@@ -69,8 +69,8 @@
         "Nitin Sharma",
         "Mukul Negi",
         "Arpit Guleria",
-        "Jitender Rana",
-        "Abhishek Kumar"
+        "Abhishek Kumar",
+        "Jitender Rana"
       ],
       "Rajasthan": [
         "Sachin Yadav",
@@ -97,8 +97,8 @@
         "Nitin Sharma": "70414",
         "Mukul Negi": "82930",
         "Arpit Guleria": "69128",
-        "Jitender Rana": "105840",
         "Abhishek Kumar": "84333",
+        "Jitender Rana": "105840",
         "Sachin Yadav": "88319",
         "Rohan Rajbhar": "96701",
         "Mahipal Lomror": "20222",
@@ -5304,37 +5304,706 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 32,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Mukul Negi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mukul Negi",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Mukul Negi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Mukul Negi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Mukul Negi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Mukul Negi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mukul Negi",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mukul Negi",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mukul Negi",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Mukul Negi"
+                }
+              ]
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Aniket Choudhary",
+              "non_striker": "Vaibhav Kalta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vaibhav Kalta",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Vaibhav Kalta",
+                  "fielders": [
+                    {
+                      "name": "Kunal Rathore"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Arpit Guleria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Arpit Guleria",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Arpit Guleria",
+                  "fielders": [
+                    {
+                      "name": "Karan Lamba"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jitender Rana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jitender Rana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Jitender Rana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Danish Bhambhu",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Jitender Rana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Jitender Rana",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek Kumar",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Jitender Rana",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jitender Rana",
+              "bowler": "Sahil Dhiwan",
+              "non_striker": "Abhishek Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Jitender Rana"
+                }
+              ]
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Aniket Choudhary": {
-          "overs": "10.0",
-          "maidens": 3,
-          "runs": 31,
-          "wickets": 2,
-          "dots": 44,
+          "overs": "12.0",
+          "maidens": 4,
+          "runs": 33,
+          "wickets": 3,
+          "dots": 55,
           "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Danish Bhambhu": {
-          "overs": "10.0",
+          "overs": "14.0",
           "maidens": 3,
-          "runs": 42,
-          "wickets": 1,
-          "dots": 41,
-          "fours": 6,
-          "sixes": 0,
+          "runs": 63,
+          "wickets": 2,
+          "dots": 55,
+          "fours": 8,
+          "sixes": 1,
           "wides": 0,
           "noballs": 1
         },
         "Sahil Dhiwan": {
-          "overs": "11.0",
+          "overs": "13.0",
           "maidens": 2,
-          "runs": 48,
-          "wickets": 3,
-          "dots": 44,
+          "runs": 50,
+          "wickets": 5,
+          "dots": 54,
           "fours": 4,
           "sixes": 2,
           "wides": 0,
@@ -5347,6 +6016,106 @@
           "wickets": 0,
           "dots": 4,
           "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    },
+    {
+      "team": "Rajasthan",
+      "overs": [
+        {
+          "over": 0,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Abhishek Kumar",
+              "non_striker": "Rohan Rajbhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Abhishek Kumar",
+              "non_striker": "Rohan Rajbhar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Abhishek Kumar",
+              "non_striker": "Rohan Rajbhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Abhishek Kumar",
+              "non_striker": "Rohan Rajbhar",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Abhishek Kumar",
+              "non_striker": "Rohan Rajbhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Yadav",
+              "bowler": "Abhishek Kumar",
+              "non_striker": "Rohan Rajbhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Abhishek Kumar": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 4,
+          "wickets": 0,
+          "dots": 5,
+          "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

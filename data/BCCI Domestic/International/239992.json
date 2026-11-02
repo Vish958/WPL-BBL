@@ -18,9 +18,9 @@
     "days_summary": [
       {
         "day": 1,
-        "status": "in play",
-        "score": "Chhattisgarh are 244 for 6",
-        "time": ""
+        "status": "stumps",
+        "score": "279/7 in 87.0 ov",
+        "time": "2026-11-02 11:29:28.94"
       }
     ],
     "event": {
@@ -31,15 +31,15 @@
     "match_timing": {
       "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 77.0,
-      "overs_remaining_today": 13.0,
-      "balls_remaining_today": 78,
+      "overs_bowled": 87.0,
+      "overs_remaining_today": 3.0,
+      "balls_remaining_today": 18,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 13.0,
-        "max_overs_with_1hr_extension": 28.0,
+        "expected_overs_next_hour": 3.0,
+        "max_overs_with_1hr_extension": 18.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -56,7 +56,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Chhattisgarh are 244 for 6"
+      "summary": "Chhattisgarh are 279 for 7"
     },
     "players": {
       "Chhattisgarh": [
@@ -134,8 +134,20 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Chama Milind",
+              "batter": "Pandey, no run",
+              "bowler": "Milind",
+              "non_striker": "Anuj Tiwary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pandey, no run",
+              "bowler": "Milind",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -148,7 +160,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -160,7 +172,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -172,7 +184,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -184,19 +196,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Ayush Pandey",
-              "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -304,8 +304,8 @@
               "session": 1
             },
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Chama Milind",
+              "batter": "Pandey, no run",
+              "bowler": "Milind",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -318,7 +318,19 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pandey, no run",
+              "bowler": "Milind",
+              "non_striker": "Ayush Pandey",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -330,19 +342,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Ayush Pandey",
-              "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -352,9 +352,9 @@
               "session": 1
             },
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Chama Milind",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Pandey, no run",
+              "bowler": "Milind",
+              "non_striker": "Ayush Pandey",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -371,8 +371,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Ayush Pandey",
               "runs": {
                 "batter": 0,
@@ -385,7 +385,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Ayush Pandey",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -397,7 +397,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Ayush Pandey",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -409,7 +409,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Ayush Pandey",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -419,9 +419,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Ayush Pandey",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -431,9 +431,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Ayush Pandey",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -529,8 +529,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Ayush Pandey",
               "runs": {
                 "batter": 0,
@@ -541,9 +541,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Ayush Pandey",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -553,9 +553,9 @@
               "session": 1
             },
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Pandey, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -567,7 +567,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 2,
@@ -580,9 +580,9 @@
               }
             },
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Pandey, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Ayush Pandey",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -594,7 +594,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -611,9 +611,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Pandey, 2 runs",
+              "bowler": "Readdi",
+              "non_striker": "Ayush Pandey",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -625,7 +625,19 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pandey, no run",
+              "bowler": "Readdi",
+              "non_striker": "Pandey, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -637,7 +649,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -649,7 +661,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -661,19 +673,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Ayush Pandey",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -714,8 +714,8 @@
               "session": 1
             },
             {
-              "batter": "Ayush Pandey",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Pandey, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -728,7 +728,7 @@
             {
               "batter": "Ayush Pandey",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Pandey, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -816,8 +816,8 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
+              "batter": "Tiwary, 4 runs",
+              "bowler": "Readdi",
               "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 4,
@@ -830,7 +830,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Tiwary, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -842,7 +842,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Tiwary, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -859,8 +859,20 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Verma, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -873,7 +885,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -883,9 +895,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -895,21 +907,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -919,9 +919,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Verma, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -938,9 +938,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, no run",
+              "bowler": "Readdi",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -950,9 +950,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, no run",
+              "bowler": "Readdi",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -962,9 +962,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -976,7 +976,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -986,9 +986,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Readdi",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -998,9 +998,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Readdi",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1017,9 +1017,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1029,9 +1029,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1041,9 +1041,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1053,9 +1053,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Verma, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1067,7 +1067,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1077,9 +1077,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1096,9 +1096,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1110,7 +1110,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1120,9 +1120,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Readdi",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1132,9 +1132,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Readdi",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1144,9 +1144,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, 4 runs",
+              "bowler": "Readdi",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1156,9 +1156,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Readdi",
+              "non_striker": "Verma, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1175,9 +1175,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Verma, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1189,7 +1189,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1201,7 +1201,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1213,7 +1213,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1225,7 +1225,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1237,7 +1237,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1254,8 +1254,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Tiwary, 2 runs",
+              "bowler": "Yadav",
               "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 2,
@@ -1266,9 +1266,21 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Tiwary, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Tiwary, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1280,19 +1292,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1304,7 +1304,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1314,9 +1314,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1333,9 +1333,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Tiwary, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1347,7 +1347,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1359,7 +1359,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1369,9 +1369,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1383,7 +1383,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1395,7 +1395,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1424,8 +1424,8 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Verma, no run",
+              "bowler": "Yadav",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -1438,7 +1438,31 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Yadav",
+              "non_striker": "Mayank Verma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Yadav",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1450,31 +1474,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1493,7 +1493,31 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Tiwary, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Mayank Verma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1505,31 +1529,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1539,9 +1539,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1551,9 +1551,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1572,7 +1572,19 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Yadav",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1584,7 +1596,31 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Yadav",
+              "non_striker": "Mayank Verma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Yadav",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1596,43 +1632,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1651,7 +1651,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1663,7 +1663,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1675,7 +1675,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1687,7 +1687,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1699,7 +1699,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1711,7 +1711,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1728,9 +1728,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1742,7 +1742,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1843,8 +1843,8 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
+              "batter": "Verma, 4 runs",
+              "bowler": "Anikethreddy",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 4,
@@ -1857,7 +1857,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1867,9 +1867,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1886,9 +1886,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1900,7 +1900,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1912,7 +1912,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1922,8 +1922,8 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
               "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 0,
@@ -1936,7 +1936,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1948,7 +1948,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1965,8 +1965,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
+              "batter": "Verma, no run",
+              "bowler": "Anikethreddy",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -1979,7 +1979,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1989,9 +1989,9 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Verma, 4 runs",
+              "bowler": "Anikethreddy",
+              "non_striker": "Mayank Verma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2003,7 +2003,19 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Verma, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Verma, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2015,19 +2027,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Mayank Verma",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2092,8 +2092,8 @@
               "session": 1
             },
             {
-              "batter": "Mayank Verma",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Verma, 1 run",
+              "bowler": "Yadav",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
@@ -2106,7 +2106,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Mayank Verma",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2125,7 +2125,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2137,7 +2137,7 @@
             {
               "batter": "Mayank Verma",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2160,7 +2160,7 @@
             {
               "batter": "Sanjeet Desai",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2172,7 +2172,7 @@
             {
               "batter": "Sanjeet Desai",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2184,7 +2184,7 @@
             {
               "batter": "Sanjeet Desai",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2207,7 +2207,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Verma, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2236,9 +2236,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Amandeep Khare",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2250,7 +2250,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Amandeep Khare",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2262,7 +2262,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Amandeep Khare",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2274,7 +2274,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Amandeep Khare",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2284,9 +2284,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Amandeep Khare",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2305,7 +2305,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2317,7 +2317,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2329,7 +2329,19 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Khare, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Amandeep Khare",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2341,7 +2353,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Khare, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2351,21 +2363,9 @@
               "session": 1
             },
             {
-              "batter": "Amandeep Khare",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Amandeep Khare",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Khare, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Amandeep Khare",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2382,9 +2382,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Amandeep Khare",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Khare, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2394,9 +2394,9 @@
               "session": 1
             },
             {
-              "batter": "Amandeep Khare",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Khare, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2408,7 +2408,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2420,7 +2420,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2432,7 +2432,7 @@
             {
               "batter": "Amandeep Khare",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2455,7 +2455,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2472,8 +2472,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
+              "batter": "Tiwary, no run",
+              "bowler": "Anikethreddy",
               "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
@@ -2484,9 +2484,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2498,7 +2498,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2599,8 +2599,8 @@
               "session": 1
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Tiwari, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -2611,9 +2611,9 @@
               "session": 1
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, 6 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 6,
                 "extras": 0,
@@ -2632,7 +2632,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 6 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2642,9 +2642,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2656,7 +2656,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2690,9 +2690,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2711,7 +2711,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2721,9 +2721,9 @@
               "session": 1
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2733,9 +2733,9 @@
               "session": 1
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, 2 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2747,7 +2747,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2759,7 +2759,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2769,9 +2769,9 @@
               "session": 1
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2788,9 +2788,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2802,7 +2802,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 2,
@@ -2817,7 +2817,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2842,8 +2842,8 @@
               }
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Gangam Anikethreddy",
+              "batter": "Tiwari, no run",
+              "bowler": "Anikethreddy",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -2856,7 +2856,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2875,7 +2875,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2887,7 +2887,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2921,8 +2921,8 @@
               "session": 1
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Tiwari, 1 run",
+              "bowler": "Thyagarajan",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
@@ -2933,9 +2933,9 @@
               "session": 1
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2954,7 +2954,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2966,7 +2966,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2978,7 +2978,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3012,8 +3012,8 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Tiwari, no run",
+              "bowler": "Yadav",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -3031,9 +3031,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3045,7 +3045,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3057,7 +3057,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3067,9 +3067,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3079,9 +3079,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3091,9 +3091,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3112,7 +3112,31 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Anuj Tiwary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3124,7 +3148,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3136,31 +3160,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3172,7 +3172,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3225,9 +3225,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3239,7 +3239,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3251,7 +3251,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3270,7 +3270,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3304,8 +3304,8 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Tiwari, 1 run",
+              "bowler": "Yadav",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
@@ -3316,9 +3316,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3328,9 +3328,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3349,7 +3349,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3383,8 +3383,20 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Tiwari, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Anuj Tiwary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwari, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
@@ -3397,19 +3409,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3462,9 +3462,21 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Anuj Tiwary",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3476,19 +3488,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3505,9 +3505,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3517,9 +3517,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Readdi",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3529,9 +3529,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3543,7 +3543,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3584,8 +3584,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Tiwari, 4 runs",
+              "bowler": "Yadav",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 4,
@@ -3598,7 +3598,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, 4 runs",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3608,8 +3608,20 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
+              "non_striker": "Vikalp Tiwari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwary, no run",
+              "bowler": "Yadav",
               "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
@@ -3622,7 +3634,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3634,19 +3646,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3738,9 +3738,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3759,7 +3759,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3771,7 +3771,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3783,7 +3783,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3795,7 +3795,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3860,9 +3860,21 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vikalp Tiwari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwari, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3874,7 +3886,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3886,19 +3898,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3917,7 +3917,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3927,8 +3927,8 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Gangam Anikethreddy",
+              "batter": "Tiwari, 1 run",
+              "bowler": "Anikethreddy",
               "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
@@ -3941,7 +3941,19 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwary, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3953,7 +3965,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3965,19 +3977,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3996,7 +3996,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -4009,9 +4009,9 @@
               }
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 2 runs",
+              "bowler": "Readdi",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4021,9 +4021,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, no run",
+              "bowler": "Readdi",
+              "non_striker": "Tiwary, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4035,7 +4035,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwary, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4045,9 +4045,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4059,7 +4059,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -4103,9 +4103,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4117,7 +4117,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4129,7 +4129,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4141,7 +4141,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "non_striker": "Tiwary, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4151,9 +4151,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Anuj Tiwary",
+              "batter": "Tiwari, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4172,7 +4172,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Chama Milind",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4184,7 +4184,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Chama Milind",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4196,7 +4196,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Chama Milind",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -4208,7 +4208,7 @@
             {
               "batter": "Anuj Tiwary",
               "bowler": "Chama Milind",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4218,9 +4218,9 @@
               "session": 2
             },
             {
-              "batter": "Anuj Tiwary",
-              "bowler": "Chama Milind",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Tiwary, out!",
+              "bowler": "Milind",
+              "non_striker": "Anuj Tiwary",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4236,9 +4236,9 @@
               ]
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Tiwary, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4257,7 +4257,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4279,9 +4279,33 @@
               "session": 2
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4293,31 +4317,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4336,7 +4336,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4370,8 +4370,20 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Chama Milind",
+              "batter": "Tiwari, no run",
+              "bowler": "Milind",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwari, no run",
+              "bowler": "Milind",
               "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
@@ -4384,19 +4396,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4413,9 +4413,21 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Vikalp Tiwari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwari, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4427,7 +4439,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4439,7 +4451,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4451,7 +4463,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4461,21 +4473,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4586,9 +4586,9 @@
               "session": 2
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4600,7 +4600,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4612,7 +4612,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4624,7 +4624,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4665,8 +4665,8 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Tiwari, 1 run",
+              "bowler": "Thyagarajan",
               "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 1,
@@ -4679,7 +4679,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4691,7 +4691,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4703,7 +4703,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4715,7 +4715,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4732,9 +4732,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4746,7 +4746,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4758,7 +4758,19 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4770,7 +4782,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4782,19 +4794,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Gangam Anikethreddy",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4914,9 +4914,21 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vikalp Tiwari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Tiwari, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4928,7 +4940,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4938,21 +4950,9 @@
               "session": 2
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, no run",
+              "bowler": "Readdi",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4971,7 +4971,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4983,7 +4983,19 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4995,7 +5007,19 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5007,31 +5031,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5048,9 +5048,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5060,9 +5060,9 @@
               "session": 2
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "batter": "Yadav, no run",
+              "bowler": "Readdi",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5074,7 +5074,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Rakshan Readdi",
-              "non_striker": "Vikalp Tiwari",
+              "non_striker": "Tiwari, 1 run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5108,8 +5108,8 @@
               "session": 2
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Rakshan Readdi",
+              "batter": "Yadav, no run",
+              "bowler": "Readdi",
               "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
@@ -5127,9 +5127,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, no run",
+              "bowler": "Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5139,9 +5139,9 @@
               "session": 3
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Tiwari, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5153,7 +5153,7 @@
             {
               "batter": "Vikalp Tiwari",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Tiwari, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5163,9 +5163,9 @@
               "session": 3
             },
             {
-              "batter": "Vikalp Tiwari",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Tiwari, out!",
+              "bowler": "Yadav",
+              "non_striker": "Vikalp Tiwari",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5181,9 +5181,9 @@
               ]
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Tiwari, out!",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5195,7 +5195,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5212,9 +5212,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5226,7 +5226,43 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5238,43 +5274,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5351,8 +5351,8 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Mende Ruthik Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
               "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
@@ -5370,9 +5370,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5382,9 +5382,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 4 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5394,9 +5394,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, 2 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 4 runs",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5406,9 +5406,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 2 runs",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5420,7 +5420,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5449,9 +5449,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5463,7 +5463,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5473,9 +5473,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5528,20 +5528,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
               "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 1,
@@ -5552,9 +5540,21 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5564,9 +5564,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5576,9 +5576,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5590,7 +5590,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5643,9 +5643,21 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5657,19 +5669,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5686,9 +5686,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5698,9 +5698,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5712,7 +5712,19 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5724,7 +5736,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5734,21 +5746,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5767,7 +5767,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5779,7 +5779,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5789,9 +5789,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Yadav",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5803,7 +5803,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5815,7 +5815,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5825,9 +5825,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Mende Ruthik Yadav",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5846,7 +5846,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5858,7 +5858,19 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5870,7 +5882,19 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5882,31 +5906,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5923,8 +5923,20 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Chama Milind",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
               "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
@@ -5959,9 +5971,9 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Prateek Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5973,19 +5985,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Chama Milind",
-              "non_striker": "Prateek Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6002,8 +6002,20 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
               "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
@@ -6016,7 +6028,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6026,21 +6038,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6052,7 +6052,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6064,7 +6064,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6117,9 +6117,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6131,7 +6131,7 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6141,9 +6141,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6162,7 +6162,19 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6174,7 +6186,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6186,19 +6198,7 @@
             {
               "batter": "Jayant Yadav",
               "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Jayant Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Prateek Yadav",
+              "non_striker": "Yadav, no run",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6220,9 +6220,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Tanay Thyagarajan",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6239,8 +6239,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Jayant Yadav",
-              "bowler": "Chama Milind",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
               "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
@@ -6251,8 +6251,75 @@
               "session": 3
             },
             {
-              "batter": "Jayant Yadav",
+              "batter": "Yadav, 1 run",
+              "bowler": "Milind",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
               "bowler": "Chama Milind",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Chama Milind",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Chama Milind",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
               "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 1,
@@ -6264,8 +6331,23 @@
             },
             {
               "batter": "Prateek Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Yadav, 1 run",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6274,6 +6356,49 @@
               "day": 1,
               "session": 3
             },
+            {
+              "batter": "Yadav, 4 runs",
+              "bowler": "Thyagarajan",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, 1 run",
+              "bowler": "Thyagarajan",
+              "non_striker": "Yadav, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Tanay Thyagarajan",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
             {
               "batter": "Prateek Yadav",
               "bowler": "Chama Milind",
@@ -6287,9 +6412,9 @@
               "session": 3
             },
             {
-              "batter": "Prateek Yadav",
-              "bowler": "Chama Milind",
-              "non_striker": "Jayant Yadav",
+              "batter": "Yadav, no run",
+              "bowler": "Milind",
+              "non_striker": "Prateek Yadav",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6301,6 +6426,279 @@
             {
               "batter": "Prateek Yadav",
               "bowler": "Chama Milind",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, 1 run",
+              "bowler": "Milind",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Chama Milind",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Chama Milind",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Readdi",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Readdi",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Yadav, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, 1 run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Prateek Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Gangam Anikethreddy",
               "non_striker": "Jayant Yadav",
               "runs": {
                 "batter": 0,
@@ -6311,60 +6709,466 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 82,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Readdi",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, 1 run",
+              "bowler": "Readdi",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prateek Yadav",
+              "bowler": "Rakshan Readdi",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Prateek Yadav",
+                  "fielders": [
+                    {
+                      "name": "Abhirath Reddy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Mandal, no run",
+              "bowler": "Readdi",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mandal, no run",
+              "bowler": "Readdi",
+              "non_striker": "Yadav, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Mandal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Mandal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mandal, 4 runs",
+              "bowler": "Yadav",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Mandal, 4 runs",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Mandal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Mandal, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mandal, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mandal, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mandal, no run",
+              "bowler": "Anikethreddy",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Mandal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Mandal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ajay Mandal",
+              "bowler": "Gangam Anikethreddy",
+              "non_striker": "Mandal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Ajay Mandal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Jayant Yadav",
+              "bowler": "Mende Ruthik Yadav",
+              "non_striker": "Yadav, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, no run",
+              "bowler": "Yadav",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Yadav, 2 runs",
+              "bowler": "Yadav",
+              "non_striker": "Jayant Yadav",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Chama Milind": {
-          "overs": "9.0",
+          "overs": "10.0",
           "maidens": 3,
-          "runs": 16,
+          "runs": 17,
           "wickets": 1,
-          "dots": 45,
+          "dots": 50,
           "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Tanay Thyagarajan": {
-          "overs": "25.0",
+          "overs": "26.0",
           "maidens": 4,
-          "runs": 83,
+          "runs": 89,
           "wickets": 1,
-          "dots": 107,
-          "fours": 9,
+          "dots": 110,
+          "fours": 10,
           "sixes": 2,
           "wides": 0,
           "noballs": 0
         },
         "Rakshan Readdi": {
-          "overs": "10.0",
+          "overs": "12.0",
           "maidens": 1,
-          "runs": 31,
-          "wickets": 1,
-          "dots": 42,
+          "runs": 34,
+          "wickets": 2,
+          "dots": 51,
           "fours": 3,
           "sixes": 0,
           "wides": 2,
           "noballs": 0
         },
         "Mende Ruthik Yadav": {
-          "overs": "16.0",
+          "overs": "18.0",
           "maidens": 1,
-          "runs": 58,
+          "runs": 69,
           "wickets": 1,
-          "dots": 63,
-          "fours": 6,
+          "dots": 71,
+          "fours": 8,
           "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Gangam Anikethreddy": {
-          "overs": "17.0",
-          "maidens": 3,
-          "runs": 49,
+          "overs": "21.0",
+          "maidens": 4,
+          "runs": 59,
           "wickets": 2,
-          "dots": 71,
-          "fours": 5,
+          "dots": 89,
+          "fours": 6,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
