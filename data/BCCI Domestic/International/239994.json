@@ -1,0 +1,5847 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2026-11-02",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "New Chandigarh",
+    "current_day": 1,
+    "dates": [
+      "2026-11-02"
+    ],
+    "day_status": "Live Day 1",
+    "days_played": [
+      1
+    ],
+    "days_summary": [
+      {
+        "day": 1,
+        "status": "in play",
+        "score": "Punjab are 232 for 5",
+        "time": ""
+      }
+    ],
+    "event": {
+      "name": "Ranji Trophy Elite",
+      "match_number": 55
+    },
+    "gender": "male",
+    "match_timing": {
+      "day": 1,
+      "scheduled_daily_overs": 90,
+      "overs_bowled": 70.0,
+      "overs_remaining_today": 20.0,
+      "balls_remaining_today": 120,
+      "fixed_projection": {
+        "standard_overs_per_hour": 15,
+        "minutes_per_over": 4.0,
+        "one_hour_capacity_overs": 15.0,
+        "expected_overs_next_hour": 15.0,
+        "max_overs_with_1hr_extension": 30.0,
+        "extension_1_hour_overs": 15.0,
+        "extension_30_min_overs": 7.5
+      }
+    },
+    "match_type": "MDM",
+    "officials": {
+      "umpires": [
+        "Bhavesh Patel",
+        "Nishaanth Sethuraman"
+      ],
+      "match_referees": [
+        "Iqbal Siddiqui"
+      ]
+    },
+    "outcome": {
+      "result": "stumps",
+      "summary": "Punjab are 232 for 5"
+    },
+    "players": {
+      "Punjab": [
+        "Vihaan Malhotra",
+        "Prabhsimran Singh",
+        "Jashanpreet Singh Sidhu",
+        "Uday Saharan",
+        "Ramandeep Singh",
+        "Salil Arora",
+        "Sanvir Singh",
+        "Harpreet Brar",
+        "Emanjot Singh Chahal",
+        "Gursimran Singh",
+        "Sukhdeep Bajwa"
+      ],
+      "Andhra": [
+        "Changalapatu Gnaneshwar",
+        "Revanth Reddy",
+        "Shaik Rasheed",
+        "Karan Shinde",
+        "Ricky Bhui",
+        "SV Rahul",
+        "Kalidindi Raju",
+        "Venkat Sasikanth",
+        "Saurabh Kumar",
+        "Tripurana Vijay",
+        "Kavuri Saiteja"
+      ]
+    },
+    "registry": {
+      "people": {
+        "Vihaan Malhotra": "86477",
+        "Prabhsimran Singh": "68831",
+        "Jashanpreet Singh Sidhu": "86970",
+        "Uday Saharan": "83596",
+        "Ramandeep Singh": "65478",
+        "Salil Arora": "72140",
+        "Sanvir Singh": "68814",
+        "Harpreet Brar": "69782",
+        "Emanjot Singh Chahal": "87006",
+        "Gursimran Singh": "87050",
+        "Sukhdeep Bajwa": "87198",
+        "Changalapatu Gnaneshwar": "69775",
+        "Revanth Reddy": "84660",
+        "Shaik Rasheed": "76206",
+        "Karan Shinde": "40070",
+        "Ricky Bhui": "27084",
+        "SV Rahul": "96083",
+        "Kalidindi Raju": "94200",
+        "Venkat Sasikanth": "27722",
+        "Saurabh Kumar": "22945",
+        "Tripurana Vijay": "76128",
+        "Kavuri Saiteja": "76156"
+      }
+    },
+    "season": "2026/27",
+    "team_type": "domestic",
+    "teams": [
+      "Punjab",
+      "Andhra"
+    ],
+    "toss": {
+      "decision": "field",
+      "winner": "Andhra"
+    },
+    "venue": "PCA International Cricket Stadium, Ground A, New Chandigarh"
+  },
+  "innings": [
+    {
+      "team": "Punjab",
+      "overs": [
+        {
+          "over": 0,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Prabhsimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Prabhsimran Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Prabhsimran Singh"
+                }
+              ]
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Jashanpreet Singh Sidhu",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Jashanpreet Singh Sidhu",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Jashanpreet Singh Sidhu",
+                  "fielders": [
+                    {
+                      "name": "Tripurana Vijay"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Uday Saharan",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Uday Saharan",
+                  "fielders": [
+                    {
+                      "name": "Shaik Rasheed"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Ramandeep Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Ramandeep Singh",
+                  "fielders": [
+                    {
+                      "name": "SV Rahul"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": null,
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Vihaan Malhotra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vihaan Malhotra",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Vihaan Malhotra"
+                }
+              ]
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "byes": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Kavuri Saiteja": {
+          "overs": "16.0",
+          "maidens": 3,
+          "runs": 62,
+          "wickets": 3,
+          "dots": 66,
+          "fours": 8,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 3
+        },
+        "Kalidindi Raju": {
+          "overs": "15.0",
+          "maidens": 3,
+          "runs": 39,
+          "wickets": 2,
+          "dots": 69,
+          "fours": 4,
+          "sixes": 0,
+          "wides": 1,
+          "noballs": 0
+        },
+        "Venkat Sasikanth": {
+          "overs": "11.0",
+          "maidens": 4,
+          "runs": 35,
+          "wickets": 0,
+          "dots": 56,
+          "fours": 8,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 1
+        },
+        "Tripurana Vijay": {
+          "overs": "10.0",
+          "maidens": 2,
+          "runs": 36,
+          "wickets": 0,
+          "dots": 42,
+          "fours": 3,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Saurabh Kumar": {
+          "overs": "18.0",
+          "maidens": 2,
+          "runs": 55,
+          "wickets": 0,
+          "dots": 75,
+          "fours": 3,
+          "sixes": 2,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    }
+  ]
+}

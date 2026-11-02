@@ -1,0 +1,7079 @@
+{
+  "meta": {
+    "data_version": "1.1.0",
+    "created": "2026-11-02",
+    "revision": 1
+  },
+  "info": {
+    "balls_per_over": 6,
+    "city": "Guwahati",
+    "current_day": 1,
+    "dates": [
+      "2026-11-02"
+    ],
+    "day_status": "Live Day 1",
+    "days_played": [
+      1
+    ],
+    "days_summary": [
+      {
+        "day": 1,
+        "status": "stumps",
+        "score": "180/2 in 36.0 ov",
+        "time": "2026-11-02 10:30:21.82"
+      }
+    ],
+    "event": {
+      "name": "Ranji Trophy Elite",
+      "match_number": 54
+    },
+    "gender": "male",
+    "match_timing": {
+      "day": 1,
+      "scheduled_daily_overs": 90,
+      "overs_bowled": 36.0,
+      "overs_remaining_today": 54.0,
+      "balls_remaining_today": 324,
+      "fixed_projection": {
+        "standard_overs_per_hour": 15,
+        "minutes_per_over": 4.0,
+        "one_hour_capacity_overs": 15.0,
+        "expected_overs_next_hour": 15.0,
+        "max_overs_with_1hr_extension": 30.0,
+        "extension_1_hour_overs": 15.0,
+        "extension_30_min_overs": 7.5
+      }
+    },
+    "match_type": "MDM",
+    "officials": {
+      "umpires": [
+        "Abhijit Deshmukh",
+        "Pashchim Pathak"
+      ],
+      "match_referees": [
+        "Amit Sharma"
+      ]
+    },
+    "outcome": {
+      "result": "stumps",
+      "summary": "Karnataka lead Assam by 45 runs with 8 wickets remaining"
+    },
+    "players": {
+      "Assam": [
+        "Nibir Deka",
+        "Pradyun Saikia",
+        "Sumit Ghadigaonkar",
+        "Denish Das",
+        "Sibsankar Roy",
+        "Sarupam Purkayastha",
+        "Amlanjyoti Das",
+        "Roshan Alam",
+        "Mukhtar Hussain",
+        "Mohit Thakur",
+        "Hridip Deka"
+      ],
+      "Karnataka": [
+        "Rohan Patil",
+        "Mayank Agarwal",
+        "KL Shrijith",
+        "KV Aneesh",
+        "Aneeshwar Gautam",
+        "Karun Nair",
+        "Vidwath Kaverappa",
+        "Shreyas Gopal",
+        "Ritesh Bhatkal",
+        "Manvanth Kumar",
+        "Shikhar Shetty"
+      ]
+    },
+    "registry": {
+      "people": {
+        "Nibir Deka": "96113",
+        "Pradyun Saikia": "82885",
+        "Sumit Ghadigaonkar": "73172",
+        "Denish Das": "73911",
+        "Sibsankar Roy": "25678",
+        "Sarupam Purkayastha": "20727",
+        "Amlanjyoti Das": "72332",
+        "Roshan Alam": "38836",
+        "Mukhtar Hussain": "67799",
+        "Mohit Thakur": "97775",
+        "Hridip Deka": "76591",
+        "Rohan Patil": "78926",
+        "Mayank Agarwal": "16946",
+        "KL Shrijith": "69676",
+        "KV Aneesh": "83037",
+        "Aneeshwar Gautam": "76226",
+        "Karun Nair": "16936",
+        "Vidwath Kaverappa": "76665",
+        "Shreyas Gopal": "16937",
+        "Ritesh Bhatkal": "69191",
+        "Manvanth Kumar": "83061",
+        "Shikhar Shetty": "87029"
+      }
+    },
+    "season": "2026/27",
+    "team_type": "domestic",
+    "teams": [
+      "Assam",
+      "Karnataka"
+    ],
+    "toss": {
+      "decision": "bat",
+      "winner": "Assam"
+    },
+    "venue": "ACA Stadium, Barsapara, Guwahati"
+  },
+  "innings": [
+    {
+      "team": "Assam",
+      "overs": [
+        {
+          "over": 0,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Vidwath Kaverappa",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Pradyun Saikia",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Pradyun Saikia",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Pradyun Saikia"
+                }
+              ]
+            },
+            {
+              "batter": "Sumit Ghadigaonkar",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sumit Ghadigaonkar",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sumit Ghadigaonkar",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sumit Ghadigaonkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sumit Ghadigaonkar",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sumit Ghadigaonkar",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Sumit Ghadigaonkar"
+                }
+              ]
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Nibir Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Nibir Deka",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Nibir Deka",
+                  "fielders": [
+                    {
+                      "name": "Karun Nair"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Manvanth Kumar",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shreyas Gopal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sibsankar Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sibsankar Roy",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Sibsankar Roy"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 1,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Denish Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Denish Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Denish Das"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Amlanjyoti Das",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Amlanjyoti Das",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Amlanjyoti Das",
+                  "fielders": [
+                    {
+                      "name": "Karun Nair"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Sarupam Purkayastha",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sarupam Purkayastha",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Sarupam Purkayastha",
+                  "fielders": [
+                    {
+                      "name": "Manvanth Kumar"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Mukhtar Hussain",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Mukhtar Hussain",
+                  "fielders": [
+                    {
+                      "name": "Shikhar Shetty"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Roshan Alam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Roshan Alam",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Roshan Alam"
+                }
+              ]
+            },
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Mohit Thakur",
+              "bowler": "Ritesh Bhatkal",
+              "non_striker": "Hridip Deka",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Hridip Deka",
+              "bowler": "Shikhar Shetty",
+              "non_striker": "Mohit Thakur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Hridip Deka"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Vidwath Kaverappa": {
+          "overs": "3.0",
+          "maidens": 1,
+          "runs": 9,
+          "wickets": 0,
+          "dots": 15,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Manvanth Kumar": {
+          "overs": "6.0",
+          "maidens": 3,
+          "runs": 15,
+          "wickets": 0,
+          "dots": 30,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Ritesh Bhatkal": {
+          "overs": "18.0",
+          "maidens": 4,
+          "runs": 35,
+          "wickets": 5,
+          "dots": 89,
+          "fours": 5,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Shikhar Shetty": {
+          "overs": "17.1",
+          "maidens": 4,
+          "runs": 53,
+          "wickets": 5,
+          "dots": 79,
+          "fours": 7,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Shreyas Gopal": {
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 10,
+          "wickets": 0,
+          "dots": 17,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    },
+    {
+      "team": "Karnataka",
+      "overs": [
+        {
+          "over": 0,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 1,
+                "total": 5
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 1,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Sarupam Purkayastha",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "Rohan Patil",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Patil",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Rohan Patil",
+                  "fielders": [
+                    {
+                      "name": "Sibsankar Roy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KL Shrijith",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KL Shrijith",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "KL Shrijith"
+                }
+              ]
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 1,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Mukhtar Hussain": {
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 20,
+          "wickets": 0,
+          "dots": 9,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 2
+        },
+        "Mohit Thakur": {
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 39,
+          "wickets": 0,
+          "dots": 28,
+          "fours": 5,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 1
+        },
+        "Amlanjyoti Das": {
+          "overs": "13.0",
+          "maidens": 1,
+          "runs": 51,
+          "wickets": 2,
+          "dots": 49,
+          "fours": 5,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Hridip Deka": {
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 0,
+          "dots": 13,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Sarupam Purkayastha": {
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 19,
+          "wickets": 0,
+          "dots": 8,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Roshan Alam": {
+          "overs": "6.0",
+          "maidens": 0,
+          "runs": 32,
+          "wickets": 0,
+          "dots": 19,
+          "fours": 3,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    }
+  ]
+}
