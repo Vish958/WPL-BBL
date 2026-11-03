@@ -1,19 +1,20 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-11-02",
+    "created": "2026-11-03",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": "Guwahati",
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "180/2 in 36.0 ov",
         "time": "2026-11-02 10:30:21.82"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Karnataka lead Assam by 169 runs with 6 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -29,11 +36,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 36.0,
-      "overs_remaining_today": 54.0,
-      "balls_remaining_today": 324,
+      "overs_bowled": 65.2,
+      "overs_remaining_today": 24.4,
+      "balls_remaining_today": 148,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -56,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Karnataka lead Assam by 45 runs with 8 wickets remaining"
+      "summary": "Karnataka lead Assam by 169 runs with 6 wickets remaining"
     },
     "players": {
       "Assam": [
@@ -77,8 +84,8 @@
         "Mayank Agarwal",
         "KL Shrijith",
         "KV Aneesh",
-        "Aneeshwar Gautam",
         "Karun Nair",
+        "Aneeshwar Gautam",
         "Vidwath Kaverappa",
         "Shreyas Gopal",
         "Ritesh Bhatkal",
@@ -103,8 +110,8 @@
         "Mayank Agarwal": "16946",
         "KL Shrijith": "69676",
         "KV Aneesh": "83037",
-        "Aneeshwar Gautam": "76226",
         "Karun Nair": "16936",
+        "Aneeshwar Gautam": "76226",
         "Vidwath Kaverappa": "76665",
         "Shreyas Gopal": "16937",
         "Ritesh Bhatkal": "69191",
@@ -7004,50 +7011,2410 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 36,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Mayank Agarwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Mayank Agarwal",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Mayank Agarwal",
+                  "fielders": [
+                    {
+                      "name": "Denish Das"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Mukhtar Hussain",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Karun Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Karun Nair",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Karun Nair"
+                }
+              ]
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Hridip Deka",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Hridip Deka",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Roshan Alam",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Roshan Alam",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Mohit Thakur",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aneeshwar Gautam",
+              "bowler": "Mohit Thakur",
+              "non_striker": "KV Aneesh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "KV Aneesh",
+              "bowler": "Amlanjyoti Das",
+              "non_striker": "Aneeshwar Gautam",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Mukhtar Hussain": {
-          "overs": "3.0",
-          "maidens": 0,
-          "runs": 20,
+          "overs": "10.0",
+          "maidens": 1,
+          "runs": 42,
           "wickets": 0,
-          "dots": 9,
-          "fours": 3,
+          "dots": 40,
+          "fours": 6,
           "sixes": 0,
-          "wides": 0,
+          "wides": 1,
           "noballs": 2
         },
         "Mohit Thakur": {
-          "overs": "8.0",
+          "overs": "16.0",
           "maidens": 0,
-          "runs": 39,
-          "wickets": 0,
-          "dots": 28,
-          "fours": 5,
+          "runs": 76,
+          "wickets": 1,
+          "dots": 55,
+          "fours": 10,
           "sixes": 0,
           "wides": 0,
           "noballs": 1
         },
         "Amlanjyoti Das": {
-          "overs": "13.0",
-          "maidens": 1,
-          "runs": 51,
+          "overs": "17.2",
+          "maidens": 2,
+          "runs": 60,
           "wickets": 2,
-          "dots": 49,
+          "dots": 67,
           "fours": 5,
           "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Hridip Deka": {
-          "overs": "3.0",
+          "overs": "6.0",
           "maidens": 0,
-          "runs": 14,
+          "runs": 35,
           "wickets": 0,
-          "dots": 13,
-          "fours": 3,
-          "sixes": 0,
+          "dots": 21,
+          "fours": 5,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
@@ -7063,13 +9430,13 @@
           "noballs": 0
         },
         "Roshan Alam": {
-          "overs": "6.0",
-          "maidens": 0,
-          "runs": 32,
-          "wickets": 0,
-          "dots": 19,
-          "fours": 3,
-          "sixes": 1,
+          "overs": "13.0",
+          "maidens": 1,
+          "runs": 62,
+          "wickets": 1,
+          "dots": 49,
+          "fours": 4,
+          "sixes": 4,
           "wides": 0,
           "noballs": 0
         }

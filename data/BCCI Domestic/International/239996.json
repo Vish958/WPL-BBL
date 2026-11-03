@@ -1,19 +1,20 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-11-02",
+    "created": "2026-11-03",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "37/3 in 25.0 ov",
         "time": "2026-11-02 11:03:05.38"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Jharkhand are 72 for 3",
+        "time": ""
       }
     ],
     "event": {
@@ -29,11 +36,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 25.0,
-      "overs_remaining_today": 65.0,
-      "balls_remaining_today": 390,
+      "overs_bowled": 47.3,
+      "overs_remaining_today": 42.3,
+      "balls_remaining_today": 255,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -56,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Jharkhand are 37 for 3"
+      "summary": "Jharkhand are 72 for 3"
     },
     "players": {
       "Odisha": [
@@ -146,8 +153,8 @@
               "session": 1
             },
             {
-              "batter": "Sen, no run",
-              "bowler": "Mohanty",
+              "batter": "Aryaman Sen",
+              "bowler": "Rajesh Mohanty",
               "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
@@ -160,7 +167,7 @@
             {
               "batter": "Aryaman Sen",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Sen, no run",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -170,9 +177,9 @@
               "session": 1
             },
             {
-              "batter": "Sen, 1 run",
-              "bowler": "Mohanty",
-              "non_striker": "Aryaman Sen",
+              "batter": "Aryaman Sen",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -187,7 +194,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Sen, 1 run",
+              "non_striker": "Aryaman Sen",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -199,7 +206,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Sen, 1 run",
+              "non_striker": "Aryaman Sen",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -216,8 +223,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sen, 1 run",
-              "bowler": "Yadav",
+              "batter": "Aryaman Sen",
+              "bowler": "Lalit Yadav",
               "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 1,
@@ -230,19 +237,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Sen, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Sharandeep Singh",
+              "non_striker": "Aryaman Sen",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -254,19 +249,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Sharandeep Singh",
+              "non_striker": "Aryaman Sen",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -278,7 +261,31 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aryaman Sen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sharandeep Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aryaman Sen",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sharandeep Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aryaman Sen",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -295,9 +302,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Sen, out!",
-              "bowler": "Mohanty",
-              "non_striker": "Singh, no run",
+              "batter": "Aryaman Sen",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -313,9 +320,9 @@
               ]
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Sen, out!",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -327,7 +334,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Sen, out!",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -339,7 +346,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Sen, out!",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -349,9 +356,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -363,7 +370,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Sharandeep Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -382,31 +389,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Sharandeep Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Sharandeep Singh",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -418,7 +401,31 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sharandeep Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Utkarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Sharandeep Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -430,7 +437,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -442,7 +449,7 @@
             {
               "batter": "Sharandeep Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -470,8 +477,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
               "non_striker": null,
               "runs": {
                 "batter": 0,
@@ -484,31 +491,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -520,7 +503,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -530,9 +513,33 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -549,20 +556,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Utkarsh Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
               "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
@@ -585,21 +580,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Virat Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Virat Singh",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -611,7 +594,31 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Utkarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -628,8 +635,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
               "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
@@ -642,7 +649,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -654,7 +661,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -664,9 +671,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -676,9 +683,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -688,9 +695,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -731,9 +738,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Virat Singh",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -745,7 +752,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -757,7 +764,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -769,7 +776,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -786,8 +793,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
               "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
@@ -800,31 +807,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Utkarsh Singh",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -836,7 +819,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -848,7 +831,31 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -867,19 +874,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Utkarsh Singh",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -891,7 +886,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -903,7 +898,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -915,7 +910,19 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Utkarsh Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -925,8 +932,8 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
               "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
@@ -946,7 +953,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -958,7 +965,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -970,7 +977,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -982,7 +989,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -994,7 +1001,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1006,7 +1013,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1023,18 +1030,6 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Utkarsh Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
               "batter": "Virat Singh",
               "bowler": "Prasanta Rana",
               "non_striker": "Utkarsh Singh",
@@ -1083,9 +1078,21 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Virat Singh",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Utkarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Utkarsh Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1102,8 +1109,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
+              "batter": "Utkarsh Singh",
+              "bowler": "Rajesh Mohanty",
               "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
@@ -1116,7 +1123,7 @@
             {
               "batter": "Utkarsh Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1139,7 +1146,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1151,7 +1158,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1163,7 +1170,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1173,9 +1180,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Aditya Singh",
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1295,8 +1302,8 @@
               "session": 1
             },
             {
-              "batter": "Singh, 1 run",
-              "bowler": "Mohanty",
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
               "non_striker": "Virat Singh",
               "runs": {
                 "batter": 1,
@@ -1307,9 +1314,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Singh, 1 run",
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1321,7 +1328,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1333,7 +1340,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1362,9 +1369,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Aditya Singh",
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1376,7 +1383,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1388,7 +1395,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1400,7 +1407,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1412,7 +1419,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1431,7 +1438,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1443,7 +1450,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1455,19 +1462,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Mohanty",
-              "non_striker": "Virat Singh",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1479,7 +1474,19 @@
             {
               "batter": "Virat Singh",
               "bowler": "Rajesh Mohanty",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1532,20 +1539,8 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Aditya Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
               "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
@@ -1558,7 +1553,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1570,7 +1565,19 @@
             {
               "batter": "Virat Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1635,9 +1642,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Aditya Singh",
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1647,9 +1654,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Aditya Singh",
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1666,8 +1673,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
               "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
@@ -1680,43 +1687,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Virat Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Virat Singh",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Virat Singh",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1728,7 +1699,43 @@
             {
               "batter": "Virat Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1805,8 +1812,8 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
               "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
@@ -1824,9 +1831,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Aditya Singh",
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1836,9 +1843,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, 4 runs",
-              "bowler": "Rana",
-              "non_striker": "Singh, no run",
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1850,7 +1857,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, 4 runs",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1862,7 +1869,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, 4 runs",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1874,7 +1881,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, 4 runs",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1886,7 +1893,7 @@
             {
               "batter": "Aditya Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, 4 runs",
+              "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1951,9 +1958,9 @@
               "session": 1
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Virat Singh",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1965,7 +1972,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1982,9 +1989,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Singh, 2 runs",
-              "bowler": "Rana",
-              "non_striker": "Singh, no run",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1994,9 +2001,9 @@
               "session": 2
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Singh, 2 runs",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2008,7 +2015,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Prasanta Rana",
-              "non_striker": "Singh, 2 runs",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2018,9 +2025,9 @@
               "session": 2
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Virat Singh",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2030,9 +2037,9 @@
               "session": 2
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Rana",
-              "non_striker": "Virat Singh",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2042,9 +2049,9 @@
               "session": 2
             },
             {
-              "batter": "Singh, 1 run",
-              "bowler": "Rana",
-              "non_striker": "Singh, no run",
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2061,21 +2068,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Singh, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Singh, 1 run",
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2087,19 +2082,7 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
-              "non_striker": "Virat Singh",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2111,7 +2094,31 @@
             {
               "batter": "Virat Singh",
               "bowler": "Lalit Yadav",
-              "non_striker": "Singh, no run",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2121,8 +2128,8 @@
               "session": 2
             },
             {
-              "batter": "Singh, no run",
-              "bowler": "Yadav",
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
               "non_striker": "Virat Singh",
               "runs": {
                 "batter": 0,
@@ -2133,38 +2140,1833 @@
               "session": 2
             }
           ]
+        },
+        {
+          "over": 25,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Rajesh Mohanty": {
-          "overs": "9.0",
-          "maidens": 4,
-          "runs": 15,
+          "overs": "14.3",
+          "maidens": 7,
+          "runs": 20,
           "wickets": 2,
-          "dots": 48,
-          "fours": 3,
+          "dots": 79,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Lalit Yadav": {
-          "overs": "9.0",
-          "maidens": 2,
-          "runs": 14,
+          "overs": "14.0",
+          "maidens": 5,
+          "runs": 19,
           "wickets": 0,
-          "dots": 45,
-          "fours": 1,
+          "dots": 73,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Prasanta Rana": {
-          "overs": "7.0",
-          "maidens": 5,
-          "runs": 7,
+          "overs": "14.0",
+          "maidens": 6,
+          "runs": 23,
           "wickets": 0,
-          "dots": 39,
-          "fours": 1,
+          "dots": 72,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Ninad Rathva": {
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 5,
+          "wickets": 0,
+          "dots": 25,
+          "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

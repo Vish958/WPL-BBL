@@ -1,19 +1,20 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-11-02",
+    "created": "2026-11-03",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "261/6 in 77.0 ov",
         "time": "2026-11-02 11:33:34.54"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Pondicherry are 373 for 8",
+        "time": ""
       }
     ],
     "event": {
@@ -29,17 +36,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 77.0,
-      "overs_remaining_today": 13.0,
-      "balls_remaining_today": 78,
+      "overs_bowled": 91.3,
+      "overs_remaining_today": 0.0,
+      "balls_remaining_today": 0,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 13.0,
-        "max_overs_with_1hr_extension": 28.0,
+        "expected_overs_next_hour": 0.0,
+        "max_overs_with_1hr_extension": 15.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -56,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Pondicherry are 261 for 6"
+      "summary": "Pondicherry are 373 for 8"
     },
     "players": {
       "Jammu & Kashmir": [
@@ -170,8 +177,8 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
               "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
@@ -184,7 +191,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -196,7 +203,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -213,9 +220,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -225,9 +232,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Kangayan, 1 run",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -239,7 +246,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -249,9 +256,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, 4 runs",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -261,9 +268,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -273,9 +280,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -292,9 +299,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -306,7 +313,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -316,9 +323,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 4 runs",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -328,9 +335,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Kangayan, 4 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -340,9 +347,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Kangayan, 4 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -352,9 +359,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Kangayan, 4 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -373,7 +380,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -385,7 +392,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -397,7 +404,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -407,9 +414,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -421,7 +428,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -433,7 +440,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -450,9 +457,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -464,19 +471,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -488,7 +483,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -498,9 +493,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -510,9 +505,21 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -529,8 +536,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Gudge, 4 runs",
-              "bowler": "Sharma",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
               "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
@@ -541,33 +548,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Gudge, 4 runs",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, no run",
-              "runs": {
-                "batter": 4,
-                "extras": 0,
-                "total": 4
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -579,7 +562,19 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -589,9 +584,21 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -656,8 +663,8 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Kumar",
+              "batter": "Ritesh Gudge",
+              "bowler": "Sunil Kumar",
               "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
@@ -668,9 +675,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, 4 runs",
-              "bowler": "Kumar",
-              "non_striker": "Gudge, no run",
+              "batter": "Ritesh Gudge",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -687,9 +694,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, 4 runs",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -699,9 +706,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Sharma",
-              "non_striker": "Kangayan, 4 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -711,9 +718,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Kangayan, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -725,7 +732,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -735,9 +742,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -747,9 +754,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -766,9 +773,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -780,19 +787,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -804,7 +799,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -816,7 +811,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -828,7 +823,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -872,9 +879,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -886,7 +893,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -898,7 +905,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -910,7 +917,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -920,9 +927,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -939,9 +946,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -953,7 +960,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1030,8 +1037,8 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Nazir",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
               "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
@@ -1042,21 +1049,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1068,7 +1063,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1078,9 +1073,21 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1109,9 +1116,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Khanday",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1123,7 +1130,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1135,7 +1142,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1147,7 +1154,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1157,9 +1164,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Khanday",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1176,9 +1183,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, 1 run (wide)",
-              "bowler": "Nazir",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -1191,9 +1198,9 @@
               }
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 1 run (wide)",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1205,7 +1212,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1215,9 +1222,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1227,9 +1234,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Gudge, no run",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1239,9 +1246,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Gudge, 1 run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1253,7 +1260,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1294,20 +1301,8 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 4 runs",
-              "bowler": "Khanday",
-              "non_striker": "Ritesh Gudge",
-              "runs": {
-                "batter": 4,
-                "extras": 0,
-                "total": 4
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, 4 runs",
-              "bowler": "Khanday",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
               "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 4,
@@ -1320,7 +1315,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, 4 runs",
+              "non_striker": "Ritesh Gudge",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1330,9 +1337,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1351,7 +1358,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1361,9 +1368,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, 1 run (no ball)",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -1376,9 +1383,9 @@
               }
             },
             {
-              "batter": "Gudge, 4 runs",
-              "bowler": "Nazir",
-              "non_striker": "Gudge, 1 run (no ball)",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -1390,7 +1397,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1402,7 +1409,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1414,7 +1421,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1426,7 +1433,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1445,7 +1452,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1457,7 +1464,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1469,7 +1476,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1481,7 +1488,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1493,7 +1500,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1503,9 +1510,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1522,9 +1529,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1536,7 +1543,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1558,9 +1565,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1572,7 +1579,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, 1 run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1584,7 +1591,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, 1 run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1625,9 +1632,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1639,7 +1646,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -1649,9 +1656,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, no run",
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1663,7 +1670,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, 1 run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1692,9 +1699,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1706,7 +1713,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1718,7 +1725,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1728,9 +1735,9 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1740,9 +1747,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "batter": "Ritesh Gudge",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1759,9 +1766,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Sharma",
-              "non_striker": "Gudge, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1771,44 +1778,8 @@
               "session": 1
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Ritesh Gudge",
+              "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Ritesh Gudge",
-              "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, 1 run",
-              "runs": {
-                "batter": 1,
-                "extras": 0,
-                "total": 1
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Sharma",
               "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 1,
@@ -1821,7 +1792,43 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Ritesh Gudge",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -1840,7 +1847,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1852,7 +1859,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1864,7 +1871,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1876,19 +1883,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Gudge, no run",
-              "bowler": "Kumar",
-              "non_striker": "Ritesh Gudge",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1900,7 +1895,19 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Sunil Kumar",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Ritesh Gudge",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1919,7 +1926,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1931,7 +1938,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1943,7 +1950,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1955,19 +1962,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Gudge, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Sharma",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1979,7 +1974,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Ritesh Gudge",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ritesh Gudge",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -1998,7 +2005,7 @@
             {
               "batter": "Ritesh Gudge",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2008,9 +2015,9 @@
               "session": 1
             },
             {
-              "batter": "Gudge, out!",
-              "bowler": "Kumar",
-              "non_striker": "Ritesh Gudge",
+              "batter": "Ritesh Gudge",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2028,7 +2035,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Sunil Kumar",
-              "non_striker": "Gudge, out!",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2040,7 +2047,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Sunil Kumar",
-              "non_striker": "Gudge, out!",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2052,7 +2059,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Sunil Kumar",
-              "non_striker": "Gudge, out!",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2064,7 +2071,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Sunil Kumar",
-              "non_striker": "Gudge, out!",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2081,8 +2088,8 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Nazir",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
               "non_striker": "Nikhil Gangta",
               "runs": {
                 "batter": 1,
@@ -2095,7 +2102,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2107,7 +2114,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2119,7 +2126,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 4,
@@ -2134,7 +2141,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2146,7 +2153,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2165,19 +2172,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Nikhil Gangta",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2189,7 +2184,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Nikhil Gangta",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2201,19 +2196,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Nikhil Gangta",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2225,7 +2208,31 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Nikhil Gangta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Nikhil Gangta",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Nikhil Gangta",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2242,33 +2249,9 @@
           "session": 1,
           "deliveries": [
             {
-              "batter": "Gangta, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Gangta, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 1
-            },
-            {
-              "batter": "Gangta, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, no run",
+              "batter": "Nikhil Gangta",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2280,7 +2263,7 @@
             {
               "batter": "Nikhil Gangta",
               "bowler": "Umar Nazir",
-              "non_striker": "Gangta, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2290,9 +2273,33 @@
               "session": 1
             },
             {
-              "batter": "Gangta, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Nikhil Gangta",
+              "batter": "Nikhil Gangta",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nikhil Gangta",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 1
+            },
+            {
+              "batter": "Nikhil Gangta",
+              "bowler": "Umar Nazir",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2304,7 +2311,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Gangta, 1 run",
+              "non_striker": "Nikhil Gangta",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2356,8 +2363,8 @@
               ]
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
               "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
@@ -2370,7 +2377,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2382,7 +2389,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2394,7 +2401,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2411,8 +2418,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Sharma",
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -2425,19 +2432,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Sharma",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2449,7 +2444,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2461,7 +2456,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2502,21 +2509,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2528,7 +2523,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2540,7 +2535,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2552,7 +2547,19 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2571,19 +2578,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kale, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Sharma",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2595,7 +2590,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2607,7 +2602,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2619,7 +2614,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2631,7 +2626,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2650,19 +2657,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
-              "runs": {
-                "batter": 4,
-                "extras": 0,
-                "total": 4
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, 4 runs",
-              "bowler": "Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2674,19 +2669,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, 4 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
-                "batter": 0,
+                "batter": 4,
                 "extras": 0,
-                "total": 0
+                "total": 4
               },
               "day": 1,
               "session": 2
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2698,7 +2693,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2710,7 +2705,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2727,9 +2734,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kale, no run",
-              "bowler": "Sharma",
-              "non_striker": "Kangayan, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2739,9 +2746,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, 4 runs",
-              "bowler": "Sharma",
-              "non_striker": "Kale, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2753,7 +2760,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kale, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2765,7 +2772,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kale, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2777,7 +2784,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kale, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2787,9 +2794,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Sharma",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2806,9 +2813,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2820,7 +2827,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2832,7 +2839,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2844,7 +2851,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2854,9 +2861,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, 4 runs",
-              "bowler": "Khanday",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -2868,7 +2875,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, 4 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -2885,9 +2892,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kangayan, 1 run (no ball)",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 4 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -2902,31 +2909,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run (no ball)",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Neyan Kangayan",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Neyan Kangayan",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2938,7 +2921,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2950,7 +2933,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2962,7 +2945,31 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -2979,9 +2986,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kale, 2 runs",
-              "bowler": "Khanday",
-              "non_striker": "Kangayan, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -2993,7 +3000,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 2 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3003,8 +3010,8 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, 6 runs",
-              "bowler": "Khanday",
+              "batter": "Neyan Kangayan",
+              "bowler": "Waseem Khanday",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 6,
@@ -3017,7 +3024,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kangayan, 6 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3058,9 +3065,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kale, 4 runs",
-              "bowler": "Lotra",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3072,19 +3079,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
-              "non_striker": "Kale, 4 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3096,7 +3091,19 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3106,9 +3113,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3120,7 +3127,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -3137,20 +3144,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Mohit Kale",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -3163,7 +3158,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3216,8 +3223,8 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Lotra",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sahil Lotra",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -3228,9 +3235,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Lotra",
-              "non_striker": "Kangayan, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3240,9 +3247,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
-              "non_striker": "Kangayan, 1 run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3252,9 +3259,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
-              "non_striker": "Kangayan, 1 run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3266,7 +3273,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3278,7 +3285,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3319,9 +3326,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3333,7 +3340,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3345,7 +3352,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3357,7 +3364,7 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3376,7 +3383,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3386,8 +3393,8 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, 1 run (no ball)",
-              "bowler": "Lotra",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sahil Lotra",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -3401,21 +3408,9 @@
               }
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Lotra",
-              "non_striker": "Kangayan, 1 run (no ball)",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kangayan, no run",
-              "bowler": "Lotra",
-              "non_striker": "Kangayan, 1 run (no ball)",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3427,7 +3422,19 @@
             {
               "batter": "Neyan Kangayan",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kangayan, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Neyan Kangayan",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3437,8 +3444,8 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
               "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
@@ -3449,8 +3456,8 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
               "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
@@ -3468,9 +3475,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Kale, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3482,7 +3489,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Umar Nazir",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3492,8 +3499,8 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -3504,9 +3511,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, 2 runs",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, no run",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -3516,9 +3523,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 2 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3528,9 +3535,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kangayan, 2 runs",
+              "batter": "Neyan Kangayan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3549,7 +3556,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kangayan, 2 runs",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3571,9 +3578,9 @@
               "session": 2
             },
             {
-              "batter": "Kangayan, 1 run",
-              "bowler": "Lotra",
-              "non_striker": "Neyan Kangayan",
+              "batter": "Neyan Kangayan",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3585,7 +3592,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3597,7 +3604,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3609,7 +3616,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kangayan, 1 run",
+              "non_striker": "Neyan Kangayan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3649,8 +3656,8 @@
               ]
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Nazir",
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -3663,7 +3670,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3675,19 +3682,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ankit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3699,7 +3694,19 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3740,8 +3747,8 @@
               "session": 2
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Lotra",
+              "batter": "Ankit Sharma",
+              "bowler": "Sahil Lotra",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
@@ -3752,9 +3759,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Lotra",
-              "non_striker": "Sharma, 1 run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -3764,9 +3771,9 @@
               "session": 2
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Lotra",
-              "non_striker": "Kale, 1 run",
+              "batter": "Ankit Sharma",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3778,7 +3785,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3807,33 +3814,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3845,7 +3828,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3855,9 +3838,33 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ankit Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ankit Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3876,7 +3883,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3888,7 +3895,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3900,19 +3907,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Lotra",
-              "non_striker": "Ankit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3924,7 +3919,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3936,7 +3931,19 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -3955,7 +3962,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 1,
@@ -3980,33 +3987,9 @@
               "session": 2
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4018,7 +4001,31 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4035,9 +4042,9 @@
           "session": 2,
           "deliveries": [
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Lotra",
-              "non_striker": "Sharma, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4049,7 +4056,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sahil Lotra",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4059,9 +4066,9 @@
               "session": 2
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Lotra",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4071,9 +4078,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
-              "non_striker": "Sharma, 1 run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4083,9 +4090,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Lotra",
-              "non_striker": "Sharma, 1 run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4095,9 +4102,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Lotra",
-              "non_striker": "Kale, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4116,7 +4123,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4126,8 +4133,8 @@
               "session": 2
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Kumar",
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -4140,19 +4147,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4164,7 +4159,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4176,7 +4171,19 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4205,9 +4212,9 @@
               "session": 2
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4219,7 +4226,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4231,19 +4238,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Mohit Kale",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4255,7 +4250,19 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4274,7 +4281,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4286,7 +4293,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4298,7 +4305,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4310,19 +4317,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 2
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4334,7 +4329,19 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 2
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4353,7 +4360,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4365,7 +4372,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4377,7 +4384,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4389,7 +4396,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4401,7 +4408,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4413,7 +4420,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4442,9 +4449,9 @@
               "session": 2
             },
             {
-              "batter": "Sharma, 4 runs",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4456,7 +4463,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, 4 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4468,7 +4475,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, 4 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4480,7 +4487,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, 4 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4490,9 +4497,9 @@
               "session": 2
             },
             {
-              "batter": "Sharma, 4 runs",
-              "bowler": "Kumar",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4509,9 +4516,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Sharma, 4 runs",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4521,9 +4528,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4535,7 +4542,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4547,7 +4554,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4559,7 +4566,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4571,7 +4578,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4624,9 +4631,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Sharma",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4636,9 +4643,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Kale, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4650,7 +4657,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4667,8 +4674,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Khanday",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
@@ -4679,9 +4686,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Khanday",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4693,7 +4700,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4705,7 +4712,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4715,9 +4722,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4727,9 +4734,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4748,7 +4755,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Kale, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -4758,9 +4765,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4770,9 +4777,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4782,9 +4789,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Sharma",
-              "non_striker": "Sharma, no run",
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4796,7 +4803,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Rohit Sharma",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4806,9 +4813,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Sharma",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4825,9 +4832,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, no run",
+              "batter": "Ankit Sharma",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4839,7 +4846,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4849,9 +4856,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, 1 run",
-              "bowler": "Khanday",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4863,7 +4870,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, 1 run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -4904,9 +4911,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4918,7 +4925,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4930,19 +4937,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Sharma, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ankit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4954,7 +4949,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4966,7 +4961,19 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4983,9 +4990,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Sharma, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -4997,7 +5004,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5009,7 +5016,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5086,8 +5093,8 @@
               "session": 3
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Sharma",
+              "batter": "Mohit Kale",
+              "bowler": "Rohit Sharma",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
@@ -5098,9 +5105,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Kale, 1 run",
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5112,7 +5119,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Rohit Sharma",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5122,9 +5129,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Sharma",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Rohit Sharma",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5153,9 +5160,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, 4 runs",
-              "bowler": "Khanday",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5167,7 +5174,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 4 runs",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5179,19 +5186,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, 4 runs",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5203,7 +5198,19 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5244,8 +5251,8 @@
               "session": 3
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Nazir",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
@@ -5258,19 +5265,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Kale, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5282,7 +5277,19 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5299,8 +5306,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, no run",
-              "bowler": "Khanday",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
@@ -5311,9 +5318,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5323,33 +5330,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, 1 run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Sharma, 4 runs",
-              "bowler": "Khanday",
-              "non_striker": "Sharma, no run",
-              "runs": {
-                "batter": 4,
-                "extras": 0,
-                "total": 4
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Sharma, no run",
-              "bowler": "Khanday",
-              "non_striker": "Sharma, 4 runs",
+              "batter": "Ankit Sharma",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5361,7 +5344,31 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Waseem Khanday",
-              "non_striker": "Sharma, 4 runs",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Ankit Sharma",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5378,8 +5385,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, 2 runs",
-              "bowler": "Nazir",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 2,
@@ -5390,21 +5397,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kale, 2 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Kale, no run",
-              "bowler": "Nazir",
-              "non_striker": "Kale, 2 runs",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5416,7 +5411,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Umar Nazir",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5428,7 +5423,19 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Umar Nazir",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5493,8 +5500,8 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
@@ -5507,7 +5514,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5517,9 +5524,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5536,8 +5543,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Sharma, 4 runs",
-              "bowler": "Nazir",
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
@@ -5548,9 +5555,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Nazir",
-              "non_striker": "Sharma, 4 runs",
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5562,7 +5569,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5574,7 +5581,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5584,9 +5591,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, 2 runs (no ball)",
-              "bowler": "Nazir",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 1,
@@ -5599,9 +5606,9 @@
               }
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Nazir",
-              "non_striker": "Sharma, 2 runs (no ball)",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5611,9 +5618,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Nazir",
-              "non_striker": "Sharma, 2 runs (no ball)",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5630,9 +5637,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Sharma, 2 runs",
-              "bowler": "Kumar",
-              "non_striker": "Kale, no run",
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5644,7 +5651,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, 2 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5654,8 +5661,8 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
@@ -5668,7 +5675,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5678,8 +5685,8 @@
               "session": 3
             },
             {
-              "batter": "Sharma, 4 runs",
-              "bowler": "Kumar",
+              "batter": "Ankit Sharma",
+              "bowler": "Sunil Kumar",
               "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
@@ -5695,7 +5702,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, 4 runs",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5712,8 +5719,8 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, no run",
-              "bowler": "Nazir",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
               "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
@@ -5724,9 +5731,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Kale, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Umar Nazir",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5738,7 +5745,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5750,7 +5757,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5760,9 +5767,9 @@
               "session": 3
             },
             {
-              "batter": "Sharma, no run",
-              "bowler": "Nazir",
-              "non_striker": "Ankit Sharma",
+              "batter": "Ankit Sharma",
+              "bowler": "Umar Nazir",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5774,7 +5781,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Umar Nazir",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5793,7 +5800,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Sharma, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -5803,9 +5810,9 @@
               "session": 3
             },
             {
-              "batter": "Kale, no run",
-              "bowler": "Kumar",
-              "non_striker": "Mohit Kale",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5817,7 +5824,7 @@
             {
               "batter": "Mohit Kale",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Ankit Sharma",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5829,7 +5836,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5841,7 +5848,7 @@
             {
               "batter": "Ankit Sharma",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, no run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5862,9 +5869,9 @@
               ]
             },
             {
-              "batter": "Udeshi, no run",
-              "bowler": "Kumar",
-              "non_striker": "Kale, no run",
+              "batter": "Sagar Udeshi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5881,9 +5888,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, 1 run",
-              "bowler": "Khanday",
-              "non_striker": "Udeshi, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Udeshi",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -5893,9 +5900,9 @@
               "session": 3
             },
             {
-              "batter": "Udeshi, no run",
-              "bowler": "Khanday",
-              "non_striker": "Kale, 1 run",
+              "batter": "Sagar Udeshi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5907,7 +5914,7 @@
             {
               "batter": "Sagar Udeshi",
               "bowler": "Waseem Khanday",
-              "non_striker": "Kale, 1 run",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5917,9 +5924,9 @@
               "session": 3
             },
             {
-              "batter": "Udeshi, 2 runs",
-              "bowler": "Khanday",
-              "non_striker": "Sagar Udeshi",
+              "batter": "Sagar Udeshi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 2,
                 "extras": 0,
@@ -5929,9 +5936,9 @@
               "session": 3
             },
             {
-              "batter": "Udeshi, out!",
-              "bowler": "Khanday",
-              "non_striker": "Udeshi, 2 runs",
+              "batter": "Sagar Udeshi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5952,9 +5959,9 @@
               ]
             },
             {
-              "batter": "Pawar, no run",
-              "bowler": "Khanday",
-              "non_striker": "Udeshi, out!",
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Mohit Kale",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5971,9 +5978,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Kale, out!",
-              "bowler": "Kumar",
-              "non_striker": "Pawar, no run",
+              "batter": "Mohit Kale",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -5994,9 +6001,9 @@
               ]
             },
             {
-              "batter": "Pawar, no run",
-              "bowler": "Kumar",
-              "non_striker": "Kale, out!",
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6008,7 +6015,7 @@
             {
               "batter": "Prasad Pawar",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, out!",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6020,19 +6027,7 @@
             {
               "batter": "Prasad Pawar",
               "bowler": "Sunil Kumar",
-              "non_striker": "Kale, out!",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Pawar, no run",
-              "bowler": "Kumar",
-              "non_striker": "Prasad Pawar",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6044,7 +6039,19 @@
             {
               "batter": "Prasad Pawar",
               "bowler": "Sunil Kumar",
-              "non_striker": "Pawar, no run",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": null,
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6063,7 +6070,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Pawar, no run",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6075,43 +6082,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Pawar, no run",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Khan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Aman Khan",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Khan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Aman Khan",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Khan, no run",
-              "bowler": "Khanday",
-              "non_striker": "Aman Khan",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6123,7 +6094,43 @@
             {
               "batter": "Aman Khan",
               "bowler": "Waseem Khanday",
-              "non_striker": "Khan, no run",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Aman Khan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Aman Khan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Aman Khan",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6140,9 +6147,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Pawar, 1 run",
-              "bowler": "Kumar",
-              "non_striker": "Khan, no run",
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6152,9 +6159,9 @@
               "session": 3
             },
             {
-              "batter": "Khan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Pawar, 1 run",
+              "batter": "Aman Khan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6166,7 +6173,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Pawar, 1 run",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -6176,9 +6183,9 @@
               "session": 3
             },
             {
-              "batter": "Khan, no run",
-              "bowler": "Kumar",
-              "non_striker": "Aman Khan",
+              "batter": "Aman Khan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6190,7 +6197,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Khan, no run",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 4,
                 "extras": 0,
@@ -6202,7 +6209,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Sunil Kumar",
-              "non_striker": "Khan, no run",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6219,9 +6226,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Pawar, no run",
-              "bowler": "Khanday",
-              "non_striker": "Khan, no run",
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6231,9 +6238,9 @@
               "session": 3
             },
             {
-              "batter": "Pawar, 4 runs",
-              "bowler": "Khanday",
-              "non_striker": "Pawar, no run",
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 0,
                 "extras": 4,
@@ -6248,7 +6255,7 @@
             {
               "batter": "Prasad Pawar",
               "bowler": "Waseem Khanday",
-              "non_striker": "Pawar, 4 runs",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6260,19 +6267,7 @@
             {
               "batter": "Prasad Pawar",
               "bowler": "Waseem Khanday",
-              "non_striker": "Pawar, 4 runs",
-              "runs": {
-                "batter": 0,
-                "extras": 0,
-                "total": 0
-              },
-              "day": 1,
-              "session": 3
-            },
-            {
-              "batter": "Pawar, no run",
-              "bowler": "Khanday",
-              "non_striker": "Prasad Pawar",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6284,7 +6279,19 @@
             {
               "batter": "Prasad Pawar",
               "bowler": "Waseem Khanday",
-              "non_striker": "Pawar, no run",
+              "non_striker": "Aman Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6301,9 +6308,9 @@
           "session": 3,
           "deliveries": [
             {
-              "batter": "Khan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Pawar, no run",
+              "batter": "Aman Khan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6315,7 +6322,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Umar Nazir",
-              "non_striker": "Khan, no run",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6327,7 +6334,7 @@
             {
               "batter": "Aman Khan",
               "bowler": "Umar Nazir",
-              "non_striker": "Khan, no run",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6337,9 +6344,9 @@
               "session": 3
             },
             {
-              "batter": "Khan, no run",
-              "bowler": "Nazir",
-              "non_striker": "Aman Khan",
+              "batter": "Aman Khan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6349,9 +6356,9 @@
               "session": 3
             },
             {
-              "batter": "Khan, 1 run",
-              "bowler": "Nazir",
-              "non_striker": "Aman Khan",
+              "batter": "Aman Khan",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
               "runs": {
                 "batter": 1,
                 "extras": 0,
@@ -6361,9 +6368,9 @@
               "session": 3
             },
             {
-              "batter": "Pawar, no run",
-              "bowler": "Nazir",
-              "non_striker": "Khan, 1 run",
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Aman Khan",
               "runs": {
                 "batter": 0,
                 "extras": 0,
@@ -6373,17 +6380,1218 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aman Khan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aman Khan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Aman Khan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aman Khan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aman Khan",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Aman Khan",
+                  "fielders": [
+                    {
+                      "name": "Abdul Samad"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 1,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Umar Nazir",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 4,
+                "extras": 1,
+                "total": 5
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Umar Nazir",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Waseem Khanday",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Prasad Pawar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Prasad Pawar",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Prasad Pawar",
+                  "fielders": [
+                    {
+                      "name": "Paras Dogra"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Gaurav Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Gaurav Yadav",
+              "bowler": "Sahil Lotra",
+              "non_striker": "Sagar Trivedi",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Gaurav Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Gaurav Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sagar Trivedi",
+              "bowler": "Sunil Kumar",
+              "non_striker": "Gaurav Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Sunil Kumar": {
-          "overs": "20.0",
-          "maidens": 8,
-          "runs": 59,
-          "wickets": 3,
-          "dots": 98,
-          "fours": 12,
-          "sixes": 0,
+          "overs": "27.3",
+          "maidens": 9,
+          "runs": 93,
+          "wickets": 5,
+          "dots": 129,
+          "fours": 15,
+          "sixes": 2,
           "wides": 0,
           "noballs": 0
         },
@@ -6399,35 +7607,35 @@
           "noballs": 0
         },
         "Waseem Khanday": {
-          "overs": "17.0",
+          "overs": "19.0",
           "maidens": 2,
-          "runs": 61,
+          "runs": 81,
           "wickets": 1,
-          "dots": 73,
-          "fours": 8,
+          "dots": 75,
+          "fours": 11,
           "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Umar Nazir": {
-          "overs": "18.0",
+          "overs": "21.0",
           "maidens": 1,
-          "runs": 58,
+          "runs": 88,
           "wickets": 1,
-          "dots": 80,
-          "fours": 5,
-          "sixes": 1,
+          "dots": 89,
+          "fours": 9,
+          "sixes": 2,
           "wides": 1,
-          "noballs": 4
+          "noballs": 6
         },
         "Sahil Lotra": {
-          "overs": "7.0",
+          "overs": "9.0",
           "maidens": 1,
-          "runs": 28,
+          "runs": 56,
           "wickets": 0,
-          "dots": 26,
-          "fours": 3,
-          "sixes": 0,
+          "dots": 30,
+          "fours": 6,
+          "sixes": 2,
           "wides": 0,
           "noballs": 1
         }

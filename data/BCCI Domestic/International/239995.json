@@ -1,19 +1,20 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-11-02",
+    "created": "2026-11-03",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 1,
+    "current_day": 2,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 1",
+    "day_status": "Live Day 2",
     "days_played": [
-      1
+      1,
+      2
     ],
     "days_summary": [
       {
@@ -21,6 +22,12 @@
         "status": "stumps",
         "score": "219/7 in 74.3 ov",
         "time": "2026-11-02 10:05:34.99"
+      },
+      {
+        "day": 2,
+        "status": "in play",
+        "score": "Saurashtra trail Tripura by 252 runs with 9 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -29,11 +36,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 1,
+      "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 74.3,
-      "overs_remaining_today": 15.3,
-      "balls_remaining_today": 93,
+      "overs_bowled": 7.1,
+      "overs_remaining_today": 82.5,
+      "balls_remaining_today": 497,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -56,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Tripura are 219 for 7"
+      "summary": "Saurashtra trail Tripura by 252 runs with 9 wickets remaining"
     },
     "players": {
       "Tripura": [
@@ -69,19 +76,19 @@
         "Sentu Sarkar",
         "Manisankar Murasingh",
         "Bikram Debnath",
-        "Abhijit Sarkar",
-        "Parvez Sultan"
+        "Parvez Sultan",
+        "Abhijit Sarkar"
       ],
       "Saurashtra": [
-        "Parth Bhut",
+        "Hetvik Kotak",
+        "Harvik Desai",
         "Chirag Jani",
+        "Parth Bhut",
         "Neel Pandya",
         "Prerak Mankad",
         "Chetan Sakariya",
         "Yuvraj Dodiya",
-        "Harvik Desai",
         "Arpit Vasavada",
-        "Hetvik Kotak",
         "Jay Gohil",
         "Sammar Gajjar"
       ]
@@ -97,17 +104,17 @@
         "Sentu Sarkar": "94160",
         "Manisankar Murasingh": "18587",
         "Bikram Debnath": "68627",
-        "Abhijit Sarkar": "42898",
         "Parvez Sultan": "73950",
-        "Parth Bhut": "73171",
+        "Abhijit Sarkar": "42898",
+        "Hetvik Kotak": "83260",
+        "Harvik Desai": "65342",
         "Chirag Jani": "16781",
+        "Parth Bhut": "73171",
         "Neel Pandya": "96045",
         "Prerak Mankad": "37516",
         "Chetan Sakariya": "67822",
         "Yuvraj Dodiya": "79508",
-        "Harvik Desai": "65342",
         "Arpit Vasavada": "16783",
-        "Hetvik Kotak": "83260",
         "Jay Gohil": "75651",
         "Sammar Gajjar": "83250"
       }
@@ -6090,18 +6097,1425 @@
               },
               "day": 1,
               "session": 3
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Sammar Gajjar",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Sammar Gajjar",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 1,
+              "session": 3
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Sammar Gajjar",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 1,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chirag Jani",
+              "non_striker": "Manisankar Murasingh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Manisankar Murasingh",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Manisankar Murasingh",
+                  "fielders": [
+                    {
+                      "name": "Sammar Gajjar"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chirag Jani",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chirag Jani",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chirag Jani",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chirag Jani",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chirag Jani",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chirag Jani",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Parvez Sultan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Parvez Sultan",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Parvez Sultan",
+                  "fielders": [
+                    {
+                      "name": "Prerak Mankad"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": null,
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Parth Bhut",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Parth Bhut",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Bikram Debnath",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Abhijit Sarkar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Abhijit Sarkar",
+              "bowler": "Chetan Sakariya",
+              "non_striker": "Bikram Debnath",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Abhijit Sarkar"
+                }
+              ]
             }
           ]
         }
       ],
       "official_bowlers": {
         "Chetan Sakariya": {
-          "overs": "10.0",
+          "overs": "15.0",
           "maidens": 4,
-          "runs": 26,
-          "wickets": 2,
-          "dots": 48,
-          "fours": 4,
+          "runs": 39,
+          "wickets": 3,
+          "dots": 72,
+          "fours": 6,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
@@ -6118,23 +7532,23 @@
           "noballs": 1
         },
         "Chirag Jani": {
-          "overs": "4.0",
+          "overs": "8.0",
           "maidens": 1,
-          "runs": 13,
+          "runs": 30,
           "wickets": 0,
-          "dots": 19,
-          "fours": 2,
+          "dots": 34,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Parth Bhut": {
-          "overs": "19.0",
-          "maidens": 2,
-          "runs": 52,
-          "wickets": 3,
-          "dots": 85,
-          "fours": 1,
+          "overs": "27.0",
+          "maidens": 5,
+          "runs": 65,
+          "wickets": 5,
+          "dots": 126,
+          "fours": 2,
           "sixes": 3,
           "wides": 0,
           "noballs": 0
@@ -6162,13 +7576,631 @@
           "noballs": 0
         },
         "Sammar Gajjar": {
-          "overs": "6.3",
+          "overs": "7.0",
           "maidens": 2,
-          "runs": 24,
+          "runs": 30,
           "wickets": 1,
-          "dots": 31,
-          "fours": 3,
+          "dots": 32,
+          "fours": 4,
           "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    },
+    {
+      "team": "Saurashtra",
+      "overs": [
+        {
+          "over": 0,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Abhijit Sarkar",
+              "non_striker": "Harvik Desai",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Harvik Desai",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Harvik Desai"
+                }
+              ]
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Hetvik Kotak",
+              "bowler": "Manisankar Murasingh",
+              "non_striker": "Chirag Jani",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Chirag Jani",
+              "bowler": "Parvez Sultan",
+              "non_striker": "Hetvik Kotak",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Manisankar Murasingh": {
+          "overs": "4.0",
+          "maidens": 1,
+          "runs": 8,
+          "wickets": 1,
+          "dots": 20,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Abhijit Sarkar": {
+          "overs": "2.0",
+          "maidens": 1,
+          "runs": 6,
+          "wickets": 0,
+          "dots": 10,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Parvez Sultan": {
+          "overs": "1.1",
+          "maidens": 0,
+          "runs": 2,
+          "wickets": 0,
+          "dots": 5,
+          "fours": 0,
+          "sixes": 0,
           "wides": 0,
           "noballs": 0
         }
