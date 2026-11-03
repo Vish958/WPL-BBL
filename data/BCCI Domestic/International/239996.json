@@ -25,9 +25,9 @@
       },
       {
         "day": 2,
-        "status": "in play",
-        "score": "Jharkhand are 72 for 3",
-        "time": ""
+        "status": "stumps",
+        "score": "258/5 in 108.0 ov",
+        "time": "2026-11-03 11:03:01.51"
       }
     ],
     "event": {
@@ -38,15 +38,15 @@
     "match_timing": {
       "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 47.3,
-      "overs_remaining_today": 42.3,
-      "balls_remaining_today": 255,
+      "overs_bowled": 108.0,
+      "overs_remaining_today": 0.0,
+      "balls_remaining_today": 0,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 0.0,
+        "max_overs_with_1hr_extension": 15.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Jharkhand are 72 for 3"
+      "summary": "Jharkhand are 258 for 5"
     },
     "players": {
       "Odisha": [
@@ -3922,51 +3922,4894 @@
               },
               "day": 2,
               "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Virat Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Virat Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Virat Singh",
+                  "fielders": [
+                    {
+                      "name": "Lalit Yadav"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "byes": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Swastik Samal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Swastik Samal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Gourav Choudhury",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Rajesh Mohanty",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 92,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 93,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 94,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Prasanta Rana",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 95,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 96,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 97,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Anukul Roy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Anukul Roy",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Anukul Roy",
+                  "fielders": [
+                    {
+                      "name": "Ninad Rathva"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 98,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 99,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 100,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 101,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 102,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 103,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 104,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 105,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 106,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Ninad Rathva",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 107,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Robin Minz",
+              "bowler": "Badal Biswal",
+              "non_striker": "Aditya Singh",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Aditya Singh",
+              "bowler": "Badal Biswal",
+              "non_striker": "Robin Minz",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
             }
           ]
         }
       ],
       "official_bowlers": {
         "Rajesh Mohanty": {
-          "overs": "14.3",
-          "maidens": 7,
-          "runs": 20,
+          "overs": "23.0",
+          "maidens": 10,
+          "runs": 30,
           "wickets": 2,
-          "dots": 79,
+          "dots": 121,
           "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Lalit Yadav": {
-          "overs": "14.0",
-          "maidens": 5,
-          "runs": 19,
+          "overs": "21.0",
+          "maidens": 6,
+          "runs": 47,
           "wickets": 0,
-          "dots": 73,
-          "fours": 2,
+          "dots": 100,
+          "fours": 6,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Prasanta Rana": {
-          "overs": "14.0",
+          "overs": "19.0",
           "maidens": 6,
-          "runs": 23,
+          "runs": 41,
           "wickets": 0,
-          "dots": 72,
-          "fours": 3,
+          "dots": 90,
+          "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Ninad Rathva": {
+          "overs": "23.0",
+          "maidens": 1,
+          "runs": 71,
+          "wickets": 1,
+          "dots": 93,
+          "fours": 4,
+          "sixes": 2,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Swastik Samal": {
           "overs": "5.0",
-          "maidens": 0,
-          "runs": 5,
+          "maidens": 1,
+          "runs": 10,
           "wickets": 0,
-          "dots": 25,
+          "dots": 24,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Badal Biswal": {
+          "overs": "13.0",
+          "maidens": 1,
+          "runs": 38,
+          "wickets": 1,
+          "dots": 46,
           "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Gourav Choudhury": {
+          "overs": "4.0",
+          "maidens": 1,
+          "runs": 8,
+          "wickets": 0,
+          "dots": 19,
+          "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

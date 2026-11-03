@@ -25,9 +25,9 @@
       },
       {
         "day": 2,
-        "status": "in play",
-        "score": "Delhi trail Services by 208 runs with 9 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "299/6 in 90.0 ov",
+        "time": "2026-11-03 11:26:38.62"
       }
     ],
     "event": {
@@ -38,15 +38,15 @@
     "match_timing": {
       "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 18.4,
-      "overs_remaining_today": 71.2,
-      "balls_remaining_today": 428,
+      "overs_bowled": 90.0,
+      "overs_remaining_today": 0.0,
+      "balls_remaining_today": 0,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 0.0,
+        "max_overs_with_1hr_extension": 15.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Delhi trail Services by 208 runs with 9 wickets remaining"
+      "summary": "Delhi lead Services by 33 runs with 4 wickets remaining"
     },
     "players": {
       "Delhi": [
@@ -74,10 +74,10 @@
         "Ayush Doseja",
         "Anuj Rawat",
         "Sumit Mathur",
+        "Dev Lakra",
         "Hrithik Shokeen",
         "Navdeep Saini",
-        "Aman Chaudhary",
-        "Dev Lakra"
+        "Aman Chaudhary"
       ],
       "Services": [
         "Shubham Rohilla",
@@ -102,10 +102,10 @@
         "Ayush Doseja": "86934",
         "Anuj Rawat": "66837",
         "Sumit Mathur": "84662",
+        "Dev Lakra": "82905",
         "Hrithik Shokeen": "70447",
         "Navdeep Saini": "16790",
         "Aman Chaudhary": "91782",
-        "Dev Lakra": "82905",
         "Shubham Rohilla": "38283",
         "Nitin Tanwar": "66938",
         "Ravi Chauhan": "18339",
@@ -8801,40 +8801,5811 @@
               },
               "day": 2,
               "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Virender",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Virender",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Priyansh Arya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Priyansh Arya",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Priyansh Arya",
+                  "fielders": [
+                    {
+                      "name": "Jayant Goyat"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Yash Dhull"
+                }
+              ]
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Badoni",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Badoni",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Ayush Badoni"
+                }
+              ]
+            },
+            {
+              "batter": "Anuj Rawat",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anuj Rawat",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anuj Rawat",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Anuj Rawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Anuj Rawat",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Anuj Rawat"
+                }
+              ]
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Ravi Chauhan",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Virender",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 1,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "legbyes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Pulkit Narang",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Vineet Dhankhar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "byes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Arjun Sharma",
+              "non_striker": "Ayush Doseja",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Ayush Doseja",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Ayush Doseja",
+                  "fielders": [
+                    {
+                      "name": "Nakul Sharma"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Virender",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "byes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Dev Lakra",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Jayant Goyat",
+              "non_striker": "Dev Lakra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
             }
           ]
         }
       ],
       "official_bowlers": {
         "Pulkit Narang": {
-          "overs": "9.4",
-          "maidens": 1,
-          "runs": 34,
+          "overs": "25.0",
+          "maidens": 3,
+          "runs": 72,
           "wickets": 1,
-          "dots": 39,
-          "fours": 1,
-          "sixes": 2,
+          "dots": 109,
+          "fours": 4,
+          "sixes": 3,
           "wides": 0,
           "noballs": 0
         },
         "Virender": {
-          "overs": "5.0",
+          "overs": "16.0",
           "maidens": 0,
-          "runs": 6,
+          "runs": 50,
+          "wickets": 1,
+          "dots": 70,
+          "fours": 3,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 1
+        },
+        "Jayant Goyat": {
+          "overs": "16.0",
+          "maidens": 2,
+          "runs": 51,
+          "wickets": 2,
+          "dots": 71,
+          "fours": 8,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 1
+        },
+        "Arjun Sharma": {
+          "overs": "16.0",
+          "maidens": 2,
+          "runs": 48,
+          "wickets": 2,
+          "dots": 63,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Nitin Tanwar": {
+          "overs": "12.0",
+          "maidens": 1,
+          "runs": 32,
           "wickets": 0,
-          "dots": 25,
+          "dots": 49,
+          "fours": 1,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Ravi Chauhan": {
+          "overs": "2.0",
+          "maidens": 0,
+          "runs": 7,
+          "wickets": 0,
+          "dots": 6,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
-        "Jayant Goyat": {
-          "overs": "4.0",
-          "maidens": 0,
-          "runs": 6,
+        "Vineet Dhankhar": {
+          "overs": "3.0",
+          "maidens": 1,
+          "runs": 20,
           "wickets": 0,
-          "dots": 18,
-          "fours": 0,
+          "dots": 11,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

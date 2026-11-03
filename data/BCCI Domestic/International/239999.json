@@ -25,9 +25,9 @@
       },
       {
         "day": 2,
-        "status": "in play",
-        "score": "Maharashtra trail Bengal by 58 runs with 4 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "207/9 in 79.0 ov",
+        "time": "2026-11-03 10:37:39.55"
       }
     ],
     "event": {
@@ -38,15 +38,15 @@
     "match_timing": {
       "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 30.3,
-      "overs_remaining_today": 59.3,
-      "balls_remaining_today": 357,
+      "overs_bowled": 79.0,
+      "overs_remaining_today": 11.0,
+      "balls_remaining_today": 66,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 11.0,
+        "max_overs_with_1hr_extension": 26.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Maharashtra trail Bengal by 58 runs with 4 wickets remaining"
+      "summary": "Maharashtra lead Bengal by 64 runs with 1 wicket remaining"
     },
     "players": {
       "Bengal": [
@@ -88,8 +88,8 @@
         "Harshal Kate",
         "Saurabh Nawale",
         "Tanay Sanghavi",
-        "Hitesh Walunj",
         "Rajvardhan Hangargekar",
+        "Hitesh Walunj",
         "Pradeep Dadhe"
       ]
     },
@@ -114,8 +114,8 @@
         "Harshal Kate": "87033",
         "Saurabh Nawale": "79014",
         "Tanay Sanghavi": "87261",
-        "Hitesh Walunj": "70555",
         "Rajvardhan Hangargekar": "70448",
+        "Hitesh Walunj": "70555",
         "Pradeep Dadhe": "54585"
       }
     },
@@ -5701,51 +5701,3968 @@
               },
               "day": 2,
               "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Saurabh Nawale",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Saurabh Nawale",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Saurabh Nawale",
+                  "fielders": [
+                    {
+                      "name": "Abishek Porel"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Rajvardhan Hangargekar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Rajvardhan Hangargekar",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Rajvardhan Hangargekar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": null,
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "byes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "byes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Hitesh Walunj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Hitesh Walunj",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Hitesh Walunj",
+                  "fielders": [
+                    {
+                      "name": "Abhimanyu Easwaran"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Kaif",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Sumanta Gupta",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Mohammed Shami",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Pradipta Pramanik",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Shahbaz Ahmed",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Tanay Sanghavi",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Pradeep Dadhe",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Pradeep Dadhe",
+              "bowler": "Suraj Jaiswal",
+              "non_striker": "Tanay Sanghavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
             }
           ]
         }
       ],
       "official_bowlers": {
         "Mohammed Shami": {
-          "overs": "13.0",
-          "maidens": 3,
-          "runs": 21,
+          "overs": "22.0",
+          "maidens": 7,
+          "runs": 36,
           "wickets": 3,
-          "dots": 65,
-          "fours": 2,
+          "dots": 112,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Suraj Jaiswal": {
-          "overs": "8.0",
+          "overs": "13.0",
           "maidens": 0,
-          "runs": 27,
+          "runs": 38,
           "wickets": 1,
-          "dots": 36,
-          "fours": 5,
+          "dots": 59,
+          "fours": 6,
           "sixes": 0,
           "wides": 0,
-          "noballs": 0
+          "noballs": 1
         },
         "Mohammed Kaif": {
-          "overs": "8.3",
-          "maidens": 0,
-          "runs": 28,
+          "overs": "12.0",
+          "maidens": 2,
+          "runs": 33,
           "wickets": 2,
-          "dots": 37,
+          "dots": 54,
           "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Shahbaz Ahmed": {
-          "overs": "1.0",
-          "maidens": 0,
-          "runs": 1,
+          "overs": "17.0",
+          "maidens": 4,
+          "runs": 34,
+          "wickets": 3,
+          "dots": 82,
+          "fours": 2,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Pradipta Pramanik": {
+          "overs": "13.0",
+          "maidens": 1,
+          "runs": 39,
           "wickets": 0,
-          "dots": 5,
-          "fours": 0,
+          "dots": 56,
+          "fours": 2,
+          "sixes": 2,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Sumanta Gupta": {
+          "overs": "2.0",
+          "maidens": 1,
+          "runs": 8,
+          "wickets": 0,
+          "dots": 7,
+          "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

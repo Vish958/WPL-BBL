@@ -25,9 +25,9 @@
       },
       {
         "day": 2,
-        "status": "in play",
-        "score": "Punjab are 331 for 5",
-        "time": ""
+        "status": "stumps",
+        "score": "20/0 in 9.0 ov",
+        "time": "2026-11-03 11:27:10.04"
       }
     ],
     "event": {
@@ -38,15 +38,15 @@
     "match_timing": {
       "day": 2,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 97.0,
-      "overs_remaining_today": 0.0,
-      "balls_remaining_today": 0,
+      "overs_bowled": 9.0,
+      "overs_remaining_today": 81.0,
+      "balls_remaining_today": 486,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 0.0,
-        "max_overs_with_1hr_extension": 15.0,
+        "expected_overs_next_hour": 15.0,
+        "max_overs_with_1hr_extension": 30.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,7 +63,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Punjab are 331 for 5"
+      "summary": "Andhra trail Punjab by 572 runs with 10 wickets remaining"
     },
     "players": {
       "Punjab": [
@@ -74,10 +74,10 @@
         "Ramandeep Singh",
         "Salil Arora",
         "Sanvir Singh",
-        "Harpreet Brar",
         "Emanjot Singh Chahal",
-        "Gursimran Singh",
-        "Sukhdeep Bajwa"
+        "Harpreet Brar",
+        "Sukhdeep Bajwa",
+        "Gursimran Singh"
       ],
       "Andhra": [
         "Changalapatu Gnaneshwar",
@@ -102,10 +102,10 @@
         "Ramandeep Singh": "65478",
         "Salil Arora": "72140",
         "Sanvir Singh": "68814",
-        "Harpreet Brar": "69782",
         "Emanjot Singh Chahal": "87006",
-        "Gursimran Singh": "87050",
+        "Harpreet Brar": "69782",
         "Sukhdeep Bajwa": "87198",
+        "Gursimran Singh": "87050",
         "Changalapatu Gnaneshwar": "69775",
         "Revanth Reddy": "84660",
         "Shaik Rasheed": "76206",
@@ -7938,71 +7938,5596 @@
               "session": 1
             }
           ]
+        },
+        {
+          "over": 97,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 98,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 99,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 100,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 101,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Salil Arora",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 102,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Salil Arora",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Salil Arora",
+                  "fielders": [
+                    {
+                      "name": "Revanth Reddy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 103,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 104,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 105,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 106,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 107,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 108,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 109,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 110,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 111,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 112,
+          "day": 2,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 113,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 114,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 115,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 1,
+                "total": 5
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 1,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 116,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 117,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Kavuri Saiteja",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 118,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 119,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 120,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 121,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 122,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 123,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 124,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 125,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 126,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 127,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 128,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 129,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 130,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 131,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 132,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 133,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Shaik Rasheed",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 134,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 135,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 136,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 137,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 138,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 139,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 140,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sanvir Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Sanvir Singh",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Sanvir Singh",
+                  "fielders": [
+                    {
+                      "name": "Shaik Rasheed"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 141,
+          "day": 2,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 2
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 142,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 143,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Harpreet Brar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 144,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Harpreet Brar",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Harpreet Brar"
+                }
+              ]
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 145,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 146,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 147,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 148,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 149,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 150,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Kalidindi Raju",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 151,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 152,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 153,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Venkat Sasikanth",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 154,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Emanjot Singh Chahal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Tripurana Vijay",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 155,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Emanjot Singh Chahal",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Emanjot Singh Chahal",
+                  "fielders": [
+                    {
+                      "name": "Ricky Bhui"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Gursimran Singh",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Sukhdeep Bajwa",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Gursimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Gursimran Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Gursimran Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Sukhdeep Bajwa",
+              "bowler": "Saurabh Kumar",
+              "non_striker": "Gursimran Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Kavuri Saiteja": {
-          "overs": "22.0",
+          "overs": "28.0",
           "maidens": 3,
-          "runs": 87,
+          "runs": 110,
           "wickets": 3,
-          "dots": 86,
-          "fours": 10,
+          "dots": 115,
+          "fours": 13,
           "sixes": 0,
-          "wides": 0,
-          "noballs": 4
+          "wides": 1,
+          "noballs": 6
         },
         "Kalidindi Raju": {
-          "overs": "19.0",
-          "maidens": 4,
-          "runs": 51,
+          "overs": "26.0",
+          "maidens": 5,
+          "runs": 70,
           "wickets": 2,
-          "dots": 87,
-          "fours": 6,
+          "dots": 122,
+          "fours": 10,
           "sixes": 0,
           "wides": 1,
           "noballs": 0
         },
         "Venkat Sasikanth": {
-          "overs": "18.0",
+          "overs": "22.0",
           "maidens": 5,
-          "runs": 52,
+          "runs": 101,
           "wickets": 0,
-          "dots": 91,
-          "fours": 11,
-          "sixes": 0,
-          "wides": 0,
+          "dots": 104,
+          "fours": 15,
+          "sixes": 5,
+          "wides": 1,
           "noballs": 1
         },
         "Tripurana Vijay": {
-          "overs": "12.0",
-          "maidens": 2,
-          "runs": 50,
-          "wickets": 0,
-          "dots": 49,
-          "fours": 6,
-          "sixes": 1,
+          "overs": "27.0",
+          "maidens": 3,
+          "runs": 127,
+          "wickets": 2,
+          "dots": 101,
+          "fours": 11,
+          "sixes": 5,
           "wides": 0,
           "noballs": 0
         },
         "Saurabh Kumar": {
-          "overs": "23.0",
-          "maidens": 2,
-          "runs": 69,
-          "wickets": 0,
-          "dots": 94,
-          "fours": 4,
-          "sixes": 2,
+          "overs": "45.0",
+          "maidens": 5,
+          "runs": 144,
+          "wickets": 2,
+          "dots": 185,
+          "fours": 10,
+          "sixes": 5,
           "wides": 0,
           "noballs": 0
         },
         "Shaik Rasheed": {
+          "overs": "8.0",
+          "maidens": 0,
+          "runs": 35,
+          "wickets": 0,
+          "dots": 27,
+          "fours": 2,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    },
+    {
+      "team": "Andhra",
+      "overs": [
+        {
+          "over": 0,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Gursimran Singh",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Sukhdeep Bajwa",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3,
+              "extras": {
+                "legbyes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Revanth Reddy",
+              "bowler": "Emanjot Singh Chahal",
+              "non_striker": "Changalapatu Gnaneshwar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 2,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Changalapatu Gnaneshwar",
+              "bowler": "Harpreet Brar",
+              "non_striker": "Revanth Reddy",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Harpreet Brar": {
+          "overs": "3.0",
+          "maidens": 1,
+          "runs": 5,
+          "wickets": 0,
+          "dots": 14,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Gursimran Singh": {
           "overs": "3.0",
           "maidens": 0,
-          "runs": 17,
+          "runs": 13,
           "wickets": 0,
-          "dots": 9,
-          "fours": 2,
+          "dots": 14,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Sukhdeep Bajwa": {
+          "overs": "2.0",
+          "maidens": 1,
+          "runs": 1,
+          "wickets": 0,
+          "dots": 11,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Emanjot Singh Chahal": {
+          "overs": "1.0",
+          "maidens": 1,
+          "runs": 0,
+          "wickets": 0,
+          "dots": 6,
+          "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
