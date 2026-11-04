@@ -7,14 +7,15 @@
   "info": {
     "balls_per_over": 6,
     "city": "Kanpur",
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "196/0 in 55.0 ov",
         "time": "2026-11-03 11:13:11.42"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Uttar Pradesh lead Baroda by 69 runs with 5 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,17 +43,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 55.0,
-      "overs_remaining_today": 35.0,
-      "balls_remaining_today": 210,
+      "overs_bowled": 125.0,
+      "overs_remaining_today": 0.0,
+      "balls_remaining_today": 0,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 0.0,
+        "max_overs_with_1hr_extension": 15.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,7 +70,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Uttar Pradesh trail Baroda by 159 runs with 10 wickets remaining"
+      "summary": "Uttar Pradesh lead Baroda by 69 runs with 5 wickets remaining"
     },
     "players": {
       "Uttar Pradesh": [
@@ -13801,61 +13808,5635 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 55,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Atit Sheth",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Raj Limbani",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Raj Limbani",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 3,
+                "extras": 0,
+                "total": 3
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Madhav Kaushik",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Shashwat Rawat",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Madhav Kaushik",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Madhav Kaushik",
+                  "fielders": [
+                    {
+                      "name": "Mitesh Patel"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 92,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 93,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 94,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 95,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Adarsh Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Adarsh Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Adarsh Singh"
+                }
+              ]
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 96,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 97,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2,
+              "extras": {
+                "byes": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 98,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 99,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 100,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 101,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 102,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 103,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 104,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Karan Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Karan Sharma",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Karan Sharma"
+                }
+              ]
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 105,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 106,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 107,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 108,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 109,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 110,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 111,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 112,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 113,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 114,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Rinku Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 115,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rinku Singh",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Rinku Singh"
+                }
+              ]
+            },
+            {
+              "batter": "Siddharth Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Siddharth Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Siddharth Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Siddharth Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 116,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Siddharth Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Siddharth Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Siddharth Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Siddharth Yadav",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Siddharth Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Siddharth Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 117,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Siddharth Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Siddharth Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Siddharth Yadav"
+                }
+              ]
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 118,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 119,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 120,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 121,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 122,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Rasikh Dar",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 123,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 124,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Aryan Juyal",
+              "bowler": "Atit Sheth",
+              "non_striker": "Prashant Veer",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Prashant Veer",
+              "bowler": "Atit Sheth",
+              "non_striker": "Aryan Juyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Bhargav Bhatt": {
-          "overs": "16.0",
-          "maidens": 1,
-          "runs": 57,
-          "wickets": 0,
-          "dots": 60,
-          "fours": 5,
-          "sixes": 1,
+          "overs": "38.0",
+          "maidens": 3,
+          "runs": 124,
+          "wickets": 2,
+          "dots": 151,
+          "fours": 9,
+          "sixes": 3,
           "wides": 0,
           "noballs": 0
         },
         "Atit Sheth": {
-          "overs": "9.0",
+          "overs": "17.0",
           "maidens": 0,
-          "runs": 29,
+          "runs": 51,
           "wickets": 0,
-          "dots": 35,
-          "fours": 3,
+          "dots": 68,
+          "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Rasikh Dar": {
-          "overs": "8.0",
-          "maidens": 0,
-          "runs": 28,
+          "overs": "18.0",
+          "maidens": 1,
+          "runs": 59,
           "wickets": 0,
-          "dots": 33,
-          "fours": 4,
+          "dots": 69,
+          "fours": 6,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Raj Limbani": {
-          "overs": "5.0",
+          "overs": "10.0",
           "maidens": 0,
-          "runs": 22,
+          "runs": 37,
           "wickets": 0,
-          "dots": 20,
-          "fours": 4,
+          "dots": 40,
+          "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Mahesh Pithiya": {
-          "overs": "12.0",
-          "maidens": 1,
-          "runs": 33,
-          "wickets": 0,
-          "dots": 51,
-          "fours": 4,
-          "sixes": 0,
+          "overs": "34.0",
+          "maidens": 2,
+          "runs": 105,
+          "wickets": 3,
+          "dots": 144,
+          "fours": 10,
+          "sixes": 2,
           "wides": 0,
           "noballs": 0
         },
@@ -13866,6 +19447,17 @@
           "wickets": 0,
           "dots": 22,
           "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Shashwat Rawat": {
+          "overs": "3.0",
+          "maidens": 0,
+          "runs": 14,
+          "wickets": 0,
+          "dots": 10,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

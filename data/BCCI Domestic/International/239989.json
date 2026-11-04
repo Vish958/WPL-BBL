@@ -7,14 +7,15 @@
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Goa win by an innings and 177 runs",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "63/3 in 22.0 ov",
         "time": "2026-11-03 11:33:23.42"
+      },
+      {
+        "day": 3,
+        "status": "end of match",
+        "score": "113/10 in 45.3 ov",
+        "time": "2026-11-04 05:52:49.70"
       }
     ],
     "event": {
@@ -36,11 +43,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 22.0,
-      "overs_remaining_today": 68.0,
-      "balls_remaining_today": 408,
+      "overs_bowled": 45.3,
+      "overs_remaining_today": 44.3,
+      "balls_remaining_today": 267,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -62,8 +69,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Bihar trail Goa by 227 runs with 7 wickets remaining"
+      "result": "draw",
+      "summary": "Goa win by an innings and 177 runs"
     },
     "players": {
       "Goa": [
@@ -87,6 +94,7 @@
         "Prithvi Raj",
         "Suraj Kashyap",
         "Mangal Mahrour",
+        "Naman Gaurav",
         "Amod Yadav",
         "Vasudev Prasad Singh",
         "Suman Kumar",
@@ -113,6 +121,7 @@
         "Prithvi Raj": "95302",
         "Suraj Kashyap": "74000",
         "Mangal Mahrour": "69816",
+        "Naman Gaurav": "102705",
         "Amod Yadav": "73455",
         "Vasudev Prasad Singh": "96681",
         "Suman Kumar": "94220",
@@ -13775,38 +13784,1963 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 22,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Vasudev Prasad Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Vasudev Prasad Singh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Vasudev Prasad Singh"
+                }
+              ]
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Bipin Saurabh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Bipin Saurabh",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Bipin Saurabh",
+                  "fielders": [
+                    {
+                      "name": "Amulya Pandrekar"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Vasuki Koushik",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Prithvi Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Prithvi Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Prithvi Raj",
+                  "fielders": [
+                    {
+                      "name": "Darshan Misal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Heramb Parab",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Heramb Parab",
+              "non_striker": "Akash Raj",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Akash Raj",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Akash Raj",
+                  "fielders": [
+                    {
+                      "name": "Suyash Prabhudessai"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Naman Gaurav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Naman Gaurav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Naman Gaurav",
+                  "fielders": [
+                    {
+                      "name": "Abhinav Tejrana"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Amod Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Amod Yadav",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Amod Yadav"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": null,
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suman Kumar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suman Kumar",
+              "bowler": "Lalit Yadav",
+              "non_striker": "Suraj Kashyap",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suman Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suman Kumar",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Suraj Kashyap",
+              "bowler": "Yash Kasvankar",
+              "non_striker": "Suman Kumar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Suraj Kashyap"
+                }
+              ]
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Lalit Yadav": {
-          "overs": "9.0",
-          "maidens": 2,
-          "runs": 17,
-          "wickets": 2,
-          "dots": 39,
+          "overs": "14.0",
+          "maidens": 3,
+          "runs": 23,
+          "wickets": 5,
+          "dots": 63,
           "fours": 0,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Vasuki Koushik": {
-          "overs": "4.0",
-          "maidens": 1,
-          "runs": 14,
-          "wickets": 0,
-          "dots": 18,
-          "fours": 2,
+          "overs": "9.0",
+          "maidens": 3,
+          "runs": 28,
+          "wickets": 1,
+          "dots": 40,
+          "fours": 4,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Heramb Parab": {
-          "overs": "3.0",
-          "maidens": 0,
-          "runs": 7,
-          "wickets": 0,
-          "dots": 15,
-          "fours": 1,
+          "overs": "7.0",
+          "maidens": 1,
+          "runs": 14,
+          "wickets": 1,
+          "dots": 36,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
@@ -13823,11 +15757,11 @@
           "noballs": 0
         },
         "Yash Kasvankar": {
-          "overs": "3.0",
-          "maidens": 0,
-          "runs": 10,
-          "wickets": 1,
-          "dots": 12,
+          "overs": "12.3",
+          "maidens": 1,
+          "runs": 29,
+          "wickets": 3,
+          "dots": 52,
           "fours": 1,
           "sixes": 0,
           "wides": 0,

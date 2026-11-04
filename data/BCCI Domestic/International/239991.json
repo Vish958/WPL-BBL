@@ -7,14 +7,15 @@
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Live Day 3",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "149/0 in 50.3 ov",
         "time": "2026-11-03 11:06:25.28"
+      },
+      {
+        "day": 3,
+        "status": "in play",
+        "score": "Jammu & Kashmir lead Pondicherry by 56 runs with 7 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -36,17 +43,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 50.3,
-      "overs_remaining_today": 39.3,
-      "balls_remaining_today": 237,
+      "overs_bowled": 122.3,
+      "overs_remaining_today": 0.0,
+      "balls_remaining_today": 0,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 0.0,
+        "max_overs_with_1hr_extension": 15.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -63,20 +70,20 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Jammu & Kashmir trail Pondicherry by 236 runs with 10 wickets remaining"
+      "summary": "Jammu & Kashmir lead Pondicherry by 56 runs with 7 wickets remaining"
     },
     "players": {
       "Jammu & Kashmir": [
         "Qamran Iqbal",
         "Shubham Khajuria",
+        "Kawalpreet Singh",
+        "Paras Dogra",
+        "Abdul Samad",
         "Waseem Khanday",
         "Sunil Kumar",
         "Umar Nazir",
         "Rohit Sharma",
-        "Paras Dogra",
-        "Abdul Samad",
         "Rydham Sharma",
-        "Kawalpreet Singh",
         "Sahil Lotra"
       ],
       "Pondicherry": [
@@ -97,14 +104,14 @@
       "people": {
         "Qamran Iqbal": "69821",
         "Shubham Khajuria": "32353",
+        "Kawalpreet Singh": "94997",
+        "Paras Dogra": "16964",
+        "Abdul Samad": "70433",
         "Waseem Khanday": "95076",
         "Sunil Kumar": "78837",
         "Umar Nazir": "30417",
         "Rohit Sharma": "39144",
-        "Paras Dogra": "16964",
-        "Abdul Samad": "70433",
         "Rydham Sharma": "95253",
-        "Kawalpreet Singh": "94997",
         "Sahil Lotra": "79035",
         "Neyan Kangayan": "76557",
         "Ritesh Gudge": "87002",
@@ -11827,65 +11834,5883 @@
               },
               "day": 2,
               "session": 3
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 2,
+              "session": 3
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 2,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 78,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 79,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 80,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 81,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 82,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Aman Khan",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Aman Khan",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 83,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 84,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 85,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 86,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 87,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 88,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 89,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 90,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 91,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 92,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 93,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 94,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 95,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 96,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 97,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 98,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Shubham Khajuria",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 99,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Shubham Khajuria",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Shubham Khajuria"
+                }
+              ]
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 100,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 101,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 102,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2,
+              "extras": {
+                "wides": 1
+              }
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 103,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 104,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 105,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 106,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Tahir Bhat",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 107,
+          "day": 3,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 2
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 108,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Qamran Iqbal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Qamran Iqbal",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Qamran Iqbal",
+                  "fielders": [
+                    {
+                      "name": "Mohit Kale"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 109,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Paras Dogra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Paras Dogra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Paras Dogra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 110,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Paras Dogra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Paras Dogra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 111,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Paras Dogra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Paras Dogra"
+                }
+              ]
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 112,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 113,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 114,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 115,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 116,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 117,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 118,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 119,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 120,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Ankit Sharma",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 121,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Abdul Samad",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 122,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
             }
           ]
         }
       ],
       "official_bowlers": {
         "Gaurav Yadav": {
-          "overs": "9.0",
+          "overs": "17.0",
           "maidens": 1,
-          "runs": 34,
+          "runs": 68,
           "wickets": 0,
-          "dots": 41,
-          "fours": 7,
+          "dots": 72,
+          "fours": 12,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Sagar Trivedi": {
-          "overs": "12.3",
-          "maidens": 8,
-          "runs": 21,
+          "overs": "24.3",
+          "maidens": 10,
+          "runs": 73,
           "wickets": 0,
-          "dots": 65,
-          "fours": 3,
-          "sixes": 0,
-          "wides": 0,
+          "dots": 113,
+          "fours": 10,
+          "sixes": 1,
+          "wides": 1,
           "noballs": 0
         },
         "Tahir Bhat": {
-          "overs": "15.0",
-          "maidens": 4,
-          "runs": 57,
+          "overs": "21.0",
+          "maidens": 5,
+          "runs": 92,
           "wickets": 0,
-          "dots": 69,
-          "fours": 9,
+          "dots": 91,
+          "fours": 15,
           "sixes": 1,
-          "wides": 0,
+          "wides": 1,
           "noballs": 1
         },
         "Sagar Udeshi": {
-          "overs": "7.0",
-          "maidens": 3,
-          "runs": 13,
-          "wickets": 0,
-          "dots": 36,
-          "fours": 2,
-          "sixes": 0,
+          "overs": "28.0",
+          "maidens": 5,
+          "runs": 73,
+          "wickets": 2,
+          "dots": 127,
+          "fours": 8,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Aman Khan": {
-          "overs": "7.0",
+          "overs": "12.0",
           "maidens": 1,
-          "runs": 24,
+          "runs": 47,
           "wickets": 0,
-          "dots": 30,
-          "fours": 3,
+          "dots": 47,
+          "fours": 6,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
+        },
+        "Ankit Sharma": {
+          "overs": "20.0",
+          "maidens": 2,
+          "runs": 83,
+          "wickets": 1,
+          "dots": 74,
+          "fours": 5,
+          "sixes": 3,
+          "wides": 0,
+          "noballs": 4
         }
       }
     }

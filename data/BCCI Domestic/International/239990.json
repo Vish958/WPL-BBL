@@ -7,14 +7,15 @@
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 2,
+    "current_day": 3,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 2",
+    "day_status": "Vidarbha win by an innings and 20 runs",
     "days_played": [
       1,
-      2
+      2,
+      3
     ],
     "days_summary": [
       {
@@ -28,6 +29,12 @@
         "status": "stumps",
         "score": "19/1 in 6.0 ov",
         "time": "2026-11-03 11:30:50.57"
+      },
+      {
+        "day": 3,
+        "status": "end of match",
+        "score": "105/10 in 33.3 ov",
+        "time": "2026-11-04 06:23:05.20"
       }
     ],
     "event": {
@@ -36,11 +43,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 2,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 6.0,
-      "overs_remaining_today": 84.0,
-      "balls_remaining_today": 504,
+      "overs_bowled": 33.3,
+      "overs_remaining_today": 56.3,
+      "balls_remaining_today": 339,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -62,8 +69,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Madhya Pradesh trail Vidarbha by 106 runs with 9 wickets remaining"
+      "result": "draw",
+      "summary": "Vidarbha win by an innings and 20 runs"
     },
     "players": {
       "Vidarbha": [
@@ -14404,38 +14411,2330 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 6,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 4,
+                "extras": 1,
+                "total": 5
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "noballs": 1
+              }
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Bhute",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Purohit, 4 runs",
+              "bowler": "Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 3,
+                "total": 3
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "legbyes": 3
+              }
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Purohit, no run",
+              "bowler": "Nalkande",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Nachiket Bhute",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Purohit, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Nalkande",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Darshan Nalkande",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Gurbani",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Purohit, 2 runs",
+              "bowler": "Dubey",
+              "non_striker": "Saksham Purohit",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "byes": 2
+              }
+            },
+            {
+              "batter": "Saksham Purohit",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Purohit, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Saksham Purohit"
+                }
+              ]
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Purohit, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Purohit, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "byes": 2
+              }
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Gurbani",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sharma, no run",
+              "bowler": "Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sharma, 1 run",
+              "bowler": "Gurbani",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Gurbani",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Rajneesh Gurbani",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sharma, no run",
+              "bowler": "Dubey",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Dubey",
+              "non_striker": "Atharva Mahajan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Sharma, no run",
+              "bowler": "Rekhade",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Mahajan, no run",
+              "bowler": "Rekhade",
+              "non_striker": "Sharma, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Sharma, 1 run",
+              "bowler": "Dubey",
+              "non_striker": "Mahajan, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Atharva Mahajan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Atharva Mahajan"
+                }
+              ]
+            },
+            {
+              "batter": "Saransh Jain",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Saransh Jain",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saransh Jain",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Sharma, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Jain, no run",
+              "bowler": "Rekhade",
+              "non_striker": "Saransh Jain",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saransh Jain",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Jain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saransh Jain",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Jain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Saransh Jain",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Jain, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Jain, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Jain, 1 run",
+              "bowler": "Dubey",
+              "non_striker": "Shubham Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Jain, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Shubham Sharma",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Jain, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Shubham Sharma",
+                  "fielders": [
+                    {
+                      "name": "Danish Malewar"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Rajat Patidar",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Jain, 1 run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Patidar, out!",
+              "bowler": "Dubey",
+              "non_striker": "Rajat Patidar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Rajat Patidar"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Jain, out!",
+              "bowler": "Rekhade",
+              "non_striker": "Patidar, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Saransh Jain"
+                }
+              ]
+            },
+            {
+              "batter": "Arshad Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Jain, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Arshad Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Jain, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Arshad Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Jain, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Arshad Khan",
+                  "fielders": [
+                    {
+                      "name": "Parth Rekhade"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Kartikeya, no run",
+              "bowler": "Rekhade",
+              "non_striker": "Jain, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Kumar Kartikeya",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Kartikeya, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Kumar Kartikeya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Kumar Kartikeya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Kumar Kartikeya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Kumar Kartikeya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Kumar Kartikeya",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 3,
+              "session": 1,
+              "extras": {
+                "byes": 4
+              }
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Kumar Kartikeya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Kartikeya, out!",
+              "bowler": "Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Kartikeya, out!",
+              "bowler": "Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Kumar Kartikeya"
+                }
+              ]
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Kartikeya, out!",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Avesh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Avesh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Avesh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Avesh Khan",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Avesh Khan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Avesh Khan",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Khan, out!",
+              "bowler": "Rekhade",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Avesh Khan"
+                }
+              ]
+            },
+            {
+              "batter": "Ravi Kiran",
+              "bowler": "Parth Rekhade",
+              "non_striker": "Khan, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 3,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Ravi Kiran",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Chanchal Rathore",
+              "bowler": "Harsh Dubey",
+              "non_striker": "Ravi Kiran",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1
+            },
+            {
+              "batter": "Rathore, out!",
+              "bowler": "Dubey",
+              "non_striker": "Chanchal Rathore",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Chanchal Rathore"
+                }
+              ]
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Parth Rekhade": {
-          "overs": "2.0",
-          "maidens": 0,
-          "runs": 6,
-          "wickets": 1,
-          "dots": 10,
-          "fours": 1,
+          "overs": "7.0",
+          "maidens": 2,
+          "runs": 14,
+          "wickets": 5,
+          "dots": 36,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Harsh Dubey": {
-          "overs": "3.0",
-          "maidens": 1,
-          "runs": 5,
-          "wickets": 0,
-          "dots": 14,
-          "fours": 0,
+          "overs": "11.3",
+          "maidens": 2,
+          "runs": 37,
+          "wickets": 5,
+          "dots": 49,
+          "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Rajneesh Gurbani": {
-          "overs": "1.0",
-          "maidens": 0,
-          "runs": 8,
+          "overs": "5.0",
+          "maidens": 1,
+          "runs": 13,
           "wickets": 0,
-          "dots": 4,
+          "dots": 23,
           "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Nachiket Bhute": {
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 18,
+          "wickets": 0,
+          "dots": 23,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 1
+        },
+        "Darshan Nalkande": {
+          "overs": "5.0",
+          "maidens": 1,
+          "runs": 11,
+          "wickets": 0,
+          "dots": 23,
+          "fours": 1,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
