@@ -32,9 +32,9 @@
       },
       {
         "day": 3,
-        "status": "in play",
-        "score": "Services lead Delhi by 152 runs with 7 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "280/5 in 66.0 ov",
+        "time": "2026-11-04 11:29:31.76"
       }
     ],
     "event": {
@@ -45,9 +45,9 @@
     "match_timing": {
       "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 53.0,
-      "overs_remaining_today": 37.0,
-      "balls_remaining_today": 222,
+      "overs_bowled": 66.0,
+      "overs_remaining_today": 24.0,
+      "balls_remaining_today": 144,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -70,7 +70,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Services lead Delhi by 152 runs with 7 wickets remaining"
+      "summary": "Services lead Delhi by 202 runs with 5 wickets remaining"
     },
     "players": {
       "Delhi": [
@@ -20117,6 +20117,1055 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 53,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Priyansh Arya",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Priyansh Arya",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Priyansh Arya",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Priyansh Arya",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Priyansh Arya",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Priyansh Arya",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Sumit Mathur",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Sumit Mathur",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Sumit Mathur",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Sumit Mathur",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Sumit Mathur",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Sumit Mathur",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Mohit Ahlawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Mohit Ahlawat",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Mohit Ahlawat",
+                  "fielders": [
+                    {
+                      "name": "Sanat Sangwan"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": null,
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": null,
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Nakul Sharma",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Nakul Sharma",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Nakul Sharma",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Nakul Sharma",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Nakul Sharma",
+                  "fielders": [
+                    {
+                      "name": "Ayush Badoni"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Hrithik Shokeen",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Vineet Dhankhar",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Rajat Paliwal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rajat Paliwal",
+              "bowler": "Aman Chaudhary",
+              "non_striker": "Vineet Dhankhar",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -20132,11 +21181,11 @@
           "noballs": 0
         },
         "Hrithik Shokeen": {
-          "overs": "9.0",
+          "overs": "13.0",
           "maidens": 2,
-          "runs": 39,
+          "runs": 45,
           "wickets": 1,
-          "dots": 37,
+          "dots": 55,
           "fours": 2,
           "sixes": 3,
           "wides": 0,
@@ -20154,13 +21203,13 @@
           "noballs": 0
         },
         "Aman Chaudhary": {
-          "overs": "15.0",
-          "maidens": 1,
-          "runs": 61,
-          "wickets": 0,
-          "dots": 63,
+          "overs": "22.0",
+          "maidens": 2,
+          "runs": 87,
+          "wickets": 2,
+          "dots": 90,
           "fours": 8,
-          "sixes": 1,
+          "sixes": 3,
           "wides": 0,
           "noballs": 0
         },
@@ -20176,23 +21225,23 @@
           "noballs": 0
         },
         "Sumit Mathur": {
-          "overs": "5.0",
+          "overs": "6.0",
           "maidens": 0,
-          "runs": 21,
+          "runs": 31,
           "wickets": 0,
-          "dots": 16,
+          "dots": 17,
           "fours": 2,
-          "sixes": 0,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Priyansh Arya": {
-          "overs": "2.0",
+          "overs": "3.0",
           "maidens": 0,
-          "runs": 9,
+          "runs": 17,
           "wickets": 0,
-          "dots": 6,
-          "fours": 1,
+          "dots": 7,
+          "fours": 2,
           "sixes": 0,
           "wides": 0,
           "noballs": 0

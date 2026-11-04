@@ -32,9 +32,9 @@
       },
       {
         "day": 3,
-        "status": "in play",
-        "score": "Kerala trail Gujarat by 255 runs with 10 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "41/1 in 16.0 ov",
+        "time": "2026-11-04 11:31:51.52"
       }
     ],
     "event": {
@@ -45,9 +45,9 @@
     "match_timing": {
       "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 0.0,
-      "overs_remaining_today": 90.0,
-      "balls_remaining_today": 540,
+      "overs_bowled": 16.0,
+      "overs_remaining_today": 74.0,
+      "balls_remaining_today": 444,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -71,7 +71,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Kerala trail Gujarat by 255 runs with 10 wickets remaining"
+      "summary": "Kerala trail Gujarat by 214 runs with 9 wickets remaining"
     },
     "players": {
       "Gujarat": [
@@ -18573,7 +18573,7 @@
           "deliveries": [
             {
               "batter": "Jalaj Saxena",
-              "bowler": "Amit Desai",
+              "bowler": "Siddharth Desai",
               "non_striker": "Mohammed Azharuddeen",
               "runs": {
                 "batter": 0,
@@ -18585,7 +18585,7 @@
             },
             {
               "batter": "Jalaj Saxena",
-              "bowler": "Amit Desai",
+              "bowler": "Siddharth Desai",
               "non_striker": "Mohammed Azharuddeen",
               "runs": {
                 "batter": 0,
@@ -18600,7 +18600,7 @@
             },
             {
               "batter": "Mohammed Azharuddeen",
-              "bowler": "Amit Desai",
+              "bowler": "Siddharth Desai",
               "non_striker": "Jalaj Saxena",
               "runs": {
                 "batter": 0,
@@ -18612,7 +18612,7 @@
             },
             {
               "batter": "Mohammed Azharuddeen",
-              "bowler": "Amit Desai",
+              "bowler": "Siddharth Desai",
               "non_striker": "Jalaj Saxena",
               "runs": {
                 "batter": 0,
@@ -18624,7 +18624,7 @@
             },
             {
               "batter": "Mohammed Azharuddeen",
-              "bowler": "Amit Desai",
+              "bowler": "Siddharth Desai",
               "non_striker": "Jalaj Saxena",
               "runs": {
                 "batter": 0,
@@ -18636,7 +18636,7 @@
             },
             {
               "batter": "Mohammed Azharuddeen",
-              "bowler": "Amit Desai",
+              "bowler": "Siddharth Desai",
               "non_striker": "Jalaj Saxena",
               "runs": {
                 "batter": 1,
@@ -18970,22 +18970,22 @@
           "noballs": 1
         },
         "Amit Desai": {
-          "overs": "14.0",
+          "overs": "13.0",
           "maidens": 1,
-          "runs": 43,
+          "runs": 42,
           "wickets": 1,
-          "dots": 59,
+          "dots": 54,
           "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Siddharth Desai": {
-          "overs": "23.0",
+          "overs": "24.0",
           "maidens": 8,
-          "runs": 66,
+          "runs": 67,
           "wickets": 2,
-          "dots": 113,
+          "dots": 118,
           "fours": 9,
           "sixes": 2,
           "wides": 0,
@@ -19006,8 +19006,1344 @@
     },
     {
       "team": "Kerala",
-      "overs": [],
-      "official_bowlers": {}
+      "overs": [
+        {
+          "over": 0,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3,
+              "extras": {
+                "legbyes": 1
+              }
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3,
+              "extras": {
+                "legbyes": 2
+              }
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3,
+              "extras": {
+                "legbyes": 2
+              }
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Chintan Gaja",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Rohan Kunnummal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rohan Kunnummal",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Rohan Kunnummal"
+                }
+              ]
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Arzan Nagwaswalla",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Siddharth Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Amit Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Amit Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Amit Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Amit Desai",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Amit Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sachin Baby",
+              "bowler": "Amit Desai",
+              "non_striker": "Abhishek P Nair",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Abhishek P Nair",
+              "bowler": "Vishal Jayswal",
+              "non_striker": "Sachin Baby",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Chintan Gaja": {
+          "overs": "4.0",
+          "maidens": 2,
+          "runs": 5,
+          "wickets": 0,
+          "dots": 22,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Arzan Nagwaswalla": {
+          "overs": "4.0",
+          "maidens": 0,
+          "runs": 11,
+          "wickets": 1,
+          "dots": 19,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Siddharth Desai": {
+          "overs": "5.0",
+          "maidens": 0,
+          "runs": 15,
+          "wickets": 0,
+          "dots": 24,
+          "fours": 3,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Vishal Jayswal": {
+          "overs": "2.0",
+          "maidens": 1,
+          "runs": 4,
+          "wickets": 0,
+          "dots": 11,
+          "fours": 1,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Amit Desai": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 1,
+          "wickets": 0,
+          "dots": 5,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
     }
   ]
 }

@@ -32,9 +32,9 @@
       },
       {
         "day": 3,
-        "status": "in play",
-        "score": "Jammu & Kashmir lead Pondicherry by 56 runs with 7 wickets remaining",
-        "time": ""
+        "status": "stumps",
+        "score": "491/5 in 130.0 ov",
+        "time": "2026-11-04 11:14:30.03"
       }
     ],
     "event": {
@@ -45,7 +45,7 @@
     "match_timing": {
       "day": 3,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 122.3,
+      "overs_bowled": 130.0,
       "overs_remaining_today": 0.0,
       "balls_remaining_today": 0,
       "fixed_projection": {
@@ -70,7 +70,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Jammu & Kashmir lead Pondicherry by 56 runs with 7 wickets remaining"
+      "summary": "Jammu & Kashmir lead Pondicherry by 106 runs with 5 wickets remaining"
     },
     "players": {
       "Jammu & Kashmir": [
@@ -79,12 +79,12 @@
         "Kawalpreet Singh",
         "Paras Dogra",
         "Abdul Samad",
+        "Sahil Lotra",
+        "Rydham Sharma",
         "Waseem Khanday",
         "Sunil Kumar",
         "Umar Nazir",
-        "Rohit Sharma",
-        "Rydham Sharma",
-        "Sahil Lotra"
+        "Rohit Sharma"
       ],
       "Pondicherry": [
         "Neyan Kangayan",
@@ -107,12 +107,12 @@
         "Kawalpreet Singh": "94997",
         "Paras Dogra": "16964",
         "Abdul Samad": "70433",
+        "Sahil Lotra": "79035",
+        "Rydham Sharma": "95253",
         "Waseem Khanday": "95076",
         "Sunil Kumar": "78837",
         "Umar Nazir": "30417",
         "Rohit Sharma": "39144",
-        "Rydham Sharma": "95253",
-        "Sahil Lotra": "79035",
         "Neyan Kangayan": "76557",
         "Ritesh Gudge": "87002",
         "Nikhil Gangta": "32159",
@@ -17641,29 +17641,635 @@
               },
               "day": 3,
               "session": 3
+            },
+            {
+              "batter": "Abdul Samad",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Abdul Samad"
+                }
+              ]
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 123,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 124,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 125,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 126,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 127,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Udeshi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 128,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Sahil Lotra",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Sagar Trivedi",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 129,
+          "day": 3,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Sahil Lotra",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 3,
+              "session": 3,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Sahil Lotra",
+                  "fielders": [
+                    {
+                      "name": "Prasad Pawar"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Rydham Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Rydham Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Rydham Sharma",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Kawalpreet Singh",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Rydham Sharma",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 3,
+              "session": 3
+            },
+            {
+              "batter": "Kawalpreet Singh",
+              "bowler": "Gaurav Yadav",
+              "non_striker": "Rydham Sharma",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 3,
+              "session": 3
             }
           ]
         }
       ],
       "official_bowlers": {
         "Gaurav Yadav": {
-          "overs": "17.0",
+          "overs": "18.0",
           "maidens": 1,
-          "runs": 68,
-          "wickets": 0,
-          "dots": 72,
-          "fours": 12,
-          "sixes": 0,
+          "runs": 81,
+          "wickets": 1,
+          "dots": 73,
+          "fours": 13,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Sagar Trivedi": {
-          "overs": "24.3",
+          "overs": "28.0",
           "maidens": 10,
-          "runs": 73,
-          "wickets": 0,
-          "dots": 113,
-          "fours": 10,
+          "runs": 98,
+          "wickets": 1,
+          "dots": 122,
+          "fours": 14,
           "sixes": 1,
           "wides": 1,
           "noballs": 0
@@ -17680,12 +18286,12 @@
           "noballs": 1
         },
         "Sagar Udeshi": {
-          "overs": "28.0",
+          "overs": "31.0",
           "maidens": 5,
-          "runs": 73,
+          "runs": 85,
           "wickets": 2,
-          "dots": 127,
-          "fours": 8,
+          "dots": 136,
+          "fours": 9,
           "sixes": 1,
           "wides": 0,
           "noballs": 0
