@@ -1,21 +1,22 @@
 {
   "meta": {
     "data_version": "1.1.0",
-    "created": "2026-11-04",
+    "created": "2026-11-05",
     "revision": 1
   },
   "info": {
     "balls_per_over": 6,
     "city": null,
-    "current_day": 3,
+    "current_day": 4,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 3",
+    "day_status": "Live Day 4",
     "days_played": [
       1,
       2,
-      3
+      3,
+      4
     ],
     "days_summary": [
       {
@@ -35,6 +36,12 @@
         "status": "stumps",
         "score": "131/7 in 41.0 ov",
         "time": "2026-11-04 10:46:38.67"
+      },
+      {
+        "day": 4,
+        "status": "in play",
+        "score": "Saurashtra require 211 runs to win with 3 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -43,7 +50,7 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 3,
+      "day": 4,
       "scheduled_daily_overs": 90,
       "overs_bowled": 41.0,
       "overs_remaining_today": 49.0,
