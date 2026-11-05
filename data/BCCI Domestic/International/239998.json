@@ -11,7 +11,7 @@
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 4",
+    "day_status": "Match Drawn (Delhi win by 1st innings)",
     "days_played": [
       1,
       2,
@@ -39,9 +39,9 @@
       },
       {
         "day": 4,
-        "status": "in play",
-        "score": "Delhi require 153 runs to win with 6 wickets remaining",
-        "time": ""
+        "status": "end of match",
+        "score": "168/4 in 37.0 ov",
+        "time": "2026-11-05 10:31:35.54"
       }
     ],
     "event": {
@@ -50,11 +50,11 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 4,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 36.2,
-      "overs_remaining_today": 53.4,
-      "balls_remaining_today": 322,
+      "overs_bowled": 37.0,
+      "overs_remaining_today": 53.0,
+      "balls_remaining_today": 318,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
@@ -76,8 +76,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Delhi require 153 runs to win with 6 wickets remaining"
+      "result": "draw",
+      "summary": "Match Drawn (Delhi win by 1st innings)"
     },
     "players": {
       "Delhi": [
@@ -26836,6 +26836,66 @@
               },
               "day": 4,
               "session": 3
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Yash Dhull",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Sumit Mathur",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Sumit Mathur",
+              "bowler": "Nitin Tanwar",
+              "non_striker": "Yash Dhull",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
             }
           ]
         }
@@ -26886,11 +26946,11 @@
           "noballs": 0
         },
         "Nitin Tanwar": {
-          "overs": "7.4",
+          "overs": "8.2",
           "maidens": 0,
-          "runs": 30,
+          "runs": 31,
           "wickets": 1,
-          "dots": 30,
+          "dots": 33,
           "fours": 1,
           "sixes": 2,
           "wides": 0,

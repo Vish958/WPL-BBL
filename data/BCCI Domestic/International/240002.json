@@ -11,7 +11,7 @@
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 4",
+    "day_status": "Mumbai win by 106 runs",
     "days_played": [
       1,
       2,
@@ -39,9 +39,9 @@
       },
       {
         "day": 4,
-        "status": "in play",
-        "score": "Railways require 144 runs to win with 5 wickets remaining",
-        "time": ""
+        "status": "end of match",
+        "score": "265/10 in 77.2 ov",
+        "time": "2026-11-05 11:47:08.06"
       }
     ],
     "event": {
@@ -50,17 +50,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 4,
+      "day": 1,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 60.5,
-      "overs_remaining_today": 29.1,
-      "balls_remaining_today": 175,
+      "overs_bowled": 77.2,
+      "overs_remaining_today": 12.4,
+      "balls_remaining_today": 76,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 15.0,
-        "max_overs_with_1hr_extension": 30.0,
+        "expected_overs_next_hour": 12.4,
+        "max_overs_with_1hr_extension": 27.7,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -76,8 +76,8 @@
       ]
     },
     "outcome": {
-      "result": "stumps",
-      "summary": "Railways require 144 runs to win with 5 wickets remaining"
+      "result": "draw",
+      "summary": "Mumbai win by 106 runs"
     },
     "players": {
       "Railways": [
@@ -24951,6 +24951,1430 @@
               "session": 2
             }
           ]
+        },
+        {
+          "over": 60,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Eshaan Goyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Goyal, no run",
+              "bowler": "Kotian",
+              "non_striker": "Eshaan Goyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Ali, no run",
+              "bowler": "Mulani",
+              "non_striker": "Goyal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Shams Mulani",
+              "non_striker": "Ali, no run",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Shams Mulani",
+              "non_striker": "Ali, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Ali, no run",
+              "bowler": "Mulani",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Shams Mulani",
+              "non_striker": "Ali, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Shams Mulani",
+              "non_striker": "Ali, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Ali, 6 runs",
+              "bowler": "Kotian",
+              "non_striker": "Eshaan Goyal",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Ali, 6 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Ali, 6 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Goyal, no run",
+              "bowler": "Mulani",
+              "non_striker": "Ali, 6 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Goyal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Goyal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Goyal, no run",
+              "bowler": "Mulani",
+              "non_striker": "Eshaan Goyal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Eshaan Goyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Goyal, no run",
+              "bowler": "Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Goyal, no run",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Eshaan Goyal",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Eshaan Goyal",
+              "bowler": "Musheer Khan",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Eshaan Goyal",
+                  "fielders": [
+                    {
+                      "name": "Sarfaraz Khan"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Musheer Khan",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Musheer Khan",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Musheer Khan",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Musheer Khan",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mondal, 4 runs",
+              "bowler": "Khan",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, 4 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, 4 runs",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mondal, no run",
+              "bowler": "Kotian",
+              "non_striker": "Zubair Ali",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 68,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Musheer Khan",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Zubair Ali",
+              "bowler": "Musheer Khan",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Zubair Ali",
+                  "fielders": [
+                    {
+                      "name": "Suryansh Shedge"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Choudhury, no run",
+              "bowler": "Khan",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Choudhury, no run",
+              "bowler": "Khan",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 69,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mondal, no run",
+              "bowler": "Kotian",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mondal, no run",
+              "bowler": "Kotian",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 70,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 71,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mondal, no run",
+              "bowler": "Mulani",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 72,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Choudhury, no run",
+              "bowler": "Khan",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Musheer Khan",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 73,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mondal, no run",
+              "bowler": "Mulani",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mondal, no run",
+              "bowler": "Mulani",
+              "non_striker": "Toufik Mondal",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Toufik Mondal",
+              "bowler": "Shams Mulani",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Toufik Mondal",
+                  "fielders": [
+                    {
+                      "name": "Tanush Kotian"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Shams Mulani",
+              "non_striker": "Mondal, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 74,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Himanshu Sangwan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Choudhury, no run",
+              "bowler": "Kotian",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Choudhury, 2 runs",
+              "bowler": "Kotian",
+              "non_striker": "Choudhury, no run",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 75,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Shams Mulani",
+              "non_striker": "Choudhury, 2 runs",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Sangwan, no run",
+              "bowler": "Mulani",
+              "non_striker": "Himanshu Sangwan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Shams Mulani",
+              "non_striker": "Sangwan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Sangwan, no run",
+              "bowler": "Mulani",
+              "non_striker": "Himanshu Sangwan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Sangwan, no run",
+              "bowler": "Mulani",
+              "non_striker": "Himanshu Sangwan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Sangwan, no run",
+              "bowler": "Mulani",
+              "non_striker": "Himanshu Sangwan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 76,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Sangwan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Sangwan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Sangwan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Sangwan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Raj Choudhury",
+              "bowler": "Tanush Kotian",
+              "non_striker": "Sangwan, no run",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Choudhury, out!",
+              "bowler": "Kotian",
+              "non_striker": "Raj Choudhury",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Raj Choudhury"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 77,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Himanshu Sangwan",
+              "bowler": "Musheer Khan",
+              "non_striker": "Choudhury, out!",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Sangwan, out!",
+              "bowler": "Khan",
+              "non_striker": "Himanshu Sangwan",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Himanshu Sangwan",
+                  "fielders": [
+                    {
+                      "name": "Divyaansh Saxena"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "official_bowlers": {
@@ -24988,34 +26412,34 @@
           "noballs": 0
         },
         "Shams Mulani": {
-          "overs": "17.4",
-          "maidens": 2,
-          "runs": 59,
-          "wickets": 3,
-          "dots": 75,
-          "fours": 8,
-          "sixes": 0,
+          "overs": "23.0",
+          "maidens": 5,
+          "runs": 69,
+          "wickets": 4,
+          "dots": 105,
+          "fours": 9,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
         "Tanush Kotian": {
-          "overs": "19.0",
-          "maidens": 3,
-          "runs": 70,
-          "wickets": 1,
-          "dots": 81,
-          "fours": 7,
-          "sixes": 2,
+          "overs": "26.0",
+          "maidens": 4,
+          "runs": 93,
+          "wickets": 2,
+          "dots": 112,
+          "fours": 9,
+          "sixes": 3,
           "wides": 0,
           "noballs": 0
         },
         "Musheer Khan": {
-          "overs": "10.0",
-          "maidens": 2,
-          "runs": 38,
-          "wickets": 0,
-          "dots": 44,
-          "fours": 4,
+          "overs": "14.2",
+          "maidens": 5,
+          "runs": 42,
+          "wickets": 3,
+          "dots": 69,
+          "fours": 5,
           "sixes": 2,
           "wides": 0,
           "noballs": 0
