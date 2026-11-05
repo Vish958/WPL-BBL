@@ -7,15 +7,16 @@
   "info": {
     "balls_per_over": 6,
     "city": "Kanpur",
-    "current_day": 3,
+    "current_day": 4,
     "dates": [
       "2026-11-02"
     ],
-    "day_status": "Live Day 3",
+    "day_status": "Live Day 4",
     "days_played": [
       1,
       2,
-      3
+      3,
+      4
     ],
     "days_summary": [
       {
@@ -35,6 +36,12 @@
         "status": "stumps",
         "score": "455/8 in 133.0 ov",
         "time": "2026-11-04 11:13:52.85"
+      },
+      {
+        "day": 4,
+        "status": "in play",
+        "score": "Baroda lead Uttar Pradesh by 20 runs with 4 wickets remaining",
+        "time": ""
       }
     ],
     "event": {
@@ -43,17 +50,17 @@
     },
     "gender": "male",
     "match_timing": {
-      "day": 3,
+      "day": 4,
       "scheduled_daily_overs": 90,
-      "overs_bowled": 133.0,
-      "overs_remaining_today": 0.0,
-      "balls_remaining_today": 0,
+      "overs_bowled": 68.0,
+      "overs_remaining_today": 22.0,
+      "balls_remaining_today": 132,
       "fixed_projection": {
         "standard_overs_per_hour": 15,
         "minutes_per_over": 4.0,
         "one_hour_capacity_overs": 15.0,
-        "expected_overs_next_hour": 0.0,
-        "max_overs_with_1hr_extension": 15.0,
+        "expected_overs_next_hour": 15.0,
+        "max_overs_with_1hr_extension": 30.0,
         "extension_1_hour_overs": 15.0,
         "extension_30_min_overs": 7.5
       }
@@ -70,7 +77,7 @@
     },
     "outcome": {
       "result": "stumps",
-      "summary": "Uttar Pradesh lead Baroda by 100 runs with 2 wickets remaining"
+      "summary": "Baroda lead Uttar Pradesh by 20 runs with 4 wickets remaining"
     },
     "players": {
       "Uttar Pradesh": [
@@ -20037,28 +20044,409 @@
               "session": 3
             }
           ]
+        },
+        {
+          "over": 133,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Raj Limbani",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Raj Limbani",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Raj Limbani",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Raj Limbani",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Raj Limbani",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Raj Limbani",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 134,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Atit Sheth",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Atit Sheth",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Atit Sheth",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Atit Sheth",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Atit Sheth",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Atit Sheth",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 135,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 136,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Shivam Mavi",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivam Mavi",
+              "bowler": "Mahesh Pithiya",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Shivam Mavi",
+                  "fielders": [
+                    {
+                      "name": "Dhruv N Patel"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "over": 137,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": null,
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Zeeshan Ansari",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Kartik Yadav",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Kartik Yadav",
+              "bowler": "Bhargav Bhatt",
+              "non_striker": "Zeeshan Ansari",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Kartik Yadav",
+                  "fielders": [
+                    {
+                      "name": "Priyanshu Moliya"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
         }
       ],
       "official_bowlers": {
         "Bhargav Bhatt": {
-          "overs": "40.0",
+          "overs": "41.3",
           "maidens": 3,
-          "runs": 138,
-          "wickets": 2,
-          "dots": 158,
-          "fours": 10,
+          "runs": 153,
+          "wickets": 3,
+          "dots": 161,
+          "fours": 13,
           "sixes": 4,
           "wides": 0,
           "noballs": 0
         },
         "Atit Sheth": {
-          "overs": "19.0",
+          "overs": "20.0",
           "maidens": 0,
-          "runs": 61,
+          "runs": 69,
           "wickets": 1,
-          "dots": 74,
+          "dots": 77,
           "fours": 6,
-          "sixes": 0,
+          "sixes": 1,
           "wides": 0,
           "noballs": 0
         },
@@ -20074,22 +20462,22 @@
           "noballs": 0
         },
         "Raj Limbani": {
-          "overs": "10.0",
+          "overs": "11.0",
           "maidens": 0,
-          "runs": 37,
+          "runs": 47,
           "wickets": 0,
-          "dots": 40,
-          "fours": 5,
+          "dots": 42,
+          "fours": 7,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
         },
         "Mahesh Pithiya": {
-          "overs": "38.0",
+          "overs": "39.0",
           "maidens": 2,
-          "runs": 112,
-          "wickets": 5,
-          "dots": 162,
+          "runs": 116,
+          "wickets": 6,
+          "dots": 164,
           "fours": 10,
           "sixes": 2,
           "wides": 0,
@@ -20113,6 +20501,5512 @@
           "wickets": 0,
           "dots": 10,
           "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        }
+      }
+    },
+    {
+      "team": "Baroda",
+      "overs": [
+        {
+          "over": 0,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 1,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 2,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Yash Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Yash Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Yash Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 3,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 4,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 5,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 6,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Yash Dayal",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Yash Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Yash Dayal",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 7,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 8,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 9,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 10,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 11,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 12,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 13,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Shivalik Sharma",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 14,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Shivalik Sharma",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Shivalik Sharma"
+                }
+              ]
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 15,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 16,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Shivam Mavi",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 17,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 18,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 19,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 20,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 21,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 22,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 23,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 24,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 25,
+          "day": 4,
+          "session": 1,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Rinku Singh",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Rinku Singh",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Rinku Singh",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Rinku Singh",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Rinku Singh",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Rinku Singh",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 1
+            }
+          ]
+        },
+        {
+          "over": 26,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 27,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 28,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 29,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 30,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 31,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 32,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 33,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 34,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 35,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Priyanshu Moliya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Priyanshu Moliya",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Priyanshu Moliya"
+                }
+              ]
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 1,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2,
+              "extras": {
+                "legbyes": 1
+              }
+            }
+          ]
+        },
+        {
+          "over": 36,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 37,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 38,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 39,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 40,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 41,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 42,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Dhruv N Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 43,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Dhruv N Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "lbw",
+                  "player_out": "Dhruv N Patel"
+                }
+              ]
+            },
+            {
+              "batter": "Shashwat Rawat",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Shashwat Rawat",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 2,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2,
+              "extras": {
+                "legbyes": 2
+              }
+            },
+            {
+              "batter": "Shashwat Rawat",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Shashwat Rawat",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 44,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Shashwat Rawat",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Shashwat Rawat",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Shashwat Rawat"
+                }
+              ]
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 45,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 46,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 47,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Karan Sharma",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 48,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 49,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Mitesh Patel",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 50,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mitesh Patel",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "bowled",
+                  "player_out": "Mitesh Patel"
+                }
+              ]
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 51,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 4,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2,
+              "extras": {
+                "legbyes": 4
+              }
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Karan Sharma",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 52,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Manan Solanki",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Manan Solanki",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2,
+              "wickets": [
+                {
+                  "kind": "caught",
+                  "player_out": "Manan Solanki",
+                  "fielders": [
+                    {
+                      "name": "Aryan Juyal"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 53,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Zeeshan Ansari",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 54,
+          "day": 4,
+          "session": 2,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 2
+            }
+          ]
+        },
+        {
+          "over": 55,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 56,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 57,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 58,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 4,
+                "extras": 0,
+                "total": 4
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 59,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 60,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 61,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 62,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 63,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 64,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Prashant Veer",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Prashant Veer",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 65,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 66,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Yash Dayal",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 1,
+                "extras": 0,
+                "total": 1
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Yash Dayal",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Yash Dayal",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Yash Dayal",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Yash Dayal",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Mahesh Pithiya",
+              "bowler": "Yash Dayal",
+              "non_striker": "Atit Sheth",
+              "runs": {
+                "batter": 2,
+                "extras": 0,
+                "total": 2
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        },
+        {
+          "over": 67,
+          "day": 4,
+          "session": 3,
+          "deliveries": [
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 0,
+                "extras": 0,
+                "total": 0
+              },
+              "day": 4,
+              "session": 3
+            },
+            {
+              "batter": "Atit Sheth",
+              "bowler": "Kartik Yadav",
+              "non_striker": "Mahesh Pithiya",
+              "runs": {
+                "batter": 6,
+                "extras": 0,
+                "total": 6
+              },
+              "day": 4,
+              "session": 3
+            }
+          ]
+        }
+      ],
+      "official_bowlers": {
+        "Yash Dayal": {
+          "overs": "5.0",
+          "maidens": 1,
+          "runs": 9,
+          "wickets": 0,
+          "dots": 23,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Kartik Yadav": {
+          "overs": "17.4",
+          "maidens": 4,
+          "runs": 27,
+          "wickets": 0,
+          "dots": 90,
+          "fours": 1,
+          "sixes": 1,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Karan Sharma": {
+          "overs": "18.0",
+          "maidens": 3,
+          "runs": 36,
+          "wickets": 1,
+          "dots": 81,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Shivam Mavi": {
+          "overs": "5.0",
+          "maidens": 2,
+          "runs": 13,
+          "wickets": 1,
+          "dots": 25,
+          "fours": 2,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Rinku Singh": {
+          "overs": "1.0",
+          "maidens": 0,
+          "runs": 2,
+          "wickets": 0,
+          "dots": 4,
+          "fours": 0,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Zeeshan Ansari": {
+          "overs": "6.2",
+          "maidens": 1,
+          "runs": 24,
+          "wickets": 1,
+          "dots": 27,
+          "fours": 4,
+          "sixes": 0,
+          "wides": 0,
+          "noballs": 0
+        },
+        "Prashant Veer": {
+          "overs": "15.0",
+          "maidens": 2,
+          "runs": 39,
+          "wickets": 3,
+          "dots": 68,
+          "fours": 5,
           "sixes": 0,
           "wides": 0,
           "noballs": 0
